@@ -1,0 +1,89 @@
+{
+	"identifier": "Level_1",
+	"uniqueIdentifer": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+	"x": 0,
+	"y": -256,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "c39fb370-8990-11ee-9ab0-a5bd4713fd29",
+			"dir": "s"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"Tiles.png",
+		"Tiles2.png"
+	],
+	"entities": {
+		"FloorButton": [
+			{
+				"id": "FloorButton",
+				"iid": "9093c3d2-8990-11ee-9ab0-7781a0278a82",
+				"layer": "OnGround",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": [
+						{
+							"entityIid": "960ecf80-8990-11ee-9ab0-3f9906ebd8a5",
+							"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
+							"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
+						}
+					],
+					"Entity_ref2": {
+						"entityIid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
+						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
+						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
+					}
+				}
+			},
+			{
+				"id": "FloorButton",
+				"iid": "960ecf80-8990-11ee-9ab0-3f9906ebd8a5",
+				"layer": "OnGround",
+				"x": 160,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": [
+						{
+							"entityIid": "9093c3d2-8990-11ee-9ab0-7781a0278a82",
+							"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
+							"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
+						}
+					],
+					"Entity_ref2": {
+						"entityIid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
+						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
+						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
+					}
+				}
+			}
+		],
+		"LockedDoor": [
+			{
+				"id": "LockedDoor",
+				"iid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
+				"layer": "OnGround",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 13601382,
+				"customFields" : {}
+			}
+		]
+	}
+}

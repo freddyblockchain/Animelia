@@ -1,0 +1,18 @@
+package com.mygdx.game.Utils
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.mygdx.game.BaseClasses.Renderable
+
+class RenderGraph {
+    companion object{
+        private val RenderList = mutableListOf<Renderable>()
+        fun addToSceneGraph(renderable: Renderable){
+            RenderList.add(renderable)
+        }
+        fun render(batch: SpriteBatch){
+            RenderList.sortBy {it.layer}
+            RenderList.forEach{it.render(batch)}
+            RenderList.clear()
+        }
+    }
+}
