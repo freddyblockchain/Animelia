@@ -1,5 +1,6 @@
 package com.mygdx.game
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
@@ -7,27 +8,32 @@ import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 
 
-
-
-
 class MyInputProcessor : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
-        val scale = 5f
-        val cameradir = when (keycode) {
-            Input.Keys.LEFT -> getDirectionUnitVector(Direction.LEFT)
-            Input.Keys.RIGHT -> getDirectionUnitVector(Direction.RIGHT)
-            Input.Keys.UP -> getDirectionUnitVector(Direction.UP)
-            Input.Keys.DOWN -> getDirectionUnitVector(Direction.DOWN)
-            else -> Vector2(0f,0f)
-        }
-        cameraDirection = cameradir * scale
         return false
     }
 
-    override fun keyUp(keycode: Int): Boolean {
-        when (keycode) {
-            Input.Keys.LEFT, Input.Keys.RIGHT,  Input.Keys.UP, Input.Keys.DOWN -> cameraDirection = Vector2(0f,0f)
+    fun handleInput() {
+        var directionUnitVector = Vector2(0f,0f)
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            directionUnitVector = getDirectionUnitVector(Direction.LEFT)
         }
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            directionUnitVector = getDirectionUnitVector(Direction.RIGHT)
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+            directionUnitVector = getDirectionUnitVector(Direction.UP)
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+            directionUnitVector = getDirectionUnitVector(Direction.DOWN)
+        }
+        if(directionUnitVector != Vector2(0f,0f)){
+            player.move(directionUnitVector)
+            player.setRotation(directionUnitVector, player, 90f)
+        }
+    }
+
+    override fun keyUp(keycode: Int): Boolean {
         return false
     }
 

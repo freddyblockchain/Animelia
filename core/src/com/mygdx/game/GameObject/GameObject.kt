@@ -1,13 +1,17 @@
-package com.mygdx.game.BaseClasses
+package com.mygdx.game.GameObject
 
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.*
 import com.mygdx.game.Collisions.CanMoveCollision
-import com.mygdx.game.Interfaces.*
+import com.mygdx.game.Collition.Collision
+import com.mygdx.game.Collition.CollisionMask
+import com.mygdx.game.Collition.DefaultCollisionMask
+import com.mygdx.game.InitPolygon
+import com.mygdx.game.InitSprite
+import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
 
 abstract class GameObject(val initPosition: Vector2, val size: Vector2): Renderable {
@@ -30,7 +34,7 @@ abstract class GameObject(val initPosition: Vector2, val size: Vector2): Rendera
     open val sprite: Sprite by lazy { InitSprite(texture)}
     open val polygon: Polygon by lazy {InitPolygon(sprite)}
     open val shouldCollide = true
-    open val collition: Collision = CanMoveCollision
+    open val collision: Collision = CanMoveCollision()
     var collidingObjects: List<GameObject> = listOf()
     override fun render(batch: SpriteBatch){
         sprite.draw(batch)
@@ -49,5 +53,9 @@ abstract class GameObject(val initPosition: Vector2, val size: Vector2): Rendera
 
     fun currentPosition(): Vector2 {
         return Vector2(sprite.x,sprite.y)
+    }
+
+    fun remove(){
+
     }
 }

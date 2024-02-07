@@ -3,21 +3,30 @@ package com.mygdx.game
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.BaseClasses.Area
+import com.mygdx.game.Area.Area
+import com.mygdx.game.Area.AreaIdentifier
 import com.mygdx.game.GameObjects.Ground
+import com.mygdx.game.Managers.AreaManager
 
 fun renderRepeatedTexture(batch: PolygonSpriteBatch, texture: Texture, position: Vector2, size: Vector2) {
     texture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat)
     batch.draw(texture, position.x, position.y, 0, 0, size.x.toInt(), size.y.toInt())
 }
 
-fun createArea(levelPath: String): Area {
-    val areaToCreate = Area()
-    val ground = Ground(Vector2(0f,0f), Vector2(256f, 256f), "$levelPath/_composite.png")
-    val entityObjects = JsonParser.parseJson("$levelPath/data.json")
+fun createArea(areaIdentifier: AreaIdentifier): Area {
+    val areaToCreate = Area(areaIdentifier)
+    val ground = Ground(Vector2(0f,0f), Vector2(256f, 256f), "levels/${areaIdentifier.name}/_composite.png")
+    val entityObjects = JsonParser.parseJson("levels/${areaIdentifier.name}/data.json")
     areaToCreate.gameObjects.add(ground)
     areaToCreate.gameObjects.addAll(entityObjects)
     return areaToCreate
+}
+
+fun initAreas(){
+    AreaIdentifier.entries.map {
+        AreaManager.areas.add(createArea(it))
+    }
+    AreaManager.setActiveArea(AreaIdentifier.Level_0)
 }
 /*
 

@@ -1,10 +1,7 @@
-
-import com.mygdx.game.BaseClasses.GameObject
-import com.mygdx.game.Entities
-import com.mygdx.game.FloorButtonData
-import com.mygdx.game.GameObjectData
+package com.mygdx.game
+import LockedDoor
+import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.GameObjects.Button
-import com.mygdx.game.LockedDoorData
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 
@@ -15,12 +12,13 @@ object GameObjectFactory {
         registry[type] = constructorFunction
     }
 
-    private fun create(data: GameObjectData): GameObject? {
+    private fun create(data: GameObjectData, height: Int): GameObject? {
         val constructor = registry[data::class.java]
+        data.y = height - data.y - 32
         return constructor?.invoke(data)
     }
 
-    fun GetGameObjectsFromJson(entities: Entities): List<GameObject> {
+    fun GetGameObjectsFromJson(entities: Entities, height: Int): List<GameObject> {
         val allEntities = mutableListOf<GameObject>()
         Entities::class.memberProperties.forEach { property ->
             property.isAccessible = true // Make sure we can access the property
@@ -32,7 +30,7 @@ object GameObjectFactory {
                     if (item is GameObjectData) { // Check if the item implements GameObjectData
                         // At this point, item is safely cast to GameObjectData
                         // You can now add item to your List<GameObjectData>
-                        allEntities.add(create(item)!!)
+                        allEntities.add(create(item, height)!!)
                     }
                 }
             }
@@ -42,10 +40,10 @@ object GameObjectFactory {
     }
 
     fun initMappings(){
-        this.register(FloorButtonData::class.java) {
+        register(FloorButtonData::class.java) {
             Button(it as FloorButtonData)
         }
-        this.register(LockedDoorData::class.java) {
+        register(LockedDoorData::class.java) {
             LockedDoor(it as LockedDoorData)
         }
     }

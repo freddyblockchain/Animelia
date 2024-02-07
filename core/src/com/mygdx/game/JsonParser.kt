@@ -1,7 +1,7 @@
 package com.mygdx.game
 
-import GameObjectFactory.GetGameObjectsFromJson
-import com.mygdx.game.BaseClasses.GameObject
+import com.mygdx.game.GameObjectFactory.GetGameObjectsFromJson
+import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.FileHandler.Companion.getFileJson
 import kotlinx.serialization.json.Json
 
@@ -12,7 +12,7 @@ class JsonParser {
             val objectStrings = getFileJson(fileName)
             val json = Json { ignoreUnknownKeys = true } // Configure as needed
             val root = json.decodeFromString<Root>(objectStrings)
-            return GetGameObjectsFromJson(root.entities);
+            return GetGameObjectsFromJson(root.entities, root.height);
         }
     }
 }

@@ -1,3 +1,5 @@
+package com.mygdx.game.Rendering
+
 import com.badlogic.gdx.graphics.Texture
 
 interface TextureHandler {

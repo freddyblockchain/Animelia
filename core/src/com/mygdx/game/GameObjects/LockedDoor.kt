@@ -1,6 +1,6 @@
 
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.BaseClasses.GameObject
+import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.LockedDoorData

@@ -1,4 +1,4 @@
-package com.mygdx.game.BaseClasses
+package com.mygdx.game.Rendering
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.Enums.Layer

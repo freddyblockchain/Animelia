@@ -1,7 +1,7 @@
 package com.mygdx.game.Utils
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.mygdx.game.BaseClasses.Renderable
+import com.mygdx.game.Rendering.Renderable
 
 class RenderGraph {
     companion object{
@@ -10,9 +10,11 @@ class RenderGraph {
             RenderList.add(renderable)
         }
         fun render(batch: SpriteBatch){
+            batch.begin()
             RenderList.sortBy {it.layer}
             RenderList.forEach{it.render(batch)}
             RenderList.clear()
+            batch.end()
         }
     }
 }
