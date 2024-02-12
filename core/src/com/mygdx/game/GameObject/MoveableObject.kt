@@ -4,14 +4,15 @@ import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.Collition.CollisionType
+import com.mygdx.game.GameObjectData
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollitionManager.Companion.entityWithinLocations
 import com.mygdx.game.Managers.CollitionManager.Companion.handleMoveCollisions
 import com.mygdx.game.plus
 import com.mygdx.game.times
 
-abstract class MoveableObject(Position: Vector2, size: Vector2) :
-    GameObject(Position, size), RotationalObject by DefaultRotationalObject(),
+abstract class MoveableObject(gameObjectData: GameObjectData, size: Vector2) :
+    GameObject(gameObjectData, size), RotationalObject by DefaultRotationalObject(),
     DirectionalObject {
     abstract var speed: Float
     abstract val cannotMoveStrategy: CannotMoveStrategy

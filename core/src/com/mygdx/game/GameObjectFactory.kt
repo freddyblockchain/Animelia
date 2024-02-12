@@ -1,7 +1,9 @@
 package com.mygdx.game
-import LockedDoor
 import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.GameObjects.Button
+import com.mygdx.game.GameObjects.FloorButtonData
+import com.mygdx.game.GameObjects.LockedDoor
+import com.mygdx.game.GameObjects.LockedDoorData
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 

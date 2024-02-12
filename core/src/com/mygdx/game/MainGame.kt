@@ -11,6 +11,7 @@ import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.GameObjectFactory.initMappings
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
+import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerData
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Utils.RenderGraph
 
@@ -32,7 +33,7 @@ class MainGame : ApplicationAdapter() {
         Gdx.input.setInputProcessor(inputProcessor);
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
-        player = Player(Vector2(160f, 128f), Vector2(32f, 32f))
+        player = Player(PlayerData("", 160, 128), Vector2(32f, 32f))
         AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
     }
@@ -46,7 +47,7 @@ class MainGame : ApplicationAdapter() {
         }
         RenderGraph.render(worldBatch!!)
         inputProcessor.handleInput()
-        //drawrects()
+        drawrects()
         Gdx.gl.glDisable(GL20.GL_SCISSOR_TEST);
         camera.position.set(player.sprite.x, player.sprite.y, 0f)
         camera.update()

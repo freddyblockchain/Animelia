@@ -1,4 +1,6 @@
 package com.mygdx.game
+import com.mygdx.game.GameObjects.FloorButtonData
+import com.mygdx.game.GameObjects.LockedDoorData
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -12,20 +14,8 @@ interface GameObjectData {
     val x: Int
     //Need y to be var, so that we can change y, to align with the level maker y value.
     var y: Int
+    val iid: String
 }
+
 @Serializable
-data class FloorButtonData(
-    val id: String,
-    val iid: String,
-    override val x: Int,
-    override var y: Int
-    // Include other relevant fields
-) : GameObjectData
-@Serializable
-data class LockedDoorData(
-    val id: String,
-    val iid: String,
-    override val x: Int,
-    override var y: Int
-    // Include other relevant fields
-): GameObjectData
+data class EntityRefData(val entityIid: String, val layerIid: String, val levelIid: String, val worldIid: String)

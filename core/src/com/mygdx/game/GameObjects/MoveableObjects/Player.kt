@@ -7,10 +7,12 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObject.MoveableObject
+import com.mygdx.game.GameObjectData
+import kotlinx.serialization.Serializable
 
 
-class Player(Position: Vector2, size: Vector2)
-    : MoveableObject(Position, size){
+class Player(gameObjectData: GameObjectData, size: Vector2)
+    : MoveableObject(gameObjectData, size){
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override var speed: Float = 2f
     override val cannotMoveStrategy = NoAction()
@@ -19,3 +21,10 @@ class Player(Position: Vector2, size: Vector2)
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
 }
+
+@Serializable
+data class PlayerData(
+    override val iid: String,
+    override val x: Int,
+    override var y: Int
+): GameObjectData

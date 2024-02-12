@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
 import com.mygdx.game.Area.AreaIdentifier
 import com.mygdx.game.GameObjects.Ground
+import com.mygdx.game.GameObjects.GroundData
 import com.mygdx.game.Managers.AreaManager
 
 fun renderRepeatedTexture(batch: PolygonSpriteBatch, texture: Texture, position: Vector2, size: Vector2) {
@@ -15,7 +16,7 @@ fun renderRepeatedTexture(batch: PolygonSpriteBatch, texture: Texture, position:
 
 fun createArea(areaIdentifier: AreaIdentifier): Area {
     val areaToCreate = Area(areaIdentifier)
-    val ground = Ground(Vector2(0f,0f), Vector2(256f, 256f), "levels/${areaIdentifier.name}/_composite.png")
+    val ground = Ground(GroundData("", 0,0), Vector2(256f, 256f), "levels/${areaIdentifier.name}/_composite.png")
     val entityObjects = JsonParser.parseJson("levels/${areaIdentifier.name}/data.json")
     areaToCreate.gameObjects.add(ground)
     areaToCreate.gameObjects.addAll(entityObjects)

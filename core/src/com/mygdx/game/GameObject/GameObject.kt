@@ -9,12 +9,14 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.DefaultCollisionMask
+import com.mygdx.game.GameObjectData
 import com.mygdx.game.InitPolygon
 import com.mygdx.game.InitSprite
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
 
-abstract class GameObject(val initPosition: Vector2, val size: Vector2): Renderable {
+abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Renderable {
+    val initPosition = Vector2(gameObjectData.x.toFloat(), gameObjectData.y.toFloat())
     val topleft = Vector2(initPosition.x,initPosition.y + size.y)
     val topright = Vector2(initPosition.x + size.x,initPosition.y + size.y)
     val bottomright =  Vector2(initPosition.x + size.x,initPosition.y)
@@ -35,6 +37,7 @@ abstract class GameObject(val initPosition: Vector2, val size: Vector2): Rendera
     open val polygon: Polygon by lazy {InitPolygon(sprite)}
     open val shouldCollide = true
     open val collision: Collision = CanMoveCollision()
+    val gameObjectIid = gameObjectData.iid
     var collidingObjects: List<GameObject> = listOf()
     override fun render(batch: SpriteBatch){
         sprite.draw(batch)
