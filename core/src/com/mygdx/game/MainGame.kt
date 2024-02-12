@@ -36,6 +36,7 @@ class MainGame : ApplicationAdapter() {
         player = Player(PlayerData("", 160, 128), Vector2(32f, 32f))
         AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
+        initObjects()
     }
 
     override fun render() {

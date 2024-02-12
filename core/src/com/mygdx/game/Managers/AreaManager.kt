@@ -23,5 +23,10 @@ class AreaManager {
 
             return activeObjects.filter { it.collision.collitionType == collisionType }
         }
+
+        fun getObjectWithIid(iidToFind: String): GameObject{
+            val allObjects = areas.flatMap { it.gameObjects }
+            return allObjects.filter { it.gameObjectIid == iidToFind }.first()
+        }
     }
 }

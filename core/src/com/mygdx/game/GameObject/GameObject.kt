@@ -45,6 +45,9 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Re
     open fun frameTask(){
         addToSceneGraph(this)
     }
+    open fun initObject(){
+
+    }
     val onLocationEnterActions: MutableList<()-> Unit> = mutableListOf()
     val onRemoveAction: MutableList<()->Unit> = mutableListOf({})
     open val collitionMask: CollisionMask = DefaultCollisionMask()

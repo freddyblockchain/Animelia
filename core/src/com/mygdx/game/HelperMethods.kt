@@ -29,6 +29,11 @@ fun initAreas(){
     }
     AreaManager.setActiveArea(AreaIdentifier.Level_0)
 }
+
+fun initObjects(){
+    val objects = AreaManager.areas.flatMap { it.gameObjects }
+    objects.forEach { it.initObject() }
+}
 /*
 
 import com.badlogic.gdx.assets.AssetManager
