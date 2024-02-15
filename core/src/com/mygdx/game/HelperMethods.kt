@@ -1,33 +1,31 @@
 package com.mygdx.game
 
-import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
-import com.mygdx.game.Area.AreaIdentifier
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.GroundData
 import com.mygdx.game.Managers.AreaManager
+import java.io.File
 
-fun renderRepeatedTexture(batch: PolygonSpriteBatch, texture: Texture, position: Vector2, size: Vector2) {
-    texture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat)
-    batch.draw(texture, position.x, position.y, 0, 0, size.x.toInt(), size.y.toInt())
-}
-
-fun createArea(areaIdentifier: AreaIdentifier): Area {
-    val areaToCreate = Area(areaIdentifier)
-    val ground = Ground(GroundData("", 0,0), Vector2(256f, 256f), "levels/${areaIdentifier.name}/_composite.png")
-    val entityObjects = JsonParser.parseJson("levels/${areaIdentifier.name}/data.json")
-    areaToCreate.gameObjects.add(ground)
+fun createArea(areaName: String): Area {
+    val root = JsonParser.getRoot("levels/${areaName}/data.json")
+    val areaToCreate = Area(root.uniqueIdentifer)
+    val entityObjects = JsonParser.getGameObjects(root)
     areaToCreate.gameObjects.addAll(entityObjects)
+    val ground = Ground(GroundData("", 0,0), Vector2(256f, 256f), "levels/${areaName}/_composite.png")
+    areaToCreate.gameObjects.add(ground)
     return areaToCreate
 }
 
 fun initAreas(){
-    AreaIdentifier.entries.map {
-        AreaManager.areas.add(createArea(it))
+    val directoryPath = "C:\\Users\\frede\\IdeaProjects\\Gdxgameengine\\assets\\levels"
+    val directory = File(directoryPath)
+
+    directory.listFiles().forEach {
+        AreaManager.areas.add(createArea(it.name))
     }
-    AreaManager.setActiveArea(AreaIdentifier.Level_0)
+    AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
+
 }
 
 fun initObjects(){

@@ -1,14 +1,16 @@
 package com.mygdx.game
+import com.mygdx.game.GameObjects.EntranceData
 import com.mygdx.game.GameObjects.FloorButtonData
 import com.mygdx.game.GameObjects.LockedDoorData
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Root(val entities: Entities, val width: Int, val height: Int)
+data class Root(val entities: Entities, val width: Int, val height: Int, val uniqueIdentifer: String, val identifier: String)
 @Serializable
 data class Entities(
     val FloorButton: List<FloorButtonData>,
-    val LockedDoor: List<LockedDoorData>
+    val LockedDoor: List<LockedDoorData>,
+    val Entrance: List<EntranceData>,
 )
 interface GameObjectData {
     val x: Int

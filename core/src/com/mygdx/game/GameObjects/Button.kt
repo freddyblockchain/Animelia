@@ -50,7 +50,6 @@ class ButtonCollision(val lockedDoor: LockedDoor) :
     }
 
     override fun movedOutsideAction(objectLeaved: GameObject) {
-        lockedDoor.unlocked = false
     }
 
     override var canMoveAfterCollision = true
