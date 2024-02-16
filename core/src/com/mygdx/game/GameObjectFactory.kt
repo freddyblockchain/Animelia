@@ -1,6 +1,5 @@
 package com.mygdx.game
 import com.mygdx.game.GameObject.GameObject
-import com.mygdx.game.GameObjects.*
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 
@@ -36,17 +35,5 @@ object GameObjectFactory {
         }
 
         return allEntities
-    }
-
-    fun initMappings(){
-        register(FloorButtonData::class.java) {
-            Button(it as FloorButtonData)
-        }
-        register(LockedDoorData::class.java) {
-            LockedDoor(it as LockedDoorData)
-        }
-        register(EntranceData::class.java){
-            Entrance(it as EntranceData)
-        }
     }
 }

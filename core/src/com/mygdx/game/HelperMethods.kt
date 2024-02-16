@@ -32,6 +32,11 @@ fun initObjects(){
     val objects = AreaManager.areas.flatMap { it.gameObjects }
     objects.forEach { it.initObject() }
 }
+
+fun getUnitVectorTowardsPoint(position: Vector2, point: Vector2): Vector2 {
+    return Vector2(point).sub(position).nor()
+}
+
 /*
 
 import com.badlogic.gdx.assets.AssetManager
