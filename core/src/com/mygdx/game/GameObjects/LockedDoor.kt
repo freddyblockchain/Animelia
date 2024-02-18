@@ -2,16 +2,13 @@ package com.mygdx.game.GameObjects
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.Collition.MoveCollision
-import com.mygdx.game.DefaultTextureHandler
-import com.mygdx.game.EntityRefData
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObject.GameObject
-import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Utils.RectanglePolygon
-import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 
 class LockedDoor(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vector2(32f,32f)) {
@@ -59,8 +56,13 @@ class LockedDoorCollision(val lockedDoor: LockedDoor): MoveCollision(){
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Player && lockedDoor.unlocked){
+            val newPos = Vector2(lockedDoor.exitEntrance.x, lockedDoor.exitEntrance.y)
             AreaManager.changeActiveArea(lockedDoor.areaIdentifierOfNewArea)
-            player.setPosition(Vector2(lockedDoor.exitEntrance.x, lockedDoor.exitEntrance.y))
+            player.setPosition(newPos)
+            player.startingPosition = newPos
+            if(butler.active){
+                butler.setPosition(newPos)
+            }
         }
     }
 

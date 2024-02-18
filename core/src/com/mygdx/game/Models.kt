@@ -1,5 +1,7 @@
 package com.mygdx.game
 import com.mygdx.game.GameObjects.*
+import com.mygdx.game.GameObjects.Hazards.Spike
+import com.mygdx.game.GameObjects.Hazards.SpikeData
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationSensor
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
 import kotlinx.serialization.Serializable
@@ -12,6 +14,7 @@ data class Entities(
     val LockedDoor: List<LockedDoorData> = listOf(),
     val Entrance: List<EntranceData> = listOf(),
     val Butler: List<ButlerData> = listOf(),
+    val Spikes: List<SpikeData> = listOf()
 )
 fun initMappings(){
     GameObjectFactory.register(FloorButtonData::class.java) {
@@ -26,6 +29,9 @@ fun initMappings(){
     GameObjectFactory.register(ButlerData::class.java) {
         ButlerActivationSensor(it as ButlerData)
     }
+    GameObjectFactory.register(SpikeData::class.java) {
+        Spike(it as SpikeData)
+    }
 }
 interface GameObjectData {
     val x: Int
@@ -33,6 +39,5 @@ interface GameObjectData {
     var y: Int
     val iid: String
 }
-
 @Serializable
 data class EntityRefData(val entityIid: String, val layerIid: String, val levelIid: String, val worldIid: String)

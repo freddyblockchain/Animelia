@@ -3,6 +3,7 @@ package com.mygdx.game.Managers
 import com.mygdx.game.Area.Area
 import com.mygdx.game.Collition.CollisionType
 import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.butler
 import com.mygdx.game.player
 
 class AreaManager {
@@ -33,11 +34,15 @@ class AreaManager {
             //cleanup old area
             val currentArea = activeArea!!
             currentArea.gameObjects.remove(player)
+            currentArea.gameObjects.remove(butler)
 
             //activate new area
             setActiveArea(areaIdentifier)
             val newArea = activeArea!!
             newArea.gameObjects.add(player)
+            if(butler.active){
+                newArea.gameObjects.add(butler)
+            }
         }
     }
 }
