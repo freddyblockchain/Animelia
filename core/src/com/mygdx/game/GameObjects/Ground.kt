@@ -16,5 +16,7 @@ class Ground(gameObjectData: GameObjectData, size: Vector2, textureName: String)
 data class GroundData(
     override val iid: String,
     override val x: Int,
-    override var y: Int
+    override var y: Int,
+    override val width: Int,
+    override val height: Int,
 ): GameObjectData

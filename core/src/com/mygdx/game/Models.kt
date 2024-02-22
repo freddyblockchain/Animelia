@@ -2,6 +2,10 @@ package com.mygdx.game
 import com.mygdx.game.GameObjects.*
 import com.mygdx.game.GameObjects.Hazards.Spike
 import com.mygdx.game.GameObjects.Hazards.SpikeData
+import com.mygdx.game.GameObjects.Memory.MemoryPad
+import com.mygdx.game.GameObjects.Memory.MemoryPadData
+import com.mygdx.game.GameObjects.Memory.MemoryStone
+import com.mygdx.game.GameObjects.Memory.MemoryStoneData
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationSensor
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
 import kotlinx.serialization.Serializable
@@ -14,7 +18,9 @@ data class Entities(
     val LockedDoor: List<LockedDoorData> = listOf(),
     val Entrance: List<EntranceData> = listOf(),
     val Butler: List<ButlerData> = listOf(),
-    val Spikes: List<SpikeData> = listOf()
+    val Spikes: List<SpikeData> = listOf(),
+    val MemoryPad: List<MemoryPadData> = listOf(),
+    val MemoryStone: List<MemoryStoneData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register(FloorButtonData::class.java) {
@@ -32,12 +38,20 @@ fun initMappings(){
     GameObjectFactory.register(SpikeData::class.java) {
         Spike(it as SpikeData)
     }
+    GameObjectFactory.register(MemoryPadData::class.java) {
+        MemoryPad(it as MemoryPadData)
+    }
+    GameObjectFactory.register(MemoryStoneData::class.java) {
+        MemoryStone(it as MemoryStoneData)
+    }
 }
 interface GameObjectData {
     val x: Int
-    //Need y to be var, so that we can change y, to align with the level maker y value.
     var y: Int
     val iid: String
+    val width: Int
+    val height: Int
+
 }
 @Serializable
 data class EntityRefData(val entityIid: String, val layerIid: String, val levelIid: String, val worldIid: String)

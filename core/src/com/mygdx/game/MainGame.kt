@@ -34,8 +34,8 @@ class MainGame : ApplicationAdapter() {
         Gdx.input.setInputProcessor(inputProcessor);
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
-        player = Player(PlayerData("", 160, 128), Vector2(32f, 32f))
-        butler = Butler(ButlerData("",0,0))
+        player = Player(PlayerData("", 160, 128,0,0), Vector2(32f, 32f))
+        butler = Butler(ButlerData("",0,0,0,0))
         AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
         initObjects()

@@ -43,6 +43,9 @@ data class FloorButtonData(
     override val iid: String,
     override val x: Int,
     override var y: Int,
+    override val width: Int,
+    override val height: Int,
+
     val customFields: FloorButtonCustomFields
     // Include other relevant fields
 ) : GameObjectData

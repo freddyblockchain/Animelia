@@ -12,7 +12,7 @@ fun createArea(areaName: String): Area {
     val areaToCreate = Area(root.uniqueIdentifer)
     val entityObjects = JsonParser.getGameObjects(root)
     areaToCreate.gameObjects.addAll(entityObjects)
-    val ground = Ground(GroundData("", 0,0), Vector2(256f, 256f), "levels/${areaName}/_composite.png")
+    val ground = Ground(GroundData("", 0,0,0,0), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
     areaToCreate.gameObjects.add(ground)
     return areaToCreate
 }

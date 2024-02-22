@@ -18,4 +18,6 @@ data class EntranceData(
     override val iid: String,
     override val x: Int,
     override var y: Int,
+    override val width: Int,
+    override val height: Int,
 ) : GameObjectData

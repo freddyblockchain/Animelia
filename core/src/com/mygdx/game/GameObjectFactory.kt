@@ -12,7 +12,7 @@ object GameObjectFactory {
 
     private fun create(data: GameObjectData, height: Int): GameObject? {
         val constructor = registry[data::class.java]
-        data.y = height - data.y - 32
+        data.y = height - data.y - data.height
         return constructor?.invoke(data)
     }
 
