@@ -1,0 +1,122 @@
+{
+  "FFr_2D5AC71F.DisplayName": {
+    "": {
+      "Text": "Tutorial"
+    },
+    "Context": "Flow/Tutorial"
+  },
+  "FFr_8C2B57BD.DisplayName": {
+    "": {
+      "Text": "First Chapter"
+    },
+    "Context": "Flow/First Chapter"
+  },
+  "FFr_8C2B57BD.Text": {
+    "": {
+      "Text": ""
+    },
+    "Context": "Flow/First Chapter"
+  },
+  "Dlg_41669955.DisplayName": {
+    "": {
+      "Text": "First Dialogue"
+    },
+    "Context": "Flow/Tutorial/First Dialogue"
+  },
+  "Dlg_F351ABC3.DisplayName": {
+    "": {
+      "Text": "Second Dialogue"
+    },
+    "Context": "Flow/Tutorial/Second Dialogue"
+  },
+  "Dlg_09A21DD1.DisplayName": {
+    "": {
+      "Text": "First Dialogue"
+    },
+    "Context": "Flow/First Chapter/First Dialogue"
+  },
+  "DFr_C15A29AA.Text": {
+    "": {
+      "Text": "Hello, there you are!\r\nReady for an adventure?"
+    },
+    "Context": "Flow/First Dialogue/Player: \"Hello, there you are! Ready for an...\""
+  },
+  "DFr_3A3191C6.Text": {
+    "": {
+      "Text": "Hello sir, your parents requested me to check up on you. Not sure adventuring is such af good idea..."
+    },
+    "Context": "Flow/First Dialogue/Butler: \"Hello sir, your parents requested m...\""
+  },
+  "DFr_F77DB5CA.Text": {
+    "": {
+      "Text": "Haha, lets put the yes hat on!\r\nLets go!"
+    },
+    "Context": "Flow/First Dialogue/Player: \"Haha, lets put the yes hat on! Let...\""
+  },
+  "DFr_12917D7A.Text": {
+    "": {
+      "Text": "Well, alright sir. We can adventure a little bit..."
+    },
+    "Context": "Flow/First Dialogue/Butler: \"Well, alright sir. We can adventure...\""
+  },
+  "DFr_FC56EDFB.Text": {
+    "": {
+      "Text": "I vaguely remember something looking at this stone pad."
+    },
+    "Context": "Flow/Second Dialogue/Player: \"I vaguely remember something lookin...\""
+  },
+  "DFr_24726175.Text": {
+    "": {
+      "Text": "There are stones depicted on the pad. Maybe we can find these, sir?"
+    },
+    "Context": "Flow/Second Dialogue/Butler: \"There are stones depicted on the pa...\""
+  },
+  "DFr_92275A13.Text": {
+    "": {
+      "Text": "I'm looking for my dog"
+    },
+    "Context": "Flow/First Dialogue/Player: \"I'm looking for my dog\""
+  },
+  "DFr_3B58AE06.Text": {
+    "": {
+      "Text": "Maybe he is in the garden?"
+    },
+    "Context": "Flow/First Dialogue/Butler: \"Maybe he is in the garden?\""
+  },
+  "Ntt_EF27049F.DisplayName": {
+    "": {
+      "Text": "Player"
+    },
+    "Context": "Entities/Player"
+  },
+  "Ntt_2BC9FCAC.DisplayName": {
+    "": {
+      "Text": "Butler"
+    },
+    "Context": "Entities/Butler"
+  },
+  "Ntt_5D75E35F.DisplayName": {
+    "": {
+      "Text": "Brother"
+    },
+    "Context": "Entities/Brother"
+  },
+  "Ntt_732CADF6.DisplayName": {
+    "": {
+      "Text": "Mother"
+    },
+    "Context": "Entities/Mother"
+  },
+  "Ntt_27E09B7F.DisplayName": {
+    "": {
+      "Text": "Father"
+    },
+    "Context": "Entities/Father"
+  },
+  "Ntt_FEE32919.DisplayName": {
+    "": {
+      "Text": "Dog"
+    },
+    "Context": "Entities/Dog"
+  }
+}

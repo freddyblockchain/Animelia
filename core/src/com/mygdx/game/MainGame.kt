@@ -13,6 +13,7 @@ import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerData
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
+import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Utils.RenderGraph
 
@@ -39,6 +40,7 @@ class MainGame : ApplicationAdapter() {
         AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
         initObjects()
+        getArticyDraftEntries()
     }
 
     override fun render() {
