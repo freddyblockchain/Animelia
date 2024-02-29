@@ -31,9 +31,9 @@
   },
   "Dlg_09A21DD1.DisplayName": {
     "": {
-      "Text": "First Dialogue"
+      "Text": "Ch1-First-Conversation"
     },
-    "Context": "Flow/First Chapter/First Dialogue"
+    "Context": "Flow/First Chapter/Ch1-First-Conversation"
   },
   "DFr_C15A29AA.Text": {
     "": {
@@ -75,13 +75,13 @@
     "": {
       "Text": "I'm looking for my dog"
     },
-    "Context": "Flow/First Dialogue/Player: \"I'm looking for my dog\""
+    "Context": "Flow/Ch1-First-Conversation/Player: \"I'm looking for my dog\""
   },
   "DFr_3B58AE06.Text": {
     "": {
       "Text": "Maybe he is in the garden?"
     },
-    "Context": "Flow/First Dialogue/Butler: \"Maybe he is in the garden?\""
+    "Context": "Flow/Ch1-First-Conversation/Butler: \"Maybe he is in the garden?\""
   },
   "Ntt_EF27049F.DisplayName": {
     "": {

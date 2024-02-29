@@ -4,6 +4,7 @@ import com.mygdx.game.DialogueSystem.Dialogue
 import com.mygdx.game.FileHandler.Companion.getFileJson
 import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.GameObjectFactory.GetGameObjectsFromJson
+import com.mygdx.game.Managers.DialogueManager
 import kotlinx.serialization.json.*
 
 class JsonParser {
@@ -29,18 +30,16 @@ class JsonParser {
 
                 it.key to Dialogue(Text = textContent, Context = context)
             }.toMap()
-            return result
-        }
+            val dialogueFragments = dialogues.filter { it.key.contains("DFr") }
+            dialogueFragments.forEach {
+                //  example string "Flow/Ch1-First-Conversation/Butler: \"Maybe he is in the garden?\""
+                val splittedContext = it.value.Context.split("/")
+                val dialogueKey = splittedContext[1]
+                val dialogueEntity = splittedContext[2].split(":")[0]
 
-        fun preprocessJson(jsonString: String): String {
-            val jsonObject = Json.parseToJsonElement(jsonString).jsonObject
-            val modifiedObject = buildJsonObject {
-                jsonObject.forEach { (key, value) ->
-                    val newKey = if (key.isEmpty()) "Textholder" else key
-                    put(newKey, value)
-                }
+                DialogueManager.addDialogueText(key = dialogueKey, entitySpeaking = dialogueEntity, text = it.value.Text)
             }
-            return modifiedObject.toString()
+            return result
         }
     }
 }
