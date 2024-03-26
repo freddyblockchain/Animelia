@@ -14,7 +14,10 @@ import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerData
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
 import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
+import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.DialogueManager
+import com.mygdx.game.Managers.FontManager
 import com.mygdx.game.Utils.RenderGraph
 
 lateinit var player: Player
@@ -29,6 +32,7 @@ class MainGame : ApplicationAdapter() {
     override fun create() {
         initMappings()
         initAreas()
+        FontManager.initFonts()
         worldBatch = SpriteBatch()
         img = Texture("badlogic.jpg")
         inputProcessor = MyInputProcessor()
@@ -40,6 +44,8 @@ class MainGame : ApplicationAdapter() {
         AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
         initObjects()
+        DialogueManager.initSpeakableObjects()
+        AnimationManager.addAnimationsToRender()
         getArticyDraftEntries()
     }
 
@@ -51,6 +57,7 @@ class MainGame : ApplicationAdapter() {
             gameObject.frameTask()
         }
         RenderGraph.render(worldBatch!!)
+        AnimationManager.addAnimationsToRender()
         inputProcessor.handleInput()
         drawrects()
         Gdx.gl.glDisable(GL20.GL_SCISSOR_TEST);

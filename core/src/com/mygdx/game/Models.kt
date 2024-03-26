@@ -8,6 +8,8 @@ import com.mygdx.game.GameObjects.Memory.MemoryStone
 import com.mygdx.game.GameObjects.Memory.MemoryStoneData
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationSensor
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
+import com.mygdx.game.GameObjects.Sensors.SpeechActivationSensor
+import com.mygdx.game.GameObjects.Sensors.SpeechData
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -21,6 +23,7 @@ data class Entities(
     val Spikes: List<SpikeData> = listOf(),
     val MemoryPad: List<MemoryPadData> = listOf(),
     val MemoryStone: List<MemoryStoneData> = listOf(),
+    val DialogueSensor: List<SpeechData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register(FloorButtonData::class.java) {
@@ -43,6 +46,9 @@ fun initMappings(){
     }
     GameObjectFactory.register(MemoryStoneData::class.java) {
         MemoryStone(it as MemoryStoneData)
+    }
+    GameObjectFactory.register(SpeechData::class.java) {
+        SpeechActivationSensor(it as SpeechData)
     }
 }
 interface GameObjectData {

@@ -294,17 +294,6 @@
 			},
 			{
 				"id": "Spikes",
-				"iid": "93a68389-b0a0-11ee-8778-693ed5e2dad4",
-				"layer": "OnGround",
-				"x": 160,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
 				"iid": "93a6838a-b0a0-11ee-8778-0d6d47a73e1a",
 				"layer": "OnGround",
 				"x": 192,
@@ -606,9 +595,9 @@
 		"MemoryStone": [
 			{
 				"id": "MemoryStone",
-				"iid": "d3d70cd0-b0a0-11ee-8778-e3056ce5121a",
+				"iid": "d63c25f0-b0a0-11ee-8778-bb6d93affc14",
 				"layer": "OnGround",
-				"x": 16,
+				"x": 240,
 				"y": 368,
 				"width": 16,
 				"height": 16,
@@ -624,9 +613,9 @@
 			},
 			{
 				"id": "MemoryStone",
-				"iid": "d63c25f0-b0a0-11ee-8778-bb6d93affc14",
+				"iid": "034e2900-b0a0-11ee-8778-a3ebf40a806e",
 				"layer": "OnGround",
-				"x": 240,
+				"x": 16,
 				"y": 368,
 				"width": 16,
 				"height": 16,

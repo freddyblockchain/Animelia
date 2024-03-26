@@ -114,12 +114,27 @@
 				"id": "Butler",
 				"iid": "221c55d0-b0a0-11ee-882e-6767447c500f",
 				"layer": "OnGround",
-				"x": 160,
+				"x": 96,
 				"y": 160,
 				"width": 32,
 				"height": 32,
 				"color": 15194557,
 				"customFields" : {}
+			}
+		],
+		"DialogueSensor": [
+			{
+				"id": "DialogueSensor",
+				"iid": "72617810-d7b0-11ee-9742-d3cf0145164e",
+				"layer": "OnGround",
+				"x": 0,
+				"y": 128,
+				"width": 256,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"dialogueName": "First Dialogue"
+				}
 			}
 		]
 	}

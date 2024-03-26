@@ -22,3 +22,5 @@ fun convertSpeakableEntity(articyString: String): SpeakableEntity{
         else -> SpeakableEntity.PLAYER
     }
 }
+
+interface Speakable

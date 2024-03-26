@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
@@ -9,17 +10,22 @@ import com.mygdx.game.GameObject.GameObject
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.player
+import com.mygdx.game.renderRepeatedTexture
 import kotlinx.serialization.Serializable
 
 class Spike(gameObjectData: SpikeData)
-    : GameObject(gameObjectData, Vector2(32f,32f)){
+    : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())){
     override val texture = DefaultTextureHandler.getTexture("Spike.png")
     override val layer = Layer.PERSON
     override val collitionMask = OnlyPlayerCollitionMask
     override val collision = SpikeCollision(this)
 
     init {
-        polygon.scale(-0.5f)
+        this.polygon.scale(-0.2f)
+    }
+
+    override fun render(batch: SpriteBatch) {
+        renderRepeatedTexture(batch, texture, this.currentPosition(), Vector2(sprite.width, sprite.height))
     }
 }
 class SpikeCollision(val spike: Spike): MoveCollision() {

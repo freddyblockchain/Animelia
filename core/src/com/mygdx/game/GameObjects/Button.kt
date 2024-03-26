@@ -17,7 +17,7 @@ import kotlinx.serialization.Serializable
 
 class Button(val floorButtonData: FloorButtonData): GameObject(floorButtonData, Vector2(32f,32f)) {
     override val texture = DefaultTextureHandler.getTexture("GateButton.png")
-    override val layer = Layer.ONGROUND
+    override val layer = Layer.AIR
     lateinit var lockedDoor: LockedDoor
     val otherButtons: MutableList<Button> = mutableListOf()
     override var collision: MoveCollision = CanMoveCollision()
