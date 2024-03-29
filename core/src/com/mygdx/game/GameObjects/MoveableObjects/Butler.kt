@@ -1,12 +1,13 @@
 package com.mygdx.game.GameObjects.MoveableObjects
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObject.MoveableObject
+import com.mygdx.game.GameObjects.GameObject.MoveableObject
 
 class Butler(gameObjectData: ButlerData)
     : MoveableObject(gameObjectData, Vector2(32f,32f)){
@@ -19,4 +20,10 @@ class Butler(gameObjectData: ButlerData)
     override val collision = CanMoveCollision()
 
     var active = false
+
+    override fun render(batch: SpriteBatch) {
+        if(active){
+            super.render(batch)
+        }
+    }
 }

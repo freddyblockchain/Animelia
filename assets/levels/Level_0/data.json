@@ -14,8 +14,11 @@
 	],
 	"customFields" : {},
 	"layers": [
+		"Beach.png",
+		"Water.png",
 		"Tiles.png",
-		"Tiles2.png"
+		"Tiles2.png",
+		"Mixed.png"
 	],
 	"entities": {
 		"FloorButton": [

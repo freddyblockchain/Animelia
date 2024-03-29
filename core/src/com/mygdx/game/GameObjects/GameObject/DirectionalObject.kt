@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObject
+package com.mygdx.game.GameObjects.GameObject
 
 import com.mygdx.game.Enums.Direction
 

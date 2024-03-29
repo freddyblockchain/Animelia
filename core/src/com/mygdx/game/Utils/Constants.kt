@@ -1,6 +1,6 @@
 package com.mygdx.game.Utils
 
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color

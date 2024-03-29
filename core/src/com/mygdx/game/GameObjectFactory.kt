@@ -1,5 +1,5 @@
 package com.mygdx.game
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 

@@ -2,7 +2,7 @@ package com.mygdx.game.Managers
 
 import com.mygdx.game.Area.Area
 import com.mygdx.game.Collition.CollisionType
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.butler
 import com.mygdx.game.player
 
@@ -25,7 +25,7 @@ class AreaManager {
             return activeObjects.filter { it.collision.collitionType == collisionType }
         }
 
-        fun getObjectWithIid(iidToFind: String): GameObject{
+        fun getObjectWithIid(iidToFind: String): GameObject {
             val allObjects = areas.flatMap { it.gameObjects }
             return allObjects.filter { it.gameObjectIid == iidToFind }.first()
         }

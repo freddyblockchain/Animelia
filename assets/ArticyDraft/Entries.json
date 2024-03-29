@@ -35,6 +35,24 @@
     },
     "Context": "Flow/First Chapter/Ch1-First-Conversation"
   },
+  "Dlg_A1BB6D6E.DisplayName": {
+    "": {
+      "Text": "Flashback1 Before"
+    },
+    "Context": "Flow/Tutorial/Flashback1 Before"
+  },
+  "Dlg_39334FE0.DisplayName": {
+    "": {
+      "Text": "Flashback1"
+    },
+    "Context": "Flow/Tutorial/Flashback1"
+  },
+  "Dlg_39334FE0.Text": {
+    "": {
+      "Text": ""
+    },
+    "Context": "Flow/Tutorial/Flashback1"
+  },
   "DFr_C15A29AA.Text": {
     "": {
       "Text": "Hello, there you are!\r\nReady for an adventure?"
@@ -82,6 +100,42 @@
       "Text": "Maybe he is in the garden?"
     },
     "Context": "Flow/Ch1-First-Conversation/Butler: \"Maybe he is in the garden?\""
+  },
+  "DFr_0631A398.Text": {
+    "": {
+      "Text": "All these spikes!!\r\n\r\nDidn't we play with these before?"
+    },
+    "Context": "Flow/Flashback1 Before/Player: \"All these spikes!! Didn't we pla...\""
+  },
+  "DFr_6BE704E5.Text": {
+    "": {
+      "Text": "Yes sir, when you were little.\r\n\r\nYou wanted to cross the spikes"
+    },
+    "Context": "Flow/Flashback1 Before/Butler: \"Yes sir, when you were little. Y...\""
+  },
+  "DFr_5D2F77B1.Text": {
+    "": {
+      "Text": "Lets plaaay!\r\n\r\nI wanna cross the spikes!"
+    },
+    "Context": "Flow/Flashback1/Player: \"Lets plaaay! I wanna cross the s...\""
+  },
+  "DFr_D5107C45.Text": {
+    "": {
+      "Text": "Well alright sir.\r\n\r\nI will get you spike boots like mine."
+    },
+    "Context": "Flow/Flashback1/Butler: \"Well alright sir. I will get you...\""
+  },
+  "DFr_03335F40.Text": {
+    "": {
+      "Text": "Whaat? No!!\r\n\r\nI'll just use you!"
+    },
+    "Context": "Flow/Flashback1/Player: \"Whaat? No!! I'll just use you!\""
+  },
+  "DFr_3F635AF5.Text": {
+    "": {
+      "Text": "Well sir, i'm not sure\r\nthat is quite possible..."
+    },
+    "Context": "Flow/Flashback1/Butler: \"Well sir, i'm not sure that is qui...\""
   },
   "Ntt_EF27049F.DisplayName": {
     "": {

@@ -1,12 +1,12 @@
 package com.mygdx.game.Animation
 
+import FontManager
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.DialogueSystem.Sentence
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Managers.DialogueManager
-import com.mygdx.game.Managers.FontManager
 
 class SpeechBubble(val sentence: Sentence, duration: Int): DefaultAnimation() {
     override val duration = duration
@@ -18,7 +18,7 @@ class SpeechBubble(val sentence: Sentence, duration: Int): DefaultAnimation() {
     override val layer = Layer.AIR
 
     init {
-        speechBubbleSprite.setSize(96f,64f)
+        speechBubbleSprite.setSize(32f * 5,32f * 3)
     }
 
     override fun render(batch: SpriteBatch) {
@@ -28,6 +28,6 @@ class SpeechBubble(val sentence: Sentence, duration: Int): DefaultAnimation() {
         val textX = speechBubbleSprite.x
         val textY = speechBubbleSprite.y + speechBubbleSprite.height - 8f
         speechBubbleSprite.draw(batch)
-        FontManager.NormalFont.draw(batch, sentence.Text, textX, textY)
+        FontManager.SpeechFont.draw(batch, sentence.Text, textX, textY)
     }
 }

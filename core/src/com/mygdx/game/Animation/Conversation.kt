@@ -4,12 +4,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Managers.DialogueManager
 
-class Conversation(val dialogueName: String): DefaultAnimation() {
+class Conversation(val dialogueName: String, ActionAfter: () -> Unit = {}): DefaultAnimation() {
     val speeches = DialogueManager.dialogueMap[dialogueName]!!
-    val speechLength = 300
+    val speechLength = 210
     override val duration = speechLength * speeches.size
-    override val animationAction: () -> Unit = {}
-    override var actionFrame = 0
+    override val animationAction: () -> Unit = ActionAfter
+    override var actionFrame = duration
     override val layer = Layer.AIR
 
     var counter = 0

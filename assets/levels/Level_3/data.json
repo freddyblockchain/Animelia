@@ -14,8 +14,11 @@
 	],
 	"customFields" : {},
 	"layers": [
+		"Beach.png",
+		"Water.png",
 		"Tiles.png",
-		"Tiles2.png"
+		"Tiles2.png",
+		"Mixed.png"
 	],
 	"entities": {
 		"LockedDoor": [
@@ -36,547 +39,6 @@
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
 					}
 				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "93a63562-b0a0-11ee-8778-1dc7044097da",
-				"layer": "OnGround",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a63563-b0a0-11ee-8778-5d5135c0cbd4",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c70-b0a0-11ee-8778-79cea9756937",
-				"layer": "OnGround",
-				"x": 64,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c71-b0a0-11ee-8778-0db3bfd0a979",
-				"layer": "OnGround",
-				"x": 64,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c72-b0a0-11ee-8778-f1c25a49c425",
-				"layer": "OnGround",
-				"x": 0,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c73-b0a0-11ee-8778-45787a395821",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c74-b0a0-11ee-8778-a17ce04d774b",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c75-b0a0-11ee-8778-cd63da0f6dfe",
-				"layer": "OnGround",
-				"x": 64,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c76-b0a0-11ee-8778-13fe2d39315b",
-				"layer": "OnGround",
-				"x": 64,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c77-b0a0-11ee-8778-d1ba02db5852",
-				"layer": "OnGround",
-				"x": 160,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c78-b0a0-11ee-8778-f11e402d98de",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c79-b0a0-11ee-8778-6b7d68aea3f2",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c7a-b0a0-11ee-8778-dbc331100f68",
-				"layer": "OnGround",
-				"x": 64,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a65c7b-b0a0-11ee-8778-19fe9bdad03b",
-				"layer": "OnGround",
-				"x": 0,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68380-b0a0-11ee-8778-f7a7f4ebda2d",
-				"layer": "OnGround",
-				"x": 0,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68381-b0a0-11ee-8778-f3e69722ea36",
-				"layer": "OnGround",
-				"x": 128,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68382-b0a0-11ee-8778-d302676dbbaa",
-				"layer": "OnGround",
-				"x": 128,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68383-b0a0-11ee-8778-53e0d276c0cf",
-				"layer": "OnGround",
-				"x": 160,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68384-b0a0-11ee-8778-f134441d65d7",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68385-b0a0-11ee-8778-1de4f57e46a3",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68386-b0a0-11ee-8778-67bfa5a2fac0",
-				"layer": "OnGround",
-				"x": 224,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68387-b0a0-11ee-8778-cda0b6578368",
-				"layer": "OnGround",
-				"x": 224,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a68388-b0a0-11ee-8778-c36d5bcf3f8b",
-				"layer": "OnGround",
-				"x": 128,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838a-b0a0-11ee-8778-0d6d47a73e1a",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838b-b0a0-11ee-8778-f5172c6dfd88",
-				"layer": "OnGround",
-				"x": 224,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838c-b0a0-11ee-8778-6be6930964e8",
-				"layer": "OnGround",
-				"x": 224,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838d-b0a0-11ee-8778-5b25a9392bb3",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838e-b0a0-11ee-8778-93103ffdd3a5",
-				"layer": "OnGround",
-				"x": 160,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "93a6838f-b0a0-11ee-8778-0d6ed1e7a6ef",
-				"layer": "OnGround",
-				"x": 128,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "210db3b0-b0a0-11ee-8778-bb3b080590e2",
-				"layer": "OnGround",
-				"x": 96,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "21525dd0-b0a0-11ee-8778-f1dc794d6227",
-				"layer": "OnGround",
-				"x": 96,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "2200c640-b0a0-11ee-8778-47ab7fd285ed",
-				"layer": "OnGround",
-				"x": 224,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "2241c6e0-b0a0-11ee-8778-3dcc40d9da7e",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "227be9b0-b0a0-11ee-8778-a539795d92e8",
-				"layer": "OnGround",
-				"x": 160,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "22b15190-b0a0-11ee-8778-a7d96401f689",
-				"layer": "OnGround",
-				"x": 128,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "22ee5a90-b0a0-11ee-8778-75be50a454a5",
-				"layer": "OnGround",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "23219f90-b0a0-11ee-8778-b5d949624a28",
-				"layer": "OnGround",
-				"x": 96,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "23569240-b0a0-11ee-8778-33c5c7e3b6d2",
-				"layer": "OnGround",
-				"x": 96,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "23bcce20-b0a0-11ee-8778-dfa74222a7e8",
-				"layer": "OnGround",
-				"x": 0,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "32915830-b0a0-11ee-8778-53c4ec0531a7",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 224,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "32fff880-b0a0-11ee-8778-5f9fe8ee876d",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 256,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "33ae60f0-b0a0-11ee-8778-e3e1d4a73cec",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 320,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "34072f50-b0a0-11ee-8778-7fd2e19b741a",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 352,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "35291a10-b0a0-11ee-8778-339fc24cdeb1",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 224,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "356dc430-b0a0-11ee-8778-47fb5baac960",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 256,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "35a85c30-b0a0-11ee-8778-1b3b7611b53e",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 288,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "35e5b350-b0a0-11ee-8778-b9510a3b519d",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 320,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "3635a810-b0a0-11ee-8778-1fb3ddc8d705",
-				"layer": "OnGround",
-				"x": 192,
-				"y": 352,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "16a0fb20-b0a0-11ee-8778-91a0430235e2",
-				"layer": "OnGround",
-				"x": 32,
-				"y": 288,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields" : {}
 			}
 		],
 		"Entrance": [
@@ -643,6 +105,41 @@
 				"customFields": {
 					"AmountOfStones": 2
 				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "032e5150-d7b0-11ee-9742-672a04162cca",
+				"layer": "OnGround",
+				"x": 32,
+				"y": 224,
+				"width": 32,
+				"height": 160,
+				"color": 7552569,
+				"customFields" : {}
+			},
+			{
+				"id": "Spikes",
+				"iid": "089fe720-d7b0-11ee-9742-89f32822ecbc",
+				"layer": "OnGround",
+				"x": 192,
+				"y": 224,
+				"width": 32,
+				"height": 160,
+				"color": 7552569,
+				"customFields" : {}
+			},
+			{
+				"id": "Spikes",
+				"iid": "14cf1ac0-d7b0-11ee-9742-cb5cf789804c",
+				"layer": "OnGround",
+				"x": 0,
+				"y": 32,
+				"width": 256,
+				"height": 160,
+				"color": 7552569,
+				"customFields" : {}
 			}
 		]
 	}

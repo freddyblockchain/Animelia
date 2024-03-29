@@ -11,6 +11,8 @@ enum class ConversationState {BEFORE,ONGOING}
 enum class CharacterState {STUNNED,FREE,DASHING}
 enum class Element {FIRE, ICE, EARTH}
 enum class QuestIdentifier{DOJO,FIRE}
+
+enum class PlayerState{NORMAL, BUTLERRIDING}
 data class Item(val itemType: ItemType,var amount:Int, val texture: Texture)
 
 fun getDirectionUnitVector(direction: Direction): Vector2{

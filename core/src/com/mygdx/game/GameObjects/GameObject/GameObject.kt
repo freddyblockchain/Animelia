@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObject
+package com.mygdx.game.GameObjects.GameObject
 
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
@@ -9,11 +9,13 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.DefaultCollisionMask
+import com.mygdx.game.GameModes.FlashbackMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.InitPolygon
 import com.mygdx.game.InitSprite
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
+import com.mygdx.game.currentGameMode
 
 abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Renderable {
     val initPosition = Vector2(gameObjectData.x.toFloat(), gameObjectData.y.toFloat())
@@ -40,6 +42,11 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Re
     val gameObjectIid = gameObjectData.iid
     var collidingObjects: List<GameObject> = listOf()
     override fun render(batch: SpriteBatch){
+        if(currentGameMode is FlashbackMode){
+            sprite.setColor(0.6f, 0.6f, 1f, 1f);
+        } else {
+            sprite.setColor(1f, 1f, 1f, 1f);
+        }
         sprite.draw(batch)
     }
     open fun frameTask(){

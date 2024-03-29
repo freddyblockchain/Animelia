@@ -3,7 +3,7 @@ package com.mygdx.game.GameObjects
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjectData
 import kotlinx.serialization.Serializable
 

@@ -1,7 +1,7 @@
 package com.mygdx.game.CannotMoveStrategy
 
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.GameObject.MoveableObject
+import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.plus
 import com.mygdx.game.times
 

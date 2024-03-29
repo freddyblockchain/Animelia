@@ -2,7 +2,7 @@ package com.mygdx.game
 
 import com.mygdx.game.DialogueSystem.Dialogue
 import com.mygdx.game.FileHandler.Companion.getFileJson
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjectFactory.GetGameObjectsFromJson
 import com.mygdx.game.Managers.DialogueManager
 import kotlinx.serialization.json.*

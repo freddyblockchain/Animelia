@@ -1,12 +1,12 @@
 package com.mygdx.game.Collisions
 
 import com.mygdx.game.Collition.MoveCollision
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 
 
 abstract class AreaEntranceCollition: MoveCollision() {
    abstract var insideCollition: MutableMap<GameObject, Boolean>
-   abstract fun movedInside(objectEntered:GameObject)
+   abstract fun movedInside(objectEntered: GameObject)
     abstract fun movedOutside(objectLeaved: GameObject)
     abstract fun movedInsideAction(objectEntered: GameObject)
     abstract fun movedOutsideAction(objectLeaved: GameObject)

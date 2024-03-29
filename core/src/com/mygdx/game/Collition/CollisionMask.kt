@@ -1,6 +1,6 @@
 package com.mygdx.game.Collition
 
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 
 interface CollisionMask {
@@ -12,5 +12,5 @@ class DefaultCollisionMask(override val canCollideWith: (GameObject) -> Boolean 
 }
 
 object OnlyPlayerCollitionMask: CollisionMask{
-    override val canCollideWith: (GameObject) -> Boolean = {other: GameObject -> other is Player }
+    override val canCollideWith: (GameObject) -> Boolean = { other: GameObject -> other is Player }
 }

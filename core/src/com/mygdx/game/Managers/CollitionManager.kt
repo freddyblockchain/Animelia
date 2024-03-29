@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.FloatArray
 import com.mygdx.game.Collisions.AreaEntranceCollition
 import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.MoveCollision
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.anyPointInPolygon
 

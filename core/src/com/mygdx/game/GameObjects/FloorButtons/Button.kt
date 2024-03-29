@@ -1,7 +1,6 @@
-package com.mygdx.game.GameObjects
+package com.mygdx.game.GameObjects.FloorButtons
 
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
@@ -9,7 +8,8 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.LockedDoor
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.Managers.AreaManager

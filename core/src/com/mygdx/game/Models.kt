@@ -1,7 +1,16 @@
 package com.mygdx.game
-import com.mygdx.game.GameObjects.*
+import com.mygdx.game.GameObjects.Entrance
+import com.mygdx.game.GameObjects.EntranceData
+import com.mygdx.game.GameObjects.FloorButtons.Button
+import com.mygdx.game.GameObjects.FloorButtons.FloorButtonData
+import com.mygdx.game.GameObjects.FloorButtons.ToggleButton
+import com.mygdx.game.GameObjects.FloorButtons.ToggleButtonData
 import com.mygdx.game.GameObjects.Hazards.Spike
 import com.mygdx.game.GameObjects.Hazards.SpikeData
+import com.mygdx.game.GameObjects.Hazards.Water
+import com.mygdx.game.GameObjects.Hazards.WaterData
+import com.mygdx.game.GameObjects.LockedDoor
+import com.mygdx.game.GameObjects.LockedDoorData
 import com.mygdx.game.GameObjects.Memory.MemoryPad
 import com.mygdx.game.GameObjects.Memory.MemoryPadData
 import com.mygdx.game.GameObjects.Memory.MemoryStone
@@ -24,6 +33,8 @@ data class Entities(
     val MemoryPad: List<MemoryPadData> = listOf(),
     val MemoryStone: List<MemoryStoneData> = listOf(),
     val DialogueSensor: List<SpeechData> = listOf(),
+    val Water: List<WaterData> = listOf(),
+    val ToggleButton: List<ToggleButtonData> = listOf()
 )
 fun initMappings(){
     GameObjectFactory.register(FloorButtonData::class.java) {
@@ -49,6 +60,12 @@ fun initMappings(){
     }
     GameObjectFactory.register(SpeechData::class.java) {
         SpeechActivationSensor(it as SpeechData)
+    }
+    GameObjectFactory.register(WaterData::class.java) {
+        Water(it as WaterData)
+    }
+    GameObjectFactory.register(ToggleButtonData::class.java) {
+        ToggleButton(it as ToggleButtonData)
     }
 }
 interface GameObjectData {

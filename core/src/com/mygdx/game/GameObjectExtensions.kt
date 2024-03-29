@@ -3,7 +3,7 @@ package com.mygdx.game
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.math.Polygon
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Utils.RectanglePolygon
 
 fun GameObject.InitSprite(texture: Texture): Sprite {

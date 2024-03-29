@@ -3,7 +3,7 @@ package com.mygdx.game.Managers
 import com.mygdx.game.DialogueSystem.Sentence
 import com.mygdx.game.DialogueSystem.SpeakableEntity
 import com.mygdx.game.DialogueSystem.convertSpeakableEntity
-import com.mygdx.game.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.butler
 import com.mygdx.game.player
 
