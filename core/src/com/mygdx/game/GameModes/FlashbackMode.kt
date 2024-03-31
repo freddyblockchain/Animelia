@@ -23,7 +23,7 @@ class FlashbackMode(val prevPosition: Vector2, val prevAreaIdentifier: String): 
             gameObject.frameTask()
         }
         if(frameCounter == 0){
-            changeArea(Vector2(128f,32f), "e73c6da0-d7b0-11ee-9742-ab29f4293810")
+            changeArea(Vector2(128f,32f), "e73c6da0-d7b0-11ee-9742-ab29f4293810", false)
             AnimationManager.animationManager.add(Conversation("Flashback1") {
                 player.abilities.add(ButlerRiding())
                 playerMoveForward = true})
@@ -32,7 +32,7 @@ class FlashbackMode(val prevPosition: Vector2, val prevAreaIdentifier: String): 
             player.move(getDirectionUnitVector(Direction.UP))
         }
         if(frameCounter >= 900){
-            changeArea(prevPosition, prevAreaIdentifier)
+            changeArea(prevPosition, prevAreaIdentifier, false)
             currentGameMode = mainMode
         }
         frameCounter++

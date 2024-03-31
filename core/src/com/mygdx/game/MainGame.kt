@@ -20,12 +20,17 @@ import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.DialogueManager
+import com.mygdx.game.Saving.PlayerSaveState
+import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Utils.RenderGraph
+import kotlinx.serialization.json.Json
 
 lateinit var player: Player
 lateinit var butler: Butler
 lateinit var currentGameMode: GameMode
 lateinit var mainMode: MainMode
+lateinit var playerSaveState: PlayerSaveState
+
 var camera: OrthographicCamera = OrthographicCamera()
 class MainGame : ApplicationAdapter() {
 
@@ -42,21 +47,31 @@ class MainGame : ApplicationAdapter() {
         Gdx.input.setInputProcessor(inputProcessor);
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
-       // player = Player(PlayerData("", 160, 128,0,0), Vector2(32f, 32f))
-        player = Player(PlayerData("", 160, 0,0,0), Vector2(32f, 32f))
+        player = Player(PlayerData("", 160, 128,0,0), Vector2(32f, 32f))
         butler = Butler(ButlerData("",0,0,0,0))
-        val currentObjects = AreaManager.getActiveArea()!!.gameObjects
-        butler.active = true
-        butler.setPosition(player.currentPosition())
-        currentObjects.add(butler)
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
-        AreaManager.getActiveArea()!!.gameObjects.add(player)
         shapeRenderer = ShapeRenderer()
         initObjects()
         DialogueManager.initSpeakableObjects()
         getArticyDraftEntries()
-        currentGameMode = ChapterMode()
+
+        if (!FileHandler.SaveFileEmpty()) {
+            val savedState: String = FileHandler.readFromFile()[0]
+            val savedPlayerSaveState: PlayerSaveState = Json.decodeFromString(savedState)
+            playerSaveState = PlayerSaveState(
+                savedPlayerSaveState.playerXPos, savedPlayerSaveState.playerYPos,
+                savedPlayerSaveState.areaIdentifier, player.entityId
+            )
+            AreaManager.setActiveArea(savedPlayerSaveState.areaIdentifier)
+
+        } else {
+            currentGameMode = ChapterMode()
+            playerSaveState = PlayerSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, player.entityId)
+            updateAndSavePlayer()
+            AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
+        }
+        AreaManager.getActiveArea()!!.gameObjects.add(player)
 
     }
 

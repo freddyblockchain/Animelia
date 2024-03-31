@@ -12,10 +12,12 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.PlayerState
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
+import com.mygdx.game.SaveHandling.SaveStateEntity
+import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 class Player(gameObjectData: GameObjectData, size: Vector2)
-    : MoveableObject(gameObjectData, size){
+    : MoveableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
     val butlerTexture = DefaultTextureHandler.getTexture("Butler.png")
     val butlerSprite = Sprite(butlerTexture)

@@ -7,6 +7,7 @@ import com.mygdx.game.Area.Area
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.GroundData
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Saving.updateAndSavePlayer
 import java.io.File
 
 fun createArea(areaName: String): Area {
@@ -19,7 +20,7 @@ fun createArea(areaName: String): Area {
     return areaToCreate
 }
 
-fun changeArea(newPos: Vector2, newAreaIdentifier: String){
+fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
     player.abilities.forEach { it.onDeactivate() }
     val newPos = Vector2(newPos.x, newPos.y)
     AreaManager.changeActiveArea(newAreaIdentifier)
@@ -27,6 +28,9 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String){
     player.startingPosition = newPos
     if(butler.active){
         butler.setPosition(newPos + Vector2(0f,32f))
+    }
+    if(shouldSave){
+        updateAndSavePlayer()
     }
 }
 
@@ -37,7 +41,6 @@ fun initAreas(){
     directory.listFiles().forEach {
         AreaManager.areas.add(createArea(it.name))
     }
-    AreaManager.setActiveArea(AreaManager.areas[5].areaIdentifier)
 
 }
 
