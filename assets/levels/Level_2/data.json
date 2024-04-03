@@ -18,18 +18,19 @@
 	],
 	"customFields" : {},
 	"layers": [
-		"Beach.png",
-		"Water.png",
-		"Tiles.png",
-		"Tiles2.png",
-		"Mixed.png"
+		"Ground_Water.png",
+		"Ground_Grass.png",
+		"Ground_Inside.png",
+		"Onground_Outside.png",
+		"Onground_beach.png",
+		"Walls.png"
 	],
 	"entities": {
 		"FloorButton": [
 			{
 				"id": "FloorButton",
 				"iid": "003cb241-b0a0-11ee-916f-e7ceb7860609",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 0,
 				"y": 96,
 				"width": 32,
@@ -55,7 +56,7 @@
 			{
 				"id": "FloorButton",
 				"iid": "003cb242-b0a0-11ee-916f-1b450789d367",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 224,
 				"y": 96,
 				"width": 32,
@@ -79,11 +80,11 @@
 				}
 			}
 		],
-		"LockedDoor": [
+		"Door": [
 			{
-				"id": "LockedDoor",
+				"id": "Door",
 				"iid": "003cb243-b0a0-11ee-916f-55a26bb156fe",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 0,
 				"width": 32,
@@ -95,7 +96,8 @@
 						"layerIid": "93a60e51-b0a0-11ee-8778-5122d4f6c263",
 						"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
+					},
+					"Locked": true
 				}
 			}
 		],
@@ -103,7 +105,7 @@
 			{
 				"id": "Entrance",
 				"iid": "003cb244-b0a0-11ee-916f-69bdbfe6e037",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 224,
 				"width": 32,
@@ -116,7 +118,7 @@
 			{
 				"id": "Spikes",
 				"iid": "4afc99f0-d7b0-11ee-9742-b7abaec8859f",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 0,
 				"y": 32,
 				"width": 96,
@@ -127,7 +129,7 @@
 			{
 				"id": "Spikes",
 				"iid": "52229680-d7b0-11ee-9742-bba71a0bc7bd",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 128,
 				"y": 128,
 				"width": 128,
@@ -138,7 +140,7 @@
 			{
 				"id": "Spikes",
 				"iid": "5798c030-d7b0-11ee-9742-4717a1a9bbe9",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 128,
 				"y": 32,
 				"width": 128,

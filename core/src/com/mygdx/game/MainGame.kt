@@ -20,7 +20,7 @@ import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.DialogueManager
-import com.mygdx.game.Saving.PlayerSaveState
+import com.mygdx.game.Saving.GeneralSaveState
 import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
@@ -29,7 +29,7 @@ lateinit var player: Player
 lateinit var butler: Butler
 lateinit var currentGameMode: GameMode
 lateinit var mainMode: MainMode
-lateinit var playerSaveState: PlayerSaveState
+lateinit var generalSaveState: GeneralSaveState
 
 var camera: OrthographicCamera = OrthographicCamera()
 class MainGame : ApplicationAdapter() {
@@ -58,18 +58,21 @@ class MainGame : ApplicationAdapter() {
 
         if (!FileHandler.SaveFileEmpty()) {
             val savedState: String = FileHandler.readFromFile()[0]
-            val savedPlayerSaveState: PlayerSaveState = Json.decodeFromString(savedState)
-            playerSaveState = PlayerSaveState(
-                savedPlayerSaveState.playerXPos, savedPlayerSaveState.playerYPos,
-                savedPlayerSaveState.areaIdentifier, player.entityId
+            val savedGeneralSaveState: GeneralSaveState = Json.decodeFromString(savedState)
+            AreaManager.setActiveArea(savedGeneralSaveState.areaIdentifier)
+            generalSaveState = GeneralSaveState(
+                savedGeneralSaveState.playerXPos, savedGeneralSaveState.playerYPos,
+                savedGeneralSaveState.areaIdentifier, savedGeneralSaveState.butlerActive, player.entityId
             )
-            AreaManager.setActiveArea(savedPlayerSaveState.areaIdentifier)
+            if(generalSaveState.butlerActive){
+                butler.setActive(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
+            }
 
         } else {
             currentGameMode = ChapterMode()
-            playerSaveState = PlayerSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, player.entityId)
-            updateAndSavePlayer()
+            generalSaveState = GeneralSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, false, player.entityId)
             AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
+            updateAndSavePlayer()
         }
         AreaManager.getActiveArea()!!.gameObjects.add(player)
 

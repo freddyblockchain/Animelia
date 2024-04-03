@@ -8,6 +8,8 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
+import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.butler
 
 class Butler(gameObjectData: ButlerData)
     : MoveableObject(gameObjectData, Vector2(32f,32f)){
@@ -25,5 +27,13 @@ class Butler(gameObjectData: ButlerData)
         if(active){
             super.render(batch)
         }
+    }
+    fun setActive(pos: Vector2){
+        val currentObjects = AreaManager.getActiveArea()!!.gameObjects
+        if(!currentObjects.contains(butler)){
+            currentObjects.add(butler)
+        }
+        butler.active = true
+        butler.setPosition(pos)
     }
 }

@@ -4,8 +4,8 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.butler
@@ -37,9 +37,7 @@ class ButlerActivationCollision(val butlerActivationSensor: ButlerActivationSens
         if(collidedObject is Player){
             val currentObjects = AreaManager.getActiveArea()!!.gameObjects
             currentObjects.remove(butlerActivationSensor)
-            butler.active = true
-            butler.setPosition(butlerActivationSensor.currentPosition())
-            currentObjects.add(butler)
+            butler.setActive(butlerActivationSensor.currentPosition())
         }
     }
 

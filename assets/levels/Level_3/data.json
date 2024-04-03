@@ -14,18 +14,19 @@
 	],
 	"customFields" : {},
 	"layers": [
-		"Beach.png",
-		"Water.png",
-		"Tiles.png",
-		"Tiles2.png",
-		"Mixed.png"
+		"Ground_Water.png",
+		"Ground_Grass.png",
+		"Ground_Inside.png",
+		"Onground_Outside.png",
+		"Onground_beach.png",
+		"Walls.png"
 	],
 	"entities": {
-		"LockedDoor": [
+		"Door": [
 			{
-				"id": "LockedDoor",
+				"id": "Door",
 				"iid": "93a63560-b0a0-11ee-8778-1748a1613b70",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 0,
 				"width": 32,
@@ -33,11 +34,12 @@
 				"color": 13601382,
 				"customFields": {
 					"Entrance": {
-						"entityIid": "b13e5990-b0a0-11ee-8778-d9ccf8951eb8",
-						"layerIid": "93a60e51-b0a0-11ee-8778-5122d4f6c263",
-						"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
+						"entityIid": "00dc8b20-d7b0-11ee-81d4-39cfb7b9fa36",
+						"layerIid": "d7fe1411-d7b0-11ee-81d4-b92fd9cdd55e",
+						"levelIid": "d7fe1410-d7b0-11ee-81d4-4f306e131c77",
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
+					},
+					"Locked": false
 				}
 			}
 		],
@@ -45,7 +47,7 @@
 			{
 				"id": "Entrance",
 				"iid": "b13e5990-b0a0-11ee-8778-d9ccf8951eb8",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 352,
 				"width": 32,
@@ -58,7 +60,7 @@
 			{
 				"id": "MemoryStone",
 				"iid": "d63c25f0-b0a0-11ee-8778-bb6d93affc14",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 240,
 				"y": 368,
 				"width": 16,
@@ -76,7 +78,7 @@
 			{
 				"id": "MemoryStone",
 				"iid": "034e2900-b0a0-11ee-8778-a3ebf40a806e",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 16,
 				"y": 368,
 				"width": 16,
@@ -96,7 +98,7 @@
 			{
 				"id": "MemoryPad",
 				"iid": "de8c98c0-b0a0-11ee-8778-a352905f6c59",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 112,
 				"y": 208,
 				"width": 32,
@@ -111,7 +113,7 @@
 			{
 				"id": "Spikes",
 				"iid": "032e5150-d7b0-11ee-9742-672a04162cca",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 32,
 				"y": 224,
 				"width": 32,
@@ -122,7 +124,7 @@
 			{
 				"id": "Spikes",
 				"iid": "089fe720-d7b0-11ee-9742-89f32822ecbc",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 192,
 				"y": 224,
 				"width": 32,
@@ -133,7 +135,7 @@
 			{
 				"id": "Spikes",
 				"iid": "14cf1ac0-d7b0-11ee-9742-cb5cf789804c",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 0,
 				"y": 32,
 				"width": 256,

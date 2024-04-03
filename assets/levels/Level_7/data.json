@@ -1,0 +1,88 @@
+{
+	"identifier": "Level_7",
+	"uniqueIdentifer": "e95f8330-d7b0-11ee-81d4-eb0322ad0214",
+	"x": 0,
+	"y": -2208,
+	"width": 288,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "d7fe1410-d7b0-11ee-81d4-4f306e131c77",
+			"dir": "s"
+		}
+	],
+	"customFields" : {},
+	"layers": [
+		"Ground_Water.png",
+		"Ground_Grass.png",
+		"Ground_Inside.png",
+		"Onground_Outside.png",
+		"Onground_beach.png",
+		"Walls.png"
+	],
+	"entities": {
+		"Thorns": [
+			{
+				"id": "Thorns",
+				"iid": "e95faa41-d7b0-11ee-81d4-53e2445e5c0b",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 288,
+				"height": 64,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "e95faa42-d7b0-11ee-81d4-756c6e38e575",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 13601382,
+				"customFields": {
+					"Entrance": {
+						"entityIid": "f29920b0-d7b0-11ee-81d4-b7654f89f8e0",
+						"layerIid": "e95faa40-d7b0-11ee-81d4-45c141518a6e",
+						"levelIid": "e95f8330-d7b0-11ee-81d4-eb0322ad0214",
+						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
+					},
+					"Locked": false
+				}
+			}
+		],
+		"Entrance": [
+			{
+				"id": "Entrance",
+				"iid": "f29920b0-d7b0-11ee-81d4-b7654f89f8e0",
+				"layer": "Entities",
+				"x": 128,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 13216106,
+				"customFields" : {}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "2b555bd0-d7b0-11ee-81d4-9994424c7066",
+				"layer": "Entities",
+				"x": 128,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 6539085,
+				"customFields": {
+					"Ability": "ButlerSwitch"
+				}
+			}
+		]
+	}
+}

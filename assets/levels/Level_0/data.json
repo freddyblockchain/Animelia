@@ -14,18 +14,19 @@
 	],
 	"customFields" : {},
 	"layers": [
-		"Beach.png",
-		"Water.png",
-		"Tiles.png",
-		"Tiles2.png",
-		"Mixed.png"
+		"Ground_Water.png",
+		"Ground_Grass.png",
+		"Ground_Inside.png",
+		"Onground_Outside.png",
+		"Onground_beach.png",
+		"Walls.png"
 	],
 	"entities": {
 		"FloorButton": [
 			{
 				"id": "FloorButton",
 				"iid": "ff45e390-8990-11ee-9ab0-b74af982d5fa",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 96,
 				"width": 32,
@@ -42,11 +43,11 @@
 				}
 			}
 		],
-		"LockedDoor": [
+		"Door": [
 			{
-				"id": "LockedDoor",
+				"id": "Door",
 				"iid": "35d96060-8990-11ee-9ab0-8dbc57fdebfa",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 0,
 				"width": 32,
@@ -58,7 +59,8 @@
 						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
 						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
+					},
+					"Locked": true
 				}
 			}
 		],
@@ -66,7 +68,7 @@
 			{
 				"id": "Entrance",
 				"iid": "21ea4690-b0a0-11ee-8aa7-259c9402d9c5",
-				"layer": "OnGround",
+				"layer": "Entities",
 				"x": 96,
 				"y": 192,
 				"width": 32,
