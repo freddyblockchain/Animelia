@@ -13,9 +13,7 @@ import com.mygdx.game.GameModes.ChapterMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
-import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerData
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
-import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
 import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
@@ -47,8 +45,8 @@ class MainGame : ApplicationAdapter() {
         Gdx.input.setInputProcessor(inputProcessor);
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
-        player = Player(PlayerData("", 160, 128,0,0), Vector2(32f, 32f))
-        butler = Butler(ButlerData("",0,0,0,0))
+        player = Player(GameObjectData(x = 160, y = 120), Vector2(32f, 32f))
+        butler = Butler(GameObjectData())
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
         shapeRenderer = ShapeRenderer()

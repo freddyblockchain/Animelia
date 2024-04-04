@@ -14,8 +14,11 @@ import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.GameObjects.Toggelable
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class ToggleButton(val toggleButtonData: ToggleButtonData): GameObject(toggleButtonData, Vector2(32f,32f)) {
+class ToggleButton(toggleButtonData: GameObjectData): GameObject(toggleButtonData, Vector2(32f,32f)) {
+    val customFields = Json.decodeFromJsonElement<ToggleButtonCustomFields>(toggleButtonData.customFields)
     override val texture = DefaultTextureHandler.getTexture("GateButton.png")
     override val layer = Layer.AIR
     lateinit var toggleObject: GameObject
@@ -27,24 +30,9 @@ class ToggleButton(val toggleButtonData: ToggleButtonData): GameObject(toggleBut
         super.render(batch)
     }
     override fun initObject() {
-        toggleObject = AreaManager.getObjectWithIid(toggleButtonData.customFields.Entity_ref.entityIid)
+        toggleObject = AreaManager.getObjectWithIid(customFields.Entity_ref.entityIid)
     }
 }
-
-
-@Serializable
-data class ToggleButtonData(
-    val id: String,
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-
-    val customFields: ToggleButtonCustomFields
-    // Include other relevant fields
-) : GameObjectData
-
 @Serializable
 data class ToggleButtonCustomFields(val Entity_ref: EntityRefData){
 

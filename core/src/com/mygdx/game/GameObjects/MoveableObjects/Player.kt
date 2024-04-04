@@ -15,7 +15,7 @@ import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.player
-import kotlinx.serialization.Serializable
+
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : MoveableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
@@ -45,12 +45,3 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
         }
     }
 }
-
-@Serializable
-data class PlayerData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-): GameObjectData

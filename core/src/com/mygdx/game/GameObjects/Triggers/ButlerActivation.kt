@@ -9,9 +9,8 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.butler
-import kotlinx.serialization.Serializable
 
-class ButlerActivationTrigger(gameObjectData: ButlerData)
+class ButlerActivationTrigger(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(32f,32f)){
     override val texture = DefaultTextureHandler.getTexture("Butler.png")
     override val layer = Layer.PERSON
@@ -20,15 +19,6 @@ class ButlerActivationTrigger(gameObjectData: ButlerData)
         polygon.scale(1.5f)
     }
 }
-
-@Serializable
-data class ButlerData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-): GameObjectData
 
 class ButlerActivationCollision(val butlerActivationTrigger: ButlerActivationTrigger): MoveCollision(){
     override var canMoveAfterCollision = true

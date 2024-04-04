@@ -11,24 +11,16 @@ import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class SpeechActivationTrigger(val gameObjectData: SpeechData)
+class SpeechActivationTrigger(val gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2( gameObjectData.width.toFloat(),gameObjectData.height.toFloat())){
+    val customFields = Json.decodeFromJsonElement<SpeechActivationCustomFields>(gameObjectData.customFields)
     override val texture = DefaultTextureHandler.getTexture("inputbox.png")
     override val layer = Layer.PERSON
     override val collision = SpeechActivationCollision(this)
 }
-
-@Serializable
-data class SpeechData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-    val customFields: SpeechActivationCustomFields,
-): GameObjectData
-
 @Serializable
 data class SpeechActivationCustomFields(val dialogueName: String){
 
@@ -40,7 +32,7 @@ class SpeechActivationCollision(val speechActivationTrigger: SpeechActivationTri
         if(collidedObject is Player){
             val currentObjects = AreaManager.getActiveArea()!!.gameObjects
             currentObjects.remove(speechActivationTrigger)
-            AnimationManager.animationManager.add(Conversation(speechActivationTrigger.gameObjectData.customFields.dialogueName))
+            AnimationManager.animationManager.add(Conversation(speechActivationTrigger.customFields.dialogueName))
         }
     }
 

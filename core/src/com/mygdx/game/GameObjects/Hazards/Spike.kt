@@ -11,9 +11,8 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.player
 import com.mygdx.game.renderRepeatedTexture
-import kotlinx.serialization.Serializable
 
-class Spike(gameObjectData: SpikeData)
+class Spike(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())){
     override val texture = DefaultTextureHandler.getTexture("Spike.png")
     override val layer = Layer.PERSON
@@ -50,12 +49,3 @@ class SpikeCollision(val spike: Spike): DefaultAreaEntranceCollition() {
     }
 
 }
-
-@Serializable
-data class SpikeData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-): GameObjectData

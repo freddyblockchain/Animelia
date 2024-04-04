@@ -11,9 +11,12 @@ import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class AbilityTrigger(val gameObjectData: AbilityTriggerData)
+class AbilityTrigger(val gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(32f,32f)){
+    val abilityFields = Json.decodeFromJsonElement<AbilityCustomFields>(gameObjectData.customFields)
     override val texture = DefaultTextureHandler.getTexture("Box.png")
     override val layer = Layer.PERSON
     override val collision = AbilityCollision(this)
@@ -29,23 +32,13 @@ class AbilityCollision(val abilityTrigger: AbilityTrigger): MoveCollision(){
         if(collidedObject is Player){
             val currentObjects = AreaManager.getActiveArea()!!.gameObjects
             currentObjects.remove(abilityTrigger)
-            val abilityString = abilityTrigger.gameObjectData.customFields.Ability
+            val abilityString = abilityTrigger.abilityFields.Ability
             val ability = getAbilityBasedOnEnum(abilityString)
             player.abilities.add(ability)
         }
     }
 
 }
-
-@Serializable
-data class AbilityTriggerData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-    val customFields: AbilityCustomFields,
-): GameObjectData
 
 @Serializable
 data class AbilityCustomFields(val Ability: String){

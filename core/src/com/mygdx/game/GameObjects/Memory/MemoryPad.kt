@@ -14,11 +14,14 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class MemoryPad(val gameObjectData: MemoryPadData) : GameObject(gameObjectData, Vector2(32f,32f)) {
+class MemoryPad(val gameObjectData: GameObjectData) : GameObject(gameObjectData, Vector2(32f,32f)) {
+    val customFields = Json.decodeFromJsonElement<MemoryPadCustomFields>(gameObjectData.customFields)
     override val texture = DefaultTextureHandler.getTexture("Box.png")
     override val layer = Layer.ONGROUND
-    private val amountOfStone: Int = gameObjectData.customFields.AmountOfStones
+    private val amountOfStone: Int = customFields.AmountOfStones
     private var stonesActivateSoFar = 0
     override val collision = MemoryPadCollision(this)
     var activated: Boolean = false
@@ -32,16 +35,6 @@ class MemoryPad(val gameObjectData: MemoryPadData) : GameObject(gameObjectData, 
         }
     }
 }
-
-@Serializable
-data class MemoryPadData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-    val customFields: MemoryPadCustomFields
-): GameObjectData
 
 @Serializable
 data class MemoryPadCustomFields(val AmountOfStones: Int){

@@ -4,14 +4,14 @@ import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 
 object GameObjectFactory {
-    private val registry = mutableMapOf<Class<*>, (GameObjectData) -> GameObject>()
+    private val registry = mutableMapOf<String, (GameObjectData) -> GameObject>()
 
-    fun register(type: Class<out GameObjectData>, constructorFunction: (GameObjectData) -> GameObject) {
+    fun register(type: String, constructorFunction: (GameObjectData) -> GameObject) {
         registry[type] = constructorFunction
     }
 
     private fun create(data: GameObjectData, height: Int): GameObject? {
-        val constructor = registry[data::class.java]
+        val constructor = registry[data.id]
         data.y = height - data.y - data.height
         return constructor?.invoke(data)
     }

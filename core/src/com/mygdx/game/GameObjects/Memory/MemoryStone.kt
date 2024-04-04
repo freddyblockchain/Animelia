@@ -10,8 +10,11 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class MemoryStone(val gameObjectData: MemoryStoneData) : GameObject(gameObjectData, Vector2(16f,16f)) {
+class MemoryStone(val gameObjectData: GameObjectData) : GameObject(gameObjectData, Vector2(16f,16f)) {
+    val customFields = Json.decodeFromJsonElement<MemoryStoneCustomFields>(gameObjectData.customFields)
     override val texture = DefaultTextureHandler.getTexture("MemoryStone.png")
     override val layer = Layer.ONGROUND
 
@@ -19,7 +22,7 @@ class MemoryStone(val gameObjectData: MemoryStoneData) : GameObject(gameObjectDa
     override val collision = MemoryStoneCollision(this)
 
     override fun initObject() {
-        memoryPad = AreaManager.getObjectWithIid(gameObjectData.customFields.MemoryPad.entityIid) as MemoryPad
+        memoryPad = AreaManager.getObjectWithIid(customFields.MemoryPad.entityIid) as MemoryPad
     }
 }
 
@@ -34,16 +37,6 @@ class MemoryStoneCollision(val memoryStone: MemoryStone): MoveCollision(){
     }
 
 }
-
-@Serializable
-data class MemoryStoneData(
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-    val customFields: MemoryStoneCustomFields
-): GameObjectData
 
 @Serializable
 data class MemoryStoneCustomFields(val MemoryPad: EntityRefData){

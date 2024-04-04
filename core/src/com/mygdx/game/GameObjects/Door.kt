@@ -13,13 +13,16 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Utils.RectanglePolygon
 import com.mygdx.game.changeArea
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class Door(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vector2(32f,32f)) {
+class Door(val lockedDoorData: GameObjectData): GameObject(lockedDoorData, Vector2(32f,32f)) {
+    val customFields = Json.decodeFromJsonElement<LockedDoorCustomFields>(lockedDoorData.customFields)
     override val texture = DefaultTextureHandler.getTexture("EmptyDoor.png")
     override val layer = Layer.ONGROUND
     override val polygon = RectanglePolygon(Vector2(lockedDoorData.x + 8f, lockedDoorData.y - 8f),16f, 8f)
     override val collision = LockedDoorCollision(this)
-    val areaIdentifierOfNewArea = lockedDoorData.customFields.Entrance.levelIid
+    val areaIdentifierOfNewArea = customFields.Entrance.levelIid
     lateinit var exitEntrance: Entrance
     var unlocked = false
 
@@ -28,8 +31,8 @@ class Door(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vecto
     }
 
     override fun initObject() {
-        exitEntrance = AreaManager.getObjectWithIid(lockedDoorData.customFields.Entrance.entityIid) as Entrance
-        if(!lockedDoorData.customFields.Locked){
+        exitEntrance = AreaManager.getObjectWithIid(customFields.Entrance.entityIid) as Entrance
+        if(!customFields.Locked){
             unlockDoor()
         }
     }
@@ -41,18 +44,6 @@ class Door(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vecto
         }
     }
 }
-
-@Serializable
-data class LockedDoorData(
-    val id: String,
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-    val customFields: LockedDoorCustomFields
-    // Include other relevant fields
-): GameObjectData
 
 @Serializable
 data class LockedDoorCustomFields(val Entrance: EntityRefData,val Locked: Boolean){

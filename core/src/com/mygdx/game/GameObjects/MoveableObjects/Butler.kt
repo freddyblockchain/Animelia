@@ -7,11 +7,12 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.butler
 
-class Butler(gameObjectData: ButlerData)
+class Butler(gameObjectData: GameObjectData)
     : MoveableObject(gameObjectData, Vector2(32f,32f)){
     override val texture = DefaultTextureHandler.getTexture("Butler.png")
     override var speed: Float = 2f

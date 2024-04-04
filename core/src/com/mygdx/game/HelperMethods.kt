@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
 import com.mygdx.game.GameObjects.Ground
-import com.mygdx.game.GameObjects.GroundData
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
 import java.io.File
@@ -15,7 +14,7 @@ fun createArea(areaName: String): Area {
     val areaToCreate = Area(root.uniqueIdentifer)
     val entityObjects = JsonParser.getGameObjects(root)
     areaToCreate.gameObjects.addAll(entityObjects)
-    val ground = Ground(GroundData("", 0,0,0,0), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
+    val ground = Ground(GameObjectData(), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
     areaToCreate.gameObjects.add(ground)
     return areaToCreate
 }

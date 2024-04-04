@@ -12,10 +12,14 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
+import com.mygdx.game.GameObjects.Triggers.AbilityCustomFields
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
-class Button(val floorButtonData: FloorButtonData): GameObject(floorButtonData, Vector2(32f,32f)) {
+class Button(floorButtonData: GameObjectData): GameObject(floorButtonData, Vector2(32f,32f)) {
+    val customFields = Json.decodeFromJsonElement<FloorButtonCustomFields>(floorButtonData.customFields)
     override val texture = DefaultTextureHandler.getTexture("GateButton.png")
     override val layer = Layer.AIR
     lateinit var door: Door
@@ -28,27 +32,13 @@ class Button(val floorButtonData: FloorButtonData): GameObject(floorButtonData, 
         super.render(batch)
     }
     override fun initObject() {
-        door = AreaManager.getObjectWithIid(floorButtonData.customFields.Entity_ref2.entityIid) as Door
+        door = AreaManager.getObjectWithIid(customFields.Entity_ref2.entityIid) as Door
         collision = ButtonCollision(door, this)
-        floorButtonData.customFields.Entity_ref.forEach {
+        customFields.Entity_ref.forEach {
             otherButtons.add(AreaManager.getObjectWithIid(it.entityIid) as Button)
         }
     }
 }
-
-
-@Serializable
-data class FloorButtonData(
-    val id: String,
-    override val iid: String,
-    override val x: Int,
-    override var y: Int,
-    override val width: Int,
-    override val height: Int,
-
-    val customFields: FloorButtonCustomFields
-    // Include other relevant fields
-) : GameObjectData
 
 @Serializable
 data class FloorButtonCustomFields(val Entity_ref: List<EntityRefData>, val Entity_ref2: EntityRefData){
