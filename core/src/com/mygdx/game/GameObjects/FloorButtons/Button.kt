@@ -9,7 +9,7 @@ import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.GameObjects.LockedDoor
+import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.Managers.AreaManager
@@ -18,7 +18,7 @@ import kotlinx.serialization.Serializable
 class Button(val floorButtonData: FloorButtonData): GameObject(floorButtonData, Vector2(32f,32f)) {
     override val texture = DefaultTextureHandler.getTexture("GateButton.png")
     override val layer = Layer.AIR
-    lateinit var lockedDoor: LockedDoor
+    lateinit var door: Door
     val otherButtons: MutableList<Button> = mutableListOf()
     override var collision: MoveCollision = CanMoveCollision()
     var activated = false
@@ -28,8 +28,8 @@ class Button(val floorButtonData: FloorButtonData): GameObject(floorButtonData, 
         super.render(batch)
     }
     override fun initObject() {
-        lockedDoor = AreaManager.getObjectWithIid(floorButtonData.customFields.Entity_ref2.entityIid) as LockedDoor
-        collision = ButtonCollision(lockedDoor, this)
+        door = AreaManager.getObjectWithIid(floorButtonData.customFields.Entity_ref2.entityIid) as Door
+        collision = ButtonCollision(door, this)
         floorButtonData.customFields.Entity_ref.forEach {
             otherButtons.add(AreaManager.getObjectWithIid(it.entityIid) as Button)
         }
@@ -55,7 +55,7 @@ data class FloorButtonCustomFields(val Entity_ref: List<EntityRefData>, val Enti
 
 }
 
-class ButtonCollision(val lockedDoor: LockedDoor, val button: Button) :
+class ButtonCollision(val door: Door, val button: Button) :
     DefaultAreaEntranceCollition() {
     override fun movedInsideAction(objectEntered: GameObject) {
         val objectIsPlayerOrButler = objectEntered is Player || objectEntered is Butler
@@ -64,7 +64,7 @@ class ButtonCollision(val lockedDoor: LockedDoor, val button: Button) :
             button.activated = true
         }
         if(allButtonsAreActivated){
-            lockedDoor.unlockDoor()
+            door.unlockDoor()
         }
     }
 

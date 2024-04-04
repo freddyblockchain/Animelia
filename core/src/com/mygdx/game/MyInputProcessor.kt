@@ -5,12 +5,19 @@ import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.math.Vector3
+import com.mygdx.game.Abilities.KeyAbility
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 
 
 class MyInputProcessor : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
+
+        for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
+            if (keycode == keyAbility.triggerKey) {
+                keyAbility.onActivate()
+            }
+        }
         return false
     }
 
@@ -46,6 +53,11 @@ class MyInputProcessor : InputProcessor {
         }
 
     override fun keyUp(keycode: Int): Boolean {
+        for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
+            if (keycode == keyAbility.triggerKey) {
+                keyAbility.onDeactivate()
+            }
+        }
         return false
     }
 

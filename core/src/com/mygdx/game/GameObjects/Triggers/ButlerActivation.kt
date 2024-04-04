@@ -11,7 +11,7 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.butler
 import kotlinx.serialization.Serializable
 
-class ButlerActivationSensor(gameObjectData: ButlerData)
+class ButlerActivationTrigger(gameObjectData: ButlerData)
     : GameObject(gameObjectData, Vector2(32f,32f)){
     override val texture = DefaultTextureHandler.getTexture("Butler.png")
     override val layer = Layer.PERSON
@@ -30,14 +30,14 @@ data class ButlerData(
     override val height: Int,
 ): GameObjectData
 
-class ButlerActivationCollision(val butlerActivationSensor: ButlerActivationSensor): MoveCollision(){
+class ButlerActivationCollision(val butlerActivationTrigger: ButlerActivationTrigger): MoveCollision(){
     override var canMoveAfterCollision = true
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Player){
             val currentObjects = AreaManager.getActiveArea()!!.gameObjects
-            currentObjects.remove(butlerActivationSensor)
-            butler.setActive(butlerActivationSensor.currentPosition())
+            currentObjects.remove(butlerActivationTrigger)
+            butler.setActive(butlerActivationTrigger.currentPosition())
         }
     }
 

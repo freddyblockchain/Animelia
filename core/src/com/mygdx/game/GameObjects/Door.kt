@@ -14,7 +14,7 @@ import com.mygdx.game.Utils.RectanglePolygon
 import com.mygdx.game.changeArea
 import kotlinx.serialization.Serializable
 
-class LockedDoor(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vector2(32f,32f)) {
+class Door(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData, Vector2(32f,32f)) {
     override val texture = DefaultTextureHandler.getTexture("EmptyDoor.png")
     override val layer = Layer.ONGROUND
     override val polygon = RectanglePolygon(Vector2(lockedDoorData.x + 8f, lockedDoorData.y - 8f),16f, 8f)
@@ -29,6 +29,9 @@ class LockedDoor(val lockedDoorData: LockedDoorData): GameObject(lockedDoorData,
 
     override fun initObject() {
         exitEntrance = AreaManager.getObjectWithIid(lockedDoorData.customFields.Entrance.entityIid) as Entrance
+        if(!lockedDoorData.customFields.Locked){
+            unlockDoor()
+        }
     }
 
     override fun render(batch: SpriteBatch) {
@@ -52,16 +55,16 @@ data class LockedDoorData(
 ): GameObjectData
 
 @Serializable
-data class LockedDoorCustomFields(val Entrance: EntityRefData){
+data class LockedDoorCustomFields(val Entrance: EntityRefData,val Locked: Boolean){
 
 }
 
-class LockedDoorCollision(val lockedDoor: LockedDoor): MoveCollision(){
+class LockedDoorCollision(val door: Door): MoveCollision(){
     override var canMoveAfterCollision = true
 
     override fun collisionHappened(collidedObject: GameObject) {
-        if(collidedObject is Player && lockedDoor.unlocked){
-            changeArea(Vector2(lockedDoor.exitEntrance.x, lockedDoor.exitEntrance.y), lockedDoor.areaIdentifierOfNewArea)
+        if(collidedObject is Player && door.unlocked){
+            changeArea(Vector2(door.exitEntrance.x, door.exitEntrance.y), door.areaIdentifierOfNewArea)
         }
     }
 

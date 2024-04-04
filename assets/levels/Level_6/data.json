@@ -113,6 +113,52 @@
 					}
 				}
 			}
+		],
+		"Thorns": [
+			{
+				"id": "Thorns",
+				"iid": "31146e00-d7b0-11ee-81d4-c1619a55cb3e",
+				"layer": "Entities",
+				"x": 0,
+				"y": 128,
+				"width": 256,
+				"height": 64,
+				"color": 16705377,
+				"customFields" : {}
+			},
+			{
+				"id": "Thorns",
+				"iid": "32d2e6e0-d7b0-11ee-81d4-df1e1c45b416",
+				"layer": "Entities",
+				"x": 0,
+				"y": 32,
+				"width": 64,
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
+			},
+			{
+				"id": "Thorns",
+				"iid": "3515f910-d7b0-11ee-81d4-4b9e1d74a81c",
+				"layer": "Entities",
+				"x": 160,
+				"y": 32,
+				"width": 96,
+				"height": 32,
+				"color": 16705377,
+				"customFields" : {}
+			},
+			{
+				"id": "Thorns",
+				"iid": "3a0b32f0-d7b0-11ee-81d4-b30b3dc17e0e",
+				"layer": "Entities",
+				"x": 160,
+				"y": 64,
+				"width": 128,
+				"height": 32,
+				"color": 16705377,
+				"customFields" : {}
+			}
 		]
 	}
 }

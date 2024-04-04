@@ -1,24 +1,23 @@
 package com.mygdx.game
+import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.EntranceData
 import com.mygdx.game.GameObjects.FloorButtons.Button
 import com.mygdx.game.GameObjects.FloorButtons.FloorButtonData
 import com.mygdx.game.GameObjects.FloorButtons.ToggleButton
 import com.mygdx.game.GameObjects.FloorButtons.ToggleButtonData
-import com.mygdx.game.GameObjects.Hazards.Spike
-import com.mygdx.game.GameObjects.Hazards.SpikeData
-import com.mygdx.game.GameObjects.Hazards.Water
-import com.mygdx.game.GameObjects.Hazards.WaterData
-import com.mygdx.game.GameObjects.LockedDoor
+import com.mygdx.game.GameObjects.Hazards.*
 import com.mygdx.game.GameObjects.LockedDoorData
 import com.mygdx.game.GameObjects.Memory.MemoryPad
 import com.mygdx.game.GameObjects.Memory.MemoryPadData
 import com.mygdx.game.GameObjects.Memory.MemoryStone
 import com.mygdx.game.GameObjects.Memory.MemoryStoneData
-import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationSensor
+import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationTrigger
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerData
-import com.mygdx.game.GameObjects.Sensors.SpeechActivationSensor
-import com.mygdx.game.GameObjects.Sensors.SpeechData
+import com.mygdx.game.GameObjects.Triggers.AbilityTrigger
+import com.mygdx.game.GameObjects.Triggers.AbilityTriggerData
+import com.mygdx.game.GameObjects.Triggers.SpeechActivationTrigger
+import com.mygdx.game.GameObjects.Triggers.SpeechData
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -26,7 +25,7 @@ data class Root(val entities: Entities, val width: Int, val height: Int, val uni
 @Serializable
 data class Entities(
     val FloorButton: List<FloorButtonData> = listOf(),
-    val LockedDoor: List<LockedDoorData> = listOf(),
+    val Door: List<LockedDoorData> = listOf(),
     val Entrance: List<EntranceData> = listOf(),
     val Butler: List<ButlerData> = listOf(),
     val Spikes: List<SpikeData> = listOf(),
@@ -34,20 +33,22 @@ data class Entities(
     val MemoryStone: List<MemoryStoneData> = listOf(),
     val DialogueSensor: List<SpeechData> = listOf(),
     val Water: List<WaterData> = listOf(),
-    val ToggleButton: List<ToggleButtonData> = listOf()
+    val ToggleButton: List<ToggleButtonData> = listOf(),
+    val Thorns: List<ThornsData> = listOf(),
+    val Ability: List<AbilityTriggerData> = listOf()
 )
 fun initMappings(){
     GameObjectFactory.register(FloorButtonData::class.java) {
         Button(it as FloorButtonData)
     }
     GameObjectFactory.register(LockedDoorData::class.java) {
-        LockedDoor(it as LockedDoorData)
+        Door(it as LockedDoorData)
     }
     GameObjectFactory.register(EntranceData::class.java) {
         Entrance(it as EntranceData)
     }
     GameObjectFactory.register(ButlerData::class.java) {
-        ButlerActivationSensor(it as ButlerData)
+        ButlerActivationTrigger(it as ButlerData)
     }
     GameObjectFactory.register(SpikeData::class.java) {
         Spike(it as SpikeData)
@@ -59,13 +60,19 @@ fun initMappings(){
         MemoryStone(it as MemoryStoneData)
     }
     GameObjectFactory.register(SpeechData::class.java) {
-        SpeechActivationSensor(it as SpeechData)
+        SpeechActivationTrigger(it as SpeechData)
     }
     GameObjectFactory.register(WaterData::class.java) {
         Water(it as WaterData)
     }
     GameObjectFactory.register(ToggleButtonData::class.java) {
         ToggleButton(it as ToggleButtonData)
+    }
+    GameObjectFactory.register(ThornsData::class.java) {
+        Thorns(it as ThornsData)
+    }
+    GameObjectFactory.register(AbilityTriggerData::class.java) {
+        AbilityTrigger(it as AbilityTriggerData)
     }
 }
 interface GameObjectData {

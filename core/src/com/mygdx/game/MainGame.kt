@@ -64,6 +64,7 @@ class MainGame : ApplicationAdapter() {
                 savedGeneralSaveState.playerXPos, savedGeneralSaveState.playerYPos,
                 savedGeneralSaveState.areaIdentifier, savedGeneralSaveState.butlerActive, player.entityId
             )
+            player.setPosition(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
             if(generalSaveState.butlerActive){
                 butler.setActive(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
             }
