@@ -34,9 +34,9 @@
 				"color": 13601382,
 				"customFields": {
 					"Entrance": {
-						"entityIid": "00dc8b20-d7b0-11ee-81d4-39cfb7b9fa36",
-						"layerIid": "d7fe1411-d7b0-11ee-81d4-b92fd9cdd55e",
-						"levelIid": "d7fe1410-d7b0-11ee-81d4-4f306e131c77",
+						"entityIid": "4132eb90-d7b0-11ee-86d3-7de00863939b",
+						"layerIid": "69dfe962-d7b0-11ee-9742-7b7dff6492f1",
+						"levelIid": "69dfe960-d7b0-11ee-9742-53d989e34eaf",
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
 					},
 					"Locked": false

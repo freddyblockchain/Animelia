@@ -2,8 +2,10 @@ package com.mygdx.game
 
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
@@ -55,6 +57,15 @@ fun getUnitVectorTowardsPoint(position: Vector2, point: Vector2): Vector2 {
 fun renderRepeatedTexture(batch: SpriteBatch, texture: Texture, position: Vector2, size: Vector2) {
     texture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat)
     batch.draw(texture, position.x, position.y, 0, 0, size.x.toInt(), size.y.toInt())
+}
+
+fun InsideCircle(circleObject: GameObject, circleRadius: Float, targetObject: GameObject): Boolean{
+    val circleToCheck = Circle(
+        circleObject.sprite.x,
+        circleObject.sprite.y,
+        circleRadius
+    )
+    return circleToCheck.contains(targetObject.currentPosition())
 }
 /*
 

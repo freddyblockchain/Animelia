@@ -26,6 +26,11 @@ class MemoryStone(val gameObjectData: GameObjectData) : GameObject(gameObjectDat
     }
 }
 
+@Serializable
+data class MemoryStoneCustomFields(val MemoryPad: EntityRefData){
+
+}
+
 class MemoryStoneCollision(val memoryStone: MemoryStone): MoveCollision(){
     override var canMoveAfterCollision = true
 
@@ -35,10 +40,5 @@ class MemoryStoneCollision(val memoryStone: MemoryStone): MoveCollision(){
             AreaManager.getActiveArea()!!.gameObjects.remove(memoryStone)
         }
     }
-
-}
-
-@Serializable
-data class MemoryStoneCustomFields(val MemoryPad: EntityRefData){
 
 }

@@ -44,5 +44,9 @@ class AreaManager {
                 newArea.gameObjects.add(butler)
             }
         }
+
+        fun addObject(gameObject: GameObject){
+            AreaManager.addObject(gameObject)
+        }
     }
 }

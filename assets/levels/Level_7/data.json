@@ -10,6 +10,10 @@
 		{
 			"levelIid": "d7fe1410-d7b0-11ee-81d4-4f306e131c77",
 			"dir": "s"
+		},
+		{
+			"levelIid": "15d6fd70-d7b0-11ee-8139-5b2928bd96e3",
+			"dir": "n"
 		}
 	],
 	"customFields" : {},
@@ -47,9 +51,9 @@
 				"color": 13601382,
 				"customFields": {
 					"Entrance": {
-						"entityIid": "f29920b0-d7b0-11ee-81d4-b7654f89f8e0",
-						"layerIid": "e95faa40-d7b0-11ee-81d4-45c141518a6e",
-						"levelIid": "e95f8330-d7b0-11ee-81d4-eb0322ad0214",
+						"entityIid": "15d6fd74-d7b0-11ee-8139-f5b9f8891ac3",
+						"layerIid": "15d6fd71-d7b0-11ee-8139-4dda2f20cde0",
+						"levelIid": "15d6fd70-d7b0-11ee-8139-5b2928bd96e3",
 						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
 					},
 					"Locked": false
