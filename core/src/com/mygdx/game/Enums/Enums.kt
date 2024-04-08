@@ -24,6 +24,15 @@ fun getDirectionUnitVector(direction: Direction): Vector2{
     }
 }
 
+fun getDirectionUnitVector(direction: String): Vector2{
+    return when(direction){
+        "Up" -> Vector2(0f,1f)
+        "Left" -> Vector2(-1f, 0f)
+        "Right" -> Vector2(1f, 0f)
+        else -> Vector2(0f,-1f)
+    }
+}
+
 fun getDirectionFromUnitVector(directionUnitVector: Vector2): Direction{
     return when(directionUnitVector){
         Vector2(0f,1f) -> Direction.UP

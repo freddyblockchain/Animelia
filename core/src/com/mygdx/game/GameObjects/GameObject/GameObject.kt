@@ -13,6 +13,7 @@ import com.mygdx.game.GameModes.FlashbackMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.InitPolygon
 import com.mygdx.game.InitSprite
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
 import com.mygdx.game.currentGameMode
@@ -69,6 +70,9 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Re
     }
 
     fun remove(){
-
+        AreaManager.getActiveArea()!!.gameObjects.remove(this)
+    }
+    fun add(){
+        AreaManager.getActiveArea()!!.gameObjects.add(this)
     }
 }

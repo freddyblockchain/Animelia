@@ -8,7 +8,7 @@ class MainMode(val inputProcessor: MyInputProcessor): GameMode {
     override val spriteBatch = SpriteBatch()
 
     override fun FrameAction() {
-        for(gameObject in AreaManager.getActiveArea()!!.gameObjects){
+        for(gameObject in AreaManager.getActiveArea()!!.gameObjects.toMutableList()){
             gameObject.frameTask()
         }
         inputProcessor.handleInput()

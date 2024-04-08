@@ -209,12 +209,14 @@
 				"id": "MissileGenerator",
 				"iid": "6ea68e90-d7b0-11ee-8139-9382d3067d0f",
 				"layer": "Entities",
-				"x": 0,
+				"x": -16,
 				"y": 256,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
-				"customFields" : {}
+				"customFields": {
+					"Direction": "Right"
+				}
 			}
 		],
 		"MemoryPad": [

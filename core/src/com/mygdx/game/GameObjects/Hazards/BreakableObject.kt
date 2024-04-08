@@ -14,6 +14,7 @@ class BreakableObject(gameObjectData: GameObjectData): GameObject(gameObjectData
 ) {
     override val texture = DefaultTextureHandler.getTexture("FireGate.png")
     override val layer = Layer.AIR
+    override val collision = BreakableObjectCollision(this)
 }
 
 class BreakableObjectCollision(val breakableObject: BreakableObject): MoveCollision(){

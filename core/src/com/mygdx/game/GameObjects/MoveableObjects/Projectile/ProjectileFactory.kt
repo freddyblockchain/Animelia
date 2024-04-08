@@ -2,7 +2,7 @@ package com.mygdx.game.GameObjects.MoveableObjects.Projectile
 
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.player
 
 fun generateProjectileFromConstructor(projectileFactory: (gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2) -> Projectile,
                               gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2): () -> Projectile{
@@ -11,8 +11,8 @@ fun generateProjectileFromConstructor(projectileFactory: (gameObjectData: GameOb
     }
 }
 
-fun generateMissile(gameObjectData: GameObjectData, speed: Float, unitVectorDirection: Vector2,target: GameObject): () -> Projectile{
+fun generateMissile(gameObjectData: GameObjectData, speed: Float): () -> Projectile{
     return {
-        Missile(gameObjectData, unitVectorDirection, target, speed)
+        Missile(gameObjectData, player, speed, Vector2(0f,0f))
     }
 }

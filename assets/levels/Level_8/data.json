@@ -94,7 +94,9 @@
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
-				"customFields" : {}
+				"customFields": {
+					"Direction": "Right"
+				}
 			}
 		],
 		"FloorButton": [

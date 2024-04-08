@@ -3,9 +3,8 @@ import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.FloorButtons.Button
 import com.mygdx.game.GameObjects.FloorButtons.ToggleButton
-import com.mygdx.game.GameObjects.Hazards.Spike
-import com.mygdx.game.GameObjects.Hazards.Thorns
-import com.mygdx.game.GameObjects.Hazards.Water
+import com.mygdx.game.GameObjects.Hazards.*
+import com.mygdx.game.GameObjects.Hazards.Generator.MissileGenerator
 import com.mygdx.game.GameObjects.Memory.MemoryPad
 import com.mygdx.game.GameObjects.Memory.MemoryStone
 import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationTrigger
@@ -30,7 +29,10 @@ data class Entities(
     val Water: List<GameObjectData> = listOf(),
     val ToggleButton: List<GameObjectData> = listOf(),
     val Thorns: List<GameObjectData> = listOf(),
-    val Ability: List<GameObjectData> = listOf()
+    val Ability: List<GameObjectData> = listOf(),
+    val BreakableObject: List<GameObjectData> = listOf(),
+    val MissileGenerator: List<GameObjectData> = listOf(),
+    val InvisibleWall: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("FloorButton", ::Button)
@@ -45,6 +47,9 @@ fun initMappings(){
     GameObjectFactory.register("ToggleButton", ::ToggleButton)
     GameObjectFactory.register("Thorns", ::Thorns)
     GameObjectFactory.register("Ability", ::AbilityTrigger)
+    GameObjectFactory.register("BreakableObject", ::BreakableObject)
+    GameObjectFactory.register("MissileGenerator", ::MissileGenerator)
+    GameObjectFactory.register("InvisibleWall", ::InvisibleWall)
 }
 
 interface CustomFields {

@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Abilities.ButlerRiding
+import com.mygdx.game.Abilities.ButlerSwitch
 import com.mygdx.game.GameModes.ChapterMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
@@ -53,6 +55,9 @@ class MainGame : ApplicationAdapter() {
         initObjects()
         DialogueManager.initSpeakableObjects()
         getArticyDraftEntries()
+        //Change later
+        player.abilities.add(ButlerRiding())
+        player.abilities.add(ButlerSwitch())
 
         if (!FileHandler.SaveFileEmpty()) {
             val savedState: String = FileHandler.readFromFile()[0]
