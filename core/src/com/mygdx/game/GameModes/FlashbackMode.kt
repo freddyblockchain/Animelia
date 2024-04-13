@@ -1,13 +1,15 @@
 package com.mygdx.game.GameModes
 
+import AbilityGainedSignal
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Abilities.ButlerRiding
+import com.mygdx.game.Abilities.AbilityId
 import com.mygdx.game.Animation.Conversation
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.changeArea
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
@@ -25,7 +27,7 @@ class FlashbackMode(val prevPosition: Vector2, val prevAreaIdentifier: String): 
         if(frameCounter == 0){
             changeArea(Vector2(128f,32f), "e73c6da0-d7b0-11ee-9742-ab29f4293810", false)
             AnimationManager.animationManager.add(Conversation("Flashback1") {
-                player.abilities.add(ButlerRiding())
+                SignalManager.emitSignal(AbilityGainedSignal(AbilityId.BUTLERRIDING))
                 playerMoveForward = true})
         }
         if(playerMoveForward){

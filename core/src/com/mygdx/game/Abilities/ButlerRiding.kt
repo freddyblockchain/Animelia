@@ -16,4 +16,6 @@ class ButlerRiding: Ability {
         butler.active = true
     }
 
+    override val abilityId = AbilityId.BUTLERRIDING
+
 }

@@ -1,11 +1,10 @@
 package com.mygdx.game.GameObjects.Hazards.Generator
 
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.Collisions.CannotMoveCollision
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionUnitVector
-import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.DefaultRotationalObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.RotationalObject
@@ -14,7 +13,6 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.Trimer.DelayTimer
-import com.mygdx.game.plus
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -59,7 +57,8 @@ open class Generator(
 
     override fun frameTask() {
         super.frameTask()
-        if (delayTimer.tryUseCooldown() && shouldFire) {
+        val playerInRange = InsideCircle(this, 150f, player)
+        if (playerInRange && delayTimer.tryUseCooldown()) {
                 val projectile = generateProjectile()
                 AreaManager.getActiveArea()!!.gameObjects.add(projectile)
             }

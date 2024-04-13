@@ -13,7 +13,7 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.butler
 
 class Butler(gameObjectData: GameObjectData)
-    : MoveableObject(gameObjectData, Vector2(32f,32f)){
+    : MoveableObject(gameObjectData, Vector2(48f,32f)){
     override val texture = DefaultTextureHandler.getTexture("Butler.png")
     override var speed: Float = 2f
     override val cannotMoveStrategy = NoAction()

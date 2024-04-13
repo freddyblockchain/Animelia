@@ -9,8 +9,6 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Abilities.ButlerRiding
-import com.mygdx.game.Abilities.ButlerSwitch
 import com.mygdx.game.GameModes.ChapterMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
@@ -20,8 +18,12 @@ import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.DialogueManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.GeneralSaveState
 import com.mygdx.game.Saving.updateAndSavePlayer
+import com.mygdx.game.Signal.Signal
+import com.mygdx.game.Signal.initSignalListeners
+import com.mygdx.game.Signal.signalConvert
 import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
 
@@ -55,10 +57,6 @@ class MainGame : ApplicationAdapter() {
         initObjects()
         DialogueManager.initSpeakableObjects()
         getArticyDraftEntries()
-        //Change later
-        player.abilities.add(ButlerRiding())
-        player.abilities.add(ButlerSwitch())
-
         if (!FileHandler.SaveFileEmpty()) {
             val savedState: String = FileHandler.readFromFile()[0]
             val savedGeneralSaveState: GeneralSaveState = Json.decodeFromString(savedState)
@@ -78,6 +76,13 @@ class MainGame : ApplicationAdapter() {
             AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
             updateAndSavePlayer()
         }
+        initSignalListeners()
+        val originalFile = FileHandler.readFromFile()
+        val saves = originalFile.subList(1, originalFile.size)
+        val savedSignals: List<Signal> = saves.map(::signalConvert)
+        savedSignals.forEach { SignalManager.emitSignal(it, false);
+            SignalManager.pastSignals.add(it)
+        }
         AreaManager.getActiveArea()!!.gameObjects.add(player)
 
     }
@@ -89,6 +94,7 @@ class MainGame : ApplicationAdapter() {
         RenderGraph.render(currentGameMode.spriteBatch)
         AnimationManager.addAnimationsToRender()
         currentGameMode.FrameAction()
+        SignalManager.executeSignals()
         drawrects()
         camera.position.set(player.sprite.x, player.sprite.y, 0f)
         camera.update()

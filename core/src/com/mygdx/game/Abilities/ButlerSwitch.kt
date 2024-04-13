@@ -19,4 +19,6 @@ class ButlerSwitch: KeyAbility {
     override fun onDeactivate() {
 
     }
+
+    override val abilityId = AbilityId.BUTLERSWITCH
 }

@@ -1,6 +1,9 @@
 package com.mygdx.game
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.files.FileHandle
+import com.mygdx.game.Signal.Signal
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.serializer
 import java.io.BufferedWriter
 import java.io.File
 
@@ -32,6 +35,15 @@ class FileHandler {
 
         fun SaveFileEmpty(): Boolean{
             return file.length() == 0L
+        }
+        fun writeSignalToFile(signal: Signal){
+            val lines = readFromFile().toMutableList()
+            val serializer = serializer(signal::class.java)
+            val signalContent = Json.encodeToString(serializer,signal)
+            lines.add(signalContent)
+            fileWriter = file.bufferedWriter()
+            fileWriter.use { writer -> lines.forEach { writer.write(it)
+                writer.newLine()}}
         }
     }
 }
