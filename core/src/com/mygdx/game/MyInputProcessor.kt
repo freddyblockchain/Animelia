@@ -23,16 +23,16 @@ class MyInputProcessor : InputProcessor {
 
     fun handleInput() {
         var directionUnitVector = Vector2(0f,0f)
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             directionUnitVector = getDirectionUnitVector(Direction.LEFT)
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
             directionUnitVector = getDirectionUnitVector(Direction.RIGHT)
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             directionUnitVector = getDirectionUnitVector(Direction.UP)
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             directionUnitVector = getDirectionUnitVector(Direction.DOWN)
         }
         if(directionUnitVector != Vector2(0f,0f)){
