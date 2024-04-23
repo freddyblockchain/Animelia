@@ -1,146 +1,27 @@
 {
 	"identifier": "Level_1",
-	"uniqueIdentifer": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-	"x": 0,
-	"y": -256,
+	"uniqueIdentifer": "8cbe3bd0-fec0-11ee-8705-3790be9e0879",
+	"x": 448,
+	"y": 64,
 	"width": 256,
-	"height": 256,
-	"bgColor": "#696A79",
+	"height": 128,
+	"bgColor": "#1E1F26",
 	"neighbourLevels": [
 		{
-			"levelIid": "c39fb370-8990-11ee-9ab0-a5bd4713fd29",
-			"dir": "s"
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+			"dir": "w"
 		},
 		{
-			"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-			"dir": "n"
+			"levelIid": "d95096f0-fec0-11ee-8705-351c6befc195",
+			"dir": "e"
 		}
 	],
-	"customFields" : {},
+	"customFields": {
+		"World": "World1"
+	},
 	"layers": [
-		"Ground_Water.png",
-		"Ground_Grass.png",
-		"Ground_Inside.png",
-		"Onground_Outside.png",
-		"Onground_beach.png",
-		"Walls.png"
+		"Tiles.png",
+		"OnGround.png"
 	],
-	"entities": {
-		"FloorButton": [
-			{
-				"id": "FloorButton",
-				"iid": "9093c3d2-8990-11ee-9ab0-7781a0278a82",
-				"layer": "Entities",
-				"x": 64,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"Entity_ref": [
-						{
-							"entityIid": "960ecf80-8990-11ee-9ab0-3f9906ebd8a5",
-							"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
-							"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-						}
-					],
-					"Entity_ref2": {
-						"entityIid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
-						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
-						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			},
-			{
-				"id": "FloorButton",
-				"iid": "960ecf80-8990-11ee-9ab0-3f9906ebd8a5",
-				"layer": "Entities",
-				"x": 160,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"Entity_ref": [
-						{
-							"entityIid": "9093c3d2-8990-11ee-9ab0-7781a0278a82",
-							"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
-							"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-						}
-					],
-					"Entity_ref2": {
-						"entityIid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
-						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
-						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			}
-		],
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "40531bd0-8990-11ee-9ab0-9d5b5a78530f",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 13601382,
-				"customFields": {
-					"Entrance": {
-						"entityIid": "003cb244-b0a0-11ee-916f-69bdbfe6e037",
-						"layerIid": "003cb240-b0a0-11ee-916f-4b120917845c",
-						"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					},
-					"Locked": true
-				}
-			}
-		],
-		"Entrance": [
-			{
-				"id": "Entrance",
-				"iid": "b1dbc7f0-b0a0-11ee-8aa7-cd2a95248fb7",
-				"layer": "Entities",
-				"x": 96,
-				"y": 224,
-				"width": 32,
-				"height": 32,
-				"color": 13216106,
-				"customFields" : {}
-			}
-		],
-		"Butler": [
-			{
-				"id": "Butler",
-				"iid": "221c55d0-b0a0-11ee-882e-6767447c500f",
-				"layer": "Entities",
-				"x": 96,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 15194557,
-				"customFields" : {}
-			}
-		],
-		"DialogueSensor": [
-			{
-				"id": "DialogueSensor",
-				"iid": "72617810-d7b0-11ee-9742-d3cf0145164e",
-				"layer": "Entities",
-				"x": 0,
-				"y": 128,
-				"width": 256,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"dialogueName": "First Dialogue"
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

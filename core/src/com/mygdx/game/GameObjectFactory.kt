@@ -10,13 +10,15 @@ object GameObjectFactory {
         registry[type] = constructorFunction
     }
 
-    private fun create(data: GameObjectData, height: Int): GameObject? {
+    private fun create(data: GameObjectData, root: Root): GameObject? {
         val constructor = registry[data.id]
-        data.y = height - data.y - data.height
+        data.y = root.height - data.y - data.height
+        data.x += root.x
+        data.y += (-root.y) - root.height
         return constructor?.invoke(data)
     }
 
-    fun GetGameObjectsFromJson(entities: Entities, height: Int): List<GameObject> {
+    fun GetGameObjectsFromJson(entities: Entities, root: Root): List<GameObject> {
         val allEntities = mutableListOf<GameObject>()
         Entities::class.memberProperties.forEach { property ->
             property.isAccessible = true // Make sure we can access the property
@@ -28,7 +30,7 @@ object GameObjectFactory {
                     if (item is GameObjectData) { // Check if the item implements GameObjectData
                         // At this point, item is safely cast to GameObjectData
                         // You can now add item to your List<GameObjectData>
-                        allEntities.add(create(item, height)!!)
+                        allEntities.add(create(item, root)!!)
                     }
                 }
             }

@@ -1,81 +1,27 @@
 {
 	"identifier": "Level_0",
-	"uniqueIdentifer": "c39fb370-8990-11ee-9ab0-a5bd4713fd29",
+	"uniqueIdentifer": "26777bd0-fec0-11ee-8705-bd263430058c",
 	"x": 0,
-	"y": 0,
-	"width": 256,
-	"height": 256,
+	"y": -64,
+	"width": 448,
+	"height": 384,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
+			"levelIid": "8cbe3bd0-fec0-11ee-8705-3790be9e0879",
+			"dir": "e"
+		},
+		{
+			"levelIid": "effb8f90-fec0-11ee-8705-09483a43230e",
 			"dir": "n"
 		}
 	],
-	"customFields" : {},
+	"customFields": {
+		"World": "World1"
+	},
 	"layers": [
-		"Ground_Water.png",
-		"Ground_Grass.png",
-		"Ground_Inside.png",
-		"Onground_Outside.png",
-		"Onground_beach.png",
-		"Walls.png"
+		"Tiles.png",
+		"OnGround.png"
 	],
-	"entities": {
-		"FloorButton": [
-			{
-				"id": "FloorButton",
-				"iid": "ff45e390-8990-11ee-9ab0-b74af982d5fa",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"Entity_ref": [],
-					"Entity_ref2": {
-						"entityIid": "35d96060-8990-11ee-9ab0-8dbc57fdebfa",
-						"layerIid": "d72c3bc0-8990-11ee-9ab0-0783b0a722dc",
-						"levelIid": "c39fb370-8990-11ee-9ab0-a5bd4713fd29",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			}
-		],
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "35d96060-8990-11ee-9ab0-8dbc57fdebfa",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 13601382,
-				"customFields": {
-					"Entrance": {
-						"entityIid": "b1dbc7f0-b0a0-11ee-8aa7-cd2a95248fb7",
-						"layerIid": "9093c3d1-8990-11ee-9ab0-a5917ae46250",
-						"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					},
-					"Locked": true
-				}
-			}
-		],
-		"Entrance": [
-			{
-				"id": "Entrance",
-				"iid": "21ea4690-b0a0-11ee-8aa7-259c9402d9c5",
-				"layer": "Entities",
-				"x": 96,
-				"y": 192,
-				"width": 32,
-				"height": 32,
-				"color": 13216106,
-				"customFields" : {}
-			}
-		]
-	}
+	"entities" : {}
 }

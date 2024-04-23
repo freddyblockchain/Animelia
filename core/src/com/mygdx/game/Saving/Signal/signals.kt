@@ -1,4 +1,4 @@
-import com.mygdx.game.Abilities.AbilityId
+
 import com.mygdx.game.Signal.Signal
 import kotlinx.serialization.Serializable
 
@@ -11,6 +11,6 @@ class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJEC
 
 
 @Serializable
-class AbilityGainedSignal(val abilityId: AbilityId) : Signal(SIGNALTYPE.ABILITY_GAINED) {
+class AbilityGainedSignal() : Signal(SIGNALTYPE.ABILITY_GAINED) {
 
 }

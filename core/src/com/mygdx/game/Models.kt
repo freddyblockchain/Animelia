@@ -1,13 +1,7 @@
 package com.mygdx.game
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
-import com.mygdx.game.GameObjects.FloorButtons.Button
-import com.mygdx.game.GameObjects.FloorButtons.ToggleButton
 import com.mygdx.game.GameObjects.Hazards.*
-import com.mygdx.game.GameObjects.Hazards.Generator.MissileGenerator
-import com.mygdx.game.GameObjects.Memory.MemoryPad
-import com.mygdx.game.GameObjects.Memory.MemoryStone
-import com.mygdx.game.GameObjects.MoveableObjects.ButlerActivationTrigger
 import com.mygdx.game.GameObjects.Triggers.AbilityTrigger
 import com.mygdx.game.GameObjects.Triggers.SpeechActivationTrigger
 import kotlinx.serialization.Serializable
@@ -15,48 +9,37 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 
 @Serializable
-data class Root(val entities: Entities, val width: Int, val height: Int, val uniqueIdentifer: String, val identifier: String)
+data class Root(val x: Int, val y: Int, val entities: Entities, val width: Int, val height: Int, val uniqueIdentifer: String, val identifier: String, val customFields: RootCustomFields)
+
+@Serializable
+data class RootCustomFields(val World: String)
 @Serializable
 data class Entities(
-    val FloorButton: List<GameObjectData> = listOf(),
     val Door: List<GameObjectData> = listOf(),
     val Entrance: List<GameObjectData> = listOf(),
-    val Butler: List<GameObjectData> = listOf(),
     val Spikes: List<GameObjectData> = listOf(),
-    val MemoryPad: List<GameObjectData> = listOf(),
-    val MemoryStone: List<GameObjectData> = listOf(),
     val DialogueSensor: List<GameObjectData> = listOf(),
     val Water: List<GameObjectData> = listOf(),
-    val ToggleButton: List<GameObjectData> = listOf(),
     val Thorns: List<GameObjectData> = listOf(),
     val Ability: List<GameObjectData> = listOf(),
     val BreakableObject: List<GameObjectData> = listOf(),
-    val MissileGenerator: List<GameObjectData> = listOf(),
     val InvisibleWall: List<GameObjectData> = listOf(),
+    val Lava: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
-    GameObjectFactory.register("FloorButton", ::Button)
     GameObjectFactory.register("Door", ::Door)
     GameObjectFactory.register("Entrance", ::Entrance)
-    GameObjectFactory.register("Butler", ::ButlerActivationTrigger)
     GameObjectFactory.register("Spikes", ::Spike)
-    GameObjectFactory.register("MemoryPad", ::MemoryPad)
-    GameObjectFactory.register("MemoryStone", ::MemoryStone)
     GameObjectFactory.register("DialogueSensor", ::SpeechActivationTrigger)
     GameObjectFactory.register("Water", ::Water)
-    GameObjectFactory.register("ToggleButton", ::ToggleButton)
     GameObjectFactory.register("Thorns", ::Thorns)
     GameObjectFactory.register("Ability", ::AbilityTrigger)
     GameObjectFactory.register("BreakableObject", ::BreakableObject)
-    GameObjectFactory.register("MissileGenerator", ::MissileGenerator)
     GameObjectFactory.register("InvisibleWall", ::InvisibleWall)
-}
-
-interface CustomFields {
-
+    GameObjectFactory.register("Lava", ::Lava)
 }
 @Serializable
-open class GameObjectData( val x: Int = 0,
+open class GameObjectData( var x: Int = 0,
                            var y: Int = 0,
                            val iid: String = "",
                            val id: String = "",

@@ -7,7 +7,6 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
-import com.mygdx.game.GameObjects.MoveableObjects.Butler
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.player
 
@@ -27,9 +26,6 @@ class ProjectileCollision(val projectile: Projectile): MoveCollision() {
         if(collidedObject is Player){
             AreaManager.getActiveArea()!!.gameObjects.remove(projectile)
             PlayerMoveBackCollision().collisionHappened(player)
-        }
-        else if(collidedObject is Butler){
-            AreaManager.getActiveArea()!!.gameObjects.remove(projectile)
         }
     }
 }

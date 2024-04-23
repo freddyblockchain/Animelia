@@ -1,151 +1,90 @@
 {
 	"identifier": "Level_2",
-	"uniqueIdentifer": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-	"x": 0,
-	"y": -512,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "d95096f0-fec0-11ee-8705-351c6befc195",
+	"x": 704,
+	"y": -128,
+	"width": 512,
+	"height": 512,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "9093c3d0-8990-11ee-9ab0-e3439ca6f280",
-			"dir": "s"
-		},
-		{
-			"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
-			"dir": "n"
+			"levelIid": "8cbe3bd0-fec0-11ee-8705-3790be9e0879",
+			"dir": "w"
 		}
 	],
-	"customFields" : {},
+	"customFields": {
+		"World": "World1"
+	},
 	"layers": [
-		"Ground_Water.png",
-		"Ground_Grass.png",
-		"Ground_Inside.png",
-		"Onground_Outside.png",
-		"Onground_beach.png",
-		"Walls.png"
+		"Tiles.png",
+		"OnGround.png"
 	],
 	"entities": {
-		"FloorButton": [
+		"Lava": [
 			{
-				"id": "FloorButton",
-				"iid": "003cb241-b0a0-11ee-916f-e7ceb7860609",
+				"id": "Lava",
+				"iid": "5831d240-fec0-11ee-8705-4f4e32eb1612",
 				"layer": "Entities",
 				"x": 0,
-				"y": 96,
-				"width": 32,
-				"height": 32,
+				"y": 288,
+				"width": 128,
+				"height": 224,
 				"color": 12470831,
-				"customFields": {
-					"Entity_ref": [
-						{
-							"entityIid": "003cb242-b0a0-11ee-916f-1b450789d367",
-							"layerIid": "003cb240-b0a0-11ee-916f-4b120917845c",
-							"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-						}
-					],
-					"Entity_ref2": {
-						"entityIid": "003cb243-b0a0-11ee-916f-55a26bb156fe",
-						"layerIid": "003cb240-b0a0-11ee-916f-4b120917845c",
-						"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
+				"customFields" : {}
 			},
 			{
-				"id": "FloorButton",
-				"iid": "003cb242-b0a0-11ee-916f-1b450789d367",
+				"id": "Lava",
+				"iid": "5bc81860-fec0-11ee-8705-9ba7c6340269",
 				"layer": "Entities",
-				"x": 224,
-				"y": 96,
-				"width": 32,
-				"height": 32,
+				"x": 128,
+				"y": 384,
+				"width": 384,
+				"height": 128,
 				"color": 12470831,
-				"customFields": {
-					"Entity_ref": [
-						{
-							"entityIid": "003cb241-b0a0-11ee-916f-e7ceb7860609",
-							"layerIid": "003cb240-b0a0-11ee-916f-4b120917845c",
-							"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-							"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-						}
-					],
-					"Entity_ref2": {
-						"entityIid": "003cb243-b0a0-11ee-916f-55a26bb156fe",
-						"layerIid": "003cb240-b0a0-11ee-916f-4b120917845c",
-						"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			}
-		],
-		"Door": [
+				"customFields" : {}
+			},
 			{
-				"id": "Door",
-				"iid": "003cb243-b0a0-11ee-916f-55a26bb156fe",
+				"id": "Lava",
+				"iid": "5f265e90-fec0-11ee-8705-89790765aac0",
 				"layer": "Entities",
-				"x": 96,
+				"x": 384,
+				"y": 288,
+				"width": 128,
+				"height": 96,
+				"color": 12470831,
+				"customFields" : {}
+			},
+			{
+				"id": "Lava",
+				"iid": "60e0b8c0-fec0-11ee-8705-c70dc111b537",
+				"layer": "Entities",
+				"x": 384,
 				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 13601382,
-				"customFields": {
-					"Entrance": {
-						"entityIid": "b13e5990-b0a0-11ee-8778-d9ccf8951eb8",
-						"layerIid": "93a60e51-b0a0-11ee-8778-5122d4f6c263",
-						"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					},
-					"Locked": true
-				}
-			}
-		],
-		"Entrance": [
-			{
-				"id": "Entrance",
-				"iid": "003cb244-b0a0-11ee-916f-69bdbfe6e037",
-				"layer": "Entities",
-				"x": 96,
-				"y": 224,
-				"width": 32,
-				"height": 32,
-				"color": 13216106,
+				"width": 128,
+				"height": 224,
+				"color": 12470831,
 				"customFields" : {}
-			}
-		],
-		"Spikes": [
+			},
 			{
-				"id": "Spikes",
-				"iid": "4afc99f0-d7b0-11ee-9742-b7abaec8859f",
+				"id": "Lava",
+				"iid": "63d19720-fec0-11ee-8705-f59b8b87dee5",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 256,
+				"height": 128,
+				"color": 12470831,
+				"customFields" : {}
+			},
+			{
+				"id": "Lava",
+				"iid": "6572eb10-fec0-11ee-8705-d706a59e7e3c",
 				"layer": "Entities",
 				"x": 0,
-				"y": 32,
-				"width": 96,
-				"height": 160,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "52229680-d7b0-11ee-9742-bba71a0bc7bd",
-				"layer": "Entities",
-				"x": 128,
-				"y": 128,
+				"y": 0,
 				"width": 128,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "5798c030-d7b0-11ee-9742-4717a1a9bbe9",
-				"layer": "Entities",
-				"x": 128,
-				"y": 32,
-				"width": 128,
-				"height": 64,
-				"color": 7552569,
+				"height": 224,
+				"color": 12470831,
 				"customFields" : {}
 			}
 		]

@@ -1,148 +1,23 @@
 {
 	"identifier": "Level_3",
-	"uniqueIdentifer": "93a60e50-b0a0-11ee-8778-c55653327010",
+	"uniqueIdentifer": "effb8f90-fec0-11ee-8705-09483a43230e",
 	"x": 0,
-	"y": -896,
+	"y": -320,
 	"width": 256,
-	"height": 384,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "003c8b30-b0a0-11ee-916f-4f958e2128e4",
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 			"dir": "s"
 		}
 	],
-	"customFields" : {},
+	"customFields": {
+		"World": "World2"
+	},
 	"layers": [
-		"Ground_Water.png",
-		"Ground_Grass.png",
-		"Ground_Inside.png",
-		"Onground_Outside.png",
-		"Onground_beach.png",
-		"Walls.png"
+		"Tiles.png",
+		"OnGround.png"
 	],
-	"entities": {
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "93a63560-b0a0-11ee-8778-1748a1613b70",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 13601382,
-				"customFields": {
-					"Entrance": {
-						"entityIid": "4132eb90-d7b0-11ee-86d3-7de00863939b",
-						"layerIid": "69dfe962-d7b0-11ee-9742-7b7dff6492f1",
-						"levelIid": "69dfe960-d7b0-11ee-9742-53d989e34eaf",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					},
-					"Locked": false
-				}
-			}
-		],
-		"Entrance": [
-			{
-				"id": "Entrance",
-				"iid": "b13e5990-b0a0-11ee-8778-d9ccf8951eb8",
-				"layer": "Entities",
-				"x": 96,
-				"y": 352,
-				"width": 32,
-				"height": 32,
-				"color": 13216106,
-				"customFields" : {}
-			}
-		],
-		"MemoryStone": [
-			{
-				"id": "MemoryStone",
-				"iid": "d63c25f0-b0a0-11ee-8778-bb6d93affc14",
-				"layer": "Entities",
-				"x": 240,
-				"y": 368,
-				"width": 16,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"MemoryPad": {
-						"entityIid": "de8c98c0-b0a0-11ee-8778-a352905f6c59",
-						"layerIid": "93a60e51-b0a0-11ee-8778-5122d4f6c263",
-						"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			},
-			{
-				"id": "MemoryStone",
-				"iid": "034e2900-b0a0-11ee-8778-a3ebf40a806e",
-				"layer": "Entities",
-				"x": 16,
-				"y": 368,
-				"width": 16,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"MemoryPad": {
-						"entityIid": "de8c98c0-b0a0-11ee-8778-a352905f6c59",
-						"layerIid": "93a60e51-b0a0-11ee-8778-5122d4f6c263",
-						"levelIid": "93a60e50-b0a0-11ee-8778-c55653327010",
-						"worldIid": "c39f1730-8990-11ee-9ab0-410975c2b103"
-					}
-				}
-			}
-		],
-		"MemoryPad": [
-			{
-				"id": "MemoryPad",
-				"iid": "de8c98c0-b0a0-11ee-8778-a352905f6c59",
-				"layer": "Entities",
-				"x": 112,
-				"y": 208,
-				"width": 32,
-				"height": 32,
-				"color": 16217634,
-				"customFields": {
-					"AmountOfStones": 2
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "032e5150-d7b0-11ee-9742-672a04162cca",
-				"layer": "Entities",
-				"x": 32,
-				"y": 224,
-				"width": 32,
-				"height": 160,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "089fe720-d7b0-11ee-9742-89f32822ecbc",
-				"layer": "Entities",
-				"x": 192,
-				"y": 224,
-				"width": 32,
-				"height": 160,
-				"color": 7552569,
-				"customFields" : {}
-			},
-			{
-				"id": "Spikes",
-				"iid": "14cf1ac0-d7b0-11ee-9742-cb5cf789804c",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 256,
-				"height": 160,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		]
-	}
+	"entities" : {}
 }

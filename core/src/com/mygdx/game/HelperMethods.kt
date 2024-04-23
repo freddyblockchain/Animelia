@@ -11,14 +11,16 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
 import java.io.File
 
-fun createArea(areaName: String): Area {
+fun HandleArea(areaName: String): Area {
     val root = JsonParser.getRoot("levels/${areaName}/data.json")
-    val areaToCreate = Area(root.uniqueIdentifer)
+    val correspondingArea = AreaManager.areas.firstOrNull { it.areaIdentifier == root.customFields.World }
+        ?:
+        Area(root.customFields.World)
     val entityObjects = JsonParser.getGameObjects(root)
-    areaToCreate.gameObjects.addAll(entityObjects)
-    val ground = Ground(GameObjectData(), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
-    areaToCreate.gameObjects.add(ground)
-    return areaToCreate
+    correspondingArea.gameObjects.addAll(entityObjects)
+    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
+    correspondingArea.gameObjects.add(ground)
+    return correspondingArea
 }
 
 fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
@@ -27,9 +29,6 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     AreaManager.changeActiveArea(newAreaIdentifier)
     player.setPosition(newPos)
     player.startingPosition = newPos
-    if(butler.active){
-        butler.setPosition(newPos + Vector2(0f,32f))
-    }
     if(shouldSave){
         updateAndSavePlayer()
     }
@@ -39,8 +38,11 @@ fun initAreas(){
     val directoryPath = "C:\\Users\\frede\\IdeaProjects\\Gdxgameengine\\assets\\levels"
     val directory = File(directoryPath)
 
-    directory.listFiles().forEach {
-        AreaManager.areas.add(createArea(it.name))
+    directory.listFiles().forEach { level ->
+        val area = HandleArea(level.name)
+        if(!(AreaManager.areas.any { it.areaIdentifier == area.areaIdentifier })){
+            AreaManager.areas.add(area)
+        }
     }
 
 }

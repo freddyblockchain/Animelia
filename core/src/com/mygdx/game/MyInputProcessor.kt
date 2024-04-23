@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
-import com.badlogic.gdx.math.Vector3
 import com.mygdx.game.Abilities.KeyAbility
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
@@ -39,18 +38,7 @@ class MyInputProcessor : InputProcessor {
             player.move(directionUnitVector)
             player.setRotation(directionUnitVector, player, 90f)
         }
-
-        val clickPosition = camera.unproject(Vector3(Gdx.input.x.toFloat(), Gdx.input.y.toFloat(), 0f))
-            val unitVectorTowardsPoint = getUnitVectorTowardsPoint(
-                Vector2(butler.sprite.x, butler.sprite.y),
-                Vector2(clickPosition.x, clickPosition.y)
-            )
-            if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
-                if(butler.active) {
-                    butler.move((unitVectorTowardsPoint))
-                }
-            }
-        }
+    }
 
     override fun keyUp(keycode: Int): Boolean {
         for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {

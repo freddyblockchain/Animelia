@@ -5,7 +5,6 @@ import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
@@ -13,8 +12,6 @@ import com.mygdx.game.GameModes.ChapterMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
-import com.mygdx.game.GameObjects.MoveableObjects.Butler
-import com.mygdx.game.JsonParser.Companion.getArticyDraftEntries
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.DialogueManager
@@ -28,7 +25,6 @@ import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
 
 lateinit var player: Player
-lateinit var butler: Butler
 lateinit var currentGameMode: GameMode
 lateinit var mainMode: MainMode
 lateinit var generalSaveState: GeneralSaveState
@@ -36,7 +32,6 @@ lateinit var generalSaveState: GeneralSaveState
 var camera: OrthographicCamera = OrthographicCamera()
 class MainGame : ApplicationAdapter() {
 
-    var img: Texture? = null
     lateinit var inputProcessor: MyInputProcessor
     lateinit var shapeRenderer: ShapeRenderer
     override fun create() {
@@ -44,35 +39,30 @@ class MainGame : ApplicationAdapter() {
         initAreas()
         FontManager.initFonts()
 
-        img = Texture("badlogic.jpg")
         inputProcessor = MyInputProcessor()
-        Gdx.input.setInputProcessor(inputProcessor);
+        Gdx.input.inputProcessor = inputProcessor
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
-        player = Player(GameObjectData(x = 160, y = 120), Vector2(32f, 32f))
-        butler = Butler(GameObjectData())
+        player = Player(GameObjectData(x = 120, y = 0), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
         shapeRenderer = ShapeRenderer()
         initObjects()
         DialogueManager.initSpeakableObjects()
-        getArticyDraftEntries()
+       // getArticyDraftEntries()
         if (!FileHandler.SaveFileEmpty()) {
             val savedState: String = FileHandler.readFromFile()[0]
             val savedGeneralSaveState: GeneralSaveState = Json.decodeFromString(savedState)
             AreaManager.setActiveArea(savedGeneralSaveState.areaIdentifier)
             generalSaveState = GeneralSaveState(
                 savedGeneralSaveState.playerXPos, savedGeneralSaveState.playerYPos,
-                savedGeneralSaveState.areaIdentifier, savedGeneralSaveState.butlerActive, player.entityId
+                savedGeneralSaveState.areaIdentifier, player.entityId
             )
             player.setPosition(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
-            if(generalSaveState.butlerActive){
-                butler.setActive(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
-            }
 
         } else {
             currentGameMode = ChapterMode()
-            generalSaveState = GeneralSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, false, player.entityId)
+            generalSaveState = GeneralSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, player.entityId)
             AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
             updateAndSavePlayer()
         }
@@ -80,7 +70,7 @@ class MainGame : ApplicationAdapter() {
         val originalFile = FileHandler.readFromFile()
         val saves = originalFile.subList(1, originalFile.size)
         val savedSignals: List<Signal> = saves.map(::signalConvert)
-        savedSignals.forEach { SignalManager.emitSignal(it, false);
+        savedSignals.forEach { SignalManager.emitSignal(it, false)
             SignalManager.pastSignals.add(it)
         }
         AreaManager.getActiveArea()!!.gameObjects.add(player)
@@ -102,7 +92,6 @@ class MainGame : ApplicationAdapter() {
 
     override fun dispose() {
         currentGameMode.spriteBatch.dispose()
-        img!!.dispose()
     }
 
     fun drawrects() {

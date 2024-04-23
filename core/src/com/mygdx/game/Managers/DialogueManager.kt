@@ -4,7 +4,6 @@ import com.mygdx.game.DialogueSystem.Sentence
 import com.mygdx.game.DialogueSystem.SpeakableEntity
 import com.mygdx.game.DialogueSystem.convertSpeakableEntity
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.butler
 import com.mygdx.game.player
 
 class DialogueManager {
@@ -18,7 +17,6 @@ class DialogueManager {
         }
         fun initSpeakableObjects(){
             speakableObjectMap[SpeakableEntity.PLAYER] = player
-            speakableObjectMap[SpeakableEntity.BUTLER] = butler
         }
     }
 }
