@@ -12,8 +12,8 @@ object GameObjectFactory {
 
     private fun create(data: GameObjectData, root: Root): GameObject? {
         val constructor = registry[data.id]
-        data.y = root.height - data.y - data.height
         data.x += root.x
+        data.y = root.height - data.y - data.height
         data.y += (-root.y) - root.height
         return constructor?.invoke(data)
     }
