@@ -42,7 +42,7 @@ class MainGame : ApplicationAdapter() {
         inputProcessor = MyInputProcessor()
         Gdx.input.inputProcessor = inputProcessor
         camera = OrthographicCamera()
-        camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
+        camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 2, Gdx.graphics.height.toFloat() / 2)
         player = Player(GameObjectData(x = 120, y = 0), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode

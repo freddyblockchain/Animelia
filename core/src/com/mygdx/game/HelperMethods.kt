@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
+import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
 import java.io.File
@@ -21,6 +22,8 @@ fun HandleArea(areaName: String): Area {
     correspondingArea.gameObjects.addAll(entityObjects)
     val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
     correspondingArea.gameObjects.add(ground)
+    val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
+    correspondingArea.gameObjects.add(wall)
     return correspondingArea
 }
 
