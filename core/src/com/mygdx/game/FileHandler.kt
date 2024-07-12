@@ -10,7 +10,7 @@ import java.io.File
 class FileHandler {
     companion object{
 
-        var handle = Gdx.files.internal("SaveFiles/CurrentSave")
+        var handle = Gdx.files.internal("assets/SaveFiles/CurrentSave")
         private val file: File = handle.file()
         private lateinit var fileWriter: BufferedWriter
         fun savePlayerState(playerState: String){

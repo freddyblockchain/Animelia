@@ -1,5 +1,6 @@
 package com.mygdx.game
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Circle
@@ -12,7 +13,7 @@ import com.mygdx.game.Saving.updateAndSavePlayer
 import java.io.File
 
 fun HandleArea(areaName: String): Area {
-    val root = JsonParser.getRoot("levels/${areaName}/data.json")
+    val root = JsonParser.getRoot("assets/levels/${areaName}/data.json")
     val correspondingArea = AreaManager.areas.firstOrNull { it.areaIdentifier == root.customFields.World }
         ?:
         Area(root.customFields.World)
@@ -35,13 +36,14 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 }
 
 fun initAreas(){
-    val directoryPath = "C:\\Users\\frede\\IdeaProjects\\Gdxgameengine\\assets\\levels"
-    val directory = File(directoryPath)
-
-    directory.listFiles().forEach { level ->
-        val area = HandleArea(level.name)
-        if(!(AreaManager.areas.any { it.areaIdentifier == area.areaIdentifier })){
-            AreaManager.areas.add(area)
+    val directoryPath = "assets/levels/"  // Path inside the assets directory
+    val filesHandle = Gdx.files.internal(directoryPath)
+    if (filesHandle.exists() && filesHandle.isDirectory) {
+        filesHandle.list().forEach { level ->
+            val area = HandleArea(level.name())
+            if(!(AreaManager.areas.any { it.areaIdentifier == area.areaIdentifier })){
+                AreaManager.areas.add(area)
+            }
         }
     }
 
