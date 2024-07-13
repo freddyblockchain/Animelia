@@ -2,9 +2,9 @@ package com.mygdx.game.GameModes
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.MyInputProcessor
+import com.mygdx.game.InGameProcessor
 
-class MainMode(val inputProcessor: MyInputProcessor): GameMode {
+class MainMode(override val inputProcessor: InGameProcessor): GameMode {
     override val spriteBatch = SpriteBatch()
 
     override fun FrameAction() {

@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.GameModes.ChapterMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
@@ -32,14 +31,14 @@ lateinit var generalSaveState: GeneralSaveState
 var camera: OrthographicCamera = OrthographicCamera()
 class MainGame : ApplicationAdapter() {
 
-    lateinit var inputProcessor: MyInputProcessor
+    lateinit var inputProcessor: InGameProcessor
     lateinit var shapeRenderer: ShapeRenderer
     override fun create() {
         initMappings()
         initAreas()
         FontManager.initFonts()
 
-        inputProcessor = MyInputProcessor()
+        inputProcessor = InGameProcessor()
         Gdx.input.inputProcessor = inputProcessor
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 2, Gdx.graphics.height.toFloat() / 2)
@@ -61,7 +60,6 @@ class MainGame : ApplicationAdapter() {
             player.setPosition(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))
 
         } else {
-            currentGameMode = ChapterMode()
             generalSaveState = GeneralSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, player.entityId)
             AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
             updateAndSavePlayer()
@@ -95,7 +93,7 @@ class MainGame : ApplicationAdapter() {
     }
 
     fun drawrects() {
-        AreaManager.getActiveArea()!!.gameObjects.forEach { x -> drawPolygonShape(x.polygon, shapeRenderer) }
+        //AreaManager.getActiveArea()!!.gameObjects.forEach { x -> drawPolygonShape(x.polygon, shapeRenderer) }
     }
 
     fun drawPolygonShape(polygon: Polygon, shapeRenderer: ShapeRenderer){

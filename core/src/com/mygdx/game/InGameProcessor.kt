@@ -1,5 +1,6 @@
 package com.mygdx.game
 
+import PauseMode
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
@@ -9,13 +10,16 @@ import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 
 
-class MyInputProcessor : InputProcessor {
+class InGameProcessor : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
 
         for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
             if (keycode == keyAbility.triggerKey) {
                 keyAbility.onActivate()
             }
+        }
+        if(keycode == Input.Keys.ESCAPE){
+            currentGameMode = PauseMode(currentGameMode)
         }
         return false
     }
