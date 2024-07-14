@@ -46,7 +46,8 @@
 						"layerIid": "0bc3f265-25d0-11ef-8e0b-57d888068715",
 						"levelIid": "d82abd10-25d0-11ef-943d-f5c0fd435082",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Up"
 				}
 			}
 		],
