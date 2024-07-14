@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.Collition.CollisionType
+import com.mygdx.game.Enums.getDirectionFromUnitVector
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollitionManager.Companion.entityWithinLocations
@@ -23,6 +24,7 @@ abstract class MoveableObject(gameObjectData: GameObjectData, size: Vector2) :
         if (canMove) {
             val nextIncrement = newUnitVector * this.getCurrentSpeed()
             currentUnitVector = newUnitVector
+            direction = getDirectionFromUnitVector(currentUnitVector)
             val moveSuccessfull = moveObject(nextIncrement)
             return moveSuccessfull
         } else {

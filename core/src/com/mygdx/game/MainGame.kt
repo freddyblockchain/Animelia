@@ -93,7 +93,7 @@ class MainGame : ApplicationAdapter() {
     }
 
     fun drawrects() {
-        //AreaManager.getActiveArea()!!.gameObjects.forEach { x -> drawPolygonShape(x.polygon, shapeRenderer) }
+        AreaManager.getActiveArea()!!.gameObjects.forEach { x -> drawPolygonShape(x.polygon, shapeRenderer) }
     }
 
     fun drawPolygonShape(polygon: Polygon, shapeRenderer: ShapeRenderer){

@@ -19,8 +19,6 @@ import com.mygdx.game.player
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : MoveableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
-    val butlerTexture = DefaultTextureHandler.getTexture("Butler.png")
-    val butlerSprite = Sprite(butlerTexture)
     override var speed: Float = 2f
     override val cannotMoveStrategy = NoAction()
     override val layer = Layer.PERSON
@@ -28,20 +26,4 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
     val abilities: MutableList<Ability> = mutableListOf()
-    var state: PlayerState = PlayerState.NORMAL
-
-    init {
-        butlerSprite.setSize(32f,48f)
-    }
-
-    override fun render(batch: SpriteBatch) {
-        when(state){
-            PlayerState.NORMAL -> super.render(batch)
-            PlayerState.BUTLERRIDING -> {
-                butlerSprite.setPosition(player.sprite.x, player.sprite.y - 16f)
-                butlerSprite.draw(batch)
-                super.render(batch)
-            }
-        }
-    }
 }
