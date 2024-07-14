@@ -2,6 +2,9 @@ package com.mygdx.game
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.Hazards.*
+import com.mygdx.game.GameObjects.MoveableObjects.AnimeliaEnemies.convertToEnemyAnimelia
+import com.mygdx.game.GameObjects.MoveableObjects.Animelias.convertToFriendlyAnimelia
+import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.GameObjects.Triggers.AbilityTrigger
 import com.mygdx.game.GameObjects.Triggers.SpeechActivationTrigger
 import kotlinx.serialization.Serializable
@@ -16,27 +19,21 @@ data class RootCustomFields(val World: String)
 @Serializable
 data class Entities(
     val Door: List<GameObjectData> = listOf(),
-    val Entrance: List<GameObjectData> = listOf(),
-    val Spikes: List<GameObjectData> = listOf(),
-    val DialogueSensor: List<GameObjectData> = listOf(),
-    val Water: List<GameObjectData> = listOf(),
-    val Thorns: List<GameObjectData> = listOf(),
-    val Ability: List<GameObjectData> = listOf(),
-    val BreakableObject: List<GameObjectData> = listOf(),
-    val InvisibleWall: List<GameObjectData> = listOf(),
     val Lava: List<GameObjectData> = listOf(),
+    val IceCone: List<GameObjectData> = listOf(),
+    val Rock: List<GameObjectData> = listOf(),
+    val Animelia: List<GameObjectData> = listOf(),
+    val AnimeliaEnemy: List<GameObjectData> = listOf(),
+    val TrainingStation: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
-    GameObjectFactory.register("Entrance", ::Entrance)
-    GameObjectFactory.register("Spikes", ::Spike)
-    GameObjectFactory.register("DialogueSensor", ::SpeechActivationTrigger)
-    GameObjectFactory.register("Water", ::Water)
-    GameObjectFactory.register("Thorns", ::Thorns)
-    GameObjectFactory.register("Ability", ::AbilityTrigger)
-    GameObjectFactory.register("BreakableObject", ::BreakableObject)
-    GameObjectFactory.register("InvisibleWall", ::InvisibleWall)
     GameObjectFactory.register("Lava", ::Lava)
+    GameObjectFactory.register("IceCone", ::IceCone)
+    GameObjectFactory.register("Rock", ::Rock)
+    GameObjectFactory.register("Animelia", ::convertToFriendlyAnimelia)
+    GameObjectFactory.register("AnimeliaEnemy", ::convertToEnemyAnimelia)
+    GameObjectFactory.register("TrainingStation", ::TrainingStation)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

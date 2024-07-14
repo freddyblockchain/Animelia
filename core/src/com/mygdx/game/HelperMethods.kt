@@ -11,7 +11,6 @@ import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
-import java.io.File
 
 fun HandleArea(areaName: String): Area {
     val root = JsonParser.getRoot("assets/levels/${areaName}/data.json")
@@ -24,6 +23,9 @@ fun HandleArea(areaName: String): Area {
     correspondingArea.gameObjects.add(ground)
     val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
     correspondingArea.gameObjects.add(wall)
+    correspondingArea.gameObjects.forEach {
+        it.areaIdentifier = correspondingArea.areaIdentifier
+    }
     return correspondingArea
 }
 

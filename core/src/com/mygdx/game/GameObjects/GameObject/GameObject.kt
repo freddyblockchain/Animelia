@@ -15,7 +15,6 @@ import com.mygdx.game.InitSprite
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
-import com.mygdx.game.currentGameMode
 
 abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Renderable {
     val initPosition = Vector2(gameObjectData.x.toFloat(), gameObjectData.y.toFloat())
@@ -41,6 +40,7 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Re
     open val collision: Collision = CanMoveCollision()
     val gameObjectIid = gameObjectData.iid
     var collidingObjects: List<GameObject> = listOf()
+    var areaIdentifier = "World1"
     override fun render(batch: SpriteBatch){
         sprite.draw(batch)
     }

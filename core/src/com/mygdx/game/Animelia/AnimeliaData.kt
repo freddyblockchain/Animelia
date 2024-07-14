@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObjects.Animelia
+package com.mygdx.game.Animelia
 
 interface AnimeliaData {
     val elemental_types: List<ELEMENTAL_TYPE>
@@ -30,7 +30,7 @@ class IceYetiData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.MASTER
 }
 
-fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData{
+fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FIRE_ARMADILLO ->  {
             FireArmadilloData()

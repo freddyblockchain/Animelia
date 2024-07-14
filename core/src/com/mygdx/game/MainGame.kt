@@ -42,7 +42,7 @@ class MainGame : ApplicationAdapter() {
         Gdx.input.inputProcessor = inputProcessor
         camera = OrthographicCamera()
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 2, Gdx.graphics.height.toFloat() / 2)
-        player = Player(GameObjectData(x = 120, y = 0), Vector2(32f, 32f))
+        player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
         shapeRenderer = ShapeRenderer()
@@ -61,7 +61,7 @@ class MainGame : ApplicationAdapter() {
 
         } else {
             generalSaveState = GeneralSaveState(160f, 128f, AreaManager.areas[0].areaIdentifier, player.entityId)
-            AreaManager.setActiveArea(AreaManager.areas[0].areaIdentifier)
+            AreaManager.setActiveArea("World1")
             updateAndSavePlayer()
         }
         initSignalListeners()

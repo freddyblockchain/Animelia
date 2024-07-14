@@ -18,9 +18,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.GameObjects.Animelia.ANIMELIA_ENTITY
-import com.mygdx.game.GameObjects.Animelia.ANIMELIA_STAGE
-import com.mygdx.game.GameObjects.Animelia.getAnimeliaData
+import com.mygdx.game.Animelia.ANIMELIA_ENTITY
+import com.mygdx.game.Animelia.ANIMELIA_STAGE
+import com.mygdx.game.Animelia.getAnimeliaData
 
 lateinit var rootTable: Table
 
