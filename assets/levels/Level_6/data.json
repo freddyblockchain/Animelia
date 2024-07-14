@@ -1,0 +1,110 @@
+{
+	"identifier": "Level_6",
+	"uniqueIdentifer": "d82abd10-25d0-11ef-943d-f5c0fd435082",
+	"x": 160,
+	"y": -608,
+	"width": 160,
+	"height": 352,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
+			"dir": "s"
+		},
+		{
+			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "World3"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground.png",
+		"OngroundTerrain.png",
+		"Tiles.png"
+	],
+	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "1e731e90-25d0-11ef-8e0b-7b87950b48ab",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 336,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "13463fc0-25d0-11ef-8e0b-dd6e0736df44",
+						"layerIid": "0bc3f260-25d0-11ef-8e0b-eb8431c13b62",
+						"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "4683f520-25d0-11ef-943d-452b56027e01",
+				"layer": "Entities",
+				"x": 32,
+				"y": 256,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "49b77a70-25d0-11ef-943d-0dc77a18bc2b",
+				"layer": "Entities",
+				"x": 0,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "52e6db90-25d0-11ef-943d-afdb78f9406c",
+				"layer": "Entities",
+				"x": 96,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "5a989d60-25d0-11ef-943d-27bbd83f08d0",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			}
+		]
+	}
+}

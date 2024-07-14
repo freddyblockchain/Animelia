@@ -1,0 +1,58 @@
+{
+	"identifier": "Level_7",
+	"uniqueIdentifer": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+	"x": 0,
+	"y": -896,
+	"width": 512,
+	"height": 288,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "d82abd10-25d0-11ef-943d-f5c0fd435082",
+			"dir": "s"
+		}
+	],
+	"customFields": {
+		"World": "World3"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground.png",
+		"OngroundTerrain.png",
+		"Tiles.png"
+	],
+	"entities": {
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "a81fb490-25d0-11ef-8e0b-a1d9ad8e3701",
+				"layer": "Entities",
+				"x": 224,
+				"y": 96,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
+			}
+		],
+		"Rock": [
+			{
+				"id": "Rock",
+				"iid": "bf70d510-25d0-11ef-8e0b-1d07fec99f41",
+				"layer": "Entities",
+				"x": 224,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 20
+				}
+			}
+		]
+	}
+}

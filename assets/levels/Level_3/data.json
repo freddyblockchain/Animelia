@@ -1,23 +1,33 @@
 {
 	"identifier": "Level_3",
-	"uniqueIdentifer": "effb8f90-fec0-11ee-8705-09483a43230e",
-	"x": 0,
-	"y": -320,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "2feab690-25d0-11ef-9d5b-271d9cab9325",
+	"x": -96,
+	"y": 160,
+	"width": 96,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "s"
+			"dir": "e"
+		},
+		{
+			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World2"
+		"World": "World1"
 	},
 	"layers": [
-		"Tiles.png",
-		"OnGround.png"
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground.png",
+		"OngroundTerrain.png",
+		"Tiles.png"
 	],
 	"entities" : {}
 }
