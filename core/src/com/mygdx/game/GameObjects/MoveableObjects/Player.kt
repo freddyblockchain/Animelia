@@ -1,23 +1,26 @@
 package com.mygdx.game.GameObjects.MoveableEntities.Characters
 
-import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Abilities.Ability
+import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
+import com.mygdx.game.Ability.Ability
+import com.mygdx.game.Ability.KeyAbility
+import com.mygdx.game.Animelia.ANIMELIA_ENTITY
+import com.mygdx.game.Animelia.AnimeliaData
+import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.Enums.PlayerState
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
-import com.mygdx.game.player
 
 class Player(gameObjectData: GameObjectData, size: Vector2)
-    : MoveableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
+    : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override var speed: Float = 2f
     override val cannotMoveStrategy = NoAction()
@@ -25,5 +28,13 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override var direction = Direction.RIGHT
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
-    val abilities: MutableList<Ability> = mutableListOf()
+    val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
+    var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FIRE_ARMADILLO
+    val animeliaInfo: AnimeliaData
+    get() = getAnimeliaData(currentAnimelia)
+
+    override fun render(batch: SpriteBatch) {
+        sprite.texture = animeliaInfo.gameTexture
+        super.render(batch)
+    }
 }

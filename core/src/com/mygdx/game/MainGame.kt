@@ -11,10 +11,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
-import com.mygdx.game.Managers.AnimationManager
-import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.DialogueManager
-import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.GeneralSaveState
 import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Signal.Signal
@@ -41,7 +38,7 @@ class MainGame : ApplicationAdapter() {
         inputProcessor = InGameProcessor()
         Gdx.input.inputProcessor = inputProcessor
         camera = OrthographicCamera()
-        camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 2, Gdx.graphics.height.toFloat() / 2)
+        camera.setToOrtho(false, Gdx.graphics.width.toFloat() / 3, Gdx.graphics.height.toFloat() / 3)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
@@ -81,6 +78,7 @@ class MainGame : ApplicationAdapter() {
         currentGameMode.spriteBatch.projectionMatrix = camera.combined
         RenderGraph.render(currentGameMode.spriteBatch)
         AnimationManager.addAnimationsToRender()
+        AbilityManager.processAbilities()
         currentGameMode.FrameAction()
         SignalManager.executeSignals()
         drawrects()

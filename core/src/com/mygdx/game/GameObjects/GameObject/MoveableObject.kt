@@ -20,9 +20,9 @@ abstract class MoveableObject(gameObjectData: GameObjectData, size: Vector2) :
     private var canMove = true
     var currentUnitVector: Vector2 = Vector2(0f,0f)
 
-    open fun move(newUnitVector: Vector2): Boolean {
+    open fun move(newUnitVector: Vector2, speed: Float = this.getCurrentSpeed()): Boolean {
         if (canMove) {
-            val nextIncrement = newUnitVector * this.getCurrentSpeed()
+            val nextIncrement = newUnitVector * speed
             currentUnitVector = newUnitVector
             direction = getDirectionFromUnitVector(currentUnitVector)
             val moveSuccessfull = moveObject(nextIncrement)

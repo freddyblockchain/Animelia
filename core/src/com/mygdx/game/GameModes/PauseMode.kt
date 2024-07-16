@@ -14,9 +14,8 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.currentGameMode
 
 
-private var stage: Stage = Stage(ScreenViewport())
-
 class PauseMode(val prevMode: GameMode): GameMode{
+    val stage: Stage = Stage(ScreenViewport())
     override val spriteBatch = SpriteBatch()
     override val inputProcessor = stage
     val pauseScreen = PauseScreen(prevMode, stage)

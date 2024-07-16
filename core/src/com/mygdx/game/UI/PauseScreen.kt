@@ -21,14 +21,15 @@ import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.ANIMELIA_STAGE
 import com.mygdx.game.Animelia.getAnimeliaData
+import com.mygdx.game.UI.createBackgroundDrawable
 
-lateinit var rootTable: Table
 
 class PauseScreen(val prevMode: GameMode, val stage: Stage){
 
     private var activeButton: Button? = null
     private val buttons = mutableListOf<Button>()
     private var activeButtonIndex: Int = 0
+    lateinit var rootTable: Table
 
     private val shapeRenderer: ShapeRenderer = ShapeRenderer()
 
@@ -156,6 +157,7 @@ class PauseScreen(val prevMode: GameMode, val stage: Stage){
         setActiveButton(buttons[activeButtonIndex])
     }
 
+
     private fun pressEnter() {
         activeButton?.let { simulateClick(it) }
     }
@@ -166,24 +168,5 @@ class PauseScreen(val prevMode: GameMode, val stage: Stage){
         button.fire(event)
         event.type = InputEvent.Type.touchUp
         button.fire(event)
-    }
-
-    fun getAllAnimelias(){
-    }
-
-    private fun createBackgroundDrawable(color: Color): Drawable {
-        // Create a pixmap with the specified color
-        val pixmap = Pixmap(1, 1, Pixmap.Format.RGBA8888)
-        pixmap.setColor(color)
-        pixmap.fill()
-
-        // Create a texture from the pixmap
-        val texture = Texture(pixmap)
-
-        // Dispose of the pixmap to free up memory
-        pixmap.dispose()
-
-        // Create a drawable from the texture
-        return TextureRegionDrawable(texture)
     }
 }

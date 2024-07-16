@@ -27,7 +27,7 @@ class Rock(gameObjectData: GameObjectData)
     fun getSize(strengthToBreak: Int): Vector2{
         return when {
             strengthToBreak >= 15 -> Vector2(32f,32f)
-            else -> Vector2(8f,8f)
+            else -> Vector2(24f,24f)
         }
     }
 }

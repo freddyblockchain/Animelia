@@ -5,9 +5,12 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Abilities.KeyAbility
+import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
+import com.mygdx.game.GameModes.TrainingMode
+import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
+import com.mygdx.game.Managers.AbilityManager
 
 
 class InGameProcessor : InputProcessor {
@@ -20,6 +23,14 @@ class InGameProcessor : InputProcessor {
         }
         if(keycode == Input.Keys.ESCAPE){
             currentGameMode = PauseMode(currentGameMode)
+        }
+        if(keycode == Input.Keys.SPACE){
+            currentGameMode = TrainingMode(currentGameMode)
+        }
+        for(ability in player.abilities){
+            if(ability.triggerKey == keycode){
+                AbilityManager.abilities.add(ability)
+            }
         }
         return false
     }
@@ -39,8 +50,10 @@ class InGameProcessor : InputProcessor {
             directionUnitVector = getDirectionUnitVector(Direction.DOWN)
         }
         if(directionUnitVector != Vector2(0f,0f)){
-            player.move(directionUnitVector)
-            player.setRotation(directionUnitVector, player, 90f)
+            if (player.move(directionUnitVector))
+            {
+                player.setRotation(directionUnitVector, player, 90f)
+            }
         }
     }
 
