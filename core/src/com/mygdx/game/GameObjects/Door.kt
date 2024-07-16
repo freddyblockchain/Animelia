@@ -3,7 +3,6 @@ package com.mygdx.game.GameObjects
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collition.MoveCollision
-import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromString
 import com.mygdx.game.GameObjects.GameObject.GameObject
@@ -12,7 +11,6 @@ import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
-import kotlin.system.exitProcess
 
 class Door(val gameObjectData: GameObjectData): GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     val customFields = Json.decodeFromJsonElement<DoorCustomFields>(gameObjectData.customFields)

@@ -1,17 +1,21 @@
 package com.mygdx.game.Managers
 
+
+data class Stats(var offence: Int = 10,
+                 var defence: Int = 10,
+                 var speed: Int = 10,
+                 var intelligence: Int = 10
+){
+
+}
 class PlayerStatus {
 
 
     companion object {
-        val defaultStatStart = 10
         var age = 5
         var maxAge = 10
         var exp = 5
 
-        var offence = defaultStatStart
-        var defence = defaultStatStart
-        var speed = defaultStatStart
-        var intelligence = defaultStatStart
+        val playerStats = Stats()
     }
 }

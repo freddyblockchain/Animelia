@@ -38,10 +38,10 @@ class TrainingScreen(val prevMode: GameMode, val stage: Stage): UIScreen() {
 
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.BLACK)
 
-        var offence = PlayerStatus.offence
-        var defence = PlayerStatus.defence
-        var speed = PlayerStatus.speed
-        var intelligence = PlayerStatus.intelligence
+        var offence = PlayerStatus.playerStats.offence
+        var defence = PlayerStatus.playerStats.defence
+        var speed = PlayerStatus.playerStats.speed
+        var intelligence = PlayerStatus.playerStats.intelligence
 
         var age = PlayerStatus.age
         var exp = PlayerStatus.exp
@@ -105,7 +105,7 @@ class TrainingScreen(val prevMode: GameMode, val stage: Stage): UIScreen() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 PlayerStatus.age = age
                 PlayerStatus.exp = exp
-                PlayerStatus.offence = offence
+                PlayerStatus.playerStats.offence = offence
                 changeMode(prevMode)
             }
         })

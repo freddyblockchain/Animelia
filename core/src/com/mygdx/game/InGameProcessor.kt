@@ -16,11 +16,11 @@ import com.mygdx.game.Managers.AbilityManager
 class InGameProcessor : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
 
-        for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
+        /*for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
             if (keycode == keyAbility.triggerKey) {
                 keyAbility.onActivate()
             }
-        }
+        }*/
         if(keycode == Input.Keys.ESCAPE){
             currentGameMode = PauseMode(currentGameMode)
         }
@@ -58,11 +58,14 @@ class InGameProcessor : InputProcessor {
     }
 
     override fun keyUp(keycode: Int): Boolean {
+        /*
         for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
             if (keycode == keyAbility.triggerKey) {
                 keyAbility.onDeactivate()
             }
         }
+        return false
+     */
         return false
     }
 
