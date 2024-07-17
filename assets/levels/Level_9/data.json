@@ -1,0 +1,29 @@
+{
+	"identifier": "Level_9",
+	"uniqueIdentifer": "0aa29eb0-25d0-11ef-9fe3-67a32544441f",
+	"x": 608,
+	"y": -1152,
+	"width": 96,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
+			"dir": "s"
+		}
+	],
+	"customFields": {
+		"World": "World1"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground.png",
+		"OngroundTerrain.png",
+		"Tiles.png"
+	],
+	"entities" : {}
+}

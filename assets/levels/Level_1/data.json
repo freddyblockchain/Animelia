@@ -54,9 +54,61 @@
 		"Rock": [
 			{
 				"id": "Rock",
-				"iid": "6042ab80-25d0-11ef-943d-47f0f1ff5b36",
+				"iid": "474c4800-25d0-11ef-9fe3-35697a08b4a0",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 10
+				}
+			},
+			{
+				"id": "Rock",
+				"iid": "47a71230-25d0-11ef-9fe3-8d44c4d818ba",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 10
+				}
+			},
+			{
+				"id": "Rock",
+				"iid": "47e1aa30-25d0-11ef-9fe3-e17608a437cb",
 				"layer": "Entities",
 				"x": 64,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 10
+				}
+			},
+			{
+				"id": "Rock",
+				"iid": "4816eb00-25d0-11ef-9fe3-9b9a484631f0",
+				"layer": "Entities",
+				"x": 96,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 10
+				}
+			},
+			{
+				"id": "Rock",
+				"iid": "48ace970-25d0-11ef-9fe3-5bc2f9155175",
+				"layer": "Entities",
+				"x": 96,
 				"y": 0,
 				"width": 32,
 				"height": 32,
