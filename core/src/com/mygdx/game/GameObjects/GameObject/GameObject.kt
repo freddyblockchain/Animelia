@@ -16,7 +16,7 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.Utils.RenderGraph.Companion.addToSceneGraph
 
-abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2): Renderable {
+abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())): Renderable {
     val initPosition = Vector2(gameObjectData.x.toFloat(), gameObjectData.y.toFloat())
     val topleft = Vector2(initPosition.x,initPosition.y + size.y)
     val topright = Vector2(initPosition.x + size.x,initPosition.y + size.y)

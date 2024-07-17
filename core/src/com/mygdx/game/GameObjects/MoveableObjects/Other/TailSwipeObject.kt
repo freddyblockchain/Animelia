@@ -30,19 +30,23 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
 
     init {
         setSize(Vector2(objectAttached.width / 5f, 6f))
-        this.polygon.setOrigin(0f, objectAttached.sprite.originY)
-        this.setPosition(objectAttached.currentPosition() + Vector2(objectAttached.width / 2,0f))
+        currentUnitVector = objectAttached.currentUnitVector
+        val amountToIncrease = Vector2(- (objectAttached.width / 2 * currentUnitVector.x), -(objectAttached.height / 2 * currentUnitVector.y))
+        this.polygon.setOrigin(- amountToIncrease.x, - amountToIncrease.y)
+        this.setPosition(objectAttached.currentMiddle + amountToIncrease)
     }
 
     override fun render(batch: SpriteBatch) {
     }
 
     override fun frameTask() {
-        if(this.objectAttached.direction == Direction.DOWN || this.objectAttached.direction == Direction.UP){
+        /*if(this.objectAttached.direction == Direction.DOWN || this.objectAttached.direction == Direction.UP){
             this.setPosition(Vector2(this.currentPosition().x, objectAttached.currentPosition().y))
         }else {
             this.setPosition(Vector2(objectAttached.currentPosition().x + objectAttached.width / 2, this.currentPosition().y))
-        }
+        }*/
+        currentUnitVector = objectAttached.currentUnitVector
+        this.setPosition(this.currentPosition() + currentUnitVector)
         this.rotateByAmount(rotationAmount, this)
         //cheating abit to trigger collisions
         this.move(Vector2(0f, 0f), speed)

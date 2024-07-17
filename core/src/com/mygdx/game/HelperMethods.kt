@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Circle
+import com.badlogic.gdx.math.MathUtils.cos
+import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Area.Area
 import com.mygdx.game.GameObjects.GameObject.GameObject
@@ -11,6 +13,7 @@ import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
+import kotlin.math.PI
 
 fun HandleArea(areaName: String): Area {
     val root = JsonParser.getRoot("assets/levels/${areaName}/data.json")
@@ -75,6 +78,15 @@ fun InsideCircle(circleObject: GameObject, circleRadius: Float, targetObject: Ga
         circleRadius
     )
     return circleToCheck.contains(targetObject.currentPosition())
+}
+
+fun getRotatedUnitVectorClockwise(unitVector: Vector2, angleDegrees: Float): Vector2 {
+    val x = unitVector.x
+    val y = unitVector.y
+    val radians = (angleDegrees * PI / 180).toFloat()  // Convert angle from degrees to radians
+    val newX = x * cos(radians) + y * sin(radians)
+    val newY = -x * sin(radians) + y * cos(radians)
+    return Vector2(newX, newY)
 }
 /*
 

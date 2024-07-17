@@ -10,7 +10,7 @@ interface AnimeliaData {
 }
 
 class FireArmadilloData(): AnimeliaData {
-    override val gameTexture = DefaultTextureHandler.getTexture("Butler.png")
+    override val gameTexture = DefaultTextureHandler.getTexture("player.png")
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
 }

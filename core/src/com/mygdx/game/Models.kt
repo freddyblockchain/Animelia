@@ -1,4 +1,5 @@
 package com.mygdx.game
+import com.mygdx.game.Ability.AbilityItem
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.Hazards.*
@@ -25,6 +26,7 @@ data class Entities(
     val Animelia: List<GameObjectData> = listOf(),
     val AnimeliaEnemy: List<GameObjectData> = listOf(),
     val TrainingStation: List<GameObjectData> = listOf(),
+    val Ability: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -34,6 +36,7 @@ fun initMappings(){
     GameObjectFactory.register("Animelia", ::convertToFriendlyAnimelia)
     GameObjectFactory.register("AnimeliaEnemy", ::convertToEnemyAnimelia)
     GameObjectFactory.register("TrainingStation", ::TrainingStation)
+    GameObjectFactory.register("Ability", ::AbilityItem)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,
