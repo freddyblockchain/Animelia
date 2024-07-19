@@ -6,5 +6,9 @@ abstract class DefaultAnimation: Animation {
         currentFrame = 1
     }
 
+    override val animationAction = {}
+
+    override var actionFrame = 0
+
 
 }

@@ -1,9 +1,8 @@
 package com.mygdx.game.Animelia
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.CannotMoveStrategy.NoAction
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
@@ -24,8 +23,7 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData): GameObject(game
 
 abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(gameObjectData, Vector2(32f,32f)) {
     abstract val animeliaEntity: ANIMELIA_ENTITY
-    val animeliaData: AnimeliaData
-        get() = getAnimeliaData(animeliaEntity)
+    abstract val animeliaInfo: AnimeliaData
 
     override var speed = 1f
     override val cannotMoveStrategy = NoAction()
@@ -37,6 +35,21 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
         get() = TODO("Not yet implemented")
         set(value) {}
 
+    override fun render(batch: SpriteBatch) {
+        setAnimeliaSpriteTexture(this, animeliaInfo)
+        super.render(batch)
+    }
+
+}
+
+fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaData){
+    if(animelia.isMoving){
+        animeliaInfo.animeliaAnimation.setSpriteTextureBasedOnAnimation(animelia.sprite)
+        animelia.isMoving = false
+    } else {
+        animelia.sprite.texture = animeliaInfo.gameTexture
+        animeliaInfo.animeliaAnimation.reset()
+    }
 }
 
 fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {

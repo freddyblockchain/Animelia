@@ -7,6 +7,7 @@ import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaData
 import com.mygdx.game.Animelia.getAnimeliaData
+import com.mygdx.game.Animelia.setAnimeliaSpriteTexture
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.DefaultTextureHandler
@@ -31,11 +32,10 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val stats = PlayerStatus.playerStats
     val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FIRE_ARMADILLO
-    val animeliaInfo: AnimeliaData
-    get() = getAnimeliaData(currentAnimelia)
+    var animeliaInfo = getAnimeliaData(currentAnimelia)
 
     override fun render(batch: SpriteBatch) {
-        sprite.texture = animeliaInfo.gameTexture
+        setAnimeliaSpriteTexture(this, animeliaInfo)
         super.render(batch)
     }
 }
