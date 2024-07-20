@@ -14,3 +14,7 @@ class DefaultCollisionMask(override val canCollideWith: (GameObject) -> Boolean 
 object OnlyPlayerCollitionMask: CollisionMask{
     override val canCollideWith: (GameObject) -> Boolean = { other: GameObject -> other is Player }
 }
+
+class AllOtherObjectsCollisionMask(val objectToExclude: GameObject): CollisionMask{
+    override val canCollideWith: (GameObject) -> Boolean = { other: GameObject ->  other != objectToExclude }
+}

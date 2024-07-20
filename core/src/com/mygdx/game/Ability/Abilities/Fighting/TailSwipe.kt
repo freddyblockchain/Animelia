@@ -3,6 +3,7 @@ package com.mygdx.game.Ability.Abilities.Fighting
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.KeyAbility
+import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.MoveableObjects.Other.TailSwipeObject

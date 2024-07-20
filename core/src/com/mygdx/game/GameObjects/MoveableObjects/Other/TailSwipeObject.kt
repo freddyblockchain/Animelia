@@ -3,7 +3,9 @@ package com.mygdx.game.GameObjects.MoveableObjects.Other
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
+import com.mygdx.game.Collition.AllOtherObjectsCollisionMask
 import com.mygdx.game.Collition.Collision
+import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
@@ -27,6 +29,7 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
     override var direction = Direction.DOWN
     override var canChangeDirection = true
     override val collision = TailSwipeCollision(objectAttached)
+    override val collitionMask = AllOtherObjectsCollisionMask(objectAttached)
 
     init {
         setSize(Vector2(objectAttached.width / 5f, 6f))
@@ -55,10 +58,15 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
 
 class TailSwipeCollision(val objectAttached: FightableObject): MoveCollision() {
     override var canMoveAfterCollision = true
+    var hasHit = false
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Rock && collidedObject.checkDestroyed(objectAttached.stats)){
             AreaManager.getActiveArea()!!.gameObjects.remove(collidedObject)
+        }
+        if(collidedObject is FightableObject && !hasHit){
+            collidedObject.currentHealth -= 10f
+            hasHit = true
         }
     }
 

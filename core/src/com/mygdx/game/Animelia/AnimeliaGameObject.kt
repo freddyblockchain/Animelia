@@ -1,6 +1,7 @@
 package com.mygdx.game.Animelia
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
@@ -8,6 +9,11 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.UI.EnemyHealthStrategy
+import com.mygdx.game.UI.HealthStrategy
+import com.mygdx.game.getRotatedUnitVectorClockwise
+import com.mygdx.game.getUnitVectorTowardsPoint
+import com.mygdx.game.player
 
 enum class ANIMELIA_ENTITY {FIRE_ARMADILLO, ICE_PENGUIN, FIRE_DRAGON, ICE_DINASAUR, ICE_YETI, FIRE_HIPPO}
 
@@ -28,6 +34,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override var speed = 1f
     override val cannotMoveStrategy = NoAction()
     override val layer = Layer.ONGROUND
+
+    override val healthStrategy = EnemyHealthStrategy()
     override var direction: Direction
         get() = TODO("Not yet implemented")
         set(value) {}
@@ -38,6 +46,21 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
         super.render(batch)
+    }
+
+    override fun frameTask() {
+        val currentMiddle = this.currentMiddle
+        val circle = Circle(currentMiddle.x, currentMiddle.y, 100f)
+        if(circle.contains(player.currentPosition())){
+            val unitVectorToDirection = getUnitVectorTowardsPoint(currentMiddle, player.currentPosition())
+            this.currentUnitVector = unitVectorToDirection
+            this.setRotation(unitVectorToDirection, this, 90f)
+        } else{
+            this.currentUnitVector = getRotatedUnitVectorClockwise(this.currentUnitVector, 1f)
+            this.move(this.currentUnitVector)
+            this.setRotation(this.currentUnitVector, this, 90f)
+        }
+        super.frameTask()
     }
 
 }

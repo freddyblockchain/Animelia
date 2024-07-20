@@ -10,6 +10,7 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.getRotatedUnitVectorClockwise
 import com.mygdx.game.player
+import kotlin.math.max
 
 enum class EnemyState {NORMAL, AGGROED}
 
@@ -18,14 +19,11 @@ class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObj
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
 
+    override val maxHealth = 30f
+
 
     init {
         this.currentUnitVector = Vector2(1.5f,0f)
-    }
-    override fun frameTask() {
-        super.frameTask()
-        this.currentUnitVector = getRotatedUnitVectorClockwise(this.currentUnitVector, 1f)
-        this.move(this.currentUnitVector)
-        this.setRotation(this.currentUnitVector, this, 90f)
+        currentHealth = maxHealth
     }
 }

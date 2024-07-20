@@ -19,6 +19,8 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
+import com.mygdx.game.UI.HealthStrategy
+import com.mygdx.game.UI.PlayerHealthStrategy
 
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
@@ -29,10 +31,17 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override var direction = Direction.RIGHT
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
+    override val maxHealth = 30f
     override val stats = PlayerStatus.playerStats
     val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FIRE_ARMADILLO
     var animeliaInfo = getAnimeliaData(currentAnimelia)
+
+    override val healthStrategy = PlayerHealthStrategy()
+
+    init {
+        currentHealth = maxHealth
+    }
 
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
