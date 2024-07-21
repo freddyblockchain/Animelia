@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Animelia.ANIMELIA_ENTITY
+import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -44,7 +46,7 @@ class MainGame : ApplicationAdapter() {
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
-        currentGameMode = mainMode
+        currentGameMode = AnivolutionMode(mainMode,ANIMELIA_ENTITY.ICE_PENGUIN)
         shapeRenderer = ShapeRenderer()
         initObjects()
         DialogueManager.initSpeakableObjects()
