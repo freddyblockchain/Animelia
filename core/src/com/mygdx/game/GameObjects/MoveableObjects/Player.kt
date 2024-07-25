@@ -2,6 +2,7 @@ package com.mygdx.game.GameObjects.MoveableEntities.Characters
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Ability.Abilities.Fighting.FireballAbility
 import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
@@ -33,7 +34,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val collision = CanMoveCollision()
     override val maxHealth = 30f
     override val stats = PlayerStatus.playerStats
-    val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
+    val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this), FireballAbility(this))
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FIRE_ARMADILLO
     var animeliaInfo = getAnimeliaData(currentAnimelia)
 

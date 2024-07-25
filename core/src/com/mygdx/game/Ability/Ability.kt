@@ -8,6 +8,6 @@ interface Ability {
     val activeFrames: Int
     var currentFrame: Int
     fun frameAction()
-    val fightableObject: FightableObject
+    val attachedFightableObject: FightableObject
 
 }

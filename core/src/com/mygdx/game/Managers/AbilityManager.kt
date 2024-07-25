@@ -11,12 +11,12 @@ class AbilityManager {
                 ability.currentFrame += 1
                 if(ability.currentFrame == 1){
                     ability.onActivate()
-                    ability.fightableObject.usingAbility = true
+                    ability.attachedFightableObject.usingAbility = true
                 }else if(ability.currentFrame >= ability.activeFrames){
                     ability.onDeactivate()
                     ability.currentFrame = 0
                     abilities.remove(ability)
-                    ability.fightableObject.usingAbility = false
+                    ability.attachedFightableObject.usingAbility = false
                 } else {
                     ability.frameAction()
                 }

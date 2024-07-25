@@ -46,7 +46,8 @@ class MainGame : ApplicationAdapter() {
         camera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
-        currentGameMode = AnivolutionMode(mainMode,ANIMELIA_ENTITY.ICE_PENGUIN)
+        currentGameMode = mainMode
+        //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
         initObjects()
         DialogueManager.initSpeakableObjects()
