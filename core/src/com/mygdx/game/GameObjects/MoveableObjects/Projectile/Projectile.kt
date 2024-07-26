@@ -26,7 +26,7 @@ abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var
     }
 }
 
-class ProjectileCollision(val projectile: Projectile): MoveCollision() {
+open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
 
     override var canMoveAfterCollision = true
     override fun collisionHappened(collidedObject: GameObject) {

@@ -10,6 +10,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromUnitVector
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.Hazards.IceCone
 
 class Fireball(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
 
@@ -19,8 +20,16 @@ class Fireball(gameObjectData: GameObjectData, size: Vector2, unitVectorDirectio
     override val layer = Layer.AIR
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
-
+    override val collision = FireballCollision(this)
     init {
         setRotation(unitVectorDirection,this,0f)
+    }
+}
+
+class FireballCollision(fireball: Fireball): ProjectileCollision(fireball){
+    override fun collisionHappened(collidedObject: GameObject) {
+        if(collidedObject is IceCone){
+            collidedObject.remove()
+        }
     }
 }

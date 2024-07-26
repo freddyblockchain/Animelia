@@ -28,6 +28,6 @@ class SpeechBubble(val sentence: Sentence, duration: Int): DefaultAnimation() {
         val textX = speechBubbleSprite.x
         val textY = speechBubbleSprite.y + speechBubbleSprite.height - 8f
         speechBubbleSprite.draw(batch)
-        FontManager.SpeechFont.draw(batch, sentence.Text, textX, textY)
+        FontManager.TextFont.draw(batch, sentence.Text, textX, textY)
     }
 }

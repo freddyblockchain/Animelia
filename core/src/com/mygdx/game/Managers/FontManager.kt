@@ -7,23 +7,26 @@ class FontManager {
 
     companion object {
         val generator = FreeTypeFontGenerator(Gdx.files.internal("Fonts/Raleway-SemiBold.ttf"))
-        val parameter = FreeTypeFontGenerator.FreeTypeFontParameter()
-        val chapterParam = FreeTypeFontGenerator.FreeTypeFontParameter()
 
-        lateinit var SpeechFont: BitmapFont
+        lateinit var TextFont: BitmapFont
         lateinit var ChapterFont: BitmapFont
 
         fun initFonts() {
-            // Adjust the size based on the display's DPI or use multiple font sizes
-            parameter.size = 12 // Consider different sizes for different DPIs
+
+            TextFont = initFont(12)
+            ChapterFont = initFont(100)
+            generator.dispose() // Dispose of the generator to avoid memory leaks
+        }
+
+        fun initFont(size: Int): BitmapFont{
+            val parameter = FreeTypeFontGenerator.FreeTypeFontParameter()
+
+            parameter.size = size
             parameter.minFilter = Texture.TextureFilter.Linear
             parameter.magFilter = Texture.TextureFilter.Linear
             // Optionally enable mipMap generation and linear filtering
             parameter.genMipMaps = true
-            SpeechFont = generator.generateFont(parameter) // Generate the font
-            chapterParam.size = 100
-            ChapterFont = generator.generateFont(chapterParam)
-            generator.dispose() // Dispose of the generator to avoid memory leaks
+            return generator.generateFont(parameter)
         }
     }
 }

@@ -9,6 +9,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.Managers.InventoryManager
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.UI.HealthStrategy
 import com.mygdx.game.getRotatedUnitVectorClockwise
@@ -36,12 +37,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override val layer = Layer.ONGROUND
 
     override val healthStrategy = EnemyHealthStrategy()
-    override var direction: Direction
-        get() = TODO("Not yet implemented")
-        set(value) {}
-    override var canChangeDirection: Boolean
-        get() = TODO("Not yet implemented")
-        set(value) {}
+    override var direction = Direction.DOWN
+    override var canChangeDirection = true
 
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
@@ -60,6 +57,12 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
             this.move(this.currentUnitVector)
             this.setRotation(this.currentUnitVector, this, 90f)
         }
+
+        if(this.currentHealth <= 0){
+            this.remove()
+            InventoryManager.goldReceived(1, this.currentMiddle)
+        }
+
         super.frameTask()
     }
 
