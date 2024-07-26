@@ -1,10 +1,14 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
+import com.mygdx.game.Animation.Animation
+import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.Stats
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -30,6 +34,12 @@ class Rock(gameObjectData: GameObjectData)
     }
 
     fun checkDestroyed(stats: Stats): Boolean{
+        val isDestroyed = stats.offence >= this.customFields.StrengthToBreak
+
+        if(!isDestroyed){
+            val textAnimation = TextAnimation(Color.LIGHT_GRAY, "requires ${this.customFields.StrengthToBreak} offence", this.currentMiddle + Vector2(this.width, 0f), false, 120)
+            AnimationManager.animationManager.add(textAnimation)
+        }
         return stats.offence >= this.customFields.StrengthToBreak
     }
 }
