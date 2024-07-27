@@ -14,6 +14,10 @@
 		{
 			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
 			"dir": "e"
+		},
+		{
+			"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -25,24 +29,11 @@
 		"GroundSands2.png",
 		"GroundSands.png",
 		"Ground_Ice_2.png",
-		"Ground.png",
+		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"Tiles.png"
+		"OnGround_lava.png"
 	],
 	"entities": {
-		"TrainingStation": [
-			{
-				"id": "TrainingStation",
-				"iid": "a81fb490-25d0-11ef-8e0b-a1d9ad8e3701",
-				"layer": "Entities",
-				"x": 224,
-				"y": 96,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		],
 		"Rock": [
 			{
 				"id": "Rock",
@@ -54,7 +45,7 @@
 				"height": 32,
 				"color": 14984818,
 				"customFields": {
-					"StrengthToBreak": 20
+					"StrengthToBreak": 25
 				}
 			}
 		],

@@ -21,9 +21,9 @@
 		"GroundSands2.png",
 		"GroundSands.png",
 		"Ground_Ice_2.png",
-		"Ground.png",
+		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"Tiles.png"
+		"OnGround_lava.png"
 	],
 	"entities": {
 		"IceCone": [
@@ -48,6 +48,21 @@
 				"height": 32,
 				"color": 3469566,
 				"customFields" : {}
+			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "15d3c9a0-25d0-11ef-b434-ad64f39ebba8",
+				"layer": "EntitiesOnTop",
+				"x": 256,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "IcePenguin"
+				}
 			}
 		]
 	}

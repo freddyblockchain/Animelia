@@ -29,9 +29,9 @@
 		"GroundSands2.png",
 		"GroundSands.png",
 		"Ground_Ice_2.png",
-		"Ground.png",
+		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"Tiles.png"
+		"OnGround_lava.png"
 	],
 	"entities" : {}
 }

@@ -3,6 +3,7 @@ import com.mygdx.game.Ability.AbilityItem
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.Hazards.*
+import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.AnimeliaEnemies.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.Animelias.convertToFriendlyAnimelia
 import com.mygdx.game.GameObjects.Structures.TrainingStation
@@ -27,6 +28,8 @@ data class Entities(
     val AnimeliaEnemy: List<GameObjectData> = listOf(),
     val TrainingStation: List<GameObjectData> = listOf(),
     val Ability: List<GameObjectData> = listOf(),
+    val ConveyerBelt: List<GameObjectData> = listOf(),
+    val FireLightBulb: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -37,6 +40,8 @@ fun initMappings(){
     GameObjectFactory.register("AnimeliaEnemy", ::convertToEnemyAnimelia)
     GameObjectFactory.register("TrainingStation", ::TrainingStation)
     GameObjectFactory.register("Ability", ::AbilityItem)
+    GameObjectFactory.register("ConveyerBelt", ::ConveyerBelt)
+    GameObjectFactory.register("FireLightBulb", ::LightBulb)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

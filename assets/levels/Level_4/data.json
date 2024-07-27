@@ -25,9 +25,23 @@
 		"GroundSands2.png",
 		"GroundSands.png",
 		"Ground_Ice_2.png",
-		"Ground.png",
+		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"Tiles.png"
+		"OnGround_lava.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "1a5c0db0-25d0-11ef-b434-3f772b085b47",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		]
+	}
 }
