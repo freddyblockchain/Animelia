@@ -22,7 +22,7 @@ class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbili
     }
 
     override fun frameAction(){
-        attachedFightableObject.rotateByAmount(rotationIncrement, attachedFightableObject)
+        attachedFightableObject.sprite.rotate(rotationIncrement)
         attachedFightableObject.forceMove(1f)
     }
 
