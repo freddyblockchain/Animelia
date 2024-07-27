@@ -15,39 +15,39 @@ interface GameMode {
 
 val emptyInputProcessor = object : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun keyUp(keycode: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun keyTyped(character: Char): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun touchDown(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun touchCancelled(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun touchDragged(screenX: Int, screenY: Int, pointer: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun mouseMoved(screenX: Int, screenY: Int): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 
     override fun scrolled(amountX: Float, amountY: Float): Boolean {
-        TODO("Not yet implemented")
+        return false
     }
 }
 fun changeMode(newMode: GameMode){

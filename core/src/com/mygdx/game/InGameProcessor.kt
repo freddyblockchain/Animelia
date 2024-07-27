@@ -5,12 +5,15 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Ability.KeyAbility
+import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.utils.viewport.ScreenViewport
+import com.mygdx.game.Animelia.Egg
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
-import com.mygdx.game.GameModes.TrainingMode
-import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.Managers.AbilityManager
+import com.mygdx.game.UI.ReincarnationScreen
+import com.mygdx.game.UI.TrainingScreen
 
 
 class InGameProcessor : InputProcessor {
@@ -25,7 +28,10 @@ class InGameProcessor : InputProcessor {
             currentGameMode = PauseMode(currentGameMode)
         }
         if(keycode == Input.Keys.SPACE){
-            currentGameMode = TrainingMode(currentGameMode)
+            currentGameMode = UIMode(TrainingScreen(mainMode))
+        }
+        if(keycode == Input.Keys.R){
+            currentGameMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
         }
         for(ability in player.abilities){
             if(ability.triggerKey == keycode){

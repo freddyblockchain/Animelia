@@ -4,8 +4,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Collition.AllOtherObjectsCollisionMask
-import com.mygdx.game.Collition.Collision
-import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
@@ -18,7 +16,6 @@ import com.mygdx.game.GameObjects.Hazards.Rock
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.plus
 import com.mygdx.game.setSize
-import java.awt.geom.Area
 
 class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectAttached: FightableObject, val rotationAmount: Float) : MoveableObject(gameObjectData, size) {
 
@@ -28,8 +25,10 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
     override val layer = Layer.ONGROUND
     override var direction = Direction.DOWN
     override var canChangeDirection = true
-    override val collision = TailSwipeCollision(objectAttached)
+    override val collision = TailSwipeCollision(this,objectAttached)
     override val collitionMask = AllOtherObjectsCollisionMask(objectAttached)
+
+    val entitesHit = mutableMapOf<GameObject, Boolean>()
 
     init {
         setSize(Vector2(objectAttached.width / 5f, 6f))
@@ -56,18 +55,22 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
     }
 }
 
-class TailSwipeCollision(val objectAttached: FightableObject): MoveCollision() {
+class TailSwipeCollision(val tailSwipeObject: TailSwipeObject, val objectAttached: FightableObject): MoveCollision() {
     override var canMoveAfterCollision = true
     var hasHit = false
 
     override fun collisionHappened(collidedObject: GameObject) {
-        if(collidedObject is Rock && collidedObject.checkDestroyed(objectAttached.stats)){
+        if(collidedObject is Rock && !gameObjectAlreadyHit(collidedObject) && collidedObject.checkDestroyed(objectAttached.stats) ){
             AreaManager.getActiveArea()!!.gameObjects.remove(collidedObject)
         }
-        if(collidedObject is FightableObject && !hasHit){
+        if(collidedObject is FightableObject && !gameObjectAlreadyHit(collidedObject)){
             collidedObject.currentHealth -= 10f
-            hasHit = true
         }
+        tailSwipeObject.entitesHit[collidedObject] = true
+    }
+
+    fun gameObjectAlreadyHit(gameObject: GameObject): Boolean{
+        return tailSwipeObject.entitesHit.getOrDefault(gameObject, false)
     }
 
 }

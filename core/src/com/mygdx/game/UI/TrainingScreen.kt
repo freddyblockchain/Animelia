@@ -14,16 +14,17 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.mygdx.game.Animelia.anivolutionCheck
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
 
-class TrainingScreen(val prevMode: GameMode, val stage: Stage): UIScreen() {
+class TrainingScreen(val prevMode: GameMode): UIScreen() {
     override var activeButton: Button? = null
     lateinit var rootTable: Table
 
-    fun create() {
+    override fun create() {
         rootTable = Table()
         val arrowTable = Table()
 
@@ -107,6 +108,7 @@ class TrainingScreen(val prevMode: GameMode, val stage: Stage): UIScreen() {
                 PlayerStatus.exp = exp
                 PlayerStatus.playerStats.offence = offence
                 changeMode(prevMode)
+                anivolutionCheck()
             }
         })
 
@@ -142,7 +144,7 @@ class TrainingScreen(val prevMode: GameMode, val stage: Stage): UIScreen() {
 
     }
 
-    fun render() {
+    override fun render() {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Gdx.graphics.deltaTime)
         stage.isDebugAll = true

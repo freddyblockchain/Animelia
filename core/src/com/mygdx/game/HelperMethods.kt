@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.MathUtils.cos
 import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Animelia.anivolutionCheck
 import com.mygdx.game.Area.Area
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
@@ -38,6 +39,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     AreaManager.changeActiveArea(newAreaIdentifier)
     player.setPosition(newPos)
     player.startingPosition = newPos
+    anivolutionCheck()
     if(shouldSave){
         updateAndSavePlayer()
     }

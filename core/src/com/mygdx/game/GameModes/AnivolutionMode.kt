@@ -44,7 +44,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
 
         if(currentFrame > 270){
             camera.zoom = origZoom
-            currentGameMode = prevMode
+            changeMode(prevMode)
         }
     }
 }
