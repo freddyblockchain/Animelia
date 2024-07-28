@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObjects.MoveableObjects.Animelias
+package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.FriendlyAnimelia

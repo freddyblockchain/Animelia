@@ -1,14 +1,11 @@
 package com.mygdx.game
 import com.mygdx.game.Ability.AbilityItem
 import com.mygdx.game.GameObjects.Door
-import com.mygdx.game.GameObjects.Entrance
 import com.mygdx.game.GameObjects.Hazards.*
 import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
-import com.mygdx.game.GameObjects.MoveableObjects.AnimeliaEnemies.convertToEnemyAnimelia
-import com.mygdx.game.GameObjects.MoveableObjects.Animelias.convertToFriendlyAnimelia
+import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
+import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
 import com.mygdx.game.GameObjects.Structures.TrainingStation
-import com.mygdx.game.GameObjects.Triggers.AbilityTrigger
-import com.mygdx.game.GameObjects.Triggers.SpeechActivationTrigger
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject

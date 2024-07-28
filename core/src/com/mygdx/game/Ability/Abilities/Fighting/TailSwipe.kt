@@ -27,6 +27,8 @@ class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbili
     }
 
     override fun onDeactivate() {
-        AreaManager.getActiveArea()!!.gameObjects.remove(tailSwipeObject!!)
+        if(tailSwipeObject != null){
+            AreaManager.getActiveArea()!!.gameObjects.remove(tailSwipeObject!!)
+        }
     }
 }

@@ -7,4 +7,5 @@ abstract class MoveCollision: Collision {
 }
 abstract class InputCollition: Collision {
     override val collitionType = CollisionType.INPUT
+    abstract val keyCode: Int
 }

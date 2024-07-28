@@ -86,6 +86,7 @@ class MainGame : ApplicationAdapter() {
         AnimationManager.addAnimationsToRender()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()
+        EventManager.executeEvents()
         SignalManager.executeSignals()
         drawHealthBars()
         drawrects()

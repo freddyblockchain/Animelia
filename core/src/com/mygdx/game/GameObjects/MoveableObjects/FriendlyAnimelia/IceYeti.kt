@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObjects.MoveableObjects.Animelias
+package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Enums.Layer
@@ -6,8 +6,8 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.FriendlyAnimelia
 
-class FireDragon(gameObjectData: GameObjectData) : FriendlyAnimelia(gameObjectData) {
-    override val animeliaEntity = ANIMELIA_ENTITY.FIRE_DRAGON
+class IceYeti(gameObjectData: GameObjectData) : FriendlyAnimelia(gameObjectData) {
+    override val animeliaEntity = ANIMELIA_ENTITY.ICE_YETI
     override val texture: Texture
         get() = TODO("Not yet implemented")
     override val layer: Layer

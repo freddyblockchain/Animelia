@@ -17,5 +17,7 @@ class PlayerStatus {
         var exp = 5
 
         val playerStats = Stats()
+
+        var animeliaClonesKilled = 0
     }
 }

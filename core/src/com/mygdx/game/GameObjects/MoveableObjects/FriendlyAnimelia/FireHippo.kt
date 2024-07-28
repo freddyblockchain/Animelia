@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObjects.MoveableObjects.Animelias
+package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Enums.Layer

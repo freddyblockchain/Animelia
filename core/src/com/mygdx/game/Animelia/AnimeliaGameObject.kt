@@ -10,6 +10,7 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.InventoryManager
+import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.UI.HealthStrategy
 import com.mygdx.game.getRotatedUnitVectorClockwise
@@ -21,12 +22,6 @@ enum class ANIMELIA_ENTITY {FIRE_ARMADILLO, ICE_PENGUIN, FIRE_DRAGON, ICE_DINASA
 enum class ELEMENTAL_TYPE{ICE, FIRE}
 
 enum class ANIMELIA_STAGE{JUNIOR, MASTER, GRANDMASTER}
-
-abstract class FriendlyAnimelia(gameObjectData: GameObjectData): GameObject(gameObjectData, Vector2(32f,32f)) {
-    abstract val animeliaEntity: ANIMELIA_ENTITY
-    val animeliaData: AnimeliaData
-        get() = getAnimeliaData(animeliaEntity)
-}
 
 abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(gameObjectData, Vector2(32f,32f)) {
     abstract val animeliaEntity: ANIMELIA_ENTITY
@@ -61,6 +56,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
         if(this.currentHealth <= 0){
             this.remove()
             InventoryManager.goldReceived(1, this.currentMiddle)
+            PlayerStatus.animeliaClonesKilled += 1
         }
 
         super.frameTask()

@@ -5,9 +5,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
+import com.mygdx.game.Collition.OnlyPlayerCollitionMask
+import com.mygdx.game.Collition.OnlyProjectileCollisionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromString
+import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Utils.Triggerable
@@ -37,7 +40,8 @@ class ConveyerBelt(gameObjectData: GameObjectData)
     val startBrick = ConveyerBrick(if(isVertical) start + offsetStartBrick else start - offsetStartBrick, if(isVertical) Vector2(size.x,brickLength) else Vector2(brickLength,size.y),speed,direction, DefaultTextureHandler.getTexture(brickImageFileName))
     val endBrick = ConveyerBrick(end, if(isVertical) Vector2(size.x,brickLength) else Vector2(brickLength,size.y),speed,direction, DefaultTextureHandler.getTexture(brickImageFileName))
     val bricks = constructBricks()
-    override val collision = ConveyerBeltCollition(direction)
+    override val collision = ConveyerBeltCollition(this)
+    override val collitionMask = OnlyPlayerCollitionMask
     override fun render(batch: SpriteBatch) {
         endBrick.draw(batch)
         startBrick.draw(batch)
@@ -72,18 +76,25 @@ class ConveyerBelt(gameObjectData: GameObjectData)
     }
 }
 
-class ConveyerBeltCollition(val direction: Direction) : DefaultAreaEntranceCollition() {
-
-
-    override var canMoveAfterCollision = true
+class ConveyerBeltCollition(val conveyerBelt: ConveyerBelt) : DefaultAreaEntranceCollition() {
+    override fun actionWhileInside() {
+        player.currentUnitVector = getDirectionUnitVector(conveyerBelt.direction)
+        player.setRotation(player.currentUnitVector, player, 90f)
+        player.forceMove(1.5f)
+    }
 
     override fun movedInsideAction(objectEntered: GameObject) {
-
+        player.cannotMoveCount+= 1
+        super.movedInsideAction(objectEntered)
     }
 
     override fun movedOutsideAction(objectLeaved: GameObject) {
-
+        super.movedOutsideAction(objectLeaved)
+        player.cannotMoveCount -= 1
+        player.setRotation(player.currentUnitVector, player, 90f)
     }
+
+    override var canMoveAfterCollision = true
 }
 
 @Serializable

@@ -5,13 +5,15 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
-import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.game.Animelia.Egg
+import com.mygdx.game.Collition.InputCollition
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.Managers.AbilityManager
+import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.CollitionManager.Companion.handleKeyCollitions
+import com.mygdx.game.Managers.InputActionManager
 import com.mygdx.game.UI.ReincarnationScreen
 import com.mygdx.game.UI.TrainingScreen
 
@@ -24,6 +26,9 @@ class InGameProcessor : InputProcessor {
                 keyAbility.onActivate()
             }
         }*/
+        val keyCollitions = AreaManager.getActiveArea()!!.gameObjects.filter {it.collision is InputCollition && (it.collision as InputCollition).keyCode == keycode}
+        handleKeyCollitions(keyCollitions)
+
         if(keycode == Input.Keys.ESCAPE){
             currentGameMode = PauseMode(currentGameMode)
         }
@@ -36,6 +41,12 @@ class InGameProcessor : InputProcessor {
         for(ability in player.abilities){
             if(ability.triggerKey == keycode){
                 AbilityManager.abilities.add(ability)
+            }
+        }
+
+        InputActionManager.inputActionManager.forEach {
+            if(it.keycodes.contains(keycode)){
+                it.action(keycode)
             }
         }
         return false

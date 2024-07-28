@@ -6,7 +6,7 @@ import com.mygdx.game.Managers.Stats
 import com.mygdx.game.UI.HealthStrategy
 
 abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : MoveableObject(gameObjectData, size) {
-    var cannotInitiateMove = false
+    var cannotMoveCount = 0
     var isMoving = false
     abstract val maxHealth: Float
     var currentHealth = 0f
@@ -14,7 +14,7 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     abstract val healthStrategy: HealthStrategy
 
     override fun move(newUnitVector: Vector2, speed: Float): Boolean {
-        if (!cannotInitiateMove) {
+        if (cannotMoveCount == 0) {
             isMoving = super.move(newUnitVector, speed)
             return isMoving
         }

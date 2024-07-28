@@ -10,6 +10,7 @@ import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.anyPointInPolygon
+import com.mygdx.game.player
 
 class CollitionManager {
     companion object {
@@ -22,7 +23,7 @@ class CollitionManager {
                 gameObject.collision.collisionHappened(it)
             }
             // Handle moving object away from previous colliding object.
-            handleAreaExitCollisions(gameObject,collidingObjects)
+            checkObjectMovedOutside(gameObject,collidingObjects)
             gameObject.collidingObjects = collidingObjects
 
             return collitions.all { x -> x.canMoveAfterCollision }
@@ -38,19 +39,18 @@ class CollitionManager {
                     || polygon1.anyPointInPolygon(polygon2)
         }
 
-        fun handleAreaExitCollisions(gameObject: GameObject, collidingObjects: List<GameObject>){
+        fun checkObjectMovedOutside(gameObject: GameObject, collidingObjects: List<GameObject>){
             val oldCollitions = gameObject.collidingObjects.minus(collidingObjects.toSet())
             if(oldCollitions.isNotEmpty()){
                 oldCollitions.forEach {
-                    val collition = it.collision
-                    handleAreaExitCheckAndAction(it.collision, gameObject)
-                    handleAreaExitCheckAndAction(gameObject.collision, it)
+                    handleObjectMovedOutside(it.collision, gameObject)
+                    handleObjectMovedOutside(gameObject.collision, it)
                 }
 
             }
         }
 
-        fun handleAreaExitCheckAndAction(collition: Collision, objectLeaved: GameObject){
+        fun handleObjectMovedOutside(collition: Collision, objectLeaved: GameObject){
             if(collition is AreaEntranceCollition){
                 if(collition.insideCollition.getOrDefault(objectLeaved, true)){
                     collition.movedOutside(objectLeaved)
@@ -84,6 +84,9 @@ class CollitionManager {
             return listOfVectors
         }
 
-
+        fun handleKeyCollitions(objectsToCheck: List<GameObject>) {
+            val collidingObjects = GetCollidingObjects(player, player.polygon,objectsToCheck)
+            collidingObjects.forEach { x -> x.collision.collisionHappened(player); }
+        }
     }
 }

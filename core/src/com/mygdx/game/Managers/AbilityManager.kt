@@ -11,12 +11,12 @@ class AbilityManager {
                 ability.currentFrame += 1
                 if(ability.currentFrame == 1){
                     ability.onActivate()
-                    ability.attachedFightableObject.cannotInitiateMove = true
+                    ability.attachedFightableObject.cannotMoveCount += 1
                 }else if(ability.currentFrame >= ability.activeFrames){
                     ability.onDeactivate()
                     ability.currentFrame = 0
                     abilities.remove(ability)
-                    ability.attachedFightableObject.cannotInitiateMove = false
+                    ability.attachedFightableObject.cannotMoveCount -= 1
                 } else {
                     ability.frameAction()
                 }
