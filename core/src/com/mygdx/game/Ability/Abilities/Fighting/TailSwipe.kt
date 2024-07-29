@@ -2,6 +2,7 @@ package com.mygdx.game.Ability.Abilities.Fighting
 
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Ability.AbilityData
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -31,4 +32,8 @@ class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbili
             AreaManager.getActiveArea()!!.gameObjects.remove(tailSwipeObject!!)
         }
     }
+}
+
+class TailSwipeData(): AbilityData {
+    override val imageIcon = "TailSwipeIcon.png"
 }

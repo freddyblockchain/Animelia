@@ -9,10 +9,13 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
 class AbilityItem(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
-    override val texture = DefaultTextureHandler.getTexture("Box.png")
     override val layer = Layer.ONGROUND
 
-    val abilityCustomFields = Json.decodeFromJsonElement<AbilityCustomFields>(gameObjectData.customFields).Ability
+    val abilityString = Json.decodeFromJsonElement<AbilityCustomFields>(gameObjectData.customFields).Ability
+    val abilityType = convertAbilityToType(abilityString)
+    val abilityData = convertAbilityTypeToData(abilityType)
+    override val texture = DefaultTextureHandler.getTexture(abilityData.imageIcon)
+
 }
 
 @Serializable

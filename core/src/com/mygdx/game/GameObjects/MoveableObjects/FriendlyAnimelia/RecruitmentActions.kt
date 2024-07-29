@@ -1,0 +1,1 @@
+package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia

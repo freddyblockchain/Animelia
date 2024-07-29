@@ -15,6 +15,8 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData): GameObject(game
     abstract val animeliaEntity: ANIMELIA_ENTITY
     val animeliaData by lazy { getAnimeliaData(animeliaEntity) }
     val animeliaRecruitmentConditions = mutableListOf<AnimeliaRecruitmendCondition>()
+    abstract fun recruitmentAction()
+
 
     override val collision = FriendlyAnimeliaCollision(this)
 
@@ -29,6 +31,7 @@ class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCo
     override fun collisionHappened(collidedObject: GameObject) {
         if(friendlyAnimelia.isConditionsFulfilled()){
             println("All conditions fulfilled")
+            friendlyAnimelia.recruitmentAction()
         } else {
             println("Not Fulfilled Yet")
         }

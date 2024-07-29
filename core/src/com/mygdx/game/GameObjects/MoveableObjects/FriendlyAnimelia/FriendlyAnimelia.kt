@@ -12,7 +12,6 @@ import kotlinx.serialization.json.decodeFromJsonElement
 fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaEntityString = Json.decodeFromJsonElement<AnimeliaCustomFields>(gameObjectData.customFields).AnimeliaType
     val animeliaEntity = getAnimeliaEntity(animeliaEntityString)
-
     return createFriendlyAnimelia(animeliaEntity, gameObjectData)
 }
 

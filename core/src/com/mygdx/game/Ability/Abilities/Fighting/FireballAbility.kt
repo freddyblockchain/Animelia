@@ -3,6 +3,7 @@ package com.mygdx.game.Ability.Abilities.Fighting
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
+import com.mygdx.game.Ability.AbilityData
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.EffectAnimation
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -46,4 +47,8 @@ class FireballAbility(override val attachedFightableObject: FightableObject): Ke
             fireball.add()
         }
     }
+}
+
+class FireballData(): AbilityData {
+    override val imageIcon = "fireball-icon.png"
 }

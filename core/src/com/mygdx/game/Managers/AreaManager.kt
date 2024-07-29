@@ -18,6 +18,10 @@ class AreaManager {
             return activeArea
         }
 
+        fun getArea(areaIdentifier: String): Area{
+            return areas.first {it.areaIdentifier == areaIdentifier}
+        }
+
         fun getObjectsWithCollisionType(collisionType: CollisionType): List<GameObject>{
             val activeObjects = activeArea!!.gameObjects
 

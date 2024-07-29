@@ -8,6 +8,10 @@ import com.mygdx.game.Animelia.FriendlyAnimelia
 
 class FireDragon(gameObjectData: GameObjectData) : FriendlyAnimelia(gameObjectData) {
     override val animeliaEntity = ANIMELIA_ENTITY.FIRE_DRAGON
+    override fun recruitmentAction() {
+        TODO("Not yet implemented")
+    }
+
     override val texture: Texture
         get() = TODO("Not yet implemented")
     override val layer: Layer
