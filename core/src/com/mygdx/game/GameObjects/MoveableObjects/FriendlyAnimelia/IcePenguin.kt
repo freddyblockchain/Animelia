@@ -6,7 +6,9 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.FriendlyAnimelia
 
-class IcePenguin(gameObjectData: GameObjectData) : FriendlyAnimelia(gameObjectData) {
+class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: String) : FriendlyAnimelia(gameObjectData,
+    cityPosEntityId
+) {
     override val animeliaEntity = ANIMELIA_ENTITY.ICE_PENGUIN
     override fun recruitmentAction() {
         TODO("Not yet implemented")

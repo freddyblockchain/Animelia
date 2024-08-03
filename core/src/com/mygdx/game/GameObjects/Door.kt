@@ -47,7 +47,7 @@ class DoorCollision(val door: Door): MoveCollision(){
         if(collidedObject is Player && player.direction == door.direction){
             var newPos = Vector2(door.exitDoor.x, door.exitDoor.y)
             if(player.direction == Direction.DOWN){
-                newPos = Vector2(door.exitDoor.x, door.exitDoor.y - door.exitDoor.height)
+                newPos = Vector2(door.exitDoor.x, door.exitDoor.y - door.exitDoor.height * 2)
             }
             changeArea(Vector2(newPos), door.exitDoor.areaIdentifier)
         }

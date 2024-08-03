@@ -22,8 +22,10 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Ve
     val topright = Vector2(initPosition.x + size.x,initPosition.y + size.y)
     val bottomright =  Vector2(initPosition.x + size.x,initPosition.y)
     val bottomleft = initPosition
-    val x = initPosition.x
-    val y = initPosition.y
+    val x
+        get() = sprite.x
+    val y
+        get() = sprite.y
     val width = size.x
     val height = size.y
 

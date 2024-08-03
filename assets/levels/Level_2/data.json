@@ -53,15 +53,21 @@
 		"Animelia": [
 			{
 				"id": "Animelia",
-				"iid": "15d3c9a0-25d0-11ef-b434-ad64f39ebba8",
-				"layer": "EntitiesOnTop",
-				"x": 256,
+				"iid": "48b522f0-4ce0-11ef-adfe-d964930bfc11",
+				"layer": "Entities",
+				"x": 224,
 				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 15389866,
 				"customFields": {
-					"AnimeliaType": "IcePenguin"
+					"AnimeliaType": "IcePenguin",
+					"AnimeliaCityPos": {
+						"entityIid": "2df6f9c0-4ce0-11ef-adfe-0f7951af364a",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]
