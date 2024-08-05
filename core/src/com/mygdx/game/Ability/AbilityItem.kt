@@ -1,5 +1,6 @@
 package com.mygdx.game.Ability
 
+import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
@@ -15,6 +16,10 @@ class AbilityItem(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
     val abilityType = convertAbilityToType(abilityString)
     val abilityData = convertAbilityTypeToData(abilityType)
     override val texture = DefaultTextureHandler.getTexture(abilityData.imageIcon)
+
+    init {
+        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+    }
 
 }
 
