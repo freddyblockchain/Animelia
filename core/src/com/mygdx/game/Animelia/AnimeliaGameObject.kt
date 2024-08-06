@@ -1,5 +1,6 @@
 package com.mygdx.game.Animelia
 
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
@@ -35,6 +36,9 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override var direction = Direction.DOWN
     override var canChangeDirection = true
 
+    override fun initObject() {
+        sprite.setColor(Color.CHARTREUSE)
+    }
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
         super.render(batch)

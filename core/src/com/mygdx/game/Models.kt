@@ -6,6 +6,7 @@ import com.mygdx.game.GameObjects.Hazards.*
 import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
+import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
@@ -30,6 +31,7 @@ data class Entities(
     val FireLightBulb: List<GameObjectData> = listOf(),
     val Cliffside: List<GameObjectData> = listOf(),
     val Position: List<GameObjectData> = listOf(),
+    val Fountain: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -44,6 +46,7 @@ fun initMappings(){
     GameObjectFactory.register("FireLightBulb", ::LightBulb)
     GameObjectFactory.register("Cliffside", ::Cliffside)
     GameObjectFactory.register("Position", ::AnimeliaPosition)
+    GameObjectFactory.register("Fountain", ::Fountain)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

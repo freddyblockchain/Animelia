@@ -57,6 +57,19 @@
 				"color": 1199753,
 				"customFields" : {}
 			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "cb257b70-4ce0-11ef-81d3-e5ed9f7f2d08",
+				"layer": "Entities",
+				"x": 192,
+				"y": 160,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
 		]
 	}
 }

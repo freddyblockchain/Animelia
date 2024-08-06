@@ -33,9 +33,6 @@ class InGameProcessor : InputProcessor {
         if(keycode == Input.Keys.ESCAPE){
             currentGameMode = PauseMode(currentGameMode)
         }
-        if(keycode == Input.Keys.R){
-            currentGameMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
-        }
         for(ability in player.abilities){
             if(ability.triggerKey == keycode){
                 AbilityManager.abilities.add(ability)
