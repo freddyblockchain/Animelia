@@ -13,7 +13,7 @@ interface GameMode {
     val inputProcessor: InputProcessor
 }
 
-val emptyInputProcessor = object : InputProcessor {
+open class DefaultInputProcessor(): InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
         return false
     }

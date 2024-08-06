@@ -2,13 +2,17 @@ package com.mygdx.game.Animelia
 
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.InputCollition
+import com.mygdx.game.GameModes.TalkMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Utils.Triggerable
+import com.mygdx.game.UI.Conversation.Conversation
+import com.mygdx.game.UI.Conversation.SpeechData
+import com.mygdx.game.currentGameMode
+import com.mygdx.game.mainMode
 
 interface AnimeliaRecruitmendCondition{
     fun isConditionFulfilled(): Boolean
@@ -37,6 +41,13 @@ class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCo
     override val keyCode = Input.Keys.C
 
     override fun collisionHappened(collidedObject: GameObject) {
+        val speech1 = SpeechData("", "Do you wanna come to the city?")
+        val speech2 = SpeechData("", "hmm, prove your worth by defeating 3 animelia clones")
+        val speech3 = SpeechData("", "Alright, i'll do that")
+
+        val speeches = listOf(speech1, speech2, speech3)
+
+        changeMode(TalkMode(Conversation(speeches), mainMode))
         if(friendlyAnimelia.isConditionsFulfilled()){
             println("All conditions fulfilled")
             friendlyAnimelia.recruitmentAction()

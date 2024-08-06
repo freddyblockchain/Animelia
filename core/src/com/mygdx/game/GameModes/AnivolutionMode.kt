@@ -3,16 +3,14 @@ package com.mygdx.game.GameModes
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
-import com.mygdx.game.camera
-import com.mygdx.game.currentGameMode
-import com.mygdx.game.mainMode
+import com.mygdx.game.mainCamera
 import com.mygdx.game.player
 import kotlin.math.min
 
 class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTITY): GameMode {
     override val spriteBatch = SpriteBatch()
-    override val inputProcessor = emptyInputProcessor
-    val origZoom = camera.zoom
+    override val inputProcessor = DefaultInputProcessor()
+    val origZoom = mainCamera.zoom
 
     var currentFrame = 0
     val playerSprite =  player.sprite
@@ -21,7 +19,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
 
     override fun FrameAction() {
         if(currentFrame <= 90){
-            camera.zoom -= 0.005f
+            mainCamera.zoom -= 0.005f
         }
         else if(currentFrame <= 150){
             playerSprite.setRegion(0, yOffsetUp,playerSprite.width.toInt(),playerSprite.height.toInt());
@@ -35,7 +33,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
             yoffsetDown += 1
         }
         else if(currentFrame <= 270){
-            camera.zoom += 0.005f
+            mainCamera.zoom += 0.005f
         }
         spriteBatch.begin()
         player.render(spriteBatch)
@@ -43,7 +41,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         currentFrame += 1
 
         if(currentFrame > 270){
-            camera.zoom = origZoom
+            mainCamera.zoom = origZoom
             changeMode(prevMode)
         }
     }

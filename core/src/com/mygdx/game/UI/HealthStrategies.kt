@@ -6,8 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.math.Vector3
-import com.mygdx.game.camera
-import com.mygdx.game.player
+import com.mygdx.game.mainCamera
 import com.mygdx.game.zoomX
 import com.mygdx.game.zoomY
 
@@ -26,7 +25,7 @@ class EnemyHealthStrategy: HealthStrategy{
 
     override fun showHealth(sprite:Sprite, health: Float, maxHealth: Float) {
         val pos = Vector3(sprite.x,sprite.y,0f)
-        camera.project(pos)
+        mainCamera.project(pos)
         drawHealthBar(Vector2(pos.x,pos.y + sprite.height * zoomY),Vector2(sprite.width * zoomX,5f * zoomY),health,maxHealth)
     }
 }

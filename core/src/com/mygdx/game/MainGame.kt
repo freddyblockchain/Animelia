@@ -8,8 +8,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Animelia.ANIMELIA_ENTITY
-import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -28,7 +26,7 @@ lateinit var currentGameMode: GameMode
 lateinit var mainMode: MainMode
 lateinit var generalSaveState: GeneralSaveState
 
-var camera: OrthographicCamera = OrthographicCamera()
+var mainCamera: OrthographicCamera = OrthographicCamera()
 val zoomX = 3
 val zoomY = 3
 class MainGame : ApplicationAdapter() {
@@ -42,8 +40,8 @@ class MainGame : ApplicationAdapter() {
 
         inputProcessor = InGameProcessor()
         Gdx.input.inputProcessor = inputProcessor
-        camera = OrthographicCamera()
-        camera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
+        mainCamera = OrthographicCamera()
+        mainCamera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         currentGameMode = mainMode
@@ -81,7 +79,7 @@ class MainGame : ApplicationAdapter() {
     override fun render() {
 
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT or GL20.GL_DEPTH_BUFFER_BIT)
-        currentGameMode.spriteBatch.projectionMatrix = camera.combined
+        currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         RenderGraph.render(currentGameMode.spriteBatch)
         AnimationManager.addAnimationsToRender()
         AbilityManager.processAbilities()
@@ -90,8 +88,8 @@ class MainGame : ApplicationAdapter() {
         SignalManager.executeSignals()
         drawHealthBars()
         drawrects()
-        camera.position.set(player.sprite.x, player.sprite.y, 0f)
-        camera.update()
+        mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
+        mainCamera.update()
     }
 
     override fun dispose() {
@@ -103,7 +101,7 @@ class MainGame : ApplicationAdapter() {
     }
 
     fun drawPolygonShape(polygon: Polygon, shapeRenderer: ShapeRenderer){
-        shapeRenderer.projectionMatrix = camera.combined
+        shapeRenderer.projectionMatrix = mainCamera.combined
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
         shapeRenderer.polygon(polygon.transformedVertices)
         shapeRenderer.end()
