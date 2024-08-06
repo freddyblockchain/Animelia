@@ -6,13 +6,14 @@ import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.Egg
-import com.mygdx.game.Collition.InputCollition
+import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.CollitionManager.Companion.handleKeyCollitions
+import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
+import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
 import com.mygdx.game.UI.ReincarnationScreen
 import com.mygdx.game.UI.TrainingScreen
@@ -26,14 +27,11 @@ class InGameProcessor : InputProcessor {
                 keyAbility.onActivate()
             }
         }*/
-        val keyCollitions = AreaManager.getActiveArea()!!.gameObjects.filter {it.collision is InputCollition && (it.collision as InputCollition).keyCode == keycode}
+        val keyCollitions = AreaManager.getActiveArea()!!.gameObjects.filter {it.collision is InputCollision && (it.collision as InputCollision).keyCode == keycode}
         handleKeyCollitions(keyCollitions)
 
         if(keycode == Input.Keys.ESCAPE){
             currentGameMode = PauseMode(currentGameMode)
-        }
-        if(keycode == Input.Keys.SPACE){
-            currentGameMode = UIMode(TrainingScreen(mainMode))
         }
         if(keycode == Input.Keys.R){
             currentGameMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
@@ -53,6 +51,9 @@ class InGameProcessor : InputProcessor {
     }
 
     fun handleInput() {
+        // Fix later. Abit many collision checks
+        handleKeyPressable(AreaManager.getActiveArea()!!.gameObjects)
+
         var directionUnitVector = Vector2(0f,0f)
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             directionUnitVector = getDirectionUnitVector(Direction.LEFT)

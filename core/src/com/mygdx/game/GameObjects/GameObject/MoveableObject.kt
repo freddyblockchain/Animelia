@@ -7,8 +7,8 @@ import com.mygdx.game.Collition.CollisionType
 import com.mygdx.game.Enums.getDirectionFromUnitVector
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.CollitionManager.Companion.entityWithinLocations
-import com.mygdx.game.Managers.CollitionManager.Companion.handleMoveCollisions
+import com.mygdx.game.Managers.CollisionManager.Companion.entityWithinLocations
+import com.mygdx.game.Managers.CollisionManager.Companion.handleMoveCollisions
 import com.mygdx.game.plus
 import com.mygdx.game.times
 

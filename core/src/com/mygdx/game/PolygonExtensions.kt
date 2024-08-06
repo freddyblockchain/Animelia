@@ -1,7 +1,7 @@
 package com.mygdx.game
 
 import com.badlogic.gdx.math.Polygon
-import com.mygdx.game.Managers.CollitionManager.Companion.getPolygonPoints
+import com.mygdx.game.Managers.CollisionManager.Companion.getPolygonPoints
 
 fun Polygon.anyPointInPolygon(polygon: Polygon):Boolean{
     val points = getPolygonPoints(polygon)

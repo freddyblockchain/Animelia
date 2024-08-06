@@ -6,13 +6,14 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.FloatArray
 import com.mygdx.game.Collisions.AreaEntranceCollition
 import com.mygdx.game.Collition.Collision
+import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.anyPointInPolygon
 import com.mygdx.game.player
 
-class CollitionManager {
+class CollisionManager {
     companion object {
 
         fun handleMoveCollisions(gameObject: GameObject, polygonToCheck: Polygon, objectsToCheck: List<GameObject>): Boolean{
@@ -87,6 +88,12 @@ class CollitionManager {
         fun handleKeyCollitions(objectsToCheck: List<GameObject>) {
             val collidingObjects = GetCollidingObjects(player, player.polygon,objectsToCheck)
             collidingObjects.forEach { x -> x.collision.collisionHappened(player); }
+        }
+
+        fun handleKeyPressable(objectsToCheck: List<GameObject>) {
+            val inputObjects = objectsToCheck.filter { it.collision is InputCollision }
+            val collidingObjects = GetCollidingObjects(player, player.polygon, inputObjects)
+            collidingObjects.forEach { (it.collision as InputCollision).renderKeycodeToPress() }
         }
     }
 }
