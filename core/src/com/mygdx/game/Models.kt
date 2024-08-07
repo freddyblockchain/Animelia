@@ -1,5 +1,6 @@
 package com.mygdx.game
-import com.mygdx.game.Ability.AbilityItem
+import com.mygdx.game.Enums.Item
+import com.mygdx.game.WorldItems.AbilityItem
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Hazards.*
@@ -8,6 +9,8 @@ import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAn
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
 import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.TrainingStation
+import com.mygdx.game.WorldItems.BookItem
+import com.mygdx.game.WorldItems.MaterialItem
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
@@ -27,6 +30,8 @@ data class Entities(
     val AnimeliaEnemy: List<GameObjectData> = listOf(),
     val TrainingStation: List<GameObjectData> = listOf(),
     val Ability: List<GameObjectData> = listOf(),
+    val AnivolutionBook: List<GameObjectData> = listOf(),
+    val Item: List<GameObjectData> = listOf(),
     val ConveyerBelt: List<GameObjectData> = listOf(),
     val FireLightBulb: List<GameObjectData> = listOf(),
     val Cliffside: List<GameObjectData> = listOf(),
@@ -47,6 +52,8 @@ fun initMappings(){
     GameObjectFactory.register("Cliffside", ::Cliffside)
     GameObjectFactory.register("Position", ::AnimeliaPosition)
     GameObjectFactory.register("Fountain", ::Fountain)
+    GameObjectFactory.register("AnivolutionBook", ::BookItem)
+    GameObjectFactory.register("Item", ::MaterialItem)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

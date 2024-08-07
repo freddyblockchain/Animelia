@@ -80,7 +80,8 @@ fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaDa
 
 fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
     return when(animeliaType){
-        "Fire_Armadillo" -> ANIMELIA_ENTITY.FireArmadillo
+        "FireArmadillo" -> ANIMELIA_ENTITY.FireArmadillo
+        "FireHippo" -> ANIMELIA_ENTITY.FireHippo
         else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }
