@@ -26,6 +26,7 @@ import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.Managers.Stats
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 import com.mygdx.game.player
@@ -60,7 +61,7 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
                 override fun clicked(event: InputEvent?, x: Float, y: Float) {
                     // Define what should happen when the button is clicked
                     player.animeliaInfo.gameTexture = texture
-                    PlayerStatus
+                    player.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
                     changeMode(AnivolutionMode(prevMode, getEggAnimelia(egg), isReincarnating = true))
                 }
             })

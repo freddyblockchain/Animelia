@@ -18,6 +18,7 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.player
 
 class TrainingScreen(val prevMode: GameMode): UIScreen() {
     override var activeButton: Button? = null
@@ -38,10 +39,10 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
 
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.BLACK)
 
-        var offence = PlayerStatus.playerStats.offence
-        var defence = PlayerStatus.playerStats.defence
-        var speed = PlayerStatus.playerStats.speed
-        var intelligence = PlayerStatus.playerStats.intelligence
+        var offence = player.stats.offence
+        var defence = player.stats.defence
+        var speed = player.stats.speed
+        var intelligence = player.stats.intelligence
 
         var age = PlayerStatus.age
         var exp = PlayerStatus.sp
@@ -105,7 +106,7 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 PlayerStatus.age = age
                 PlayerStatus.sp = exp
-                PlayerStatus.playerStats.offence = offence
+                player.stats.offence = offence
                 changeMode(prevMode)
                 anivolutionCheck()
             }

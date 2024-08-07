@@ -22,7 +22,7 @@ interface AnivolutionCondition{
 
 class OffenceOver(val offence: Int): AnivolutionCondition{
     override fun isConditionFulfilled(): Boolean {
-        return PlayerStatus.playerStats.offence >= offence
+        return player.stats.offence >= offence
     }
 }
 

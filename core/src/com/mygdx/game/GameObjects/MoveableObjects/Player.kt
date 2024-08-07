@@ -26,14 +26,14 @@ import com.mygdx.game.UI.PlayerHealthStrategy
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
-    override var speed: Float = 2f
+    override var speed: Float = 5f
     override val cannotMoveStrategy = NoAction()
     override val layer = Layer.PERSON
     override var direction = Direction.RIGHT
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
     override val maxHealth = 30f
-    override val stats = PlayerStatus.playerStats
+    override var stats = Stats()
     val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this), FireballAbility(this))
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FireArmadillo
     var animeliaInfo = getAnimeliaData(currentAnimelia)
