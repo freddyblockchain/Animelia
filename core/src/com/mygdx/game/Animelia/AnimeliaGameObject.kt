@@ -18,7 +18,7 @@ import com.mygdx.game.getRotatedUnitVectorClockwise
 import com.mygdx.game.getUnitVectorTowardsPoint
 import com.mygdx.game.player
 
-enum class ANIMELIA_ENTITY {FIRE_ARMADILLO, ICE_PENGUIN, FIRE_DRAGON, ICE_DINASAUR, ICE_YETI, FIRE_HIPPO}
+enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo}
 
 enum class ELEMENTAL_TYPE{ICE, FIRE}
 
@@ -80,7 +80,7 @@ fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaDa
 
 fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
     return when(animeliaType){
-        "Fire_Armadillo" -> ANIMELIA_ENTITY.FIRE_ARMADILLO
-        else -> ANIMELIA_ENTITY.FIRE_DRAGON
+        "Fire_Armadillo" -> ANIMELIA_ENTITY.FireArmadillo
+        else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

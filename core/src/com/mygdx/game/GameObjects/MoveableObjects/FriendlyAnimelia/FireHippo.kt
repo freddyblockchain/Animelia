@@ -9,7 +9,7 @@ import com.mygdx.game.Animelia.FriendlyAnimelia
 class FireHippo(gameObjectData: GameObjectData, cityPosEntityId: String) : FriendlyAnimelia(gameObjectData,
     cityPosEntityId
 ) {
-    override val animeliaEntity = ANIMELIA_ENTITY.FIRE_HIPPO
+    override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
     override fun recruitmentAction() {
         TODO("Not yet implemented")
     }

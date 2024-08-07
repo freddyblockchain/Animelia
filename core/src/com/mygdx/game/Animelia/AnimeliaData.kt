@@ -38,7 +38,7 @@ class FireArmadilloData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FIRE_HIPPO)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo)
 }
 class IcePenguinData(): AnimeliaData {
     override var gameTexture = DefaultTextureHandler.getTexture("Animelias/icepenguin-straight.png")
@@ -83,22 +83,22 @@ class IceYetiData(): AnimeliaData {
 
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
-        ANIMELIA_ENTITY.FIRE_ARMADILLO ->  {
+        ANIMELIA_ENTITY.FireArmadillo->  {
             FireArmadilloData()
         }
-        ANIMELIA_ENTITY.FIRE_DRAGON -> {
+        ANIMELIA_ENTITY.FireDragon -> {
             FireDragonData()
         }
-        ANIMELIA_ENTITY.ICE_YETI -> {
+        ANIMELIA_ENTITY.IceYeti -> {
             IceYetiData()
         }
-        ANIMELIA_ENTITY.FIRE_HIPPO -> {
+        ANIMELIA_ENTITY.FireHippo -> {
             FireHippoData()
         }
-        ANIMELIA_ENTITY.ICE_PENGUIN -> {
+        ANIMELIA_ENTITY.IcePenguin -> {
             IcePenguinData()
         }
-        ANIMELIA_ENTITY.ICE_DINASAUR -> {
+        ANIMELIA_ENTITY.IceDinasaur -> {
             IceDinosaurData()
         }
     }

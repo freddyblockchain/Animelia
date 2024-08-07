@@ -19,7 +19,7 @@ fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
 
 fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosEntityId: String): FriendlyAnimelia{
     return when(animeliaEntity){
-        ANIMELIA_ENTITY.FIRE_ARMADILLO -> FireArmadillo(gameObjectData, cityPosEntityId)
+        ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosEntityId)
         else -> FireArmadillo(gameObjectData, cityPosEntityId)
     }
 }

@@ -20,7 +20,7 @@ fun convertToEnemyAnimelia(gameObjectData: GameObjectData): GameObject{
 
 fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData): EnemyAnimelia{
     return when(animeliaEntity){
-        ANIMELIA_ENTITY.FIRE_ARMADILLO -> FireArmadilloEnemy(gameObjectData)
+        ANIMELIA_ENTITY.FireArmadillo -> FireArmadilloEnemy(gameObjectData)
         else -> FireArmadilloEnemy(gameObjectData)
     }
 }

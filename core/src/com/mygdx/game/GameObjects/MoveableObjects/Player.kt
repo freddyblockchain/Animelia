@@ -35,7 +35,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val maxHealth = 30f
     override val stats = PlayerStatus.playerStats
     val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this), FireballAbility(this))
-    var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FIRE_ARMADILLO
+    var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FireArmadillo
     var animeliaInfo = getAnimeliaData(currentAnimelia)
 
     override val healthStrategy = PlayerHealthStrategy()

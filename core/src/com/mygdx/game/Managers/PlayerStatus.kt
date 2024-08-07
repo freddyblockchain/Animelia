@@ -13,8 +13,7 @@ class PlayerStatus {
 
     companion object {
         var age = 5
-        var maxAge = 10
-        var exp = 5
+        var sp = 5
 
         val playerStats = Stats()
 

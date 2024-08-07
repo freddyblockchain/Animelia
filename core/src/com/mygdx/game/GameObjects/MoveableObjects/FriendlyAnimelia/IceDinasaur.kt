@@ -9,7 +9,7 @@ import com.mygdx.game.Animelia.FriendlyAnimelia
 class IceDinasaur(gameObjectData: GameObjectData, cityPosEntityId: String) : FriendlyAnimelia(gameObjectData,
     cityPosEntityId
 ) {
-    override val animeliaEntity = ANIMELIA_ENTITY.ICE_DINASAUR
+    override val animeliaEntity = ANIMELIA_ENTITY.IceDinasaur
     override fun recruitmentAction() {
         TODO("Not yet implemented")
     }

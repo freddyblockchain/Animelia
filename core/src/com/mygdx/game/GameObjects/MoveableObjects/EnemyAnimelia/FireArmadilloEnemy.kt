@@ -8,7 +8,7 @@ import com.mygdx.game.DefaultTextureHandler
 enum class EnemyState {NORMAL, AGGROED}
 
 class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObjectData) {
-    override val animeliaEntity = ANIMELIA_ENTITY.FIRE_ARMADILLO
+    override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
 

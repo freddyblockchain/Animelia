@@ -11,7 +11,7 @@ fun getEggTexture(egg: Egg): String{
 
 fun getEggAnimelia(egg: Egg): ANIMELIA_ENTITY{
     return when (egg){
-        Egg.ICE -> ANIMELIA_ENTITY.ICE_PENGUIN
-        else -> ANIMELIA_ENTITY.FIRE_ARMADILLO
+        Egg.ICE -> ANIMELIA_ENTITY.IcePenguin
+        else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

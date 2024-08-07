@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
@@ -45,9 +44,9 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
         var intelligence = PlayerStatus.playerStats.intelligence
 
         var age = PlayerStatus.age
-        var exp = PlayerStatus.exp
+        var exp = PlayerStatus.sp
 
-        val expLabel = Label("Exp: " + PlayerStatus.exp, labelStyle)
+        val expLabel = Label("Exp: " + PlayerStatus.sp, labelStyle)
         val ageLabel = Label("Age " + PlayerStatus.age, labelStyle)
 
         rootTable.add(expLabel)
@@ -105,7 +104,7 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
         finishTrainingButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 PlayerStatus.age = age
-                PlayerStatus.exp = exp
+                PlayerStatus.sp = exp
                 PlayerStatus.playerStats.offence = offence
                 changeMode(prevMode)
                 anivolutionCheck()
