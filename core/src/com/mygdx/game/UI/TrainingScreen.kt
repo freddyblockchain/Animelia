@@ -22,20 +22,13 @@ import com.mygdx.game.player
 
 class TrainingScreen(val prevMode: GameMode): UIScreen() {
     override var activeButton: Button? = null
-    lateinit var rootTable: Table
+
+    override val backgroundColor = Color(1f, 1f, 1f, 1f) // Example color
 
     override fun create() {
-        rootTable = Table()
+        super.create()
+
         val arrowTable = Table()
-
-        Gdx.input.inputProcessor = stage
-        rootTable.setFillParent(true)
-
-
-        val backgroundColor = Color(1f, 1f, 1f, 1f) // Example color
-
-        rootTable.background = createBackgroundDrawable(backgroundColor)
-        stage.addActor(rootTable)
 
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.BLACK)
 

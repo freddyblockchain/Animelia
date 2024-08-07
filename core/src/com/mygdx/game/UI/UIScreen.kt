@@ -1,19 +1,25 @@
 package com.mygdx.game.UI
 
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.Input
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.InputEvent
+import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 
 abstract class UIScreen {
+    lateinit var rootTable: Table
     abstract var activeButton: Button?
     val buttons = mutableListOf<Button>()
     private var activeButtonIndex: Int = 0
     val shapeRenderer: ShapeRenderer = ShapeRenderer()
     val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
+    open val backgroundColor = Color.DARK_GRAY
 
     val stage = Stage(ScreenViewport())
 
@@ -39,8 +45,39 @@ abstract class UIScreen {
         button.fire(event)
     }
 
-    abstract fun create()
+    open fun create(){
+        rootTable = Table()
+        stage.addListener(
+            object : InputListener() {
+                override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
+                    when (keycode) {
+                        Input.Keys.RIGHT -> {
+                            moveUp()
+                            return true
+                        }
+
+                        Input.Keys.LEFT -> {
+                            moveDown()
+                            return true
+                        }
+
+                        Input.Keys.ENTER -> {
+                            pressEnter()
+                            return true
+                        }
+                        else -> return false
+                    }
+                }
+            })
+
+        Gdx.input.inputProcessor = stage
+        rootTable.setFillParent(true)
+        rootTable.setBackground(createBackgroundDrawable(backgroundColor))
+        stage.addActor(rootTable)
+    }
 
     abstract fun render()
+
+
 
 }

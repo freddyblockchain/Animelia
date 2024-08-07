@@ -33,15 +33,8 @@ import com.mygdx.game.player
 
 class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScreen() {
     override var activeButton: Button? = null
-    lateinit var rootTable: Table
 
     override fun create() {
-        rootTable = Table()
-
-        Gdx.input.inputProcessor = stage
-        rootTable.setFillParent(true)
-
-        stage.addActor(rootTable)
 
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
         val reincarnationText = Label("Reincarnation", labelStyle)
@@ -68,28 +61,6 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
             buttons.add(eggButton)
         }
         activeButton = buttons[0]
-        stage.addListener(
-            object : InputListener() {
-                override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
-                    when (keycode) {
-                        Input.Keys.RIGHT -> {
-                            moveUp()
-                            return true
-                        }
-
-                        Input.Keys.LEFT -> {
-                            moveDown()
-                            return true
-                        }
-
-                        Input.Keys.ENTER -> {
-                            pressEnter()
-                            return true
-                        }
-                        else -> return false
-                    }
-                }
-            })
 
     }
     override fun render() {

@@ -1,22 +1,18 @@
 package com.mygdx.game
 
-import PauseMode
+import AnivolutionViewMode
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Animelia.Egg
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
-import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
-import com.mygdx.game.UI.ReincarnationScreen
-import com.mygdx.game.UI.TrainingScreen
 
 
 class InGameProcessor : InputProcessor {
@@ -31,7 +27,7 @@ class InGameProcessor : InputProcessor {
         handleKeyCollitions(keyCollitions)
 
         if(keycode == Input.Keys.ESCAPE){
-            currentGameMode = PauseMode(currentGameMode)
+            currentGameMode = AnivolutionViewMode(currentGameMode)
         }
         for(ability in player.abilities){
             if(ability.triggerKey == keycode){
