@@ -2,7 +2,9 @@ package com.mygdx.game.UI
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
+import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
@@ -10,7 +12,10 @@ import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
+import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.ScreenViewport
+import com.badlogic.gdx.utils.viewport.StretchViewport
+import com.mygdx.game.Utils.Center
 
 abstract class UIScreen {
     lateinit var rootTable: Table
@@ -71,13 +76,14 @@ abstract class UIScreen {
             })
 
         Gdx.input.inputProcessor = stage
-        rootTable.setFillParent(true)
+        rootTable.setFillParent(false)
         rootTable.setBackground(createBackgroundDrawable(backgroundColor))
+        rootTable.width = (Gdx.graphics.width / 1.5).toFloat()
+        rootTable.height = (Gdx.graphics.height / 1.25f).toFloat()
+        rootTable.setPosition(Center.x / 3f, Center.y / 5f)
         stage.addActor(rootTable)
     }
 
     abstract fun render()
-
-
 
 }

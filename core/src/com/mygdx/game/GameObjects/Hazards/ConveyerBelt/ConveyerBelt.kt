@@ -33,7 +33,7 @@ class ConveyerBelt(gameObjectData: GameObjectData)
         Direction.RIGHT -> Vector2(0f,0f)
         Direction.LEFT -> Vector2(brickLength,0f)
     }
-    val speed =  1f
+    val speed =  0.5f
     val start = initPosition + if(isVertical) Vector2(0f,size.y) else Vector2(0f,0f)
     val end = if(isVertical) initPosition + offsetStartBrick else bottomright - Vector2(brickLength,0f)
     val brickImageFileName = if(isVertical) "ConveyerBrick.png" else "ConveyerBrickDown.png"
@@ -80,7 +80,7 @@ class ConveyerBeltCollition(val conveyerBelt: ConveyerBelt) : DefaultAreaEntranc
     override fun actionWhileInside() {
         player.currentUnitVector = getDirectionUnitVector(conveyerBelt.direction)
         player.setRotation(player.currentUnitVector, player, 90f)
-        player.forceMove(1.5f)
+        player.forceMove(2f)
     }
 
     override fun movedInsideAction(objectEntered: GameObject) {

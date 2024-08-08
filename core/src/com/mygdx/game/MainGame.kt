@@ -87,7 +87,7 @@ class MainGame : ApplicationAdapter() {
         EventManager.executeEvents()
         SignalManager.executeSignals()
         drawHealthBars()
-        drawrects()
+       // drawrects()
         mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
         mainCamera.update()
     }

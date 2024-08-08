@@ -36,7 +36,6 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
         rootTable.add(reincarnationText).center()
     }
     override fun render() {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Gdx.graphics.deltaTime)
         stage.isDebugAll = true
         stage.draw()

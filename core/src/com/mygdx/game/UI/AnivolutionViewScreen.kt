@@ -119,7 +119,6 @@ class AnivolutionViewScreen(val prevMode: GameMode, val stage: Stage){
     }
 
     fun render() {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Gdx.graphics.deltaTime)
       //  stage.isDebugAll = true
         stage.draw()

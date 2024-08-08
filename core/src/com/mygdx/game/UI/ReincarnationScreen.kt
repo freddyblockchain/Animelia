@@ -35,7 +35,7 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
     override var activeButton: Button? = null
 
     override fun create() {
-
+        super.create()
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
         val reincarnationText = Label("Reincarnation", labelStyle)
 
@@ -64,7 +64,6 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
 
     }
     override fun render() {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Gdx.graphics.deltaTime)
         stage.isDebugAll = true
         stage.draw()
