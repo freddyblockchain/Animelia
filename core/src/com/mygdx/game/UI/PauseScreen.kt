@@ -1,39 +1,60 @@
 package com.mygdx.game.UI
 
+import HeaderButton
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.Button
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
-import com.mygdx.game.Animelia.Egg
-import com.mygdx.game.Animelia.getEggAnimelia
-import com.mygdx.game.Animelia.getEggTexture
-import com.mygdx.game.DefaultTextureHandler
-import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.Managers.PlayerStatus
-import com.mygdx.game.Managers.Stats
-import com.mygdx.game.player
 
 class PauseScreen(val prevMode: GameMode) : UIScreen() {
     override var activeButton: Button? = null
 
     override fun create() {
-
+        super.create()
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
         val reincarnationText = Label("Status", labelStyle)
+        rootTable.background = createBackgroundDrawable(Color(0f,0f,0f,0f))
+        stage.addListener  (
+            object : InputListener() {
+                override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
+                    when (keycode) {
+                        Input.Keys.ESCAPE -> {
+                            changeMode(prevMode)
+                            return true
+                        }
+                    }
+                    return false
+                }
+            })
 
-        rootTable.add(reincarnationText).center()
+        val buttonTable = Table()
+        buttonTable.height = 100f
+        val headerButton1 = HeaderButton("Status", labelStyle, buttonTable)
+        val headerButton2 = HeaderButton("Ability", labelStyle, buttonTable)
+        val headerButton3 = HeaderButton("Inventory", labelStyle, buttonTable)
+        buttonTable.add(headerButton1).expand().center()
+        buttonTable.add(headerButton2).expand().center()
+        buttonTable.add(headerButton3).expand().center()
+        buttonTable.background = createBackgroundDrawable(Color.BLACK)
+
+        val contentTable = Table()
+        contentTable.add(reincarnationText).expand().center()
+        contentTable.background = createBackgroundDrawable(backgroundColor)
+
+
+        //Expand og fill
+        rootTable.add(buttonTable).fill().width(rootTable.width / 1.5f)
+        rootTable.row()
+        rootTable.add(contentTable).expand().fill()
+
     }
     override fun render() {
         stage.act(Gdx.graphics.deltaTime)

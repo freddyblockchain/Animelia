@@ -31,14 +31,14 @@ val zoomX = 3
 val zoomY = 3
 class MainGame : ApplicationAdapter() {
 
-    lateinit var inputProcessor: InGameProcessor
+    lateinit var inputProcessor: InGameInputProcessor
     lateinit var shapeRenderer: ShapeRenderer
     override fun create() {
         initMappings()
         initAreas()
         FontManager.initFonts()
 
-        inputProcessor = InGameProcessor()
+        inputProcessor = InGameInputProcessor()
         Gdx.input.inputProcessor = inputProcessor
         mainCamera = OrthographicCamera()
         mainCamera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)

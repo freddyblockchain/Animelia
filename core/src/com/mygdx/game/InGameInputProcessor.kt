@@ -8,14 +8,16 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
+import com.mygdx.game.UI.PauseScreen
 
 
-class InGameProcessor : InputProcessor {
+class InGameInputProcessor : InputProcessor {
     override fun keyDown(keycode: Int): Boolean {
 
         /*for (keyAbility in player.abilities.filterIsInstance<KeyAbility>()) {
@@ -27,7 +29,8 @@ class InGameProcessor : InputProcessor {
         handleKeyCollitions(keyCollitions)
 
         if(keycode == Input.Keys.ESCAPE){
-            currentGameMode = AnivolutionViewMode(currentGameMode)
+            //currentGameMode = AnivolutionViewMode(currentGameMode)
+            currentGameMode = UIMode(PauseScreen(currentGameMode))
         }
         for(ability in player.abilities){
             if(ability.triggerKey == keycode){
