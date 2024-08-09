@@ -1,6 +1,4 @@
 package com.mygdx.game.UI
-
-import HeaderButton
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
@@ -13,14 +11,22 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.UI.PauseScreenComponents.AbilityTable.AbilityTable
+import com.mygdx.game.UI.PauseScreenComponents.HeaderButton
+import com.mygdx.game.UI.PauseScreenComponents.InventoryTable
+import com.mygdx.game.UI.PauseScreenComponents.StatusTable
 
 class PauseScreen(val prevMode: GameMode) : UIScreen() {
     override var activeButton: Button? = null
+    val statusTable = StatusTable(this.backgroundColor)
+    val inventoryTable = InventoryTable(this.backgroundColor)
+    val abilityTable = AbilityTable(this.backgroundColor)
+    var activeTable: Table = statusTable
+
 
     override fun create() {
         super.create()
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
-        val reincarnationText = Label("Status", labelStyle)
         rootTable.background = createBackgroundDrawable(Color(0f,0f,0f,0f))
         stage.addListener  (
             object : InputListener() {
@@ -37,23 +43,19 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
 
         val buttonTable = Table()
         buttonTable.height = 100f
-        val headerButton1 = HeaderButton("Status", labelStyle, buttonTable)
-        val headerButton2 = HeaderButton("Ability", labelStyle, buttonTable)
-        val headerButton3 = HeaderButton("Inventory", labelStyle, buttonTable)
+        val headerButton1 = HeaderButton("Status", labelStyle, this, statusTable)
+        val headerButton2 = HeaderButton("Ability", labelStyle, this, abilityTable)
+        val headerButton3 = HeaderButton("Inventory", labelStyle, this, inventoryTable)
         buttonTable.add(headerButton1).expand().center()
+
         buttonTable.add(headerButton2).expand().center()
         buttonTable.add(headerButton3).expand().center()
         buttonTable.background = createBackgroundDrawable(Color.BLACK)
 
-        val contentTable = Table()
-        contentTable.add(reincarnationText).expand().center()
-        contentTable.background = createBackgroundDrawable(backgroundColor)
-
-
         //Expand og fill
         rootTable.add(buttonTable).fill().width(rootTable.width / 1.5f)
         rootTable.row()
-        rootTable.add(contentTable).expand().fill()
+        rootTable.add(activeTable).expand().top().fill()
 
     }
     override fun render() {

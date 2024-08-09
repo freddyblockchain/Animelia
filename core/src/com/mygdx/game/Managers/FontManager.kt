@@ -10,11 +10,13 @@ class FontManager {
 
         lateinit var TextFont: BitmapFont
         lateinit var ChapterFont: BitmapFont
+        lateinit var MediumFont: BitmapFont
 
         fun initFonts() {
 
             TextFont = initFont(12)
             ChapterFont = initFont(100)
+            MediumFont = initFont(70)
             generator.dispose() // Dispose of the generator to avoid memory leaks
         }
 
