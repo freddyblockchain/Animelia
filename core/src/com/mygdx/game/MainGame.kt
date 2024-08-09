@@ -27,8 +27,8 @@ lateinit var mainMode: MainMode
 lateinit var generalSaveState: GeneralSaveState
 
 var mainCamera: OrthographicCamera = OrthographicCamera()
-val zoomX = 3
-val zoomY = 3
+val zoomX = 4
+val zoomY = 4
 class MainGame : ApplicationAdapter() {
 
     lateinit var inputProcessor: InGameInputProcessor
