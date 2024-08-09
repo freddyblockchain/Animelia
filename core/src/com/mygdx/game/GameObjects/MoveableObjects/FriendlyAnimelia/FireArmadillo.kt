@@ -7,13 +7,14 @@ import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
 import com.mygdx.game.Animelia.FriendlyAnimelia
 import com.mygdx.game.DefaultTextureHandler
+import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.plus
 
-class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: String) : FriendlyAnimelia(gameObjectData, cityPositionEntityId) {
+class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 
     override val texture = DefaultTextureHandler.getTexture("Animelias/firearmadillo-straight.png")

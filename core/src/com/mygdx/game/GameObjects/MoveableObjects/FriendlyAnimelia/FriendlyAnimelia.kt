@@ -14,13 +14,13 @@ fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaFields = Json.decodeFromJsonElement<AnimeliaCustomFields>(gameObjectData.customFields)
     val animeliaEntity = getAnimeliaEntity(animeliaFields.AnimeliaType)
 
-    return createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos.entityIid)
+    return createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos)
 }
 
-fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosEntityId: String): FriendlyAnimelia{
+fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimelia{
     return when(animeliaEntity){
-        ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosEntityId)
-        else -> FireArmadillo(gameObjectData, cityPosEntityId)
+        ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosRefData)
+        else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
 

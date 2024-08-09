@@ -28,7 +28,7 @@ class LightBulb(gameObjectData: GameObjectData)
     lateinit var gameObjectToTrigger: Triggerable
 
     override fun initObject() {
-        gameObjectToTrigger = AreaManager.getObjectWithIid(entityRefData.entityIid) as Triggerable
+        gameObjectToTrigger = AreaManager.getObjectWithIid(entityRefData.entityIid, entityRefData.levelIid) as Triggerable
     }
 }
 

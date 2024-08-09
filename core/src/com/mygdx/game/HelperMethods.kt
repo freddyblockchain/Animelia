@@ -16,27 +16,47 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Saving.updateAndSavePlayer
 import kotlin.math.PI
 
-fun HandleArea(areaName: String): Area {
-    val root = JsonParser.getRoot("assets/levels/${areaName}/data.json")
+fun InitArea(levelName: String){
+    val levelPath = "assets/levels/${levelName}/data.json"
+    val root = JsonParser.getRoot(levelPath)
     val correspondingArea = AreaManager.areas.firstOrNull { it.areaIdentifier == root.customFields.World }
         ?:
         Area(root.customFields.World)
-    val entityObjects = JsonParser.getGameObjects(root)
-    correspondingArea.gameObjects.addAll(entityObjects)
-    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${areaName}/_composite.png")
-    correspondingArea.gameObjects.add(ground)
-    val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
-    correspondingArea.gameObjects.add(wall)
-    correspondingArea.gameObjects.forEach {
-        it.areaIdentifier = correspondingArea.areaIdentifier
+    if(!(AreaManager.areas.any { it.areaIdentifier == correspondingArea.areaIdentifier })){
+        AreaManager.areas.add(correspondingArea)
     }
-    return correspondingArea
+    correspondingArea.associatedLevels.add(levelName)
+    AreaManager.uniqueIdToLevelPathMap[root.uniqueIdentifer] = levelName
+    AreaManager.levelToAreaMap[levelName] = correspondingArea.areaIdentifier
+
+}
+
+fun getObjectsFromLevelName(levelName: String): List<GameObject>{
+    val levelPath = "assets/levels/${levelName}/data.json"
+    val root = JsonParser.getRoot(levelPath)
+    val entityObjects = JsonParser.getGameObjects(root)
+    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${levelName}/_composite.png")
+    val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
+    val objectsToReturn = entityObjects + ground + wall
+    objectsToReturn.forEach { it.areaIdentifier = AreaManager.levelToAreaMap[levelName]!! }
+
+    return objectsToReturn
+}
+
+fun addObjectsToArea(area: Area, objectsToAdd: List<GameObject>){
+    area.gameObjects.addAll(objectsToAdd)
+    area.gameObjects.forEach {
+        it.areaIdentifier = area.areaIdentifier
+    }
 }
 
 fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
     player.abilities.forEach { it.onDeactivate() }
     val newPos = Vector2(newPos.x, newPos.y)
+
     AreaManager.changeActiveArea(newAreaIdentifier)
+
+
     player.setPosition(newPos)
     player.startingPosition = newPos
     anivolutionCheck()
@@ -50,18 +70,10 @@ fun initAreas(){
     val filesHandle = Gdx.files.internal(directoryPath)
     if (filesHandle.exists() && filesHandle.isDirectory) {
         filesHandle.list().forEach { level ->
-            val area = HandleArea(level.name())
-            if(!(AreaManager.areas.any { it.areaIdentifier == area.areaIdentifier })){
-                AreaManager.areas.add(area)
-            }
+            InitArea(level.name())
         }
     }
 
-}
-
-fun initObjects(){
-    val objects = AreaManager.areas.flatMap { it.gameObjects }
-    objects.forEach { it.initObject() }
 }
 
 fun getUnitVectorTowardsPoint(position: Vector2, point: Vector2): Vector2 {

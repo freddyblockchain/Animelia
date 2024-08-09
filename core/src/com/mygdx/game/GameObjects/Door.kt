@@ -31,7 +31,7 @@ class Door(val gameObjectData: GameObjectData): GameObject(gameObjectData, Vecto
     }
 
     override fun initObject() {
-        exitDoor = AreaManager.getObjectWithIid(customFields.Door.entityIid) as Door
+        exitDoor = AreaManager.getObjectWithIid(customFields.Door.entityIid, customFields.Door.levelIid) as Door
     }
 }
 

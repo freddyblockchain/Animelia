@@ -3,12 +3,16 @@ package com.mygdx.game.Managers
 import com.mygdx.game.Area.Area
 import com.mygdx.game.Collition.CollisionType
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.addObjectsToArea
+import com.mygdx.game.getObjectsFromLevelName
 import com.mygdx.game.player
 
 class AreaManager {
     companion object {
         val areas = mutableListOf<Area>()
         private var activeArea: Area? = null
+        val uniqueIdToLevelPathMap: MutableMap<String, String> = mutableMapOf()
+        val levelToAreaMap: MutableMap<String, String> = mutableMapOf()
 
         fun setActiveArea(areaIdentifier: String){
             val areaWithIdentifier = areas.find { it.areaIdentifier == areaIdentifier }
@@ -28,19 +32,30 @@ class AreaManager {
             return activeObjects.filter { it.collision.collitionType == collisionType }
         }
 
-        fun getObjectWithIid(iidToFind: String): GameObject {
-            val allObjects = areas.flatMap { it.gameObjects }
-            return allObjects.filter { it.gameObjectIid == iidToFind }.first()
+        fun getObjectWithIid(entityId: String, levelId: String): GameObject {
+            //Check objects in current area
+            if(activeArea!!.gameObjects.any { it.gameObjectIid == entityId }){
+                return activeArea!!.gameObjects.first { it.gameObjectIid == entityId }
+            }
+            // If object is in another area, create copy.
+            val levelName = uniqueIdToLevelPathMap[levelId]!!
+            val getLevelObjects = getObjectsFromLevelName(levelName)
+            return getLevelObjects.filter { it.gameObjectIid == entityId }.first()
         }
 
         fun changeActiveArea(areaIdentifier: String){
             //cleanup old area
             val currentArea = activeArea!!
-            currentArea.gameObjects.remove(player)
+            currentArea.gameObjects.clear()
 
             //activate new area
             setActiveArea(areaIdentifier)
             val newArea = activeArea!!
+            newArea.associatedLevels.forEach {
+                val newObjects = getObjectsFromLevelName(it)
+                addObjectsToArea(newArea, newObjects)
+            }
+            newArea.gameObjects.forEach { it.initObject() }
             newArea.gameObjects.add(player)
         }
     }

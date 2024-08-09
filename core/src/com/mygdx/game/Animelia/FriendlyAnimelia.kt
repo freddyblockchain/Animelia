@@ -3,6 +3,7 @@ package com.mygdx.game.Animelia
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collition.InputCollision
+import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameModes.TalkMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
@@ -17,7 +18,7 @@ interface AnimeliaRecruitmendCondition{
     fun isConditionFulfilled(): Boolean
 }
 
-abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val cityPosEntityId: String): GameObject(gameObjectData, Vector2(32f,32f)) {
+abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val cityPosEntityRefData: EntityRefData): GameObject(gameObjectData, Vector2(32f,32f)) {
     abstract val animeliaEntity: ANIMELIA_ENTITY
     val animeliaData by lazy { getAnimeliaData(animeliaEntity) }
     val animeliaRecruitmentConditions = mutableListOf<AnimeliaRecruitmendCondition>()
@@ -29,7 +30,7 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
     lateinit var cityPosition: AnimeliaPosition
 
     override fun initObject() {
-       cityPosition = AreaManager.getObjectWithIid(cityPosEntityId) as AnimeliaPosition
+       cityPosition = AreaManager.getObjectWithIid(cityPosEntityRefData.entityIid, cityPosEntityRefData.levelIid) as AnimeliaPosition
     }
     fun isConditionsFulfilled(): Boolean{
         return animeliaRecruitmentConditions.all { it.isConditionFulfilled() }

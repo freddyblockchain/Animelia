@@ -36,6 +36,7 @@ class MainGame : ApplicationAdapter() {
     override fun create() {
         initMappings()
         initAreas()
+        AreaManager.setActiveArea("World1")
         FontManager.initFonts()
 
         inputProcessor = InGameInputProcessor()
@@ -47,7 +48,6 @@ class MainGame : ApplicationAdapter() {
         currentGameMode = mainMode
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
-        initObjects()
         DialogueManager.initSpeakableObjects()
        // getArticyDraftEntries()
         if (!FileHandler.SaveFileEmpty()) {
@@ -72,7 +72,7 @@ class MainGame : ApplicationAdapter() {
         savedSignals.forEach { SignalManager.emitSignal(it, false)
             SignalManager.pastSignals.add(it)
         }
-        AreaManager.getActiveArea()!!.gameObjects.add(player)
+        changeArea(Vector2(160f,200f), "World1")
 
     }
 
