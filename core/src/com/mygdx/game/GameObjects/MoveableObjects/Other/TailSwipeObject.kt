@@ -61,7 +61,7 @@ class TailSwipeCollision(val tailSwipeObject: TailSwipeObject, val objectAttache
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Rock && !gameObjectAlreadyHit(collidedObject) && collidedObject.checkDestroyed(objectAttached.stats) ){
-            AreaManager.getActiveArea()!!.gameObjects.remove(collidedObject)
+            collidedObject.remove()
         }
         if(collidedObject is FightableObject && !gameObjectAlreadyHit(collidedObject)){
             collidedObject.currentHealth -= 10f

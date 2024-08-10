@@ -1,19 +1,22 @@
 package com.mygdx.game.Ability
 
 import com.badlogic.gdx.graphics.Texture
-import com.mygdx.game.Ability.Abilities.Fighting.FireballData
-import com.mygdx.game.Ability.Abilities.Fighting.TailSwipeData
+import com.mygdx.game.Ability.Abilities.Fighting.RockThrowAbility
+import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjects.GameObject.FightableObject
+import com.mygdx.game.player
 
-enum class AbilityName{Fireball, TailSwipe, PlaceHolder}
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder}
 
 enum class AbilityType{Fire, Fighting,Ice, Sound}
+
+data class AbilityData(val abilityName: AbilityName, val abilityType: AbilityType, val keyAbility: KeyAbility)
 
 fun getAbilitiesFromType(abilityType: AbilityType): List<AbilityName>{
     return when (abilityType){
         AbilityType.Fire -> listOf(AbilityName.Fireball, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        AbilityType.Fighting -> listOf(AbilityName.PlaceHolder, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        AbilityType.Fighting -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
     }
 }
@@ -26,21 +29,12 @@ fun getIconFromType(abilityType: AbilityType): Texture{
     }
 }
 
-fun convertAbilityToType(ability:String): AbilityName{
+fun convertAbilityToName(ability:String): AbilityData{
     return when(ability){
-        "Fireball" -> AbilityName.Fireball
-        else -> AbilityName.TailSwipe
+        "Fireball" -> AbilityData(AbilityName.Fireball, AbilityType.Fire, FireballAbility(player))
+        "RockThrow" -> AbilityData(AbilityName.RockThrow, AbilityType.Fighting, RockThrowAbility(player))
+        else -> AbilityData(AbilityName.Fireball,AbilityType.Fire, FireballAbility(player))
     }
-}
-fun convertAbilityTypeToData(ability: AbilityName): AbilityData{
-    return when(ability){
-        AbilityName.Fireball -> FireballData()
-        else -> TailSwipeData()
-    }
-}
-
-interface AbilityData{
-    val imageIcon: String
 }
 interface Ability {
     fun onActivate()
@@ -49,5 +43,4 @@ interface Ability {
     var currentFrame: Int
     fun frameAction()
     val attachedFightableObject: FightableObject
-
 }

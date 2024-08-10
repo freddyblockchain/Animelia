@@ -26,21 +26,6 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
-		"Item": [
-			{
-				"id": "Item",
-				"iid": "300d0b70-4ce0-11ef-a0fc-8980aab2f072",
-				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 192,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "IceFlower"
-				}
-			}
-		],
 		"IceCone": [
 			{
 				"id": "IceCone",
@@ -63,6 +48,21 @@
 				"height": 32,
 				"color": 3469566,
 				"customFields" : {}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "15bd6640-4ce0-11ef-a934-f594317db23b",
+				"layer": "Entities",
+				"x": 0,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "RockThrow"
+				}
 			}
 		]
 	}
