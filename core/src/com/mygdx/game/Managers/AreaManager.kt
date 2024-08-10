@@ -1,6 +1,7 @@
 package com.mygdx.game.Managers
 
 import com.mygdx.game.Area.Area
+import com.mygdx.game.Area.getAreaMusic
 import com.mygdx.game.Collition.CollisionType
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.addObjectsToArea
@@ -57,6 +58,9 @@ class AreaManager {
             }
             newArea.gameObjects.forEach { it.initObject() }
             newArea.gameObjects.add(player)
+
+            val music = getAreaMusic(areaIdentifier)
+            MusicManager.changeAndPlay(music)
         }
     }
 }
