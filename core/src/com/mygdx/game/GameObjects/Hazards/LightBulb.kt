@@ -5,6 +5,7 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Collition.OnlyProjectileCollisionMask
+import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.Enums.Layer
@@ -25,6 +26,7 @@ class LightBulb(gameObjectData: GameObjectData)
     override val collitionMask = OnlyProjectileCollisionMask
     override val collision = LightBulbCollision(this)
     val entityRefData = Json.decodeFromJsonElement<LightbulbCustomFields>(gameObjectData.customFields).Entity_ref
+    val sound = DefaultSoundHandler.getSound("Sound/bell.wav")
     lateinit var gameObjectToTrigger: Triggerable
 
     override fun initObject() {
@@ -44,6 +46,8 @@ class LightBulbCollision(val lightBulb: LightBulb): MoveCollision(){
         if(collidedObject is Fireball){
             collidedObject.remove()
             lightBulb.gameObjectToTrigger.onTrigger()
+            val id = lightBulb.sound.play(1f)
+            lightBulb.sound.setPitch(id, 1f)
         }
     }
 

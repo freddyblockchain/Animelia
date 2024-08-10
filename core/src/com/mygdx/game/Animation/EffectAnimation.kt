@@ -5,7 +5,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Particles.AnimeliaEffect
 import java.time.Duration
 
-class EffectAnimation(private val animeliaEffect: AnimeliaEffect, override val duration: Int): Animation {
+class EffectAnimation(private val animeliaEffect: AnimeliaEffect, override val durationFrames: Int): Animation {
     override val animationAction = {}
     override var currentFrame = 0
     override var actionFrame = 0

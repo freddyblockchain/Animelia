@@ -6,7 +6,7 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 
 class AnimeliaAnimation(val straight: String, val right: String, val left: String): DefaultAnimation() {
-    override val duration = 60
+    override val durationFrames = 60
     override val layer = Layer.ONGROUND
     val straightTexture = DefaultTextureHandler.getTexture(straight)
     val rightTexture = DefaultTextureHandler.getTexture(right)

@@ -14,7 +14,7 @@ class AnimationManager {
                 if(animation.currentFrame == animation.actionFrame){
                     animation.animationAction()
                 }
-                if(animation.currentFrame >= animation.duration){
+                if(animation.currentFrame >= animation.durationFrames){
                     animationManager.remove(animation)
                 }
             }

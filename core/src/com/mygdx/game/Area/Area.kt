@@ -11,7 +11,7 @@ class Area(val areaIdentifier: String) {
 fun getAreaMusic(areaIdentifier: String): Music{
     val musicString =  when(areaIdentifier){
         "World1" -> "Music/Snow City Theme/snow_city.mp3"
-        "World3" -> "Music/Stone Fortress/stone fortress.ogg"
+        "World3" -> "Music/Stone Fortress/stone fortress.mp3"
         else -> "Music/Nature Theme sketch/nature sketch.wav"
     }
     return DefaultMusicHandler.getMusic(musicString)

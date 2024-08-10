@@ -9,7 +9,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Managers.DialogueManager
 
 class SpeechBubble(val sentence: Sentence, duration: Int): DefaultAnimation() {
-    override val duration = duration
+    override val durationFrames = duration
     override val animationAction = {}
     override var actionFrame = duration
     val texture = DefaultTextureHandler.getTexture("speechicon.png")

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Enums.Layer
 
-class TextAnimation(val color: Color, val text: String, val pos: Vector2, val moveTextUp: Boolean = true, override val duration: Int = 60): DefaultAnimation() {
+class TextAnimation(val color: Color, val text: String, val pos: Vector2, val moveTextUp: Boolean = true, override val durationFrames: Int = 60): DefaultAnimation() {
     override val layer = Layer.AIR
     val font = FontManager.TextFont
 

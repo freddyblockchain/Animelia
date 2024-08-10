@@ -8,13 +8,13 @@ import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 
 class ChapterAnimation(val text: String): DefaultAnimation() {
-    override val duration = 360
+    override val durationFrames = 360
     override val animationAction = {
         currentGameMode = mainMode
     }
     override var actionFrame = 360
     override val layer = Layer.AIR
-    val alphaTime = (duration / 3)
+    val alphaTime = (durationFrames / 3)
     var alpha = 0f
 
     override fun render(batch: SpriteBatch) {
