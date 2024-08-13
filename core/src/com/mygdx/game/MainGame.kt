@@ -120,7 +120,7 @@ class MainGame : ApplicationAdapter() {
 
     override fun resize(width: Int, height: Int) {
         super.resize(width, height)
-        //Yes its shit. thank scene 2d fucks for that.
+        //scene 2d weird bug otherwise
         (currentGameMode as? UIMode)?.stage?.viewport?.update(width, height, true)
     }
 }
