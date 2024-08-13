@@ -40,7 +40,7 @@ abstract class UIScreen {
     }
 
     fun pressEnter() {
-        activeButton?.let { simulateClick(it) }
+        buttons[activeButtonIndex]?.let { simulateClick(it) }
     }
 
     fun simulateClick(actor: Actor) {
@@ -91,20 +91,31 @@ abstract class UIScreen {
 
     open fun render(){
         stage.act(Gdx.graphics.deltaTime)
-        stage.isDebugAll = true
+       //stage.isDebugAll = true
         stage.draw()
 
-       /* buttons.forEachIndexed { index, actor ->
+        buttons.forEachIndexed { index, actor ->
             val stageCoords = actor.localToStageCoordinates(Vector2(0f, 0f))
             val origColor = shapeRenderer.color
-            val color = if (index == activeButtonIndex) Color.GREEN else Color.WHITE
+            val color = Color.WHITE
             shapeRenderer.projectionMatrix = stage.camera.combined
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
             shapeRenderer.setColor(color)
             shapeRenderer.rect(stageCoords.x, stageCoords.y, actor.width, actor.height)
             shapeRenderer.color = origColor
             shapeRenderer.end()
-        }*/
+        }
+        buttons[activeButtonIndex]?.let {
+            val stageCoords = it.localToStageCoordinates(Vector2(0f, 0f))
+            val origColor = shapeRenderer.color
+            val color = Color.GREEN
+            shapeRenderer.projectionMatrix = stage.camera.combined
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
+            shapeRenderer.setColor(color)
+            shapeRenderer.rect(stageCoords.x, stageCoords.y, it.width, it.height)
+            shapeRenderer.color = origColor
+            shapeRenderer.end()
+        }
 
     }
 

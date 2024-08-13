@@ -7,7 +7,7 @@ import com.mygdx.game.Utils.RenderGraph
 import com.mygdx.game.mainMode
 
 class UIMode(val uiScreen: UIScreen, override val spriteBatch: SpriteBatch = mainMode.spriteBatch, val renderGameObjects: Boolean = true): GameMode{
-
+    val stage = uiScreen.stage
     init {
         uiScreen.create()
     }

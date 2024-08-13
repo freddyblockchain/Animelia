@@ -28,8 +28,8 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
     override fun changeActive(activeIndex: Int){
         val newTable = when(activeIndex){
             0 -> statusTable
-            1 -> inventoryTable
-            else -> abilityTable
+            1 -> abilityTable
+            else -> inventoryTable
         }
         val cellToChange = this.rootTable.getCell(this.activeTable)
         cellToChange.clearActor()

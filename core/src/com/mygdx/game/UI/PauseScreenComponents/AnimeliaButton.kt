@@ -11,16 +11,16 @@ import com.mygdx.game.UI.Screens.UIScreen
 
 class AnimeliaButton(text: String, labelStyle: LabelStyle, val screen: UIScreen, val activeIndex: Int): Label(text, labelStyle) {
     init {
-        //this.setFontScale(0.5f)
-        //this.fontScaleX = 0.5f
-        //this.color = Color.WHITE
-        //val thisInstance = this
-        /*this.addListener(object : ClickListener() {
+        this.setFontScale(0.5f)
+        this.fontScaleX = 0.5f
+        this.color = Color.WHITE
+        val thisInstance = this
+        this.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 screen.changeActive(activeIndex)
                 screen.activeButton = thisInstance
             }
-        })*/
+        })
 
     }
 }

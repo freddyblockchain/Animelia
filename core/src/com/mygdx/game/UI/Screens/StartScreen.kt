@@ -23,42 +23,29 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
 
         val buttonTable = Table()
 
-        val newGameButton = AnimeliaButton("hello", bigLabel, this, 1)
-        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 2)
-        val controlsButton = AnimeliaButton("Controls", bigLabel, this, 3)
-        val optionsButton = AnimeliaButton("Options", bigLabel, this, 4)
+        val newGameButton = AnimeliaButton("New Game", bigLabel, this, 0)
+        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 1)
+        val controlsButton = AnimeliaButton("Controls", bigLabel, this, 2)
+        val optionsButton = AnimeliaButton("Options", bigLabel, this, 3)
 
         val randomLabel = TextButton("hello", skin)
 
         buttons.addAll(listOf(newGameButton, loadGameButton, controlsButton, optionsButton))
-        loadGameButton.addListener(object : ClickListener() {
+        newGameButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
                 changeMode(nextGameMode)
-            }
-        })
-
-        randomLabel.addListener(object : ClickListener() {
-            override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                changeMode(nextGameMode)
-            }
-        })
-
-        controlsButton.addListener(object : ClickListener() {
-            override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                // Define what should happen when the button is clicked
-                println("clicked!")
             }
         })
         rootTable.add(buttonTable).expand().center()
 
-        buttonTable.add(randomLabel)
-        /*buttonTable.row()
+        buttonTable.add(newGameButton)
+        buttonTable.row()
         buttonTable.add(loadGameButton)
         buttonTable.row()
         buttonTable.add(controlsButton)
         buttonTable.row()
-        buttonTable.add(optionsButton)*/
+        buttonTable.add(optionsButton)
 
     }
     override fun render() {
