@@ -17,8 +17,10 @@ class AnimeliaButton(text: String, labelStyle: LabelStyle, val screen: UIScreen,
         val thisInstance = this
         this.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                screen.changeActive(activeIndex)
-                screen.activeButton = thisInstance
+                if(activeIndex != screen.activeButtonIndex){
+                    screen.changeActive(activeIndex)
+                    screen.activeButton = thisInstance
+                }
             }
         })
 

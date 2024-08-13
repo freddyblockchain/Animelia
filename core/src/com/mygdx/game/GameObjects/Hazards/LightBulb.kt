@@ -47,7 +47,7 @@ class LightBulbCollision(val lightBulb: LightBulb): MoveCollision(){
             collidedObject.remove()
             lightBulb.gameObjectToTrigger.onTrigger()
             val id = lightBulb.sound.play(1f)
-            lightBulb.sound.setPitch(id, 1f)
+            lightBulb.sound.setPitch(id, 2f)
         }
     }
 

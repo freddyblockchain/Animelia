@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
+import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
@@ -21,8 +22,10 @@ class Fireball(gameObjectData: GameObjectData, size: Vector2, unitVectorDirectio
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
     override val collision = FireballCollision(this)
+   // val sound = DefaultSoundHandler.getSound("Sound/FireSound/bell.wav")
     init {
         setRotation(unitVectorDirection,this,0f)
+        //sound.play()
     }
 }
 

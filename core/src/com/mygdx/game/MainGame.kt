@@ -49,9 +49,6 @@ class MainGame : ApplicationAdapter() {
         mainCamera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
-        val startScreen = StartScreen(mainMode)
-        startingStage = startScreen.stage
-        currentGameMode = UIMode(startScreen, renderGameObjects = false)
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()
@@ -79,6 +76,7 @@ class MainGame : ApplicationAdapter() {
             SignalManager.pastSignals.add(it)
         }
         changeArea(Vector2(160f,200f), "World1")
+        currentGameMode = UIMode(StartScreen(mainMode), renderGameObjects = false)
     }
 
     override fun render() {

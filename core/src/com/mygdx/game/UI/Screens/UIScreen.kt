@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.ScreenViewport
+import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.UI.createBackgroundDrawable
 import com.mygdx.game.Utils.Center
 
@@ -24,6 +25,10 @@ abstract class UIScreen {
 
     val stage = Stage(ScreenViewport())
     val buttons: MutableList<Actor> = mutableListOf()
+
+    val confirmSound = DefaultSoundHandler.getSound("Sound/Menu FX example/Menu1A.wav")
+    val backSound  = DefaultSoundHandler.getSound("Sound/Menu FX example/Menu1B.wav")
+    val switchSound = DefaultSoundHandler.getSound("Sound/switch6.wav")
 
     abstract var activeButton: Actor?
 
@@ -87,6 +92,7 @@ abstract class UIScreen {
 
     open fun changeActive(activeIndex: Int){
         activeButtonIndex = activeIndex
+        switchSound.play()
     }
 
     open fun render(){

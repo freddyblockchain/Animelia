@@ -8,14 +8,20 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
+import com.mygdx.game.DefaultMusicHandler
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.UI.PauseScreenComponents.AnimeliaButton
 import com.mygdx.game.UI.bigLabel
 import com.mygdx.game.UI.createBackgroundDrawable
 
 class StartScreen(val nextGameMode: GameMode): UIScreen() {
     override var activeButton: Actor? = null
+
+    init {
+        MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Forest/forest.mp3"))
+    }
 
     override fun create() {
         super.create()
@@ -35,6 +41,8 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
                 changeMode(nextGameMode)
+                confirmSound.play()
+                MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Snow City Theme/snow_city.mp3"))
             }
         })
         rootTable.add(buttonTable).expand().center()

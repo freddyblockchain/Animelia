@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
+import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.mainCamera
 import com.mygdx.game.player
@@ -21,10 +22,15 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
     val playerSprite =  player.sprite
     var yOffsetUp = 0
     var yoffsetDown = 0
+    val dissappearSound = DefaultSoundHandler.getSound("Sound/Virix/ALERT_Appear.wav")
+    val appearSound = DefaultSoundHandler.getSound("Sound/Virix/ALERT_Dissappear.wav")
 
     override fun FrameAction() {
         if(currentFrame <= 90){
             mainCamera.zoom -= 0.005f
+            if(currentFrame == 90){
+                dissappearSound.play()
+            }
         }
         else if(currentFrame <= 150){
             playerSprite.setRegion(0, yOffsetUp,playerSprite.width.toInt(),playerSprite.height.toInt());
@@ -32,6 +38,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         }
         else if(currentFrame == 151){
             player.animeliaInfo = getAnimeliaData(animeliaEntity)
+            appearSound.play()
         }
         else if(currentFrame <= 210){
             playerSprite.setRegion(0, playerSprite.height.toInt() - (min(yoffsetDown, playerSprite.height.toInt())),playerSprite.width.toInt(),playerSprite.height.toInt());
