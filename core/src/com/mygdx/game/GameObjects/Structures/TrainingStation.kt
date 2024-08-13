@@ -2,14 +2,13 @@ package com.mygdx.game.GameObjects.Structures
 
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.UI.TrainingScreen
+import com.mygdx.game.UI.Screens.TrainingScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 

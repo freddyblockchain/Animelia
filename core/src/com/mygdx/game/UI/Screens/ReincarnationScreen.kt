@@ -1,19 +1,14 @@
-package com.mygdx.game.UI
+package com.mygdx.game.UI.Screens
 
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
-import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Animelia.Egg
@@ -23,16 +18,20 @@ import com.mygdx.game.Animelia.getEggTexture
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
-import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
-import com.mygdx.game.currentGameMode
-import com.mygdx.game.mainMode
 import com.mygdx.game.player
 
 class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScreen() {
-    override var activeButton: Button? = null
+    override var nrOfButtons = 0
+    override var activeButton: Actor? = null
+    val buttons = mutableListOf<Button>()
+
+    override fun changeActive(activeIndex: Int) {
+        activeButton = buttons[activeIndex]
+        super.changeActive(activeIndex)
+    }
 
     override fun create() {
         super.create()
@@ -60,14 +59,14 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
             })
             buttons.add(eggButton)
         }
-        activeButton = buttons[0]
+        nrOfButtons = buttons.size
 
     }
     override fun render() {
         stage.act(Gdx.graphics.deltaTime)
         stage.isDebugAll = true
         stage.draw()
-        activeButton?.let {
+        buttons[activeButtonIndex].let {
             val stageCoords = it.localToParentCoordinates(Vector2(it.parent.x, it.parent.y));
 
             shapeRenderer.projectionMatrix = stage.camera.combined

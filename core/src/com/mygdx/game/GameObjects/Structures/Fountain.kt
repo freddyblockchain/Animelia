@@ -10,8 +10,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.UI.ReincarnationScreen
-import com.mygdx.game.UI.TrainingScreen
+import com.mygdx.game.UI.Screens.ReincarnationScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 

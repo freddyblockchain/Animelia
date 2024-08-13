@@ -3,6 +3,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.UI.Screens.AnivolutionViewScreen
 
 
 class AnivolutionViewMode(val prevMode: GameMode): GameMode{

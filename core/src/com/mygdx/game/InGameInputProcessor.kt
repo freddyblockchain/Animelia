@@ -1,6 +1,5 @@
 package com.mygdx.game
 
-import AnivolutionViewMode
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.InputProcessor
@@ -14,7 +13,7 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
-import com.mygdx.game.UI.PauseScreen
+import com.mygdx.game.UI.Screens.PauseScreen
 
 
 class InGameInputProcessor : InputProcessor {

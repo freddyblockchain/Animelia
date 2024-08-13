@@ -1,13 +1,8 @@
 package com.mygdx.game.GameModes
 
-import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.UI.TrainingScreen
-import com.mygdx.game.UI.UIScreen
+import com.mygdx.game.UI.Screens.UIScreen
 import com.mygdx.game.Utils.RenderGraph
 import com.mygdx.game.mainMode
 

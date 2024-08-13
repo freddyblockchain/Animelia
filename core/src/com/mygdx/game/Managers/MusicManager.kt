@@ -21,12 +21,12 @@ class MusicManager {
         }
 
         fun changeAndPlay(music: Music) {
-            if (music != currentTrack) {
+           /* if (music != currentTrack) {
                 stopTrack()
                 changeTrack(music)
                 currentTrack!!.volume = 0.5f
                 playMusic()
-            }
+            }*/
         }
     }
 }
