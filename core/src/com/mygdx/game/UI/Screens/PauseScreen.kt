@@ -19,7 +19,6 @@ import com.mygdx.game.UI.PauseScreenComponents.StatusTable
 import com.mygdx.game.UI.createBackgroundDrawable
 
 class PauseScreen(val prevMode: GameMode) : UIScreen() {
-    override val nrOfButtons = 3
     val statusTable = StatusTable(this.backgroundColor)
     val inventoryTable = InventoryTable(this.backgroundColor)
     val abilityTable = AbilityTable(this.backgroundColor)
@@ -63,6 +62,7 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
         val headerButton1 = AnimeliaButton("Status", labelStyle, this, 0)
         val headerButton2 = AnimeliaButton("Ability", labelStyle, this, 1)
         val headerButton3 = AnimeliaButton("Inventory", labelStyle, this,2)
+        buttons.addAll(listOf( headerButton1, headerButton2, headerButton3))
         buttonTable.add(headerButton1).expand().center()
 
         buttonTable.add(headerButton2).expand().center()
@@ -76,18 +76,6 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
 
     }
     override fun render() {
-        stage.act(Gdx.graphics.deltaTime)
-        stage.isDebugAll = true
-        stage.draw()
-        /*activeButton?.let {
-            val stageCoords = it.localToParentCoordinates(Vector2(it.parent.x, it.parent.y));
-
-            shapeRenderer.projectionMatrix = stage.camera.combined
-            shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
-            shapeRenderer.setColor(0f, 1f, 0f, 1f)
-            shapeRenderer.circle(stageCoords.x + it.width / 2, stageCoords.y + it.height / 2, it.width / 2 + 10)
-            shapeRenderer.end()
-        }*/
-
+        super.render()
     }
 }

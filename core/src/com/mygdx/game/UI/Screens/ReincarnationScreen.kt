@@ -24,9 +24,7 @@ import com.mygdx.game.Managers.Stats
 import com.mygdx.game.player
 
 class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScreen() {
-    override var nrOfButtons = 0
     override var activeButton: Actor? = null
-    val buttons = mutableListOf<Button>()
 
     override fun changeActive(activeIndex: Int) {
         activeButton = buttons[activeIndex]
@@ -59,7 +57,6 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
             })
             buttons.add(eggButton)
         }
-        nrOfButtons = buttons.size
 
     }
     override fun render() {

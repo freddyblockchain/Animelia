@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.*
@@ -18,6 +19,8 @@ import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.initSignalListeners
 import com.mygdx.game.Signal.signalConvert
+import com.mygdx.game.UI.Screens.StartScreen
+import com.mygdx.game.UI.Screens.UIScreen
 import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
 
@@ -45,7 +48,7 @@ class MainGame : ApplicationAdapter() {
         mainCamera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
-        currentGameMode = mainMode
+        currentGameMode = UIMode(StartScreen(mainMode), renderGameObjects = false)
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()

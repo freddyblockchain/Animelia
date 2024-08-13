@@ -4,11 +4,11 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.ScreenViewport
@@ -17,24 +17,24 @@ import com.mygdx.game.Utils.Center
 
 abstract class UIScreen {
     lateinit var rootTable: Table
-    abstract val nrOfButtons: Int
     var activeButtonIndex: Int = 0
     val shapeRenderer: ShapeRenderer = ShapeRenderer()
     val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
     open val backgroundColor = Color.DARK_GRAY
 
     val stage = Stage(ScreenViewport())
+    val buttons: MutableList<Actor> = mutableListOf()
 
     abstract var activeButton: Actor?
 
     fun moveUp() {
-        activeButtonIndex = (activeButtonIndex - 1 + nrOfButtons) % nrOfButtons
+        activeButtonIndex = (activeButtonIndex + 1) % buttons.size
 
         changeActive(activeButtonIndex)
     }
 
     fun moveDown() {
-        activeButtonIndex = (activeButtonIndex + 1) % nrOfButtons
+        activeButtonIndex = if(activeButtonIndex - 1 < 0 ) buttons.size - 1 else activeButtonIndex - 1
 
         changeActive(activeButtonIndex)
     }
@@ -57,12 +57,12 @@ abstract class UIScreen {
             object : InputListener() {
                 override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                     when (keycode) {
-                        Input.Keys.RIGHT -> {
+                        Input.Keys.RIGHT, Input.Keys.DOWN -> {
                             moveUp()
                             return true
                         }
 
-                        Input.Keys.LEFT -> {
+                        Input.Keys.LEFT, Input.Keys.UP -> {
                             moveDown()
                             return true
                         }
@@ -89,6 +89,23 @@ abstract class UIScreen {
         activeButtonIndex = activeIndex
     }
 
-    abstract fun render()
+    open fun render(){
+        stage.act(Gdx.graphics.deltaTime)
+        stage.isDebugAll = true
+        stage.draw()
+
+       /* buttons.forEachIndexed { index, actor ->
+            val stageCoords = actor.localToStageCoordinates(Vector2(0f, 0f))
+            val origColor = shapeRenderer.color
+            val color = if (index == activeButtonIndex) Color.GREEN else Color.WHITE
+            shapeRenderer.projectionMatrix = stage.camera.combined
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
+            shapeRenderer.setColor(color)
+            shapeRenderer.rect(stageCoords.x, stageCoords.y, actor.width, actor.height)
+            shapeRenderer.color = origColor
+            shapeRenderer.end()
+        }*/
+
+    }
 
 }

@@ -21,7 +21,6 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.player
 
 class TrainingScreen(val prevMode: GameMode): UIScreen() {
-    override val nrOfButtons = 0
 
     override val backgroundColor = Color(1f, 1f, 1f, 1f) // Example color
     override var activeButton: Actor? = null
