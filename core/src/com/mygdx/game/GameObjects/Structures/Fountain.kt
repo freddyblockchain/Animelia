@@ -8,8 +8,10 @@ import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.UI.Screens.DialogScreen
 import com.mygdx.game.UI.Screens.ReincarnationScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
@@ -27,7 +29,10 @@ class FountainCollision(): InputCollision(){
     override val keyCode = Input.Keys.SPACE
 
     override fun collisionHappened(collidedObject: GameObject) {
-        currentGameMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
+        val reincarnationMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
+        val dialogMode = UIMode(DialogScreen(currentGameMode, reincarnationMode,"Do you want to Reincarnate?"))
+        dialogMode.uiScreen.confirmSound.play()
+        changeMode(dialogMode)
     }
 
 }

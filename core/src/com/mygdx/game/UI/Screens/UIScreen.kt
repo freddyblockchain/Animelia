@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.game.DefaultSoundHandler
+import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.UI.createBackgroundDrawable
 import com.mygdx.game.Utils.Center
 
@@ -29,6 +30,9 @@ abstract class UIScreen {
     val confirmSound = DefaultSoundHandler.getSound("Sound/Menu FX example/Menu1A.wav")
     val backSound  = DefaultSoundHandler.getSound("Sound/Menu FX example/Menu1B.wav")
     val switchSound = DefaultSoundHandler.getSound("Sound/switch6.wav")
+
+    open var prevMode: GameMode? = null
+    open var renderPrevGameMode : Boolean = false
 
     abstract var activeButton: Actor?
 

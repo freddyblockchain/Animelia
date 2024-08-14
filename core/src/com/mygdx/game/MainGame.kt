@@ -76,14 +76,14 @@ class MainGame : ApplicationAdapter() {
             SignalManager.pastSignals.add(it)
         }
         changeArea(Vector2(160f,200f), "World1")
-        currentGameMode = UIMode(StartScreen(mainMode), renderGameObjects = false)
+        currentGameMode = UIMode(StartScreen(mainMode))
     }
 
     override fun render() {
 
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT or GL20.GL_DEPTH_BUFFER_BIT)
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
-        RenderGraph.render(currentGameMode.spriteBatch)
+        currentGameMode.render()
         AnimationManager.addAnimationsToRender()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()

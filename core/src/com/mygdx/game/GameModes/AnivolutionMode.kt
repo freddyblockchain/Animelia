@@ -15,6 +15,12 @@ import kotlin.math.min
 
 class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTITY, val isReincarnating: Boolean = false): GameMode {
     override val spriteBatch = SpriteBatch()
+    override fun render() {
+        spriteBatch.begin()
+        player.render(spriteBatch)
+        spriteBatch.end()
+    }
+
     override val inputProcessor = DefaultInputProcessor()
     val origZoom = mainCamera.zoom
 
@@ -47,9 +53,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         else if(currentFrame <= 270){
             mainCamera.zoom += 0.005f
         }
-        spriteBatch.begin()
-        player.render(spriteBatch)
-        spriteBatch.end()
+        render()
         currentFrame += 1
 
         if(currentFrame > 270){

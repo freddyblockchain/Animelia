@@ -10,11 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.DefaultMusicHandler
 import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.UI.PauseScreenComponents.AnimeliaButton
 import com.mygdx.game.UI.bigLabel
 import com.mygdx.game.UI.createBackgroundDrawable
+import com.mygdx.game.currentGameMode
 
 class StartScreen(val nextGameMode: GameMode): UIScreen() {
     override var activeButton: Actor? = null
@@ -40,9 +42,12 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         newGameButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
-                changeMode(nextGameMode)
+                val dialogScreen = DialogScreen(currentGameMode, nextGameMode, "Are you sure you want to start new game?"){
+                    MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Snow City Theme/snow_city.mp3"))
+                }
+                val uiConformMode = UIMode(dialogScreen)
+                changeMode(uiConformMode)
                 confirmSound.play()
-                MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Snow City Theme/snow_city.mp3"))
             }
         })
         rootTable.add(buttonTable).expand().center()

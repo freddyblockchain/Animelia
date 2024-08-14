@@ -18,11 +18,13 @@ import com.mygdx.game.UI.PauseScreenComponents.InventoryTable
 import com.mygdx.game.UI.PauseScreenComponents.StatusTable
 import com.mygdx.game.UI.createBackgroundDrawable
 
-class PauseScreen(val prevMode: GameMode) : UIScreen() {
+class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
     val statusTable = StatusTable(this.backgroundColor)
     val inventoryTable = InventoryTable(this.backgroundColor)
     val abilityTable = AbilityTable(this.backgroundColor)
     var activeTable: Table = statusTable
+
+    override var renderPrevGameMode = true
     override var activeButton: Actor? = null
 
     override fun changeActive(activeIndex: Int){
@@ -49,7 +51,7 @@ class PauseScreen(val prevMode: GameMode) : UIScreen() {
                 override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                     when (keycode) {
                         Input.Keys.ESCAPE -> {
-                            changeMode(prevMode)
+                            changeMode(prevMode!!)
                             return true
                         }
                     }

@@ -20,10 +20,11 @@ import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.player
 
-class TrainingScreen(val prevMode: GameMode): UIScreen() {
+class TrainingScreen(override var prevMode: GameMode?): UIScreen() {
 
     override val backgroundColor = Color(1f, 1f, 1f, 1f) // Example color
     override var activeButton: Actor? = null
+    override var renderPrevGameMode = true
 
     override fun create() {
         super.create()
@@ -100,7 +101,7 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
                 PlayerStatus.age = age
                 PlayerStatus.sp = exp
                 player.stats.offence = offence
-                changeMode(prevMode)
+                changeMode(prevMode!!)
                 anivolutionCheck()
             }
         })
@@ -113,7 +114,7 @@ class TrainingScreen(val prevMode: GameMode): UIScreen() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
                     Input.Keys.SPACE -> {
-                        changeMode(prevMode)
+                        changeMode(prevMode!!)
                         return true
                     }
                     Input.Keys.UP -> {

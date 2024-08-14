@@ -23,8 +23,10 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.player
 
-class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScreen() {
+class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>) : UIScreen() {
     override var activeButton: Actor? = null
+
+    override var renderPrevGameMode = false
 
     override fun changeActive(activeIndex: Int) {
         activeButton = buttons[activeIndex]
@@ -53,7 +55,7 @@ class ReincarnationScreen(val prevMode: GameMode, val eggs: List<Egg>) : UIScree
                     confirmSound.play()
                     player.animeliaInfo.gameTexture = texture
                     player.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
-                    changeMode(AnivolutionMode(prevMode, getEggAnimelia(egg), isReincarnating = true))
+                    changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })
             buttons.add(eggButton)

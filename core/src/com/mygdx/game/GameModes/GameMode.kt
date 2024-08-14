@@ -7,7 +7,11 @@ import com.mygdx.game.currentGameMode
 
 interface GameMode {
     val spriteBatch: SpriteBatch
+    fun render()
     fun FrameAction(){
+
+    }
+    fun OnlyRenderFrameAction(){
 
     }
     val inputProcessor: InputProcessor

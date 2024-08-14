@@ -9,18 +9,22 @@ import com.mygdx.game.Utils.RenderGraph
 
 class TalkMode(val conversation: Conversation, val prevMode: GameMode): GameMode {
     override val spriteBatch = SpriteBatch()
+
     override val inputProcessor = TalkInputProcessor(::updateSpeechIndex)
     val speechTextBubble = SpeechTextBubble()
     var currentSpeechIndex = 0
 
     override fun FrameAction() {
-        spriteBatch.begin()
         for(gameObject in AreaManager.getActiveArea()!!.gameObjects.toMutableList()){
             RenderGraph.addToSceneGraph(gameObject)
         }
+    }
+    override fun render() {
+        spriteBatch.begin()
         val textBubbleToRender = conversation.speechDataList[currentSpeechIndex]
         speechTextBubble.render(spriteBatch, textBubbleToRender)
         spriteBatch.end()
+        prevMode.render()
     }
 
 
