@@ -59,7 +59,7 @@ class FireHippoData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firehippo-straight.png","Animelias/firehippo-right.png","Animelias/firehippo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(13), InArea("World3"))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball)
 }
 class FireDragonData(): AnimeliaData {
     override var gameTexture = DefaultTextureHandler.getTexture("Butler.png")

@@ -20,6 +20,11 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
     override val collision = RockCollision(this, shooter)
+
+    override fun frameTask() {
+        super.frameTask()
+        this.rotateByAmount(3f, this)
+    }
 }
 
 class RockCollision(rock: RockProjectile, val shooter: GameObject): ProjectileCollision(rock){

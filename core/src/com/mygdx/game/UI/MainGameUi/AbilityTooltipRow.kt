@@ -31,7 +31,7 @@ class AbilityTooltipRow():Renderable {
     override fun render(batch: SpriteBatch) {
         var screenSize = Vector2(Gdx.graphics.width.toFloat(),Gdx.graphics.height.toFloat())
         val xOffset = 96f
-        val startingPos = Vector2(64f, screenSize.y - 32f)
+        val startingPos = Vector2(64f, screenSize.y - (screenSize.y / 10f))
         var counter = 0
         for(toolTip in abilityToolTips){
             toolTip.sprite.setPosition(startingPos.x + (xOffset * counter), startingPos.y)

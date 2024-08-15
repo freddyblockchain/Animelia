@@ -1,6 +1,7 @@
 package com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable
 
 import FontManager
+import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
@@ -34,8 +35,10 @@ class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityNam
 
     override fun draw(batch: Batch?, parentAlpha: Float) {
         if(abilityButtonOwnership == AbilityButtonOwnership.Owned){
+            val color: Color = this.color
+            val newAlpha = if(this.abilityButtonLearnable == AbilityButtonLearnable.Learnable) 1f else 0.5f
+            this.setColor(color.r,color.g, color.b, newAlpha)
             super.draw(batch, parentAlpha)
-
             for (iconTable in iconTableList){
                 if(iconTable.chosenAbility == abilityName){
                     FontManager.MediumFont.draw(batch, iconTable.num.toString(), x + width / 3.5f, y + height)
