@@ -4,6 +4,7 @@ import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Ability.AbilityName
+import com.mygdx.game.Ability.AbilityType
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.EffectAnimation
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -15,6 +16,7 @@ import com.mygdx.game.Particles.AnimeliaEffect
 class RockThrowAbility(override val attachedFightableObject: FightableObject): KeyAbility {
     override val triggerKey = Input.Keys.NUM_3
     override val abilityName = AbilityName.RockThrow
+    override val abilityType = AbilityType.Fighting
 
     override val activeFrames = 30
     override var currentFrame = 0

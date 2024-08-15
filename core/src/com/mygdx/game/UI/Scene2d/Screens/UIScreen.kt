@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.Screens
+package com.mygdx.game.UI.Scene2d.Screens
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.GameModes.GameMode
-import com.mygdx.game.UI.createBackgroundDrawable
+import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 import com.mygdx.game.Utils.Center
 
 abstract class UIScreen {

@@ -2,7 +2,7 @@ package com.mygdx.game.GameModes
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.UI.Screens.UIScreen
+import com.mygdx.game.UI.Scene2d.Screens.UIScreen
 import com.mygdx.game.Utils.RenderGraph
 import com.mygdx.game.mainMode
 

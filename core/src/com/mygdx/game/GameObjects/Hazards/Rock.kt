@@ -41,7 +41,9 @@ class Rock(gameObjectData: GameObjectData)
 
         if(!isDestroyed){
             val textAnimation = TextAnimation(Color.LIGHT_GRAY, "requires ${this.customFields.StrengthToBreak} offence", this.currentMiddle + Vector2(this.width, 0f), false, 120)
-            AnimationManager.animationManager.add(textAnimation)
+            if(!AnimationManager.animationManager.any { it is TextAnimation && textAnimation.text.startsWith("requires")}){
+                AnimationManager.animationManager.add(textAnimation)
+            }
         } else{
             activateDestroyedEffect()
         }

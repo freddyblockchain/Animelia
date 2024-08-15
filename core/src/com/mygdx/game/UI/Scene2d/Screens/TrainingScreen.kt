@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.Screens
+package com.mygdx.game.UI.Scene2d.Screens
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input

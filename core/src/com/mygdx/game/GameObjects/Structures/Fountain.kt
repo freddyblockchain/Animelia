@@ -11,8 +11,8 @@ import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.UI.Screens.DialogScreen
-import com.mygdx.game.UI.Screens.ReincarnationScreen
+import com.mygdx.game.UI.Scene2d.Screens.DialogScreen
+import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 

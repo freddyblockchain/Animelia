@@ -1,4 +1,4 @@
-package com.mygdx.game.UI
+package com.mygdx.game.UI.Scene2d
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.scenes.scene2d.ui.Label

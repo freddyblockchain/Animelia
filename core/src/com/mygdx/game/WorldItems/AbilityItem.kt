@@ -22,7 +22,7 @@ class AbilityItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     }
 
     override fun itemGained() {
-        player.abilities.add(abilityData.keyAbility)
+        player.ownedAbilities.add(abilityData.keyAbility)
         super.itemGained()
     }
 

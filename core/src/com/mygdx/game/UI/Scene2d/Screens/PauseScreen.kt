@@ -1,22 +1,18 @@
-package com.mygdx.game.UI.Screens
-import com.badlogic.gdx.Gdx
+package com.mygdx.game.UI.Scene2d.Screens
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.UI.PauseScreenComponents.AbilityTable.AbilityTable
-import com.mygdx.game.UI.PauseScreenComponents.AnimeliaButton
-import com.mygdx.game.UI.PauseScreenComponents.InventoryTable
-import com.mygdx.game.UI.PauseScreenComponents.StatusTable
-import com.mygdx.game.UI.createBackgroundDrawable
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable.AbilityTable
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.InventoryTable
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.StatusTable
+import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 
 class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
     val statusTable = StatusTable(this.backgroundColor)

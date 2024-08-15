@@ -1,5 +1,4 @@
 package com.mygdx.game
-import com.mygdx.game.Enums.Item
 import com.mygdx.game.WorldItems.AbilityItem
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Door

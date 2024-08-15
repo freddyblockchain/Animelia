@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.Screens
+package com.mygdx.game.UI.Scene2d.Screens
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
@@ -19,6 +19,7 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.player
@@ -32,7 +33,6 @@ class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>)
         activeButton = buttons[activeIndex]
         super.changeActive(activeIndex)
     }
-
     override fun create() {
         super.create()
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)

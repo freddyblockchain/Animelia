@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.Screens
+package com.mygdx.game.UI.Scene2d.Screens
 import FontManager
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
@@ -17,7 +17,7 @@ import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.ANIMELIA_STAGE
 import com.mygdx.game.Animelia.getAnimeliaData
-import com.mygdx.game.UI.createBackgroundDrawable
+import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 
 
 class AnivolutionViewScreen(val prevMode: GameMode, val stage: Stage){

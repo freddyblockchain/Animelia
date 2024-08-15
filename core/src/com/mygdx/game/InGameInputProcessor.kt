@@ -13,7 +13,7 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
-import com.mygdx.game.UI.Screens.PauseScreen
+import com.mygdx.game.UI.Scene2d.Screens.PauseScreen
 
 
 class InGameInputProcessor : InputProcessor {
@@ -31,9 +31,11 @@ class InGameInputProcessor : InputProcessor {
             //currentGameMode = AnivolutionViewMode(currentGameMode)
             currentGameMode = UIMode(PauseScreen(currentGameMode))
         }
-        for(ability in player.abilities){
-            if(ability.triggerKey == keycode){
-                AbilityManager.abilities.add(ability)
+        for(abilityPair in player.activeAbilities){
+            if(abilityPair.value != null){
+                if(abilityPair.key == keycode - 7){
+                    AbilityManager.abilities.add(abilityPair.value!!)
+                }
             }
         }
 

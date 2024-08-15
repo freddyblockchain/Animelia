@@ -43,4 +43,6 @@ interface Ability {
     var currentFrame: Int
     fun frameAction()
     val attachedFightableObject: FightableObject
+    val abilityName: AbilityName
+    val abilityType: AbilityType
 }

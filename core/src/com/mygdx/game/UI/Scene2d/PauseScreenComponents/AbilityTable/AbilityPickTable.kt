@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.PauseScreenComponents.AbilityTable
+package com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable
 
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
@@ -6,8 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Ability.AbilityType
 import com.mygdx.game.Ability.getAbilitiesFromType
 import com.mygdx.game.Ability.getIconFromType
-import com.mygdx.game.DefaultTextureHandler
-import com.mygdx.game.UI.smallLabel
+import com.mygdx.game.UI.Scene2d.smallLabel
 
 class AbilityPickTable(val iconTableList: List<IconTable>): Table() {
     init {

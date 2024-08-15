@@ -51,7 +51,7 @@ fun addObjectsToArea(area: Area, objectsToAdd: List<GameObject>){
 }
 
 fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
-    player.abilities.forEach { it.onDeactivate() }
+    player.ownedAbilities.forEach { it.onDeactivate() }
     val newPos = Vector2(newPos.x, newPos.y)
 
     AreaManager.changeActiveArea(newAreaIdentifier)

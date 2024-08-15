@@ -1,4 +1,4 @@
-package com.mygdx.game.UI.PauseScreenComponents.AbilityTable
+package com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable
 
 import FontManager
 import com.badlogic.gdx.graphics.g2d.Batch
@@ -13,7 +13,7 @@ enum class AbilityButtonOwnership {NotOwned, Owned}
 enum class AbilityButtonLearnable {Learnable, NotLearnable}
 
 class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>): ImageButton(drawable) {
-    val abilityButtonOwnership = if(player.abilities.any { it.abilityName == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
+    val abilityButtonOwnership = if(player.ownedAbilities.any { it.abilityName == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
     val abilityButtonLearnable = if(player.animeliaInfo.availableAbilities.contains(abilityName)) AbilityButtonLearnable.Learnable else AbilityButtonLearnable.NotLearnable
 
     init {

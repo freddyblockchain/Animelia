@@ -20,7 +20,7 @@ import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.initSignalListeners
 import com.mygdx.game.Signal.signalConvert
-import com.mygdx.game.UI.Screens.StartScreen
+import com.mygdx.game.UI.Scene2d.Screens.StartScreen
 import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
 
@@ -76,6 +76,7 @@ class MainGame : ApplicationAdapter() {
             SignalManager.pastSignals.add(it)
         }
         changeArea(Vector2(160f,200f), "World1")
+        mainMode.abilityRowUi.updateToolTips()
         currentGameMode = UIMode(StartScreen(mainMode))
     }
 

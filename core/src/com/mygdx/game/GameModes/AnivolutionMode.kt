@@ -8,6 +8,7 @@ import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.mainCamera
 import com.mygdx.game.player
 import com.mygdx.game.plus
@@ -19,6 +20,10 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         spriteBatch.begin()
         player.render(spriteBatch)
         spriteBatch.end()
+    }
+
+    init {
+        MusicManager.currentTrack?.stop()
     }
 
     override val inputProcessor = DefaultInputProcessor()
@@ -67,6 +72,7 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
                 false,
                 240
             )
+            MusicManager.currentTrack?.play()
             AnimationManager.animationManager.add(textAnimation)
         }
     }

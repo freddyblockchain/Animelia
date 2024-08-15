@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.MoveableEntities.Characters
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
@@ -18,6 +19,7 @@ import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.UI.PlayerHealthStrategy
+import com.mygdx.game.player
 
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
@@ -30,7 +32,8 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val collision = CanMoveCollision()
     override val maxHealth = 30f
     override var stats = Stats()
-    val abilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
+    val ownedAbilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
+    val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FireArmadillo
     var animeliaInfo = getAnimeliaData(currentAnimelia)
 
@@ -38,6 +41,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
 
     init {
         currentHealth = maxHealth
+        activeAbilities[1] = ownedAbilities[0]
     }
 
     override fun render(batch: SpriteBatch) {
