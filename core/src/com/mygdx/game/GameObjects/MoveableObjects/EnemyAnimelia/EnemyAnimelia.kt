@@ -7,6 +7,7 @@ import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.AnimeliaCustomFields
+import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.IcePenguin
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -21,6 +22,7 @@ fun convertToEnemyAnimelia(gameObjectData: GameObjectData): GameObject{
 fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData): EnemyAnimelia{
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadilloEnemy(gameObjectData)
+        ANIMELIA_ENTITY.IcePenguin -> IcePenguinEnemy(gameObjectData)
         else -> FireArmadilloEnemy(gameObjectData)
     }
 }

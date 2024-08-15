@@ -7,6 +7,7 @@ import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
 import com.mygdx.game.GameObjects.Structures.Fountain
+import com.mygdx.game.GameObjects.Structures.House
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.WorldItems.BookItem
 import com.mygdx.game.WorldItems.MaterialItem
@@ -36,6 +37,7 @@ data class Entities(
     val Cliffside: List<GameObjectData> = listOf(),
     val Position: List<GameObjectData> = listOf(),
     val Fountain: List<GameObjectData> = listOf(),
+    val House: List<GameObjectData> = listOf()
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -53,6 +55,7 @@ fun initMappings(){
     GameObjectFactory.register("Fountain", ::Fountain)
     GameObjectFactory.register("AnivolutionBook", ::BookItem)
     GameObjectFactory.register("Item", ::MaterialItem)
+    GameObjectFactory.register("House", ::House)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

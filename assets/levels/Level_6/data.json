@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_6",
-	"uniqueIdentifer": "d82abd10-25d0-11ef-943d-f5c0fd435082",
-	"x": 160,
-	"y": -416,
-	"width": 160,
-	"height": 160,
+	"uniqueIdentifer": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+	"x": 480,
+	"y": 128,
+	"width": 256,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
-			"dir": "s"
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+			"dir": "w"
 		},
 		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "n"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "World3"
+		"World": "World1"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -30,46 +30,17 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
-		"Door": [
+		"Cliffside": [
 			{
-				"id": "Door",
-				"iid": "1e731e90-25d0-11ef-8e0b-7b87950b48ab",
-				"layer": "EntitiesOnTop",
-				"x": 64,
-				"y": 144,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "6589ed40-25d0-11ef-8e0b-1d3b7e9159a7",
-						"layerIid": "0bc3f260-25d0-11ef-8e0b-eb8431c13b62",
-						"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			}
-		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "2d0f3930-4ce0-11ef-adfe-6f665ad35ddb",
+				"id": "Cliffside",
+				"iid": "1a5c0db0-25d0-11ef-b434-3f772b085b47",
 				"layer": "Entities",
-				"x": 64,
-				"y": 64,
+				"x": 128,
+				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "Fire_Armadillo",
-					"AnimeliaCityPos": {
-						"entityIid": "2c328d70-4ce0-11ef-adfe-0598b27f0fb5",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
 			}
 		]
 	}

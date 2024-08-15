@@ -1,12 +1,16 @@
 {
 	"identifier": "Level_2",
 	"uniqueIdentifer": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
-	"x": -512,
+	"x": -384,
 	"y": 96,
-	"width": 416,
+	"width": 288,
 	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
+		{
+			"levelIid": "eda8b670-4ce0-11ef-8f8c-b95441bdb4c3",
+			"dir": "n"
+		},
 		{
 			"levelIid": "2feab690-25d0-11ef-9d5b-271d9cab9325",
 			"dir": "e"
@@ -26,37 +30,13 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
-		"IceCone": [
-			{
-				"id": "IceCone",
-				"iid": "1c3152a0-25d0-11ef-8e0b-fdd868c88700",
-				"layer": "EntitiesOnTop",
-				"x": 384,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			},
-			{
-				"id": "IceCone",
-				"iid": "222278b0-25d0-11ef-8e0b-455e94475a93",
-				"layer": "EntitiesOnTop",
-				"x": 384,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			}
-		],
 		"Animelia": [
 			{
 				"id": "Animelia",
-				"iid": "48b522f0-4ce0-11ef-adfe-d964930bfc11",
+				"iid": "1b2770f0-4ce0-11ef-8f8c-d50373249f93",
 				"layer": "Entities",
-				"x": 224,
-				"y": 0,
+				"x": 128,
+				"y": 160,
 				"width": 32,
 				"height": 32,
 				"color": 15389866,
@@ -68,6 +48,27 @@
 						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "614772a0-4ce0-11ef-8f8c-d504f9ef9d73",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "c85045f0-4ce0-11ef-8f8c-2732dacb94ce",
+						"layerIid": "eda8dd83-4ce0-11ef-8f8c-4323770bffbd",
+						"levelIid": "eda8b670-4ce0-11ef-8f8c-b95441bdb4c3",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
 				}
 			}
 		]

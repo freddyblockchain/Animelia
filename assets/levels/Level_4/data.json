@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_4",
-	"uniqueIdentifer": "f316d7b0-25d0-11ef-8eef-4537a8752474",
-	"x": 480,
-	"y": 128,
-	"width": 256,
-	"height": 96,
+	"uniqueIdentifer": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
+	"x": -896,
+	"y": -352,
+	"width": 352,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "w"
+			"levelIid": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
+			"dir": ">"
 		},
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "e"
+			"levelIid": "eda8b670-4ce0-11ef-8f8c-b95441bdb4c3",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "World4"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -30,17 +30,40 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"House": [
 			{
-				"id": "Cliffside",
-				"iid": "1a5c0db0-25d0-11ef-b434-3f772b085b47",
+				"id": "House",
+				"iid": "807583a0-4ce0-11ef-8f8c-83f38f134528",
+				"layer": "Entities",
+				"x": 64,
+				"y": 64,
+				"width": 128,
+				"height": 128,
+				"color": 9149364,
+				"customFields": {
+					"House": "Iglo"
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "8b07a4e0-4ce0-11ef-8f8c-a5f11cd54192",
 				"layer": "Entities",
 				"x": 128,
-				"y": 0,
+				"y": 192,
 				"width": 32,
-				"height": 96,
-				"color": 16705377,
-				"customFields" : {}
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "6060f850-4ce0-11ef-8f8c-318ee11e67f0",
+						"layerIid": "472e0302-4ce0-11ef-8f8c-5b3e95c8e0d4",
+						"levelIid": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
 			}
 		]
 	}

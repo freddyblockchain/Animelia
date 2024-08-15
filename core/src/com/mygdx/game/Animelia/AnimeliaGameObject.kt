@@ -82,6 +82,7 @@ fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
     return when(animeliaType){
         "FireArmadillo" -> ANIMELIA_ENTITY.FireArmadillo
         "FireHippo" -> ANIMELIA_ENTITY.FireHippo
+        "IcePenguin" -> ANIMELIA_ENTITY.IcePenguin
         else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

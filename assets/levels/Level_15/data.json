@@ -1,15 +1,15 @@
 {
 	"identifier": "Level_15",
-	"uniqueIdentifer": "54445e00-25d0-11ef-b434-15957d2f9085",
-	"x": 800,
-	"y": -800,
-	"width": 256,
-	"height": 96,
+	"uniqueIdentifer": "14ab7610-25d0-11ef-8421-a3a8d273b107",
+	"x": -480,
+	"y": -1152,
+	"width": 192,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
-			"dir": "w"
+			"levelIid": "d361e100-25d0-11ef-8421-612c6cfe26b8",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -26,17 +26,60 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"AnimeliaEnemy": [
 			{
-				"id": "Cliffside",
-				"iid": "a2d632a0-25d0-11ef-b434-f16106c4be1d",
+				"id": "AnimeliaEnemy",
+				"iid": "549406a0-25d0-11ef-8421-f5ed2710f98a",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "FireHippo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "768c3420-25d0-11ef-8421-793c33a61ee4",
+				"layer": "Entities",
+				"x": 64,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "FireHippo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "7e864990-25d0-11ef-8421-050ff3a17e1a",
+				"layer": "Entities",
+				"x": 64,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "FireHippo"
+				}
+			}
+		],
+		"AnivolutionBook": [
+			{
+				"id": "AnivolutionBook",
+				"iid": "435c6f40-4ce0-11ef-a0fc-5d09f865ab7f",
 				"layer": "Entities",
 				"x": 64,
 				"y": 0,
 				"width": 32,
-				"height": 96,
-				"color": 16705377,
-				"customFields" : {}
+				"height": 32,
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "FireHippo"
+				}
 			}
 		]
 	}

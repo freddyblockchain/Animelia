@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_3",
-	"uniqueIdentifer": "2feab690-25d0-11ef-9d5b-271d9cab9325",
-	"x": -96,
-	"y": 160,
-	"width": 96,
-	"height": 64,
+	"uniqueIdentifer": "eda8b670-4ce0-11ef-8f8c-b95441bdb4c3",
+	"x": -640,
+	"y": -96,
+	"width": 352,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "e"
+			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
+			"dir": "s"
 		},
 		{
-			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
-			"dir": "w"
+			"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "World4"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -29,5 +29,55 @@
 		"OngroundTerrain.png",
 		"OnGround_lava.png"
 	],
-	"entities" : {}
+	"entities": {
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "19e3e5b0-4ce0-11ef-8f8c-a562b016e00b",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IcePenguin"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "1c769e80-4ce0-11ef-8f8c-258d01a98ffb",
+				"layer": "EntitiesOnTop",
+				"x": 224,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IcePenguin"
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "c85045f0-4ce0-11ef-8f8c-2732dacb94ce",
+				"layer": "Entities",
+				"x": 256,
+				"y": 176,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "614772a0-4ce0-11ef-8f8c-d504f9ef9d73",
+						"layerIid": "42540781-25d0-11ef-9d5b-ed06f13b40c8",
+						"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		]
+	}
 }

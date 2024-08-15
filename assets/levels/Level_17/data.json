@@ -1,0 +1,43 @@
+{
+	"identifier": "Level_17",
+	"uniqueIdentifer": "54445e00-25d0-11ef-b434-15957d2f9085",
+	"x": 800,
+	"y": -800,
+	"width": 256,
+	"height": 96,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
+			"dir": "w"
+		}
+	],
+	"customFields": {
+		"World": "World3"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png"
+	],
+	"entities": {
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "a2d632a0-25d0-11ef-b434-f16106c4be1d",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		]
+	}
+}
