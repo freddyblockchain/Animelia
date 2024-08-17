@@ -52,7 +52,8 @@ class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>)
             eggButton.addListener(object : ClickListener() {
                 override fun clicked(event: InputEvent?, x: Float, y: Float) {
                     // Define what should happen when the button is clicked
-                    confirmSound.play()
+                    val id = confirmSound.play()
+                    confirmSound.setVolume(id,0.2f)
                     player.animeliaInfo.gameTexture = texture
                     player.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))

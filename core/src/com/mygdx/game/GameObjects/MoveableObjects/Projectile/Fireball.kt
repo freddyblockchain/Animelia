@@ -22,16 +22,21 @@ class Fireball(gameObjectData: GameObjectData, size: Vector2, unitVectorDirectio
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
     override val collision = FireballCollision(this)
-   // val sound = DefaultSoundHandler.getSound("Sound/FireSound/bell.wav")
+    val sound = DefaultSoundHandler.getSound("Sound/FireExplotion/explosion_01.ogg")
     init {
         setRotation(unitVectorDirection,this,0f)
-        //sound.play()
+        val id = sound.play()
+        sound.setPitch(id, 1f)
+        sound.setVolume(id,0.5f)
     }
 }
 
 class FireballCollision(fireball: Fireball): ProjectileCollision(fireball){
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is IceCone){
+            val breakingSound = DefaultSoundHandler.getSound("Sound/IceShatters/IceBreaking.ogg")
+            val id = breakingSound.play()
+            breakingSound.setVolume(id,0.5f)
             collidedObject.remove()
         }
     }

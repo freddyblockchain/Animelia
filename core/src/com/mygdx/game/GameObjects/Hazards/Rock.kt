@@ -24,6 +24,8 @@ class Rock(gameObjectData: GameObjectData)
     val particleEffect = DefaultParticleHandler.getParticle("rockexplode.p")
     val rockEffect = AnimeliaEffect(particleEffect)
 
+    val rockDestroyedSoundEffect = DefaultSoundHandler.getSound("Sound/rock_break.ogg")
+
     init{
         val rockSize = getSize(this.customFields.StrengthToBreak)
         this.setSize(rockSize)
@@ -45,6 +47,7 @@ class Rock(gameObjectData: GameObjectData)
                 AnimationManager.animationManager.add(textAnimation)
             }
         } else{
+
             activateDestroyedEffect()
         }
         return stats.offence >= this.customFields.StrengthToBreak
@@ -57,6 +60,8 @@ class Rock(gameObjectData: GameObjectData)
         rockEffect.particleEffect.setPosition(this.currentMiddle.x, this.currentMiddle.y)
         val animation = EffectAnimation(rockEffect, 60)
         AnimationManager.animationManager.add(animation)
+        val id = rockDestroyedSoundEffect.play()
+        rockDestroyedSoundEffect.setVolume(id,0.2f)
     }
 }
 

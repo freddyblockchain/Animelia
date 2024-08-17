@@ -46,8 +46,7 @@ class LightBulbCollision(val lightBulb: LightBulb): MoveCollision(){
         if(collidedObject is Fireball){
             collidedObject.remove()
             lightBulb.gameObjectToTrigger.onTrigger()
-            val id = lightBulb.sound.play(1f)
-            lightBulb.sound.setPitch(id, 2f)
+            lightBulb.sound.play()
         }
     }
 

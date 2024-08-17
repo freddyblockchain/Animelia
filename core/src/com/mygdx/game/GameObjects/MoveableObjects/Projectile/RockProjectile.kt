@@ -2,6 +2,7 @@ package com.mygdx.game.GameObjects.MoveableObjects.Projectile
 
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
+import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromUnitVector
@@ -30,6 +31,9 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
 class RockCollision(rock: RockProjectile, val shooter: GameObject): ProjectileCollision(rock){
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is IceCone){
+            val breakingSound = DefaultSoundHandler.getSound("Sound/IceShatters/IceBreaking.ogg")
+            val id = breakingSound.play()
+            breakingSound.setVolume(id,0.5f)
             collidedObject.remove()
         }
         if(collidedObject is Rock && shooter is FightableObject && collidedObject.checkDestroyed(shooter.stats)){

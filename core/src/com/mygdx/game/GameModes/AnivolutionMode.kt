@@ -33,14 +33,17 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
     val playerSprite =  player.sprite
     var yOffsetUp = 0
     var yoffsetDown = 0
-    val dissappearSound = DefaultSoundHandler.getSound("Sound/Virix/ALERT_Appear.wav")
-    val appearSound = DefaultSoundHandler.getSound("Sound/Virix/ALERT_Dissappear.wav")
+    val dissappearSound = DefaultSoundHandler.getSound("Sound/retro_beep_04.ogg")
+    val appearSound = DefaultSoundHandler.getSound("Sound/retro_beep_04.ogg")
+
+
 
     override fun FrameAction() {
         if(currentFrame <= 90){
             mainCamera.zoom -= 0.005f
             if(currentFrame == 90){
-                dissappearSound.play()
+                val id = dissappearSound.play()
+                dissappearSound.setVolume(id, 0.5f)
             }
         }
         else if(currentFrame <= 150){
@@ -49,7 +52,8 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         }
         else if(currentFrame == 151){
             player.animeliaInfo = getAnimeliaData(animeliaEntity)
-            appearSound.play()
+            val id = appearSound.play()
+            appearSound.setVolume(id, 0.5f)
         }
         else if(currentFrame <= 210){
             playerSprite.setRegion(0, playerSprite.height.toInt() - (min(yoffsetDown, playerSprite.height.toInt())),playerSprite.width.toInt(),playerSprite.height.toInt());

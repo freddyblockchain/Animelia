@@ -36,14 +36,16 @@ class DialogScreen(override var prevMode: GameMode?, val nextGameMode: GameMode,
                 // Define what should happen when the button is clicked
                 onChange()
                 changeMode(nextGameMode)
-                confirmSound.play()
+                val id = confirmSound.play()
+                confirmSound.setVolume(id,0.2f)
             }
         })
         noButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
                 changeMode(prevMode!!)
-                backSound.play()
+                val id = backSound.play()
+                backSound.setVolume(id,0.2f)
             }
         })
 

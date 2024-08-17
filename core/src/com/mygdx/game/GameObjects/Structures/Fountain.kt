@@ -31,7 +31,8 @@ class FountainCollision(): InputCollision(){
     override fun collisionHappened(collidedObject: GameObject) {
         val reincarnationMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))
         val dialogMode = UIMode(DialogScreen(currentGameMode, reincarnationMode,"Do you want to Reincarnate?"))
-        dialogMode.uiScreen.confirmSound.play()
+        val id = dialogMode.uiScreen.confirmSound.play()
+        dialogMode.uiScreen.confirmSound.setVolume(id, 0.2f)
         changeMode(dialogMode)
     }
 

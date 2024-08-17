@@ -25,6 +25,10 @@ class House(gameObjectData: GameObjectData)
     override val texture = DefaultTextureHandler.getTexture(textureName)
     override val layer = Layer.ONGROUND
     override val collision = CannotMoveCollision()
+
+    init {
+        this.polygon.scale(-0.2f)
+    }
 }
 @Serializable
 data class HouseCustomFields(val House: String){

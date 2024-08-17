@@ -45,7 +45,8 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
                 }
                 val uiConformMode = UIMode(dialogScreen)
                 changeMode(uiConformMode)
-                confirmSound.play()
+                val id = confirmSound.play()
+                confirmSound.setVolume(id,0.2f)
             }
         })
         rootTable.add(buttonTable).expand().center()
