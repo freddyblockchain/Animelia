@@ -9,11 +9,9 @@ import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.Managers.InventoryManager
+import com.mygdx.game.Managers.Inventory
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
-import com.mygdx.game.UI.HealthStrategy
 
 enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo}
 
@@ -58,7 +56,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
 
         if(this.currentHealth <= 0){
             this.remove()
-            InventoryManager.goldReceived(1, this.currentMiddle)
+            Inventory.goldReceived(1, this.currentMiddle)
             PlayerStatus.animeliaClonesKilled += 1
         }
 
@@ -82,6 +80,7 @@ fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
         "FireArmadillo" -> ANIMELIA_ENTITY.FireArmadillo
         "FireHippo" -> ANIMELIA_ENTITY.FireHippo
         "IcePenguin" -> ANIMELIA_ENTITY.IcePenguin
+        "IceYeti" -> ANIMELIA_ENTITY.IceYeti
         else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

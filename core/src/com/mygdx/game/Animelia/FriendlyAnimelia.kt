@@ -26,6 +26,9 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
     abstract val animeliaEntity: ANIMELIA_ENTITY
     val animeliaData by lazy { getAnimeliaData(animeliaEntity) }
     val animeliaRecruitmentConditions = mutableListOf<AnimeliaRecruitmendCondition>()
+
+    abstract val speeches: List<SpeechData>
+    open val goingToCitySpeech = listOf<SpeechData>()
     abstract fun recruitmentAction()
 
 
@@ -49,17 +52,14 @@ class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCo
     override val keyCode = Input.Keys.SPACE
 
     override fun collisionHappened(collidedObject: GameObject) {
-        val speech1 = SpeechData("", "Do you wanna come to the city?")
-        val speech2 = SpeechData("", "hmm, prove your worth by defeating 3 animelia clones")
-        val speech3 = SpeechData("", "Alright, i'll do that")
-
-        val speeches = listOf(speech1, speech2, speech3)
-
-        changeMode(TalkMode(Conversation(speeches), mainMode))
         if(friendlyAnimelia.isConditionsFulfilled()){
+            if(friendlyAnimelia.goingToCitySpeech.size > 0){
+                changeMode(TalkMode(Conversation(friendlyAnimelia.goingToCitySpeech), mainMode))
+            }
             println("All conditions fulfilled")
             friendlyAnimelia.recruitmentAction()
         } else {
+            changeMode(TalkMode(Conversation(friendlyAnimelia.speeches), mainMode))
             println("Not Fulfilled Yet")
         }
     }

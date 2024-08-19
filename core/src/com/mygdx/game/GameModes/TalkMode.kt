@@ -20,11 +20,11 @@ class TalkMode(val conversation: Conversation, val prevMode: GameMode): GameMode
         }
     }
     override fun render() {
+        prevMode.render()
         spriteBatch.begin()
         val textBubbleToRender = conversation.speechDataList[currentSpeechIndex]
         speechTextBubble.render(spriteBatch, textBubbleToRender)
         spriteBatch.end()
-        prevMode.render()
     }
 
 

@@ -6,11 +6,14 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.FriendlyAnimelia
 import com.mygdx.game.EntityRefData
+import com.mygdx.game.UI.Conversation.SpeechData
 
 class FireHippo(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData,
     cityPosEntityId
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
+
+    override val speeches: List<SpeechData> = listOf()
     override fun recruitmentAction() {
         TODO("Not yet implemented")
     }

@@ -2,6 +2,7 @@ package com.mygdx.game.GameObjects
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
@@ -13,7 +14,7 @@ class AnimeliaPosition(gameObjectData: GameObjectData)
     override val texture = DefaultTextureHandler.getTexture("sensor.png")
 
     override val layer = Layer.ONGROUND
-    override val collision = CannotMoveCollision()
+    override val collision = CanMoveCollision()
     override fun render(batch: SpriteBatch) {
 
     }
