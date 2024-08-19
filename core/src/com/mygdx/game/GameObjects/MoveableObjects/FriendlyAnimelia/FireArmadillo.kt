@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
+import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
@@ -16,10 +17,6 @@ import com.mygdx.game.plus
 
 class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
-
-    override val texture = DefaultTextureHandler.getTexture("Animelias/firearmadillo-straight.png")
-    override val layer = Layer.ONGROUND
-
     override fun recruitmentAction() {
         this.remove()
         val trainingStation = TrainingStation(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 32, height = 64))

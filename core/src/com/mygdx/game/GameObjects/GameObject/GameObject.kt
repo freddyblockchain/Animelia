@@ -9,6 +9,7 @@ import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.DefaultCollisionMask
+import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.InitPolygon
 import com.mygdx.game.InitSprite
@@ -35,7 +36,7 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Ve
     var startingPosition = initPosition
 
     //Remember this. Temporary solution. texture must be overriden before polygon is called
-    abstract val texture: Texture
+    open val texture = DefaultTextureHandler.getTexture("EmptyDoor.png")
     open val sprite: Sprite by lazy { InitSprite(texture)}
     open val polygon: Polygon by lazy {InitPolygon(sprite)}
     open val shouldCollide = true

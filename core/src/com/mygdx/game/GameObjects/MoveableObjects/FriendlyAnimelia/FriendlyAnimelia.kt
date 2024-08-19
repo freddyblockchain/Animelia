@@ -20,6 +20,8 @@ fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
 fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimelia{
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.IcePenguin-> IcePenguin(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.IceYeti -> IceYeti(gameObjectData, cityPosRefData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }

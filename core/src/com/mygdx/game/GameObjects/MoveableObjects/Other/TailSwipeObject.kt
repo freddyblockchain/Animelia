@@ -49,7 +49,7 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
         }*/
         currentUnitVector = objectAttached.currentUnitVector
         this.setPosition(this.currentPosition() + currentUnitVector)
-        this.rotateByAmount(rotationAmount, this)
+        this.rotateByAmount(rotationAmount)
         //cheating abit to trigger collisions
         this.move(Vector2(0f, 0f), speed)
     }

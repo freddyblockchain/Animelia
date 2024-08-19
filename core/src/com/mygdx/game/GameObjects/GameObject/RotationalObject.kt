@@ -7,7 +7,7 @@ import kotlin.math.atan2
 interface RotationalObject {
     var angle: Float
     fun setRotation(unitVectorDirection: Vector2, gameObject: GameObject, angleModifier: Float)
-    fun rotateByAmount(amount: Float, gameObject: GameObject)
+    fun GameObject.rotateByAmount(amount: Float)
 }
 
 class DefaultRotationalObject: RotationalObject {
@@ -17,9 +17,9 @@ class DefaultRotationalObject: RotationalObject {
         gameObject.polygon.rotation = angle
         gameObject.sprite.rotation = angle
     }
-    override fun rotateByAmount(amount: Float, gameObject: GameObject){
-        gameObject.polygon.rotate(amount)
-        gameObject.sprite.rotate(amount)
+    override fun GameObject.rotateByAmount(amount: Float){
+        this.polygon.rotate(amount)
+        this.sprite.rotate(amount)
     }
 }
 

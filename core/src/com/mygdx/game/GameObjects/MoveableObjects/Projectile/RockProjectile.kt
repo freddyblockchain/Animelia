@@ -24,7 +24,7 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
 
     override fun frameTask() {
         super.frameTask()
-        this.rotateByAmount(3f, this)
+        this.rotateByAmount(3f)
     }
 }
 

@@ -10,7 +10,6 @@ import com.mygdx.game.GameObjectData
 
 class IcePenguinEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObjectData) {
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
-    override val texture = DefaultTextureHandler.getTexture("player.png")
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
 
     override val maxHealth = 30f

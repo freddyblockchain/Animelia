@@ -4,19 +4,16 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.InventoryManager
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.UI.HealthStrategy
-import com.mygdx.game.getRotatedUnitVectorClockwise
-import com.mygdx.game.getUnitVectorTowardsPoint
-import com.mygdx.game.player
 
 enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo}
 
@@ -35,6 +32,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override val healthStrategy = EnemyHealthStrategy()
     override var direction = Direction.DOWN
     override var canChangeDirection = true
+
+    override val texture = DefaultTextureHandler.getTexture("player.png")
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
