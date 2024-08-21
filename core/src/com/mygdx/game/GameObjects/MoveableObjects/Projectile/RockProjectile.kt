@@ -37,12 +37,6 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
 
 class RockCollision(rock: RockProjectile, val shooter: GameObject): ProjectileCollision(rock){
     override fun collisionHappened(collidedObject: GameObject) {
-        if(collidedObject is IceCone){
-            val breakingSound = DefaultSoundHandler.getSound("Sound/IceShatters/IceBreaking.ogg")
-            val id = breakingSound.play()
-            breakingSound.setVolume(id,0.5f)
-            collidedObject.remove()
-        }
         if(collidedObject is Rock && shooter is FightableObject && collidedObject.checkDestroyed(shooter.stats)){
             collidedObject.remove()
         }

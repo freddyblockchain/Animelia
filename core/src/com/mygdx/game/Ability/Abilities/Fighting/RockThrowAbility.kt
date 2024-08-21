@@ -27,10 +27,22 @@ class RockThrowAbility(override val attachedFightableObject: FightableObject): K
 
     var pos = Vector2()
     var effectPos = Vector2()*/
+    val particleEffect = DefaultParticleHandler.getParticle("rockstart.p")
+    val rockEffect = AnimeliaEffect(particleEffect)
+
+    var effectPos = Vector2()
     override fun onActivate() {
         pos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 40f) - Vector2(
             size.x / 2,
             size.y / 2)
+
+        effectPos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
+
+        rockEffect.start()
+        rockEffect.particleEffect.emitters.forEach { it.reset() }
+        rockEffect.particleEffect.setPosition(effectPos.x, effectPos.y)
+        val animation = EffectAnimation(rockEffect, 25)
+        AnimationManager.animationManager.add(animation)
 
         /*effectPos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
 
