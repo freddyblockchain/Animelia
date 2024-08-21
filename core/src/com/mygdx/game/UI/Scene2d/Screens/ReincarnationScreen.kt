@@ -56,6 +56,7 @@ class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>)
                     confirmSound.setVolume(id,0.2f)
                     player.animeliaInfo.gameTexture = texture
                     player.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
+                    PlayerStatus.sp = PlayerStatus.baseSp
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })

@@ -21,6 +21,13 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
     override val collision = RockCollision(this, shooter)
+    val sound = DefaultSoundHandler.getSound("Sound/FireExplotion/explosion_01.ogg")
+
+    init {
+        val id = sound.play()
+        sound.setPitch(id, 1f)
+        sound.setVolume(id,0.5f)
+    }
 
     override fun frameTask() {
         super.frameTask()

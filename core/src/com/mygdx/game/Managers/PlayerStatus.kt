@@ -11,7 +11,7 @@ data class Stats(var offence: Int = 10,
 class PlayerStatus {
 
     companion object {
-        var age = 5
+        var baseSp = 5
         var sp = 5
         var baseOffence = 10
         var baseDefence = 10
