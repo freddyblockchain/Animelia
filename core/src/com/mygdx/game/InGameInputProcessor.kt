@@ -14,6 +14,7 @@ import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyPressable
 import com.mygdx.game.Managers.InputActionManager
 import com.mygdx.game.UI.Scene2d.Screens.PauseScreen
+import com.mygdx.game.UI.Scene2d.Screens.TrainingScreen.TrainingScreen
 
 
 class InGameInputProcessor : InputProcessor {

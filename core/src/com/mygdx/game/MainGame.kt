@@ -86,12 +86,12 @@ class MainGame : ApplicationAdapter() {
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
         AnimationManager.addAnimationsToRender()
+        drawrects()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()
         EventManager.executeEvents()
         SignalManager.executeSignals()
         drawHealthBars()
-        drawrects()
         mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
         mainCamera.update()
     }
