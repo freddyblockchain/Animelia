@@ -1,6 +1,7 @@
 package com.mygdx.game.GameObjects.Hazards.ConveyerBelt
 
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
+import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
@@ -42,10 +43,31 @@ class ConveyerBelt(gameObjectData: GameObjectData)
     val bricks = constructBricks()
     override val collision = ConveyerBeltCollition(this)
     override val collitionMask = OnlyPlayerCollitionMask
+
+    val upArrow = DefaultTextureHandler.getTexture("UpArrow.png")
+    val upSprite = Sprite(upArrow)
+
+    init {
+
+        upSprite.setPosition(this.currentMiddle.x  - upSprite.width / 4, this.currentMiddle.y - upSprite.height / 4)
+        upSprite.setSize(upSprite.width / 2, upSprite.height / 2)
+        upSprite.setOriginCenter()
+
+    }
     override fun render(batch: SpriteBatch) {
         endBrick.draw(batch)
         startBrick.draw(batch)
         bricks.forEach { it.draw(batch) }
+
+        if(this.direction == Direction.RIGHT){
+            upSprite.rotation = 270f
+            upSprite.draw(batch)
+        }
+        if(this.direction == Direction.LEFT){
+            upSprite.rotation = 90f
+            upSprite.draw(batch)
+        }
+
     }
 
     override fun frameTask() {

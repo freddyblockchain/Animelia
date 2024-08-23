@@ -29,6 +29,7 @@ class Rock(gameObjectData: GameObjectData)
     init{
         val rockSize = getSize(this.customFields.StrengthToBreak)
         this.setSize(rockSize)
+        this.polygon.scale(-0.1f)
     }
 
     fun getSize(strengthToBreak: Int): Vector2{

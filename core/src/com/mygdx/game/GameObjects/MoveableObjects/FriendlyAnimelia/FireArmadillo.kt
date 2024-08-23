@@ -19,15 +19,15 @@ import com.mygdx.game.plus
 class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 
-    val speech1 = SpeechData("", "Do you wanna come to the city?")
-    val speech2 = SpeechData("", "hmm, prove your worth by defeating 3 animelia clones")
-    val speech3 = SpeechData("", "Alright, i'll do that")
+    val speech1 = SpeechData("Me", "Do you wanna come to the city?")
+    val speech2 = SpeechData("Fire Armadillo", "hmm, prove your worth by defeating 3 animelia clones")
+    val speech3 = SpeechData("Me", "Alright, i'll do that")
 
     override val speeches = listOf(speech1, speech2, speech3)
 
-    val citySpeech1 = SpeechData("", "So, you actually defeated 3 clones")
-    val citySpeech2 = SpeechData("", "I have to admit. I thought you were a faker")
-    val citySpeech3 = SpeechData("", "But you have proven yourself. Alright, i'll come back to the city.")
+    val citySpeech1 = SpeechData("Fire Armadillo", "So, you actually defeated 3 clones")
+    val citySpeech2 = SpeechData("Fire Armadillo", "I have to admit. I thought you were a faker")
+    val citySpeech3 = SpeechData("Fire Armadillo", "But you have proven yourself. Alright, i'll come back to the city.")
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
     override fun recruitmentAction() {

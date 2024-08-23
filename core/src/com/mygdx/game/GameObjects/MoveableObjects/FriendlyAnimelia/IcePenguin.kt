@@ -18,14 +18,14 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
 
-    val speech1 = SpeechData("", "Do you wanna come to the city?")
-    val speech2 = SpeechData("", "I'm a researcher! I came out here to research hidden books")
-    val speech3 = SpeechData("", "And I haven't found any yet! Can you help me find one?")
-    val speech4 = SpeechData("", "Sure thing!")
+    val speech1 = SpeechData("Me", "Do you wanna come to the city?")
+    val speech2 = SpeechData("Ice Penguin", "I'm a researcher! I came out here to research hidden books")
+    val speech3 = SpeechData("Ice Penguin", "And I haven't found any yet! Can you help me find one?")
+    val speech4 = SpeechData("Me", "Sure thing!")
 
-    val citySpeech1 = SpeechData("", "You did it!")
-    val citySpeech2 = SpeechData("", "You found a book!")
-    val citySpeech3 = SpeechData("", "I'm going to the city. Please continue giving me books")
+    val citySpeech1 = SpeechData("Ice Penguin", "You did it!")
+    val citySpeech2 = SpeechData("Ice Penguin", "You found a book!")
+    val citySpeech3 = SpeechData("Ice Penguin", "I'm going to the city. Please continue finding books")
 
     override val speeches = listOf(speech1,speech2,speech3,speech4)
 
