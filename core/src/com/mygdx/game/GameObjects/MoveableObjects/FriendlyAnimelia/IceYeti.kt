@@ -18,6 +18,8 @@ class IceYeti(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : 
     val speech1 = SpeechData("", "Thank you for playing the demo!")
 
     override val speeches = listOf(speech1)
+    override val inCitySpeeches: List<SpeechData>
+        get() = TODO("Not yet implemented")
 
     init {
         this.animeliaRecruitmentConditions.add(IceYetiRecruitment())

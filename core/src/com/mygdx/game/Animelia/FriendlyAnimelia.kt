@@ -29,7 +29,10 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
 
     abstract val speeches: List<SpeechData>
     open val goingToCitySpeech = listOf<SpeechData>()
+    abstract val inCitySpeeches: List<SpeechData>
     abstract fun recruitmentAction()
+
+    var isRecruited = false
 
 
     override val collision = FriendlyAnimeliaCollision(this)
@@ -50,17 +53,23 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
 
 class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCollision(){
     override val keyCode = Input.Keys.SPACE
+    override val insideText = "TALK"
 
     override fun collisionHappened(collidedObject: GameObject) {
-        if(friendlyAnimelia.isConditionsFulfilled()){
-            if(friendlyAnimelia.goingToCitySpeech.size > 0){
-                changeMode(TalkMode(Conversation(friendlyAnimelia.goingToCitySpeech), mainMode))
-            }
-            println("All conditions fulfilled")
-            friendlyAnimelia.recruitmentAction()
+        if (friendlyAnimelia.isRecruited) {
+            changeMode(TalkMode(Conversation(friendlyAnimelia.inCitySpeeches), mainMode))
         } else {
-            changeMode(TalkMode(Conversation(friendlyAnimelia.speeches), mainMode))
-            println("Not Fulfilled Yet")
+            if (friendlyAnimelia.isConditionsFulfilled()) {
+                friendlyAnimelia.isRecruited = true
+                if (friendlyAnimelia.goingToCitySpeech.size > 0) {
+                    changeMode(TalkMode(Conversation(friendlyAnimelia.goingToCitySpeech), mainMode))
+                }
+                println("All conditions fulfilled")
+                friendlyAnimelia.recruitmentAction()
+            } else {
+                changeMode(TalkMode(Conversation(friendlyAnimelia.speeches), mainMode))
+                println("Not Fulfilled Yet")
+            }
         }
     }
 

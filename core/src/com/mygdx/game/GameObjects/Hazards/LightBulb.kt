@@ -28,6 +28,13 @@ class LightBulb(gameObjectData: GameObjectData)
     val entityRefData = Json.decodeFromJsonElement<LightbulbCustomFields>(gameObjectData.customFields).Entity_ref
     val sound = DefaultSoundHandler.getSound("Sound/bell.wav")
     lateinit var gameObjectToTrigger: Triggerable
+    var isHit = false
+    var alphaCounter = 0f
+    var alphaFrames = 30f
+    val red = fireIconSprite.color.r
+    val green = fireIconSprite.color.g
+    val blue = fireIconSprite.color.b
+    val averageColor = (blue + green + red) / 10.0f
 
     override fun initObject() {
         gameObjectToTrigger = AreaManager.getObjectWithIid(entityRefData.entityIid, entityRefData.levelIid) as Triggerable
@@ -35,12 +42,22 @@ class LightBulb(gameObjectData: GameObjectData)
         fireIconSprite.setPosition(currentMiddle.x - 8f,currentMiddle.y)
         fireIconSprite.setSize(16f,16f)
 
-        val averageColor = (fireIconSprite.color.r + fireIconSprite.color.g + fireIconSprite.color.b) / 10.0f
         fireIconSprite.setColor(averageColor, averageColor, averageColor, fireIconSprite.color.a)
     }
 
     override fun render(batch: SpriteBatch) {
         super.render(batch)
+        if(isHit){
+            if(alphaCounter <= alphaFrames){
+                fireIconSprite.setColor(red,green,blue, fireIconSprite.color.a)
+            }
+            else {
+                fireIconSprite.setColor(averageColor,averageColor,averageColor, fireIconSprite.color.a)
+                alphaCounter = 0f
+                isHit = false
+            }
+            alphaCounter += 1
+        }
         fireIconSprite.draw(batch)
     }
 }
@@ -58,6 +75,7 @@ class LightBulbCollision(val lightBulb: LightBulb): MoveCollision(){
             collidedObject.remove()
             lightBulb.gameObjectToTrigger.onTrigger()
             lightBulb.sound.play()
+            lightBulb.isHit = true
         }
     }
 

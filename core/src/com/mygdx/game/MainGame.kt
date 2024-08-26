@@ -20,6 +20,7 @@ import com.mygdx.game.Saving.updateAndSavePlayer
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.initSignalListeners
 import com.mygdx.game.Signal.signalConvert
+import com.mygdx.game.UI.Scene2d.Screens.AnivolutionViewScreen
 import com.mygdx.game.UI.Scene2d.Screens.StartScreen
 import com.mygdx.game.Utils.RenderGraph
 import kotlinx.serialization.json.Json
@@ -32,6 +33,7 @@ lateinit var generalSaveState: GeneralSaveState
 var mainCamera: OrthographicCamera = OrthographicCamera()
 val zoomX = 4
 val zoomY = 4
+val defaultLineWidth = 2f
 class MainGame : ApplicationAdapter() {
 
     lateinit var inputProcessor: InGameInputProcessor

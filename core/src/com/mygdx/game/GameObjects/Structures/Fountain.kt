@@ -27,6 +27,7 @@ class Fountain(gameObjectData: GameObjectData)
 
 class FountainCollision(): InputCollision(){
     override val keyCode = Input.Keys.SPACE
+    override val insideText = "REINCARNATE"
 
     override fun collisionHappened(collidedObject: GameObject) {
         val reincarnationMode = UIMode(ReincarnationScreen(mainMode, listOf(Egg.FIRE, Egg.ICE)))

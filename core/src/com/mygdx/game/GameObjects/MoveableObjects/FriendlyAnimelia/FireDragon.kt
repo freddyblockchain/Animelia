@@ -14,6 +14,9 @@ class FireDragon(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
     override val animeliaEntity = ANIMELIA_ENTITY.FireDragon
 
     override val speeches = listOf<SpeechData>()
+    override val inCitySpeeches: List<SpeechData>
+        get() = TODO("Not yet implemented")
+
     override fun recruitmentAction() {
         TODO("Not yet implemented")
     }

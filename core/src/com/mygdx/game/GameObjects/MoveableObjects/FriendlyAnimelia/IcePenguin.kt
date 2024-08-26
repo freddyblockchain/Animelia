@@ -30,6 +30,14 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
     override val speeches = listOf(speech1,speech2,speech3,speech4)
 
     override val goingToCitySpeech = listOf(citySpeech1, citySpeech2, citySpeech3)
+
+    val inCitySpeech = SpeechData("Ice Penguin", "I've created an animelia dashboard!")
+    val inCitySpeech2 = SpeechData("Ice Penguin", "Please take a look at what different animelias you can become")
+    val inCitySpeech3 = SpeechData("Ice Penguin", "Each book you find, will show you the conditions to get certain animelias")
+    val inCitySpeech4 = SpeechData("Ice Penguin", "I get so excited talking about books... bring me more!")
+    val inCitySpeech5 = SpeechData("Me", "Books really gets you going huh?")
+    override val inCitySpeeches = listOf(inCitySpeech, inCitySpeech2, inCitySpeech3, inCitySpeech4, inCitySpeech5)
+
     override fun recruitmentAction() {
         this.remove()
         val firstArea = AreaManager.getArea("World1")

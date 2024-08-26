@@ -21,21 +21,16 @@ abstract class MoveCollision: Collision {
 abstract class InputCollision: Collision {
     override val collitionType = CollisionType.INPUT
     abstract val keyCode: Int
+    abstract val insideText: String
 
     open fun renderKeycodeToPress(){
-        val keyInputRenderer = KeyInputRenderer(keyCode)
+        val keyInputRenderer = KeyInputRenderer(insideText)
         RenderGraph.addToSceneGraph(keyInputRenderer)
     }
 }
-class KeyInputRenderer(keyCode: Int): Renderable{
+class KeyInputRenderer(val text: String): Renderable{
     override val layer = Layer.FOREGROUND
     val font = FontManager.TextFont
-    val text = when(keyCode){
-        Input.Keys.SPACE -> "SPACE"
-        Input.Keys.B -> "B"
-        Input.Keys.C -> "C"
-        else -> "undefined"
-    }
 
     override fun render(batch: SpriteBatch) {
         val screenCoordinates = Vector3((Center.x) - 50f, (Center.y - 200), 0f)

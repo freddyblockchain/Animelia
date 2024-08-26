@@ -88,18 +88,6 @@ class TrainingScreen(override var prevMode: GameMode?): UIScreen() {
                         changeMode(prevMode!!)
                         return true
                     }
-                    Input.Keys.UP -> {
-                        moveUp()
-                        return true
-                    }
-                    Input.Keys.DOWN -> {
-                        moveDown()
-                        return true
-                    }
-                    Input.Keys.ENTER -> {
-                        pressEnter()
-                        return true
-                    }
                     else -> return false
                 }
             }

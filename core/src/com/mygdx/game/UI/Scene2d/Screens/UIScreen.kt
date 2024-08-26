@@ -67,12 +67,16 @@ abstract class UIScreen {
                 override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                     when (keycode) {
                         Input.Keys.RIGHT, Input.Keys.DOWN -> {
-                            moveUp()
+                            if(buttons.size > 0){
+                                moveUp()
+                            }
                             return true
                         }
 
                         Input.Keys.LEFT, Input.Keys.UP -> {
-                            moveDown()
+                            if(buttons.size > 0){
+                                moveDown()
+                            }
                             return true
                         }
 
@@ -92,6 +96,7 @@ abstract class UIScreen {
         rootTable.height = (Gdx.graphics.height / 1.25f).toFloat()
         rootTable.setPosition(Center.x / 3f, Center.y / 5f)
         stage.addActor(rootTable)
+        Gdx.gl.glLineWidth(5f)
     }
 
     open fun changeActive(activeIndex: Int){

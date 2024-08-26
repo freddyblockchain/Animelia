@@ -14,6 +14,9 @@ class IceDinasaur(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData
     override val animeliaEntity = ANIMELIA_ENTITY.IceDinasaur
 
     override val speeches = listOf<SpeechData>()
+    override val inCitySpeeches: List<SpeechData>
+        get() = TODO("Not yet implemented")
+
     override fun recruitmentAction() {
         TODO("Not yet implemented")
     }

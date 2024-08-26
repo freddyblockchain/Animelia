@@ -21,6 +21,7 @@ class TrainingStation(gameObjectData: GameObjectData)
 
 class TrainingStationCollision(): InputCollision(){
     override val keyCode = Input.Keys.SPACE
+    override val insideText = "TRAIN"
 
     override fun collisionHappened(collidedObject: GameObject) {
         currentGameMode = UIMode(TrainingScreen(mainMode))

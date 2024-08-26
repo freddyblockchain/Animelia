@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.currentGameMode
+import com.mygdx.game.defaultLineWidth
 
 interface GameMode {
     val spriteBatch: SpriteBatch
@@ -57,4 +58,5 @@ open class DefaultInputProcessor(): InputProcessor {
 fun changeMode(newMode: GameMode){
     currentGameMode = newMode
     Gdx.input.inputProcessor = newMode.inputProcessor
+    Gdx.gl.glLineWidth(defaultLineWidth)
 }

@@ -30,6 +30,16 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
     val citySpeech3 = SpeechData("Fire Armadillo", "But you have proven yourself. Alright, i'll come back to the city.")
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
+
+    val inCitySpeechOne = SpeechData("Fire Armadillo", "I love it here!")
+    val inCitySpeechTwo = SpeechData("Fire Armadillo", "I opened up a training center here")
+    val inCitySpeechThree = SpeechData("Me", "That's awesome! What can i use it for?")
+    val inCitySpeechFour = SpeechData("Fire Armadillo", "You can train stats!")
+    val inCitySpeechFive = SpeechData("Fire Armadillo", "Stats matter in battle! They also have a use in the world...")
+
+    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive)
+
+
     override fun recruitmentAction() {
         this.remove()
         val trainingStation = TrainingStation(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 32, height = 64))
