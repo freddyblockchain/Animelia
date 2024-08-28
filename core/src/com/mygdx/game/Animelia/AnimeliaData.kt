@@ -50,7 +50,7 @@ class IcePenguinData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/icepenguin-straight.png","Animelias/icepenguin-right.png","Animelias/icepenguin-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle)
 }
 class FireHippoData(): AnimeliaData {
     override var gameTexture = DefaultTextureHandler.getTexture("Animelias/firehippo-straight.png")

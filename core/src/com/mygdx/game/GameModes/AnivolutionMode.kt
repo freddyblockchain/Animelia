@@ -3,15 +3,12 @@ package com.mygdx.game.GameModes
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
-import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.MusicManager
-import com.mygdx.game.mainCamera
-import com.mygdx.game.player
-import com.mygdx.game.plus
 import kotlin.math.min
 
 class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTITY, val isReincarnating: Boolean = false): GameMode {
@@ -78,6 +75,12 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
             )
             MusicManager.currentTrack?.play()
             AnimationManager.animationManager.add(textAnimation)
+            for(ability in player.activeAbilities.toMap()){
+                if(ability?.value?.abilityName !in player.animeliaInfo.availableAbilities){
+                    player.activeAbilities.remove(ability?.key)
+                }
+            }
+            mainMode.abilityRowUi.updateToolTips()
         }
     }
 }

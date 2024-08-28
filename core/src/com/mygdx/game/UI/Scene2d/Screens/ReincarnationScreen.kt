@@ -24,7 +24,7 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.player
 
-class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>) : UIScreen() {
+class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
     override var activeButton: Actor? = null
 
     override var renderPrevGameMode = false
@@ -41,7 +41,7 @@ class ReincarnationScreen(override var prevMode: GameMode?, val eggs: List<Egg>)
         rootTable.add(reincarnationText).center().right()
         rootTable.row()
 
-        for (egg in eggs) {
+        for (egg in player.eggs) {
             val textureString = getEggTexture(egg)
             val texture = (DefaultTextureHandler.getTexture(textureString))
             val buttonImage = TextureRegionDrawable(texture)

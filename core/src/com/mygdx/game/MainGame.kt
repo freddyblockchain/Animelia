@@ -34,6 +34,7 @@ var mainCamera: OrthographicCamera = OrthographicCamera()
 val zoomX = 4
 val zoomY = 4
 val defaultLineWidth = 2f
+val startPos = Vector2(200f, -270f)
 class MainGame : ApplicationAdapter() {
 
     lateinit var inputProcessor: InGameInputProcessor
@@ -77,7 +78,7 @@ class MainGame : ApplicationAdapter() {
         savedSignals.forEach { SignalManager.emitSignal(it, false)
             SignalManager.pastSignals.add(it)
         }
-        changeArea(Vector2(160f,200f), "World1")
+        changeArea(startPos, "World1")
         mainMode.abilityRowUi.updateToolTips()
         currentGameMode = UIMode(StartScreen(mainMode))
     }

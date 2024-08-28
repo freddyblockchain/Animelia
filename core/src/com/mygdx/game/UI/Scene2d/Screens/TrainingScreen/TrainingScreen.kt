@@ -21,7 +21,7 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.Screens.UIScreen
 import com.mygdx.game.player
 
-class TrainingScreen(override var prevMode: GameMode?): UIScreen() {
+class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Boolean): UIScreen() {
 
     override var activeButton: Actor? = null
     override var renderPrevGameMode = true
@@ -47,19 +47,21 @@ class TrainingScreen(override var prevMode: GameMode?): UIScreen() {
 
 
         val offenceTable = offenceAttributeRow.getNewTable("Offence", offence, {offence += 1; offence},{offence -= 1; offence})
-        val defenceTable = offenceAttributeRow.getNewTable("Defence", defence, {defence += 1; defence},{defence -= 1; defence})
-        val speedTable = offenceAttributeRow.getNewTable("Speed", speed, {speed += 1; speed},{speed -= 1; speed})
-        val intelligenceTable = offenceAttributeRow.getNewTable("Intelligence", intelligence, {intelligence += 1; intelligence},{intelligence -= 1; intelligence})
-
         rootTable.add(offenceTable)
 
         rootTable.row()
-        rootTable.add(defenceTable)
-        rootTable.row()
-        rootTable.add(speedTable)
-        rootTable.row()
-        rootTable.add(intelligenceTable)
-        rootTable.row()
+        if(includeEverything){
+            val defenceTable = offenceAttributeRow.getNewTable("Defence", defence, {defence += 1; defence},{defence -= 1; defence})
+            val speedTable = offenceAttributeRow.getNewTable("Speed", speed, {speed += 1; speed},{speed -= 1; speed})
+            val intelligenceTable = offenceAttributeRow.getNewTable("Intelligence", intelligence, {intelligence += 1; intelligence},{intelligence -= 1; intelligence})
+
+            rootTable.add(defenceTable)
+            rootTable.row()
+            rootTable.add(speedTable)
+            rootTable.row()
+            rootTable.add(intelligenceTable)
+            rootTable.row()
+        }
 
         val finishTrainingButton = TextButton("Confirm Training", skin)
         rootTable.add(finishTrainingButton).center().padTop(20f).size(100f)

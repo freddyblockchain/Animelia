@@ -10,6 +10,7 @@ import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.WorldItems.BookItem
+import com.mygdx.game.WorldItems.EggItem
 import com.mygdx.game.WorldItems.MaterialItem
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
@@ -32,6 +33,7 @@ data class Entities(
     val Ability: List<GameObjectData> = listOf(),
     val AnivolutionBook: List<GameObjectData> = listOf(),
     val Item: List<GameObjectData> = listOf(),
+    val Egg: List<GameObjectData> = listOf(),
     val ConveyerBelt: List<GameObjectData> = listOf(),
     val FireLightBulb: List<GameObjectData> = listOf(),
     val Cliffside: List<GameObjectData> = listOf(),
@@ -55,6 +57,7 @@ fun initMappings(){
     GameObjectFactory.register("Fountain", ::Fountain)
     GameObjectFactory.register("AnivolutionBook", ::BookItem)
     GameObjectFactory.register("Item", ::MaterialItem)
+    GameObjectFactory.register("Egg", ::EggItem)
     GameObjectFactory.register("House", ::House)
 }
 @Serializable

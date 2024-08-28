@@ -1,16 +1,12 @@
 {
 	"identifier": "Level_10",
 	"uniqueIdentifer": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
-	"x": 512,
-	"y": -896,
+	"x": 672,
+	"y": -832,
 	"width": 288,
-	"height": 288,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
-		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "w"
-		},
 		{
 			"levelIid": "0aa29eb0-25d0-11ef-9fe3-67a32544441f",
 			"dir": "n"
@@ -18,6 +14,10 @@
 		{
 			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
 			"dir": "e"
+		},
+		{
+			"levelIid": "6283c240-4ce0-11ef-9290-f3bee5d80080",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -40,7 +40,7 @@
 				"iid": "bb351770-25d0-11ef-9fe3-8b5b8d957f8f",
 				"layer": "Entities",
 				"x": 128,
-				"y": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -53,7 +53,7 @@
 				"iid": "bccfdbb0-25d0-11ef-9fe3-879c7ff10cd9",
 				"layer": "Entities",
 				"x": 128,
-				"y": 160,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -66,7 +66,7 @@
 				"iid": "bd32e340-25d0-11ef-9fe3-c79b735f4b4c",
 				"layer": "Entities",
 				"x": 160,
-				"y": 160,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -79,7 +79,7 @@
 				"iid": "c0005b20-25d0-11ef-9fe3-79a6fecf7346",
 				"layer": "Entities",
 				"x": 160,
-				"y": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -92,7 +92,7 @@
 				"iid": "96fe7960-25d0-11ef-9fe3-3fe44eba72e7",
 				"layer": "Entities",
 				"x": 96,
-				"y": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -105,7 +105,7 @@
 				"iid": "97434a90-25d0-11ef-9fe3-01d5948f6e63",
 				"layer": "Entities",
 				"x": 96,
-				"y": 128,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -118,7 +118,7 @@
 				"iid": "97a91140-25d0-11ef-9fe3-abb797b6c89d",
 				"layer": "Entities",
 				"x": 96,
-				"y": 160,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -131,7 +131,7 @@
 				"iid": "9f452830-25d0-11ef-9fe3-d76e04ff72ca",
 				"layer": "Entities",
 				"x": 160,
-				"y": 128,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 14984818,
@@ -146,7 +146,7 @@
 				"iid": "9bc32d60-25d0-11ef-9fe3-238e8b0215e1",
 				"layer": "Entities",
 				"x": 128,
-				"y": 128,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 16690740,

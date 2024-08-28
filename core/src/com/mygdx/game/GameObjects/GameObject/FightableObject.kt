@@ -24,9 +24,4 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     fun forceMove(speed: Float) {
         super.move(this.currentUnitVector, speed)
     }
-
-    override fun frameTask() {
-       // this.healthStrategy.showHealth(this.sprite, currentHealth, maxHealth)
-        super.frameTask()
-    }
 }

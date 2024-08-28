@@ -12,19 +12,19 @@ import com.mygdx.game.UI.Scene2d.Screens.TrainingScreen.TrainingScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 
-class TrainingStation(gameObjectData: GameObjectData)
+class TrainingStation(gameObjectData: GameObjectData, val includeEverything: Boolean = false)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     override val texture = DefaultTextureHandler.getTexture("TrainingStatue.png")
     override val layer = Layer.ONGROUND
-    override val collision = TrainingStationCollision()
+    override val collision = TrainingStationCollision(includeEverything)
 }
 
-class TrainingStationCollision(): InputCollision(){
+class TrainingStationCollision(val includeEverything: Boolean): InputCollision(){
     override val keyCode = Input.Keys.SPACE
     override val insideText = "TRAIN"
 
     override fun collisionHappened(collidedObject: GameObject) {
-        currentGameMode = UIMode(TrainingScreen(mainMode))
+        currentGameMode = UIMode(TrainingScreen(mainMode,includeEverything))
     }
 
 }
