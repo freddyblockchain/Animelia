@@ -30,8 +30,10 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override val healthStrategy = EnemyHealthStrategy()
     override var direction = Direction.DOWN
     override var canChangeDirection = true
+    var aggroCircle = Circle(0f, 0f, 100f)
 
     override val texture = DefaultTextureHandler.getTexture("player.png")
+    var aggroCounter = 0
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
@@ -43,15 +45,17 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
 
     override fun frameTask() {
         val currentMiddle = this.currentMiddle
-        val circle = Circle(currentMiddle.x, currentMiddle.y, 100f)
-        if(circle.contains(player.currentPosition())){
+        aggroCircle = Circle(currentMiddle.x, currentMiddle.y, 150f)
+        if(aggroCircle.contains(player.currentPosition())){
             val unitVectorToDirection = getUnitVectorTowardsPoint(currentMiddle, player.currentPosition())
             this.currentUnitVector = unitVectorToDirection
             this.setRotation(unitVectorToDirection, this, 90f)
+            aggroCounter += 1
         } else{
             this.currentUnitVector = getRotatedUnitVectorClockwise(this.currentUnitVector, 1f)
             this.move(this.currentUnitVector)
             this.setRotation(this.currentUnitVector, this, 90f)
+            aggroCounter = 0
         }
 
         if(this.currentHealth <= 0){

@@ -45,7 +45,7 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
         firstArea.gameObjects.add(this)
 
         val library = Library(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 64, height = 64))
-        library.setPosition(cityPosition.currentPosition() + Vector2(this.width, 0f))
+        library.setPosition(cityPosition.currentPosition() + Vector2(this.width * 1.5f, 0f))
         firstArea.gameObjects.add(library)
     }
 

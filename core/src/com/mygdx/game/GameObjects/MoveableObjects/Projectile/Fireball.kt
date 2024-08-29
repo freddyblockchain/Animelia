@@ -15,7 +15,7 @@ import com.mygdx.game.GameObjects.Hazards.IceCone
 
 class Fireball(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
 
-    override var speed = 3f
+    override var speed = 2.5f
     override val cannotMoveStrategy = MoveRegardless()
     override val texture = DefaultTextureHandler.getTexture("fireball.png")
     override val layer = Layer.AIR

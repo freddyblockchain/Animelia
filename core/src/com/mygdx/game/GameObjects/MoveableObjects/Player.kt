@@ -27,7 +27,7 @@ import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
-    override var speed: Float = 5f
+    override var speed: Float = 3f
     override val cannotMoveStrategy = NoAction()
     override val layer = Layer.PERSON
     override var direction = Direction.RIGHT

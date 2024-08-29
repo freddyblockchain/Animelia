@@ -45,7 +45,7 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
         val trainingStation = TrainingStation(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 32, height = 64), true)
         val firstArea = AreaManager.getArea("World1")
         this.setPosition(cityPosition.currentPosition())
-        trainingStation.setPosition(cityPosition.currentPosition() + Vector2(this.width, 0f))
+        trainingStation.setPosition(cityPosition.currentPosition() + Vector2(this.width * 1.5f, 0f))
         firstArea.gameObjects.add(this)
         firstArea.gameObjects.add(trainingStation)
     }

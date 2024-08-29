@@ -37,6 +37,7 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
 
 class RockCollision(rock: RockProjectile, val shooter: GameObject): ProjectileCollision(rock){
     override fun collisionHappened(collidedObject: GameObject) {
+        super.collisionHappened(collidedObject)
         if(collidedObject is Rock && shooter is FightableObject && collidedObject.checkDestroyed(shooter.stats)){
             collidedObject.remove()
         }

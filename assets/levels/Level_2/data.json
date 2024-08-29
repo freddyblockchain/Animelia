@@ -101,6 +101,21 @@
 					"Ability": "Icicle"
 				}
 			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "c082c840-4ce0-11ef-9bea-b14878a3c44f",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Be careful! Cold area ahead. Ice Animelia preferred"
+				}
+			}
 		]
 	}
 }

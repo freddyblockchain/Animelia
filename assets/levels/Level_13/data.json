@@ -39,7 +39,7 @@
 				"id": "TrainingStation",
 				"iid": "fc5b3a70-25d0-11ef-8421-e72495765c62",
 				"layer": "Entities",
-				"x": 32,
+				"x": 192,
 				"y": 0,
 				"width": 32,
 				"height": 64,
@@ -87,6 +87,21 @@
 				"color": 14120515,
 				"customFields": {
 					"AnimeliaType": "Fire_Armadillo"
+				}
+			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "f2e334a0-4ce0-11ef-9bea-5b4c04524a22",
+				"layer": "Entities",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Train to get stronger!"
 				}
 			}
 		]
