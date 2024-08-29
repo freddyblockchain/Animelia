@@ -46,7 +46,7 @@ class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
             object : InputListener() {
                 override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                     when (keycode) {
-                        Input.Keys.ESCAPE -> {
+                        Input.Keys.SPACE -> {
                             changeMode(prevMode!!)
                             return true
                         }

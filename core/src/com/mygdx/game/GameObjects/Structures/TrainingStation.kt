@@ -20,7 +20,7 @@ class TrainingStation(gameObjectData: GameObjectData, val includeEverything: Boo
 }
 
 class TrainingStationCollision(val includeEverything: Boolean): InputCollision(){
-    override val keyCode = Input.Keys.SPACE
+    override val keyCode = Input.Keys.ENTER
     override val insideText = "TRAIN"
 
     override fun collisionHappened(collidedObject: GameObject) {

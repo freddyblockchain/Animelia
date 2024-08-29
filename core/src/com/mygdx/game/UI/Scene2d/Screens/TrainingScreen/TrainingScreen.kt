@@ -86,7 +86,7 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
         stage.addListener(object : InputListener() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
-                    Input.Keys.SPACE -> {
+                    Input.Keys.ENTER -> {
                         changeMode(prevMode!!)
                         return true
                     }

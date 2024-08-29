@@ -26,7 +26,7 @@ class Fountain(gameObjectData: GameObjectData)
 }
 
 class FountainCollision(): InputCollision(){
-    override val keyCode = Input.Keys.SPACE
+    override val keyCode = Input.Keys.ENTER
     override val insideText = "REINCARNATE"
 
     override fun collisionHappened(collidedObject: GameObject) {

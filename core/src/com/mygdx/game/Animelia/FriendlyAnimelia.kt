@@ -52,7 +52,7 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
 }
 
 class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCollision(){
-    override val keyCode = Input.Keys.SPACE
+    override val keyCode = Input.Keys.ENTER
     override val insideText = "TALK"
 
     override fun collisionHappened(collidedObject: GameObject) {

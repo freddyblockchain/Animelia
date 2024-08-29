@@ -39,7 +39,7 @@ class TalkMode(val conversation: Conversation, val prevMode: GameMode): GameMode
 
 class TalkInputProcessor(val advanceSpeechFunction: () -> Unit) : DefaultInputProcessor(){
     override fun keyDown(keycode: Int): Boolean {
-        if(keycode == Input.Keys.SPACE){
+        if(keycode == Input.Keys.ENTER){
             advanceSpeechFunction()
         }
         return true

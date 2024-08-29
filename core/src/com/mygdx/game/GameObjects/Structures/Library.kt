@@ -21,7 +21,7 @@ class Library(gameObjectData: GameObjectData)
 }
 
 class LibraryCollision(): InputCollision(){
-    override val keyCode = Input.Keys.SPACE
+    override val keyCode = Input.Keys.ENTER
     override val insideText = "VIEW"
     override fun collisionHappened(collidedObject: GameObject) {
         currentGameMode = UIMode(AnivolutionViewScreen(mainMode))

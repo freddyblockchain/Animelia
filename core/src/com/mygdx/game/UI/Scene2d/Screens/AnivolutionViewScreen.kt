@@ -72,7 +72,7 @@ class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
         stage.addListener(object : InputListener() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
-                    Input.Keys.SPACE -> {
+                    Input.Keys.ENTER -> {
                         changeMode(prevMode!!)
                         return true
                     }
