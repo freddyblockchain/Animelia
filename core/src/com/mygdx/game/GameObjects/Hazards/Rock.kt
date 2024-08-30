@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import RemoveObjectSignal
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
@@ -9,6 +10,7 @@ import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.Particles.AnimeliaEffect
 import kotlinx.serialization.Serializable
@@ -39,7 +41,7 @@ class Rock(gameObjectData: GameObjectData)
         }
     }
 
-    fun checkDestroyed(stats: Stats): Boolean{
+    fun handleRockDestroyed(stats: Stats): Boolean{
         val isDestroyed = stats.offence >= this.customFields.StrengthToBreak
 
         if(!isDestroyed){
@@ -48,8 +50,11 @@ class Rock(gameObjectData: GameObjectData)
                 AnimationManager.animationManager.add(textAnimation)
             }
         } else{
-
             activateDestroyedEffect()
+
+            val signal = RemoveObjectSignal(this.gameObjectIid)
+            SignalManager.emitSignal(signal)
+
         }
         return stats.offence >= this.customFields.StrengthToBreak
     }

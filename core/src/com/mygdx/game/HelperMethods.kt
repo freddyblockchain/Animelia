@@ -13,6 +13,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.updateAndSavePlayer
 import kotlin.math.PI
 
@@ -63,6 +64,9 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     if(shouldSave){
         updateAndSavePlayer()
     }
+
+    val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }
+    SignalManager.signalManager.addAll(pastSignalsInArea)
 }
 
 fun initAreas(){

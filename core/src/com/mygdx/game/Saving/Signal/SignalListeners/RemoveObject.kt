@@ -9,8 +9,9 @@ import com.mygdx.game.Signal.SignaledEventListener
 class RemoveObject: SignaledEventListener {
     override val signaltype = SIGNALTYPE.REMOVE_OBJECT
     override fun triggerEvent(signal: Signal) {
-        /*val removeItemsSignal = signal as RemoveObjectSignal
-        val gameObject = AreaManager.getObjectWithIid(removeItemsSignal.entityIid, removeItemsSignal)
-        AreaManager.getActiveArea()!!.gameObjects.remove(gameObject)*/
+        val removeItemsSignal = signal as RemoveObjectSignal
+        val areaIdentifer = signal.areaIdentifer
+        val area = AreaManager.getArea(areaIdentifer)
+        area.gameObjects.firstOrNull{it.gameObjectIid == removeItemsSignal.entityIid}?.remove()
     }
 }

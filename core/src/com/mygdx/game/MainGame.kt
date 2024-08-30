@@ -75,7 +75,7 @@ class MainGame : ApplicationAdapter() {
         val originalFile = FileHandler.readFromFile()
         val saves = originalFile.subList(1, originalFile.size)
         val savedSignals: List<Signal> = saves.map(::signalConvert)
-        savedSignals.forEach { SignalManager.emitSignal(it, false)
+        savedSignals.forEach {
             SignalManager.pastSignals.add(it)
         }
         changeArea(startPos, "World1")

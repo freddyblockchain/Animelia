@@ -9,7 +9,6 @@ import com.mygdx.game.Enums.getDirectionFromUnitVector
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.GameObjects.Hazards.IceCone
 import com.mygdx.game.GameObjects.Hazards.Rock
 
 class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
@@ -38,8 +37,8 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
 class RockCollision(rock: RockProjectile, val shooter: GameObject): ProjectileCollision(rock){
     override fun collisionHappened(collidedObject: GameObject) {
         super.collisionHappened(collidedObject)
-        if(collidedObject is Rock && shooter is FightableObject && collidedObject.checkDestroyed(shooter.stats)){
-            collidedObject.remove()
+        if(collidedObject is Rock && shooter is FightableObject){
+            collidedObject.handleRockDestroyed(shooter.stats)
         }
     }
 }

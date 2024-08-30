@@ -20,10 +20,13 @@ class SignalManager {
                     listenerMap[it.signaltype]!!.add(it)
                 }
             }
-            fun emitSignal(signal: Signal, saveSignal: Boolean = true){
+            //Remember this area identifer stuff
+            fun emitSignal(signal: Signal, saveSignal: Boolean = true, areaIdentifier: String = AreaManager.getActiveArea()?.areaIdentifier!!){
+                signal.areaIdentifer = areaIdentifier
                 if(saveSignal){
                     writeSignalToFile(signal)
                 }
+                pastSignals.add(signal)
                 signalManager.add(signal)
             }
             fun executeSignals(){
