@@ -7,10 +7,10 @@ import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
 import com.mygdx.game.Animelia.FriendlyAnimelia
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjects.Structures.Library
-import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.Inventory
+import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.UI.Conversation.SpeechData
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.plus
 
 class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData,
@@ -57,6 +57,6 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
 
 class AmountOfBooksGotten(val amount: Int): AnimeliaRecruitmendCondition {
     override fun isConditionFulfilled(): Boolean {
-        return Inventory.entityBooks.size >= amount
+        return generalSaveState.inventory.entityBooks.size >= amount
     }
 }

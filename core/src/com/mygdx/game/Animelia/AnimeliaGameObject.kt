@@ -9,7 +9,7 @@ import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.Managers.Inventory
+import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
 
@@ -60,7 +60,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
 
         if(this.currentHealth <= 0){
             this.remove()
-            Inventory.goldReceived(1, this.currentMiddle)
+            generalSaveState.inventory.goldReceived(1, this.currentMiddle)
             PlayerStatus.animeliaClonesKilled += 1
         }
 

@@ -17,6 +17,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
+import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
@@ -35,17 +36,14 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val collision = CanMoveCollision()
     override val maxHealth = 30f
     override var stats = Stats()
-    val ownedAbilities: MutableList<KeyAbility> = mutableListOf(TailSwipe(this))
     val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
     var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FireArmadillo
     var animeliaInfo = getAnimeliaData(currentAnimelia)
-    val eggs: MutableList<Egg> = mutableListOf(Egg.FIRE)
 
     override val healthStrategy = PlayerHealthStrategy()
 
     init {
         currentHealth = maxHealth
-        activeAbilities[1] = ownedAbilities[0]
     }
 
     override fun render(batch: SpriteBatch) {

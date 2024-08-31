@@ -2,8 +2,10 @@ package com.mygdx.game.Managers
 
 import com.mygdx.game.Ability.Ability
 import com.mygdx.game.Ability.AbilityName
+import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.currentGameMode
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.mainMode
 import com.mygdx.game.player
 
@@ -28,9 +30,9 @@ class AbilityManager {
             }
         }
         fun addToActiveAbilities(num: Int, abilityName: AbilityName){
-            val ability = player.ownedAbilities.first { it.abilityName == abilityName }
+            val ability = generalSaveState.inventory.ownedAbilities.first { it == abilityName }
             if(ability != null){
-                player.activeAbilities[num] = ability
+                player.activeAbilities[num] = convertAbilityToName(ability.name).keyAbility
             }
             mainMode.abilityRowUi.updateToolTips()
         }

@@ -10,22 +10,28 @@ import java.io.File
 class FileHandler {
     companion object{
 
-        var handle = Gdx.files.internal("assets/SaveFiles/CurrentSave")
-        private val file: File = handle.file()
+        var signalHandle = Gdx.files.internal("assets/SaveFiles/SignalSave")
+        var playerHandle =  Gdx.files.internal("assets/SaveFiles/PlayerSave")
+        private val signalFile: File = signalHandle.file()
+        private val playerFile: File = playerHandle.file()
         private lateinit var fileWriter: BufferedWriter
         fun savePlayerState(playerState: String){
-            val lines = readFromFile().toMutableList()
+            val lines = readPlayerFile().toMutableList()
             if (lines.isEmpty()){
                 lines.add(playerState)
             }else{
                 lines[0] = playerState
             }
-            fileWriter = file.bufferedWriter()
+            fileWriter = playerFile.bufferedWriter()
             fileWriter.use { writer -> lines.forEach { writer.write(it)
                 writer.newLine()}}
         }
-        fun readFromFile(): List<String>{
-            return file.useLines { it.toList() }
+        fun readSignalFile(): List<String>{
+            return signalFile.useLines { it.toList() }
+        }
+
+        fun readPlayerFile(): List<String>{
+            return playerFile.useLines { it.toList() }
         }
 
         fun getFileJson(fileName: String): String{
@@ -34,14 +40,14 @@ class FileHandler {
         }
 
         fun SaveFileEmpty(): Boolean{
-            return file.length() == 0L
+            return playerFile.length() == 0L
         }
         fun writeSignalToFile(signal: Signal){
-            val lines = readFromFile().toMutableList()
+            val lines = readSignalFile().toMutableList()
             val serializer = serializer(signal::class.java)
             val signalContent = Json.encodeToString(serializer,signal)
             lines.add(signalContent)
-            fileWriter = file.bufferedWriter()
+            fileWriter = signalFile.bufferedWriter()
             fileWriter.use { writer -> lines.forEach { writer.write(it)
                 writer.newLine()}}
         }

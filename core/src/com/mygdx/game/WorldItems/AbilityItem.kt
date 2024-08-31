@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.Ability.getIconFromType
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -22,7 +23,8 @@ class AbilityItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     }
 
     override fun itemGained() {
-        player.ownedAbilities.add(abilityData.keyAbility)
+        generalSaveState.inventory.ownedAbilities.add(abilityData.abilityName)
+        generalSaveState.updateSaveState()
         super.itemGained()
     }
 

@@ -2,6 +2,7 @@ package com.mygdx.game.Ability
 
 import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Ability.Abilities.Fighting.RockThrowAbility
+import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.DefaultTextureHandler
@@ -37,6 +38,7 @@ fun convertAbilityToName(ability:String): AbilityData{
         "Fireball" -> AbilityData(AbilityName.Fireball, AbilityType.Fire, FireballAbility(player))
         "RockThrow" -> AbilityData(AbilityName.RockThrow, AbilityType.Fighting, RockThrowAbility(player))
         "Icicle" -> AbilityData(AbilityName.Icicle, AbilityType.Ice, IcicleAbility(player))
+        "TailSwipe" -> AbilityData(AbilityName.TailSwipe, AbilityType.Fighting, TailSwipe(player))
         else -> AbilityData(AbilityName.Fireball,AbilityType.Fire, FireballAbility(player))
     }
 }

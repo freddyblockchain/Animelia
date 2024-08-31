@@ -3,6 +3,8 @@ package com.mygdx.game.WorldItems
 import com.mygdx.game.Animelia.Egg
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.Inventory.Inventory
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -22,7 +24,8 @@ class EggItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     override fun itemGained() {
         super.itemGained()
         val egg = getEgg()
-        player.eggs.add(egg)
+        generalSaveState.inventory.eggs.add(egg)
+        generalSaveState.updateSaveState()
     }
 
     fun getEgg(): Egg{

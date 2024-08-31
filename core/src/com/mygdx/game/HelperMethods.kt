@@ -14,7 +14,6 @@ import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
-import com.mygdx.game.Saving.updateAndSavePlayer
 import kotlin.math.PI
 
 fun InitArea(levelName: String){
@@ -52,7 +51,7 @@ fun addObjectsToArea(area: Area, objectsToAdd: List<GameObject>){
 }
 
 fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
-    player.ownedAbilities.forEach { it.onDeactivate() }
+    player.activeAbilities.values.forEach { it?.onDeactivate() }
     val newPos = Vector2(newPos.x, newPos.y)
 
     AreaManager.changeActiveArea(newAreaIdentifier)
@@ -62,7 +61,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     player.startingPosition = newPos
     anivolutionCheck()
     if(shouldSave){
-        updateAndSavePlayer()
+        //updateAndSavePlayer()
     }
 
     val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }

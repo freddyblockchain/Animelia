@@ -3,7 +3,8 @@ package com.mygdx.game.WorldItems
 import com.mygdx.game.Animelia.getAnimeliaEntity
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.Managers.Inventory
+import com.mygdx.game.Inventory.Inventory
+import com.mygdx.game.generalSaveState
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -17,7 +18,8 @@ class BookItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
 
     override fun itemGained() {
         super.itemGained()
-        Inventory.entityBooks.add(getAnimeliaEntity(animeliaType))
+        generalSaveState.inventory.entityBooks.add(getAnimeliaEntity(animeliaType))
+        generalSaveState.updateSaveState()
     }
 }
 

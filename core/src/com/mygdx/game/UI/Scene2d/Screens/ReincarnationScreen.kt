@@ -19,9 +19,11 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
 class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
@@ -41,7 +43,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
         rootTable.add(reincarnationText).center().right()
         rootTable.row()
 
-        for (egg in player.eggs) {
+        for (egg in generalSaveState.inventory.eggs) {
             val textureString = getEggTexture(egg)
             val texture = (DefaultTextureHandler.getTexture(textureString))
             val buttonImage = TextureRegionDrawable(texture)

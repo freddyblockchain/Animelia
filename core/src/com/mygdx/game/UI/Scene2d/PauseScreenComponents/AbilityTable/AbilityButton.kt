@@ -8,13 +8,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Ability.AbilityName
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
 enum class AbilityButtonOwnership {NotOwned, Owned}
 enum class AbilityButtonLearnable {Learnable, NotLearnable}
 
 class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>): ImageButton(drawable) {
-    val abilityButtonOwnership = if(player.ownedAbilities.any { it.abilityName == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
+    val abilityButtonOwnership = if(generalSaveState.inventory.ownedAbilities.any { it == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
     val abilityButtonLearnable = if(player.animeliaInfo.availableAbilities.contains(abilityName)) AbilityButtonLearnable.Learnable else AbilityButtonLearnable.NotLearnable
 
     init {
