@@ -58,14 +58,9 @@ class MainGame : ApplicationAdapter() {
         DialogueManager.initSpeakableObjects()
        // getArticyDraftEntries()
         if (!FileHandler.SaveFileEmpty()) {
-            val savedState: String = FileHandler.readSignalFile()[0]
+            val savedState: String = FileHandler.readPlayerFile()[0]
             val savedGeneralSaveState: PlayerSaveState = Json.decodeFromString(savedState)
-            //AreaManager.setActiveArea(savedGeneralSaveState.areaIdentifier)
-            /*generalSaveState = GeneralSaveState(
-                savedGeneralSaveState.playerXPos, savedGeneralSaveState.playerYPos,
-                savedGeneralSaveState.areaIdentifier, player.entityId
-            )
-            player.setPosition(Vector2(generalSaveState.playerXPos, generalSaveState.playerYPos))*/
+            generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory)
 
         } else {
             generalSaveState = PlayerSaveState(Inventory())

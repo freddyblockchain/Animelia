@@ -1,5 +1,6 @@
 package com.mygdx.game.WorldItems
 
+import RemoveObjectSignal
 import com.badlogic.gdx.graphics.Color
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Collition.Collision
@@ -9,6 +10,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.SignalManager
 
 abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjectData) {
     override val collitionMask = OnlyPlayerCollitionMask
@@ -17,7 +19,7 @@ abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjec
     override val layer = Layer.ONGROUND
 
     open fun itemGained(){
-        this.remove()
+        SignalManager.emitSignal(RemoveObjectSignal(this.gameObjectIid))
     }
 }
 

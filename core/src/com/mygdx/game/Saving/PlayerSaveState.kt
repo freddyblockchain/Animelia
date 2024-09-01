@@ -8,7 +8,7 @@ import kotlinx.serialization.json.Json
 
 @Serializable
 class PlayerSaveState(
-    val inventory: Inventory
+    var inventory: Inventory
 ){
     fun updateSaveState(){
         val stringEncoded = Json.encodeToString(this)
