@@ -9,12 +9,14 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
-
+val friendlyAnimelias = mutableListOf<FriendlyAnimelia>()
 fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaFields = Json.decodeFromJsonElement<AnimeliaCustomFields>(gameObjectData.customFields)
     val animeliaEntity = getAnimeliaEntity(animeliaFields.AnimeliaType)
 
-    return createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos)
+    val friendlyAnimelia = createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos)
+    friendlyAnimelias.add(friendlyAnimelia)
+    return friendlyAnimelia
 }
 
 fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimelia{

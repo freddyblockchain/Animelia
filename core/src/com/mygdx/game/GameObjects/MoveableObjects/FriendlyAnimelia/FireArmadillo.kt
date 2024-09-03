@@ -41,7 +41,6 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
 
 
     override fun recruitmentAction() {
-        this.remove()
         val trainingStation = TrainingStation(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 32, height = 64), true)
         val firstArea = AreaManager.getArea("World1")
         this.setPosition(cityPosition.currentPosition())

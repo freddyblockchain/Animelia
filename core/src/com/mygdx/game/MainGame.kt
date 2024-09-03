@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Stage
-import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.GameModes.GameMode
@@ -22,9 +21,9 @@ import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.PlayerSaveState
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.initSignalListeners
-import com.mygdx.game.Signal.signalConvert
 import com.mygdx.game.UI.Scene2d.Screens.StartScreen
 import kotlinx.serialization.json.Json
+import signalConvert
 
 lateinit var player: Player
 lateinit var currentGameMode: GameMode

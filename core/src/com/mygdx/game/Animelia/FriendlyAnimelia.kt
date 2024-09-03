@@ -1,5 +1,7 @@
 package com.mygdx.game.Animelia
 
+import AnimeliaRecruitedSignal
+import RemoveObjectSignal
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
@@ -14,6 +16,7 @@ import com.mygdx.game.GameObjects.GameObject.DefaultRotationalObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.RotationalObject
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.mainMode
@@ -60,12 +63,11 @@ class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia): InputCo
             changeMode(TalkMode(Conversation(friendlyAnimelia.inCitySpeeches), mainMode))
         } else {
             if (friendlyAnimelia.isConditionsFulfilled()) {
-                friendlyAnimelia.isRecruited = true
                 if (friendlyAnimelia.goingToCitySpeech.size > 0) {
                     changeMode(TalkMode(Conversation(friendlyAnimelia.goingToCitySpeech), mainMode))
                 }
-                println("All conditions fulfilled")
-                friendlyAnimelia.recruitmentAction()
+                SignalManager.emitSignal(RemoveObjectSignal(this.friendlyAnimelia.gameObjectIid))
+                SignalManager.emitSignal(AnimeliaRecruitedSignal(this.friendlyAnimelia.animeliaEntity), areaIdentifier = "World1")
             } else {
                 changeMode(TalkMode(Conversation(friendlyAnimelia.speeches), mainMode))
                 println("Not Fulfilled Yet")

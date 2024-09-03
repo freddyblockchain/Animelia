@@ -56,7 +56,6 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 
     AreaManager.changeActiveArea(newAreaIdentifier)
 
-
     player.setPosition(newPos)
     player.startingPosition = newPos
     anivolutionCheck()
