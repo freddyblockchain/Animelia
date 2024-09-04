@@ -11,35 +11,35 @@ import com.mygdx.game.player
 
 enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle}
 
-enum class AbilityType{Fire, Fighting,Ice, Sound}
+enum class ELEMENTAL_TYPE{FIRE,FIGHTING,ICE, SOUND}
 
-data class AbilityData(val abilityName: AbilityName, val abilityType: AbilityType, val keyAbility: KeyAbility)
+data class AbilityData(val abilityName: AbilityName, val ELEMENTALTYPES: ELEMENTAL_TYPE, val keyAbility: KeyAbility)
 
-fun getAbilitiesFromType(abilityType: AbilityType): List<AbilityName>{
-    return when (abilityType){
-        AbilityType.Fire -> listOf(AbilityName.Fireball, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        AbilityType.Fighting -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        AbilityType.Ice -> listOf(AbilityName.Icicle, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
+    return when (ELEMENTALTYPES){
+        ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
     }
 }
 
-fun getIconFromType(abilityType: AbilityType): Texture{
-    return when(abilityType){
-        AbilityType.Fire -> DefaultTextureHandler.getTexture("fireball-icon.png")
-        AbilityType.Fighting -> DefaultTextureHandler.getTexture("TailSwipeIcon.png")
-        AbilityType.Ice -> DefaultTextureHandler.getTexture("SnowFlake.png")
+fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
+    return when(ELEMENTALTYPES){
+        ELEMENTAL_TYPE.FIRE -> DefaultTextureHandler.getTexture("fireball-icon.png")
+        ELEMENTAL_TYPE.FIGHTING -> DefaultTextureHandler.getTexture("TailSwipeIcon.png")
+        ELEMENTAL_TYPE.ICE -> DefaultTextureHandler.getTexture("SnowFlake.png")
         else -> DefaultTextureHandler.getTexture("EmptyDoor.png")
     }
 }
 
 fun convertAbilityToName(ability:String): AbilityData{
     return when(ability){
-        "Fireball" -> AbilityData(AbilityName.Fireball, AbilityType.Fire, FireballAbility(player))
-        "RockThrow" -> AbilityData(AbilityName.RockThrow, AbilityType.Fighting, RockThrowAbility(player))
-        "Icicle" -> AbilityData(AbilityName.Icicle, AbilityType.Ice, IcicleAbility(player))
-        "TailSwipe" -> AbilityData(AbilityName.TailSwipe, AbilityType.Fighting, TailSwipe(player))
-        else -> AbilityData(AbilityName.Fireball,AbilityType.Fire, FireballAbility(player))
+        "Fireball" -> AbilityData(AbilityName.Fireball, ELEMENTAL_TYPE.FIRE, FireballAbility(player))
+        "RockThrow" -> AbilityData(AbilityName.RockThrow, ELEMENTAL_TYPE.FIGHTING, RockThrowAbility(player))
+        "Icicle" -> AbilityData(AbilityName.Icicle, ELEMENTAL_TYPE.ICE, IcicleAbility(player))
+        "TailSwipe" -> AbilityData(AbilityName.TailSwipe, ELEMENTAL_TYPE.FIGHTING, TailSwipe(player))
+        else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }
 interface Ability {
@@ -50,5 +50,5 @@ interface Ability {
     fun frameAction()
     val attachedFightableObject: FightableObject
     val abilityName: AbilityName
-    val abilityType: AbilityType
+    val ELEMENTALTYPES: ELEMENTAL_TYPE
 }

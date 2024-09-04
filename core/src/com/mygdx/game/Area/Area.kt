@@ -1,8 +1,6 @@
 package com.mygdx.game.Area
 
 import com.badlogic.gdx.audio.Music
-import com.mygdx.game.Ability.AbilityData
-import com.mygdx.game.Ability.AbilityType
 import com.mygdx.game.DefaultMusicHandler
 import com.mygdx.game.GameObjects.GameObject.GameObject
 

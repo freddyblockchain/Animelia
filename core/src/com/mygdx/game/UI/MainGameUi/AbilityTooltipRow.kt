@@ -8,8 +8,6 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Rendering.Renderable
 import com.mygdx.game.player
-import com.mygdx.game.zoomX
-import com.mygdx.game.zoomY
 
 class AbilityTooltipRow():Renderable {
     override val layer = Layer.FOREGROUND
@@ -22,7 +20,7 @@ class AbilityTooltipRow():Renderable {
             val ability = player.activeAbilities.getOrDefault(i, null)
             var texture = DefaultTextureHandler.getTexture("EmptyDoor.png")
             if(ability != null){
-                texture = getIconFromType(ability.abilityType)
+                texture = getIconFromType(ability.ELEMENTALTYPES)
             }
             abilityToolTips.add(AbilityTooltip(i,texture))
         }

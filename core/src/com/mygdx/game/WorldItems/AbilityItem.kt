@@ -5,7 +5,6 @@ import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.Ability.getIconFromType
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.generalSaveState
-import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -15,7 +14,7 @@ class AbilityItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     val abilityString = Json.decodeFromJsonElement<AbilityCustomFields>(gameObjectData.customFields).Ability
     val abilityData = convertAbilityToName(abilityString)
     val abilityName = abilityData.abilityName
-    override val texture = getIconFromType(abilityData.abilityType)
+    override val texture = getIconFromType(abilityData.ELEMENTALTYPES)
     override val itemAquiredText = "You found the ${this.abilityName.name} Ability"
 
     init {

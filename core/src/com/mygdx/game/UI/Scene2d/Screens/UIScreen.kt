@@ -106,7 +106,7 @@ abstract class UIScreen {
 
     open fun render(){
         stage.act(Gdx.graphics.deltaTime)
-       //stage.isDebugAll = true
+        stage.isDebugAll = true
         stage.draw()
 
         buttons.forEachIndexed { index, actor ->

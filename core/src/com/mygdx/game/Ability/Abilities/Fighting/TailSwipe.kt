@@ -3,7 +3,7 @@ package com.mygdx.game.Ability.Abilities.Fighting
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.AbilityName
-import com.mygdx.game.Ability.AbilityType
+import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -13,7 +13,7 @@ import com.mygdx.game.Managers.AreaManager
 class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbility {
     override val triggerKey = Input.Keys.NUM_1
     override val abilityName = AbilityName.TailSwipe
-    override val abilityType = AbilityType.Fighting
+    override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIGHTING
     override val activeFrames = 60
     override var currentFrame = 0
     val rotationIncrement = (360 / activeFrames).toFloat()

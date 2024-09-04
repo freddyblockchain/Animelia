@@ -1,11 +1,9 @@
 package com.mygdx.game.GameObjects.MoveableEntities.Characters
 
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
-import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
-import com.mygdx.game.Ability.AbilityType
+import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.Area.AreaType
@@ -17,7 +15,6 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
@@ -37,8 +34,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val maxHealth = 50f
     override var stats = Stats()
     val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
-    var currentAnimelia: ANIMELIA_ENTITY = ANIMELIA_ENTITY.FireArmadillo
-    var animeliaInfo = getAnimeliaData(currentAnimelia)
+    var animeliaInfo = getAnimeliaData(ANIMELIA_ENTITY.FireArmadillo)
 
     override val healthStrategy = PlayerHealthStrategy()
 

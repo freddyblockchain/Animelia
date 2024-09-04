@@ -15,8 +15,6 @@ import com.mygdx.game.UI.EnemyHealthStrategy
 
 enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo}
 
-enum class ELEMENTAL_TYPE{ICE, FIRE}
-
 enum class ANIMELIA_STAGE{JUNIOR, MASTER, GRANDMASTER}
 
 abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(gameObjectData, Vector2(32f,32f)) {
