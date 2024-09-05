@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 import com.mygdx.game.player
 
@@ -50,10 +51,25 @@ class StatusTable(color: Color): Table() {
 
         val trainingTitle = Label("Stats Info:", localHeaderStyle)
 
-        trainingTable.add(trainingTitle)
+        val trainingPoints = Label("TrainingPoints: ${PlayerStatus.tp}", localHeaderStyle)
+        val offence = Label("Offence: ${player.stats.offence}", localHeaderStyle)
+        val defence = Label("Defence: ${player.stats.defence}", localHeaderStyle)
+        val speed = Label("Speed: ${player.stats.speed}", localHeaderStyle)
+        val intelligence = Label("Intelligence: ${player.stats.intelligence}", localHeaderStyle)
+
+        trainingTable.add(trainingPoints).pad(50f)
+        trainingTable.row()
+        trainingTable.add(offence).pad(20f)
+        trainingTable.row()
+        trainingTable.add(defence).pad(20f)
+        trainingTable.row()
+        trainingTable.add(speed).pad(20f)
+        trainingTable.row()
+        trainingTable.add(intelligence).pad(20f)
 
         combinedTable.add(animeliaTable).expand().top()
         combinedTable.add(trainingTable).expand()
+
         this.add(combinedTable).expand().fill()
 
     }

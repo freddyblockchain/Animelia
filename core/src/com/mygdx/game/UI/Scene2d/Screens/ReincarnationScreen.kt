@@ -6,12 +6,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
-import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
-import com.mygdx.game.Animelia.Egg
 import com.mygdx.game.Animelia.getEggAnimelia
 
 import com.mygdx.game.Animelia.getEggTexture
@@ -19,8 +17,6 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.Inventory.Inventory
-import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.generalSaveState
@@ -58,7 +54,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     confirmSound.setVolume(id,0.2f)
                     player.animeliaInfo.gameTexture = texture
                     player.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
-                    PlayerStatus.sp = PlayerStatus.baseSp
+                    PlayerStatus.tp = PlayerStatus.baseTp
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })

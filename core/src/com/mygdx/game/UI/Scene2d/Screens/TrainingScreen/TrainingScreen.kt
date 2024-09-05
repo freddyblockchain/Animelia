@@ -6,17 +6,12 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Animelia.anivolutionCheck
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.Screens.UIScreen
 import com.mygdx.game.player
@@ -30,10 +25,10 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
     var defence = player.stats.defence
     var speed = player.stats.speed
     var intelligence = player.stats.intelligence
-    var sp = PlayerStatus.sp
+    var sp = PlayerStatus.tp
 
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
-    val spLabel = Label("Training Points: " + PlayerStatus.sp, labelStyle)
+    val spLabel = Label("Training Points: " + PlayerStatus.tp, labelStyle)
 
 
     override fun create() {
@@ -68,7 +63,7 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
 
         finishTrainingButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                PlayerStatus.sp = sp
+                PlayerStatus.tp = sp
                 player.stats.offence = offence
                 player.stats.defence = defence
                 player.stats.speed = speed
