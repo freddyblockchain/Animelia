@@ -27,7 +27,7 @@ fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
 fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     return when(ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> DefaultTextureHandler.getTexture("fireball-icon.png")
-        ELEMENTAL_TYPE.FIGHTING -> DefaultTextureHandler.getTexture("TailSwipeIcon.png")
+        ELEMENTAL_TYPE.FIGHTING -> DefaultTextureHandler.getTexture("fightingIcon.png")
         ELEMENTAL_TYPE.ICE -> DefaultTextureHandler.getTexture("SnowFlake.png")
         else -> DefaultTextureHandler.getTexture("EmptyDoor.png")
     }

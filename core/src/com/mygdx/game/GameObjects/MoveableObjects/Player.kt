@@ -12,6 +12,7 @@ import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameModes.DeathMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -63,9 +64,8 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     }
 
     fun death(){
-        changeArea(startPos, "World1")
         val reincarnationMode = UIMode(ReincarnationScreen(mainMode))
-        changeMode(reincarnationMode)
-        currentHealth = maxHealth
+        val deathMode = DeathMode(mainMode, reincarnationMode)
+        changeMode(deathMode)
     }
 }
