@@ -71,7 +71,6 @@ class StatusTable(color: Color): Table() {
         combinedTable.add(trainingTable).expand()
 
         this.add(combinedTable).expand().fill()
-
     }
 
 }

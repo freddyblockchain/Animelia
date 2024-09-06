@@ -33,6 +33,16 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
+fun getDescriptionFromName(abilityName: AbilityName): String{
+    return when(abilityName){
+        AbilityName.Icicle -> "Shoot a sharp shard of ice."
+        AbilityName.TailSwipe -> "A lounging tail attack! Use it to break rocks and enemies."
+        AbilityName.RockThrow -> "Throw a deadly rock at enemies"
+        AbilityName.Fireball -> "Shoot a fireball, that melts enemies and ice"
+        else -> "Nothing"
+    }
+}
+
 fun convertAbilityToName(ability:String): AbilityData{
     return when(ability){
         "Fireball" -> AbilityData(AbilityName.Fireball, ELEMENTAL_TYPE.FIRE, FireballAbility(player))
@@ -42,6 +52,8 @@ fun convertAbilityToName(ability:String): AbilityData{
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }
+
+
 interface Ability {
     fun onActivate()
     fun onDeactivate()

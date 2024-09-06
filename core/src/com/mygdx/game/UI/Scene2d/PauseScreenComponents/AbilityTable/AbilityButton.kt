@@ -3,18 +3,21 @@ package com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable
 import FontManager
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
+import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Ability.AbilityName
+import com.mygdx.game.Ability.getDescriptionFromName
 import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
 enum class AbilityButtonOwnership {NotOwned, Owned}
 enum class AbilityButtonLearnable {Learnable, NotLearnable}
 
-class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>): ImageButton(drawable) {
+class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>, val abilityDescription: Label): ImageButton(drawable) {
     val abilityButtonOwnership = if(generalSaveState.inventory.ownedAbilities.any { it == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
     val abilityButtonLearnable = if(player.animeliaInfo.availableAbilities.contains(abilityName)) AbilityButtonLearnable.Learnable else AbilityButtonLearnable.NotLearnable
 
@@ -30,6 +33,18 @@ class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityNam
                         firstNotSelected?.addAbility(abilityName)
                     }
                 }
+            }
+
+            override fun enter(event: InputEvent?, x: Float, y: Float, pointer: Int, fromActor: Actor?) {
+                if(abilityButtonOwnership == AbilityButtonOwnership.Owned){
+                    abilityDescription.setText(getDescriptionFromName(abilityName))
+                }
+                super.enter(event, x, y, pointer, fromActor)
+            }
+
+            override fun exit(event: InputEvent?, x: Float, y: Float, pointer: Int, toActor: Actor?) {
+                abilityDescription.setText("")
+                super.exit(event, x, y, pointer, toActor)
             }
         })
     }
