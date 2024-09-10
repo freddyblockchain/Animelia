@@ -33,9 +33,11 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
     override val maxHealth = 50f
-    override var stats = Stats()
     val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
     var animeliaInfo = getAnimeliaData(ANIMELIA_ENTITY.FireArmadillo)
+
+    override val stats
+        get() = generalSaveState.stats
 
     override val healthStrategy = PlayerHealthStrategy()
 

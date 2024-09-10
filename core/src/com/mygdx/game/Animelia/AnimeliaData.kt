@@ -22,18 +22,29 @@ interface AnimeliaData {
 
 interface AnivolutionCondition{
     fun isConditionFulfilled(): Boolean
+    val textDescription: String
 }
 
 class OffenceOver(val offence: Int): AnivolutionCondition{
     override fun isConditionFulfilled(): Boolean {
         return player.stats.offence >= offence
     }
+    override val textDescription = "Offence atleast at $offence"
 }
+
+class DefenceOver(val defence: Int): AnivolutionCondition{
+    override fun isConditionFulfilled(): Boolean {
+        return player.stats.defence >= defence
+    }
+    override val textDescription = "Defence atleast at $defence"
+}
+
 
 class InArea(val areaIdentifer: String): AnivolutionCondition{
     override fun isConditionFulfilled(): Boolean {
         return AreaManager.getActiveArea()!!.areaIdentifier == areaIdentifer
     }
+    override val textDescription = "Must be in $areaIdentifer"
 }
 
 class FireArmadilloData(): AnimeliaData {
@@ -42,7 +53,7 @@ class FireArmadilloData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo, ANIMELIA_ENTITY.FireDragon)
     override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball)
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 }
@@ -52,7 +63,7 @@ class IcePenguinData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/icepenguin-straight.png","Animelias/icepenguin-right.png","Animelias/icepenguin-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.IceYeti)
     override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle)
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
 }
@@ -91,7 +102,7 @@ class IceYetiData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/ice-yeti-straight.png","Animelias/ice-yet-right.png","Animelias/ice-yeti-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>()
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti

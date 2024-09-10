@@ -14,6 +14,7 @@ import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.Screens.UIScreen
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
 class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Boolean): UIScreen() {
@@ -25,10 +26,11 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
     var defence = player.stats.defence
     var speed = player.stats.speed
     var intelligence = player.stats.intelligence
-    var sp = PlayerStatus.tp
+    var sp = player.stats.tp
+
 
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
-    val spLabel = Label("Training Points: " + PlayerStatus.tp, labelStyle)
+    val spLabel = Label("Training Points: " + sp, labelStyle)
 
 
     override fun create() {
@@ -63,11 +65,14 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
 
         finishTrainingButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                PlayerStatus.tp = sp
+                player.stats.tp = sp
                 player.stats.offence = offence
                 player.stats.defence = defence
                 player.stats.speed = speed
                 player.stats.intelligence = intelligence
+
+                generalSaveState.stats = player.stats
+                generalSaveState.updateSaveState()
 
                 changeMode(prevMode!!)
                 anivolutionCheck()

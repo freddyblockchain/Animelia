@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.DefaultSoundHandler
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.player
 
 class AttributeRow(val trainingScreen: TrainingScreen) {
     val upArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("UpArrow.png"))
@@ -58,7 +59,7 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
         DownButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
-                if(trainingScreen.sp < PlayerStatus.tp){
+                if(trainingScreen.sp < player.stats.tp){
                     trainingScreen.sp += 1
 
                     val newStat = changeFunctionDown()

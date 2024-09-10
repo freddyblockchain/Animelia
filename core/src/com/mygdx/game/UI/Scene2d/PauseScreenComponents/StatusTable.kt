@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
+import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
 class StatusTable(color: Color): Table() {
@@ -51,7 +52,7 @@ class StatusTable(color: Color): Table() {
 
         val trainingTitle = Label("Stats Info:", localHeaderStyle)
 
-        val trainingPoints = Label("TrainingPoints: ${PlayerStatus.tp}", localHeaderStyle)
+        val trainingPoints = Label("TrainingPoints: ${generalSaveState.stats.tp}", localHeaderStyle)
         val offence = Label("Offence: ${player.stats.offence}", localHeaderStyle)
         val defence = Label("Defence: ${player.stats.defence}", localHeaderStyle)
         val speed = Label("Speed: ${player.stats.speed}", localHeaderStyle)

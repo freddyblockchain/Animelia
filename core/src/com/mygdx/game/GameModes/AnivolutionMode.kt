@@ -49,6 +49,9 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         }
         else if(currentFrame == 151){
             player.animeliaInfo = getAnimeliaData(animeliaEntity)
+            generalSaveState.currentAnimelia = animeliaEntity
+            generalSaveState.updateSaveState()
+
             val id = appearSound.play()
             appearSound.setVolume(id, 0.5f)
         }

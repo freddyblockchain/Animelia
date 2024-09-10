@@ -8,8 +8,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.UI.Scene2d.Screens.AnivolutionViewScreen
-import com.mygdx.game.UI.Scene2d.Screens.TrainingScreen.TrainingScreen
+import com.mygdx.game.UI.Scene2d.Screens.AnivolutionOverViewScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 
@@ -24,7 +23,7 @@ class LibraryCollision(): InputCollision(){
     override val keyCode = Input.Keys.ENTER
     override val insideText = "VIEW"
     override fun collisionHappened(collidedObject: GameObject) {
-        currentGameMode = UIMode(AnivolutionViewScreen(mainMode))
+        currentGameMode = UIMode(AnivolutionOverViewScreen(mainMode))
     }
 
 }

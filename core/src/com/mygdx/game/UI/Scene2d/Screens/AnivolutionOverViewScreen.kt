@@ -3,28 +3,23 @@ import FontManager
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer
-import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
-import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.scenes.scene2d.ui.Button
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
-import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.Skin
-import com.badlogic.gdx.scenes.scene2d.ui.Table
+import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.ANIMELIA_STAGE
 import com.mygdx.game.Animelia.getAnimeliaData
-import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable.AbilityButton
+import com.mygdx.game.DefaultTextureHandler
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
+import com.mygdx.game.generalSaveState
 
 
-class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
+class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
 
     override var activeButton: Actor? = null
     override var renderPrevGameMode = true
@@ -36,9 +31,7 @@ class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
         val juniorTable = Table()
         val masterTable = Table()
 
-        val backgroundColor = Color(1f, 1f, 1f, 1f) // Example color
 
-        rootTable.background = createBackgroundDrawable(backgroundColor)
         rootTable.add(juniorTable).padRight(400f).padTop(200f).expand().right()
         rootTable.add(masterTable).padRight(200f).padTop(150f).expand().left()
         val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
@@ -49,7 +42,7 @@ class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
         val masterLabel = Label("Master", labelStyle)
 
         juniorTable.add(juniorLabel).size(50f).padBottom(20f).padRight(150f)
-        masterTable.add(masterLabel).size(50f).expand().padBottom(20f).padRight(150f)
+        masterTable.add(masterLabel).size(50f).expand().padBottom(20f)
         juniorTable.row()
         masterTable.row()
 
@@ -63,7 +56,16 @@ class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
                 juniorTable.row()
             }
             else {
-                masterTable.add(button).width(100f).height(100f).padBottom(100f)
+                masterTable.add(button).width(100f).height(100f).padBottom(100f).padRight(0f)
+                val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture("book.png"))
+                textureRegionDrawable.setMinSize(32f,32f)
+
+                val image = Image(textureRegionDrawable)
+
+                val alpha = if(data.animeliaEntity in generalSaveState.inventory.entityBooks) 1f else 0.3f
+                image.color = Color(1f, 1f, 1f, alpha) // RGB = white, Alpha = 0.5 (50% transparency)
+
+                masterTable.add(image).top().padLeft(-32f)
                 masterTable.row()
             }
             buttons.add(button)
@@ -73,7 +75,7 @@ class AnivolutionViewScreen(override var prevMode: GameMode?): UIScreen(){
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
                     Input.Keys.ENTER -> {
-                        changeMode(prevMode!!)
+                        changeMode(UIMode(AnivolutionSpecificViewScreen(prevMode, ANIMELIA_ENTITY.entries[activeButtonIndex])))
                         return true
                     }
                     else -> return false
