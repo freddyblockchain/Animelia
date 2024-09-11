@@ -82,7 +82,7 @@ class FireDragonData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(25))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>()
     override val animeliaEntity = ANIMELIA_ENTITY.FireDragon

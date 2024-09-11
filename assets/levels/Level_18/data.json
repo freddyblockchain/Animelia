@@ -26,6 +26,21 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
+		"AnivolutionBook": [
+			{
+				"id": "AnivolutionBook",
+				"iid": "ad7b3b10-4ce0-11ef-9c31-a3518b8cc947",
+				"layer": "EntitiesOnTop",
+				"x": 160,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "IceYeti"
+				}
+			}
+		],
 		"Door": [
 			{
 				"id": "Door",

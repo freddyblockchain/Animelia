@@ -21,6 +21,7 @@ import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.PlayerSaveState
+import com.mygdx.game.Saving.SavingHandler.Companion.InitHandleSaving
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.initSignalListeners
 import com.mygdx.game.UI.Scene2d.Screens.StartScreen
@@ -57,32 +58,10 @@ class MainGame : ApplicationAdapter() {
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()
-       // getArticyDraftEntries()
-        if (!FileHandler.SaveFileEmpty()) {
-            val savedState: String = FileHandler.readPlayerFile()[0]
-            val savedGeneralSaveState: PlayerSaveState = Json.decodeFromString(savedState)
-            generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia)
-            player.animeliaInfo = getAnimeliaData(generalSaveState.currentAnimelia)
-
-        } else {
-            generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.FireArmadillo)
-            AreaManager.setActiveArea("World1")
-
-            if(generalSaveState.inventory.ownedAbilities.size == 0){
-                generalSaveState.inventory.ownedAbilities.add(AbilityName.TailSwipe)
-            }
-            val firstAbility = generalSaveState.inventory.ownedAbilities[0]
-            player.activeAbilities[1] = convertAbilityToName(firstAbility.name).keyAbility
-        }
-        initSignalListeners()
-        val originalFile = FileHandler.readSignalFile()
-        val savedSignals: List<Signal> = originalFile.map(::signalConvert)
-        savedSignals.forEach {
-            SignalManager.pastSignals.add(it)
-        }
-        changeArea(startPos, "World1")
-        mainMode.abilityRowUi.updateToolTips()
+        InitHandleSaving()
         currentGameMode = UIMode(StartScreen(mainMode))
+        mainMode.abilityRowUi.updateToolTips()
+        changeArea(startPos, "World1")
     }
 
     override fun render() {
