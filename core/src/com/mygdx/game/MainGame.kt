@@ -59,9 +59,9 @@ class MainGame : ApplicationAdapter() {
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()
         InitHandleSaving()
-        currentGameMode = UIMode(StartScreen(mainMode))
-        mainMode.abilityRowUi.updateToolTips()
         changeArea(startPos, "World1")
+        currentGameMode = UIMode(StartScreen(mainMode), playConfirmationSound = false)
+        mainMode.abilityRowUi.updateToolTips()
     }
 
     override fun render() {

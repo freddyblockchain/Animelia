@@ -66,7 +66,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     }
 
     fun death(){
-        val reincarnationMode = UIMode(ReincarnationScreen(mainMode))
+        val reincarnationMode = UIMode(ReincarnationScreen(mainMode), playConfirmationSound = false)
         val deathMode = DeathMode(mainMode, reincarnationMode)
         changeMode(deathMode)
     }

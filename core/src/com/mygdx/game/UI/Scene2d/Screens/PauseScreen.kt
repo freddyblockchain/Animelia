@@ -46,8 +46,11 @@ class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
             object : InputListener() {
                 override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                     when (keycode) {
-                        Input.Keys.SPACE -> {
+                        Input.Keys.SPACE, Input.Keys.ESCAPE -> {
                             changeMode(prevMode!!)
+
+                            val id = backSound.play()
+                            backSound.setVolume(id,0.2f)
                             return true
                         }
                     }

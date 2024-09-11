@@ -19,6 +19,7 @@ import com.mygdx.game.Utils.Center
 
 abstract class UIScreen {
     lateinit var rootTable: Table
+    lateinit var associatedMode: GameMode
     var activeButtonIndex: Int = 0
     val shapeRenderer: ShapeRenderer = ShapeRenderer()
     val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
@@ -49,7 +50,9 @@ abstract class UIScreen {
     }
 
     fun pressEnter() {
-        buttons[activeButtonIndex]?.let { simulateClick(it) }
+        if(buttons.size > 0){
+            buttons[activeButtonIndex]?.let { simulateClick(it) }
+        }
     }
 
     fun simulateClick(actor: Actor) {
@@ -106,7 +109,7 @@ abstract class UIScreen {
 
     open fun render(){
         stage.act(Gdx.graphics.deltaTime)
-        stage.isDebugAll = true
+        //stage.isDebugAll = true
         stage.draw()
 
         buttons.forEachIndexed { index, actor ->

@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.DefaultMusicHandler
+import com.mygdx.game.FileHandler
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
@@ -30,34 +31,52 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         val buttonTable = Table()
 
         val newGameButton = AnimeliaButton("New Game", bigLabel, this, 0)
-        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 1)
-        val controlsButton = AnimeliaButton("Controls", bigLabel, this, 2)
-        val optionsButton = AnimeliaButton("Options", bigLabel, this, 3)
-
+        val controlsButton = AnimeliaButton("Controls", bigLabel, this, 1)
+        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 2)
+        //val optionsButton = AnimeliaButton("Options", bigLabel, this, 2)
         val randomLabel = TextButton("hello", skin)
 
-        buttons.addAll(listOf(newGameButton, loadGameButton, controlsButton, optionsButton))
+        buttons.addAll(listOf(newGameButton, controlsButton))
+
+        if(!FileHandler.SaveFileEmpty()){
+            buttons.add(loadGameButton)
+            //changeActive(2)
+            activeButtonIndex = 2
+            activeButton = loadGameButton
+        }
         newGameButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
                 val dialogScreen = DialogScreen(currentGameMode, nextGameMode, "Are you sure you want to start new game?"){
                     MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Snow City Theme/snow_city.mp3"))
                 }
-                val uiConformMode = UIMode(dialogScreen)
-                changeMode(uiConformMode)
+                if(!FileHandler.SaveFileEmpty()){
+                    val uiConformMode = UIMode(dialogScreen, playConfirmationSound = false)
+                    changeMode(uiConformMode)
+                } else{
+                    changeMode(nextGameMode)
+                }
                 val id = confirmSound.play()
                 confirmSound.setVolume(id,0.2f)
             }
         })
+        loadGameButton.addListener(object : ClickListener() {
+            override fun clicked(event: InputEvent?, x: Float, y: Float) {
+                val id = confirmSound.play()
+                confirmSound.setVolume(id,0.2f)
+                changeMode(nextGameMode)
+                MusicManager.changeAndPlay(DefaultMusicHandler.getMusic("Music/Snow City Theme/snow_city.mp3"))
+            }
+        })
         rootTable.add(buttonTable).expand().center()
 
-        buttonTable.add(newGameButton)
+        if(!FileHandler.SaveFileEmpty()){
+            buttonTable.add(loadGameButton).padBottom(20f)
+            buttonTable.row()
+        }
+        buttonTable.add(newGameButton).padBottom(20f)
         buttonTable.row()
-        buttonTable.add(loadGameButton)
-        buttonTable.row()
-        buttonTable.add(controlsButton)
-        buttonTable.row()
-        buttonTable.add(optionsButton)
+        buttonTable.add(controlsButton).padBottom(20f)
 
     }
     override fun render() {

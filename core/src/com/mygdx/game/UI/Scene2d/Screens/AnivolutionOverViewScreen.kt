@@ -7,7 +7,9 @@ import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.InputListener
 import com.badlogic.gdx.scenes.scene2d.ui.*
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.badlogic.gdx.utils.Align
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
@@ -15,7 +17,10 @@ import com.mygdx.game.Animelia.ANIMELIA_STAGE
 import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameModes.UIMode
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
+import com.mygdx.game.UI.Scene2d.bigLabel
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
+import com.mygdx.game.currentGameMode
 import com.mygdx.game.generalSaveState
 
 
@@ -23,6 +28,7 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
 
     override var activeButton: Actor? = null
     override var renderPrevGameMode = true
+    var currentIndex = 0
 
     override fun create() {
 
@@ -31,9 +37,15 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
         val juniorTable = Table()
         val masterTable = Table()
 
+        val combinedTable = Table()
 
-        rootTable.add(juniorTable).padRight(400f).padTop(200f).expand().right()
-        rootTable.add(masterTable).padRight(200f).padTop(150f).expand().left()
+
+        combinedTable.add(juniorTable).padRight(400f).padTop(100f).expand().right()
+        combinedTable.add(masterTable).padRight(200f).padTop(50f).expand().left()
+
+        rootTable.add(combinedTable).expand().fill()
+
+
         val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
 
         val labelStyle = Label.LabelStyle(FontManager.MediumFont, Color.BLACK)
@@ -52,11 +64,11 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
             textureRegionDrawable.setMinSize(64f,64f)
             val button = ImageButton(textureRegionDrawable)
             if(data.animeliaStage == ANIMELIA_STAGE.JUNIOR){
-                juniorTable.add(button).width(64f).height(64f).padBottom(100f)
+                juniorTable.add(button).width(64f).height(64f).padBottom(50f)
                 juniorTable.row()
             }
             else {
-                masterTable.add(button).width(100f).height(100f).padBottom(100f).padRight(0f)
+                masterTable.add(button).width(100f).height(100f).padBottom(50f).padRight(0f)
                 val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture("book.png"))
                 textureRegionDrawable.setMinSize(32f,32f)
 
@@ -68,35 +80,50 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
                 masterTable.add(image).top().padLeft(-32f)
                 masterTable.row()
             }
+            val indexForButton = currentIndex
+            button.addListener(object : ClickListener() {
+                override fun clicked(event: InputEvent?, x: Float, y: Float) {
+                    // Define what should happen when the button is clicked
+                    changeMode(UIMode(AnivolutionSpecificViewScreen(associatedMode, ANIMELIA_ENTITY.entries[indexForButton])))
+                }
+            })
+
             buttons.add(button)
+            currentIndex += 1
         }
+        //Exit button
+        val animeliaButton = AnimeliaButton("Exit", bigLabel, this, buttons.size)
+        animeliaButton.setAlignment(Align.center)
+        buttons.add(animeliaButton)
+        this.activeButtonIndex = animeliaButton.activeIndex
+        this.activeButton = animeliaButton
+        rootTable.row()
+        rootTable.add(animeliaButton).expand().width(200f).top()
+
+        animeliaButton.addListener(object : ClickListener() {
+            override fun clicked(event: InputEvent?, x: Float, y: Float) {
+                // Define what should happen when the button is clicked
+                val id = backSound.play()
+                backSound.setVolume(id,0.2f)
+                changeMode(prevMode!!)
+            }
+        })
+
+        //Exit
 
         stage.addListener(object : InputListener() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
-                    Input.Keys.ENTER -> {
-                        changeMode(UIMode(AnivolutionSpecificViewScreen(prevMode, ANIMELIA_ENTITY.entries[activeButtonIndex])))
+                    Input.Keys.ESCAPE, Input.Keys.SPACE -> {
+                        val id = backSound.play()
+                        backSound.setVolume(id,0.2f)
+                        changeMode(prevMode!!)
                         return true
                     }
                     else -> return false
                 }
             }
         })
-
-
-
-
-        //table.debug = true // This is optional, but enables debug lines for tables.
-
-        /*juniorTable.add(button).center().width(100f).height(100f)
-        juniorTable.row()
-        juniorTable.add(button2).center().width(100f).height(100f)
-        juniorTable.row()
-        juniorTable.add(button3).center().width(100f).height(100f)
-
-        buttons.addAll(listOf(button, button2, button3))*/
-
-        //setActiveButton(buttons[0])
 
     }
 }

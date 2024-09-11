@@ -14,16 +14,24 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.badlogic.gdx.utils.Align
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.ANIMELIA_STAGE
 import com.mygdx.game.Animelia.getAnimeliaData
+import com.mygdx.game.Animelia.getEggAnimelia
 import com.mygdx.game.DefaultTextureHandler
+import com.mygdx.game.GameModes.AnivolutionMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.Managers.Stats
+import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
+import com.mygdx.game.UI.Scene2d.bigLabel
 import com.mygdx.game.UI.Scene2d.mediumLabel
 import com.mygdx.game.UI.Scene2d.smallToMediumLabel
 import com.mygdx.game.generalSaveState
+import com.mygdx.game.player
 
 
 class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val selectedAnimelia: ANIMELIA_ENTITY): UIScreen(){
@@ -143,7 +151,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
         rootTable.add(conditionsTable)
 
         val anivolutionConditionLabel = Label("Anivolution Conditions: ", mediumLabel)
-        conditionsTable.add(anivolutionConditionLabel)
+        conditionsTable.add(anivolutionConditionLabel).padBottom(50f)
         conditionsTable.row()
 
         if(selectedAnimelia in generalSaveState.inventory.entityBooks){
@@ -152,7 +160,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
                 if(it.isConditionFulfilled()){
                     label.color = Color.GREEN
                 }
-                conditionsTable.add(label)
+                conditionsTable.add(label).padBottom(20f)
                 conditionsTable.row()
             }
         } else{
@@ -160,11 +168,33 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
             conditionsTable.add(label)
         }
 
+        val animeliaButton = AnimeliaButton("Back", bigLabel, this, buttons.size)
+        animeliaButton.setAlignment(Align.center)
+        buttons.add(animeliaButton)
+        this.activeButtonIndex = animeliaButton.activeIndex
+        this.activeButton = animeliaButton
+        rootTable.row()
+        rootTable.add(animeliaButton).expand().width(200f).center()
+
+        animeliaButton.addListener(object : ClickListener() {
+            override fun clicked(event: InputEvent?, x: Float, y: Float) {
+                // Define what should happen when the button is clicked
+                val id = backSound.play()
+                backSound.setVolume(id,0.2f)
+                changeMode(prevMode!!)
+
+            }
+        })
+
+
         stage.addListener(object : InputListener() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
-                    Input.Keys.ESCAPE -> {
+                    Input.Keys.ESCAPE, Input.Keys.SPACE -> {
                         changeMode(prevMode!!)
+
+                        val id = backSound.play()
+                        backSound.setVolume(id,0.2f)
                         return true
                     }
                     else -> return false
@@ -196,14 +226,14 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
         shapeRenderer.color = Color.WHITE
 
         val stageCoordsCurrent = buttons[0].localToStageCoordinates(Vector2(0f, 0f))
-        for(button in buttons.drop(1)){
+        for (button in buttons.drop(1).dropLast(1)) {
             val stageCoordsNew = button.localToStageCoordinates(Vector2(0f, 0f))
             shapeRenderer.line(
                 stageCoordsCurrent.x + buttons[0].width / 2,
                 stageCoordsCurrent.y + buttons[0].height / 2,
                 stageCoordsNew.x + button.width / 2,
                 stageCoordsNew.y + button.height / 2
-            );
+            )
         }
 
         shapeRenderer.end()

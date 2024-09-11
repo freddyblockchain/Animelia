@@ -75,9 +75,17 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
                 generalSaveState.updateSaveState()
 
                 changeMode(prevMode!!)
+
+                val id = confirmSound.play()
+                confirmSound.setVolume(id,0.2f)
+
                 anivolutionCheck()
             }
         })
+
+        buttons.add(finishTrainingButton)
+        activeButtonIndex = 0
+        activeButton = finishTrainingButton
 
 
 
@@ -86,8 +94,11 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
         stage.addListener(object : InputListener() {
             override fun keyDown(event: InputEvent?, keycode: Int): Boolean {
                 when (keycode) {
-                    Input.Keys.ENTER -> {
+                    Input.Keys.ESCAPE, Input.Keys.SPACE -> {
                         changeMode(prevMode!!)
+
+                        val id = backSound.play()
+                        backSound.setVolume(id,0.2f)
                         return true
                     }
                     else -> return false
