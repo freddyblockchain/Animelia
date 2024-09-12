@@ -3,6 +3,7 @@ package com.mygdx.game
 import FontManager
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.graphics.FPSLogger
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
@@ -38,6 +39,7 @@ val zoomX = 4
 val zoomY = 4
 val defaultLineWidth = 2f
 val startPos = Vector2(200f, -270f)
+val fpsLogger = FPSLogger()
 class MainGame : ApplicationAdapter() {
 
     lateinit var inputProcessor: InGameInputProcessor
@@ -58,10 +60,7 @@ class MainGame : ApplicationAdapter() {
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()
-        InitHandleSaving()
-        changeArea(startPos, "World1")
         currentGameMode = UIMode(StartScreen(mainMode), playConfirmationSound = false)
-        mainMode.abilityRowUi.updateToolTips()
     }
 
     override fun render() {
@@ -78,6 +77,7 @@ class MainGame : ApplicationAdapter() {
         drawHealthBars()
         mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
         mainCamera.update()
+        fpsLogger.log()
     }
 
     override fun dispose() {

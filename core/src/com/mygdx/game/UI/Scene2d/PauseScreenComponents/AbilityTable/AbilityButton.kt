@@ -3,6 +3,8 @@ package com.mygdx.game.UI.Scene2d.PauseScreenComponents.AbilityTable
 import FontManager
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
@@ -20,6 +22,7 @@ enum class AbilityButtonLearnable {Learnable, NotLearnable}
 class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>, val abilityDescription: Label): ImageButton(drawable) {
     val abilityButtonOwnership = if(generalSaveState.inventory.ownedAbilities.any { it == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
     val abilityButtonLearnable = if(player.animeliaInfo.availableAbilities.contains(abilityName)) AbilityButtonLearnable.Learnable else AbilityButtonLearnable.NotLearnable
+    private val shapeRenderer: ShapeRenderer = ShapeRenderer()
 
     init {
         this.addListener(object : ClickListener() {
@@ -61,5 +64,18 @@ class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityNam
                 }
             }
         }
+
+        //Pretty bad but we are trying it out.
+
+        batch?.end() // End the current batch before using ShapeRenderer
+
+        val stageCoords = this.localToStageCoordinates(Vector2(0f, 0f))
+        val color = Color.WHITE
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
+        shapeRenderer.setColor(color)
+        shapeRenderer.rect(stageCoords.x, stageCoords.y, this.width, this.height)
+        shapeRenderer.end()
+
+        batch?.begin() // Restart the batch after using ShapeRenderer
     }
 }

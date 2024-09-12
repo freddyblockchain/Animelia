@@ -16,7 +16,7 @@ import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 
 class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
     val statusTable = StatusTable(this.backgroundColor)
-    val inventoryTable = InventoryTable(this.backgroundColor)
+    //val inventoryTable = InventoryTable(this.backgroundColor)
     val abilityTable = AbilityTable(this.backgroundColor)
     var activeTable: Table = statusTable
 
@@ -26,8 +26,8 @@ class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
     override fun changeActive(activeIndex: Int){
         val newTable = when(activeIndex){
             0 -> statusTable
-            1 -> abilityTable
-            else -> inventoryTable
+            else -> abilityTable
+            //else -> inventoryTable
         }
         val cellToChange = this.rootTable.getCell(this.activeTable)
         cellToChange.clearActor()
@@ -62,12 +62,12 @@ class PauseScreen(override var prevMode: GameMode?) : UIScreen() {
         buttonTable.height = 100f
         val headerButton1 = AnimeliaButton("Status", labelStyle, this, 0)
         val headerButton2 = AnimeliaButton("Ability", labelStyle, this, 1)
-        val headerButton3 = AnimeliaButton("Inventory", labelStyle, this,2)
-        buttons.addAll(listOf( headerButton1, headerButton2, headerButton3))
+        //val headerButton3 = AnimeliaButton("Inventory", labelStyle, this,2)
+        buttons.addAll(listOf( headerButton1, headerButton2))
         buttonTable.add(headerButton1).expand().center()
 
         buttonTable.add(headerButton2).expand().center()
-        buttonTable.add(headerButton3).expand().center()
+        //buttonTable.add(headerButton3).expand().center()
         buttonTable.background = createBackgroundDrawable(Color.BLACK)
 
         //Expand og fill

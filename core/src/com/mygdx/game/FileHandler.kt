@@ -51,5 +51,9 @@ class FileHandler {
             fileWriter.use { writer -> lines.forEach { writer.write(it)
                 writer.newLine()}}
         }
+        fun clearSaves(){
+            signalFile.writeText("")
+            playerFile.writeText("")
+        }
     }
 }
