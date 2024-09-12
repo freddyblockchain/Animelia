@@ -16,6 +16,10 @@ interface GameMode {
 
     }
     val inputProcessor: InputProcessor
+
+    fun modeInit() {
+
+    }
 }
 
 open class DefaultInputProcessor(): InputProcessor {
@@ -57,6 +61,7 @@ open class DefaultInputProcessor(): InputProcessor {
 }
 fun changeMode(newMode: GameMode){
     currentGameMode = newMode
+    newMode.modeInit()
     Gdx.input.inputProcessor = newMode.inputProcessor
     Gdx.gl.glLineWidth(defaultLineWidth)
 }

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShaderProgram
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
+import com.mygdx.game.Animation.SpeechBubble
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
@@ -18,6 +19,8 @@ class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spr
 
     val endFrame = 180
 
+    val deathBatch = SpriteBatch()
+
     //val currentTexture = player.sprite.texture
     val deathTexture = DefaultTextureHandler.getTexture("death.png")
 
@@ -27,6 +30,10 @@ class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spr
     val originalShader = spriteBatch.shader
 
     override val inputProcessor = DefaultInputProcessor()
+
+    override fun modeInit() {
+        MusicManager.currentTrack?.stop()
+    }
     override fun FrameAction() {
 
         spriteBatch.begin()

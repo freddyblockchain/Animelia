@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
+import com.mygdx.game.Animation.SpeechBubble
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.Area.AreaType
 import com.mygdx.game.Area.getAreaType
@@ -23,6 +24,8 @@ import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.UI.PlayerHealthStrategy
 import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 
+enum class PlayerEnvironmentState {HOT, COLD, NORMAL}
+
 class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
@@ -35,6 +38,10 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val maxHealth = 50f
     val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
     var animeliaInfo = getAnimeliaData(ANIMELIA_ENTITY.FireArmadillo)
+    var playerEnvironmentState = PlayerEnvironmentState.NORMAL
+
+    val coldSpeech = SpeechBubble("This area is too cold for me!", this, 0)
+    val hotSpeech = SpeechBubble("This area is too hot for me!",this,0)
 
     override val stats
         get() = generalSaveState.stats
@@ -48,15 +55,18 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
         super.render(batch)
+
+        if(playerEnvironmentState == PlayerEnvironmentState.COLD){
+            coldSpeech.render(batch)
+        }
+        else if(playerEnvironmentState == PlayerEnvironmentState.HOT){
+            hotSpeech.render(batch)
+        }
     }
 
     override fun frameTask() {
         super.frameTask()
-        val currentAreaIdentifier = AreaManager.getActiveArea()!!.areaIdentifier
-
-        if(getAreaType(currentAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in animeliaInfo.elemental_types)){
-            currentHealth -= 0.2f
-        }else if((getAreaType(currentAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in animeliaInfo.elemental_types))){
+        if(playerEnvironmentState == PlayerEnvironmentState.HOT || playerEnvironmentState == PlayerEnvironmentState.COLD){
             currentHealth -= 0.2f
         }
 

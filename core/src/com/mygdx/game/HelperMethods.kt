@@ -7,10 +7,14 @@ import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.MathUtils.cos
 import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Animelia.anivolutionCheck
 import com.mygdx.game.Area.Area
+import com.mygdx.game.Area.AreaType
+import com.mygdx.game.Area.getAreaType
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
+import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerEnvironmentState
 import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
@@ -65,6 +69,14 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 
     val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }
     SignalManager.signalManager.addAll(pastSignalsInArea)
+
+    if(getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types)){
+        player.playerEnvironmentState = PlayerEnvironmentState.COLD
+    }else if(getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types)){
+        player.playerEnvironmentState = PlayerEnvironmentState.HOT
+    } else{
+        player.playerEnvironmentState = PlayerEnvironmentState.NORMAL
+    }
 }
 
 fun initAreas(){
