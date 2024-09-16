@@ -10,10 +10,10 @@ import java.io.File
 class FileHandler {
     companion object{
 
-        var signalHandle = Gdx.files.internal("assets/SaveFiles/SignalSave")
-        var playerHandle =  Gdx.files.internal("assets/SaveFiles/PlayerSave")
-        private val signalFile: File = signalHandle.file()
-        private val playerFile: File = playerHandle.file()
+        lateinit var signalHandle: FileHandle
+        lateinit var playerHandle: FileHandle
+        private lateinit var signalFile: File
+        private lateinit var playerFile: File
         private lateinit var fileWriter: BufferedWriter
         fun savePlayerState(playerState: String){
             val lines = readPlayerFile().toMutableList()
@@ -35,8 +35,8 @@ class FileHandler {
         }
 
         fun getFileJson(fileName: String): String{
-            val handle: FileHandle = Gdx.files.internal(fileName);
-            return handle.file().readText()
+            val handle: FileHandle = Gdx.files.internal(fileName)
+            return handle.readString()
         }
 
         fun SaveFileEmpty(): Boolean{
@@ -55,5 +55,30 @@ class FileHandler {
             signalFile.writeText("")
             playerFile.writeText("")
         }
+
+        fun initSaveFiles(){
+            signalHandle = Gdx.files.local("SaveFiles/SignalSave")
+            playerHandle =  Gdx.files.local("SaveFiles/PlayerSave")
+            // Ensure the directory exists
+            signalHandle.file().parentFile?.mkdirs()
+            playerHandle.file().parentFile?.mkdirs()
+
+            // Check if the files exist, and create them if they don't
+            if (!signalHandle.exists()) {
+                signalHandle.file().createNewFile()
+            }
+            if (!playerHandle.exists()) {
+                playerHandle.file().createNewFile()
+            }
+            signalFile = signalHandle.file()
+            playerFile  = playerHandle.file()
+        }
+
+        val BASE_PATH = if (Gdx.files.internal("assets/").exists()) {
+            "assets/"
+        } else {
+            ""
+        }
+
     }
 }

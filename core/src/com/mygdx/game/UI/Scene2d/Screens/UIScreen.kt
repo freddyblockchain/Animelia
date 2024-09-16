@@ -22,7 +22,7 @@ abstract class UIScreen {
     lateinit var associatedMode: GameMode
     var activeButtonIndex: Int = 0
     val shapeRenderer: ShapeRenderer = ShapeRenderer()
-    val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
+    val skin = Skin(Gdx.files.internal("ui/uiskin.json"))
     open val backgroundColor = Color.DARK_GRAY
 
     val stage = Stage(ScreenViewport())

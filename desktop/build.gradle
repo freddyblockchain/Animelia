@@ -1,24 +1,27 @@
-sourceCompatibility = 1.8
+
+import io.github.fourlastor.construo.Target
+import org.gradle.internal.os.OperatingSystem
+
+plugins {
+    id("io.github.fourlastor.construo") version "1.4.1"
+    id "application"
+    id 'org.jetbrains.kotlin.plugin.serialization' version "1.9.21"
+}
+apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
+
 sourceSets.main.java.srcDirs = [ "src/" ]
 sourceSets.main.resources.srcDirs = ["../assets"]
 
 project.ext.mainClassName = "com.mygdx.game.DesktopLauncher"
 project.ext.assetsDir = new File("../assets")
 
-import org.gradle.internal.os.OperatingSystem
+def os = System.properties['os.name'].toLowerCase()
 
-tasks.register('run', JavaExec) {
-    dependsOn classes
-    mainClass = project.mainClassName
-    classpath = sourceSets.main.runtimeClasspath
-    standardInput = System.in
-    workingDir = project.assetsDir
-    ignoreExitValue = true
+run {
+    workingDir = rootProject.file('assets').path
+    setIgnoreExitValue(true)
 
-    if (OperatingSystem.current() == OperatingSystem.MAC_OS) {
-        // Required to run on macOS
-        jvmArgs += "-XstartOnFirstThread"
-    }
+    if (os.contains('mac')) jvmArgs += "-XstartOnFirstThread"
 }
 
 tasks.register('debug', JavaExec) {
@@ -31,18 +34,89 @@ tasks.register('debug', JavaExec) {
     debug = true
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17)) // Set JDK 17 for compiling
+    }
+}
+
+/*
 tasks.register('dist', Jar) {
-    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
-        attributes 'Main-Class': project.mainClassName
+        attributes 'Main-Class': project(':desktop').ext.mainClassName
     }
     dependsOn configurations.runtimeClasspath
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-    with jar
+    with(tasks.named('jar').get()) // Ensure this task configuration is correct
+}*/
+
+
+def appName = "Animelia"
+def jarName = "$appName-${1.0}.jar"
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    archiveFileName.set(jarName)
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude('META-INF/INDEX.LIST', 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA')
+    dependencies {
+        exclude('META-INF/INDEX.LIST', 'META-INF/maven/**')
+    }
+    doLast {
+        file(archiveFile).setExecutable(true, false)
+    }
 }
 
+construo {
+    name.set("animelia")
+    humanName.set("Animelia")
+    version.set("0.0.0")
+
+    targets.configure {
+        create("linuxX64", Target.Linux) {
+            architecture.set(Target.Architecture.X86_64)
+            jdkUrl.set("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_x64_linux_hotspot_17.0.11_9.tar.gz")
+        }
+        create("macM1", Target.MacOs) {
+            architecture.set(Target.Architecture.AARCH64)
+            jdkUrl.set("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.11_9.tar.gz")
+            // macOS needs an identifier
+            identifier.set("com.libgdx.liftoff." + appName)
+            // Optional: icon for macOS
+            macIcon.set(project.file("icons/logo.icns"))
+        }
+        create("macX64", Target.MacOs) {
+            architecture.set(Target.Architecture.X86_64)
+            jdkUrl.set("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_x64_mac_hotspot_17.0.11_9.tar.gz")
+            // macOS needs an identifier
+            identifier.set("com.libgdx.liftoff." + appName)
+            // Optional: icon for macOS
+            macIcon.set(project.file("icons/logo.icns"))
+        }
+        create("winX64", Target.Windows) {
+            architecture.set(Target.Architecture.X86_64)
+            jdkUrl.set("https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.11%2B9/OpenJDK17U-jdk_x64_windows_hotspot_17.0.11_9.zip")
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2"
+}
+
+tasks.register('dist') {
+    dependsOn 'jar'
+}
+
+
+startScripts.dependsOn(':desktop:jar')
+startScripts.classpath = project.tasks.jar.outputs.files
 
 dist.dependsOn classes
 

@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 buildscript {
     ext.kotlinVersion = '1.9.21'
 
@@ -13,11 +14,9 @@ buildscript {
 
     }
 }
-
 plugins {
     id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlinVersion"
 }
-
 allprojects {
     apply plugin: "eclipse"
 
@@ -53,13 +52,13 @@ project(":desktop") {
         api "com.badlogicgames.gdx-controllers:gdx-controllers-desktop:$gdxControllersVersion"
         api "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
         api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+        implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
     }
 }
 
 project(":core") {
     apply plugin: "kotlin"
     apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
-
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         api "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"

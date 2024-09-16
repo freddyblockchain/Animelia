@@ -46,7 +46,7 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
         rootTable.add(combinedTable).expand().fill()
 
 
-        val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
+        val skin = Skin(Gdx.files.internal("ui/uiskin.json"))
 
         val labelStyle = Label.LabelStyle(FontManager.MediumFont, Color.BLACK)
 

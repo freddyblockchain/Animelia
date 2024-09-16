@@ -21,7 +21,7 @@ import com.mygdx.game.Managers.SignalManager
 import kotlin.math.PI
 
 fun InitArea(levelName: String){
-    val levelPath = "assets/levels/${levelName}/data.json"
+    val levelPath = "${FileHandler.BASE_PATH}$levelName/data.json"
     val root = JsonParser.getRoot(levelPath)
     val correspondingArea = AreaManager.areas.firstOrNull { it.areaIdentifier == root.customFields.World }
         ?:
@@ -36,10 +36,10 @@ fun InitArea(levelName: String){
 }
 
 fun getObjectsFromLevelName(levelName: String): List<GameObject>{
-    val levelPath = "assets/levels/${levelName}/data.json"
+    val levelPath = "${FileHandler.BASE_PATH}${levelName}/data.json"
     val root = JsonParser.getRoot(levelPath)
     val entityObjects = JsonParser.getGameObjects(root)
-    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "levels/${levelName}/_composite.png")
+    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "${levelName}/_composite.png")
     val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
     val objectsToReturn = entityObjects + ground + wall
     objectsToReturn.forEach { it.areaIdentifier = AreaManager.levelToAreaMap[levelName]!! }
@@ -80,12 +80,9 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 }
 
 fun initAreas(){
-    val directoryPath = "assets/levels/"  // Path inside the assets directory
-    val filesHandle = Gdx.files.internal(directoryPath)
-    if (filesHandle.exists() && filesHandle.isDirectory) {
-        filesHandle.list().forEach { level ->
-            InitArea(level.name())
-        }
+    val amountOfLevels = 20
+    for(i in 0..<amountOfLevels){
+        InitArea("levels/Level_$i")
     }
 
 }

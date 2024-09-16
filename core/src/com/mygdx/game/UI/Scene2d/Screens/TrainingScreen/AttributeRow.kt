@@ -15,7 +15,7 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
     val upArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("UpArrow.png"))
     val downArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("DownArrow.png"))
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
-    val skin = Skin(Gdx.files.internal("assets/ui/uiskin.json"))
+    val skin = Skin(Gdx.files.internal("ui/uiskin.json"))
     val switchSound = DefaultSoundHandler.getSound("Sound/switch6.wav")
 
     init {
