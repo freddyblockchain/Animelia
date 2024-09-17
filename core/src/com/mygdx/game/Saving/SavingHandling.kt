@@ -28,12 +28,6 @@ class SavingHandler {
             } else {
                 generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.FireArmadillo)
                 AreaManager.setActiveArea("World1")
-
-                if(generalSaveState.inventory.ownedAbilities.size == 0){
-                    generalSaveState.inventory.ownedAbilities.add(AbilityName.TailSwipe)
-                }
-                val firstAbility = generalSaveState.inventory.ownedAbilities[0]
-                player.activeAbilities[1] = convertAbilityToName(firstAbility.name).keyAbility
             }
             initSignalListeners()
             val originalFile = FileHandler.readSignalFile()

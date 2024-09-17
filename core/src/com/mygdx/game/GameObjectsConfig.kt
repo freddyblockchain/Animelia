@@ -6,6 +6,7 @@ import com.mygdx.game.GameObjects.Hazards.*
 import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
+import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.GameObjects.Sign
 import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
@@ -41,7 +42,8 @@ data class Entities(
     val Position: List<GameObjectData> = listOf(),
     val Fountain: List<GameObjectData> = listOf(),
     val House: List<GameObjectData> = listOf(),
-    val Sign: List<GameObjectData> = listOf()
+    val Sign: List<GameObjectData> = listOf(),
+    val SpiritOfAnimelia: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -62,6 +64,7 @@ fun initMappings(){
     GameObjectFactory.register("Egg", ::EggItem)
     GameObjectFactory.register("House", ::House)
     GameObjectFactory.register("Sign", ::Sign)
+    GameObjectFactory.register("SpiritOfAnimelia", ::SpiritOfAnimelia)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

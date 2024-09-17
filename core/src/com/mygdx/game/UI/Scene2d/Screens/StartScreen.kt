@@ -1,6 +1,8 @@
 package com.mygdx.game.UI.Scene2d.Screens
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
@@ -8,9 +10,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.*
 import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.GameModes.TalkMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
-import com.mygdx.game.Managers.MusicManager
+import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
+import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.SavingHandler.Companion.InitHandleSaving
 import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
 import com.mygdx.game.UI.Scene2d.bigLabel
@@ -82,6 +86,15 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
     fun initNewGame(){
         FileHandler.clearSaves()
         initAndGoToGame()
+
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT or GL20.GL_DEPTH_BUFFER_BIT)
+        mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
+        mainCamera.update()
+        currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
+        currentGameMode.render()
+
+        val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia } as SpiritOfAnimelia
+        changeMode(TalkMode(spiritOfAnimelia.activeConversation, mainMode))
     }
 
     fun initAndGoToGame(){

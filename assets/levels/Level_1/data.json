@@ -51,6 +51,21 @@
 				}
 			}
 		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "a8888d80-73f0-11ef-b850-6d8e8125fc03",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "TailSwipe"
+				}
+			}
+		],
 		"Rock": [
 			{
 				"id": "Rock",
@@ -115,6 +130,21 @@
 				"color": 14984818,
 				"customFields": {
 					"StrengthToBreak": 10
+				}
+			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "d1c8b3f0-73f0-11ef-b850-7b0b9a3ccf91",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Press \"space\" to go to the abilities page! click the ability to learn it!"
 				}
 			}
 		]

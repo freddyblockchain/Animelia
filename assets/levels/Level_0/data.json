@@ -34,6 +34,19 @@
 		"OnGround_lava.png"
 	],
 	"entities": {
+		"SpiritOfAnimelia": [
+			{
+				"id": "SpiritOfAnimelia",
+				"iid": "51e572f0-73f0-11ef-b850-cd8731902773",
+				"layer": "EntitiesOnTop",
+				"x": 224,
+				"y": 256,
+				"width": 32,
+				"height": 32,
+				"color": 16711748,
+				"customFields" : {}
+			}
+		],
 		"Position": [
 			{
 				"id": "Position",

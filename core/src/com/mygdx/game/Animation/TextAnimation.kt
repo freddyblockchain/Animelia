@@ -16,7 +16,7 @@ class TextAnimation(val color: Color, val text: String, val pos: Vector2, val mo
         val beforeColor = font.color
         font.color = color
         font.draw(batch, text, pos.x, pos.y + yIncrement)
-        font.color = beforeColor
+        font.color = Color.WHITE
 
         if(moveTextUp){
             yIncrement += 0.5f

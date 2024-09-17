@@ -21,6 +21,7 @@ class Sign(gameObjectData: GameObjectData) : GameObject(gameObjectData, Vector2(
     override val layer = Layer.ONGROUND
     override val collision = SignCollision(this)
     override val collitionMask = OnlyPlayerCollitionMask
+    
 }
 
 class SignCollision(sign: Sign): DefaultAreaEntranceCollition(){

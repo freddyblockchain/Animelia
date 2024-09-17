@@ -26,7 +26,7 @@ abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjec
 class ItemAquiredCollision(val item: WorldItem): MoveCollision() {
     override fun collisionHappened(collidedObject: GameObject) {
         val textAnimation = TextAnimation(
-            Color.GREEN,
+            Color.WHITE,
             item.itemAquiredText,
             item.currentMiddle,
             false,
