@@ -17,12 +17,6 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
     val skin = Skin(Gdx.files.internal("ui/uiskin.json"))
     val switchSound = DefaultSoundHandler.getSound("Sound/switch6.wav")
-
-    init {
-        upArrowTexture.setMinSize(64f,64f)
-        downArrowTexture.setMinSize(64f,64f)
-    }
-
     fun getNewTable(text: String, amount: Int, changeFunctionUp: () -> Int, changeFunctionDown: () -> Int): Table{
         val attributeTable = Table()
         val arrowTable = Table()
@@ -30,9 +24,9 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
 
 
         val upArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("UpArrow.png"))
-        upArrowTexture.setMinSize(64f,64f)
+        upArrowTexture.setMinSize(96f,96f)
         val downArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("DownArrow.png"))
-        downArrowTexture.setMinSize(64f,64f)
+        downArrowTexture.setMinSize(96f,96f)
         val UpButton = ImageButton(upArrowTexture)
         val DownButton = ImageButton(downArrowTexture)
         arrowTable.add(UpButton)

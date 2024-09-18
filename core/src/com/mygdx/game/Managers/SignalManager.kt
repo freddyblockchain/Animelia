@@ -32,7 +32,9 @@ class SignalManager {
             fun executeSignals(){
                 for(signal in signalManager.toList()){
                     listenerMap[signal.signaltype]!!.forEach {
-                        it.triggerEvent(signal)
+                        if(AreaManager.getActiveArea()!!.areaIdentifier == signal.areaIdentifer){
+                            it.triggerEvent(signal)
+                        }
                     }
                     signalManager.remove(signal)
                 }

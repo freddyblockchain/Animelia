@@ -45,7 +45,7 @@ class SpiritOfAnimelia(val gameObjectData: GameObjectData): GameObject(gameObjec
     val rthree = SpeechData(speaker, "There are four types of eggs: Fire, Fighting, Ice, and Sound")
     val rfour =  SpeechData(speaker, "Each egg lets you be reborn into a different animelia")
     val rfive =  SpeechData("me", "Okay! so i need to find these eggs, but how do i initiate the reincarnation?")
-    val rsix =  SpeechData("speaker", "Reincarnation happens when you die, or if you activate it at the tombstone.")
+    val rsix =  SpeechData(speaker, "Reincarnation happens when you die, or if you activate it at the tombstone.")
     val reincarnationConversation = Conversation(listOf(rone, rrtwo,rrrtwo, rtwo,rthree,rfour,rfive,rsix))
 
     val aone = SpeechData("Me", "Can you tell me more about Anivolution?")

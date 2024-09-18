@@ -55,6 +55,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     player.animeliaInfo.gameTexture = texture
                     generalSaveState.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
                     generalSaveState.stats.tp = PlayerStatus.baseTp
+                    generalSaveState.updateSaveState()
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })

@@ -13,6 +13,7 @@ import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.plus
 
@@ -31,13 +32,31 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
 
-    val inCitySpeechOne = SpeechData("Fire Armadillo", "I love it here!")
-    val inCitySpeechTwo = SpeechData("Fire Armadillo", "I opened up a training center here")
-    val inCitySpeechThree = SpeechData("Me", "That's awesome! What can i use it for?")
-    val inCitySpeechFour = SpeechData("Fire Armadillo", "You can train stats!")
-    val inCitySpeechFive = SpeechData("Fire Armadillo", "Stats matter in battle! They also have a use in the world...")
+    val inCitySpeechOne = SpeechData("Fire Armadillo", "Its good to be back!")
+    val inCitySpeechTwo = SpeechData("Fire Armadillo", "I build a training statue")
+    val inCitySpeechThree = SpeechData("Fire Armadillo", "Speak to me for training information")
 
-    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive)
+    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree)
+
+
+    val sone = SpeechData("Me", "Can you tell me about Stats?")
+    val stwo = SpeechData("Fire Armadillo", "Yes! There are four different stats")
+    val sthree= SpeechData("Fire Armadillo", "Offence affects how much damage you do")
+    val sfour = SpeechData("Fire Armadillo", "Defence affects how much damage you take")
+    val sfive= SpeechData("Fire Armadillo", "Speed affects how fast you move")
+    val ssix = SpeechData("Fire Armadillo", "Intelligence affects how many abilities you can use")
+    val statsConversation = Conversation(listOf(sone, stwo,sthree, sfour, sfive, ssix))
+
+    val tone = SpeechData("Me", "Can you tell me about Training Points?")
+    val ttwo = SpeechData("Fire Armadillo", "Yes! Training points determine how much you can increase stats!")
+    val tthree = SpeechData("Fire Armadillo", "You can use your training points to increase stats.")
+    val tfour = SpeechData("Fire Armadillo", "When you reincarnate, the training points are reset!")
+    val tfive = SpeechData("Fire Armadillo", "When you anivolve, you gain five additional training points!")
+    val tsix = SpeechData("Me", "Are there other ways to increase training points?")
+    val tseven = SpeechData("Fire Armadillo", "Not to my knowledge. But maybe you will find some")
+    val trainingPointsConversation = Conversation(listOf(tone, ttwo, tthree, tfour, tfive, tsix, tseven))
+
+    override val conversationOptions = mapOf("Stats" to statsConversation, "Training Points" to trainingPointsConversation)
 
 
     override fun recruitmentAction() {

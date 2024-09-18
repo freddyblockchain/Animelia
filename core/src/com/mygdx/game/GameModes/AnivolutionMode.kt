@@ -50,6 +50,9 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
         else if(currentFrame == 151){
             player.animeliaInfo = getAnimeliaData(animeliaEntity)
             generalSaveState.currentAnimelia = animeliaEntity
+            if(!isReincarnating){
+                generalSaveState.stats.tp += 5
+            }
             generalSaveState.updateSaveState()
 
             val id = appearSound.play()

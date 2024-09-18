@@ -22,11 +22,11 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
     override var activeButton: Actor? = null
     override var renderPrevGameMode = true
 
-    var offence = player.stats.offence
-    var defence = player.stats.defence
-    var speed = player.stats.speed
-    var intelligence = player.stats.intelligence
-    var sp = player.stats.tp
+    var offence = generalSaveState.stats.offence
+    var defence = generalSaveState.stats.defence
+    var speed = generalSaveState.stats.speed
+    var intelligence = generalSaveState.stats.intelligence
+    var sp = generalSaveState.stats.tp
 
 
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
@@ -38,7 +38,7 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
 
 
 
-        rootTable.add(spLabel).padBottom(100f)
+        rootTable.add(spLabel).padBottom(50f)
         rootTable.row()
         val offenceAttributeRow = AttributeRow(this)
 
