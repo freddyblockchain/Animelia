@@ -1,17 +1,16 @@
 package com.mygdx.game.GameObjects.Other
 
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.DefaultTextureHandler
-import com.mygdx.game.DialogueSystem.Sentence
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameModes.TalkMode
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
+import com.mygdx.game.UI.Scene2d.Screens.PickConversationScreen
 import com.mygdx.game.mainMode
 
 class SpiritOfAnimelia(val gameObjectData: GameObjectData): GameObject(gameObjectData) {
@@ -36,7 +35,30 @@ class SpiritOfAnimelia(val gameObjectData: GameObjectData): GameObject(gameObjec
     var eleven = SpeechData(speaker,"Travel the kingdom and restore the kingdom to its former glory")
     var twelve = SpeechData(me, "Thanks for creating me! I'll do my best")
 
-    var activeConversation: Conversation = Conversation(listOf(one, two, three, four, five, six, seven, eight, nine, ten, eleven,twelve))
+    val startConversation: Conversation = Conversation(listOf(one, two, three, four, five, six, seven, eight, nine, ten, eleven,twelve))
+
+
+    val rone = SpeechData("Me", "Can you tell me more about Reincarnation?")
+    val rrtwo = SpeechData(speaker, "Ofcourse! I gave you the ability to reincarnate")
+    val rrrtwo = SpeechData(speaker, "Reincarnation allows you to be reborn as the base form of an animelia")
+    val rtwo = SpeechData(speaker, "You do this by choosing an elemental egg, and the reincarnation begins.")
+    val rthree = SpeechData(speaker, "There are four types of eggs: Fire, Fighting, Ice, and Sound")
+    val rfour =  SpeechData(speaker, "Each egg lets you be reborn into a different animelia")
+    val rfive =  SpeechData("me", "Okay! so i need to find these eggs, but how do i initiate the reincarnation?")
+    val rsix =  SpeechData("speaker", "Reincarnation happens when you die, or if you activate it at the tombstone.")
+    val reincarnationConversation = Conversation(listOf(rone, rrtwo,rrrtwo, rtwo,rthree,rfour,rfive,rsix))
+
+    val aone = SpeechData("Me", "Can you tell me more about Anivolution?")
+    val atwo = SpeechData(speaker, "Ofcourse! I gave you the ability to anivolve")
+    val athree = SpeechData(speaker, "All animelia has a maturity indicator, called a stage")
+    val afour =  SpeechData(speaker, "There are three stages: Junior, Master and GrandMaster")
+    val aafour =  SpeechData(speaker, "All animelias except Junior animelias have conditions to fulfill")
+    val afive =  SpeechData(speaker, "If you fulfill the conditions of a Master animelia")
+    val asix =  SpeechData(speaker, "Then a Junior animelia will anivolve to that Master Animelia")
+    val aseven =  SpeechData(speaker, "The same happens from a Master animelia to a GrandMaster animelia")
+    val aeight = SpeechData(me, "Okay, I see! What stage am I at after reincarnation?")
+    val anine = SpeechData(speaker, "You will always be at the Junior stage after reincarnation.")
+    val anivolutionConversation = Conversation(listOf(aone,atwo,athree,afour,aafour,afive, asix, aseven, aeight, anine))
 }
 
 class SpiritOfAnimeliaCollision(val spiritOfAnimelia: SpiritOfAnimelia): InputCollision(){
@@ -44,7 +66,10 @@ class SpiritOfAnimeliaCollision(val spiritOfAnimelia: SpiritOfAnimelia): InputCo
     override val insideText = "TALK"
 
     override fun collisionHappened(collidedObject: GameObject) {
-        changeMode(TalkMode(spiritOfAnimelia.activeConversation, mainMode))
+        val conversationMap = mapOf("Reincarnation" to spiritOfAnimelia.reincarnationConversation, "Anivolution" to spiritOfAnimelia.anivolutionConversation)
+        val pickConversationScreen = PickConversationScreen(mainMode, conversationMap)
+
+        changeMode(UIMode(pickConversationScreen, playConfirmationSound = true))
     }
 
 }

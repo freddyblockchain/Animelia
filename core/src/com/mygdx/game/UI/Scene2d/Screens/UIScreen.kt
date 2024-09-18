@@ -109,7 +109,7 @@ abstract class UIScreen {
 
     open fun render(){
         stage.act(Gdx.graphics.deltaTime)
-        //stage.isDebugAll = true
+        stage.isDebugAll = true
         stage.draw()
 
         buttons.forEachIndexed { index, actor ->
@@ -123,16 +123,18 @@ abstract class UIScreen {
             shapeRenderer.color = origColor
             shapeRenderer.end()
         }
-        buttons[activeButtonIndex]?.let {
-            val stageCoords = it.localToStageCoordinates(Vector2(0f, 0f))
-            val origColor = shapeRenderer.color
-            val color = Color.GREEN
-            shapeRenderer.projectionMatrix = stage.camera.combined
-            shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
-            shapeRenderer.setColor(color)
-            shapeRenderer.rect(stageCoords.x, stageCoords.y, it.width, it.height)
-            shapeRenderer.color = origColor
-            shapeRenderer.end()
+        if(buttons.size > 0){
+            buttons[activeButtonIndex]?.let {
+                val stageCoords = it.localToStageCoordinates(Vector2(0f, 0f))
+                val origColor = shapeRenderer.color
+                val color = Color.GREEN
+                shapeRenderer.projectionMatrix = stage.camera.combined
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
+                shapeRenderer.setColor(color)
+                shapeRenderer.rect(stageCoords.x, stageCoords.y, it.width, it.height)
+                shapeRenderer.color = origColor
+                shapeRenderer.end()
+            }
         }
 
     }

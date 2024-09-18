@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.*
 import com.mygdx.game.GameModes.GameMode
@@ -37,7 +36,6 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         val controlsButton = AnimeliaButton("Controls", bigLabel, this, 1)
         val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 2)
         //val optionsButton = AnimeliaButton("Options", bigLabel, this, 2)
-        val randomLabel = TextButton("hello", skin)
 
         buttons.addAll(listOf(newGameButton, controlsButton))
 
@@ -94,7 +92,7 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         currentGameMode.render()
 
         val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia } as SpiritOfAnimelia
-        changeMode(TalkMode(spiritOfAnimelia.activeConversation, mainMode))
+        changeMode(TalkMode(spiritOfAnimelia.startConversation, mainMode))
     }
 
     fun initAndGoToGame(){

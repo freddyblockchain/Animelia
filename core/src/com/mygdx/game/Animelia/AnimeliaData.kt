@@ -104,7 +104,7 @@ class IceYetiData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/ice-yeti-straight.png","Animelias/ice-yet-right.png","Animelias/ice-yeti-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle)
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti
 }
 

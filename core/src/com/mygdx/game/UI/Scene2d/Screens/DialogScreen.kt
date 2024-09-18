@@ -13,7 +13,7 @@ import com.mygdx.game.UI.Scene2d.bigLabel
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 import com.mygdx.game.UI.Scene2d.mediumLabel
 
-class DialogScreen(override var prevMode: GameMode?, val nextGameMode: GameMode, val description: String, val onChange: () -> Unit = {}): UIScreen() {
+class DialogScreen(override var prevMode: GameMode?, val nextGameMode: GameMode, val description: String, val onChange: () -> Unit = { changeMode(nextGameMode) }): UIScreen() {
     override var activeButton: Actor? = null
 
     override var renderPrevGameMode = true
@@ -35,7 +35,6 @@ class DialogScreen(override var prevMode: GameMode?, val nextGameMode: GameMode,
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 // Define what should happen when the button is clicked
                 onChange()
-                changeMode(nextGameMode)
                 val id = confirmSound.play()
                 confirmSound.setVolume(id,0.2f)
             }
