@@ -33,16 +33,16 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         val buttonTable = Table()
 
         val newGameButton = AnimeliaButton("New Game", bigLabel, this, 0)
-        val controlsButton = AnimeliaButton("Controls", bigLabel, this, 1)
-        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 2)
+        // val controlsButton = AnimeliaButton("Controls", bigLabel, this, 1)
+        val loadGameButton = AnimeliaButton("Load Game", bigLabel, this, 1)
         //val optionsButton = AnimeliaButton("Options", bigLabel, this, 2)
 
-        buttons.addAll(listOf(newGameButton, controlsButton))
+        buttons.addAll(listOf(newGameButton))
 
         if(!FileHandler.SaveFileEmpty()){
             buttons.add(loadGameButton)
             //changeActive(2)
-            activeButtonIndex = 2
+            activeButtonIndex = 1
             activeButton = loadGameButton
         }
         newGameButton.addListener(object : ClickListener() {
@@ -76,8 +76,8 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
             buttonTable.row()
         }
         buttonTable.add(newGameButton).padBottom(20f)
-        buttonTable.row()
-        buttonTable.add(controlsButton).padBottom(20f)
+        //buttonTable.row()
+        //buttonTable.add(controlsButton).padBottom(20f)
 
     }
 

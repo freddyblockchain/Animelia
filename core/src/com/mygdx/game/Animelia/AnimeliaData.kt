@@ -74,7 +74,7 @@ class FireHippoData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firehippo-straight.png","Animelias/firehippo-right.png","Animelias/firehippo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(13), InArea("World3"))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 }
 class FireDragonData(): AnimeliaData {
