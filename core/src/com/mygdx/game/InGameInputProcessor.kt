@@ -25,23 +25,27 @@ class InGameInputProcessor : InputProcessor {
                 keyAbility.onActivate()
             }
         }*/
-        val keyCollitions = AreaManager.getActiveArea()!!.gameObjects.filter {it.collision is InputCollision && (it.collision as InputCollision).keyCode == keycode}
+        val keyCollitions =
+            AreaManager.getActiveArea()!!.gameObjects.filter { it.collision is InputCollision && (it.collision as InputCollision).keyCode == keycode }
         handleKeyCollitions(keyCollitions)
 
-        if(keycode == Input.Keys.SPACE){
+        if (keycode == Input.Keys.SPACE) {
             //currentGameMode = AnivolutionViewMode(currentGameMode)
             currentGameMode = UIMode(PauseScreen(currentGameMode))
         }
-        for(abilityPair in player.activeAbilities){
-            if(abilityPair.value != null){
-                if(abilityPair.key == keycode - 7){
-                    AbilityManager.abilities.add(abilityPair.value!!)
+        if (player.abilityCooldown.cooldownAvailable()) {
+            for (abilityPair in player.activeAbilities) {
+                if (abilityPair.value != null) {
+                    if (abilityPair.key == keycode - 7) {
+                        player.abilityCooldown.tryUseCooldown()
+                        AbilityManager.abilities.add(abilityPair.value!!)
+                    }
                 }
             }
         }
 
         InputActionManager.inputActionManager.forEach {
-            if(it.keycodes.contains(keycode)){
+            if (it.keycodes.contains(keycode)) {
                 it.action(keycode)
             }
         }
@@ -52,11 +56,11 @@ class InGameInputProcessor : InputProcessor {
         // Fix later. Abit many collision checks
         handleKeyPressable(AreaManager.getActiveArea()!!.gameObjects)
 
-        var directionUnitVector = Vector2(0f,0f)
+        var directionUnitVector = Vector2(0f, 0f)
         if (Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             directionUnitVector = getDirectionUnitVector(Direction.LEFT)
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.D ) || Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             directionUnitVector = getDirectionUnitVector(Direction.RIGHT)
         }
         if (Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.isKeyPressed(Input.Keys.UP)) {
@@ -65,9 +69,8 @@ class InGameInputProcessor : InputProcessor {
         if (Gdx.input.isKeyPressed(Input.Keys.S) || Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             directionUnitVector = getDirectionUnitVector(Direction.DOWN)
         }
-        if(directionUnitVector != Vector2(0f,0f)){
-            if (player.move(directionUnitVector))
-            {
+        if (directionUnitVector != Vector2(0f, 0f)) {
+            if (player.move(directionUnitVector)) {
                 player.setRotation(directionUnitVector, player, 90f)
             }
         }

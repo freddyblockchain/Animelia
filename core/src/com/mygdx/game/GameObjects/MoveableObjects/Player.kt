@@ -21,6 +21,8 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
+import com.mygdx.game.Timer.CooldownTimer
+import com.mygdx.game.Timer.Timer
 import com.mygdx.game.UI.PlayerHealthStrategy
 import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 
@@ -36,6 +38,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override var canChangeDirection = true
     override val collision = CanMoveCollision()
     override val maxHealth = 50f
+    val abilityCooldown = CooldownTimer(1f)
     val activeAbilities: MutableMap<Int, KeyAbility?> = mutableMapOf()
     var animeliaInfo = getAnimeliaData(ANIMELIA_ENTITY.FireArmadillo)
     var playerEnvironmentState = PlayerEnvironmentState.NORMAL

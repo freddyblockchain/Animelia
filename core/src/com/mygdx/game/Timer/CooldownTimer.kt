@@ -1,15 +1,14 @@
 package com.mygdx.game.Timer
 
-open class CooldownTimer (private val CooldownTime: Float): Timer {
+open class CooldownTimer (private val cooldownTimeInSeconds: Float): Timer {
     private var lastUsedTime = 0L
-    var coolDownAvailable = true
-        private set
+    private var coolDownAvailable = true
 
 
     fun UpdateTimer() {
         val currentTime = System.currentTimeMillis()
         val newTime: Float = (currentTime - lastUsedTime).toFloat() / 1000
-        if (newTime >= CooldownTime) {
+        if (newTime >= cooldownTimeInSeconds) {
             coolDownAvailable = true
         }
     }

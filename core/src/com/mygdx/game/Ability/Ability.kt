@@ -63,4 +63,5 @@ interface Ability {
     val attachedFightableObject: FightableObject
     val abilityName: AbilityName
     val ELEMENTALTYPES: ELEMENTAL_TYPE
+
 }

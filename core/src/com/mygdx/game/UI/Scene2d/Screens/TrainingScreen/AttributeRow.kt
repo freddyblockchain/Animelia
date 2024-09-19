@@ -12,11 +12,11 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.player
 
 class AttributeRow(val trainingScreen: TrainingScreen) {
-    val upArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("UpArrow.png"))
-    val downArrowTexture = TextureRegionDrawable(DefaultTextureHandler.getTexture("DownArrow.png"))
     val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
     val skin = Skin(Gdx.files.internal("ui/uiskin.json"))
     val switchSound = DefaultSoundHandler.getSound("Sound/switch6.wav")
+    val unpressableColor = Color(1f, 1f, 1f, 0.3f)
+    val normalColor = Color(1f, 1f, 1f, 1f)
     fun getNewTable(text: String, amount: Int, changeFunctionUp: () -> Int, changeFunctionDown: () -> Int): Table{
         val attributeTable = Table()
         val arrowTable = Table()
@@ -29,6 +29,7 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
         downArrowTexture.setMinSize(96f,96f)
         val UpButton = ImageButton(upArrowTexture)
         val DownButton = ImageButton(downArrowTexture)
+        DownButton.color = unpressableColor
         arrowTable.add(UpButton)
         arrowTable.add(DownButton)
 
@@ -47,6 +48,9 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
                     statLabel.setText("$text $newOffence")
                     trainingScreen.spLabel.setText("Training Points: " + trainingScreen.sp)
                     switchSound.play()
+
+                    UpButton.color = if(trainingScreen.sp == 0) unpressableColor else normalColor
+                    DownButton.color = if(trainingScreen.sp == player.stats.tp) unpressableColor else normalColor
                 }
             }
         })
@@ -61,6 +65,9 @@ class AttributeRow(val trainingScreen: TrainingScreen) {
                     statLabel.setText("$text $newStat")
                     trainingScreen.spLabel.setText("Training Points: " + trainingScreen.sp)
                     switchSound.play()
+
+                    UpButton.color = if(trainingScreen.sp == 0) unpressableColor else normalColor
+                    DownButton.color = if(trainingScreen.sp == player.stats.tp) unpressableColor else normalColor
                 }
             }
         })
