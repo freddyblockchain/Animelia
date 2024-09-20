@@ -56,7 +56,7 @@ class AreaManager {
                 val newObjects = getObjectsFromLevelName(it)
                 addObjectsToArea(newArea, newObjects)
             }
-            newArea.gameObjects.forEach { it.initObject() }
+            newArea.gameObjects.toMutableList().forEach { it.initObject() }
             newArea.gameObjects.add(player)
 
             val music = getAreaMusic(areaIdentifier)

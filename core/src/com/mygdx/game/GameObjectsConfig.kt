@@ -10,6 +10,7 @@ import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.GameObjects.Sign
 import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
+import com.mygdx.game.GameObjects.Structures.Railway.Railway
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.WorldItems.BookItem
 import com.mygdx.game.WorldItems.EggItem
@@ -44,6 +45,7 @@ data class Entities(
     val House: List<GameObjectData> = listOf(),
     val Sign: List<GameObjectData> = listOf(),
     val SpiritOfAnimelia: List<GameObjectData> = listOf(),
+    val Railway: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -65,6 +67,7 @@ fun initMappings(){
     GameObjectFactory.register("House", ::House)
     GameObjectFactory.register("Sign", ::Sign)
     GameObjectFactory.register("SpiritOfAnimelia", ::SpiritOfAnimelia)
+    GameObjectFactory.register("Railway", ::Railway)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

@@ -80,6 +80,17 @@
 				"height": 32,
 				"color": 1199753,
 				"customFields" : {}
+			},
+			{
+				"id": "Position",
+				"iid": "cef067a0-73f0-11ef-995c-4bc71c2effcb",
+				"layer": "Entities",
+				"x": 352,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
 			}
 		],
 		"Fountain": [
@@ -93,6 +104,21 @@
 				"height": 64,
 				"color": 39387,
 				"customFields" : {}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "81fc07a0-73f0-11ef-995c-5303afa1d73e",
+				"layer": "Entities",
+				"x": 352,
+				"y": 64,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields": {
+					"Direction": "Right"
+				}
 			}
 		]
 	}

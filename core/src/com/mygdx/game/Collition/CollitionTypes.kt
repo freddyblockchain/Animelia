@@ -20,7 +20,7 @@ abstract class MoveCollision: Collision {
 }
 abstract class InputCollision: Collision {
     override val collitionType = CollisionType.INPUT
-    abstract val keyCode: Int
+    open val keyCode = Input.Keys.ENTER
     abstract val insideText: String
 
     open fun renderKeycodeToPress(){
