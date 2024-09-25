@@ -108,6 +108,17 @@ class IceYetiData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti
 }
 
+class BirdData(): AnimeliaData {
+    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/bird-straight.png")
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIGHTING)
+    override val animeliaStage = ANIMELIA_STAGE.JUNIOR
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/bird-straight.png","Animelias/bird-right.png","Animelias/bird-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly)
+    override val animeliaEntity = ANIMELIA_ENTITY.Bird
+}
+
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo->  {
@@ -127,6 +138,9 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         }
         ANIMELIA_ENTITY.IceDinasaur -> {
             IceDinosaurData()
+        }
+        ANIMELIA_ENTITY.Bird -> {
+            BirdData()
         }
     }
 }

@@ -5,6 +5,9 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.UI.HealthStrategy
 
+enum class FlyingState{FLYING, NOTFLYING}
+enum class State{NORMAL, STUNNED}
+
 abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : MoveableObject(gameObjectData, size) {
     var cannotMoveCount = 0
     var isMoving = false
@@ -12,6 +15,9 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     var currentHealth = 0f
     open val stats = Stats()
     abstract val healthStrategy: HealthStrategy
+    var flyingState = FlyingState.NOTFLYING
+    var state = State.NORMAL
+
 
     override fun move(newUnitVector: Vector2, speed: Float): Boolean {
         if (cannotMoveCount == 0) {

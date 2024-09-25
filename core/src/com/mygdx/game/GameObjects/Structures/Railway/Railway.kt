@@ -1,7 +1,7 @@
 package com.mygdx.game.GameObjects.Structures.Railway
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.math.Vector
+import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.DefaultTextureHandler
@@ -20,19 +20,28 @@ class Railway(val gameObjectData: GameObjectData)
     val directionString = Json.decodeFromJsonElement<ConveyerBeltCustomFields>(gameObjectData.customFields).Direction
     var direction = getDirectionFromString(directionString)
     override val texture = DefaultTextureHandler.getTexture("HealthyRails.png")
-    val brokenRails  = DefaultTextureHandler.getTexture("BrokenRails.png")
     override val layer = Layer.ONGROUND
     override val collision = CanMoveCollision()
 
     lateinit var brokenRailway: BrokenRailway
 
+    lateinit var railsRegion: TextureRegion
+
+    fun fixed(){
+        sprite.setRegion(0f,0f,sprite.width, sprite.height)
+    }
+
 
     override fun initObject() {
-        sprite.setSize(gameObjectData.width.toFloat() / 2, gameObjectData.height.toFloat())
-        val brokenRailwayStart = Vector2(sprite.x + sprite.width, sprite.y)
-        brokenRailway = BrokenRailway(GameObjectData(x = brokenRailwayStart.x.toInt(), y = brokenRailwayStart.y.toInt(), width = sprite.width.toInt(), height = sprite.height.toInt()))
-        brokenRailway.add()
+        sprite.setSize(gameObjectData.width.toFloat(), gameObjectData.height.toFloat())
+        /*val brokenRailwayStart = Vector2(sprite.x, sprite.y)
+        brokenRailway = BrokenRailway(this, GameObjectData(x = brokenRailwayStart.x.toInt(), y = brokenRailwayStart.y.toInt(), width = sprite.width.toInt(), height = sprite.height.toInt()))
+        brokenRailway.add()*/
+        val cart = Cart(GameObjectData(x = sprite.x.toInt(), y= sprite.y.toInt() + 4, width = 48, height = 32))
+        cart.add()
         super.initObject()
+
+       sprite.setRegion(0,0,gameObjectData.width, gameObjectData.height)
     }
 }
 

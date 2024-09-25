@@ -4,12 +4,15 @@ import com.mygdx.game.Signal.Signal
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
-enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH }
+enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED}
 
 @Serializable
 class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJECT) {
 
 }
+
+@Serializable
+class RailwayFixedSignal(val entityIid: String): Signal(SIGNALTYPE.RAILWAY_FIXED)
 
 
 @Serializable
@@ -38,5 +41,6 @@ fun signalConvert(signalString: String): Signal{
         SIGNALTYPE.REMOVE_OBJECT -> Json.decodeFromString<RemoveObjectSignal>(signalString)
         SIGNALTYPE.ANIMELIA_RECRUITED -> Json.decodeFromString<AnimeliaRecruitedSignal>(signalString)
         SIGNALTYPE.ANIMELIA_CITY_TALKED_WITH -> Json.decodeFromString<AnimeliaCityTalkedWithSignal>(signalString)
+        SIGNALTYPE.RAILWAY_FIXED -> Json.decodeFromString<RailwayFixedSignal>(signalString)
     }
 }

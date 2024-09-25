@@ -9,9 +9,9 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.player
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle}
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly}
 
-enum class ELEMENTAL_TYPE{FIRE,FIGHTING,ICE, SOUND}
+enum class ELEMENTAL_TYPE{FIRE,FIGHTING,ICE, SOUND, METAL, FLYING}
 
 data class AbilityData(val abilityName: AbilityName, val ELEMENTALTYPES: ELEMENTAL_TYPE, val keyAbility: KeyAbility)
 

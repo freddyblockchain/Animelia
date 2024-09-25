@@ -13,7 +13,7 @@ import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
 
-enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo}
+enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo, Bird}
 
 enum class ANIMELIA_STAGE{JUNIOR, MASTER, GRANDMASTER}
 
@@ -83,6 +83,7 @@ fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
         "FireHippo" -> ANIMELIA_ENTITY.FireHippo
         "IcePenguin" -> ANIMELIA_ENTITY.IcePenguin
         "IceYeti" -> ANIMELIA_ENTITY.IceYeti
+        "Bird" -> ANIMELIA_ENTITY.Bird
         else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

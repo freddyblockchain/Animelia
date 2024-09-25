@@ -1,6 +1,7 @@
 package com.mygdx.game.Managers
 
 import com.badlogic.gdx.math.Intersector.intersectPolygonEdges
+import com.badlogic.gdx.math.Intersector.isPointInPolygon
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.FloatArray
@@ -30,14 +31,43 @@ class CollisionManager {
             return collitions.all { x -> x.canMoveAfterCollision }
         }
 
+        // added additional collision check. Beware
         fun GetCollidingObjects(gameObjectToCheck: GameObject, polygonToCheck: Polygon, gameObjects: List<GameObject>): List<GameObject> {
-            val collidingObjects = gameObjects.filter {gameObjectToCheck.collitionMask.canCollideWith(it) && it.collitionMask.canCollideWith(gameObjectToCheck) && isPolygonsColliding(polygonToCheck, it.polygon) }
+            val collidingObjects = gameObjects.filter {gameObjectToCheck.collitionMask.canCollideWith(it) && it.collitionMask.canCollideWith(gameObjectToCheck) && gameObjectToCheck.collision.collisionCheck(polygonToCheck, it.polygon) && it.collision.collisionCheck(polygonToCheck, it.polygon)}
             return collidingObjects
         }
 
         fun isPolygonsColliding(polygon1: Polygon, polygon2: Polygon): Boolean {
             return intersectPolygonEdges(FloatArray(polygon1.transformedVertices), FloatArray(polygon2.transformedVertices))
                     || polygon1.anyPointInPolygon(polygon2)
+        }
+
+        fun isMiddleInPolygon(polygon1: Polygon, polygon2: Polygon): Boolean{
+            val middle = getBoundingBoxCenter(polygon1)
+            return polygon2.contains(middle)
+        }
+
+
+        //Chat gpt weird ass polygon centee
+        fun getBoundingBoxCenter(polygon: Polygon): Vector2 {
+            val vertices = polygon.transformedVertices
+            var minX = vertices[0]
+            var minY = vertices[1]
+            var maxX = vertices[0]
+            var maxY = vertices[1]
+            var i = 2
+            while (i < vertices.size) {
+                val x = vertices[i]
+                val y = vertices[i + 1]
+                if (x < minX) minX = x
+                if (x > maxX) maxX = x
+                if (y < minY) minY = y
+                if (y > maxY) maxY = y
+                i += 2
+            }
+            val centerX = (minX + maxX) / 2
+            val centerY = (minY + maxY) / 2
+            return Vector2(centerX, centerY)
         }
 
         fun checkObjectMovedOutside(gameObject: GameObject, collidingObjects: List<GameObject>){

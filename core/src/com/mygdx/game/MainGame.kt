@@ -3,6 +3,7 @@ package com.mygdx.game
 import FontManager
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.Input
 import com.badlogic.gdx.files.FileHandle
 import com.badlogic.gdx.graphics.FPSLogger
 import com.badlogic.gdx.graphics.GL20
@@ -11,6 +12,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Stage
+import com.mygdx.game.Ability.Abilities.Flying.Fly
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
@@ -63,6 +65,8 @@ class MainGame : ApplicationAdapter() {
         shapeRenderer = ShapeRenderer()
         DialogueManager.initSpeakableObjects()
         currentGameMode = UIMode(StartScreen(mainMode), playConfirmationSound = false)
+
+        player.activeAbilities[1] = Fly(player)
     }
 
     override fun render() {

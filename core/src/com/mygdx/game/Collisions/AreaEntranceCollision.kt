@@ -17,7 +17,9 @@ abstract class AreaEntranceCollition: MoveCollision() {
 abstract class DefaultAreaEntranceCollition(): AreaEntranceCollition(){
     override var insideCollition: MutableMap<GameObject, Boolean> = mutableMapOf()
 
-    abstract fun actionWhileInside()
+    open fun actionWhileInside() {
+
+    }
 
     val insideEvent = object : DefaultEvent(eternal = true) {
         override fun execute() {
