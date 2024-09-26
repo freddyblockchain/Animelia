@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils.cos
 import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
+import com.mygdx.game.Animation.AreaTransitionAnimation
 import com.mygdx.game.Animelia.anivolutionCheck
 import com.mygdx.game.Area.Area
 import com.mygdx.game.Area.AreaType
@@ -16,6 +17,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerEnvironmentState
 import com.mygdx.game.GameObjects.Other.Wall
+import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import kotlin.math.PI
@@ -77,6 +79,8 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     } else{
         player.playerEnvironmentState = PlayerEnvironmentState.NORMAL
     }
+
+    AnimationManager.animationManager.add(AreaTransitionAnimation())
 }
 
 fun initAreas(){

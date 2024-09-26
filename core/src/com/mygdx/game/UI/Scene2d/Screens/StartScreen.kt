@@ -102,8 +102,6 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         changeArea(startPos, "World1")
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()
-
-        AnimationManager.animationManager.add(AreaTransitionAnimation())
     }
 
 }

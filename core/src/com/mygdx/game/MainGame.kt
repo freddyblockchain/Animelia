@@ -66,7 +66,7 @@ class MainGame : ApplicationAdapter() {
         DialogueManager.initSpeakableObjects()
         currentGameMode = UIMode(StartScreen(mainMode), playConfirmationSound = false)
 
-        player.activeAbilities[1] = Fly(player)
+       // player.activeAbilities[1] = Fly(player)
     }
 
     override fun render() {
