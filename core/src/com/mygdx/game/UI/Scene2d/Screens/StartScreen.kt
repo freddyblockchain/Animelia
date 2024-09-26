@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.*
+import com.mygdx.game.Animation.AreaTransitionAnimation
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.TalkMode
 import com.mygdx.game.GameModes.UIMode
@@ -93,6 +94,7 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
 
         val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia } as SpiritOfAnimelia
         changeMode(TalkMode(spiritOfAnimelia.startConversation, mainMode))
+
     }
 
     fun initAndGoToGame(){
@@ -100,6 +102,8 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         changeArea(startPos, "World1")
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()
+
+        AnimationManager.animationManager.add(AreaTransitionAnimation())
     }
 
 }
