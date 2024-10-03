@@ -27,21 +27,21 @@ class Railway(val gameObjectData: GameObjectData)
 
     lateinit var railsRegion: TextureRegion
 
-    fun fixed(){
-        sprite.setRegion(0f,0f,sprite.width, sprite.height)
-    }
-
 
     override fun initObject() {
-        sprite.setSize(gameObjectData.width.toFloat(), gameObjectData.height.toFloat())
-        /*val brokenRailwayStart = Vector2(sprite.x, sprite.y)
-        brokenRailway = BrokenRailway(this, GameObjectData(x = brokenRailwayStart.x.toInt(), y = brokenRailwayStart.y.toInt(), width = sprite.width.toInt(), height = sprite.height.toInt()))
-        brokenRailway.add()*/
+        sprite.setSize(gameObjectData.width.toFloat() / 2, gameObjectData.height.toFloat())
+        val brokenRailwayStart = Vector2(sprite.x, sprite.y)
+        brokenRailway = BrokenRailway(this, GameObjectData(x = (brokenRailwayStart.x + sprite.width).toInt(), y = brokenRailwayStart.y.toInt(), width = (sprite.width).toInt(), height = sprite.height.toInt()))
+        brokenRailway.add()
         val cart = Cart(GameObjectData(x = sprite.x.toInt(), y= sprite.y.toInt() + 4, width = 48, height = 32))
         cart.add()
         super.initObject()
 
-       sprite.setRegion(0,0,gameObjectData.width, gameObjectData.height)
+       //sprite.setRegion(0,0,gameObjectData.width, gameObjectData.height)
+    }
+
+    override fun render(batch: SpriteBatch) {
+        super.render(batch)
     }
 }
 

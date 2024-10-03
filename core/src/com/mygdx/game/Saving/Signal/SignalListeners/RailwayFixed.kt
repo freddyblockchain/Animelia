@@ -18,5 +18,7 @@ class RailwayFixed: SignaledEventListener {
         val railway: Railway = area.gameObjects.firstOrNull{it.gameObjectIid == railwayFixedSignal.entityIid} as Railway
 
         WorldStateManager.railwayTransportDataList.add(RailwayTransportData(areaIdentifer, railway.bottomright))
+
+        railway.brokenRailway.fix()
     }
 }
