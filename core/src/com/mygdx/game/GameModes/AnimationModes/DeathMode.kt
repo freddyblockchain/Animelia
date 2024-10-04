@@ -1,20 +1,16 @@
-package com.mygdx.game.GameModes
+package com.mygdx.game.GameModes.AnimationModes
 
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShaderProgram
-import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
-import com.mygdx.game.Animation.SpeechBubble
-import com.mygdx.game.Animation.TextAnimation
-import com.mygdx.game.Animelia.ANIMELIA_ENTITY
-import com.mygdx.game.Animelia.getAnimeliaData
-import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.GameModes.DefaultInputProcessor
+import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.MusicManager
-import kotlin.math.min
 
-class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch): GameMode {
+class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch):
+    GameMode {
     var currentFrame = 0
 
     val endFrame = 180

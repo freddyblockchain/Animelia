@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Structures.Railway
 
+import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.math.Vector2
@@ -27,21 +28,21 @@ class Railway(val gameObjectData: GameObjectData)
 
     lateinit var railsRegion: TextureRegion
 
+    init{
+        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Nearest);
+    }
+
 
     override fun initObject() {
         sprite.setSize(gameObjectData.width.toFloat() / 2, gameObjectData.height.toFloat())
         val brokenRailwayStart = Vector2(sprite.x, sprite.y)
         brokenRailway = BrokenRailway(this, GameObjectData(x = (brokenRailwayStart.x + sprite.width).toInt(), y = brokenRailwayStart.y.toInt(), width = (sprite.width).toInt(), height = sprite.height.toInt()))
         brokenRailway.add()
-        val cart = Cart(GameObjectData(x = sprite.x.toInt(), y= sprite.y.toInt() + 4, width = 48, height = 32))
+        val cart = Cart(GameObjectData(x = sprite.x.toInt(), y= sprite.y.toInt() + 4, width = 48, height = 32), this)
         cart.add()
         super.initObject()
 
        //sprite.setRegion(0,0,gameObjectData.width, gameObjectData.height)
-    }
-
-    override fun render(batch: SpriteBatch) {
-        super.render(batch)
     }
 }
 

@@ -1,9 +1,8 @@
-package com.mygdx.game.WorldItems
+package com.mygdx.game.Items
 
 import com.mygdx.game.Animelia.getAnimeliaEntity
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.generalSaveState
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

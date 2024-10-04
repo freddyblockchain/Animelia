@@ -3,8 +3,6 @@ package com.mygdx.game
 import FontManager
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.Input
-import com.badlogic.gdx.files.FileHandle
 import com.badlogic.gdx.graphics.FPSLogger
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -12,25 +10,14 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Stage
-import com.mygdx.game.Ability.Abilities.Flying.Fly
-import com.mygdx.game.Ability.AbilityName
-import com.mygdx.game.Ability.convertAbilityToName
-import com.mygdx.game.Animelia.ANIMELIA_ENTITY
-import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.MainMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
-import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.PlayerSaveState
-import com.mygdx.game.Saving.SavingHandler.Companion.InitHandleSaving
-import com.mygdx.game.Signal.Signal
-import com.mygdx.game.Signal.initSignalListeners
 import com.mygdx.game.UI.Scene2d.Screens.StartScreen
-import kotlinx.serialization.json.Json
-import signalConvert
 
 lateinit var player: Player
 lateinit var currentGameMode: GameMode

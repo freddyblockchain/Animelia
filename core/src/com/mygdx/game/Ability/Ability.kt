@@ -43,8 +43,8 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
     }
 }
 
-fun convertAbilityToName(ability:String): AbilityData{
-    return when(ability){
+fun convertNameToAbility(abilityName: String): AbilityData{
+    return when(abilityName){
         "Fireball" -> AbilityData(AbilityName.Fireball, ELEMENTAL_TYPE.FIRE, FireballAbility(player))
         "RockThrow" -> AbilityData(AbilityName.RockThrow, ELEMENTAL_TYPE.FIGHTING, RockThrowAbility(player))
         "Icicle" -> AbilityData(AbilityName.Icicle, ELEMENTAL_TYPE.ICE, IcicleAbility(player))

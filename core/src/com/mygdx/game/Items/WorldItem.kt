@@ -1,9 +1,8 @@
-package com.mygdx.game.WorldItems
+package com.mygdx.game.Items
 
 import RemoveObjectSignal
 import com.badlogic.gdx.graphics.Color
 import com.mygdx.game.Animation.TextAnimation
-import com.mygdx.game.Collition.Collision
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Layer
@@ -16,7 +15,7 @@ abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjec
     override val collitionMask = OnlyPlayerCollitionMask
     abstract val itemAquiredText: String
     override val collision = ItemAquiredCollision(this)
-    override val layer = Layer.ONGROUND
+    override val layer = Layer.AIR
 
     open fun itemGained(){
         SignalManager.emitSignal(RemoveObjectSignal(this.gameObjectIid))

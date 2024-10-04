@@ -1,5 +1,5 @@
 package com.mygdx.game
-import com.mygdx.game.WorldItems.AbilityItem
+import com.mygdx.game.Items.AbilityItem
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Hazards.*
@@ -12,9 +12,9 @@ import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
 import com.mygdx.game.GameObjects.Structures.Railway.Railway
 import com.mygdx.game.GameObjects.Structures.TrainingStation
-import com.mygdx.game.WorldItems.BookItem
-import com.mygdx.game.WorldItems.EggItem
-import com.mygdx.game.WorldItems.MaterialItem
+import com.mygdx.game.Items.BookItem
+import com.mygdx.game.Items.EggItem
+import com.mygdx.game.Items.MaterialItem
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject

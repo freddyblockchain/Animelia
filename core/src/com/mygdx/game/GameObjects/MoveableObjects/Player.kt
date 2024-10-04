@@ -3,26 +3,20 @@ package com.mygdx.game.GameObjects.MoveableEntities.Characters
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
-import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.SpeechBubble
 import com.mygdx.game.Animelia.*
-import com.mygdx.game.Area.AreaType
-import com.mygdx.game.Area.getAreaType
 import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameModes.DeathMode
+import com.mygdx.game.GameModes.AnimationModes.DeathMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.Stats
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.Timer.CooldownTimer
-import com.mygdx.game.Timer.Timer
 import com.mygdx.game.UI.PlayerHealthStrategy
 import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 
@@ -33,7 +27,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override var speed: Float = 3f
     override val cannotMoveStrategy = NoAction()
-    override val layer = Layer.PERSON
+    override var layer = Layer.PERSON
     override var direction = Direction.RIGHT
     override var canChangeDirection = true
     override val collision = CanMoveCollision()

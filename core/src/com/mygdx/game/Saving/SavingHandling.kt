@@ -1,7 +1,5 @@
 package com.mygdx.game.Saving
 
-import com.mygdx.game.Ability.AbilityName
-import com.mygdx.game.Ability.convertAbilityToName
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.FileHandler

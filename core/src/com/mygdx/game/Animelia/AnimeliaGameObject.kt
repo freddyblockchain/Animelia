@@ -10,8 +10,11 @@ import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.Inventory.Inventory
+import com.mygdx.game.Items.Material
+import com.mygdx.game.Items.MaterialItem
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.EnemyHealthStrategy
+import com.mygdx.game.Utils.RandomManager
 
 enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo, Bird}
 
@@ -60,6 +63,11 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
             this.remove()
             generalSaveState.inventory.goldReceived(1, this.currentMiddle)
             PlayerStatus.animeliaClonesKilled += 1
+
+            if(RandomManager.roll(50)){
+                val materialItem = MaterialItem(GameObjectData(x = this.x.toInt(), y = this.y.toInt(), width = 32, height = 32), Material.ANIMELIABONE)
+                materialItem.add()
+            }
         }
 
         super.frameTask()

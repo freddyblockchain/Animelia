@@ -1,14 +1,15 @@
-package com.mygdx.game.GameModes
+package com.mygdx.game.GameModes.AnimationModes
 
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.graphics.glutils.ShaderProgram
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
+import com.mygdx.game.GameModes.DefaultInputProcessor
+import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.State
-import com.mygdx.game.Managers.MusicManager
 
-class AnimationMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch, val endPos: Vector2): GameMode {
+class CliffsideAnimationMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch, val endPos: Vector2):
+    GameMode {
     var currentFrame = 0
 
     val endFrame = 60

@@ -4,10 +4,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
-import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameModes.AnimationMode
+import com.mygdx.game.GameModes.AnimationModes.CliffsideAnimationMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
@@ -35,7 +34,7 @@ class CliffSideCollision(val cliffside: Cliffside): DefaultAreaEntranceCollition
 
         if(player.state == State.NORMAL && player.flyingState == FlyingState.NOTFLYING){
             player.state = State.STUNNED
-            changeMode(AnimationMode(mainMode, endPos = cliffside.bottomleft + Vector2(-50f,50f)))
+            changeMode(CliffsideAnimationMode(mainMode, endPos = cliffside.bottomleft + Vector2(-50f,50f)))
             movedOutside(player)
         }
     }
