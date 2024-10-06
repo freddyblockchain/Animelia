@@ -9,11 +9,14 @@ import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.AnimationModes.CartRidingAnimationMode
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.UI.Scene2d.Screens.PickOptionsScreen
+import com.mygdx.game.UI.Scene2d.Screens.PickRailwayScreen
 
 class Cart(gameObjectData: GameObjectData, railway: Railway) : GameObject(gameObjectData) {
     override var layer = Layer.ONGROUND
@@ -27,9 +30,9 @@ class CartCollision(val railway: Railway, val cart: Cart): InputCollision(){
     override fun collisionHappened(collidedObject: GameObject) {
         if(railway.brokenRailway.fixed){
             println("begin animation")
-            val cartRidingMode = CartRidingAnimationMode(mainMode, spriteBatch = mainMode.spriteBatch, cart, railway)
+            val pickRailwayScreen = PickRailwayScreen(prevMode = mainMode, cart, railway)
 
-            changeMode(cartRidingMode)
+            changeMode(UIMode(pickRailwayScreen))
         }else {
             val textAnimation = TextAnimation(Color.RED, "Requires fixing railway", Vector2(cart.currentMiddle + Vector2(0f, cart.height)), false)
             if(!AnimationManager.animationManager.any { it is TextAnimation && textAnimation.text.startsWith("Requires")}){

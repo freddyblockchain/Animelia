@@ -13,8 +13,10 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.Inventory.RailwayTransportData
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.generalSaveState
 import com.mygdx.game.plus
@@ -50,6 +52,7 @@ class FixRailsCollision(val brokenRailway: BrokenRailway): InputCollision(){
         if(animeliaBoneAmount > 0){
             SignalManager.emitSignal(RailwayFixedSignal(brokenRailway.railway.gameObjectIid))
             generalSaveState.inventory.materialItems[Material.ANIMELIABONE] = animeliaBoneAmount - 1
+            generalSaveState.inventory.railwayConnections.add(RailwayTransportData(AreaManager.getActiveArea()!!.areaIdentifier,brokenRailway.bottomright.x, brokenRailway.bottomright.y))
             generalSaveState.updateSaveState()
         } else{
             val textAnimation = TextAnimation(Color.RED, "Requires 1 Animelia Bone", Vector2(brokenRailway.currentMiddle + Vector2(0f, brokenRailway.height)), false)
