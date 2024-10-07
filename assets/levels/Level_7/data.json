@@ -10,6 +10,10 @@
 		{
 			"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
 			"dir": "w"
+		},
+		{
+			"levelIid": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -23,7 +27,8 @@
 		"Ground_Ice_2.png",
 		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"OnGround_lava.png"
+		"OnGround_lava.png",
+		"Beach.png"
 	],
 	"entities" : {}
 }

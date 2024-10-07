@@ -23,7 +23,8 @@
 		"Ground_Ice_2.png",
 		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"OnGround_lava.png"
+		"OnGround_lava.png",
+		"Beach.png"
 	],
 	"entities": {
 		"Cliffside": [

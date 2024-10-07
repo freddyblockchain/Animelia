@@ -1,0 +1,34 @@
+{
+	"identifier": "Level_25",
+	"uniqueIdentifer": "b46fda00-73f0-11ef-bff8-ed3b824afa99",
+	"x": -2240,
+	"y": 1120,
+	"width": 256,
+	"height": 64,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+			"dir": "e"
+		},
+		{
+			"levelIid": "f03d73d0-73f0-11ef-bff8-11e5f678b2b1",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "Ice_castle"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities" : {}
+}

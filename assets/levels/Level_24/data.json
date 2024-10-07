@@ -1,0 +1,65 @@
+{
+	"identifier": "Level_24",
+	"uniqueIdentifer": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+	"x": -1984,
+	"y": 1024,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
+			"dir": "e"
+		},
+		{
+			"levelIid": "b46fda00-73f0-11ef-bff8-ed3b824afa99",
+			"dir": "w"
+		}
+	],
+	"customFields": {
+		"World": "Ice_castle"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "20d9fb00-73f0-11ef-bff8-6dce4d9bbb83",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IcePenguin"
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "1f556bf0-73f0-11ef-bff8-dbe0a83a50ce",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "Ice_Cone"
+				}
+			}
+		]
+	}
+}

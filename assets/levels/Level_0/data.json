@@ -31,7 +31,8 @@
 		"Ground_Ice_2.png",
 		"Ground_Warm.png",
 		"OngroundTerrain.png",
-		"OnGround_lava.png"
+		"OnGround_lava.png",
+		"Beach.png"
 	],
 	"entities": {
 		"SpiritOfAnimelia": [
@@ -91,6 +92,17 @@
 				"height": 32,
 				"color": 1199753,
 				"customFields" : {}
+			},
+			{
+				"id": "Position",
+				"iid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
+				"layer": "Entities",
+				"x": 160,
+				"y": 384,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
 			}
 		],
 		"Fountain": [
@@ -118,6 +130,26 @@
 				"color": 11882632,
 				"customFields": {
 					"Direction": "Right"
+				}
+			}
+		],
+		"BoxingGlove": [
+			{
+				"id": "BoxingGlove",
+				"iid": "15d04650-73f0-11ef-82cd-ab8f32380e41",
+				"layer": "Entities",
+				"x": 0,
+				"y": 384,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

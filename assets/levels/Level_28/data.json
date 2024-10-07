@@ -1,0 +1,30 @@
+{
+	"identifier": "Level_28",
+	"uniqueIdentifer": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
+	"x": 864,
+	"y": 416,
+	"width": 288,
+	"height": 288,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "World2"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities" : {}
+}
