@@ -1,8 +1,10 @@
 package com.mygdx.game.Collisions
 
+import com.badlogic.gdx.math.Polygon
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Event.DefaultEvent
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.Managers.CollisionManager
 import com.mygdx.game.Managers.EventManager
 
 
@@ -16,6 +18,10 @@ abstract class AreaEntranceCollition: MoveCollision() {
 
 abstract class DefaultAreaEntranceCollition(): AreaEntranceCollition(){
     override var insideCollition: MutableMap<GameObject, Boolean> = mutableMapOf()
+
+    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
+        return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
+    }
 
     open fun actionWhileInside() {
 

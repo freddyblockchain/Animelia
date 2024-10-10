@@ -1,1 +1,1 @@
-{"inventory":{"gold":9,"ownedAbilities":["TailSwipe","Fireball","RockThrow"],"materialItems":{"ANIMELIABONE":3},"railwayConnections":[{"areaIdentifier":"World3","x":-256.0,"y":544.0},{"areaIdentifier":"World1","x":480.0,"y":-96.0}]},"stats":{"offence":15},"currentAnimelia":"FireHippo"}
+{"inventory":{"gold":5,"entityBooks":["IceYeti"],"eggs":["FIRE","ICE"],"ownedAbilities":["TailSwipe","Fireball","Icicle"],"railwayConnections":[{"areaIdentifier":"World1","x":480.0,"y":-96.0},{"areaIdentifier":"World3","x":-256.0,"y":544.0}]},"stats":{},"currentAnimelia":"FireArmadillo"}

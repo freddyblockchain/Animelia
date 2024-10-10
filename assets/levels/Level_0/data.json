@@ -48,6 +48,19 @@
 				"customFields" : {}
 			}
 		],
+		"IceFloor": [
+			{
+				"id": "IceFloor",
+				"iid": "4a2c3460-73f0-11ef-961a-6fe855547e29",
+				"layer": "EntitiesOnTop",
+				"x": 320,
+				"y": 320,
+				"width": 128,
+				"height": 64,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		],
 		"Position": [
 			{
 				"id": "Position",

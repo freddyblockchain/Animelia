@@ -5,6 +5,8 @@ import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
+import com.mygdx.game.Collition.CollisionMask
+import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.AnimationModes.CliffsideAnimationMode
 import com.mygdx.game.GameModes.changeMode
@@ -19,6 +21,8 @@ class Cliffside(gameObjectData: GameObjectData)
 
     override val layer = Layer.ONGROUND
     override val collision = CliffSideCollision(this)
+
+    override val collitionMask = OnlyPlayerCollitionMask
     override fun render(batch: SpriteBatch) {
 
     }
@@ -26,10 +30,6 @@ class Cliffside(gameObjectData: GameObjectData)
 
 
 class CliffSideCollision(val cliffside: Cliffside): DefaultAreaEntranceCollition(){
-
-    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
-        return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
-    }
     override fun actionWhileInside() {
 
         if(player.state == State.NORMAL && player.flyingState == FlyingState.NOTFLYING){

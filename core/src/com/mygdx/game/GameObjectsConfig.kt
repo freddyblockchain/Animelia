@@ -47,6 +47,7 @@ data class Entities(
     val SpiritOfAnimelia: List<GameObjectData> = listOf(),
     val Railway: List<GameObjectData> = listOf(),
     val BoxingGlove: List<GameObjectData> = listOf(),
+    val IceFloor: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -70,6 +71,7 @@ fun initMappings(){
     GameObjectFactory.register("SpiritOfAnimelia", ::SpiritOfAnimelia)
     GameObjectFactory.register("Railway", ::Railway)
     GameObjectFactory.register("BoxingGlove", ::BoxingGlove)
+    GameObjectFactory.register("IceFloor", ::IceFloor)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,
