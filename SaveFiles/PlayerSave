@@ -1,1 +1,1 @@
-{"inventory":{"gold":6,"ownedAbilities":["TailSwipe","Fireball","RockThrow"],"railwayConnections":[{"areaIdentifier":"World3","x":-256.0,"y":544.0},{"areaIdentifier":"World1","x":480.0,"y":-96.0}]},"stats":{},"currentAnimelia":"FireArmadillo"}
+{"inventory":{"gold":9,"ownedAbilities":["TailSwipe","Fireball","RockThrow"],"materialItems":{"ANIMELIABONE":3},"railwayConnections":[{"areaIdentifier":"World3","x":-256.0,"y":544.0},{"areaIdentifier":"World1","x":480.0,"y":-96.0}]},"stats":{"offence":15},"currentAnimelia":"FireHippo"}

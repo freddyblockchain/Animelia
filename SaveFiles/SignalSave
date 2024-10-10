@@ -15,3 +15,7 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"df5298f0-25d0-11ef-8421-51858c939ac3"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"debc9a80-25d0-11ef-8421-f1d4fbb2871c"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"15bd6640-4ce0-11ef-a934-f594317db23b"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"c151c580-73f0-11ef-995c-374d462c62e2"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo"}

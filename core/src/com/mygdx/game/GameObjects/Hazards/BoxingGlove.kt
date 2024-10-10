@@ -12,9 +12,14 @@ import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionUnitVector
+import com.mygdx.game.GameModes.AnimationModes.CliffsideAnimationMode
+import com.mygdx.game.GameModes.AnimationModes.SpinningAnimationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
+import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.AnimeliaCustomFields
 import com.mygdx.game.Managers.AreaManager
@@ -76,7 +81,10 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
 class BoxingGloveCollsion(val boxingGlove: BoxingGlove): MoveCollision() {
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Player){
-            player.setPosition(boxingGlove.goToPosition.currentPosition())
+            if(player.state == State.NORMAL){
+                player.state = State.STUNNED
+                changeMode(SpinningAnimationMode(mainMode, endPos = boxingGlove.goToPosition.currentPosition()))
+            }
         }
     }
 
