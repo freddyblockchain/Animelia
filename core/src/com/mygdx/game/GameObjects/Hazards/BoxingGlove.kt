@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
+import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
@@ -32,8 +33,7 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
     lateinit var goToPosition: AnimeliaPosition
     val posEntityRef = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Entity_ref
     override var speed  = 0.5f
-    override val cannotMoveStrategy: CannotMoveStrategy
-        get() = TODO("Not yet implemented")
+    override val cannotMoveStrategy = MoveRegardless()
 
     override val texture = DefaultTextureHandler.getTexture("BoxingGlove.png")
     val springTexture = DefaultTextureHandler.getTexture("Spring.png")

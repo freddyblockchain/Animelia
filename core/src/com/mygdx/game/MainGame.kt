@@ -62,7 +62,7 @@ class MainGame : ApplicationAdapter() {
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
         AnimationManager.addAnimationsToRender()
-        //drawrects()
+        drawrects()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()
         EventManager.executeEvents()

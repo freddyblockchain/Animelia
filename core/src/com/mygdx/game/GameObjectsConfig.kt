@@ -48,6 +48,7 @@ data class Entities(
     val Railway: List<GameObjectData> = listOf(),
     val BoxingGlove: List<GameObjectData> = listOf(),
     val IceFloor: List<GameObjectData> = listOf(),
+    val Spikes: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -72,6 +73,7 @@ fun initMappings(){
     GameObjectFactory.register("Railway", ::Railway)
     GameObjectFactory.register("BoxingGlove", ::BoxingGlove)
     GameObjectFactory.register("IceFloor", ::IceFloor)
+    GameObjectFactory.register("Spikes", ::Spikes)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,
