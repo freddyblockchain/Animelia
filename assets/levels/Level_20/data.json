@@ -14,6 +14,10 @@
 		{
 			"levelIid": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
 			"dir": "w"
+		},
+		{
+			"levelIid": "4a5420b0-73f0-11ef-b6cd-3df69043e60d",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -30,5 +34,32 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "9999dc00-73f0-11ef-b6cd-bb0c6b1f339c",
+				"layer": "Entities",
+				"x": 96,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
+		"IceStatue": [
+			{
+				"id": "IceStatue",
+				"iid": "f990d0a0-73f0-11ef-b6cd-e703822707c4",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 128,
+				"height": 32,
+				"color": 15389866,
+				"customFields" : {}
+			}
+		]
+	}
 }

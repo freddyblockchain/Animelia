@@ -1,0 +1,119 @@
+{
+	"identifier": "Level_34",
+	"uniqueIdentifer": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+	"x": -2304,
+	"y": 512,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "9e4b0f60-73f0-11ef-b6cd-85a319da941c",
+			"dir": "s"
+		}
+	],
+	"customFields": {
+		"World": "Ice_castle"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "903be640-73f0-11ef-b6cd-2d06bdf451dc",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 96,
+				"height": 256,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+						"layerIid": "453708f2-73f0-11ef-b6cd-cf1637c8d2fc",
+						"levelIid": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "a406e2b0-73f0-11ef-b6cd-e969b3831241",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 96,
+				"height": 256,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+						"layerIid": "453708f2-73f0-11ef-b6cd-cf1637c8d2fc",
+						"levelIid": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+				"layer": "Entities",
+				"x": 96,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "a9cefcf0-73f0-11ef-b6cd-8d0cef3baf1e",
+				"layer": "Entities",
+				"x": 96,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IcePenguin"
+				}
+			}
+		],
+		"IceCrystal": [
+			{
+				"id": "IceCrystal",
+				"iid": "f2ad29b0-73f0-11ef-b6cd-81553ee56283",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16151930,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "9999dc00-73f0-11ef-b6cd-bb0c6b1f339c",
+						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
+						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		]
+	}
+}

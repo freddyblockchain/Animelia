@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_25",
-	"uniqueIdentifer": "b46fda00-73f0-11ef-bff8-ed3b824afa99",
-	"x": -2240,
-	"y": 1120,
-	"width": 256,
+	"uniqueIdentifer": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+	"x": -2272,
+	"y": 960,
+	"width": 192,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-			"dir": "e"
+			"levelIid": "9e4b0f60-73f0-11ef-b6cd-85a319da941c",
+			"dir": "n"
 		},
 		{
-			"levelIid": "f03d73d0-73f0-11ef-bff8-11e5f678b2b1",
-			"dir": "n"
+			"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -30,5 +30,40 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"BoxingGlove": [
+			{
+				"id": "BoxingGlove",
+				"iid": "91f84e33-73f0-11ef-b6cd-a160e894f7bf",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "91f84e34-73f0-11ef-b6cd-09dfe87e4bb5",
+						"layerIid": "91f84e32-73f0-11ef-b6cd-9ddfca1dc6e7",
+						"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Right"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "91f84e34-73f0-11ef-b6cd-09dfe87e4bb5",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		]
+	}
 }

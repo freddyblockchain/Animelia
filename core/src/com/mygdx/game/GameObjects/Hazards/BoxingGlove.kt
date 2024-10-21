@@ -92,6 +92,6 @@ class BoxingGloveCollsion(val boxingGlove: BoxingGlove): MoveCollision() {
 }
 
 @Serializable
-data class BoxingGloveCustomFields(val Entity_ref: EntityRefData){
+data class BoxingGloveCustomFields(val Entity_ref: EntityRefData, val Direction: String){
 
 }

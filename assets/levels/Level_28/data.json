@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_28",
-	"uniqueIdentifer": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
-	"x": 864,
-	"y": 416,
-	"width": 288,
-	"height": 288,
+	"uniqueIdentifer": "87800570-73f0-11ef-b6cd-992048c705bb",
+	"x": -960,
+	"y": 512,
+	"width": 64,
+	"height": 416,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "n"
+			"levelIid": "4f01c840-73f0-11ef-b6cd-f9193402d97b",
+			"dir": "e"
+		},
+		{
+			"levelIid": "7fa33170-73f0-11ef-b6cd-6931bca1cb07",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World2"
+		"World": "Ice_castle"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -26,5 +30,127 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "0b619e30-73f0-11ef-b6cd-afaece1370c7",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 256,
+				"width": 64,
+				"height": 32,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "10396500-73f0-11ef-b6cd-4761b6642823",
+						"layerIid": "87800571-73f0-11ef-b6cd-13906fc0aca6",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "2b2be4a0-73f0-11ef-b6cd-3d2c87510311",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 64,
+				"width": 64,
+				"height": 32,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "10396500-73f0-11ef-b6cd-4761b6642823",
+						"layerIid": "87800571-73f0-11ef-b6cd-13906fc0aca6",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "10396500-73f0-11ef-b6cd-4761b6642823",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 384,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			},
+			{
+				"id": "Position",
+				"iid": "4bdc01c0-73f0-11ef-b6cd-5535855503e5",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			},
+			{
+				"id": "Position",
+				"iid": "a671f7d0-73f0-11ef-b6cd-fb6827fb2b03",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
+		"IceFloor": [
+			{
+				"id": "IceFloor",
+				"iid": "f5f17d40-73f0-11ef-b6cd-5be7830924ab",
+				"layer": "Entities",
+				"x": 0,
+				"y": 256,
+				"width": 64,
+				"height": 128,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "205a4530-73f0-11ef-b6cd-27c8409515cc",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 64,
+				"height": 128,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "3ebc53a0-73f0-11ef-b6cd-9b9a229cdbc0",
+				"layer": "Entities",
+				"x": 0,
+				"y": 384,
+				"width": 32,
+				"height": 32,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "5ebc7720-73f0-11ef-b6cd-9f47ac9cbc54",
+				"layer": "Entities",
+				"x": 0,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		]
+	}
 }

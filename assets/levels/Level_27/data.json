@@ -1,14 +1,14 @@
 {
 	"identifier": "Level_27",
-	"uniqueIdentifer": "5b4fde50-73f0-11ef-bff8-55b027bd4bef",
-	"x": -2336,
-	"y": 800,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "98a52450-73f0-11ef-b6cd-e35ee7fd2070",
+	"x": -512,
+	"y": 128,
+	"width": 64,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f03d73d0-73f0-11ef-bff8-11e5f678b2b1",
+			"levelIid": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
 			"dir": "s"
 		}
 	],
@@ -27,17 +27,77 @@
 		"Beach.png"
 	],
 	"entities": {
-		"SlipperyIce": [
+		"Spikes": [
 			{
-				"id": "SlipperyIce",
-				"iid": "c401c760-73f0-11ef-bff8-151d32b33efb",
+				"id": "Spikes",
+				"iid": "c3b528c0-73f0-11ef-b6cd-53b3b7a66e5f",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 256,
+				"width": 64,
+				"height": 32,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "bd292240-73f0-11ef-b6cd-c51d20b4fe34",
+						"layerIid": "cd0acc02-73f0-11ef-b6cd-f9316025e029",
+						"levelIid": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "cf0dab70-73f0-11ef-b6cd-a398044256dc",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 96,
+				"width": 64,
+				"height": 32,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bd292240-73f0-11ef-b6cd-c51d20b4fe34",
+						"layerIid": "cd0acc02-73f0-11ef-b6cd-f9316025e029",
+						"levelIid": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"IceFloor": [
+			{
+				"id": "IceFloor",
+				"iid": "aed8e360-73f0-11ef-b6cd-799eb8480ce6",
 				"layer": "Entities",
 				"x": 0,
-				"y": 128,
-				"width": 256,
-				"height": 64,
-				"color": 16217634,
+				"y": 64,
+				"width": 64,
+				"height": 256,
+				"color": 2943221,
 				"customFields" : {}
+			}
+		],
+		"IceCrystal": [
+			{
+				"id": "IceCrystal",
+				"iid": "9cc03560-73f0-11ef-b6cd-733b1fdc2dc8",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16151930,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "9999dc00-73f0-11ef-b6cd-bb0c6b1f339c",
+						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
+						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		]
 	}

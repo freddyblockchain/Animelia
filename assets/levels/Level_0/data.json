@@ -183,7 +183,8 @@
 						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
 						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Right"
 				}
 			}
 		]

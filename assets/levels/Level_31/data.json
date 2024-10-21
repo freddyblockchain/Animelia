@@ -1,0 +1,88 @@
+{
+	"identifier": "Level_31",
+	"uniqueIdentifer": "4f01c840-73f0-11ef-b6cd-f9193402d97b",
+	"x": -896,
+	"y": 512,
+	"width": 288,
+	"height": 64,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+			"dir": "w"
+		},
+		{
+			"levelIid": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
+			"dir": "e"
+		}
+	],
+	"customFields": {
+		"World": "Ice_castle"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"IceFloor": [
+			{
+				"id": "IceFloor",
+				"iid": "af5b4f40-73f0-11ef-b6cd-bb6db2c30bee",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 128,
+				"height": 64,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		],
+		"BoxingGlove": [
+			{
+				"id": "BoxingGlove",
+				"iid": "b8d7e600-73f0-11ef-b6cd-0d251339a4ce",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "a671f7d0-73f0-11ef-b6cd-fb6827fb2b03",
+						"layerIid": "87800572-73f0-11ef-b6cd-6bed48127a85",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Left"
+				}
+			},
+			{
+				"id": "BoxingGlove",
+				"iid": "bc3da640-73f0-11ef-b6cd-759ec58b9f1a",
+				"layer": "Entities",
+				"x": 160,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "a671f7d0-73f0-11ef-b6cd-fb6827fb2b03",
+						"layerIid": "87800572-73f0-11ef-b6cd-6bed48127a85",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Left"
+				}
+			}
+		]
+	}
+}
