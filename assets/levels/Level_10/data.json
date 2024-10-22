@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_10",
-	"uniqueIdentifer": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
-	"x": 672,
-	"y": -832,
-	"width": 288,
-	"height": 160,
+	"uniqueIdentifer": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+	"x": 0,
+	"y": -896,
+	"width": 512,
+	"height": 480,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "0aa29eb0-25d0-11ef-9fe3-67a32544441f",
-			"dir": "n"
+			"levelIid": "d82abd10-25d0-11ef-943d-f5c0fd435082",
+			"dir": "s"
 		},
 		{
-			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-			"dir": "e"
+			"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
+			"dir": "w"
 		},
 		{
 			"levelIid": "6283c240-4ce0-11ef-9290-f3bee5d80080",
-			"dir": "w"
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -38,136 +38,56 @@
 		"Rock": [
 			{
 				"id": "Rock",
-				"iid": "bb351770-25d0-11ef-9fe3-8b5b8d957f8f",
+				"iid": "bf70d510-25d0-11ef-8e0b-1d07fec99f41",
 				"layer": "Entities",
-				"x": 128,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "bccfdbb0-25d0-11ef-9fe3-879c7ff10cd9",
-				"layer": "Entities",
-				"x": 128,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "bd32e340-25d0-11ef-9fe3-c79b735f4b4c",
-				"layer": "Entities",
-				"x": 160,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "c0005b20-25d0-11ef-9fe3-79a6fecf7346",
-				"layer": "Entities",
-				"x": 160,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "96fe7960-25d0-11ef-9fe3-3fe44eba72e7",
-				"layer": "Entities",
-				"x": 96,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "97434a90-25d0-11ef-9fe3-01d5948f6e63",
-				"layer": "Entities",
-				"x": 96,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "97a91140-25d0-11ef-9fe3-abb797b6c89d",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "9f452830-25d0-11ef-9fe3-d76e04ff72ca",
-				"layer": "Entities",
-				"x": 160,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 10
-				}
-			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "9bc32d60-25d0-11ef-9fe3-238e8b0215e1",
-				"layer": "Entities",
-				"x": 128,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "Fireball"
-				}
-			}
-		],
-		"Sign": [
-			{
-				"id": "Sign",
-				"iid": "8ed1fcd0-4ce0-11ef-9bea-bf9c504f35bc",
-				"layer": "Entities",
-				"x": 32,
+				"x": 224,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 3818598,
+				"color": 14984818,
 				"customFields": {
-					"Text": "Firebells react to fire!"
+					"StrengthToBreak": 25
+				}
+			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "c3e587c0-25d0-11ef-9fe3-8bb1905baa39",
+				"layer": "Entities",
+				"x": 384,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "d794bed0-25d0-11ef-9fe3-cd1b8f69b522",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "a1ea33b0-25d0-11ef-9fe3-9dd2167a63af",
+				"layer": "Entities",
+				"x": 224,
+				"y": 288,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Fire_Armadillo"
 				}
 			}
 		]

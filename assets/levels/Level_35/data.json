@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_35",
-	"uniqueIdentifer": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
-	"x": -608,
-	"y": 448,
+	"uniqueIdentifer": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+	"x": -2304,
+	"y": 512,
 	"width": 256,
-	"height": 192,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "98a52450-73f0-11ef-b6cd-e35ee7fd2070",
-			"dir": "n"
-		},
-		{
-			"levelIid": "4f01c840-73f0-11ef-b6cd-f9193402d97b",
-			"dir": "w"
+			"levelIid": "9e4b0f60-73f0-11ef-b6cd-85a319da941c",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -31,13 +27,66 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "903be640-73f0-11ef-b6cd-2d06bdf451dc",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 96,
+				"height": 256,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+						"layerIid": "453708f2-73f0-11ef-b6cd-cf1637c8d2fc",
+						"levelIid": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "a406e2b0-73f0-11ef-b6cd-e969b3831241",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 96,
+				"height": 256,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+						"layerIid": "453708f2-73f0-11ef-b6cd-cf1637c8d2fc",
+						"levelIid": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "a223a3c0-73f0-11ef-b6cd-b14ba0709493",
+				"layer": "Entities",
+				"x": 96,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
 		"AnimeliaEnemy": [
 			{
 				"id": "AnimeliaEnemy",
-				"iid": "ff4efdd0-73f0-11ef-b6cd-d5e46b2c3c2b",
+				"iid": "a9cefcf0-73f0-11ef-b6cd-8d0cef3baf1e",
 				"layer": "Entities",
 				"x": 96,
-				"y": 64,
+				"y": 128,
 				"width": 32,
 				"height": 32,
 				"color": 14120515,
@@ -46,41 +95,24 @@
 				}
 			}
 		],
-		"IceFloor": [
+		"IceCrystal": [
 			{
-				"id": "IceFloor",
-				"iid": "82ea8ce0-73f0-11ef-b6cd-7b31a24d57ae",
-				"layer": "Entities",
-				"x": 32,
-				"y": 64,
-				"width": 64,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			},
-			{
-				"id": "IceFloor",
-				"iid": "85615940-73f0-11ef-b6cd-25e218493f8e",
-				"layer": "Entities",
-				"x": 160,
-				"y": 64,
-				"width": 64,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "bd292240-73f0-11ef-b6cd-c51d20b4fe34",
+				"id": "IceCrystal",
+				"iid": "f2ad29b0-73f0-11ef-b6cd-81553ee56283",
 				"layer": "Entities",
 				"x": 96,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 1199753,
-				"customFields" : {}
+				"color": 16151930,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "9999dc00-73f0-11ef-b6cd-bb0c6b1f339c",
+						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
+						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		]
 	}

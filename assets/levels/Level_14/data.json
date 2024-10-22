@@ -1,14 +1,22 @@
 {
 	"identifier": "Level_14",
-	"uniqueIdentifer": "a3798d70-25d0-11ef-8421-af2cdb10990f",
-	"x": -416,
-	"y": -352,
-	"width": 64,
-	"height": 160,
+	"uniqueIdentifer": "64987210-25d0-11ef-8421-a11f865ea57a",
+	"x": -512,
+	"y": -800,
+	"width": 256,
+	"height": 448,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "64987210-25d0-11ef-8421-a11f865ea57a",
+			"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
+			"dir": "e"
+		},
+		{
+			"levelIid": "a3798d70-25d0-11ef-8421-af2cdb10990f",
+			"dir": "s"
+		},
+		{
+			"levelIid": "d361e100-25d0-11ef-8421-612c6cfe26b8",
 			"dir": "n"
 		}
 	],
@@ -27,42 +35,95 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCone": [
+		"TrainingStation": [
 			{
-				"id": "IceCone",
-				"iid": "debc9a80-25d0-11ef-8421-f1d4fbb2871c",
+				"id": "TrainingStation",
+				"iid": "fc5b3a70-25d0-11ef-8421-e72495765c62",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
+				"x": 192,
+				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			},
-			{
-				"id": "IceCone",
-				"iid": "df5298f0-25d0-11ef-8421-51858c939ac3",
-				"layer": "Entities",
-				"x": 32,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
+				"height": 64,
+				"color": 7552569,
 				"customFields" : {}
 			}
 		],
-		"Ability": [
+		"Rock": [
 			{
-				"id": "Ability",
-				"iid": "15bd6640-4ce0-11ef-a934-f594317db23b",
+				"id": "Rock",
+				"iid": "4dba5fe0-25d0-11ef-8421-49897ed32b54",
 				"layer": "Entities",
-				"x": 0,
-				"y": 128,
+				"x": 96,
+				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 16690740,
+				"color": 14984818,
 				"customFields": {
-					"Ability": "RockThrow"
+					"StrengthToBreak": 15
+				}
+			},
+			{
+				"id": "Rock",
+				"iid": "4e324f00-25d0-11ef-8421-99a4ca0de8c4",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 14984818,
+				"customFields": {
+					"StrengthToBreak": 15
+				}
+			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "f2e334a0-4ce0-11ef-9bea-5b4c04524a22",
+				"layer": "Entities",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Train to get stronger!"
+				}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "93ca0a50-73f0-11ef-995c-f5dfe207d030",
+				"layer": "Entities",
+				"x": 128,
+				"y": 224,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields": {
+					"Direction": "Right"
+				}
+			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "c151c580-73f0-11ef-995c-374d462c62e2",
+				"layer": "Entities",
+				"x": 160,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "FireHippo",
+					"AnimeliaCityPos": {
+						"entityIid": "cef067a0-73f0-11ef-995c-4bc71c2effcb",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

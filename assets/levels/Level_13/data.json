@@ -1,27 +1,19 @@
 {
 	"identifier": "Level_13",
-	"uniqueIdentifer": "64987210-25d0-11ef-8421-a11f865ea57a",
-	"x": -512,
+	"uniqueIdentifer": "544d74a0-25d0-11ef-8421-af1602e1e169",
+	"x": -256,
 	"y": -800,
 	"width": 256,
-	"height": 448,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
-			"dir": "s"
-		},
-		{
-			"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
+			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
 			"dir": "e"
 		},
 		{
-			"levelIid": "a3798d70-25d0-11ef-8421-af2cdb10990f",
-			"dir": "s"
-		},
-		{
-			"levelIid": "d361e100-25d0-11ef-8421-612c6cfe26b8",
-			"dir": "n"
+			"levelIid": "64987210-25d0-11ef-8421-a11f865ea57a",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -39,93 +31,36 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TrainingStation": [
+		"ConveyerBelt": [
 			{
-				"id": "TrainingStation",
-				"iid": "fc5b3a70-25d0-11ef-8421-e72495765c62",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		],
-		"Rock": [
-			{
-				"id": "Rock",
-				"iid": "4dba5fe0-25d0-11ef-8421-49897ed32b54",
-				"layer": "Entities",
+				"id": "ConveyerBelt",
+				"iid": "88a31120-25d0-11ef-a383-39bff4bb0259",
+				"layer": "EntitiesOnTop",
 				"x": 96,
 				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 15
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "4e324f00-25d0-11ef-8421-99a4ca0de8c4",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 15
-				}
-			}
-		],
-		"Sign": [
-			{
-				"id": "Sign",
-				"iid": "f2e334a0-4ce0-11ef-9bea-5b4c04524a22",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 3818598,
-				"customFields": {
-					"Text": "Train to get stronger!"
-				}
-			}
-		],
-		"Railway": [
-			{
-				"id": "Railway",
-				"iid": "93ca0a50-73f0-11ef-995c-f5dfe207d030",
-				"layer": "Entities",
-				"x": 128,
-				"y": 224,
-				"width": 128,
-				"height": 32,
-				"color": 11882632,
+				"width": 96,
+				"height": 96,
+				"color": 6539085,
 				"customFields": {
 					"Direction": "Right"
 				}
 			}
 		],
-		"Animelia": [
+		"FireLightBulb": [
 			{
-				"id": "Animelia",
-				"iid": "c151c580-73f0-11ef-995c-374d462c62e2",
-				"layer": "Entities",
-				"x": 160,
-				"y": 192,
+				"id": "FireLightBulb",
+				"iid": "95697bb0-25d0-11ef-a383-d59389190c8d",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 15389866,
+				"height": 48,
+				"color": 4098376,
 				"customFields": {
-					"AnimeliaType": "FireHippo",
-					"AnimeliaCityPos": {
-						"entityIid": "cef067a0-73f0-11ef-995c-4bc71c2effcb",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+					"Entity_ref": {
+						"entityIid": "88a31120-25d0-11ef-a383-39bff4bb0259",
+						"layerIid": "544d74a1-25d0-11ef-8421-c365490942ad",
+						"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}

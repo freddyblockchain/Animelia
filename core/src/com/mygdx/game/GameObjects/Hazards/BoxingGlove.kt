@@ -39,7 +39,7 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
     val springTexture = DefaultTextureHandler.getTexture("Spring.png")
     val springSprite = Sprite(springTexture)
 
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
 
     override val collision = BoxingGloveCollsion(this)
 

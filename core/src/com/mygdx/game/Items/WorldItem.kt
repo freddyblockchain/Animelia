@@ -12,7 +12,7 @@ import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.SignalManager
 
 abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjectData) {
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
     abstract val itemAquiredText: String
     override val collision = ItemAquiredCollision(this)
     override val layer = Layer.AIR

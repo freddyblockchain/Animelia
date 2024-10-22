@@ -2,9 +2,9 @@
 	"identifier": "Level_3",
 	"uniqueIdentifer": "eda8b670-4ce0-11ef-8f8c-b95441bdb4c3",
 	"x": -544,
-	"y": -96,
-	"width": 352,
-	"height": 192,
+	"y": -32,
+	"width": 320,
+	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -13,7 +13,7 @@
 		},
 		{
 			"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
-			"dir": "n"
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -37,7 +37,7 @@
 				"iid": "19e3e5b0-4ce0-11ef-8f8c-a562b016e00b",
 				"layer": "EntitiesOnTop",
 				"x": 32,
-				"y": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 14120515,
@@ -50,7 +50,7 @@
 				"iid": "1c769e80-4ce0-11ef-8f8c-258d01a98ffb",
 				"layer": "EntitiesOnTop",
 				"x": 224,
-				"y": 64,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 14120515,
@@ -65,7 +65,7 @@
 				"iid": "c85045f0-4ce0-11ef-8f8c-2732dacb94ce",
 				"layer": "Entities",
 				"x": 288,
-				"y": 176,
+				"y": 112,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,

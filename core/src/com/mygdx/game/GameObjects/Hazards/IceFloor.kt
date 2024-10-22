@@ -20,7 +20,7 @@ class IceFloor(gameObjectData: GameObjectData)
     override val layer = Layer.ONGROUND
     override val collision = IceFloorCollision()
 
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
 
     override fun render(batch: SpriteBatch) {
         renderRepeatedTexture(batch, texture, this.currentPosition(), Vector2(sprite.width, sprite.height))

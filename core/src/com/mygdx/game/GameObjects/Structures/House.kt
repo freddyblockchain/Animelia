@@ -38,6 +38,7 @@ data class HouseCustomFields(val House: String){
 fun getHouseTexture(houseAsString: String): String{
     return when(houseAsString){
         "Iglo" -> "iglo.png"
+        "Ice_Castle" -> "IceCastle.png"
         else -> "iglo.png"
     }
 }

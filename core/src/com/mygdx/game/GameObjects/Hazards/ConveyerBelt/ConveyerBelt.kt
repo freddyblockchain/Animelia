@@ -42,7 +42,7 @@ class ConveyerBelt(gameObjectData: GameObjectData)
     val endBrick = ConveyerBrick(end, if(isVertical) Vector2(size.x,brickLength) else Vector2(brickLength,size.y),speed,direction, DefaultTextureHandler.getTexture(brickImageFileName))
     val bricks = constructBricks()
     override val collision = ConveyerBeltCollition(this)
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
 
     val upArrow = DefaultTextureHandler.getTexture("UpArrow.png")
     val upSprite = Sprite(upArrow)

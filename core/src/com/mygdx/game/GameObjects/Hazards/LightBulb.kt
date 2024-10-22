@@ -23,7 +23,7 @@ class LightBulb(gameObjectData: GameObjectData)
     override val texture = DefaultTextureHandler.getTexture("lightbulb.png")
     val fireIconSprite = Sprite(DefaultTextureHandler.getTexture("fireball-icon.png"))
     override val layer = Layer.PERSON
-    override val collitionMask = OnlyProjectileCollisionMask
+    override val collisionMask = OnlyProjectileCollisionMask
     override val collision = LightBulbCollision(this)
     val entityRefData = Json.decodeFromJsonElement<LightbulbCustomFields>(gameObjectData.customFields).Entity_ref
     val sound = DefaultSoundHandler.getSound("Sound/bell.wav")

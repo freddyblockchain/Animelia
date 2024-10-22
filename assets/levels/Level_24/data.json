@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_24",
-	"uniqueIdentifer": "4a5420b0-73f0-11ef-b6cd-3df69043e60d",
-	"x": -1376,
+	"uniqueIdentifer": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
+	"x": -1792,
 	"y": 1120,
-	"width": 320,
+	"width": 160,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
-			"dir": "w"
+			"dir": "e"
 		},
 		{
-			"levelIid": "7fa33170-73f0-11ef-b6cd-6931bca1cb07",
-			"dir": "e"
+			"levelIid": "0e400f60-73f0-11ef-b6cd-eb89afa81411",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -31,69 +31,37 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Position": [
+		"BoxingGlove": [
 			{
-				"id": "Position",
-				"iid": "4a5447c0-73f0-11ef-b6cd-071ab7f87223",
+				"id": "BoxingGlove",
+				"iid": "3c6e1cb0-73f0-11ef-b6cd-cd6c6e3dcd0c",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
 				"width": 32,
 				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "4270a7e0-73f0-11ef-b6cd-230c61446fbc",
+						"layerIid": "ee5bcd72-73f0-11ef-bff8-eddbc677f4b3",
+						"levelIid": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Right"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "4270a7e0-73f0-11ef-b6cd-230c61446fbc",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 32,
 				"color": 1199753,
-				"customFields" : {}
-			}
-		],
-		"BoxingGlove": [
-			{
-				"id": "BoxingGlove",
-				"iid": "55616990-73f0-11ef-b6cd-71bf55861bbd",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 16067712,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "4a5447c0-73f0-11ef-b6cd-071ab7f87223",
-						"layerIid": "4a5420b2-73f0-11ef-b6cd-d9fe911e87e3",
-						"levelIid": "4a5420b0-73f0-11ef-b6cd-3df69043e60d",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Left"
-				}
-			},
-			{
-				"id": "BoxingGlove",
-				"iid": "57f70890-73f0-11ef-b6cd-97708a8c23ba",
-				"layer": "Entities",
-				"x": 96,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 16067712,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "4a5447c0-73f0-11ef-b6cd-071ab7f87223",
-						"layerIid": "4a5420b2-73f0-11ef-b6cd-d9fe911e87e3",
-						"levelIid": "4a5420b0-73f0-11ef-b6cd-3df69043e60d",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Left"
-				}
-			}
-		],
-		"IceFloor": [
-			{
-				"id": "IceFloor",
-				"iid": "a8311ee0-73f0-11ef-b6cd-cd26624c9c7c",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 128,
-				"height": 64,
-				"color": 2943221,
 				"customFields" : {}
 			}
 		]

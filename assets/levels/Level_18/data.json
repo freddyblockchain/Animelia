@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_18",
-	"uniqueIdentifer": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
-	"x": -800,
-	"y": -320,
-	"width": 192,
-	"height": 192,
+	"uniqueIdentifer": "54445e00-25d0-11ef-b434-15957d2f9085",
+	"x": 960,
+	"y": -800,
+	"width": 256,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
-			"dir": "<"
+			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "Iglo"
+		"World": "World3"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -27,61 +27,17 @@
 		"Beach.png"
 	],
 	"entities": {
-		"AnivolutionBook": [
+		"Cliffside": [
 			{
-				"id": "AnivolutionBook",
-				"iid": "ad7b3b10-4ce0-11ef-9c31-a3518b8cc947",
-				"layer": "EntitiesOnTop",
-				"x": 160,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 16777215,
-				"customFields": {
-					"AnimeliaType": "IceYeti"
-				}
-			}
-		],
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "6060f850-4ce0-11ef-8f8c-318ee11e67f0",
+				"id": "Cliffside",
+				"iid": "a2d632a0-25d0-11ef-b434-f16106c4be1d",
 				"layer": "Entities",
-				"x": 80,
-				"y": 176,
+				"x": 64,
+				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "8b07a4e0-4ce0-11ef-8f8c-a5f11cd54192",
-						"layerIid": "f2fc7923-4ce0-11ef-8f8c-033f1da8a0d2",
-						"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			}
-		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "382cb1b0-4ce0-11ef-8f8c-c91edd8377b9",
-				"layer": "Entities",
-				"x": 32,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "IceYeti",
-					"AnimeliaCityPos": {
-						"entityIid": "6d671910-4ce0-11ef-8f8c-c1f7c1d6296b",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
 			}
 		]
 	}

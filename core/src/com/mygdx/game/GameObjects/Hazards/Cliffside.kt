@@ -22,7 +22,7 @@ class Cliffside(gameObjectData: GameObjectData)
     override val layer = Layer.ONGROUND
     override val collision = CliffSideCollision(this)
 
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
     override fun render(batch: SpriteBatch) {
 
     }

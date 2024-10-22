@@ -1,23 +1,14 @@
 {
 	"identifier": "Level_19",
-	"uniqueIdentifer": "6283c240-4ce0-11ef-9290-f3bee5d80080",
-	"x": 512,
-	"y": -800,
-	"width": 160,
-	"height": 96,
+	"uniqueIdentifer": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
+	"x": -800,
+	"y": -320,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
-	"neighbourLevels": [
-		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "w"
-		},
-		{
-			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
-			"dir": "e"
-		}
-	],
+	"neighbourLevels": [],
 	"customFields": {
-		"World": "World3"
+		"World": "Iglo"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -31,36 +22,58 @@
 		"Beach.png"
 	],
 	"entities": {
-		"ConveyerBelt": [
+		"AnivolutionBook": [
 			{
-				"id": "ConveyerBelt",
-				"iid": "82a3f0e0-4ce0-11ef-9290-6d324e715d42",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 6539085,
+				"id": "AnivolutionBook",
+				"iid": "ad7b3b10-4ce0-11ef-9c31-a3518b8cc947",
+				"layer": "EntitiesOnTop",
+				"x": 160,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16777215,
 				"customFields": {
-					"Direction": "Right"
+					"AnimeliaType": "IceYeti"
 				}
 			}
 		],
-		"FireLightBulb": [
+		"Door": [
 			{
-				"id": "FireLightBulb",
-				"iid": "89c3fa00-4ce0-11ef-9290-e55af155127d",
+				"id": "Door",
+				"iid": "6060f850-4ce0-11ef-8f8c-318ee11e67f0",
 				"layer": "Entities",
-				"x": 128,
-				"y": 0,
+				"x": 80,
+				"y": 176,
 				"width": 32,
-				"height": 48,
-				"color": 4098376,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "82a3f0e0-4ce0-11ef-9290-6d324e715d42",
-						"layerIid": "6283c242-4ce0-11ef-9290-cd438ff84bb8",
-						"levelIid": "6283c240-4ce0-11ef-9290-f3bee5d80080",
+					"Door": {
+						"entityIid": "8b07a4e0-4ce0-11ef-8f8c-a5f11cd54192",
+						"layerIid": "f2fc7923-4ce0-11ef-8f8c-033f1da8a0d2",
+						"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "382cb1b0-4ce0-11ef-8f8c-c91edd8377b9",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "IceYeti",
+					"AnimeliaCityPos": {
+						"entityIid": "6d671910-4ce0-11ef-8f8c-c1f7c1d6296b",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}

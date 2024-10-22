@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_7",
-	"uniqueIdentifer": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-	"x": 736,
-	"y": -32,
-	"width": 544,
-	"height": 448,
+	"uniqueIdentifer": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+	"x": 480,
+	"y": 128,
+	"width": 256,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 			"dir": "w"
 		},
 		{
-			"levelIid": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
-			"dir": "s"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "World2"
+		"World": "World1"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -30,5 +30,19 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "1a5c0db0-25d0-11ef-b434-3f772b085b47",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 96,
+				"color": 16705377,
+				"customFields" : {}
+			}
+		]
+	}
 }

@@ -20,7 +20,7 @@ class Sign(gameObjectData: GameObjectData) : GameObject(gameObjectData, Vector2(
     override val texture = DefaultTextureHandler.getTexture("Sign.png")
     override val layer = Layer.ONGROUND
     override val collision = SignCollision(this)
-    override val collitionMask = OnlyPlayerCollitionMask
+    override val collisionMask = OnlyPlayerCollitionMask
     
 }
 

@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_32",
-	"uniqueIdentifer": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-	"x": -2080,
-	"y": 864,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "4f01c840-73f0-11ef-b6cd-f9193402d97b",
+	"x": -896,
+	"y": 512,
+	"width": 288,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+			"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
 			"dir": "w"
 		},
 		{
-			"levelIid": "4e9cce40-73f0-11ef-b6cd-f796d46d8e7d",
+			"levelIid": "cd0acc00-73f0-11ef-b6cd-6dec03785de7",
 			"dir": "e"
 		}
 	],
@@ -31,106 +31,57 @@
 		"Beach.png"
 	],
 	"entities": {
-		"AnimeliaEnemy": [
+		"IceFloor": [
 			{
-				"id": "AnimeliaEnemy",
-				"iid": "20d9fb00-73f0-11ef-bff8-6dce4d9bbb83",
+				"id": "IceFloor",
+				"iid": "af5b4f40-73f0-11ef-b6cd-bb6db2c30bee",
 				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14120515,
-				"customFields": {
-					"AnimeliaType": "IcePenguin"
-				}
-			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "1f556bf0-73f0-11ef-bff8-dbe0a83a50ce",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "Ice_Cone"
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "0bcdc4f0-73f0-11ef-b6cd-fd8c13015550",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "28c34080-73f0-11ef-b6cd-5f352697f6ae",
-				"layer": "Entities",
-				"x": 128,
+				"x": 32,
 				"y": 0,
 				"width": 128,
-				"height": 96,
-				"color": 1578021,
+				"height": 64,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		],
+		"BoxingGlove": [
+			{
+				"id": "BoxingGlove",
+				"iid": "b8d7e600-73f0-11ef-b6cd-0d251339a4ce",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
 				"customFields": {
-					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+						"entityIid": "a671f7d0-73f0-11ef-b6cd-fb6827fb2b03",
+						"layerIid": "87800572-73f0-11ef-b6cd-6bed48127a85",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Left"
 				}
 			},
 			{
-				"id": "Spikes",
-				"iid": "2ba9e5b0-73f0-11ef-b6cd-a3ccb8c683a8",
+				"id": "BoxingGlove",
+				"iid": "bc3da640-73f0-11ef-b6cd-759ec58b9f1a",
 				"layer": "Entities",
-				"x": 0,
-				"y": 160,
-				"width": 256,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-				"layer": "Entities",
-				"x": 224,
-				"y": 96,
+				"x": 160,
+				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 1199753,
-				"customFields" : {}
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "a671f7d0-73f0-11ef-b6cd-fb6827fb2b03",
+						"layerIid": "87800572-73f0-11ef-b6cd-6bed48127a85",
+						"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Left"
+				}
 			}
 		]
 	}

@@ -22,7 +22,7 @@ class TailSwipeObject(gameObjectData: GameObjectData, size: Vector2, val objectA
     override var direction = Direction.DOWN
     override var canChangeDirection = true
     override val collision = TailSwipeCollision(this,objectAttached)
-    override val collitionMask = AllOtherObjectsCollisionMask(objectAttached)
+    override val collisionMask = AllOtherObjectsCollisionMask(objectAttached)
     var objectAttachedPos = Vector2(0f,0f)
 
     val entitesHit = mutableMapOf<GameObject, Boolean>()

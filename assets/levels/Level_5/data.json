@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_5",
-	"uniqueIdentifer": "2feab690-25d0-11ef-9d5b-271d9cab9325",
-	"x": -96,
-	"y": 160,
-	"width": 96,
-	"height": 64,
+	"uniqueIdentifer": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+	"x": -1376,
+	"y": -160,
+	"width": 352,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+			"levelIid": "652dd700-73f0-11ef-af50-1b9c352c1cf8",
 			"dir": "e"
-		},
-		{
-			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
-			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "World4"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -31,28 +27,40 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCone": [
+		"House": [
 			{
-				"id": "IceCone",
-				"iid": "0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3",
-				"layer": "EntitiesOnTop",
-				"x": 32,
+				"id": "House",
+				"iid": "6cdf5540-73f0-11ef-af50-271fbf5c22a6",
+				"layer": "Entities",
+				"x": 96,
 				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			},
+				"width": 128,
+				"height": 160,
+				"color": 9149364,
+				"customFields": {
+					"House": "Ice_Castle"
+				}
+			}
+		],
+		"Door": [
 			{
-				"id": "IceCone",
-				"iid": "0e9e00a0-4ce0-11ef-8f8c-cd034c800b23",
-				"layer": "EntitiesOnTop",
-				"x": 32,
-				"y": 32,
+				"id": "Door",
+				"iid": "38c63500-73f0-11ef-af50-d1714ced0190",
+				"layer": "Entities",
+				"x": 144,
+				"y": 160,
 				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "d08680a0-73f0-11ef-af50-694eaa2b811c",
+						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
+						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
 			}
 		]
 	}

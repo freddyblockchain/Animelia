@@ -1,7 +1,6 @@
 package com.mygdx.game.Managers
 
 import com.badlogic.gdx.math.Intersector.intersectPolygonEdges
-import com.badlogic.gdx.math.Intersector.isPointInPolygon
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.FloatArray
@@ -33,7 +32,7 @@ class CollisionManager {
 
         // added additional collision check. Beware
         fun GetCollidingObjects(gameObjectToCheck: GameObject, polygonToCheck: Polygon, gameObjects: List<GameObject>): List<GameObject> {
-            val collidingObjects = gameObjects.filter {gameObjectToCheck.collitionMask.canCollideWith(it) && it.collitionMask.canCollideWith(gameObjectToCheck) && gameObjectToCheck.collision.collisionCheck(polygonToCheck, it.polygon) && it.collision.collisionCheck(polygonToCheck, it.polygon)}
+            val collidingObjects = gameObjects.filter {gameObjectToCheck.collisionMask.canCollideWith(it) && it.collisionMask.canCollideWith(gameObjectToCheck) && gameObjectToCheck.collision.collisionCheck(polygonToCheck, it.polygon) && it.collision.collisionCheck(polygonToCheck, it.polygon)}
             return collidingObjects
         }
 

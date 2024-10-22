@@ -7,6 +7,8 @@ import com.mygdx.game.*
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.Collisions.AreaEntranceCollition
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
+import com.mygdx.game.Collition.CollisionMask
+import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.AnimeliaPosition
@@ -25,6 +27,8 @@ class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
     override val texture = DefaultTextureHandler.getTexture("Spike.png")
 
     override val collision = SpikesCollision(this)
+
+    override val collisionMask = OnlyPlayerCollitionMask
 
     val maxHeight = 32f
     var currentHeight = maxHeight

@@ -1,6 +1,5 @@
 package com.mygdx.game.GameObjects.GameObject
 
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Polygon
@@ -55,7 +54,7 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Ve
     }
     val onLocationEnterActions: MutableList<()-> Unit> = mutableListOf()
     val onRemoveAction: MutableList<()->Unit> = mutableListOf({})
-    open val collitionMask: CollisionMask = DefaultCollisionMask()
+    open val collisionMask: CollisionMask = DefaultCollisionMask()
 
     open fun setPosition(position: Vector2) {
         sprite.setPosition(position.x,position.y)
