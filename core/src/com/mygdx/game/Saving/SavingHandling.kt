@@ -1,5 +1,6 @@
 package com.mygdx.game.Saving
 
+import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.FileHandler
@@ -20,19 +21,14 @@ class SavingHandler {
             if (!FileHandler.SaveFileEmpty()) {
                 val savedState: String = FileHandler.readPlayerFile()[0]
                 val savedGeneralSaveState: PlayerSaveState = Json.decodeFromString(savedState)
-                generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia)
+                generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia, savedGeneralSaveState.pos, savedGeneralSaveState.areaIdentifier)
                 player.animeliaInfo = getAnimeliaData(generalSaveState.currentAnimelia)
 
             } else {
-                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.FireArmadillo)
-                AreaManager.setActiveArea("World1")
+                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.FireArmadillo, SVector2(120f, -200f), "World1")
             }
-            initSignalListeners()
-            val originalFile = FileHandler.readSignalFile()
-            val savedSignals: List<Signal> = originalFile.map(::signalConvert)
-            savedSignals.forEach {
-                SignalManager.pastSignals.add(it)
-            }
+            AreaManager.setActiveArea(generalSaveState.areaIdentifier)
+            player.setPosition(Vector2(generalSaveState.pos.x, generalSaveState.pos.y))
         }
     }
 }

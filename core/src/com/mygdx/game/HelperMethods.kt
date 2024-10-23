@@ -20,6 +20,7 @@ import com.mygdx.game.GameObjects.Other.Wall
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.Saving.SVector2
 import kotlin.math.PI
 
 fun InitArea(levelName: String){
@@ -79,6 +80,10 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     } else{
         player.playerEnvironmentState = PlayerEnvironmentState.NORMAL
     }
+
+    generalSaveState.pos = SVector2(newPos.x, newPos.y)
+    generalSaveState.areaIdentifier = newAreaIdentifier
+    generalSaveState.updateSaveState()
 
     AnimationManager.animationManager.add(AreaTransitionAnimation())
 }

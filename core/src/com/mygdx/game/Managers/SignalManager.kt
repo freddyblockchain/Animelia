@@ -1,9 +1,12 @@
 package com.mygdx.game.Managers
 
 import SIGNALTYPE
+import com.mygdx.game.FileHandler
 import com.mygdx.game.FileHandler.Companion.writeSignalToFile
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.SignaledEventListener
+import com.mygdx.game.Signal.initSignalListeners
+import signalConvert
 
 class SignalManager {
         companion object {
@@ -37,6 +40,15 @@ class SignalManager {
                         }
                     }
                     signalManager.remove(signal)
+                }
+            }
+
+            fun initSignals(){
+                initSignalListeners()
+                val originalFile = FileHandler.readSignalFile()
+                val savedSignals: List<Signal> = originalFile.map(::signalConvert)
+                savedSignals.forEach {
+                    pastSignals.add(it)
                 }
             }
         }
