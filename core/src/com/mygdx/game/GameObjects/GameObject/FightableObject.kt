@@ -6,7 +6,7 @@ import com.mygdx.game.Managers.Stats
 import com.mygdx.game.UI.HealthStrategy
 
 enum class FlyingState{FLYING, NOTFLYING}
-enum class State{NORMAL, STUNNED}
+enum class State{NORMAL, STUNNED,SHIELDED}
 
 abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : MoveableObject(gameObjectData, size) {
     var cannotMoveCount = 0

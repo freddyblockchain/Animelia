@@ -13,7 +13,6 @@ import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
 class RockThrowAbility(override val attachedFightableObject: FightableObject): KeyAbility {
-    override val triggerKey = Input.Keys.NUM_3
     override val abilityName = AbilityName.RockThrow
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIGHTING
 

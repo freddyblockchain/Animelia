@@ -64,7 +64,7 @@ class IcePenguinData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/icepenguin-straight.png","Animelias/icepenguin-right.png","Animelias/icepenguin-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.IceYeti)
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.IceCocoon)
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
 }
 class FireHippoData(): AnimeliaData {

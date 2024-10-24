@@ -14,6 +14,7 @@ import com.mygdx.game.GameModes.AnimationModes.DeathMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.Timer.CooldownTimer
@@ -50,7 +51,9 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     }
 
     override fun render(batch: SpriteBatch) {
-        setAnimeliaSpriteTexture(this, animeliaInfo)
+        if(this.state == State.NORMAL){
+            setAnimeliaSpriteTexture(this, animeliaInfo)
+        }
         super.render(batch)
 
         if(playerEnvironmentState == PlayerEnvironmentState.COLD){

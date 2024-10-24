@@ -14,6 +14,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -85,7 +86,7 @@ class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
 }
 class SpikesCollision(val spikes: Spikes): DefaultAreaEntranceCollition(){
     override fun actionWhileInside() {
-        if(spikes.spikesActive){
+        if(spikes.spikesActive && player.state != State.SHIELDED){
             //hack right now
             player.setPosition(spikes.goToPosition.currentPosition())
         }

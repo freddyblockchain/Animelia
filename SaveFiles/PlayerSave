@@ -1,1 +1,1 @@
-{"inventory":{"eggs":["FIRE","ICE"],"ownedAbilities":["TailSwipe","Fireball","Icicle"]},"stats":{},"currentAnimelia":"IcePenguin","pos":{"x":-1536.0,"y":-1312.0},"areaIdentifier":"Ice_castle"}
+{"inventory":{"gold":7,"eggs":["FIRE","ICE"],"ownedAbilities":["TailSwipe","Fireball","Icicle","IceCocoon"],"materialItems":{"ANIMELIABONE":4}},"stats":{},"currentAnimelia":"IcePenguin","pos":{"x":-1536.0,"y":-1312.0},"areaIdentifier":"Ice_castle"}

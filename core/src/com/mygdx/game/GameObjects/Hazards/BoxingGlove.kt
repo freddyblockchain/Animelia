@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import RemoveObjectSignal
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
@@ -24,6 +25,7 @@ import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.AnimeliaCustomFields
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -81,7 +83,9 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
 class BoxingGloveCollsion(val boxingGlove: BoxingGlove): MoveCollision() {
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Player){
-            if(player.state == State.NORMAL){
+            if(player.state == State.SHIELDED){
+                SignalManager.emitSignal(RemoveObjectSignal(boxingGlove.gameObjectIid))
+            }else if (player.state == State.NORMAL){
                 player.state = State.STUNNED
                 changeMode(SpinningAnimationMode(mainMode, endPos = boxingGlove.goToPosition.currentPosition()))
             }

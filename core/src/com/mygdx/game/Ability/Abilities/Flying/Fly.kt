@@ -14,7 +14,6 @@ import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
 class Fly(override val attachedFightableObject: FightableObject): KeyAbility {
-    override val triggerKey = Input.Keys.NUM_2
     override val abilityName = AbilityName.Fly
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FLYING
 

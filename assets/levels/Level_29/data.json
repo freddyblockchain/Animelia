@@ -131,17 +131,6 @@
 			},
 			{
 				"id": "IceFloor",
-				"iid": "3ebc53a0-73f0-11ef-b6cd-9b9a229cdbc0",
-				"layer": "Entities",
-				"x": 0,
-				"y": 384,
-				"width": 32,
-				"height": 32,
-				"color": 2943221,
-				"customFields" : {}
-			},
-			{
-				"id": "IceFloor",
 				"iid": "5ebc7720-73f0-11ef-b6cd-9f47ac9cbc54",
 				"layer": "Entities",
 				"x": 0,
