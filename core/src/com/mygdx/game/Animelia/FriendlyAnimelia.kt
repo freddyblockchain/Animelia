@@ -57,7 +57,7 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
             cityPosEntityRefData.entityIid,
             cityPosEntityRefData.levelIid
         ) as AnimeliaPosition
-        this.sprite.texture = animeliaData.gameTexture
+        this.sprite.texture = DefaultTextureHandler.getTexture(animeliaData.textureName)
     }
 
     fun isConditionsFulfilled(): Boolean {

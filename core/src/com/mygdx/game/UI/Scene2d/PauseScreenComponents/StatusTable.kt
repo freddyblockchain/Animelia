@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
+import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
 import com.mygdx.game.generalSaveState
@@ -24,7 +25,7 @@ class StatusTable(color: Color): Table() {
         val animeliaTable = Table()
         val trainingTable = Table()
 
-        val textureRegion = TextureRegion(player.animeliaInfo.gameTexture)
+        val textureRegion = TextureRegion(DefaultTextureHandler.getTexture(player.animeliaInfo.textureName))
 
         // Create a TextureRegionDrawable from the TextureRegion
         val textureRegionDrawable = TextureRegionDrawable(textureRegion)

@@ -60,7 +60,7 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
 
         ANIMELIA_ENTITY.entries.forEach {
             val data = getAnimeliaData(it)
-            val textureRegionDrawable = TextureRegionDrawable(data.gameTexture)
+            val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture(data.textureName))
             textureRegionDrawable.setMinSize(64f,64f)
             val button = ImageButton(textureRegionDrawable)
             if(data.animeliaStage == ANIMELIA_STAGE.JUNIOR){

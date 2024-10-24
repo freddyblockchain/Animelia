@@ -13,6 +13,13 @@ val particleAssets = AssetManager()
 val musicAssets = AssetManager()
 val soundAssets = AssetManager()
 
+fun resetAssetManagers(){
+    textureAssets.clear()
+    particleAssets.clear()
+    musicAssets.clear()
+    soundAssets.clear()
+}
+
 object DefaultTextureHandler : TextureHandler {
     override fun getTexture(textureName: String): Texture {
         if (!textureAssets.isLoaded(textureName)) {

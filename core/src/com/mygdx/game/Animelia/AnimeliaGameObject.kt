@@ -80,7 +80,7 @@ fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaDa
         animeliaInfo.animeliaAnimation.setSpriteTextureBasedOnAnimation(animelia.sprite)
         animelia.isMoving = false
     } else {
-        animelia.sprite.texture = animeliaInfo.gameTexture
+        animelia.sprite.texture = DefaultTextureHandler.getTexture(animeliaInfo.textureName)
         animeliaInfo.animeliaAnimation.reset()
     }
 }

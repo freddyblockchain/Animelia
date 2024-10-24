@@ -45,6 +45,8 @@ class AreaManager {
         }
 
         fun changeActiveArea(areaIdentifier: String){
+
+
             //cleanup old area
             val currentArea = activeArea!!
             currentArea.gameObjects.clear()

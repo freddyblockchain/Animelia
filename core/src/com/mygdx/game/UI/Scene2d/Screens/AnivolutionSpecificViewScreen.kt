@@ -42,7 +42,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
 
     fun addEntity(entity: ANIMELIA_ENTITY, table: Table){
         val data = getAnimeliaData(entity)
-        val textureRegionDrawable = TextureRegionDrawable(data.gameTexture)
+        val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture(data.textureName))
         textureRegionDrawable.setMinSize(64f,64f)
         val button = ImageButton(textureRegionDrawable)
         if(data.animeliaStage == ANIMELIA_STAGE.JUNIOR){

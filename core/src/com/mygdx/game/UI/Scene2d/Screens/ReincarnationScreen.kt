@@ -52,7 +52,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     // Define what should happen when the button is clicked
                     val id = confirmSound.play()
                     confirmSound.setVolume(id,0.2f)
-                    player.animeliaInfo.gameTexture = texture
+                    player.animeliaInfo.textureName = textureString
                     generalSaveState.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
                     generalSaveState.stats.tp = PlayerStatus.baseTp
                     generalSaveState.updateSaveState()

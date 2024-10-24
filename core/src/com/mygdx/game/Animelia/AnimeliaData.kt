@@ -10,7 +10,7 @@ import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.player
 
 interface AnimeliaData {
-    var gameTexture: Texture
+    var textureName: String
     val elemental_types: List<ELEMENTAL_TYPE>
     val animeliaStage: ANIMELIA_STAGE
     val animeliaAnimation: AnimeliaAnimation
@@ -48,7 +48,7 @@ class InArea(val areaIdentifer: String): AnivolutionCondition{
 }
 
 class FireArmadilloData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/firearmadillo-straight.png")
+    override var textureName = "Animelias/firearmadillo-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE, ELEMENTAL_TYPE.FIGHTING)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
@@ -58,7 +58,7 @@ class FireArmadilloData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 }
 class IcePenguinData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/icepenguin-straight.png")
+    override var textureName = "Animelias/icepenguin-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/icepenguin-straight.png","Animelias/icepenguin-right.png","Animelias/icepenguin-left.png")
@@ -68,7 +68,7 @@ class IcePenguinData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
 }
 class FireHippoData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/firehippo-straight.png")
+    override var textureName = "Animelias/firehippo-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firehippo-straight.png","Animelias/firehippo-right.png","Animelias/firehippo-left.png")
@@ -78,7 +78,7 @@ class FireHippoData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 }
 class FireDragonData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Butler.png")
+    override var textureName = "Butler.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
@@ -88,7 +88,7 @@ class FireDragonData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.FireDragon
 }
 class IceDinosaurData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Butler.png")
+    override var textureName = "Butler.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
@@ -98,7 +98,7 @@ class IceDinosaurData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.IceDinasaur
 }
 class IceYetiData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/ice-yeti-straight.png")
+    override var textureName = "Animelias/ice-yeti-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/ice-yeti-straight.png","Animelias/ice-yet-right.png","Animelias/ice-yeti-left.png")
@@ -109,7 +109,7 @@ class IceYetiData(): AnimeliaData {
 }
 
 class BirdData(): AnimeliaData {
-    override var gameTexture = DefaultTextureHandler.getTexture("Animelias/bird-straight.png")
+    override var textureName = "Animelias/bird-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIGHTING)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/bird-straight.png","Animelias/bird-right.png","Animelias/bird-left.png")
