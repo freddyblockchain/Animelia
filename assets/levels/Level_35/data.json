@@ -111,6 +111,12 @@
 						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
 						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Entity_ref2": {
+						"entityIid": "f7d94980-73f0-11ef-9c51-7d9b0106ce2a",
+						"layerIid": "f0ae7762-73f0-11ef-bff8-379cd1363fc0",
+						"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			}

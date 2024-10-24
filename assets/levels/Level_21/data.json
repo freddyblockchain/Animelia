@@ -48,19 +48,6 @@
 				"customFields" : {}
 			}
 		],
-		"IceStatue": [
-			{
-				"id": "IceStatue",
-				"iid": "f990d0a0-73f0-11ef-b6cd-e703822707c4",
-				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 128,
-				"height": 32,
-				"color": 15389866,
-				"customFields" : {}
-			}
-		],
 		"Door": [
 			{
 				"id": "Door",
@@ -80,6 +67,19 @@
 					},
 					"Direction": "Down"
 				}
+			}
+		],
+		"Statue": [
+			{
+				"id": "Statue",
+				"iid": "f7d94980-73f0-11ef-9c51-7d9b0106ce2a",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 64,
+				"height": 32,
+				"color": 15389866,
+				"customFields" : {}
 			}
 		]
 	}

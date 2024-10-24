@@ -16,3 +16,13 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"57f70890-73f0-11ef-b6cd-97708a8c23ba"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"b8d7e600-73f0-11ef-b6cd-0d251339a4ce"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"bc3da640-73f0-11ef-b6cd-759ec58b9f1a"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Ice_castle","crystalEntityIId":"f2ad29b0-73f0-11ef-b6cd-81553ee56283","statueEntityIid":"f7d94980-73f0-11ef-9c51-7d9b0106ce2a"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Ice_castle","crystalEntityIId":"9cc03560-73f0-11ef-b6cd-733b1fdc2dc8","statueEntityIid":"f7d94980-73f0-11ef-9c51-7d9b0106ce2a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo"}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"FireArmadillo"}
+{"signaltype":"RAILWAY_FIXED","entityIid":"81fc07a0-73f0-11ef-995c-5303afa1d73e"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World3","entityIid":"93ca0a50-73f0-11ef-995c-f5dfe207d030"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"c151c580-73f0-11ef-995c-374d462c62e2"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Iglo","entityIid":"ad7b3b10-4ce0-11ef-9c31-a3518b8cc947"}

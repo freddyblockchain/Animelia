@@ -4,7 +4,7 @@ import com.mygdx.game.Signal.Signal
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
-enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED}
+enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED }
 
 @Serializable
 class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJECT) {
@@ -17,6 +17,10 @@ class RailwayFixedSignal(val entityIid: String): Signal(SIGNALTYPE.RAILWAY_FIXED
 
 @Serializable
 class AbilityGainedSignal() : Signal(SIGNALTYPE.ABILITY_GAINED) {
+
+}
+@Serializable
+class CrystalActivatedSignal(val crystalEntityIId: String, val statueEntityIid: String) : Signal(SIGNALTYPE.CRYSTAL_ACTIVATED) {
 
 }
 
@@ -42,5 +46,6 @@ fun signalConvert(signalString: String): Signal{
         SIGNALTYPE.ANIMELIA_RECRUITED -> Json.decodeFromString<AnimeliaRecruitedSignal>(signalString)
         SIGNALTYPE.ANIMELIA_CITY_TALKED_WITH -> Json.decodeFromString<AnimeliaCityTalkedWithSignal>(signalString)
         SIGNALTYPE.RAILWAY_FIXED -> Json.decodeFromString<RailwayFixedSignal>(signalString)
+        SIGNALTYPE.CRYSTAL_ACTIVATED -> Json.decodeFromString<CrystalActivatedSignal>(signalString)
     }
 }
