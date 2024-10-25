@@ -12,7 +12,7 @@ class AnimeliaAnimation(val straight: String, val right: String, val left: Strin
     var rightTexture = DefaultTextureHandler.getTexture(right)
     var leftTexture = DefaultTextureHandler.getTexture(left)
 
-    val textures = listOf(straightTexture, rightTexture, straightTexture, leftTexture)
+    var textures = listOf(straightTexture, rightTexture, straightTexture, leftTexture)
 
     var textureIndex = 0
 
@@ -30,6 +30,14 @@ class AnimeliaAnimation(val straight: String, val right: String, val left: Strin
     override fun reset(){
         currentFrame = 8
         textureIndex = 0
+    }
+
+    fun initTextures(){
+        straightTexture = DefaultTextureHandler.getTexture(straight)
+        rightTexture = DefaultTextureHandler.getTexture(right)
+        leftTexture = DefaultTextureHandler.getTexture(left)
+
+        textures = listOf(straightTexture, rightTexture, straightTexture, leftTexture)
     }
 
     override fun render(batch: SpriteBatch) {

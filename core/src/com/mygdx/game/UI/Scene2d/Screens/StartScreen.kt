@@ -9,14 +9,13 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.*
-import com.mygdx.game.Animation.AreaTransitionAnimation
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.TalkMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.Managers.*
-import com.mygdx.game.Saving.SavingHandler.Companion.InitHandleSaving
+import com.mygdx.game.Saving.SavingHandler.Companion.InitPlayerState
 import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
 import com.mygdx.game.UI.Scene2d.bigLabel
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
@@ -99,7 +98,8 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
     }
 
     fun initAndGoToGame(){
-        InitHandleSaving()
+        InitPlayerState()
+        SignalManager.InitSignalState()
         changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()

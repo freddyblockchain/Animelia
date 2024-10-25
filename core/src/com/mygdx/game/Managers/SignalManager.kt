@@ -43,7 +43,7 @@ class SignalManager {
                 }
             }
 
-            fun initSignals(){
+            fun InitSignalState(){
                 initSignalListeners()
                 val originalFile = FileHandler.readSignalFile()
                 val savedSignals: List<Signal> = originalFile.map(::signalConvert)

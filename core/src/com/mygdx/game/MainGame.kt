@@ -41,7 +41,6 @@ class MainGame : ApplicationAdapter() {
         initAreas()
         AreaManager.setActiveArea("World1")
         FontManager.initFonts()
-        SignalManager.initSignals()
 
         inputProcessor = InGameInputProcessor()
         Gdx.input.inputProcessor = inputProcessor

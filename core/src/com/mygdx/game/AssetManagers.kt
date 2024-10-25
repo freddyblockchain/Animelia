@@ -18,6 +18,8 @@ fun resetAssetManagers(){
     particleAssets.clear()
     musicAssets.clear()
     soundAssets.clear()
+
+    player.animeliaInfo.animeliaAnimation.initTextures()
 }
 
 object DefaultTextureHandler : TextureHandler {

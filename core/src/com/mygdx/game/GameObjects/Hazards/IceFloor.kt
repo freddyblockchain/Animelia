@@ -46,4 +46,6 @@ class IceFloorCollision(): DefaultAreaEntranceCollition(){
         player.setRotation(player.currentUnitVector, player, 90f)
     }
 
+
+
 }
