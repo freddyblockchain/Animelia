@@ -4,7 +4,7 @@
 	"x": 0,
 	"y": 0,
 	"width": 480,
-	"height": 544,
+	"height": 736,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -185,6 +185,46 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Right"
+				}
+			}
+		],
+		"Lava": [
+			{
+				"id": "Lava",
+				"iid": "8835d750-73f0-11ef-8719-bd4db6379d16",
+				"layer": "Entities",
+				"x": 64,
+				"y": 544,
+				"width": 128,
+				"height": 96,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"FireGate": [
+			{
+				"id": "FireGate",
+				"iid": "d9df7340-73f0-11ef-8719-7197a201cbcc",
+				"layer": "Entities",
+				"x": 320,
+				"y": 544,
+				"width": 64,
+				"height": 32,
+				"color": 16217634,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]
