@@ -1,5 +1,6 @@
 
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
+import com.mygdx.game.EntityRefData
 import com.mygdx.game.Signal.Signal
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -25,7 +26,7 @@ class CrystalActivatedSignal(val crystalEntityIId: String, val statueEntityIid: 
 }
 
 @Serializable
-class AnimeliaRecruitedSignal(val animeliaEntity: ANIMELIA_ENTITY) : Signal(SIGNALTYPE.ANIMELIA_RECRUITED) {
+class AnimeliaRecruitedSignal(val animeliaEntity: ANIMELIA_ENTITY,val posX: Float, val posY: Float) : Signal(SIGNALTYPE.ANIMELIA_RECRUITED) {
 
 }
 

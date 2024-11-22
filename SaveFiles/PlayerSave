@@ -1,1 +1,1 @@
-{"inventory":{},"stats":{},"currentAnimelia":"FireArmadillo","pos":{"x":120.0,"y":-200.0},"areaIdentifier":"World1"}
+{"inventory":{"gold":7,"entityBooks":["IceYeti"],"eggs":["FIRE","ICE"],"ownedAbilities":["TailSwipe","Fireball","Icicle","IceCocoon"],"materialItems":{"ANIMELIABONE":2}},"stats":{},"currentAnimelia":"IcePenguin","pos":{"x":-256.0,"y":-128.0},"areaIdentifier":"World1"}

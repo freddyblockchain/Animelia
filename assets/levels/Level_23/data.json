@@ -26,5 +26,27 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "3d529e20-9b00-11ef-9488-cddda9c8ae83",
+				"layer": "Entities",
+				"x": 96,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "IceBird",
+					"AnimeliaCityPos": {
+						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		]
+	}
 }

@@ -4,17 +4,18 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
-import com.mygdx.game.Animelia.FriendlyAnimelia
+import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
+import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjects.Structures.Library
+import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.generalSaveState
 import com.mygdx.game.plus
 
-class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData,
+class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData,
     cityPosEntityId
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
@@ -32,6 +33,14 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
 
     override val goingToCitySpeech = listOf(citySpeech1, citySpeech2, citySpeech3)
 
+    init {
+        this.rotateByAmount(180f)
+        animeliaRecruitmentConditions.add(AmountOfBooksGotten(1))
+    }
+}
+
+class IcePenguinInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
+    override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
     val inCitySpeech = SpeechData("Ice Penguin", "I've recreated the library!")
     val inCitySpeech2 = SpeechData("Ice Penguin", "I've really missed this place, and the scent of books")
     val inCitySpeech3 = SpeechData("Ice Penguin", "I get so excited talking about books... bring me more!")
@@ -60,17 +69,11 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
 
     override fun recruitmentAction() {
         val firstArea = AreaManager.getArea("World1")
-        this.setPosition(cityPosition.currentPosition())
-        firstArea.gameObjects.add(this)
-        val library = Library(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 64, height = 64))
-        library.setPosition(cityPosition.currentPosition() + Vector2(this.width * 1.5f, 0f))
+        val library = Library(GameObjectData(x = this.x.toInt() + this.width.toInt(), y=this.y.toInt(), width = 64, height = 64))
+        library.setPosition(this.currentPosition() + Vector2(this.width * 1.5f, 0f))
         firstArea.gameObjects.add(library)
     }
 
-    init {
-        this.rotateByAmount(180f)
-        animeliaRecruitmentConditions.add(AmountOfBooksGotten(1))
-    }
 }
 
 class AmountOfBooksGotten(val amount: Int): AnimeliaRecruitmendCondition {

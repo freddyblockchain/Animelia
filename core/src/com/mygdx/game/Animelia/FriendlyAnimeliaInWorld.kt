@@ -28,7 +28,10 @@ interface AnimeliaRecruitmendCondition {
     fun isConditionFulfilled(): Boolean
 }
 
-abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val cityPosEntityRefData: EntityRefData) :
+abstract class FriendlyAnimeliaInWorld(
+    gameObjectData: GameObjectData,
+    private val cityPosEntityRefData: EntityRefData
+) :
     GameObject(gameObjectData, Vector2(32f, 32f)), RotationalObject by DefaultRotationalObject() {
     abstract val animeliaEntity: ANIMELIA_ENTITY
     val animeliaData by lazy { getAnimeliaData(animeliaEntity) }
@@ -36,17 +39,11 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
 
     abstract val speeches: List<SpeechData>
     open val goingToCitySpeech = listOf<SpeechData>()
-    abstract val inCitySpeeches: List<SpeechData>
-
-    open val conversationOptions: Map<String, Conversation> = mapOf()
 
     val talkSpeechBubble = Sprite(DefaultTextureHandler.getTexture("animeliaTalk.png"))
-    abstract fun recruitmentAction()
-
-    var isRecruited = false
 
 
-    override val collision = FriendlyAnimeliaCollision(this)
+    override val collision = FriendlyAnimeliaInWorldCollision(this)
 
     lateinit var cityPosition: AnimeliaPosition
 
@@ -66,7 +63,7 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
 
     override fun render(batch: SpriteBatch) {
         super.render(batch)
-        if (this.isConditionsFulfilled() && !isRecruited) {
+        if (this.isConditionsFulfilled()) {
             val pos = this.currentMiddle - Vector2(8f, -8f)
             talkSpeechBubble.setPosition(pos.x, pos.y)
             talkSpeechBubble.draw(batch)
@@ -74,41 +71,25 @@ abstract class FriendlyAnimelia(gameObjectData: GameObjectData, private val city
     }
 }
 
-class FriendlyAnimeliaCollision(val friendlyAnimelia: FriendlyAnimelia) : InputCollision() {
+
+class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: FriendlyAnimeliaInWorld) : InputCollision() {
     override val keyCode = Input.Keys.ENTER
     override val insideText = "TALK"
 
     override fun collisionHappened(collidedObject: GameObject) {
 
-
-        if (friendlyAnimelia.isRecruited) {
-            val talkedWithAnimelia =
-                SignalManager.pastSignals.filter { it.signaltype == SIGNALTYPE.ANIMELIA_CITY_TALKED_WITH }
-                    .map { it as AnimeliaCityTalkedWithSignal }
-                    .firstOrNull { it.animeliaEntity == this.friendlyAnimelia.animeliaEntity }
-
-            if(talkedWithAnimelia != null){
-                changeMode(UIMode(PickConversationScreen(mainMode, this.friendlyAnimelia.conversationOptions)))
-            }else {
-                changeMode(TalkMode(Conversation(friendlyAnimelia.inCitySpeeches), mainMode))
-                SignalManager.emitSignal(AnimeliaCityTalkedWithSignal(this.friendlyAnimelia.animeliaEntity))
+        if (friendlyAnimeliaInWorld.isConditionsFulfilled()) {
+            if (friendlyAnimeliaInWorld.goingToCitySpeech.size > 0) {
+                changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.goingToCitySpeech), mainMode))
             }
+            SignalManager.emitSignal(RemoveObjectSignal(this.friendlyAnimeliaInWorld.gameObjectIid))
+            SignalManager.emitSignal(
+                AnimeliaRecruitedSignal(this.friendlyAnimeliaInWorld.animeliaEntity, friendlyAnimeliaInWorld.cityPosition.x, friendlyAnimeliaInWorld.cityPosition.y),
+                areaIdentifier = "World1"
+            )
         } else {
-            if (friendlyAnimelia.isConditionsFulfilled()) {
-                if (friendlyAnimelia.goingToCitySpeech.size > 0) {
-                    changeMode(TalkMode(Conversation(friendlyAnimelia.goingToCitySpeech), mainMode))
-                }
-                SignalManager.emitSignal(RemoveObjectSignal(this.friendlyAnimelia.gameObjectIid))
-                SignalManager.emitSignal(
-                    AnimeliaRecruitedSignal(this.friendlyAnimelia.animeliaEntity),
-                    areaIdentifier = "World1"
-                )
-            } else {
-                changeMode(TalkMode(Conversation(friendlyAnimelia.speeches), mainMode))
-                println("Not Fulfilled Yet")
-            }
+            changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.speeches), mainMode))
+            println("Not Fulfilled Yet")
         }
     }
-
-
 }

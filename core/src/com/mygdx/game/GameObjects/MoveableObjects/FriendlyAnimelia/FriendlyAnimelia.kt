@@ -1,7 +1,9 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
+import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
-import com.mygdx.game.Animelia.FriendlyAnimelia
+import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
+import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.Animelia.getAnimeliaEntity
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
@@ -9,22 +11,30 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
-val friendlyAnimelias = mutableListOf<FriendlyAnimelia>()
 fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaFields = Json.decodeFromJsonElement<AnimeliaCustomFields>(gameObjectData.customFields)
     val animeliaEntity = getAnimeliaEntity(animeliaFields.AnimeliaType)
 
     val friendlyAnimelia = createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos)
-    friendlyAnimelias.add(friendlyAnimelia)
     return friendlyAnimelia
 }
 
-fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimelia{
+fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimeliaInWorld{
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IcePenguin-> IcePenguin(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IceYeti -> IceYeti(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.IceBird -> IceBird(gameObjectData, cityPosRefData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
+    }
+}
+fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vector2): FriendlyAnimeliaInCity{
+    val gameObjectData = GameObjectData(x = position.x.toInt(), y = position.y.toInt(), height = 32, width = 32)
+    return when(animeliaEntity){
+        ANIMELIA_ENTITY.FireArmadillo -> FireArmadilloInCity(gameObjectData)
+        ANIMELIA_ENTITY.IcePenguin-> IcePenguinInCity(gameObjectData)
+        ANIMELIA_ENTITY.IceBird -> IceBirdInCity(gameObjectData)
+        else -> FireArmadilloInCity(gameObjectData)
     }
 }
 

@@ -1,15 +1,12 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
-import com.mygdx.game.Animelia.FriendlyAnimelia
-import com.mygdx.game.DefaultTextureHandler
+import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
+import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.EntityRefData
-import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.PlayerStatus
@@ -17,7 +14,7 @@ import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.plus
 
-class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimelia(gameObjectData, cityPositionEntityId) {
+class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 
     val speech1 = SpeechData("Me", "Do you wanna come to the city?")
@@ -31,7 +28,13 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
     val citySpeech3 = SpeechData("Fire Armadillo", "But you have proven yourself. Alright, i'll come back to the city.")
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
+    init {
+        animeliaRecruitmentConditions.add(AmountOfAnimeliasSlain(3))
+    }
+}
 
+class FireArmadilloInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
+    override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
     val inCitySpeechOne = SpeechData("Fire Armadillo", "Its good to be back!")
     val inCitySpeechTwo = SpeechData("Fire Armadillo", "I build a training statue")
     val inCitySpeechThree = SpeechData("Fire Armadillo", "Speak to me for training information")
@@ -58,19 +61,13 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
 
     override val conversationOptions = mapOf("Stats" to statsConversation, "Training Points" to trainingPointsConversation)
 
-
     override fun recruitmentAction() {
-        val trainingStation = TrainingStation(GameObjectData(x = cityPosition.x.toInt() + this.width.toInt(), y=cityPosition.y.toInt(), width = 32, height = 64), true)
+        val trainingStation = TrainingStation(GameObjectData(x = this.x.toInt() + this.width.toInt(), y=this.y.toInt(), width = 32, height = 64), true)
         val firstArea = AreaManager.getArea("World1")
-        this.setPosition(cityPosition.currentPosition())
-        trainingStation.setPosition(cityPosition.currentPosition() + Vector2(this.width * 1.5f, 0f))
-        firstArea.gameObjects.add(this)
+        trainingStation.setPosition(this.currentPosition() + Vector2(this.width * 1.5f, 0f))
         firstArea.gameObjects.add(trainingStation)
     }
 
-    init {
-        animeliaRecruitmentConditions.add(AmountOfAnimeliasSlain(3))
-    }
 }
 
 class AmountOfAnimeliasSlain(val amount: Int): AnimeliaRecruitmendCondition{

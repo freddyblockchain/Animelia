@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils.cos
 import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
+import com.mygdx.game.Ability.convertNameToAbility
 import com.mygdx.game.Animation.AreaTransitionAnimation
 import com.mygdx.game.Animelia.anivolutionCheck
 import com.mygdx.game.Area.Area
@@ -21,6 +22,7 @@ import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.SVector2
+import com.mygdx.game.UI.MainGameUi.AbilityTooltipRow
 import kotlin.math.PI
 
 fun InitArea(levelName: String){
@@ -89,6 +91,11 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     generalSaveState.updateSaveState()
 
     AnimationManager.animationManager.add(AreaTransitionAnimation())
+
+    player.activeAbilities.forEach {
+        player.activeAbilities[it.key] = convertNameToAbility(it.value!!.abilityName.name).keyAbility
+    }
+    mainMode.abilityRowUi.updateToolTips()
 }
 
 fun initAreas(){

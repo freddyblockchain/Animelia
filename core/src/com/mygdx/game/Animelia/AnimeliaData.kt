@@ -63,7 +63,7 @@ class IcePenguinData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/icepenguin-straight.png","Animelias/icepenguin-right.png","Animelias/icepenguin-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.IceYeti)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.IceYeti, ANIMELIA_ENTITY.IceBird)
     override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.IceCocoon)
     override val animeliaEntity = ANIMELIA_ENTITY.IcePenguin
 }
@@ -119,6 +119,17 @@ class BirdData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.Bird
 }
 
+class IceBirdData(): AnimeliaData {
+    override var textureName = "Animelias/IceBird-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.FLYING)
+    override val animeliaStage = ANIMELIA_STAGE.MASTER
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(20))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.IceCocoon, AbilityName.Icicle)
+    override val animeliaEntity = ANIMELIA_ENTITY.IceBird
+}
+
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo->  {
@@ -141,6 +152,9 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         }
         ANIMELIA_ENTITY.Bird -> {
             BirdData()
+        }
+        ANIMELIA_ENTITY.IceBird -> {
+            IceBirdData()
         }
     }
 }
