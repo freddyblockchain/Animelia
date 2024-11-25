@@ -8,6 +8,7 @@ import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.Egg
+import com.mygdx.game.Items.KeyItem
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Items.MaterialItem
 import com.mygdx.game.Managers.AnimationManager
@@ -22,7 +23,8 @@ class Inventory() {
     val entityBooks: MutableList<ANIMELIA_ENTITY> = mutableListOf()
     val eggs: MutableList<Egg> = mutableListOf(Egg.FIRE)
     val ownedAbilities: MutableList<AbilityName> = mutableListOf()
-    val materialItems: MutableMap<Material,Int> = mutableMapOf(Material.ANIMELIABONE to 0)
+    val materialItems: MutableMap<Material,Int> = mutableMapOf(Material.ANIMELIABONE to 0, Material.somthing1 to 1, Material.something2 to 1, Material.something3 to 1)
+    val keyItems: MutableList<KeyItem> = mutableListOf(KeyItem.FROZENHEART)
     val railwayConnections: MutableList<RailwayTransportData> = mutableListOf()
     fun goldReceived(amount: Int,pos: Vector2){
         gold += amount

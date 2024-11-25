@@ -10,11 +10,18 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
 
-enum class Material{ANIMELIABONE}
+enum class Material{ANIMELIABONE, somthing1, something2, something3}
+enum class KeyItem{FROZENHEART}
 
 fun getMaterialTexture(material: Material): Texture{
     return when(material){
         Material.ANIMELIABONE -> DefaultTextureHandler.getTexture("AnimeliaBone.png")
+        else -> DefaultTextureHandler.getTexture("AnimeliaBone.png")
+    }
+}
+fun getKeyItemTextures(keyItem: KeyItem): Texture{
+    return when(keyItem){
+        KeyItem.FROZENHEART -> DefaultTextureHandler.getTexture("frozen-heart.png")
     }
 }
 
