@@ -24,5 +24,5 @@
 {"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Ice_castle","crystalEntityIId":"9cc03560-73f0-11ef-b6cd-733b1fdc2dc8","statueEntityIid":"f7d94980-73f0-11ef-9c51-7d9b0106ce2a"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"3d529e20-9b00-11ef-9488-cddda9c8ae83"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"IceBird","posX":160.0,"posY":-416.0}
-{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"IceBird"}
 {"signaltype":"RAILWAY_FIXED","entityIid":"81fc07a0-73f0-11ef-995c-5303afa1d73e"}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"IceBird"}

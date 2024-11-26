@@ -24,7 +24,7 @@ class Inventory() {
     val eggs: MutableList<Egg> = mutableListOf(Egg.FIRE)
     val ownedAbilities: MutableList<AbilityName> = mutableListOf()
     val materialItems: MutableMap<Material,Int> = mutableMapOf(Material.ANIMELIABONE to 0, Material.somthing1 to 1, Material.something2 to 1, Material.something3 to 1)
-    val keyItems: MutableList<KeyItem> = mutableListOf(KeyItem.FROZENHEART)
+    val keyItems: MutableList<KeyItem> = mutableListOf()
     val railwayConnections: MutableList<RailwayTransportData> = mutableListOf()
     fun goldReceived(amount: Int,pos: Vector2){
         gold += amount

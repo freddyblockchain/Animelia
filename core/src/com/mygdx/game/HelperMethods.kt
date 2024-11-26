@@ -18,6 +18,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerEnvironmentState
 import com.mygdx.game.GameObjects.Other.Wall
+import com.mygdx.game.Items.KeyItem
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
@@ -80,7 +81,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 
     if(getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types)){
         player.playerEnvironmentState = PlayerEnvironmentState.COLD
-    }else if(getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types)){
+    }else if(getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types) && KeyItem.FROZENHEART !in generalSaveState.inventory.keyItems){
         player.playerEnvironmentState = PlayerEnvironmentState.HOT
     } else{
         player.playerEnvironmentState = PlayerEnvironmentState.NORMAL

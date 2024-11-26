@@ -38,7 +38,6 @@ class InventoryTable(color: Color): Table() {
             textureRegionDrawable.setMinSize(128f,128f)
             itemTable.add(ImageButton(textureRegionDrawable)).expand()
             if( (i + 1) % 3 == 0){
-                println("You in here??")
                 itemTable.row()
             }
         }
