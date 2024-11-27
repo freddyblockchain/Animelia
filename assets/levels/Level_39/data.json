@@ -1,0 +1,125 @@
+{
+	"identifier": "Level_39",
+	"uniqueIdentifer": "8b5f9690-9b00-11ef-8045-5b3be79e0aa9",
+	"x": 208,
+	"y": -1152,
+	"width": 64,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+			"dir": "s"
+		},
+		{
+			"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "World3"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"Flames": [
+			{
+				"id": "Flames",
+				"iid": "d5bfa860-9b00-11ef-8045-2bfb5e9004a8",
+				"layer": "Entities",
+				"x": 0,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d604c7b0-9b00-11ef-8045-4f3295058f5c",
+				"layer": "Entities",
+				"x": 32,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d69017c0-9b00-11ef-8045-49957700ec86",
+				"layer": "Entities",
+				"x": 0,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d6b3cc60-9b00-11ef-8045-4da6f399f450",
+				"layer": "Entities",
+				"x": 32,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d71ec330-9b00-11ef-8045-312114ee7021",
+				"layer": "Entities",
+				"x": 0,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d757fba0-9b00-11ef-8045-db71df2ab5d7",
+				"layer": "Entities",
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d854d230-9b00-11ef-8045-5bd98b439db0",
+				"layer": "Entities",
+				"x": 0,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			},
+			{
+				"id": "Flames",
+				"iid": "d86e74b0-9b00-11ef-8045-e3dde4c80e5a",
+				"layer": "Entities",
+				"x": 32,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12087120,
+				"customFields" : {}
+			}
+		]
+	}
+}

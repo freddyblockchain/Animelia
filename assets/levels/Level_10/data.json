@@ -18,6 +18,10 @@
 		{
 			"levelIid": "6283c240-4ce0-11ef-9290-f3bee5d80080",
 			"dir": "e"
+		},
+		{
+			"levelIid": "8b5f9690-9b00-11ef-8045-5b3be79e0aa9",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -35,21 +39,6 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Rock": [
-			{
-				"id": "Rock",
-				"iid": "bf70d510-25d0-11ef-8e0b-1d07fec99f41",
-				"layer": "Entities",
-				"x": 224,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 25
-				}
-			}
-		],
 		"AnimeliaEnemy": [
 			{
 				"id": "AnimeliaEnemy",
