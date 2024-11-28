@@ -34,7 +34,8 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
 
     lateinit var goToPosition: AnimeliaPosition
     val posEntityRef = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Entity_ref
-    override var speed  = 0.5f
+    val nextInt = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Speed
+    override var speed  = nextInt * 0.5f
     override val cannotMoveStrategy = MoveRegardless()
 
     override val texture = DefaultTextureHandler.getTexture("BoxingGlove.png")
@@ -96,6 +97,6 @@ class BoxingGloveCollsion(val boxingGlove: BoxingGlove): MoveCollision() {
 }
 
 @Serializable
-data class BoxingGloveCustomFields(val Entity_ref: EntityRefData, val Direction: String){
+data class BoxingGloveCustomFields(val Entity_ref: EntityRefData, val Direction: String, val Speed: Int){
 
 }

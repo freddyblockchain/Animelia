@@ -48,7 +48,8 @@
 						"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Direction": "Right"
+					"Direction": "Right",
+					"Speed": 1
 				}
 			}
 		],

@@ -48,6 +48,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
 
     init {
         currentHealth = maxHealth
+        polygon.scale(-0.2f)
     }
 
     override fun render(batch: SpriteBatch) {
