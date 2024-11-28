@@ -29,3 +29,5 @@
 {"signaltype":"REMOVE_OBJECT","entityIid":"47a71230-25d0-11ef-9fe3-8d44c4d818ba"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"474c4800-25d0-11ef-9fe3-35697a08b4a0"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"48ace970-25d0-11ef-9fe3-5bc2f9155175"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"d604c7b0-9b00-11ef-8045-4f3295058f5c"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"d5bfa860-9b00-11ef-8045-2bfb5e9004a8"}

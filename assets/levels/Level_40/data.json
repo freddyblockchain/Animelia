@@ -36,8 +36,8 @@
 				"id": "FireLightBulb",
 				"iid": "57ff02d0-9b00-11ef-8045-6b0898565b23",
 				"layer": "EntitiesOnTop",
-				"x": 64,
-				"y": 64,
+				"x": 224,
+				"y": 0,
 				"width": 32,
 				"height": 48,
 				"color": 4098376,
@@ -71,7 +71,7 @@
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
-				"width": 96,
+				"width": 32,
 				"height": 64,
 				"color": 12470831,
 				"customFields": {
@@ -85,12 +85,12 @@
 			},
 			{
 				"id": "Lava",
-				"iid": "29288080-9b00-11ef-8045-31272214d835",
+				"iid": "5aac7710-9b00-11ef-a397-e36ea6fb9a75",
 				"layer": "Entities",
-				"x": 160,
-				"y": 0,
-				"width": 96,
-				"height": 64,
+				"x": 32,
+				"y": 32,
+				"width": 64,
+				"height": 32,
 				"color": 12470831,
 				"customFields": {
 					"Entity_ref": {
@@ -109,11 +109,11 @@
 				"layer": "Entities",
 				"x": 96,
 				"y": 0,
-				"width": 64,
+				"width": 96,
 				"height": 64,
 				"color": 6539085,
 				"customFields": {
-					"Direction": "Down"
+					"Direction": "Right"
 				}
 			}
 		],
@@ -123,7 +123,7 @@
 				"iid": "ced9c870-9b00-11ef-8045-0fca7cc1487c",
 				"layer": "Entities",
 				"x": 96,
-				"y": 128,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,

@@ -18,11 +18,9 @@ import com.mygdx.game.mainMode
 
 class Fountain(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
-    override val texture = DefaultTextureHandler.getTexture("TrainingStatue.png")
+    override val texture = DefaultTextureHandler.getTexture("toomstone.png")
     override val layer = Layer.ONGROUND
     override val collision = FountainCollision()
-    override fun render(batch: SpriteBatch) {
-    }
 }
 
 class FountainCollision(): InputCollision(){

@@ -1,0 +1,47 @@
+{
+	"identifier": "Level_42",
+	"uniqueIdentifer": "e71a36a0-9b00-11ef-a397-6544d600574c",
+	"x": -128,
+	"y": -2368,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [],
+	"customFields": {
+		"World": "Vulcano"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "f374e710-9b00-11ef-a397-17e5976864ae",
+				"layer": "Entities",
+				"x": 112,
+				"y": 240,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
+						"layerIid": "5eb46341-9b00-11ef-8045-d52046eabe18",
+						"levelIid": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		]
+	}
+}

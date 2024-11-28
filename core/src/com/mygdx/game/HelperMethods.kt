@@ -100,7 +100,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 }
 
 fun initAreas(){
-    val amountOfLevels = 42
+    val amountOfLevels = 43
     for(i in 0..<amountOfLevels){
         InitArea("levels/Level_$i")
     }

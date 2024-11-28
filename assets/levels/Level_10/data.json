@@ -79,6 +79,19 @@
 					"AnimeliaType": "Fire_Armadillo"
 				}
 			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "380e5ee0-9b00-11ef-a397-033f5e9311fb",
+				"layer": "Entities",
+				"x": 224,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields" : {}
+			}
 		]
 	}
 }
