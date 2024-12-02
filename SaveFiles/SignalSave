@@ -38,3 +38,17 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"96e321f0-9b00-11ef-b959-7dcb3c0878de"}
 {"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"0c968d50-9b00-11ef-b959-11e305c04039"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"04ab0bf0-9b00-11ef-b959-a183ef6861d8"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"3d97f830-9b00-11ef-9017-a39432d437fb"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"f01dae10-9b00-11ef-9017-03629ad887d4"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"4b6cd040-9b00-11ef-9017-3f1721c915d7"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"4d85c530-9b00-11ef-9017-53f417e15c42"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"f13586b0-9b00-11ef-9017-3f5436a6af17"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"8a2d6090-9b00-11ef-9017-e9056621512d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"88757760-9b00-11ef-9017-cfdfe915ee73"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Abandoned_House","crystalEntityIId":"c1643430-9b00-11ef-9017-a1f478f735b9","statueEntityIid":"54b083e0-9b00-11ef-9017-e1f9806eaaed"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"20a32e00-9b00-11ef-9017-6b017ab35cf3"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"2044e160-9b00-11ef-9017-6192b8736f7a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"46471ae4-9b00-11ef-9017-6bf68138fd22"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"46471ae3-9b00-11ef-9017-4daccd1a39d2"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Abandoned_House","crystalEntityIId":"d0dc3f50-9b00-11ef-9017-27ae7904b6a1","statueEntityIid":"54b083e0-9b00-11ef-9017-e1f9806eaaed"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World2","entityIid":"e49e82d0-9b00-11ef-9017-933deec94738"}

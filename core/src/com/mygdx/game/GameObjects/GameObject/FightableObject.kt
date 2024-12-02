@@ -6,6 +6,7 @@ import com.mygdx.game.Managers.Stats
 import com.mygdx.game.UI.HealthStrategy
 
 enum class FlyingState{FLYING, NOTFLYING}
+enum class ReflectingState{REFLECTING, NOTREFLECTING}
 enum class State{NORMAL, STUNNED,SHIELDED}
 
 abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : MoveableObject(gameObjectData, size) {
@@ -17,6 +18,7 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     abstract val healthStrategy: HealthStrategy
     var flyingState = FlyingState.NOTFLYING
     var state = State.NORMAL
+    var reflectState = ReflectingState.NOTREFLECTING
 
 
     override fun move(newUnitVector: Vector2, speed: Float): Boolean {

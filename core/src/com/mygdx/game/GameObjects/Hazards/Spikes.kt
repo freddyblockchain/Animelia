@@ -12,6 +12,7 @@ import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.AnimeliaPosition
+import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.GameObject.State
@@ -86,7 +87,7 @@ class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
 }
 class SpikesCollision(val spikes: Spikes): DefaultAreaEntranceCollition(){
     override fun actionWhileInside() {
-        if(spikes.spikesActive && player.state != State.SHIELDED){
+        if(spikes.spikesActive && player.state != State.SHIELDED && player.flyingState != FlyingState.FLYING ){
             //hack right now
             player.setPosition(spikes.goToPosition.currentPosition())
         }

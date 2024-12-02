@@ -6,7 +6,7 @@ lowMin: 3000.0
 lowMax: 3000.0
 - Count - 
 min: 0
-max: 200
+max: 100
 - Emission - 
 lowMin: 0.0
 lowMax: 0.0
@@ -21,16 +21,18 @@ timeline0: 0.0
 lowMin: 0.0
 lowMax: 0.0
 highMin: 500.0
-highMax: 1000.0
+highMax: 500.0
 relative: false
-scalingCount: 3
+scalingCount: 4
 scaling0: 1.0
 scaling1: 1.0
-scaling2: 0.3
-timelineCount: 3
+scaling2: 1.0
+scaling3: 0.3
+timelineCount: 4
 timeline0: 0.0
 timeline1: 0.66
 timeline2: 1.0
+timeline3: 1.0
 independent: false
 - Life Offset - 
 active: false
@@ -64,8 +66,8 @@ timeline0: 0.0
 - X Scale - 
 lowMin: 0.0
 lowMax: 0.0
-highMin: 32.0
-highMax: 32.0
+highMin: 16.0
+highMax: 16.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -77,8 +79,8 @@ active: false
 active: true
 lowMin: 0.0
 lowMax: 0.0
-highMin: 200.0
-highMax: 0.1
+highMin: 0.0
+highMax: 50.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -124,13 +126,13 @@ highMax: 1.0
 relative: false
 scalingCount: 4
 scaling0: 0.0
-scaling1: 1.0
-scaling2: 0.3898295
+scaling1: 0.0
+scaling2: 1.0
 scaling3: 0.0
 timelineCount: 4
 timeline0: 0.0
-timeline1: 0.2
-timeline2: 0.7916667
+timeline1: 2.1192763E-7
+timeline2: 1.0
 timeline3: 1.0
 - Options - 
 attached: false

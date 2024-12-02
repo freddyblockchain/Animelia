@@ -31,6 +31,36 @@
 		"Beach.png"
 	],
 	"entities": {
+		"BoulderGenerator": [
+			{
+				"id": "BoulderGenerator",
+				"iid": "4b6cd040-9b00-11ef-9017-3f1721c915d7",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true
+				}
+			},
+			{
+				"id": "BoulderGenerator",
+				"iid": "4d85c530-9b00-11ef-9017-53f417e15c42",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true
+				}
+			}
+		],
 		"Spikes": [
 			{
 				"id": "Spikes",

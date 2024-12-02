@@ -23,6 +23,11 @@ class DefaultRotationalObject: RotationalObject {
     }
 }
 
+fun rotateByAmount(amount: Float, gameObject: GameObject){
+    gameObject.polygon.rotate(amount)
+    gameObject.sprite.rotate(amount)
+}
+
 fun unitVectorToAngle(unitVector: Vector2): Float {
     return (atan2(unitVector.y, unitVector.x) * 180 / PI).toFloat()
 }

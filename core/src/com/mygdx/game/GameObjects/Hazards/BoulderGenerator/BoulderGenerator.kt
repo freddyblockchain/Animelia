@@ -1,11 +1,13 @@
 package com.mygdx.game.GameObjects.Hazards.BoulderGenerator
 
+import RemoveObjectSignal
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animation.EffectAnimation
 import com.mygdx.game.Collisions.CannotMoveCollision
+import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.DefaultParticleHandler
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
@@ -15,6 +17,7 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.RockProjectile
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.Timer.CooldownTimer
 import com.mygdx.game.minus
@@ -27,7 +30,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     val customFields = Json.decodeFromJsonElement<BoulderGeneratorCustomFields>(gameObjectData.customFields)
     val direction = getDirectionFromString(customFields.Direction)
     val automatic = customFields.Automatic
-    override val collision = CannotMoveCollision()
+    override val collision = BoulderGeneratorCollision(this)
     override val texture = DefaultTextureHandler.getTexture("BoulderGenerator.png")
 
     val timer = CooldownTimer(3f)
@@ -92,3 +95,13 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
 }
 @Serializable
 class BoulderGeneratorCustomFields(val Direction: String, val Automatic: Boolean)
+
+class BoulderGeneratorCollision(val boulderGenerator: BoulderGenerator): MoveCollision(){
+    override var canMoveAfterCollision = false
+    override fun collisionHappened(collidedObject: GameObject) {
+        if(collidedObject is RockProjectile){
+            SignalManager.emitSignal(RemoveObjectSignal(boulderGenerator.gameObjectIid))
+        }
+    }
+
+}

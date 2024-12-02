@@ -6,6 +6,7 @@ import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.Abilities.Fire.Dash
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
 import com.mygdx.game.Ability.Abilities.Flying.Fly
+import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
 import com.mygdx.game.Ability.Abilities.Ice.IceCocoon
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.DefaultTextureHandler
@@ -24,13 +25,13 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash}
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind}
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
     }
 }
@@ -44,6 +45,7 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.IceCocoon -> "Envelop yourself in ice for protection"
         AbilityName.Dash -> "Do a fire dash, which grants a speed boost"
         AbilityName.Fly -> "Fly over obstacles in your way"
+        AbilityName.Whirlwind -> "Perform a whirlwind dance reflecting projectiles"
         else -> "Nothing"
     }
 }
@@ -59,6 +61,7 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "IceCocoon" -> AbilityData(AbilityName.IceCocoon, ELEMENTAL_TYPE.ICE, IceCocoon(player))
         "Dash" -> AbilityData(AbilityName.Dash, ELEMENTAL_TYPE.FIRE, Dash(player))
         "Fly" -> AbilityData(AbilityName.Fly, ELEMENTAL_TYPE.FLYING, Fly(player))
+        "Whirlwind" -> AbilityData(AbilityName.Whirlwind, ELEMENTAL_TYPE.FLYING, Whirlwind(player))
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }

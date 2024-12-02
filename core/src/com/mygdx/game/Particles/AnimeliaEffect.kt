@@ -7,7 +7,7 @@ import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Rendering.Renderable
 
 open class AnimeliaEffect(val particleEffect: ParticleEffect): Renderable {
-    override val layer = Layer.FOREGROUND
+    override var layer = Layer.FOREGROUND
 
     fun start(){
         particleEffect.start()

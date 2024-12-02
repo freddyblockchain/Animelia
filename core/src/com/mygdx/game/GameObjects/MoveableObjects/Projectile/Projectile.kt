@@ -9,11 +9,13 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
+import com.mygdx.game.GameObjects.GameObject.ReflectingState
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.player
+import com.mygdx.game.unaryMinus
 
-abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var unitVectorDirection: Vector2, val shooter: GameObject) : MoveableObject(gameObjectData, size){
+abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var unitVectorDirection: Vector2, var shooter: GameObject) : MoveableObject(gameObjectData, size){
 
     override val collision = ProjectileCollision(this)
     open val projectileLifespan = 90
@@ -35,8 +37,15 @@ open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
     override var canMoveAfterCollision = true
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is FightableObject){
-            projectile.remove()
-            collidedObject.currentHealth -= 10
+            if(collidedObject.reflectState == ReflectingState.REFLECTING){
+                projectile.shooter = collidedObject
+                projectile.currentFrame = 0
+                projectile.unitVectorDirection = -projectile.unitVectorDirection
+                projectile.collisionMask.objectToExclude = collidedObject
+            }else{
+                projectile.remove()
+                collidedObject.currentHealth -= 10
+            }
         }
     }
 }

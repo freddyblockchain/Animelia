@@ -1,7 +1,7 @@
 {
 	"identifier": "Level_59",
 	"uniqueIdentifer": "4759d550-9b00-11ef-9017-87d467ea4980",
-	"x": 1408,
+	"x": 1344,
 	"y": -1920,
 	"width": 192,
 	"height": 160,
@@ -58,7 +58,7 @@
 				"x": 128,
 				"y": 0,
 				"width": 64,
-				"height": 160,
+				"height": 128,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,

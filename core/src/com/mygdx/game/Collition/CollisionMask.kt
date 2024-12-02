@@ -20,6 +20,6 @@ object OnlyProjectileCollisionMask: CollisionMask{
     override val canCollideWith: (GameObject) -> Boolean = { other: GameObject -> other is Projectile}
 }
 
-class AllOtherObjectsCollisionMask(val objectToExclude: GameObject): CollisionMask{
+class AllOtherObjectsCollisionMask(var objectToExclude: GameObject): CollisionMask{
     override val canCollideWith: (GameObject) -> Boolean = { other: GameObject ->  other != objectToExclude }
 }
