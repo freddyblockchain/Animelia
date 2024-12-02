@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_67",
-	"uniqueIdentifer": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
-	"x": 1888,
-	"y": -2048,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+	"x": 1952,
+	"y": -1760,
+	"width": 128,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+			"levelIid": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
 			"dir": "s"
 		},
 		{
-			"levelIid": "c0b2d3a0-9b00-11ef-9017-990aea766a4e",
+			"levelIid": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
 			"dir": "n"
 		}
 	],
@@ -34,9 +34,9 @@
 		"BoulderGenerator": [
 			{
 				"id": "BoulderGenerator",
-				"iid": "46471ae3-9b00-11ef-9017-4daccd1a39d2",
+				"iid": "2044e160-9b00-11ef-9017-6192b8736f7a",
 				"layer": "Entities",
-				"x": 96,
+				"x": 32,
 				"y": 0,
 				"width": 32,
 				"height": 32,
@@ -48,9 +48,9 @@
 			},
 			{
 				"id": "BoulderGenerator",
-				"iid": "46471ae4-9b00-11ef-9017-6bf68138fd22",
+				"iid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
 				"layer": "Entities",
-				"x": 128,
+				"x": 64,
 				"y": 0,
 				"width": 32,
 				"height": 32,
@@ -64,7 +64,7 @@
 		"BoulderPad": [
 			{
 				"id": "BoulderPad",
-				"iid": "46471ae5-9b00-11ef-9017-e1f61fb2d7c8",
+				"iid": "263ac260-9b00-11ef-9017-b98cf21aab57",
 				"layer": "Entities",
 				"x": 0,
 				"y": 96,
@@ -73,81 +73,27 @@
 				"color": 14957380,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "46471ae3-9b00-11ef-9017-4daccd1a39d2",
-						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
-						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"entityIid": "2044e160-9b00-11ef-9017-6192b8736f7a",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			},
 			{
 				"id": "BoulderPad",
-				"iid": "46471ae6-9b00-11ef-9017-151a4f7142c8",
+				"iid": "29781310-9b00-11ef-9017-a7224cb35469",
 				"layer": "Entities",
-				"x": 224,
+				"x": 96,
 				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 14957380,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "46471ae4-9b00-11ef-9017-6bf68138fd22",
-						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
-						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "8b947fc0-9b00-11ef-9017-795adddb2c94",
-				"layer": "Entities",
-				"x": 64,
-				"y": 64,
-				"width": 128,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "a32efac0-9b00-11ef-9017-df0024164f4a",
-						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
-						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "a32efac0-9b00-11ef-9017-df0024164f4a",
-				"layer": "Entities",
-				"x": 96,
-				"y": 192,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields" : {}
-			}
-		],
-		"Cliffside": [
-			{
-				"id": "Cliffside",
-				"iid": "b18e2dc0-9b00-11ef-9017-89c9bc908724",
-				"layer": "Entities",
-				"x": 0,
-				"y": 128,
-				"width": 256,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "a32efac0-9b00-11ef-9017-df0024164f4a",
-						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
-						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"entityIid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}

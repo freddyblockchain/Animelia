@@ -5,22 +5,19 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.Animation.EffectAnimation
 import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.Collition.MoveCollision
-import com.mygdx.game.DefaultParticleHandler
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromString
-import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.RockProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.Timer.CooldownTimer
-import com.mygdx.game.minus
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -48,6 +45,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     fun getRocPosition(): Vector2{
         return when (direction){
             Direction.DOWN -> this.bottomleft - Vector2(0f,32f)
+            Direction.RIGHT -> this.bottomright
             else -> this.bottomleft - Vector2(0f,32f)
         }
     }
@@ -57,6 +55,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     fun getRockUnitVector(): Vector2{
         return when (direction){
             Direction.DOWN -> Vector2(0f,-1f)
+            Direction.RIGHT -> Vector2(1f,0f)
             else -> Vector2(0f,-1f)
         }
     }
