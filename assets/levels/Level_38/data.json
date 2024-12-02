@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_38",
-	"uniqueIdentifer": "652dd700-73f0-11ef-af50-1b9c352c1cf8",
-	"x": -1024,
-	"y": -32,
-	"width": 128,
-	"height": 96,
+	"uniqueIdentifer": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
+	"x": 864,
+	"y": 416,
+	"width": 288,
+	"height": 288,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
-			"dir": "e"
-		},
-		{
-			"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
-			"dir": "w"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World4"
+		"World": "World2"
 	},
 	"layers": [
 		"GroundIce.png",

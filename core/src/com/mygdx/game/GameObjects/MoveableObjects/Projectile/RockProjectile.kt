@@ -11,7 +11,7 @@ import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Hazards.Rock
 
-class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
+class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject, val newSpan: Int = 90) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
 
     override var speed = 3f
     override val cannotMoveStrategy = MoveRegardless()
@@ -20,6 +20,7 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
     override val collision = RockCollision(this, shooter)
+    override val projectileLifespan = newSpan
     val sound = DefaultSoundHandler.getSound("Sound/FireExplotion/explosion_01.ogg")
 
     init {

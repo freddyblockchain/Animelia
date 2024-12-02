@@ -79,7 +79,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }
     SignalManager.signalManager.addAll(pastSignalsInArea)
 
-    if(getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types)){
+    if(getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types) && KeyItem.FIREHEART !in generalSaveState.inventory.keyItems){
         player.playerEnvironmentState = PlayerEnvironmentState.COLD
     }else if(getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types) && KeyItem.FROZENHEART !in generalSaveState.inventory.keyItems){
         player.playerEnvironmentState = PlayerEnvironmentState.HOT
@@ -100,7 +100,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 }
 
 fun initAreas(){
-    val amountOfLevels = 43
+    val amountOfLevels = 68
     for(i in 0..<amountOfLevels){
         InitArea("levels/Level_$i")
     }

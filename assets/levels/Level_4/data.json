@@ -66,6 +66,22 @@
 					"Direction": "Up"
 				}
 			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "02930060-9b00-11ef-b959-b5042a4367c4",
+				"layer": "Entities",
+				"x": 256,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "IceFruit",
+					"PercentChance": 50
+				}
+			}
 		]
 	}
 }

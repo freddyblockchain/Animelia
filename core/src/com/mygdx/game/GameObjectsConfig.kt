@@ -1,8 +1,9 @@
 package com.mygdx.game
-import com.mygdx.game.Items.AbilityItem
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Hazards.*
+import com.mygdx.game.GameObjects.Hazards.BoulderGenerator.BoulderGenerator
+import com.mygdx.game.GameObjects.Hazards.BoulderGenerator.BoulderPad
 import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
@@ -14,9 +15,7 @@ import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
 import com.mygdx.game.GameObjects.Structures.Railway.Railway
 import com.mygdx.game.GameObjects.Structures.TrainingStation
-import com.mygdx.game.Items.BookItem
-import com.mygdx.game.Items.EggItem
-import com.mygdx.game.Items.MaterialItem
+import com.mygdx.game.Items.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
@@ -55,6 +54,8 @@ data class Entities(
     val Statue: List<GameObjectData> = listOf(),
     val FireGate: List<GameObjectData> = listOf(),
     val Flames: List<GameObjectData> = listOf(),
+    val BoulderGenerator: List<GameObjectData> = listOf(),
+    val BoulderPad: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -71,7 +72,7 @@ fun initMappings(){
     GameObjectFactory.register("Position", ::AnimeliaPosition)
     GameObjectFactory.register("Fountain", ::Fountain)
     GameObjectFactory.register("AnivolutionBook", ::BookItem)
-    GameObjectFactory.register("Item", ::MaterialItem)
+    GameObjectFactory.register("Item", ::createMaterialItem)
     GameObjectFactory.register("Egg", ::EggItem)
     GameObjectFactory.register("House", ::House)
     GameObjectFactory.register("Sign", ::Sign)
@@ -84,6 +85,8 @@ fun initMappings(){
     GameObjectFactory.register("Statue", ::Statue)
     GameObjectFactory.register("FireGate", ::FireGate)
     GameObjectFactory.register("Flames", ::Flames)
+    GameObjectFactory.register("BoulderGenerator", ::BoulderGenerator)
+    GameObjectFactory.register("BoulderPad", ::BoulderPad)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,
@@ -94,5 +97,7 @@ open class GameObjectData( var x: Int = 0,
                            val height: Int = 0,
                            val customFields: JsonElement = JsonObject(emptyMap()))
 
+@Serializable
+data class EntityRefCustomFields(val Entity_ref: EntityRefData)
 @Serializable
 data class EntityRefData(val entityIid: String, val layerIid: String, val levelIid: String, val worldIid: String)

@@ -31,3 +31,10 @@
 {"signaltype":"REMOVE_OBJECT","entityIid":"48ace970-25d0-11ef-9fe3-5bc2f9155175"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"d604c7b0-9b00-11ef-8045-4f3295058f5c"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"d5bfa860-9b00-11ef-8045-2bfb5e9004a8"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Vulcano","entityIid":"ccbd8400-9b00-11ef-a397-0344f032ff1c"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Vulcano","crystalEntityIId":"e3ac8eb0-9b00-11ef-a397-7bbe3e17093d","statueEntityIid":"53155ba0-9b00-11ef-a397-e7201db08e41"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Vulcano","crystalEntityIId":"0750c5e0-9b00-11ef-a397-a15e848ee0b3","statueEntityIid":"53155ba0-9b00-11ef-a397-e7201db08e41"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"9676a480-9b00-11ef-b959-7fcc0d7b6c6c"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"96e321f0-9b00-11ef-b959-7dcb3c0878de"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"0c968d50-9b00-11ef-b959-11e305c04039"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"04ab0bf0-9b00-11ef-b959-a183ef6861d8"}

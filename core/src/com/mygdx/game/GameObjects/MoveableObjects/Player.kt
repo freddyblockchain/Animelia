@@ -15,6 +15,7 @@ import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.State
+import com.mygdx.game.Items.Material
 import com.mygdx.game.SaveHandling.SaveStateEntity
 import com.mygdx.game.Saving.DefaultSaveStateHandler
 import com.mygdx.game.Timer.CooldownTimer
@@ -27,6 +28,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     : FightableObject(gameObjectData, size), SaveStateEntity by DefaultSaveStateHandler() {
     override val texture = DefaultTextureHandler.getTexture("player.png")
     override var speed: Float = 3f
+    override val baseSpeed = 3f
     override val cannotMoveStrategy = NoAction()
     override var layer = Layer.PERSON
     override var direction = Direction.RIGHT
@@ -40,6 +42,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
 
     val coldSpeech = SpeechBubble("This area is too cold for me!", this, 0)
     val hotSpeech = SpeechBubble("This area is too hot for me!",this,0)
+    var materialsPickedUp = mutableListOf<Material>()
 
     override val stats
         get() = generalSaveState.stats

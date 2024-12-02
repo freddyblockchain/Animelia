@@ -18,6 +18,7 @@ abstract class MoveableObject(gameObjectData: GameObjectData, size: Vector2 = Ve
     abstract var speed: Float
     abstract val cannotMoveStrategy: CannotMoveStrategy
     private var canMove = true
+    open val baseSpeed = 0f
     var currentUnitVector: Vector2 = Vector2(0f,0f)
 
     open fun move(newUnitVector: Vector2, speed: Float = this.getCurrentSpeed()): Boolean {

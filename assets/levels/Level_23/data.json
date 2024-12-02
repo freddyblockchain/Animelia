@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_23",
-	"uniqueIdentifer": "8dbb20c0-73f0-11ef-bff8-2d6980630270",
-	"x": -1632,
-	"y": 608,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "8998a030-73f0-11ef-bff8-732ef137ebf0",
+	"x": -1536,
+	"y": 832,
+	"width": 64,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "8998a030-73f0-11ef-bff8-732ef137ebf0",
+			"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
 			"dir": "s"
+		},
+		{
+			"levelIid": "8dbb20c0-73f0-11ef-bff8-2d6980630270",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -26,27 +30,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "3d529e20-9b00-11ef-9488-cddda9c8ae83",
-				"layer": "Entities",
-				"x": 96,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "IceBird",
-					"AnimeliaCityPos": {
-						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

@@ -56,6 +56,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     generalSaveState.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
                     generalSaveState.stats.tp = PlayerStatus.baseTp
                     generalSaveState.updateSaveState()
+                    player.materialsPickedUp.clear()
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })

@@ -1,0 +1,34 @@
+{
+	"identifier": "Level_63",
+	"uniqueIdentifer": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+	"x": 1984,
+	"y": -1824,
+	"width": 64,
+	"height": 64,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+			"dir": "s"
+		},
+		{
+			"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "Abandoned_House"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities" : {}
+}

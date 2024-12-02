@@ -10,6 +10,10 @@
 		{
 			"levelIid": "652dd700-73f0-11ef-af50-1b9c352c1cf8",
 			"dir": "e"
+		},
+		{
+			"levelIid": "833b64f0-9b00-11ef-b959-75615638eebc",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -60,6 +64,21 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"
+				}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "0c968d50-9b00-11ef-b959-11e305c04039",
+				"layer": "Entities",
+				"x": 224,
+				"y": 256,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields": {
+					"Direction": "Right"
 				}
 			}
 		]
