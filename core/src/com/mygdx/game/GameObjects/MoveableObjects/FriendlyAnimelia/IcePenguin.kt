@@ -29,7 +29,7 @@ class IcePenguin(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
     val citySpeech2 = SpeechData("Ice Penguin", "You found a book!")
     val citySpeech3 = SpeechData("Ice Penguin", "I'm going to the city. Please continue finding books")
 
-    override val speeches = listOf(speech1,speech2,speech3,speech4)
+    override var speeches = listOf(speech1,speech2,speech3,speech4)
 
     override val goingToCitySpeech = listOf(citySpeech1, citySpeech2, citySpeech3)
 

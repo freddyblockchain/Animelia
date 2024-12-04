@@ -37,7 +37,7 @@ abstract class FriendlyAnimeliaInWorld(
     val animeliaData by lazy { getAnimeliaData(animeliaEntity) }
     val animeliaRecruitmentConditions = mutableListOf<AnimeliaRecruitmendCondition>()
 
-    abstract val speeches: List<SpeechData>
+    abstract var speeches: List<SpeechData>
     open val goingToCitySpeech = listOf<SpeechData>()
 
     val talkSpeechBubble = Sprite(DefaultTextureHandler.getTexture("animeliaTalk.png"))
@@ -48,6 +48,10 @@ abstract class FriendlyAnimeliaInWorld(
     lateinit var cityPosition: AnimeliaPosition
 
     override val layer = Layer.ONGROUND
+
+    open fun afterSpeechAction(){
+
+    }
 
     override fun initObject() {
         cityPosition = AreaManager.getObjectWithIid(
@@ -89,6 +93,7 @@ class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: FriendlyAnim
             )
         } else {
             changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.speeches), mainMode))
+            friendlyAnimeliaInWorld.afterSpeechAction()
             println("Not Fulfilled Yet")
         }
     }

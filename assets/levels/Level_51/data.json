@@ -30,5 +30,21 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": "CanyonPos"
+				}
+			}
+		]
+	}
 }

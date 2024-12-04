@@ -25,7 +25,7 @@ class IceBird(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : 
     val speech5 = SpeechData("IceBird", "Meet me in the city. I will make you stronger")
 
     override val goingToCitySpeech = listOf(speech1, speech2, speech3, speech4, speech5)
-    override val speeches = listOf<SpeechData>()
+    override var speeches = listOf<SpeechData>()
     init {
         this.animeliaRecruitmentConditions.add(IceBirdRecruitment())
     }

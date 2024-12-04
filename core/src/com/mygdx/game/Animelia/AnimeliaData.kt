@@ -132,7 +132,7 @@ class BirdData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/bird-straight.png","Animelias/bird-right.png","Animelias/bird-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.MetalBird)
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly)
     override val animeliaEntity = ANIMELIA_ENTITY.Bird
 }
@@ -146,6 +146,17 @@ class IceBirdData(): AnimeliaData {
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.IceCocoon, AbilityName.Icicle, AbilityName.Whirlwind)
     override val animeliaEntity = ANIMELIA_ENTITY.IceBird
+}
+
+class MetalBirdData(): AnimeliaData {
+    override var textureName = "Animelias/IceBird-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.METAL)
+    override val animeliaStage = ANIMELIA_STAGE.MASTER
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.IceFruit))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind)
+    override val animeliaEntity = ANIMELIA_ENTITY.MetalBird
 }
 
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
@@ -173,6 +184,9 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         }
         ANIMELIA_ENTITY.IceBird -> {
             IceBirdData()
+        }
+        ANIMELIA_ENTITY.MetalBird -> {
+            MetalBirdData()
         }
     }
 }

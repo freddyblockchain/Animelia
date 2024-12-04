@@ -13,7 +13,7 @@ class FireDragon(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData)
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireDragon
 
-    override val speeches = listOf<SpeechData>()
+    override var speeches = listOf<SpeechData>()
 
     override val texture = DefaultTextureHandler.getTexture("Sensor.png")
     override val layer: Layer

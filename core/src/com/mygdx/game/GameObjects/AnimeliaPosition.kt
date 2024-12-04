@@ -8,10 +8,16 @@ import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.Hazards.EntityRefCustomFields
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
 class AnimeliaPosition(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     override val texture = DefaultTextureHandler.getTexture("sensor.png")
+
+    val name = Json.decodeFromJsonElement<AnimeliaPositionCustomFields>(gameObjectData.customFields).Name
 
     override val layer = Layer.ONGROUND
     override val collision = CanMoveCollision()
@@ -19,3 +25,5 @@ class AnimeliaPosition(gameObjectData: GameObjectData)
 
     }
 }
+@Serializable
+class AnimeliaPositionCustomFields(val Name: String?)

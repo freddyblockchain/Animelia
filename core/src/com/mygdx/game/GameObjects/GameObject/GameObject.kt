@@ -40,6 +40,7 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Ve
     open val polygon: Polygon by lazy {InitPolygon(sprite)}
     open val shouldCollide = true
     open val collision: Collision = CanMoveCollision()
+    var levelId = ""
     val gameObjectIid = gameObjectData.iid
     var collidingObjects: List<GameObject> = listOf()
     var areaIdentifier = "World1"

@@ -174,6 +174,21 @@
 					"Text": "Firebells react to fire!"
 				}
 			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "6d9778f0-9b00-11ef-ad95-eb2fbb7b6560",
+				"layer": "Entities",
+				"x": 224,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": "VulcanoPos"
+				}
+			}
 		]
 	}
 }

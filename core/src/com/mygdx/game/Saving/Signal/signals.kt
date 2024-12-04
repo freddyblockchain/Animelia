@@ -1,14 +1,21 @@
 
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.EntityRefData
+import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.MetalBirdPos
 import com.mygdx.game.Signal.Signal
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED }
+enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED, METAL_BIRD_TALKING }
 
 @Serializable
 class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJECT) {
+
+}
+
+@Serializable
+class MetalBirdTalkingSignal(val entityIid: String,val levelId: String, val metalBirdPos: MetalBirdPos) : Signal(SIGNALTYPE.METAL_BIRD_TALKING) {
 
 }
 
@@ -36,17 +43,18 @@ class AnimeliaCityTalkedWithSignal(val animeliaEntity: ANIMELIA_ENTITY) : Signal
 }
 
 
-fun signalConvert(signalString: String): Signal{
+fun signalConvert(signalString: String): Signal {
     val processedString = signalString.split(",")[0] + '}'
-    val newSignal:Signal = Json.decodeFromString(processedString)
+    val newSignal: Signal = Json.decodeFromString(processedString)
 
 
-    return when(newSignal.signaltype){
+    return when (newSignal.signaltype) {
         SIGNALTYPE.ABILITY_GAINED -> Json.decodeFromString<AbilityGainedSignal>(signalString)
         SIGNALTYPE.REMOVE_OBJECT -> Json.decodeFromString<RemoveObjectSignal>(signalString)
         SIGNALTYPE.ANIMELIA_RECRUITED -> Json.decodeFromString<AnimeliaRecruitedSignal>(signalString)
         SIGNALTYPE.ANIMELIA_CITY_TALKED_WITH -> Json.decodeFromString<AnimeliaCityTalkedWithSignal>(signalString)
         SIGNALTYPE.RAILWAY_FIXED -> Json.decodeFromString<RailwayFixedSignal>(signalString)
         SIGNALTYPE.CRYSTAL_ACTIVATED -> Json.decodeFromString<CrystalActivatedSignal>(signalString)
+        SIGNALTYPE.METAL_BIRD_TALKING -> Json.decodeFromString<MetalBirdTalkingSignal>(signalString)
     }
 }

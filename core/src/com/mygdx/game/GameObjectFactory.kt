@@ -15,7 +15,9 @@ object GameObjectFactory {
         data.x += root.x
         data.y = root.height - data.y - data.height
         data.y += (-root.y) - root.height
-        return constructor?.invoke(data)
+        val gameObject = constructor?.invoke(data)
+        gameObject!!.levelId = root.uniqueIdentifer
+        return gameObject
     }
 
     fun GetGameObjectsFromJson(entities: Entities, root: Root): List<GameObject> {

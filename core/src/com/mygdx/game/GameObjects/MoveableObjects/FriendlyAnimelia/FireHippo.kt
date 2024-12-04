@@ -13,7 +13,7 @@ class FireHippo(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) 
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 
-    override val speeches: List<SpeechData> = listOf()
+    override var speeches: List<SpeechData> = listOf()
 
     override val texture = DefaultTextureHandler.getTexture("Sensor.png")
     override val layer: Layer

@@ -21,7 +21,7 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
     val speech2 = SpeechData("Fire Armadillo", "hmm, prove your worth by defeating 3 animelia clones")
     val speech3 = SpeechData("Me", "Alright, i'll do that")
 
-    override val speeches = listOf(speech1, speech2, speech3)
+    override var speeches = listOf(speech1, speech2, speech3)
 
     val citySpeech1 = SpeechData("Fire Armadillo", "So, you actually defeated 3 clones")
     val citySpeech2 = SpeechData("Fire Armadillo", "I have to admit. I thought you were a faker")

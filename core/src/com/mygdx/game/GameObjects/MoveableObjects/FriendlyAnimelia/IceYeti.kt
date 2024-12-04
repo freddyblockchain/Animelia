@@ -13,7 +13,7 @@ class IceYeti(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : 
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti
     val speech1 = SpeechData("", "Thank you for playing the demo!")
 
-    override val speeches = listOf(speech1)
+    override var speeches = listOf(speech1)
 
     init {
         this.animeliaRecruitmentConditions.add(IceYetiRecruitment())

@@ -13,8 +13,6 @@ class AnimeliaRecruited: SignaledEventListener {
     override fun triggerEvent(signal: Signal) {
         // Fix dis.
 
-        // We should have 2 objects, instead of 1 friendly animelia object. Its too confusing
-        //Redesign animelia recruitment
         val animeliaRecruitedSignal = signal as AnimeliaRecruitedSignal
         val type = animeliaRecruitedSignal.animeliaEntity
         val correspondingAnimelia = createFriendlyAnimeliaInCity(type, Vector2(animeliaRecruitedSignal.posX, animeliaRecruitedSignal.posY))

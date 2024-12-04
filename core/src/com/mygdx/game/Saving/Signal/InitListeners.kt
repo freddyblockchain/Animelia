@@ -12,6 +12,7 @@ fun initSignalListeners() {
             RailwayFixed(),
             CrystalActivated(),
             AnimeliaTalkedWithInCity(),
+            MetalBirdTalkedWith(),
         )
     )
 }

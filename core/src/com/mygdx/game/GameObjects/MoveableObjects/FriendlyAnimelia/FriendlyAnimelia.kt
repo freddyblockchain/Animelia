@@ -15,16 +15,17 @@ fun convertToFriendlyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaFields = Json.decodeFromJsonElement<AnimeliaCustomFields>(gameObjectData.customFields)
     val animeliaEntity = getAnimeliaEntity(animeliaFields.AnimeliaType)
 
-    val friendlyAnimelia = createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos)
+    val friendlyAnimelia = createFriendlyAnimelia(animeliaEntity, gameObjectData, animeliaFields.AnimeliaCityPos, animeliaFields.CustomData)
     return friendlyAnimelia
 }
 
-fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData): FriendlyAnimeliaInWorld{
+fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, cityPosRefData: EntityRefData, CustomData: List<EntityRefData>): FriendlyAnimeliaInWorld{
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IcePenguin-> IcePenguin(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IceYeti -> IceYeti(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IceBird -> IceBird(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.MetalBird -> MetalBird(gameObjectData, cityPosRefData, CustomData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
@@ -39,6 +40,6 @@ fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vect
 }
 
 @Serializable
-data class AnimeliaCustomFields(val AnimeliaType: String, val AnimeliaCityPos: EntityRefData){
+data class AnimeliaCustomFields(val AnimeliaType: String, val AnimeliaCityPos: EntityRefData, val CustomData: List<EntityRefData>){
 
 }
