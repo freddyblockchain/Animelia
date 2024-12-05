@@ -26,13 +26,12 @@ import com.mygdx.game.Saving.SVector2
 import com.mygdx.game.UI.MainGameUi.AbilityTooltipRow
 import kotlin.math.PI
 
-fun InitArea(levelName: String){
+fun InitArea(levelName: String) {
     val levelPath = "${FileHandler.BASE_PATH}$levelName/data.json"
     val root = JsonParser.getRoot(levelPath)
     val correspondingArea = AreaManager.areas.firstOrNull { it.areaIdentifier == root.customFields.World }
-        ?:
-        Area(root.customFields.World)
-    if(!(AreaManager.areas.any { it.areaIdentifier == correspondingArea.areaIdentifier })){
+        ?: Area(root.customFields.World)
+    if (!(AreaManager.areas.any { it.areaIdentifier == correspondingArea.areaIdentifier })) {
         AreaManager.areas.add(correspondingArea)
     }
     correspondingArea.associatedLevels.add(levelName)
@@ -41,26 +40,30 @@ fun InitArea(levelName: String){
 
 }
 
-fun getObjectsFromLevelName(levelName: String): List<GameObject>{
+fun getObjectsFromLevelName(levelName: String): List<GameObject> {
     val levelPath = "${FileHandler.BASE_PATH}${levelName}/data.json"
     val root = JsonParser.getRoot(levelPath)
+    val ground = Ground(
+        GameObjectData(x = root.x, y = (-root.y) - root.height),
+        Vector2(root.width.toFloat(), root.height.toFloat()),
+        "${levelName}/_composite.png"
+    )
+    val wall = Wall(GameObjectData(), Vector2(0f, 0f), ground)
     val entityObjects = JsonParser.getGameObjects(root)
-    val ground = Ground(GameObjectData(x = root.x, y = (-root.y) - root.height), Vector2(root.width.toFloat(), root.height.toFloat()), "${levelName}/_composite.png")
-    val wall = Wall(GameObjectData(), Vector2(0f,0f), ground)
     val objectsToReturn = entityObjects + ground + wall
     objectsToReturn.forEach { it.areaIdentifier = AreaManager.levelToAreaMap[levelName]!! }
 
     return objectsToReturn
 }
 
-fun addObjectsToArea(area: Area, objectsToAdd: List<GameObject>){
+fun addObjectsToArea(area: Area, objectsToAdd: List<GameObject>) {
     area.gameObjects.addAll(objectsToAdd)
     area.gameObjects.forEach {
         it.areaIdentifier = area.areaIdentifier
     }
 }
 
-fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true){
+fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean = true) {
     //Reset AssetManagers
     resetAssetManagers()
 
@@ -72,18 +75,18 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     player.setPosition(newPos)
     player.startingPosition = newPos
     anivolutionCheck()
-    if(shouldSave){
+    if (shouldSave) {
         //updateAndSavePlayer()
     }
 
     val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }
     SignalManager.signalManager.addAll(pastSignalsInArea)
 
-    if(getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types) && KeyItem.FIREHEART !in generalSaveState.inventory.keyItems){
+    if (getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types) && KeyItem.FIREHEART !in generalSaveState.inventory.keyItems) {
         player.playerEnvironmentState = PlayerEnvironmentState.COLD
-    }else if(getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types) && KeyItem.FROZENHEART !in generalSaveState.inventory.keyItems){
+    } else if (getAreaType(newAreaIdentifier) == AreaType.Fire && (ELEMENTAL_TYPE.FIRE !in player.animeliaInfo.elemental_types) && KeyItem.FROZENHEART !in generalSaveState.inventory.keyItems) {
         player.playerEnvironmentState = PlayerEnvironmentState.HOT
-    } else{
+    } else {
         player.playerEnvironmentState = PlayerEnvironmentState.NORMAL
     }
 
@@ -99,12 +102,31 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     mainMode.abilityRowUi.updateToolTips()
 }
 
-fun initAreas(){
-    val amountOfLevels = 70
-    for(i in 0..<amountOfLevels){
+fun initAreas() {
+    for (i in 0..<amountOfLevels) {
         InitArea("levels/Level_$i")
     }
 
+}
+
+fun getMapObjects(): List<GameObject> {
+    var allObjects = mutableListOf<GameObject>()
+    val overworldZones = listOf("World1","World2","World3", "World4", "Swamp0")
+    for (i in 0..<amountOfLevels) {
+        if(AreaManager.levelToAreaMap["levels/Level_$i"] in overworldZones){
+            val levelPath = "${FileHandler.BASE_PATH}levels/Level_$i/data.json"
+            val root = JsonParser.getRoot(levelPath)
+            val ground = Ground(
+                GameObjectData(x = root.x, y = (-root.y) - root.height),
+                Vector2(root.width.toFloat(), root.height.toFloat()),
+                "levels/Level_$i/_composite.png"
+            )
+            val wall = Wall(GameObjectData(), Vector2(0f, 0f), ground)
+            allObjects.add(ground)
+            allObjects.add(wall)
+        }
+    }
+    return allObjects
 }
 
 fun getUnitVectorTowardsPoint(position: Vector2, point: Vector2): Vector2 {
@@ -114,15 +136,6 @@ fun getUnitVectorTowardsPoint(position: Vector2, point: Vector2): Vector2 {
 fun renderRepeatedTexture(batch: SpriteBatch, texture: Texture, position: Vector2, size: Vector2) {
     texture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat)
     batch.draw(texture, position.x, position.y, 0, 0, size.x.toInt(), size.y.toInt())
-}
-
-fun InsideCircle(circleObject: GameObject, circleRadius: Float, targetObject: GameObject): Boolean{
-    val circleToCheck = Circle(
-        circleObject.sprite.x,
-        circleObject.sprite.y,
-        circleRadius
-    )
-    return circleToCheck.contains(targetObject.currentPosition())
 }
 
 fun getRotatedUnitVectorClockwise(unitVector: Vector2, angleDegrees: Float): Vector2 {

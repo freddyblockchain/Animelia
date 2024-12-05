@@ -34,7 +34,7 @@ class MetalBird(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData, 
     val canyonSpeech1 = SpeechData("MetalBird", "CanyonSpeech")
     val swampSpeech1 = SpeechData("MetalBird", "SwampSpeech")
 
-    override val goingToCitySpeech = listOf<SpeechData>()
+    override val goingToCitySpeech = listOf<SpeechData>(SpeechData("MetalBird", "I will join the city!"))
     override var speeches = listOf<SpeechData>(speech1, speech2, speech3, speech4, speech5,speech6, speech7, speech8)
 
     val positionList = mutableListOf<AnimeliaPosition>()
@@ -76,16 +76,11 @@ class MetalBirdRecruitment(val metalBird: MetalBird): AnimeliaRecruitmendConditi
 }
 
 class MetalBirdInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
-    override val animeliaEntity = ANIMELIA_ENTITY.IceBird
+    override val animeliaEntity = ANIMELIA_ENTITY.MetalBird
 
-    val inCitySpeechOne = SpeechData("IceBird", "Ah, it feels like ages since i was here")
-    val inCitySpeechTwo = SpeechData("IceBird", "Time in the Ice Castle has went by slowly,,")
-    val inCitySpeechThree = SpeechData("Me", "Did you say you could make me stronger?")
-    val inCitySpeechFour = SpeechData("IceBird", "Yes.. Pleace accept the frozen heart")
-    val inCitySpeechFive = SpeechData("IceBird", "This artifact will let you keep your cool at all times in hot regions")
-    val inCitySpeechSix = SpeechData("IceBird", "It is the purest and cleanest form of ice")
+    val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
 
-    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive, inCitySpeechSix)
+    override val inCitySpeeches = listOf(inCitySpeechOne)
 
     val bone = SpeechData("Me", "Can you explain about books?")
     val bbone = SpeechData("Ice Penguin", "Certainly! I oversaw the library in this city before the clones invaded")
@@ -107,6 +102,7 @@ class MetalBirdInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(ga
     override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
 
     override fun recruitmentAction() {
+
     }
 
 }

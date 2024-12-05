@@ -2,6 +2,7 @@ package com.mygdx.game.GameModes
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.InputProcessor
+import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.defaultLineWidth
@@ -9,6 +10,7 @@ import com.mygdx.game.defaultLineWidth
 interface GameMode {
     val spriteBatch: SpriteBatch
     fun render()
+
     fun FrameAction(){
 
     }

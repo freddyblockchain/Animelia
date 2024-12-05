@@ -30,12 +30,16 @@ val zoomY = 4
 val defaultLineWidth = 2f
 val startPos = Vector2(200f, -270f)
 val fpsLogger = FPSLogger()
+var amountOfLevels = 0
+// has to hard code later
 class MainGame : ApplicationAdapter() {
 
     lateinit var inputProcessor: InGameInputProcessor
     lateinit var shapeRenderer: ShapeRenderer
     lateinit var startingStage: Stage
     override fun create() {
+        val fileHandle = Gdx.files.local("assets/levels")
+        amountOfLevels = fileHandle.list().size
         FileHandler.initSaveFiles()
         initMappings()
         initAreas()
@@ -62,7 +66,7 @@ class MainGame : ApplicationAdapter() {
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
         AnimationManager.addAnimationsToRender()
-        drawrects()
+        //drawrects()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()
         EventManager.executeEvents()

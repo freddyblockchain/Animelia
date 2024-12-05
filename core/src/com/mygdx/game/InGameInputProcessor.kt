@@ -7,7 +7,10 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.getDirectionUnitVector
+import com.mygdx.game.GameModes.MapMode
 import com.mygdx.game.GameModes.UIMode
+import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Items.KeyItem
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager.Companion.handleKeyCollitions
@@ -32,6 +35,11 @@ class InGameInputProcessor : InputProcessor {
         if (keycode == Input.Keys.SPACE) {
             //currentGameMode = AnivolutionViewMode(currentGameMode)
             currentGameMode = UIMode(PauseScreen(currentGameMode))
+        }
+        if(keycode == Input.Keys.M){
+            if(generalSaveState.inventory.keyItems.contains(KeyItem.MAP)){
+                changeMode(MapMode(mainMode))
+            }
         }
         if (player.abilityCooldown.cooldownAvailable()) {
             for (abilityPair in player.activeAbilities) {

@@ -62,3 +62,4 @@
 {"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"Swamp0","entityIid":"0dc4f1b0-9b00-11ef-ad95-25a9edef6b24","levelId":"47d3fee0-73f0-11ef-af50-a1d6b6e24328","metalBirdPos":"CANYON"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Swamp0","entityIid":"0dc4f1b0-9b00-11ef-ad95-25a9edef6b24"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"MetalBird","posX":384.0,"posY":-288.0}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"MetalBird"}
