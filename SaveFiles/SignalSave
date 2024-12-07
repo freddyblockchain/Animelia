@@ -63,3 +63,6 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Swamp0","entityIid":"0dc4f1b0-9b00-11ef-ad95-25a9edef6b24"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"MetalBird","posX":384.0,"posY":-288.0}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"MetalBird"}
+{"signaltype":"FIREPLACE_LIT","areaIdentifer":"Iglo"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"2b6cba00-9b00-11ef-8ab8-a3f068702c74"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"2dd92620-9b00-11ef-8ab8-7deaef94a9c5"}

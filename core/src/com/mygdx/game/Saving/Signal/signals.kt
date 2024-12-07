@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED, METAL_BIRD_TALKING }
+enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED, METAL_BIRD_TALKING, FIREPLACE_LIT}
 
 @Serializable
 class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJECT) {
@@ -16,6 +16,11 @@ class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJEC
 
 @Serializable
 class MetalBirdTalkingSignal(val entityIid: String,val levelId: String, val metalBirdPos: MetalBirdPos) : Signal(SIGNALTYPE.METAL_BIRD_TALKING) {
+
+}
+
+@Serializable
+class FireplaceLitSignal() : Signal(SIGNALTYPE.FIREPLACE_LIT) {
 
 }
 
@@ -56,5 +61,6 @@ fun signalConvert(signalString: String): Signal {
         SIGNALTYPE.RAILWAY_FIXED -> Json.decodeFromString<RailwayFixedSignal>(signalString)
         SIGNALTYPE.CRYSTAL_ACTIVATED -> Json.decodeFromString<CrystalActivatedSignal>(signalString)
         SIGNALTYPE.METAL_BIRD_TALKING -> Json.decodeFromString<MetalBirdTalkingSignal>(signalString)
+        SIGNALTYPE.FIREPLACE_LIT -> Json.decodeFromString<FireplaceLitSignal>(signalString)
     }
 }

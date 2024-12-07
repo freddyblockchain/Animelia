@@ -79,6 +79,19 @@
 					"CustomData": []
 				}
 			}
+		],
+		"Fireplace": [
+			{
+				"id": "Fireplace",
+				"iid": "a31e0b90-9b00-11ef-a1c8-eb71942215b9",
+				"layer": "Entities",
+				"x": 128,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields" : {}
+			}
 		]
 	}
 }

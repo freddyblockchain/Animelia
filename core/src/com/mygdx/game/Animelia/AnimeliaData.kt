@@ -159,6 +159,28 @@ class MetalBirdData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird
 }
 
+class FrogData(): AnimeliaData {
+    override var textureName = "Animelias/frog.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND)
+    override val animeliaStage = ANIMELIA_STAGE.JUNIOR
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/frog.png","Animelias/frog.png","Animelias/frog.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.GuardFrog)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby)
+    override val animeliaEntity = ANIMELIA_ENTITY.Frog
+}
+
+class GuardFrogData(): AnimeliaData {
+    override var textureName = "Animelias/GuardianFrog-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND, ELEMENTAL_TYPE.FIGHTING)
+    override val animeliaStage = ANIMELIA_STAGE.MASTER
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/GuardianFrog-straight.png","Animelias/GuardianFrog-right.png","Animelias/GuardianFrog-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby)
+    override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
+}
+
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo->  {
@@ -187,6 +209,12 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         }
         ANIMELIA_ENTITY.MetalBird -> {
             MetalBirdData()
+        }
+        ANIMELIA_ENTITY.Frog -> {
+            FrogData()
+        }
+        ANIMELIA_ENTITY.GuardFrog -> {
+            GuardFrogData()
         }
     }
 }

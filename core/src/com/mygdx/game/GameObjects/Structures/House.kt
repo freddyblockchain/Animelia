@@ -40,6 +40,7 @@ fun getHouseTexture(houseAsString: String): String{
         "Iglo" -> "iglo.png"
         "Ice_Castle" -> "IceCastle.png"
         "Vulcano" -> "vulcano.png"
+        "FrogBuilding" -> "FrogBuilding.png"
         else -> "vulcano.png"
     }
 }

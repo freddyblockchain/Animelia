@@ -108,15 +108,15 @@
 							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 						},
 						{
-							"entityIid": "b6ede2f0-9b00-11ef-ad95-07d6bdb50db6",
-							"layerIid": "74418b92-9b00-11ef-ad95-dff3fd173950",
-							"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						},
-						{
 							"entityIid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
 							"layerIid": "68f20cb2-9b00-11ef-9017-63ea1efe3918",
 							"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						},
+						{
+							"entityIid": "0c5d50c0-9b00-11ef-8ab8-df2969fe4c06",
+							"layerIid": "74418b92-9b00-11ef-ad95-dff3fd173950",
+							"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
 							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 						}
 					]

@@ -11,6 +11,7 @@ import com.mygdx.game.GameObjects.Other.Crystals.IceCrystal
 import com.mygdx.game.GameObjects.Other.Crystals.Statue
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.GameObjects.Sign
+import com.mygdx.game.GameObjects.Structures.Fireplace
 import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.GameObjects.Structures.House
 import com.mygdx.game.GameObjects.Structures.Railway.Railway
@@ -56,6 +57,7 @@ data class Entities(
     val Flames: List<GameObjectData> = listOf(),
     val BoulderGenerator: List<GameObjectData> = listOf(),
     val BoulderPad: List<GameObjectData> = listOf(),
+    val Fireplace: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -87,6 +89,7 @@ fun initMappings(){
     GameObjectFactory.register("Flames", ::Flames)
     GameObjectFactory.register("BoulderGenerator", ::BoulderGenerator)
     GameObjectFactory.register("BoulderPad", ::BoulderPad)
+    GameObjectFactory.register("Fireplace", ::Fireplace)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,
