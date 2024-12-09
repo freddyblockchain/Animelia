@@ -6,12 +6,15 @@ import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameModes.AnimationModes.CrystalActivation.CrystalActivationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager
 import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.currentGameMode
 import com.mygdx.game.player
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -53,12 +56,14 @@ class CrystalCollision(val crystal: Crystal): MoveCollision(){
         return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
     }
     override fun collisionHappened(collidedObject: GameObject) {
-        val crystalPastSignals = SignalManager.pastSignals.filterIsInstance<CrystalActivatedSignal>()
-        player.setPosition(crystal.goToPosition.currentPosition())
+       /* val crystalPastSignals = SignalManager.pastSignals.filterIsInstance<CrystalActivatedSignal>()
+        player.setPosition(crystal.goToPosition.currentPosition())*/
 
-        if(crystalPastSignals.none { it.crystalEntityIId == crystal.gameObjectIid }){
+        changeMode(CrystalActivationMode(currentGameMode, crystal = crystal))
+
+       /* if(crystalPastSignals.none { it.crystalEntityIId == crystal.gameObjectIid }){
             SignalManager.emitSignal(CrystalActivatedSignal(crystal.gameObjectIid, crystal.statue.gameObjectIid))
-        }
+        }*/
     }
 
 }

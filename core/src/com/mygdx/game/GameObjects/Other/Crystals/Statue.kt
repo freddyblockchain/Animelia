@@ -37,14 +37,31 @@ class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
         }
     }
 
+    fun animateAlpha(){
+        if(!activatedFirst){
+            crystal1.setAlpha(crystal1.color.a + 0.01f)
+        } else{
+            crystal2.setAlpha(crystal2.color.a + 0.01f)
+        }
+    }
+
     init {
         val pos1 = this.currentPosition() - Vector2(32f,0f)
         crystal1.setPosition(pos1.x, pos1.y)
         val pos2 = this.bottomright
         crystal2.setPosition(pos2.x, pos2.y)
 
-        crystal1.setAlpha(0.3f)
-        crystal2.setAlpha(0.3f)
+        crystal1.setAlpha(0.4f)
+        crystal2.setAlpha(0.4f)
+    }
+
+    override fun initObject() {
+        super.initObject()
+        val texture = when(this.areaIdentifier){
+            "Ice_castle" -> DefaultTextureHandler.getTexture("IceBirdStatue.png")
+            else -> DefaultTextureHandler.getTexture("EmptyDoor.png")
+        }
+        sprite.texture = texture
     }
 
     override fun render(batch: SpriteBatch) {
