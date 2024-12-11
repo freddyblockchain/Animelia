@@ -10,8 +10,12 @@ import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.GameObjects.AnimeliaPosition
+import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.DoorCustomFields
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.Hazards.BoxingGloveCustomFields
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.UI.Scene2d.Screens.DialogScreen
 import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 import kotlinx.serialization.Serializable
@@ -26,12 +30,23 @@ class House(gameObjectData: GameObjectData)
     override val layer = Layer.ONGROUND
     override val collision = CannotMoveCollision()
 
+    val doorRef = Json.decodeFromJsonElement<HouseCustomFields>(gameObjectData.customFields).Door
+    lateinit var door: Door
+
+    override fun initObject() {
+        super.initObject()
+        door =   AreaManager.getObjectWithIid(
+            doorRef.entityIid,
+            doorRef.levelIid
+        ) as Door
+    }
+
     init {
         this.polygon.scale(-0.2f)
     }
 }
 @Serializable
-data class HouseCustomFields(val House: String){
+data class HouseCustomFields(val House: String, val Door: EntityRefData){
 
 }
 

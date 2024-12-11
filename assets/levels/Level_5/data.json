@@ -42,7 +42,13 @@
 				"height": 160,
 				"color": 9149364,
 				"customFields": {
-					"House": "Ice_Castle"
+					"House": "Ice_Castle",
+					"Door": {
+						"entityIid": "38c63500-73f0-11ef-af50-d1714ced0190",
+						"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
+						"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		],

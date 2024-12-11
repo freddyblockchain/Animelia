@@ -72,7 +72,7 @@ class MainGame : ApplicationAdapter() {
         EventManager.executeEvents()
         SignalManager.executeSignals()
         drawHealthBars()
-        mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
+        currentGameMode.cameraAction()
         mainCamera.update()
         fpsLogger.log()
     }

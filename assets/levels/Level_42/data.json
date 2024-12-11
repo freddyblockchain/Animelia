@@ -38,7 +38,13 @@
 				"height": 160,
 				"color": 9149364,
 				"customFields": {
-					"House": "Vulcano"
+					"House": "Vulcano",
+					"Door": {
+						"entityIid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
+						"layerIid": "5eb46341-9b00-11ef-8045-d52046eabe18",
+						"levelIid": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		],

@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.defaultLineWidth
+import com.mygdx.game.mainCamera
+import com.mygdx.game.player
 
 interface GameMode {
     val spriteBatch: SpriteBatch
@@ -21,6 +23,10 @@ interface GameMode {
 
     fun modeInit() {
 
+    }
+
+    fun cameraAction(){
+        mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
     }
 }
 

@@ -1,5 +1,6 @@
 package com.mygdx.game.Signal
 
+import com.mygdx.game.GameModes.AnimationModes.CrystalActivation.BuildingRemoveAnimation
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.Signal.SignalListeners.*
 import com.mygdx.game.Signal.SignalListeners.AbilityGained
@@ -13,6 +14,7 @@ fun initSignalListeners() {
             CrystalActivated(),
             AnimeliaTalkedWithInCity(),
             MetalBirdTalkedWith(),
+            BuildingDestroyed(),
         )
     )
 }

@@ -42,7 +42,13 @@
 				"height": 160,
 				"color": 9149364,
 				"customFields": {
-					"House": "FrogBuilding"
+					"House": "FrogBuilding",
+					"Door": {
+						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		],
@@ -65,6 +71,46 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"CustomData": []
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+				"layer": "Entities",
+				"x": 0,
+				"y": 320,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "de0678c0-9b00-11ef-a5dc-5f6994a9c966",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			},
+			{
+				"id": "Door",
+				"iid": "de0678c0-9b00-11ef-a5dc-5f6994a9c966",
+				"layer": "Entities",
+				"x": 224,
+				"y": 320,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
 				}
 			}
 		]

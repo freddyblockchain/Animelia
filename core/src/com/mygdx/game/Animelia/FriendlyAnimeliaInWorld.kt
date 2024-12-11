@@ -65,6 +65,14 @@ abstract class FriendlyAnimeliaInWorld(
         return animeliaRecruitmentConditions.all { it.isConditionFulfilled() }
     }
 
+    open fun goingToCitySignals(){
+        SignalManager.emitSignal(RemoveObjectSignal(gameObjectIid))
+        SignalManager.emitSignal(
+            AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
+            areaIdentifier = "World1"
+        )
+    }
+
     override fun render(batch: SpriteBatch) {
         super.render(batch)
         if (this.isConditionsFulfilled()) {
@@ -86,11 +94,7 @@ class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: FriendlyAnim
             if (friendlyAnimeliaInWorld.goingToCitySpeech.size > 0) {
                 changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.goingToCitySpeech), mainMode))
             }
-            SignalManager.emitSignal(RemoveObjectSignal(this.friendlyAnimeliaInWorld.gameObjectIid))
-            SignalManager.emitSignal(
-                AnimeliaRecruitedSignal(this.friendlyAnimeliaInWorld.animeliaEntity, friendlyAnimeliaInWorld.cityPosition.x, friendlyAnimeliaInWorld.cityPosition.y),
-                areaIdentifier = "World1"
-            )
+            friendlyAnimeliaInWorld.goingToCitySignals()
         } else {
             changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.speeches), mainMode))
             friendlyAnimeliaInWorld.afterSpeechAction()
