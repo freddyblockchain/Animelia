@@ -13,6 +13,7 @@ import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.Enums.getDirectionFromString
 import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameModes.AnimationModes.CliffsideAnimationMode
 import com.mygdx.game.GameModes.AnimationModes.SpinningAnimationMode
@@ -35,6 +36,7 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
     lateinit var goToPosition: AnimeliaPosition
     val posEntityRef = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Entity_ref
     val nextInt = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Speed
+    val nextDirection = Json.decodeFromJsonElement<BoxingGloveCustomFields>(gameObjectData.customFields).Direction
     override var speed  = nextInt * 0.5f
     override val cannotMoveStrategy = MoveRegardless()
 
@@ -48,34 +50,55 @@ class BoxingGlove(gameObjectData: GameObjectData) : MoveableObject(gameObjectDat
 
     val extendDistance = 64f
 
+    override val layer = Layer.AIR
+    override var direction = getDirectionFromString(nextDirection)
+    var boxingGloveDirection =  getDirectionFromString(nextDirection)
+    override var canChangeDirection = false
+
+
     override fun initObject() {
         goToPosition = AreaManager.getObjectWithIid(
             posEntityRef.entityIid,
             posEntityRef.levelIid
         ) as AnimeliaPosition
 
-        springSprite.setPosition(this.x - springSprite.width + 4f, this.y + this.height/4)
+        if(boxingGloveDirection == Direction.LEFT){
+            sprite.rotate(180f)
+            springSprite.setPosition(this.x + springSprite.width, this.y + this.height/4)
+        } else{
+            springSprite.setPosition(this.x - springSprite.width + 4f, this.y + this.height/4)
+        }
     }
-
-    override val layer = Layer.AIR
-    override var direction = Direction.RIGHT
-    override var canChangeDirection = false
 
     override fun render(batch: SpriteBatch) {
         super.render(batch)
-
-        renderRepeatedTexture(batch, springTexture, Vector2(springSprite.x,springSprite.y), Vector2(16f + (this.currentPosition().x - this.startingPosition.x) - 4f,16f))
+        if(boxingGloveDirection == Direction.LEFT){
+            //renderRepeatedTexture(batch, springTexture, Vector2(springSprite.x + 16f,springSprite.y), Vector2(16f,16f))
+            renderRepeatedTexture(batch, springTexture, Vector2(springSprite.x + 32f,springSprite.y), Vector2( (-( (springSprite.x) - currentPosition().x)),16f))
+        } else{
+            renderRepeatedTexture(batch, springTexture, Vector2(springSprite.x,springSprite.y), Vector2(16f + (this.currentPosition().x - this.startingPosition.x) - 4f,16f))
+        }
         //springSprite.draw(batch)
     }
 
     override fun frameTask() {
         super.frameTask()
 
-        if(this.currentPosition().x >= this.startingPosition.x + extendDistance){
-            currentUnitVector = getDirectionUnitVector(Direction.LEFT)
+        if(boxingGloveDirection == Direction.RIGHT){
+            if(this.currentPosition().x >= this.startingPosition.x + extendDistance){
+                currentUnitVector = getDirectionUnitVector(Direction.LEFT)
+            }
+            if(this.currentPosition().x <= this.startingPosition.x){
+                currentUnitVector = getDirectionUnitVector(Direction.RIGHT)
+            }
         }
-        if(this.currentPosition().x <= this.startingPosition.x){
-            currentUnitVector = getDirectionUnitVector(Direction.RIGHT)
+        else if (boxingGloveDirection == Direction.LEFT){
+            if(this.currentPosition().x <= this.startingPosition.x - extendDistance){
+                currentUnitVector = getDirectionUnitVector(Direction.RIGHT)
+            }
+            if(this.currentPosition().x >= this.startingPosition.x){
+                currentUnitVector = getDirectionUnitVector(Direction.LEFT)
+            }
         }
         this.move(currentUnitVector)
     }

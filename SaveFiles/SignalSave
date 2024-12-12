@@ -20,8 +20,3 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"b8d7e600-73f0-11ef-b6cd-0d251339a4ce"}
 {"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Ice_castle","crystalEntityIId":"9cc03560-73f0-11ef-b6cd-733b1fdc2dc8","statueEntityIid":"f7d94980-73f0-11ef-9c51-7d9b0106ce2a"}
 {"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"0c968d50-9b00-11ef-b959-11e305c04039"}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Ice_castle","entityIid":"3d529e20-9b00-11ef-9488-cddda9c8ae83"}
-{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"IceBird","posX":160.0,"posY":-416.0}
-{"signaltype":"ANIMELIA_RECRUITED","areaIdentifer":"World4","animeliaEntity":"IceBird","posX":160.0,"posY":-416.0}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"6cdf5540-73f0-11ef-af50-271fbf5c22a6"}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"38c63500-73f0-11ef-af50-d1714ced0190"}
