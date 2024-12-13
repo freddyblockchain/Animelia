@@ -27,7 +27,7 @@ class House(gameObjectData: GameObjectData)
     val customFields = Json.decodeFromJsonElement<HouseCustomFields>(gameObjectData.customFields)
     val textureName = getHouseTexture(customFields.House)
     override val texture = DefaultTextureHandler.getTexture(textureName)
-    override val layer = Layer.ONGROUND
+    override val layer = Layer.PERSON
     override val collision = CannotMoveCollision()
 
     val doorRef = Json.decodeFromJsonElement<HouseCustomFields>(gameObjectData.customFields).Door

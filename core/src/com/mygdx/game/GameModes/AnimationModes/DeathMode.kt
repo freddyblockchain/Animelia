@@ -6,10 +6,12 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram
 import com.mygdx.game.*
 import com.mygdx.game.GameModes.DefaultInputProcessor
 import com.mygdx.game.GameModes.GameMode
+import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.Managers.MusicManager
+import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 
-class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch):
+class DeathMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch):
     GameMode {
     var currentFrame = 0
 
@@ -44,8 +46,9 @@ class DeathMode(val prevMode: GameMode, val nextMode: GameMode, override val spr
             spriteBatch.shader = originalShader
 
             changeArea(startPos, "World1")
+            val reincarnationMode = UIMode(ReincarnationScreen(mainMode), playConfirmationSound = false)
             player.currentHealth = player.maxHealth
-            changeMode(nextMode)
+            changeMode(reincarnationMode)
         }
 
         currentFrame += 1

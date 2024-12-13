@@ -62,9 +62,9 @@
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "38c63500-73f0-11ef-af50-d1714ced0190",
-						"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
-						"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+						"entityIid": "bc060e90-9b00-11ef-90a0-cd28489b3f6e",
+						"layerIid": "932d5c82-9b00-11ef-90a0-ff6ed4b281ba",
+						"levelIid": "932d5c80-9b00-11ef-90a0-f94bcc1096ea",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Down"

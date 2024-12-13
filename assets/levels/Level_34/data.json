@@ -31,21 +31,6 @@
 		"Beach.png"
 	],
 	"entities": {
-		"AnimeliaEnemy": [
-			{
-				"id": "AnimeliaEnemy",
-				"iid": "20d9fb00-73f0-11ef-bff8-6dce4d9bbb83",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14120515,
-				"customFields": {
-					"AnimeliaType": "IcePenguin"
-				}
-			}
-		],
 		"Ability": [
 			{
 				"id": "Ability",

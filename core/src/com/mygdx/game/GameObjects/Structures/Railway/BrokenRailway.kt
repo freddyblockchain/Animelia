@@ -48,8 +48,8 @@ class FixRailsCollision(val brokenRailway: BrokenRailway): InputCollision(){
     override val insideText = "FIX"
 
     override fun collisionHappened(collidedObject: GameObject) {
-        val animeliaBoneAmount = generalSaveState.inventory.materialItems[Material.ANIMELIABONE]!!
-        if(animeliaBoneAmount > 0){
+        val animeliaBoneAmount = generalSaveState.inventory.materialItems[Material.ANIMELIABONE]
+        if(animeliaBoneAmount != null && animeliaBoneAmount > 0){
             SignalManager.emitSignal(RailwayFixedSignal(brokenRailway.railway.gameObjectIid))
             generalSaveState.inventory.materialItems[Material.ANIMELIABONE] = animeliaBoneAmount - 1
             generalSaveState.inventory.railwayConnections.add(RailwayTransportData(AreaManager.getActiveArea()!!.areaIdentifier,brokenRailway.bottomright.x, brokenRailway.bottomright.y))

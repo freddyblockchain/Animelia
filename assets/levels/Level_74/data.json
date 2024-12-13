@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_74",
-	"uniqueIdentifer": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
-	"x": 192,
-	"y": 640,
+	"uniqueIdentifer": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
+	"x": 384,
+	"y": 1056,
 	"width": 96,
-	"height": 192,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "n"
+			"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+			"dir": "w"
 		},
 		{
-			"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-			"dir": "s"
+			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "Swamp0"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -30,71 +30,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"BoulderGenerator": [
-			{
-				"id": "BoulderGenerator",
-				"iid": "2b6cba00-9b00-11ef-8ab8-a3f068702c74",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "2dd92620-9b00-11ef-8ab8-7deaef94a9c5",
-				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "3113b7b0-9b00-11ef-8ab8-917b38cf56cf",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Right",
-					"Automatic": true
-				}
-			}
-		],
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
-				"layer": "Entities",
-				"x": 32,
-				"y": 176,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
-						"layerIid": "6170f682-9b00-11ef-8ab8-7fc3e9508808",
-						"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

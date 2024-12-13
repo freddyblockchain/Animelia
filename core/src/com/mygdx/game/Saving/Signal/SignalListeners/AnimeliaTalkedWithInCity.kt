@@ -22,7 +22,7 @@ class AnimeliaTalkedWithInCity: SignaledEventListener {
 
         if(entity == ANIMELIA_ENTITY.IceBird && KeyItem.FROZENHEART !in generalSaveState.inventory.keyItems){
             val textAnimation = TextAnimation(
-                Color.WHITE,
+                Color.YELLOW,
                 "You got the frozen heart!",
                 player.currentMiddle + Vector2(0f,64f),
                 false,

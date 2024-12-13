@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_52",
-	"uniqueIdentifer": "6e408a20-9b00-11ef-9017-c7a7a3d3fbfe",
-	"x": 1024,
-	"y": -128,
-	"width": 96,
-	"height": 96,
+	"uniqueIdentifer": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
+	"x": 1216,
+	"y": -480,
+	"width": 256,
+	"height": 352,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "s"
+			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+			"dir": "n"
 		},
 		{
 			"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-			"dir": "n"
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -30,5 +30,21 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "e49e82d0-9b00-11ef-9017-933deec94738",
+				"layer": "Entities",
+				"x": 128,
+				"y": 256,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields": {
+					"Direction": "Right"
+				}
+			}
+		]
+	}
 }

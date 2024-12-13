@@ -15,7 +15,7 @@ abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjec
     override val collisionMask = OnlyPlayerCollitionMask
     abstract val itemAquiredText: String
     override val collision = ItemAquiredCollision(this)
-    override val layer = Layer.AIR
+    override val layer = Layer.ONGROUND
 
     open fun itemGained(){
         SignalManager.emitSignal(RemoveObjectSignal(this.gameObjectIid))
@@ -25,7 +25,7 @@ abstract class WorldItem (gameObjectData: GameObjectData) : GameObject(gameObjec
 class ItemAquiredCollision(val item: WorldItem): MoveCollision() {
     override fun collisionHappened(collidedObject: GameObject) {
         val textAnimation = TextAnimation(
-            Color.WHITE,
+            Color.YELLOW,
             item.itemAquiredText,
             item.currentMiddle,
             false,

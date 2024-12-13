@@ -41,7 +41,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
 
         for (egg in generalSaveState.inventory.eggs) {
             val textureString = getEggTexture(egg)
-            val texture = (DefaultTextureHandler.getTexture(textureString))
+            val texture = DefaultTextureHandler.getTexture(textureString)
             val buttonImage = TextureRegionDrawable(texture)
             buttonImage.setMinSize(200f, 200f)
             val eggButton = ImageButton(buttonImage)

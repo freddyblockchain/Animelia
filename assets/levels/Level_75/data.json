@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_75",
-	"uniqueIdentifer": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-	"x": 480,
-	"y": 960,
-	"width": 256,
-	"height": 352,
+	"uniqueIdentifer": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+	"x": 96,
+	"y": 832,
+	"width": 288,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
+			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
 			"dir": "e"
 		},
 		{
-			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
-			"dir": "w"
+			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -31,83 +31,21 @@
 		"Beach.png"
 	],
 	"entities": {
-		"House": [
-			{
-				"id": "House",
-				"iid": "418cae80-9b00-11ef-8ab8-a3ecaf120e0e",
-				"layer": "Entities",
-				"x": 64,
-				"y": 192,
-				"width": 128,
-				"height": 160,
-				"color": 9149364,
-				"customFields": {
-					"House": "FrogBuilding",
-					"Door": {
-						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "9a8d1300-9b00-11ef-8ab8-61e47ed47e11",
-				"layer": "Entities",
-				"x": 128,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "GuardFrog",
-					"AnimeliaCityPos": {
-						"entityIid": "6d671910-4ce0-11ef-8f8c-c1f7c1d6296b",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
-				}
-			}
-		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+				"iid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
 				"layer": "Entities",
-				"x": 0,
-				"y": 320,
+				"x": 128,
+				"y": 0,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "de0678c0-9b00-11ef-a5dc-5f6994a9c966",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			},
-			{
-				"id": "Door",
-				"iid": "de0678c0-9b00-11ef-a5dc-5f6994a9c966",
-				"layer": "Entities",
-				"x": 224,
-				"y": 320,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"entityIid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
+						"layerIid": "c574c0d2-9b00-11ef-8ab8-053f57f64816",
+						"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"

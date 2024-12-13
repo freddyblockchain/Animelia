@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_66",
-	"uniqueIdentifer": "4176a3ea-9b00-11ef-9017-cf673f949878",
-	"x": 1952,
-	"y": -1504,
-	"width": 128,
-	"height": 192,
+	"uniqueIdentifer": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+	"x": 1984,
+	"y": -1824,
+	"width": 64,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "25c78b00-9b00-11ef-9017-7193c01afe7f",
-			"dir": "w"
+			"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+			"dir": "s"
 		},
 		{
-			"levelIid": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
+			"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
 			"dir": "n"
 		}
 	],
@@ -30,61 +30,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "427b3b40-9b00-11ef-9017-edf5b5a74f7e",
-				"layer": "Entities",
-				"x": 0,
-				"y": 96,
-				"width": 128,
-				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": true,
-					"Entity_ref": {
-						"entityIid": "49392730-9b00-11ef-9017-5b55c2a0043b",
-						"layerIid": "4176a3ec-9b00-11ef-9017-07b8d98a129e",
-						"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "4b9df230-9b00-11ef-9017-43d569efef92",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 128,
-				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "49392730-9b00-11ef-9017-5b55c2a0043b",
-						"layerIid": "4176a3ec-9b00-11ef-9017-07b8d98a129e",
-						"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "49392730-9b00-11ef-9017-5b55c2a0043b",
-				"layer": "Entities",
-				"x": 32,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			}
-		]
-	}
+	"entities" : {}
 }
