@@ -10,6 +10,7 @@ import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
 import com.mygdx.game.Ability.Abilities.Ice.IceCocoon
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.Ability.Abilities.Sound.AmphibianLullaby
+import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbiltiy
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.player
@@ -27,14 +28,14 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby}
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun}
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.AmphibianLullaby, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
     }
 }
@@ -50,6 +51,7 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.Fly -> "Fly over obstacles in your way"
         AbilityName.Whirlwind -> "Perform a whirlwind dance reflecting projectiles"
         AbilityName.AmphibianLullaby -> "Perform a lullaby that puts listeners to sleep"
+        AbilityName.SoundGun -> "Shoot a sharp sound towards foes"
         else -> "Nothing"
     }
 }
@@ -67,6 +69,7 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "Fly" -> AbilityData(AbilityName.Fly, ELEMENTAL_TYPE.FLYING, Fly(player))
         "Whirlwind" -> AbilityData(AbilityName.Whirlwind, ELEMENTAL_TYPE.FLYING, Whirlwind(player))
         "AmphibianLullaby" -> AbilityData(AbilityName.AmphibianLullaby, ELEMENTAL_TYPE.SOUND, AmphibianLullaby(player))
+        "SoundGun" -> AbilityData(AbilityName.SoundGun, ELEMENTAL_TYPE.SOUND, SoundGunAbiltiy(player))
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }

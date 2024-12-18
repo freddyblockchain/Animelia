@@ -84,7 +84,7 @@ abstract class FriendlyAnimeliaInWorld(
 }
 
 
-class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: FriendlyAnimeliaInWorld) : InputCollision() {
+open class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: FriendlyAnimeliaInWorld) : InputCollision() {
     override val keyCode = Input.Keys.ENTER
     override val insideText = "TALK"
 

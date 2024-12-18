@@ -21,6 +21,7 @@ class Door(val gameObjectData: GameObjectData): GameObject(gameObjectData, Vecto
     //override val polygon = RectanglePolygon(Vector2(gameObjectData.x + 8f, gameObjectData.y - 8f),16f, 8f)
     override val collision = DoorCollision(this)
     lateinit var exitDoor: Door
+    var active = true
 
     init {
         val direction = getDirectionFromString(customFields.Direction)
@@ -44,7 +45,7 @@ class DoorCollision(val door: Door): MoveCollision(){
     override var canMoveAfterCollision = true
 
     override fun collisionHappened(collidedObject: GameObject) {
-        if(collidedObject is Player && player.direction == door.direction){
+        if(collidedObject is Player && player.direction == door.direction && door.active){
             var newPos = Vector2(door.exitDoor.x, door.exitDoor.y)
             if(player.direction == Direction.DOWN){
                 newPos = Vector2(door.exitDoor.x, door.exitDoor.y - door.exitDoor.height * 2)

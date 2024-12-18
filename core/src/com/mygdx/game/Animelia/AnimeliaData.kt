@@ -166,7 +166,7 @@ class FrogData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/frog.png","Animelias/frog.png","Animelias/frog.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.GuardFrog)
-    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
     override val animeliaEntity = ANIMELIA_ENTITY.Frog
 }
 
@@ -177,7 +177,7 @@ class GuardFrogData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/GuardianFrog-straight.png","Animelias/GuardianFrog-right.png","Animelias/GuardianFrog-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
 }
 

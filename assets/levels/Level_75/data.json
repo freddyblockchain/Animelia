@@ -12,6 +12,10 @@
 			"dir": "e"
 		},
 		{
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+			"dir": "s"
+		},
+		{
 			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 			"dir": "n"
 		}
@@ -49,6 +53,21 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "51d99050-9b00-11ef-bf48-cfc411b6f4cc",
+				"layer": "Entities",
+				"x": 128,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "SoundGun"
 				}
 			}
 		]

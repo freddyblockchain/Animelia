@@ -29,6 +29,8 @@ class EggItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     fun getEgg(): Egg{
         return when(itemText){
             "Ice" -> Egg.ICE
+            "Sound" -> Egg.SOUND
+            "Flying" -> Egg.FLYING
             else -> Egg.FIRE
         }
     }
