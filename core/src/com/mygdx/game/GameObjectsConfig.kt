@@ -1,5 +1,7 @@
 package com.mygdx.game
 import com.mygdx.game.GameObjects.AnimeliaPosition
+import com.mygdx.game.GameObjects.Bulbs.LightBulb
+import com.mygdx.game.GameObjects.Bulbs.SoundBulb
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.Hazards.*
 import com.mygdx.game.GameObjects.Hazards.BoulderGenerator.BoulderGenerator
@@ -59,6 +61,7 @@ data class Entities(
     val BoulderPad: List<GameObjectData> = listOf(),
     val Fireplace: List<GameObjectData> = listOf(),
     val Trumpet: List<GameObjectData> = listOf(),
+    val SoundBulb: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -75,7 +78,7 @@ fun initMappings(){
     GameObjectFactory.register("Position", ::AnimeliaPosition)
     GameObjectFactory.register("Fountain", ::Fountain)
     GameObjectFactory.register("AnivolutionBook", ::BookItem)
-    GameObjectFactory.register("Item", ::createMaterialItem)
+    GameObjectFactory.register("Item", ::createItem)
     GameObjectFactory.register("Egg", ::EggItem)
     GameObjectFactory.register("House", ::House)
     GameObjectFactory.register("Sign", ::Sign)
@@ -92,6 +95,7 @@ fun initMappings(){
     GameObjectFactory.register("BoulderPad", ::BoulderPad)
     GameObjectFactory.register("Fireplace", ::Fireplace)
     GameObjectFactory.register("Trumpet", ::Trumpet)
+    GameObjectFactory.register("SoundBulb", ::SoundBulb)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

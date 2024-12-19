@@ -1,4 +1,4 @@
-package com.mygdx.game.GameObjects.Hazards
+package com.mygdx.game.GameObjects.Bulbs
 
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch

@@ -31,6 +31,11 @@ val defaultLineWidth = 2f
 val startPos = Vector2(200f, -270f)
 val fpsLogger = FPSLogger()
 var amountOfLevels = 0
+
+var baseWidth = 1920f // Base width
+
+var baseHeight = 1080f // Base height
+
 // has to hard code later
 class MainGame : ApplicationAdapter() {
 
@@ -49,7 +54,8 @@ class MainGame : ApplicationAdapter() {
         inputProcessor = InGameInputProcessor()
         Gdx.input.inputProcessor = inputProcessor
         mainCamera = OrthographicCamera()
-        mainCamera.setToOrtho(false, Gdx.graphics.width.toFloat() / zoomX, Gdx.graphics.height.toFloat() / zoomY)
+        mainCamera.setToOrtho(false, (baseWidth / zoomX) * (Gdx.graphics.getWidth() / baseWidth),
+            (baseHeight / zoomY) * (Gdx.graphics.getHeight() / baseHeight))
         player = Player(GameObjectData(x = 120, y = -200), Vector2(32f, 32f))
         mainMode = MainMode(inputProcessor)
         //AnivolutionMode(mainMode,ANIMELIA_ENTITY.FIRE_HIPPO)

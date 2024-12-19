@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import RemoveObjectSignal
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collisions.CannotMoveCollision
@@ -18,8 +19,10 @@ import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
+import com.mygdx.game.GameObjects.MoveableObjects.Projectile.RockProjectile
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.SoundProjectile
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -33,6 +36,13 @@ class Trumpet(gameObjectData: GameObjectData)
 
     override val layer = Layer.ONGROUND
     override val collision = TrumpetCollision(this)
+
+    override fun initObject() {
+        super.initObject()
+        if(this.direction == Direction.LEFT){
+            this.sprite.rotation = 180f
+        }
+    }
 
     fun getOffset(): Vector2{
         if(direction == Direction.RIGHT){
@@ -55,6 +65,10 @@ class TrumpetCollision(val trumpet: Trumpet): MoveCollision(){
             val vec2 = Vector2(trumpet.x + offset.x, trumpet.y + offset.y)
             val newProjectile = SoundProjectile(GameObjectData(x = vec2.x.toInt(), y = vec2.y.toInt()), Vector2(16f,32f), getDirectionUnitVector(trumpet.direction), trumpet)
             newProjectile.add()
+        }
+        if(collidedObject is RockProjectile){
+            SignalManager.emitSignal(RemoveObjectSignal(this.trumpet.gameObjectIid))
+            collidedObject.remove()
         }
     }
 }

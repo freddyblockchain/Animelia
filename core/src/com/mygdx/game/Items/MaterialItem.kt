@@ -16,7 +16,7 @@ import kotlinx.serialization.json.decodeFromJsonElement
 
 
 enum class Material{ANIMELIABONE, somthing1, something2, something3, IceFruit}
-enum class KeyItem{FROZENHEART,FIREHEART, MAP}
+enum class KeyItem{FROZENHEART,FIREHEART, MAP, CROWN}
 
 fun getMaterialTexture(material: Material): Texture{
     return when(material){
@@ -30,6 +30,7 @@ fun getKeyItemTextures(keyItem: KeyItem): Texture{
         KeyItem.FROZENHEART -> DefaultTextureHandler.getTexture("frozen-heart.png")
         KeyItem.FIREHEART -> DefaultTextureHandler.getTexture("fire-heart.png")
         KeyItem.MAP -> DefaultTextureHandler.getTexture("book.png")
+        KeyItem.CROWN -> DefaultTextureHandler.getTexture("book.png")
     }
 }
 
@@ -41,14 +42,18 @@ class Dud(gameObjectData: GameObjectData):GameObject(gameObjectData){
 
 }
 
-fun createMaterialItem(gameObjectData: GameObjectData): GameObject {
-    val customFields = Json.decodeFromJsonElement<MaterialItemCustomFields>(gameObjectData.customFields)
-    if(RandomManager.roll(customFields.PercentChance)){
-        val itemText = customFields.Item
-        val material = Material.values().find { it.name == itemText }
-        return MaterialItem(gameObjectData, material!!)
+fun createItem(gameObjectData: GameObjectData): GameObject {
+    val customFields = Json.decodeFromJsonElement<ItemCustomFields>(gameObjectData.customFields)
+    if(customFields.KeyItem){
+        return KeyItemObject(gameObjectData)
     } else {
-        return Dud(gameObjectData)
+        if(RandomManager.roll(customFields.PercentChance)){
+            val itemText = customFields.Item
+            val material = Material.values().find { it.name == itemText }
+            return MaterialItem(gameObjectData, material!!)
+        } else {
+            return Dud(gameObjectData)
+        }
     }
 }
 
@@ -75,6 +80,6 @@ class MaterialItem(gameObjectData: GameObjectData, var material: Material) : Wor
 }
 
 @Serializable
-data class MaterialItemCustomFields(val Item: String, val PercentChance: Int){
+data class ItemCustomFields(val Item: String, val PercentChance: Int, val KeyItem: Boolean){
 
 }

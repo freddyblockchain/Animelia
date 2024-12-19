@@ -18,11 +18,12 @@ import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.Timer.CooldownTimer
+import com.mygdx.game.Utils.Triggerable
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
-class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
+class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectData), Triggerable {
     override val layer = Layer.ONGROUND
     val customFields = Json.decodeFromJsonElement<BoulderGeneratorCustomFields>(gameObjectData.customFields)
     val direction = getDirectionFromString(customFields.Direction)
@@ -90,6 +91,10 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
             }
             rockThrowCounter += 1
         }
+    }
+
+    override fun onTrigger() {
+        triggerGenerator()
     }
 }
 @Serializable
