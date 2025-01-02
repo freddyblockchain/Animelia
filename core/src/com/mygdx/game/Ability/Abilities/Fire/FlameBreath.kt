@@ -43,7 +43,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
             size.x / 2,
             size.y / 2)
 
-        effectPos = attacheFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
+        effectPos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
 
         initEffect.start()
         initEffect.particleEffect.emitters.forEach { it.reset()
@@ -57,7 +57,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
 
     }
 
-    override val activeFrames = 90
+    override val activeFrames = 75
     override var currentFrame = 0
 
     override fun frameAction() {

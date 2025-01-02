@@ -54,3 +54,6 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo","posX":64.0,"posY":-96.0}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"FireArmadillo"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"4816eb00-25d0-11ef-9fe3-9b9a484631f0"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"48ace970-25d0-11ef-9fe3-5bc2f9155175"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"474c4800-25d0-11ef-9fe3-35697a08b4a0"}
