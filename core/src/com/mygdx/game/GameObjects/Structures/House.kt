@@ -30,6 +30,8 @@ class House(gameObjectData: GameObjectData)
     override val layer = Layer.PERSON
     override val collision = CannotMoveCollision()
 
+    var visible = customFields.Visible
+
     val doorRef = Json.decodeFromJsonElement<HouseCustomFields>(gameObjectData.customFields).Door
     lateinit var door: Door
 
@@ -39,6 +41,11 @@ class House(gameObjectData: GameObjectData)
             doorRef.entityIid,
             doorRef.levelIid
         ) as Door
+
+        if(!visible){
+            door.remove()
+            this.remove()
+        }
     }
 
     init {
@@ -46,7 +53,7 @@ class House(gameObjectData: GameObjectData)
     }
 }
 @Serializable
-data class HouseCustomFields(val House: String, val Door: EntityRefData){
+data class HouseCustomFields(val House: String, val Door: EntityRefData, val Visible: Boolean){
 
 }
 

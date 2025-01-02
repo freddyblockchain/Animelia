@@ -117,12 +117,12 @@ class IceDinosaurData(): AnimeliaData {
 }
 class IceYetiData(): AnimeliaData {
     override var textureName = "Animelias/ice-yeti-straight.png"
-    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/ice-yeti-straight.png","Animelias/ice-yet-right.png","Animelias/ice-yeti-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(IntelligenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.ScrewAttack, AbilityName.ScrapStorm, AbilityName.Missile)
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti
 }
 

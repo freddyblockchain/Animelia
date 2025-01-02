@@ -9,6 +9,9 @@ import com.mygdx.game.Ability.Abilities.Flying.Fly
 import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
 import com.mygdx.game.Ability.Abilities.Ice.IceCocoon
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
+import com.mygdx.game.Ability.Abilities.Metal.Missile
+import com.mygdx.game.Ability.Abilities.Metal.ScrapStorm
+import com.mygdx.game.Ability.Abilities.Metal.ScrewAttack
 import com.mygdx.game.Ability.Abilities.Sound.AmphibianLullaby
 import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbiltiy
 import com.mygdx.game.DefaultTextureHandler
@@ -28,7 +31,7 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun}
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack}
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
@@ -36,6 +39,7 @@ fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
         ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.METAL -> listOf(AbilityName.ScrewAttack, AbilityName.Missile, AbilityName.ScrapStorm, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
     }
 }
@@ -52,6 +56,9 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.Whirlwind -> "Perform a whirlwind dance reflecting projectiles"
         AbilityName.AmphibianLullaby -> "Perform a lullaby that puts listeners to sleep"
         AbilityName.SoundGun -> "Shoot a sharp sound towards foes"
+        AbilityName.ScrapStorm -> "Create a storm of metal scraps around you"
+        AbilityName.ScrewAttack -> "Shoot a screw at enemies and buildings"
+        AbilityName.Missile -> "Shoot a missile that tracks enemies and objects"
         else -> "Nothing"
     }
 }
@@ -70,6 +77,9 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "Whirlwind" -> AbilityData(AbilityName.Whirlwind, ELEMENTAL_TYPE.FLYING, Whirlwind(player))
         "AmphibianLullaby" -> AbilityData(AbilityName.AmphibianLullaby, ELEMENTAL_TYPE.SOUND, AmphibianLullaby(player))
         "SoundGun" -> AbilityData(AbilityName.SoundGun, ELEMENTAL_TYPE.SOUND, SoundGunAbiltiy(player))
+        "Missile" -> AbilityData(AbilityName.Missile, ELEMENTAL_TYPE.METAL, Missile(player))
+        "ScrewAttack" -> AbilityData(AbilityName.ScrewAttack, ELEMENTAL_TYPE.METAL, ScrewAttack(player))
+        "ScrapStorm" -> AbilityData(AbilityName.ScrapStorm, ELEMENTAL_TYPE.METAL, ScrapStorm(player))
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }
@@ -84,5 +94,4 @@ interface Ability {
     val attachedFightableObject: FightableObject
     val abilityName: AbilityName
     val ELEMENTALTYPES: ELEMENTAL_TYPE
-
 }

@@ -1,14 +1,19 @@
 {
 	"identifier": "Level_83",
-	"uniqueIdentifer": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
-	"x": 480,
-	"y": 1536,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "66dd33c0-9b00-11ef-9dff-fb5bd7714a7c",
+	"x": 576,
+	"y": 1408,
+	"width": 160,
+	"height": 128,
 	"bgColor": "#696A79",
-	"neighbourLevels": [],
+	"neighbourLevels": [
+		{
+			"levelIid": "5a2bfee0-9b00-11ef-9dff-bdc5362ca354",
+			"dir": "n"
+		}
+	],
 	"customFields": {
-		"World": "FrogHouse"
+		"World": "Swamp0"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -22,41 +27,53 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Position": [
 			{
-				"id": "Door",
-				"iid": "c23e9230-9b00-11ef-bf48-95cc4d8aa862",
+				"id": "Position",
+				"iid": "66dd33c6-9b00-11ef-9dff-6b3ef860a283",
 				"layer": "Entities",
-				"x": 96,
+				"x": 128,
 				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 1199753,
 				"customFields": {
-					"Door": {
-						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
+					"Name": null
 				}
 			}
 		],
-		"Item": [
+		"Animelia": [
 			{
-				"id": "Item",
-				"iid": "afca1ba0-9b00-11ef-9dff-6764f9ac27bb",
+				"id": "Animelia",
+				"iid": "845c0390-9b00-11ef-9dff-8d5a40147880",
 				"layer": "Entities",
-				"x": 96,
-				"y": 96,
+				"x": 64,
+				"y": 64,
 				"width": 32,
 				"height": 32,
-				"color": 12635100,
+				"color": 15389866,
 				"customFields": {
-					"Item": "Crown",
-					"PercentChance": 100,
-					"KeyItem": true
+					"AnimeliaType": "KingFrog",
+					"AnimeliaCityPos": {
+						"entityIid": "abb01620-c210-11ef-b8ac-d1e38ca0c9d7",
+						"layerIid": "85324401-c210-11ef-b8ac-4f44a5024376",
+						"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"CustomData": [
+						{
+							"entityIid": "418cae80-9b00-11ef-8ab8-a3ecaf120e0e",
+							"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+							"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						},
+						{
+							"entityIid": "63286670-c210-11ef-b8ac-fdc0855a84cd",
+							"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+							"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						}
+					]
 				}
 			}
 		]

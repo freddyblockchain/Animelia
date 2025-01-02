@@ -23,11 +23,11 @@ fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: Game
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadillo(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.IcePenguin-> IcePenguin(gameObjectData, cityPosRefData)
-        ANIMELIA_ENTITY.IceYeti -> IceYeti(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.IceYeti -> IceYeti(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.IceBird -> IceBird(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.MetalBird -> MetalBird(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.GuardFrog -> GuardFrog(gameObjectData, cityPosRefData, CustomData)
-        ANIMELIA_ENTITY.KingFrog -> KingFrog(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.KingFrog -> KingFrog(gameObjectData, cityPosRefData, CustomData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
@@ -38,6 +38,9 @@ fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vect
         ANIMELIA_ENTITY.IcePenguin-> IcePenguinInCity(gameObjectData)
         ANIMELIA_ENTITY.IceBird -> IceBirdInCity(gameObjectData)
         ANIMELIA_ENTITY.MetalBird -> MetalBirdInCity(gameObjectData)
+        ANIMELIA_ENTITY.KingFrog -> KingFrogInCity(gameObjectData)
+        ANIMELIA_ENTITY.GuardFrog -> GuardFrogInCity(gameObjectData)
+        ANIMELIA_ENTITY.IceYeti -> IceYetiInCity(gameObjectData)
         else -> FireArmadilloInCity(gameObjectData)
     }
 }

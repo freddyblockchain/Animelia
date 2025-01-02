@@ -159,6 +159,88 @@
 					"Direction": "Right"
 				}
 			}
+		],
+		"House": [
+			{
+				"id": "House",
+				"iid": "63286670-c210-11ef-b8ac-fdc0855a84cd",
+				"layer": "Entities",
+				"x": 288,
+				"y": 448,
+				"width": 160,
+				"height": 160,
+				"color": 9149364,
+				"customFields": {
+					"House": "FrogBuilding",
+					"Door": {
+						"entityIid": "8edb1380-c210-11ef-b8ac-f75a14c8a59f",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Visible": false
+				}
+			},
+			{
+				"id": "House",
+				"iid": "18714f70-c210-11ef-b8ac-434d95f8c309",
+				"layer": "Entities",
+				"x": 0,
+				"y": 384,
+				"width": 128,
+				"height": 128,
+				"color": 9149364,
+				"customFields": {
+					"House": "Iglo",
+					"Door": {
+						"entityIid": "22f3e480-c210-11ef-b8ac-ad2fde47c5f8",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Visible": false
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "8edb1380-c210-11ef-b8ac-f75a14c8a59f",
+				"layer": "Entities",
+				"x": 352,
+				"y": 448,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "846a31b0-c210-11ef-b8ac-298178677201",
+						"layerIid": "85324401-c210-11ef-b8ac-4f44a5024376",
+						"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			},
+			{
+				"id": "Door",
+				"iid": "22f3e480-c210-11ef-b8ac-ad2fde47c5f8",
+				"layer": "Entities",
+				"x": 48,
+				"y": 512,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "35b0f364-c210-11ef-b8ac-2785485d6fae",
+						"layerIid": "35b0f363-c210-11ef-b8ac-9375e79fd607",
+						"levelIid": "35b0f360-c210-11ef-b8ac-cdb7c312bf42",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
+			}
 		]
 	}
 }

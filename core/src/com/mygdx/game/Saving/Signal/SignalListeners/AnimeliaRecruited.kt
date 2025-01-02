@@ -10,13 +10,15 @@ import com.mygdx.game.Signal.SignaledEventListener
 
 class AnimeliaRecruited: SignaledEventListener {
     override val signaltype = SIGNALTYPE.ANIMELIA_RECRUITED
+    val cityAreas = listOf("World1", "FrogHouse_City", "Iglo_City")
     override fun triggerEvent(signal: Signal) {
+        val area = AreaManager.getActiveArea()!!.areaIdentifier
 
-        if(AreaManager.getActiveArea()!!.areaIdentifier == "World1"){
+        if(area in cityAreas){
             val animeliaRecruitedSignal = signal as AnimeliaRecruitedSignal
             val type = animeliaRecruitedSignal.animeliaEntity
             val correspondingAnimelia = createFriendlyAnimeliaInCity(type, Vector2(animeliaRecruitedSignal.posX, animeliaRecruitedSignal.posY))
-            val firstArea = AreaManager.getArea("World1")
+            val firstArea = AreaManager.getArea(area)
             correspondingAnimelia.initObject()
             firstArea.gameObjects.add(correspondingAnimelia)
             correspondingAnimelia.recruitmentAction()

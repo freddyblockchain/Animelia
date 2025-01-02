@@ -1,0 +1,69 @@
+{
+	"identifier": "Level_84",
+	"uniqueIdentifer": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
+	"x": 480,
+	"y": 1536,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
+			"dir": "s"
+		}
+	],
+	"customFields": {
+		"World": "FrogHouse"
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "c23e9230-9b00-11ef-bf48-95cc4d8aa862",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "afca1ba0-9b00-11ef-9dff-6764f9ac27bb",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "Crown",
+					"PercentChance": 100,
+					"KeyItem": true
+				}
+			}
+		]
+	}
+}
