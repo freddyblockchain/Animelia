@@ -43,13 +43,13 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
             size.x / 2,
             size.y / 2)
 
-        effectPos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
+        effectPos = attacheFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 20f)
 
         initEffect.start()
         initEffect.particleEffect.emitters.forEach { it.reset()
         }
         initEffect.particleEffect.setPosition(effectPos.x, effectPos.y)
-        val animation = EffectAnimation(initEffect, 25)
+        val animation = EffectAnimation(initEffect, 20)
         AnimationManager.animationManager.add(animation)
     }
 
@@ -61,7 +61,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
     override var currentFrame = 0
 
     override fun frameAction() {
-        if(currentFrame == 25){
+        if(currentFrame == 10){
             //rotateByAmount(-30f,attachedFightableObject)
             particleEffect.load(Gdx.files.internal("Particles/flamebreath.p"), Gdx.files.internal("Particles"))
             breatheEffect = AnimeliaEffect(particleEffect)
@@ -78,7 +78,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
             val animation = EffectAnimation(breatheEffect, 65)
             AnimationManager.animationManager.add(animation)
         }
-        if(currentFrame > 25){
+        if(currentFrame > 10){
             breatheEffect.particleEffect.emitters.forEach {
                 val low = it.angle.highMin
                 val high = it.angle.highMax
