@@ -92,7 +92,8 @@
 				"color": 12635100,
 				"customFields": {
 					"Item": "IceFruit",
-					"PercentChance": 50
+					"PercentChance": 50,
+					"KeyItem": false
 				}
 			}
 		]

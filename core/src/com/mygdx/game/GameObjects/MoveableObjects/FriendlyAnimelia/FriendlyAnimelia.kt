@@ -27,6 +27,7 @@ fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: Game
         ANIMELIA_ENTITY.IceBird -> IceBird(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.MetalBird -> MetalBird(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.GuardFrog -> GuardFrog(gameObjectData, cityPosRefData, CustomData)
+        ANIMELIA_ENTITY.KingFrog -> KingFrog(gameObjectData, cityPosRefData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
