@@ -14,7 +14,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Icicle
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class IceCocoon(override val attachedFightableObject: FightableObject): KeyAbility {
+class IceCocoon(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.IceCocoon
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.ICE
     val originalTexture = attachedFightableObject.sprite.texture

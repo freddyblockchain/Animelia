@@ -2,16 +2,16 @@ Flame
 - Delay -
 active: false
 - Duration - 
-lowMin: 3000.0
-lowMax: 3000.0
+lowMin: 100.0
+lowMax: 100.0
 - Count - 
 min: 0
-max: 200
+max: 400
 - Emission - 
 lowMin: 0.0
 lowMax: 0.0
-highMin: 250.0
-highMax: 250.0
+highMin: 500.0
+highMax: 500.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -20,8 +20,8 @@ timeline0: 0.0
 - Life - 
 lowMin: 0.0
 lowMax: 0.0
-highMin: 400.0
-highMax: 400.0
+highMin: 300.0
+highMax: 300.0
 relative: false
 scalingCount: 3
 scaling0: 1.0
@@ -36,9 +36,27 @@ independent: false
 active: false
 independent: false
 - X Offset - 
-active: false
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 0.0
+highMax: 0.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
 - Y Offset - 
-active: false
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 0.0
+highMax: 0.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
 - Spawn Shape - 
 shape: point
 - Spawn Width - 
@@ -64,8 +82,8 @@ timeline0: 0.0
 - X Scale - 
 lowMin: 0.0
 lowMax: 0.0
-highMin: 16.0
-highMax: 16.0
+highMin: 8.0
+highMax: 8.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -77,8 +95,8 @@ active: false
 active: true
 lowMin: 0.0
 lowMax: 0.0
-highMin: 120.0
-highMax: 120.0
+highMin: 128.0
+highMax: 64.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -88,8 +106,23 @@ timeline0: 0.0
 active: true
 lowMin: 90.0
 lowMax: 90.0
-highMin: 30.0
-highMax: 60.0
+highMin: 0.0
+highMax: 360.0
+relative: false
+scalingCount: 3
+scaling0: 1.0
+scaling1: 1.0
+scaling2: 0.0
+timelineCount: 3
+timeline0: 0.0
+timeline1: 1.0
+timeline2: 1.0
+- Rotation - 
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 0.0
+highMax: 360.0
 relative: false
 scalingCount: 3
 scaling0: 1.0
@@ -97,40 +130,40 @@ scaling1: 1.0
 scaling2: 1.0
 timelineCount: 3
 timeline0: 0.0
-timeline1: 0.75
+timeline1: 1.0
 timeline2: 1.0
-- Rotation - 
-active: false
 - Wind - 
 active: false
 - Gravity - 
 active: false
 - Tint - 
-colorsCount: 3
-colors0: 0.96862745
-colors1: 0.0627451
-colors2: 0.015686275
-timelineCount: 1
+colorsCount: 6
+colors0: 0.07450981
+colors1: 0.39607844
+colors2: 0.33333334
+colors3: 0.43137255
+colors4: 0.34509805
+colors5: 0.14901961
+timelineCount: 2
 timeline0: 0.0
+timeline1: 0.9867927
 - Transparency - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 1.0
 highMax: 1.0
 relative: false
-scalingCount: 4
-scaling0: 1.0
+scalingCount: 3
+scaling0: 0.0
 scaling1: 1.0
-scaling2: 1.0
-scaling3: 1.0
-timelineCount: 4
+scaling2: 0.0
+timelineCount: 3
 timeline0: 0.0
-timeline1: 0.19444486
-timeline2: 0.8888889
-timeline3: 1.0
+timeline1: 0.0
+timeline2: 1.0
 - Options - 
 attached: false
-continuous: true
+continuous: false
 aligned: false
 additive: true
 behind: false

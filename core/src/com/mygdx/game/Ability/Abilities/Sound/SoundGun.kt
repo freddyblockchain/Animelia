@@ -12,7 +12,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.SoundProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class SoundGunAbiltiy(override val attachedFightableObject: FightableObject): KeyAbility {
+class SoundGunAbiltiy(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.SoundGun
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.SOUND
 

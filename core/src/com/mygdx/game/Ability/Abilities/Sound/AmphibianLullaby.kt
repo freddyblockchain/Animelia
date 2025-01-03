@@ -20,7 +20,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
 import com.mygdx.game.getUnitVectorTowardsPoint
 
-class AmphibianLullaby(override val attachedFightableObject: FightableObject) : KeyAbility {
+class AmphibianLullaby(override val attachedFightableObject: FightableObject) : KeyAbility() {
     override val abilityName = AbilityName.AmphibianLullaby
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.SOUND
     val circle = Circle()

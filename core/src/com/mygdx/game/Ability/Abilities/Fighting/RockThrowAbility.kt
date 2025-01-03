@@ -12,7 +12,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.RockProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class RockThrowAbility(override val attachedFightableObject: FightableObject): KeyAbility {
+class RockThrowAbility(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.RockThrow
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIGHTING
 

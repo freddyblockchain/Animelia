@@ -6,8 +6,10 @@ import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.Abilities.Fire.Dash
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
 import com.mygdx.game.Ability.Abilities.Fire.FlameBreath
+import com.mygdx.game.Ability.Abilities.Flying.AerialDeath
 import com.mygdx.game.Ability.Abilities.Flying.Fly
 import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
+import com.mygdx.game.Ability.Abilities.Ice.IceBreath
 import com.mygdx.game.Ability.Abilities.Ice.IceCocoon
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.Ability.Abilities.Metal.Missile
@@ -32,13 +34,13 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath }
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath, IceBreath, AerialDeath }
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.IceBreath, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
         ELEMENTAL_TYPE.METAL -> listOf(AbilityName.ScrewAttack, AbilityName.Missile, AbilityName.ScrapStorm, AbilityName.PlaceHolder)
         else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
@@ -53,7 +55,7 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.Fireball -> "Shoot a fireball, that melts enemies and ice"
         AbilityName.IceCocoon -> "Envelop yourself in ice for protection"
         AbilityName.Dash -> "Do a fire dash, which grants a speed boost"
-        AbilityName.Fly -> "Fly over obstacles in your way"
+        AbilityName.Fly -> "Fly over obstacles and projectiles in your way"
         AbilityName.Whirlwind -> "Perform a whirlwind dance reflecting projectiles"
         AbilityName.AmphibianLullaby -> "Perform a lullaby that puts listeners to sleep"
         AbilityName.SoundGun -> "Shoot a sharp sound towards foes"
@@ -61,6 +63,8 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.ScrewAttack -> "Shoot a screw at enemies and buildings"
         AbilityName.Missile -> "Shoot a missile that tracks enemies and objects"
         AbilityName.FlameBreath -> "Breathe fire in an arc in front of you"
+        AbilityName.IceBreath -> "Breathe ice in an arc in front of you"
+        AbilityName.AerialDeath -> "Fly high up above and come crashing down"
         else -> "Nothing"
     }
 }
@@ -83,6 +87,8 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "ScrewAttack" -> AbilityData(AbilityName.ScrewAttack, ELEMENTAL_TYPE.METAL, ScrewAttack(player))
         "ScrapStorm" -> AbilityData(AbilityName.ScrapStorm, ELEMENTAL_TYPE.METAL, ScrapStorm(player))
         "FlameBreath" -> AbilityData(AbilityName.FlameBreath, ELEMENTAL_TYPE.FIRE, FlameBreath(player))
+        "IceBreath" -> AbilityData(AbilityName.IceBreath, ELEMENTAL_TYPE.ICE, IceBreath(player))
+        "AerialDeath" -> AbilityData(AbilityName.AerialDeath, ELEMENTAL_TYPE.FLYING, AerialDeath(player))
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }
@@ -97,4 +103,5 @@ interface Ability {
     val attachedFightableObject: FightableObject
     val abilityName: AbilityName
     val ELEMENTALTYPES: ELEMENTAL_TYPE
+    var activated: Boolean
 }

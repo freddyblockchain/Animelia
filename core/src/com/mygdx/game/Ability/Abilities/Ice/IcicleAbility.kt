@@ -12,7 +12,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Icicle
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class IcicleAbility(override val attachedFightableObject: FightableObject): KeyAbility {
+class IcicleAbility(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.Icicle
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.ICE
 

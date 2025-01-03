@@ -1,4 +1,4 @@
-package com.mygdx.game.Ability.Abilities.Fire
+package com.mygdx.game.Ability.Abilities.Ice
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
@@ -9,18 +9,15 @@ import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.EffectAnimation
-import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.GameObjects.GameObject.rotateByAmount
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
+class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
 
     private lateinit var breatheEffect: AnimeliaEffect
 
@@ -34,11 +31,11 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
     var effectPos = Vector2()
     val size = Vector2(48f,24f)
 
-    lateinit var flameBreathObject: FlameBreathObject
+    lateinit var flameBreathObject: IceBreathObject
 
     init {
 
-        particleEffect2.load(Gdx.files.internal("Particles/firestart.p"), Gdx.files.internal("Particles"))
+        particleEffect2.load(Gdx.files.internal("Particles/icestart.p"), Gdx.files.internal("Particles"))
         initEffect = AnimeliaEffect(particleEffect2)
     }
 
@@ -69,7 +66,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
     override fun frameAction() {
         if(currentFrame == 10){
             //rotateByAmount(-30f,attachedFightableObject)
-            particleEffect.load(Gdx.files.internal("Particles/flamebreath.p"), Gdx.files.internal("Particles"))
+            particleEffect.load(Gdx.files.internal("Particles/frostbreath.p"), Gdx.files.internal("Particles"))
             breatheEffect = AnimeliaEffect(particleEffect)
 
             effectPos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 15f)
@@ -84,7 +81,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
             val animation = EffectAnimation(breatheEffect, 65)
             AnimationManager.animationManager.add(animation)
 
-            val flameBreathObject = FlameBreathObject(GameObjectData(x = effectPos.x.toInt(), y = effectPos.y.toInt()), attachedFightableObject)
+            val flameBreathObject = IceBreathObject(GameObjectData(x = effectPos.x.toInt(), y = effectPos.y.toInt()), attachedFightableObject)
             flameBreathObject.add()
         }
         if(currentFrame > 10){
@@ -98,7 +95,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
         }
     }
 
-    override val abilityName = AbilityName.FlameBreath
+    override val abilityName = AbilityName.IceBreath
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIRE
 }
 
@@ -111,7 +108,7 @@ fun getAngleModifier(attachedFightableObject: FightableObject): Float{
     }
 }
 
-class FlameBreathObject(gameObjectData: GameObjectData, val attachedFightableObject: FightableObject): Projectile(gameObjectData = gameObjectData, size = Vector2(16f,64f), unitVectorDirection = Vector2(0f,0f), shooter = attachedFightableObject) {
+class IceBreathObject(gameObjectData: GameObjectData, val attachedFightableObject: FightableObject): Projectile(gameObjectData = gameObjectData, size = Vector2(16f,64f), unitVectorDirection = Vector2(0f,0f), shooter = attachedFightableObject) {
     override val layer = Layer.ONGROUND
     override var direction = Direction.DOWN
     override var canChangeDirection = true
@@ -131,7 +128,7 @@ class FlameBreathObject(gameObjectData: GameObjectData, val attachedFightableObj
 
     override fun frameTask() {
         super.frameTask()
-        rotateByAmount(1f, this)
+        com.mygdx.game.GameObjects.GameObject.rotateByAmount(1f, this)
     }
 
     override var speed = 0f

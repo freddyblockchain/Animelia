@@ -12,7 +12,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.SoundProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class ScrewAttack(override val attachedFightableObject: FightableObject): KeyAbility {
+class ScrewAttack(override val attachedFightableObject: FightableObject): KeyAbility(){
     override val abilityName = AbilityName.ScrewAttack
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.METAL
 

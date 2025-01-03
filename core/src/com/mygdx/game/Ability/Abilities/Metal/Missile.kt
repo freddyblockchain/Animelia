@@ -13,7 +13,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.ScrewProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class Missile(override val attachedFightableObject: FightableObject): KeyAbility {
+class Missile(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.Missile
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.METAL
 

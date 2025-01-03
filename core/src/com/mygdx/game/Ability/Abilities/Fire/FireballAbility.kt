@@ -12,7 +12,7 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Fireball
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class FireballAbility(override val attachedFightableObject: FightableObject): KeyAbility {
+class FireballAbility(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.Fireball
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIRE
 

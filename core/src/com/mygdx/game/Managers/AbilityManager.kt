@@ -15,10 +15,12 @@ class AbilityManager {
             for(ability in abilities.toMutableList()){
                 ability.currentFrame += 1
                 if(ability.currentFrame == 1){
+                    ability.activated = true
                     ability.onActivate()
                     ability.attachedFightableObject.cannotMoveCount += 1
                 }else if(ability.currentFrame >= ability.activeFrames){
                     ability.onDeactivate()
+                    ability.activated = false
                     ability.currentFrame = 0
                     abilities.remove(ability)
                     ability.attachedFightableObject.cannotMoveCount -= 1
