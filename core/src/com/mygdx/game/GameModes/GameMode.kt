@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.mygdx.game.Managers.InputActionManager
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.defaultLineWidth
 import com.mygdx.game.mainCamera
@@ -68,6 +69,7 @@ open class DefaultInputProcessor(): InputProcessor {
     }
 }
 fun changeMode(newMode: GameMode){
+    InputActionManager.inputActionManager.clear()
     currentGameMode = newMode
     newMode.modeInit()
     Gdx.input.inputProcessor = newMode.inputProcessor

@@ -74,3 +74,5 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Abandoned_House","entityIid":"46471ae3-9b00-11ef-9017-4daccd1a39d2"}
 {"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Abandoned_House","crystalEntityIId":"d0dc3f50-9b00-11ef-9017-27ae7904b6a1","statueEntityIid":"54b083e0-9b00-11ef-9017-e1f9806eaaed"}
 {"signaltype":"RAILWAY_FIXED","areaIdentifer":"World2","entityIid":"e49e82d0-9b00-11ef-9017-933deec94738"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"76e78c50-9b00-11ef-b886-1d9db1a78905"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"751898b0-9b00-11ef-b886-0b3e9d355be5"}

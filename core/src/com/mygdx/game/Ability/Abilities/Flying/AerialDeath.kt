@@ -2,6 +2,7 @@ package com.mygdx.game.Ability.Abilities.Flying
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
+import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
@@ -20,17 +21,17 @@ class AerialDeath(override val attachedFightableObject: FightableObject): KeyAbi
 
     var effect: ParticleEffect = ParticleEffect()
     lateinit var animeliaEffect: AnimeliaEffect
+    lateinit var origSize: Vector2
 
     override fun onActivate() {
+        attachedFightableObject.flyingState = FlyingState.FLYING
         effect.load(Gdx.files.internal("Particles/BirdCrashdown.p"), Gdx.files.internal("Particles"))
         animeliaEffect = AnimeliaEffect(effect)
 
-        attachedFightableObject.flyingState = FlyingState.FLYING
     }
 
     override fun onDeactivate() {
-
-        attachedFightableObject.flyingState = FlyingState.NOTFLYING
+      attachedFightableObject.flyingState = FlyingState.NOTFLYING
     }
 
     override fun frameAction() {
@@ -38,12 +39,10 @@ class AerialDeath(override val attachedFightableObject: FightableObject): KeyAbi
         val height = attachedFightableObject.sprite.height
         if(currentFrame < 60){
             attachedFightableObject.sprite.setSize(width + 1, height + 1)
-            println("width is : " + width)
         }
         else if(currentFrame > 60){
             attachedFightableObject.sprite.setSize(width  - 2, height - 2)
         }
-        attachedFightableObject.forceMove(1f)
 
         if(currentFrame == activeFrames - 5){
             animeliaEffect.reset()
@@ -53,5 +52,6 @@ class AerialDeath(override val attachedFightableObject: FightableObject): KeyAbi
             val animeliaAnimation = EffectAnimation(animeliaEffect, 30)
             AnimationManager.animationManager.add(animeliaAnimation)
         }
+        attachedFightableObject.forceMove(1f)
     }
 }
