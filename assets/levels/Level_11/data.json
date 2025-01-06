@@ -25,7 +25,8 @@
 		}
 	],
 	"customFields": {
-		"World": "World3"
+		"World": "World3",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",

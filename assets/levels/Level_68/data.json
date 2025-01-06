@@ -1,19 +1,24 @@
 {
 	"identifier": "Level_68",
-	"uniqueIdentifer": "c0b2d3a0-9b00-11ef-9017-990aea766a4e",
+	"uniqueIdentifer": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
 	"x": 1984,
-	"y": -2112,
+	"y": -1568,
 	"width": 64,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+			"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
 			"dir": "s"
+		},
+		{
+			"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House"
+		"World": "Abandoned_House",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",
@@ -26,32 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"IceCrystal": [
-			{
-				"id": "IceCrystal",
-				"iid": "d0dc3f50-9b00-11ef-9017-27ae7904b6a1",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 16151930,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "b18d0730-9b00-11ef-9017-6b97b9f52090",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Entity_ref2": {
-						"entityIid": "54b083e0-9b00-11ef-9017-e1f9806eaaed",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

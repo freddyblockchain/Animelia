@@ -17,7 +17,8 @@
 		}
 	],
 	"customFields": {
-		"World": "Ice_castle"
+		"World": "Ice_castle",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",

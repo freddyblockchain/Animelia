@@ -20,12 +20,17 @@
 			"dir": "e"
 		},
 		{
+			"levelIid": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
+			"dir": "e"
+		},
+		{
 			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "World1",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",

@@ -16,6 +16,7 @@ fun initSignalListeners() {
             MetalBirdTalkedWith(),
             BuildingDestroyed(),
             AddHouse(),
+            LevelVisible(),
         )
     )
 }

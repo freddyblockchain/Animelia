@@ -84,18 +84,3 @@ fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaDa
         animeliaInfo.animeliaAnimation.reset()
     }
 }
-
-fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
-    return when(animeliaType){
-        "FireArmadillo" -> ANIMELIA_ENTITY.FireArmadillo
-        "FireHippo" -> ANIMELIA_ENTITY.FireHippo
-        "IcePenguin" -> ANIMELIA_ENTITY.IcePenguin
-        "IceYeti" -> ANIMELIA_ENTITY.IceYeti
-        "Bird" -> ANIMELIA_ENTITY.Bird
-        "IceBird" -> ANIMELIA_ENTITY.IceBird
-        "MetalBird" -> ANIMELIA_ENTITY.MetalBird
-        "GuardFrog" -> ANIMELIA_ENTITY.GuardFrog
-        "KingFrog" -> ANIMELIA_ENTITY.KingFrog
-        else -> ANIMELIA_ENTITY.FireArmadillo
-    }
-}

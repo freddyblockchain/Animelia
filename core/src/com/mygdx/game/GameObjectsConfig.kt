@@ -27,7 +27,7 @@ import kotlinx.serialization.json.JsonObject
 data class Root(val x: Int, val y: Int, val entities: Entities, val width: Int, val height: Int, val uniqueIdentifer: String, val identifier: String, val customFields: RootCustomFields)
 
 @Serializable
-data class RootCustomFields(val World: String)
+data class RootCustomFields(val World: String, val Visible: Boolean)
 @Serializable
 data class Entities(
     val Door: List<GameObjectData> = listOf(),

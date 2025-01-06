@@ -8,6 +8,10 @@
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
+			"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
+			"dir": "o"
+		},
+		{
 			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
 			"dir": "n"
 		},
@@ -17,7 +21,8 @@
 		}
 	],
 	"customFields": {
-		"World": "World2"
+		"World": "World2",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",

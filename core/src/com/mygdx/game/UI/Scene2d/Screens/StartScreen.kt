@@ -16,6 +16,7 @@ import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.Managers.*
 import com.mygdx.game.Saving.SavingHandler.Companion.InitPlayerState
+import com.mygdx.game.Signal.WORLDSIGNAL
 import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
 import com.mygdx.game.UI.Scene2d.bigLabel
 import com.mygdx.game.UI.Scene2d.createBackgroundDrawable
@@ -100,6 +101,14 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
     fun initAndGoToGame(){
         InitPlayerState()
         SignalManager.InitSignalState()
+        //Execute world events before the beginning of the game
+        val worldSignals = SignalManager.pastSignals.filter { it.areaIdentifer == WORLDSIGNAL }
+        worldSignals.forEach {
+            SignalManager.signalManager.add(it)
+        }
+        SignalManager.executeSignals()
+
+        //Change to first area.
         changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()

@@ -3,11 +3,12 @@ import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.MetalBirdPos
 import com.mygdx.game.Signal.Signal
+import com.mygdx.game.Signal.WORLDSIGNAL
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED, METAL_BIRD_TALKING, FIREPLACE_LIT, CHANGE_VISIBLE}
+enum class SIGNALTYPE { ABILITY_GAINED, REMOVE_OBJECT, ANIMELIA_RECRUITED, ANIMELIA_CITY_TALKED_WITH, RAILWAY_FIXED, CRYSTAL_ACTIVATED, METAL_BIRD_TALKING, FIREPLACE_LIT, CHANGE_VISIBLE, CHANGE_LEVEL_VISIBLE}
 
 @Serializable
 class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJECT) {
@@ -16,6 +17,10 @@ class RemoveObjectSignal(val entityIid: String) : Signal(SIGNALTYPE.REMOVE_OBJEC
 
 @Serializable
 class ChangeVisibleSignal(val entityIid: String, val levelId: String) : Signal(SIGNALTYPE.CHANGE_VISIBLE) {
+
+}
+@Serializable
+class ChangeLevelVisibleSignal(val levelId: String) : Signal(SIGNALTYPE.CHANGE_VISIBLE, WORLDSIGNAL) {
 
 }
 
@@ -53,6 +58,7 @@ class AnimeliaCityTalkedWithSignal(val animeliaEntity: ANIMELIA_ENTITY) : Signal
 }
 
 
+
 fun signalConvert(signalString: String): Signal {
     val processedString = signalString.split(",")[0] + '}'
     val newSignal: Signal = Json.decodeFromString(processedString)
@@ -68,5 +74,6 @@ fun signalConvert(signalString: String): Signal {
         SIGNALTYPE.METAL_BIRD_TALKING -> Json.decodeFromString<MetalBirdTalkingSignal>(signalString)
         SIGNALTYPE.FIREPLACE_LIT -> Json.decodeFromString<FireplaceLitSignal>(signalString)
         SIGNALTYPE.CHANGE_VISIBLE -> Json.decodeFromString<ChangeVisibleSignal>(signalString)
+        SIGNALTYPE.CHANGE_LEVEL_VISIBLE -> Json.decodeFromString<ChangeLevelVisibleSignal>(signalString)
     }
 }

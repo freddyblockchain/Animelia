@@ -2,12 +2,12 @@ package com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia
 
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.EnemyAnimelia
-import com.mygdx.game.Animelia.getAnimeliaEntity
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.AnimeliaCustomFields
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.IcePenguin
+import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.getAnimeliaEntity
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement

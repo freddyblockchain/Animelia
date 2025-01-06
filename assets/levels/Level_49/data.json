@@ -1,27 +1,24 @@
 {
 	"identifier": "Level_49",
-	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-	"x": 1216,
-	"y": -704,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "833b64f0-9b00-11ef-b959-75615638eebc",
+	"x": -1504,
+	"y": -32,
+	"width": 128,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-			"dir": "n"
-		},
-		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
 			"dir": "e"
 		},
 		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-			"dir": "s"
+			"levelIid": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World2"
+		"World": "World4",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",
@@ -35,60 +32,28 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"IceCone": [
 			{
-				"id": "Door",
-				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
+				"id": "IceCone",
+				"iid": "9676a480-9b00-11ef-b959-7fcc0d7b6c6c",
 				"layer": "Entities",
-				"x": 0,
+				"x": 96,
 				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
-						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
-						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
-				}
-			}
-		],
-		"Cliffside": [
+				"height": 32,
+				"color": 3469566,
+				"customFields" : {}
+			},
 			{
-				"id": "Cliffside",
-				"iid": "680565f0-9b00-11ef-9017-99ca0506282d",
+				"id": "IceCone",
+				"iid": "96e321f0-9b00-11ef-b959-7dcb3c0878de",
 				"layer": "Entities",
-				"x": 224,
-				"y": 64,
-				"width": 32,
-				"height": 64,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
-						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-				"layer": "Entities",
-				"x": 160,
-				"y": 64,
+				"x": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
+				"color": 3469566,
+				"customFields" : {}
 			}
 		]
 	}

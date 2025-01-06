@@ -1,19 +1,28 @@
 {
 	"identifier": "Level_59",
-	"uniqueIdentifer": "015874a0-9b00-11ef-9017-89014ae0a87f",
-	"x": 1696,
-	"y": -1440,
-	"width": 128,
+	"uniqueIdentifer": "41e67220-9b00-11ef-9017-75098ba24119",
+	"x": 1568,
+	"y": -1248,
+	"width": 384,
 	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "f6d98910-9b00-11ef-9017-e5f222d195bc",
-			"dir": "s"
+			"dir": "n"
+		},
+		{
+			"levelIid": "10f334e0-9b00-11ef-9017-05c2f1944775",
+			"dir": "n"
+		},
+		{
+			"levelIid": "25c78b00-9b00-11ef-9017-7193c01afe7f",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House"
+		"World": "Abandoned_House",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",
@@ -26,5 +35,55 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Statue": [
+			{
+				"id": "Statue",
+				"iid": "54b083e0-9b00-11ef-9017-e1f9806eaaed",
+				"layer": "Entities",
+				"x": 160,
+				"y": 0,
+				"width": 64,
+				"height": 32,
+				"color": 15389866,
+				"customFields" : {}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "b18d0730-9b00-11ef-9017-6b97b9f52090",
+				"layer": "Entities",
+				"x": 160,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "e6746530-9b00-11ef-9017-237f5b37278a",
+				"layer": "Entities",
+				"x": 176,
+				"y": 112,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "da69a980-9b00-11ef-9017-fd5b92968883",
+						"layerIid": "c5e25862-9b00-11ef-9017-ef82e2b817ba",
+						"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		]
+	}
 }

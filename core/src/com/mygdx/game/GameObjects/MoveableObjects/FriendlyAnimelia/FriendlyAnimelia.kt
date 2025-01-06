@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
 import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
-import com.mygdx.game.Animelia.getAnimeliaEntity
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
@@ -28,6 +27,7 @@ fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: Game
         ANIMELIA_ENTITY.MetalBird -> MetalBird(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.GuardFrog -> GuardFrog(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.KingFrog -> KingFrog(gameObjectData, cityPosRefData, CustomData)
+        ANIMELIA_ENTITY.Frog -> Frog(gameObjectData, cityPosRefData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
@@ -41,7 +41,23 @@ fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vect
         ANIMELIA_ENTITY.KingFrog -> KingFrogInCity(gameObjectData)
         ANIMELIA_ENTITY.GuardFrog -> GuardFrogInCity(gameObjectData)
         ANIMELIA_ENTITY.IceYeti -> IceYetiInCity(gameObjectData)
+        ANIMELIA_ENTITY.Frog -> FrogInCity(gameObjectData)
         else -> FireArmadilloInCity(gameObjectData)
+    }
+}
+fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
+    return when(animeliaType){
+        "FireArmadillo" -> ANIMELIA_ENTITY.FireArmadillo
+        "FireHippo" -> ANIMELIA_ENTITY.FireHippo
+        "IcePenguin" -> ANIMELIA_ENTITY.IcePenguin
+        "IceYeti" -> ANIMELIA_ENTITY.IceYeti
+        "Bird" -> ANIMELIA_ENTITY.Bird
+        "IceBird" -> ANIMELIA_ENTITY.IceBird
+        "MetalBird" -> ANIMELIA_ENTITY.MetalBird
+        "GuardFrog" -> ANIMELIA_ENTITY.GuardFrog
+        "KingFrog" -> ANIMELIA_ENTITY.KingFrog
+        "Frog" -> ANIMELIA_ENTITY.Frog
+        else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }
 

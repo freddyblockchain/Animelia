@@ -5,6 +5,7 @@ import com.mygdx.game.FileHandler
 import com.mygdx.game.FileHandler.Companion.writeSignalToFile
 import com.mygdx.game.Signal.Signal
 import com.mygdx.game.Signal.SignaledEventListener
+import com.mygdx.game.Signal.WORLDSIGNAL
 import com.mygdx.game.Signal.initSignalListeners
 import signalConvert
 
@@ -35,7 +36,8 @@ class SignalManager {
             fun executeSignals(){
                 for(signal in signalManager.toList()){
                     listenerMap[signal.signaltype]!!.forEach {
-                        if(AreaManager.getActiveArea()!!.areaIdentifier == signal.areaIdentifer){
+                        //Fix næste gange
+                        if(AreaManager.getActiveArea()!!.areaIdentifier == signal.areaIdentifer || signal.areaIdentifer == WORLDSIGNAL){
                             it.triggerEvent(signal)
                         }
                     }

@@ -37,6 +37,9 @@ fun InitArea(levelName: String) {
     correspondingArea.associatedLevels.add(levelName)
     AreaManager.uniqueIdToLevelPathMap[root.uniqueIdentifer] = levelName
     AreaManager.levelToAreaMap[levelName] = correspondingArea.areaIdentifier
+    AreaManager.levelNameToLevelId[levelName] = root.uniqueIdentifer
+
+    AreaManager.levelVisibleMap[root.uniqueIdentifer] = root.customFields.Visible
 
 }
 

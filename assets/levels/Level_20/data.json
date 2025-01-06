@@ -8,7 +8,8 @@
 	"bgColor": "#696A79",
 	"neighbourLevels": [],
 	"customFields": {
-		"World": "Iglo"
+		"World": "Iglo",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",

@@ -1,23 +1,24 @@
 {
 	"identifier": "Level_72",
-	"uniqueIdentifer": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-	"x": 896,
-	"y": 704,
-	"width": 352,
-	"height": 256,
+	"uniqueIdentifer": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+	"x": 1952,
+	"y": -1760,
+	"width": 128,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
-			"dir": "n"
+			"levelIid": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
+			"dir": "s"
 		},
 		{
-			"levelIid": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
-			"dir": "s"
+			"levelIid": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0"
+		"World": "Abandoned_House",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",
@@ -31,54 +32,71 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"BoulderGenerator": [
 			{
-				"id": "Door",
-				"iid": "eee08950-9b00-11ef-ad95-d999d583f93f",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "e38806a0-9b00-11ef-ad95-1b6239092199",
-						"layerIid": "ce4cdc42-73f0-11ef-bff8-671ae94b1e29",
-						"levelIid": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "0c5d50c0-9b00-11ef-8ab8-df2969fe4c06",
+				"id": "BoulderGenerator",
+				"iid": "2044e160-9b00-11ef-9017-6192b8736f7a",
 				"layer": "Entities",
 				"x": 32,
-				"y": 64,
+				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 1199753,
+				"color": 7552569,
 				"customFields": {
-					"Name": "SwampPos"
+					"Direction": "Down",
+					"Automatic": false
+				}
+			},
+			{
+				"id": "BoulderGenerator",
+				"iid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": false
 				}
 			}
 		],
-		"Egg": [
+		"BoulderPad": [
 			{
-				"id": "Egg",
-				"iid": "8d757db0-9b00-11ef-bf48-4d5c171eed5c",
+				"id": "BoulderPad",
+				"iid": "263ac260-9b00-11ef-9017-b98cf21aab57",
 				"layer": "Entities",
-				"x": 192,
-				"y": 128,
+				"x": 0,
+				"y": 96,
 				"width": 32,
 				"height": 32,
-				"color": 5925256,
+				"color": 14957380,
 				"customFields": {
-					"Egg": "Sound"
+					"Entity_ref": {
+						"entityIid": "2044e160-9b00-11ef-9017-6192b8736f7a",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "BoulderPad",
+				"iid": "29781310-9b00-11ef-9017-a7224cb35469",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

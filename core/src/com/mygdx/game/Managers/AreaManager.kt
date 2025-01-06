@@ -14,6 +14,8 @@ class AreaManager {
         private var activeArea: Area? = null
         val uniqueIdToLevelPathMap: MutableMap<String, String> = mutableMapOf()
         val levelToAreaMap: MutableMap<String, String> = mutableMapOf()
+        val levelVisibleMap: MutableMap<String,Boolean> = mutableMapOf()
+        val levelNameToLevelId: MutableMap<String,String> = mutableMapOf()
 
         fun setActiveArea(areaIdentifier: String){
             val areaWithIdentifier = areas.find { it.areaIdentifier == areaIdentifier }
@@ -55,8 +57,11 @@ class AreaManager {
             setActiveArea(areaIdentifier)
             val newArea = activeArea!!
             newArea.associatedLevels.forEach {
-                val newObjects = getObjectsFromLevelName(it)
-                addObjectsToArea(newArea, newObjects)
+                val levelId = levelNameToLevelId[it]
+                if(levelVisibleMap[levelId]!!){
+                    val newObjects = getObjectsFromLevelName(it)
+                    addObjectsToArea(newArea, newObjects)
+                }
             }
             newArea.gameObjects.toMutableList().forEach { it.initObject() }
             newArea.gameObjects.add(player)
