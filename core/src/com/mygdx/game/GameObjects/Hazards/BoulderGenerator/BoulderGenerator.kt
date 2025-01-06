@@ -38,6 +38,10 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
 
     var effect: ParticleEffect = ParticleEffect()
 
+    init {
+        texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+    }
+
     override fun initObject() {
         effect.load(Gdx.files.internal("Particles/rockstart.p"), Gdx.files.internal("Particles"))
     }

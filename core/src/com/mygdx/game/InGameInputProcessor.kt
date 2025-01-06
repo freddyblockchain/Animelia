@@ -41,7 +41,7 @@ class InGameInputProcessor : InputProcessor {
                 changeMode(MapMode(mainMode))
             }
         }
-        if (player.abilityCooldown.cooldownAvailable()) {
+        if (player.abilityCooldown.cooldownAvailable() && AbilityManager.abilities.all { !it.activated }) {
             for (abilityPair in player.activeAbilities) {
                 if (abilityPair.value != null) {
                     if (abilityPair.key == keycode - 7) {

@@ -43,6 +43,7 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     val coldSpeech = SpeechBubble("This area is too cold for me!", this, 0)
     val hotSpeech = SpeechBubble("This area is too hot for me!",this,0)
     var materialsPickedUp = mutableListOf<Material>()
+    var drawPlayer = true
 
     override val stats
         get() = generalSaveState.stats
@@ -55,16 +56,17 @@ class Player(gameObjectData: GameObjectData, size: Vector2)
     }
 
     override fun render(batch: SpriteBatch) {
-        if(this.state == State.NORMAL){
-            setAnimeliaSpriteTexture(this, animeliaInfo)
-        }
-        super.render(batch)
+        if(drawPlayer) {
+            if (this.state == State.NORMAL) {
+                setAnimeliaSpriteTexture(this, animeliaInfo)
+            }
+            super.render(batch)
 
-        if(playerEnvironmentState == PlayerEnvironmentState.COLD){
-            coldSpeech.render(batch)
-        }
-        else if(playerEnvironmentState == PlayerEnvironmentState.HOT){
-            hotSpeech.render(batch)
+            if (playerEnvironmentState == PlayerEnvironmentState.COLD) {
+                coldSpeech.render(batch)
+            } else if (playerEnvironmentState == PlayerEnvironmentState.HOT) {
+                hotSpeech.render(batch)
+            }
         }
     }
 

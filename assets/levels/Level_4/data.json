@@ -48,7 +48,8 @@
 						"layerIid": "f2fc7923-4ce0-11ef-8f8c-033f1da8a0d2",
 						"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Visible": true
 				}
 			}
 		],

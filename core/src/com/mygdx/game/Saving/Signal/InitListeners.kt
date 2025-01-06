@@ -15,6 +15,7 @@ fun initSignalListeners() {
             AnimeliaTalkedWithInCity(),
             MetalBirdTalkedWith(),
             BuildingDestroyed(),
+            AddHouse(),
         )
     )
 }

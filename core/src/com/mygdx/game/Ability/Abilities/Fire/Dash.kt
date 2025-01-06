@@ -18,7 +18,7 @@ import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.getUnitVectorTowardsPoint
 import com.mygdx.game.player
 
-class Dash(override val attachedFightableObject: FightableObject) : KeyAbility {
+class Dash(override val attachedFightableObject: FightableObject) : KeyAbility() {
 
     var animeliaEffect: AnimeliaEffect
     val particleEffect = ParticleEffect()

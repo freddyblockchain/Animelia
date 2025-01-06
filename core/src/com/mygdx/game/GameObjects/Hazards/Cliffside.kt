@@ -47,7 +47,7 @@ class CliffSideCollision(val cliffside: Cliffside): DefaultAreaEntranceCollition
 
         if(player.state == State.NORMAL && player.flyingState == FlyingState.NOTFLYING){
             player.state = State.STUNNED
-            changeMode(CliffsideAnimationMode(mainMode, endPos = cliffside.bottomleft + Vector2(-50f,50f), returningPos = cliffside.animeliaPosition))
+            changeMode(CliffsideAnimationMode(mainMode, returningPos = cliffside.animeliaPosition))
             movedOutside(player)
         }
     }

@@ -10,7 +10,7 @@ import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.MoveableObjects.Other.TailSwipeObject
 import com.mygdx.game.Managers.AreaManager
 
-class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbility {
+class TailSwipe(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.TailSwipe
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIGHTING
     override val activeFrames = 60

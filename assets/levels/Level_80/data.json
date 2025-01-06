@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_80",
-	"uniqueIdentifer": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
-	"x": 192,
-	"y": 640,
-	"width": 96,
-	"height": 192,
+	"uniqueIdentifer": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+	"x": 160,
+	"y": 1152,
+	"width": 128,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "n"
-		},
-		{
 			"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-			"dir": "s"
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World1"
+		"World": "Swamp0"
 	},
 	"layers": [
 		"GroundIce.png",
@@ -31,88 +27,18 @@
 		"Beach.png"
 	],
 	"entities": {
-		"BoulderGenerator": [
+		"Trumpet": [
 			{
-				"id": "BoulderGenerator",
-				"iid": "2b6cba00-9b00-11ef-8ab8-a3f068702c74",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "2dd92620-9b00-11ef-8ab8-7deaef94a9c5",
-				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "3113b7b0-9b00-11ef-8ab8-917b38cf56cf",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Right",
-					"Automatic": false
-				}
-			}
-		],
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
-				"layer": "Entities",
-				"x": 32,
-				"y": 176,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
-						"layerIid": "6170f682-9b00-11ef-8ab8-7fc3e9508808",
-						"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			}
-		],
-		"SoundBulb": [
-			{
-				"id": "SoundBulb",
-				"iid": "79bb92d0-9b00-11ef-9dff-3b616218559d",
+				"id": "Trumpet",
+				"iid": "a5d63110-9b00-11ef-bf48-dd19e2f05396",
 				"layer": "Entities",
 				"x": 0,
 				"y": 64,
 				"width": 32,
-				"height": 48,
-				"color": 6539085,
+				"height": 32,
+				"color": 16705377,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "3113b7b0-9b00-11ef-8ab8-917b38cf56cf",
-						"layerIid": "c574c0d2-9b00-11ef-8ab8-053f57f64816",
-						"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Right"
 				}
 			}
 		]

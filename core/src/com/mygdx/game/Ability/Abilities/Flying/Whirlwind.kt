@@ -13,7 +13,7 @@ import com.mygdx.game.GameObjects.GameObject.rotateByAmount
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 
-class Whirlwind(override val attachedFightableObject: FightableObject): KeyAbility {
+class Whirlwind(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.Whirlwind
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FLYING
 

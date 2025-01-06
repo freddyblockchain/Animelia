@@ -11,6 +11,9 @@ import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameModes.AnimationModes.CliffsideAnimationMode
+import com.mygdx.game.GameModes.AnimationModes.SkewerAnimationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
@@ -89,7 +92,8 @@ class SpikesCollision(val spikes: Spikes): DefaultAreaEntranceCollition(){
     override fun actionWhileInside() {
         if(spikes.spikesActive && player.state != State.SHIELDED && player.flyingState != FlyingState.FLYING ){
             //hack right now
-            player.setPosition(spikes.goToPosition.currentPosition())
+            player.state = State.STUNNED
+            changeMode(SkewerAnimationMode(mainMode, returningPos = spikes.goToPosition))
         }
     }
 
