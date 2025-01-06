@@ -9,7 +9,7 @@ import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.State
 
-class CliffsideAnimationMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch, val endPos: Vector2, val returningPos: AnimeliaPosition):
+class CliffsideAnimationMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = mainMode.spriteBatch, val returningPos: AnimeliaPosition):
     GameMode {
     var currentFrame = 0
 

@@ -101,7 +101,9 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
     AnimationManager.animationManager.add(AreaTransitionAnimation())
 
     player.activeAbilities.forEach {
-        player.activeAbilities[it.key] = convertNameToAbility(it.value!!.abilityName.name).keyAbility
+        if(it.value != null){
+            player.activeAbilities[it.key] = convertNameToAbility(it.value!!.abilityName.name).keyAbility
+        }
     }
     mainMode.abilityRowUi.updateToolTips()
 }
