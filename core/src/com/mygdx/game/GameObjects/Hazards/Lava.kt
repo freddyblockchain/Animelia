@@ -3,18 +3,19 @@ package com.mygdx.game.GameObjects.Hazards
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.*
 import com.mygdx.game.Collisions.CanMoveCollision
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
-import com.mygdx.game.GameObjectData
+import com.mygdx.game.GameModes.AnimationModes.FireAnimationMode
+import com.mygdx.game.GameModes.AnimationModes.SkewerAnimationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.CollisionManager
-import com.mygdx.game.player
-import com.mygdx.game.renderRepeatedTexture
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
@@ -48,7 +49,8 @@ class LavaCollision(val lava: Lava): MoveCollision(){
     }
 
     override fun collisionHappened(collidedObject: GameObject) {
-        player.setPosition(lava.goToPosition.currentPosition())
+        player.state = State.STUNNED
+        changeMode(FireAnimationMode(mainMode, returningPos = lava.goToPosition))
     }
 
 }
