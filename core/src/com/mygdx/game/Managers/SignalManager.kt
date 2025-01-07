@@ -26,7 +26,9 @@ class SignalManager {
             }
             //Remember this area identifer stuff
             fun emitSignal(signal: Signal, saveSignal: Boolean = true, areaIdentifier: String = AreaManager.getActiveArea()?.areaIdentifier!!){
-                signal.areaIdentifer = areaIdentifier
+                if(signal.areaIdentifer != WORLDSIGNAL){
+                    signal.areaIdentifer = areaIdentifier
+                }
                 if(saveSignal){
                     writeSignalToFile(signal)
                 }

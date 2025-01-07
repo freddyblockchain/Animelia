@@ -17,7 +17,7 @@ import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.plus
 
 class Frog(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData, cityPositionEntityId) {
-    override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
+    override val animeliaEntity = ANIMELIA_ENTITY.Frog
 
     val speech1 = SpeechData("Me", "Do you wanna come to the city?")
     val speech2 = SpeechData("Fire Armadillo", "hmm, prove your worth by defeating 3 animelia clones")

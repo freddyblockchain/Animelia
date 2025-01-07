@@ -160,10 +160,10 @@ class MetalBirdData(): AnimeliaData {
 }
 
 class FrogData(): AnimeliaData {
-    override var textureName = "Animelias/frog.png"
+    override var textureName = "Animelias/frog-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/frog.png","Animelias/frog-right.png","Animelias/frog-left.png")
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/frog-straight.png","Animelias/frog-right.png","Animelias/frog-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.GuardFrog)
     override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)

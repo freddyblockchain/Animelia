@@ -20,7 +20,7 @@ class ChangeVisibleSignal(val entityIid: String, val levelId: String) : Signal(S
 
 }
 @Serializable
-class ChangeLevelVisibleSignal(val levelId: String) : Signal(SIGNALTYPE.CHANGE_VISIBLE, WORLDSIGNAL) {
+class ChangeLevelVisibleSignal(val levelId: String) : Signal(SIGNALTYPE.CHANGE_LEVEL_VISIBLE, WORLDSIGNAL) {
 
 }
 

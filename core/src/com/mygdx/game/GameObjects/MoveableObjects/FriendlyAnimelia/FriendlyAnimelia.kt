@@ -40,7 +40,7 @@ fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vect
         ANIMELIA_ENTITY.MetalBird -> MetalBirdInCity(gameObjectData)
         ANIMELIA_ENTITY.KingFrog -> KingFrogInCity(gameObjectData)
         ANIMELIA_ENTITY.GuardFrog -> GuardFrogInCity(gameObjectData)
-        ANIMELIA_ENTITY.IceYeti -> IceYetiInCity(gameObjectData)
+        ANIMELIA_ENTITY.IceYeti  -> IceYetiInCity(gameObjectData)
         ANIMELIA_ENTITY.Frog -> FrogInCity(gameObjectData)
         else -> FireArmadilloInCity(gameObjectData)
     }
