@@ -15,14 +15,17 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
 
-enum class Material{ANIMELIABONE, somthing1, something2, something3, IceFruit}
-enum class KeyItem{FROZENHEART,FIREHEART, MAP, Crown}
+enum class Material{ANIMELIABONE, ICEFRUIT, FIREFRUIT,CANYONFRUIT,FORESTFRUIT,TROPICALFRUIT}
+enum class KeyItem{FROZENHEART,FIREHEART, MAP, CROWN}
 
 fun getMaterialTexture(material: Material): Texture{
     return when(material){
         Material.ANIMELIABONE -> DefaultTextureHandler.getTexture("AnimeliaBone.png")
-        Material.IceFruit -> DefaultTextureHandler.getTexture("icefruit.png")
-        else -> DefaultTextureHandler.getTexture("AnimeliaBone.png")
+        Material.ICEFRUIT -> DefaultTextureHandler.getTexture("icefruit.png")
+        Material.FORESTFRUIT -> DefaultTextureHandler.getTexture("forestfruit.png")
+        Material.FIREFRUIT -> DefaultTextureHandler.getTexture("firefruit.png")
+        Material.CANYONFRUIT -> DefaultTextureHandler.getTexture("canyonfruit.png")
+        Material.TROPICALFRUIT -> DefaultTextureHandler.getTexture("Tropicalfruit.png")
     }
 }
 fun getKeyItemTextures(keyItem: KeyItem): Texture{
@@ -30,7 +33,7 @@ fun getKeyItemTextures(keyItem: KeyItem): Texture{
         KeyItem.FROZENHEART -> DefaultTextureHandler.getTexture("frozen-heart.png")
         KeyItem.FIREHEART -> DefaultTextureHandler.getTexture("fire-heart.png")
         KeyItem.MAP -> DefaultTextureHandler.getTexture("book.png")
-        KeyItem.Crown -> DefaultTextureHandler.getTexture("crown.png")
+        KeyItem.CROWN -> DefaultTextureHandler.getTexture("crown.png")
     }
 }
 

@@ -1,14 +1,10 @@
 package com.mygdx.game.Animelia
 
-import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Animation.AnimeliaAnimation
-import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Items.Material
-import com.mygdx.game.Items.MaterialItem
 import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.PlayerStatus
 import com.mygdx.game.player
 
 interface AnimeliaData {
@@ -142,7 +138,7 @@ class IceBirdData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.FLYING)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.IceFruit))
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.ICEFRUIT))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.IceCocoon, AbilityName.Icicle, AbilityName.Whirlwind)
     override val animeliaEntity = ANIMELIA_ENTITY.IceBird
@@ -153,7 +149,7 @@ class MetalBirdData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.IceFruit))
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.ICEFRUIT))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind)
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird

@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_57",
-	"uniqueIdentifer": "6e408a20-9b00-11ef-9017-c7a7a3d3fbfe",
-	"x": 1024,
-	"y": -128,
-	"width": 96,
+	"uniqueIdentifer": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+	"x": 640,
+	"y": 64,
+	"width": 192,
 	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
 			"dir": "s"
 		},
 		{
-			"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-			"dir": "n"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -31,5 +31,62 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "e01905a0-9b00-11ef-b886-0d69c0fad0c4",
+				"layer": "Entities",
+				"x": 32,
+				"y": 80,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "dcefd930-9b00-11ef-b886-0d2e82f3eef1",
+						"layerIid": "f316d7b1-25d0-11ef-8eef-5163e16a9dc6",
+						"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		],
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "3025ba70-9b00-11ef-b886-7b399733c624",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 96,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "34c496f0-9b00-11ef-b886-2b37bc1bc55e",
+						"layerIid": "bcd2dee2-9b00-11ef-b886-753395e1af32",
+						"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "34c496f0-9b00-11ef-b886-2b37bc1bc55e",
+				"layer": "Entities",
+				"x": 160,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		]
+	}
 }

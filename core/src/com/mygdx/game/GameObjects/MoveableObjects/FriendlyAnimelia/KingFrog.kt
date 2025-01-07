@@ -91,7 +91,7 @@ class KingFrog(val gameObjectData: GameObjectData, cityPosEntityId: EntityRefDat
 
 class KingFrogRecruitment(): AnimeliaRecruitmendCondition {
     override fun isConditionFulfilled(): Boolean {
-        return generalSaveState.inventory.keyItems.contains(KeyItem.Crown)
+        return generalSaveState.inventory.keyItems.contains(KeyItem.CROWN)
     }
 }
 

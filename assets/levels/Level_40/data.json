@@ -1,28 +1,20 @@
 {
 	"identifier": "Level_40",
-	"uniqueIdentifer": "2b561ed0-c210-11ef-9e36-b98cadac3324",
-	"x": 960,
-	"y": 416,
-	"width": 288,
-	"height": 288,
+	"uniqueIdentifer": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
+	"x": 480,
+	"y": 480,
+	"width": 224,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "ce4cdc40-73f0-11ef-bff8-874e078d0c7f",
-			"dir": "o"
-		},
-		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "n"
-		},
-		{
-			"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-			"dir": "s"
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World2",
-		"Visible": true
+		"World": "World1",
+		"Visible": false
 	},
 	"layers": [
 		"GroundIce.png",
@@ -36,46 +28,95 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Position": [
 			{
-				"id": "Door",
-				"iid": "2b561ed3-c210-11ef-9e36-69c3ecc647d7",
+				"id": "Position",
+				"iid": "d56dd250-c210-11ef-9e36-c79da551d64e",
 				"layer": "Entities",
-				"x": 128,
-				"y": 272,
+				"x": 96,
+				"y": 32,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 1199753,
 				"customFields": {
-					"Door": {
-						"entityIid": "eee08950-9b00-11ef-ad95-d999d583f93f",
-						"layerIid": "74418b92-9b00-11ef-ad95-dff3fd173950",
-						"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
+					"Name": null
 				}
 			}
 		],
-		"Animelia": [
+		"Item": [
 			{
-				"id": "Animelia",
-				"iid": "c89d55a0-c210-11ef-9e36-e550b344a58a",
+				"id": "Item",
+				"iid": "5b7281a0-c210-11ef-9b6f-714dc16a81f3",
 				"layer": "Entities",
-				"x": 128,
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "ICEFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "602a8b70-c210-11ef-9b6f-5334ffb08fbd",
+				"layer": "Entities",
+				"x": 64,
 				"y": 128,
 				"width": 32,
 				"height": 32,
-				"color": 15389866,
+				"color": 12635100,
 				"customFields": {
-					"AnimeliaType": "Frog",
-					"AnimeliaCityPos": {
-						"entityIid": "d56dd250-c210-11ef-9e36-c79da551d64e",
-						"layerIid": "3f2b7b82-c210-11ef-9e36-1dc3b9e324bc",
-						"levelIid": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
+					"Item": "FORESTFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "66943ce0-c210-11ef-9b6f-19a3833ef761",
+				"layer": "Entities",
+				"x": 192,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "CANYONFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "7060a150-c210-11ef-9b6f-99d46206f886",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FIREFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "7bebccc0-c210-11ef-9b6f-c50f8051faef",
+				"layer": "Entities",
+				"x": 192,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "TROPICALFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
 				}
 			}
 		]

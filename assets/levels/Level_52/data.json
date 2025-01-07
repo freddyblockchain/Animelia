@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_52",
-	"uniqueIdentifer": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-	"x": 1472,
-	"y": -704,
-	"width": 352,
-	"height": 160,
+	"uniqueIdentifer": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
+	"x": 1760,
+	"y": -800,
+	"width": 64,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-			"dir": "w"
+			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"dir": "s"
 		},
 		{
-			"levelIid": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
+			"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
 			"dir": "n"
 		}
 	],
@@ -32,18 +32,23 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Position": [
+		"Cliffside": [
 			{
-				"id": "Position",
-				"iid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
+				"id": "Cliffside",
+				"iid": "71c631a0-9b00-11ef-9017-053b4924eb09",
 				"layer": "Entities",
-				"x": 288,
-				"y": 0,
-				"width": 32,
+				"x": 0,
+				"y": 32,
+				"width": 64,
 				"height": 32,
-				"color": 1199753,
+				"color": 16705377,
 				"customFields": {
-					"Name": null
+					"Entity_ref": {
+						"entityIid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
+						"layerIid": "4e3bcf92-9b00-11ef-9017-edefa8611ddd",
+						"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]
