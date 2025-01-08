@@ -44,8 +44,8 @@ class DeathMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = 
         }
         if(currentFrame == endFrame){
             spriteBatch.shader = originalShader
-
-            changeArea(startPos, "World1")
+            val respawn = getNearestRespawn()
+            changeArea(respawn.first, respawn.second)
             val reincarnationMode = UIMode(ReincarnationScreen(mainMode), playConfirmationSound = false)
             player.currentHealth = player.maxHealth
             changeMode(reincarnationMode)

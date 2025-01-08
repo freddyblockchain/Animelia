@@ -56,7 +56,6 @@ class StatusTable(color: Color): Table() {
         val trainingPoints = Label("TrainingPoints: ${generalSaveState.stats.tp}", localHeaderStyle)
         val offence = Label("Offence: ${player.stats.offence}", localHeaderStyle)
         val defence = Label("Defence: ${player.stats.defence}", localHeaderStyle)
-        val speed = Label("Speed: ${player.stats.speed}", localHeaderStyle)
         val intelligence = Label("Intelligence: ${player.stats.intelligence}", localHeaderStyle)
 
         trainingTable.add(trainingPoints).pad(50f)
@@ -64,8 +63,6 @@ class StatusTable(color: Color): Table() {
         trainingTable.add(offence).pad(20f)
         trainingTable.row()
         trainingTable.add(defence).pad(20f)
-        trainingTable.row()
-        trainingTable.add(speed).pad(20f)
         trainingTable.row()
         trainingTable.add(intelligence).pad(20f)
 

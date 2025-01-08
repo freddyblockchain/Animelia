@@ -24,7 +24,6 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
 
     var offence = generalSaveState.stats.offence
     var defence = generalSaveState.stats.defence
-    var speed = generalSaveState.stats.speed
     var intelligence = generalSaveState.stats.intelligence
     var sp = generalSaveState.stats.tp
 
@@ -49,12 +48,9 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
         rootTable.row()
         if(includeEverything){
             val defenceTable = offenceAttributeRow.getNewTable("Defence", defence, {defence += 1; defence},{defence -= 1; defence})
-            val speedTable = offenceAttributeRow.getNewTable("Speed", speed, {speed += 1; speed},{speed -= 1; speed})
             val intelligenceTable = offenceAttributeRow.getNewTable("Intelligence", intelligence, {intelligence += 1; intelligence},{intelligence -= 1; intelligence})
 
             rootTable.add(defenceTable)
-            rootTable.row()
-            rootTable.add(speedTable)
             rootTable.row()
             rootTable.add(intelligenceTable)
             rootTable.row()
@@ -68,7 +64,6 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
                 player.stats.tp = sp
                 player.stats.offence = offence
                 player.stats.defence = defence
-                player.stats.speed = speed
                 player.stats.intelligence = intelligence
 
                 generalSaveState.stats = player.stats

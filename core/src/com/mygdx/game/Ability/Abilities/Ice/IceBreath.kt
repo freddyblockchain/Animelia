@@ -96,7 +96,7 @@ class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbil
     }
 
     override val abilityName = AbilityName.IceBreath
-    override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIRE
+    override val ELEMENTALTYPES = ELEMENTAL_TYPE.ICE
 }
 
 fun getAngleModifier(attachedFightableObject: FightableObject): Float{

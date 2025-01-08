@@ -142,6 +142,7 @@ class GuardFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(ga
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
 
     val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
+    val spear = Sprite(DefaultTextureHandler.getTexture("spear.png"))
 
     override val inCitySpeeches = listOf(inCitySpeechOne)
 
@@ -164,8 +165,21 @@ class GuardFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(ga
 
     override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
 
+    override fun initObject() {
+        super.initObject()
+        spear.setSize(8f,32f)
+        spear.setOriginCenter()
+        spear.rotation = 180f
+        spear.setPosition(this.bottomright.x - 8f, this.bottomright.y)
+    }
+
     override fun recruitmentAction() {
 
+    }
+
+    override fun render(batch: SpriteBatch) {
+        super.render(batch)
+        spear.draw(batch)
     }
 
 }

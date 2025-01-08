@@ -1,9 +1,7 @@
 package com.mygdx.game
 
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.MathUtils.cos
 import com.badlogic.gdx.math.MathUtils.sin
 import com.badlogic.gdx.math.Vector2
@@ -18,12 +16,12 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.PlayerEnvironmentState
 import com.mygdx.game.GameObjects.Other.Wall
+import com.mygdx.game.GameObjects.Structures.Fountain
 import com.mygdx.game.Items.KeyItem
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.SVector2
-import com.mygdx.game.UI.MainGameUi.AbilityTooltipRow
 import kotlin.math.PI
 
 fun InitArea(levelName: String) {
@@ -154,6 +152,15 @@ fun getRotatedUnitVectorClockwise(unitVector: Vector2, angleDegrees: Float): Vec
     val newX = x * cos(radians) + y * sin(radians)
     val newY = -x * sin(radians) + y * cos(radians)
     return Vector2(newX, newY)
+}
+
+fun getNearestRespawn(areaIdentifierToLookFor: String? = null): Pair<Vector2, String>{
+    val activeArea = if(areaIdentifierToLookFor == null) AreaManager.getActiveArea() else AreaManager.getArea(areaIdentifierToLookFor)
+    val fountain = activeArea!!.gameObjects.find { it is Fountain }
+    if(fountain != null){
+        return Pair(fountain.currentPosition(), activeArea.areaIdentifier)
+    }
+    return Pair(startPos, "World1")
 }
 /*
 

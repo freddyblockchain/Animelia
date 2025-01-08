@@ -36,6 +36,19 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "6058e7d0-c210-11ef-a7b0-c3206713f882",
+				"layer": "EntitiesOnTop",
+				"x": 128,
+				"y": 64,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
 		"Railway": [
 			{
 				"id": "Railway",

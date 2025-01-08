@@ -22,14 +22,14 @@ class AbilityTable(color: Color): Table() {
         val iconRootTable = Table()
         val iconTableList = mutableListOf<IconTable>()
         for(i in 1..abilitiesAvailable){
-            val iconTable = IconTable(i)
-            iconRootTable.add(iconTable).expand().top()
+            val iconTable = IconTable(i, abilityDescription)
+            iconRootTable.add(iconTable).expand().top().padLeft(50f)
             iconTableList.add(iconTable)
         }
         this.add(iconRootTable).expandY().top()
 
         this.row()
-        this.add(AbilityPickTable(iconTableList, abilityDescription)).expandY().top()
+        this.add(AbilityPickTable(iconTableList, abilityDescription)).expandY().top().padRight(100f)
         this.row()
         // Set width
         abilityDescription.setAlignment(Align.center)

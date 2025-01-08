@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton
 import com.badlogic.gdx.scenes.scene2d.ui.Label
+import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable
 import com.mygdx.game.Animelia.getEggAnimelia
@@ -36,8 +37,10 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
         val labelStyle = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
         val reincarnationText = Label("Reincarnation", labelStyle)
 
-        rootTable.add(reincarnationText).center().right()
+        rootTable.add(reincarnationText).center()
         rootTable.row()
+        val eggTable = Table()
+        rootTable.add(eggTable).expand().center()
 
         for (egg in generalSaveState.inventory.eggs) {
             val textureString = getEggTexture(egg)
@@ -45,7 +48,8 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
             val buttonImage = TextureRegionDrawable(texture)
             buttonImage.setMinSize(200f, 200f)
             val eggButton = ImageButton(buttonImage)
-            rootTable.add(eggButton)
+
+            eggTable.add(eggButton).expand().left().pad(20f)
 
             eggButton.addListener(object : ClickListener() {
                 override fun clicked(event: InputEvent?, x: Float, y: Float) {
@@ -53,28 +57,32 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     val id = confirmSound.play()
                     confirmSound.setVolume(id,0.2f)
                     player.animeliaInfo.textureName = textureString
-                    generalSaveState.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseSpeed, PlayerStatus.baseIntelligence)
+                    generalSaveState.stats = Stats(PlayerStatus.baseOffence, PlayerStatus.baseDefence, PlayerStatus.baseIntelligence)
                     generalSaveState.stats.tp = PlayerStatus.baseTp
                     generalSaveState.updateSaveState()
                     player.materialsPickedUp.clear()
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
                 }
             })
+
+
+
             buttons.add(eggButton)
         }
 
     }
     override fun render() {
         stage.act(Gdx.graphics.deltaTime)
-        stage.isDebugAll = true
+        //stage.isDebugAll = true
         stage.draw()
         buttons[activeButtonIndex].let {
             val stageCoords = it.localToParentCoordinates(Vector2(it.parent.x, it.parent.y));
+            val difference = Vector2(stageCoords.x - it.x, stageCoords.y - it.y)
 
             shapeRenderer.projectionMatrix = stage.camera.combined
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
             shapeRenderer.setColor(0f, 1f, 0f, 1f)
-            shapeRenderer.circle(stageCoords.x + it.width / 2, stageCoords.y + it.height / 2, it.width / 2 + 10)
+            shapeRenderer.circle(stageCoords.x + it.width + 80f + difference.x, stageCoords.y + difference.y - 20f, it.width / 2 + 10)
             shapeRenderer.end()
         }
 

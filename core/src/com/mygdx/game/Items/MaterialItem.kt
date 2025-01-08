@@ -37,6 +37,22 @@ fun getKeyItemTextures(keyItem: KeyItem): Texture{
     }
 }
 
+fun getItemDescription(itemName: String): String{
+    return when(itemName){
+        "ANIMELIABONE" ->"A bone found by killing animelia clones"
+        "ICEFRUIT" -> "A Fruit that grows in cold areas"
+        "FIREFRUIT" -> "A Fruit that grows in warm areas"
+        "CANYONFRUIT" -> "A Fruit that grows in canyons"
+        "FORESTFRUIT" -> "A Fruit that grows in forests"
+        "TROPICALFRUIT" -> "A Fruit found in oases"
+        "FROZENHEART" -> "A frozen heart! This lets me keep cool even in warm areas"
+        "FIREHEART" -> "A fire heart! This lets me keep warm even in cool areas"
+        "MAP" -> "A map! This lets me view a map of the world by pressing M"
+        "CROWN" -> "A crown! This belongs to a certain king"
+        else -> "something"
+    }
+}
+
 class Dud(gameObjectData: GameObjectData):GameObject(gameObjectData){
     override val layer = Layer.ONGROUND
 

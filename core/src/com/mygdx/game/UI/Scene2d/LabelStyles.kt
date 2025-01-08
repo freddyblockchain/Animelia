@@ -9,5 +9,6 @@ val bigLabel = Label.LabelStyle(FontManager.ChapterFont, Color.WHITE)
 val smallLabel = Label.LabelStyle(FontManager.TextFont, Color.WHITE)
 val mediumLabel = Label.LabelStyle(FontManager.MediumFont, Color.WHITE)
 val smallToMediumLabel = Label.LabelStyle(FontManager.SmallToMediumFont, Color.WHITE)
+val smallFontLabel = Label.LabelStyle(FontManager.SmallFont, Color.WHITE)
 
 val textFieldStyle = TextField.TextFieldStyle(FontManager.MediumFont, Color.WHITE, null, null, null)

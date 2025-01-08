@@ -46,6 +46,19 @@
 					"Direction": "Right"
 				}
 			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "fb453eb0-c210-11ef-a7b0-41c94520e5be",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
 		]
 	}
 }

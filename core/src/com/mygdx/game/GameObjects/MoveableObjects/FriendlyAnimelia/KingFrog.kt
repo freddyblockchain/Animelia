@@ -99,6 +99,7 @@ class KingFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gam
     override val animeliaEntity = ANIMELIA_ENTITY.KingFrog
 
     val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
+    val crown = Sprite(DefaultTextureHandler.getTexture("crown.png"))
 
     override val inCitySpeeches = listOf(inCitySpeechOne)
 
@@ -121,8 +122,19 @@ class KingFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gam
 
     override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
 
+    override fun initObject() {
+        crown.setSize(12f,8f)
+        crown.setPosition(this.topleft.x + this.width / 2 - crown.width / 2 + 1f, this.topleft.y - crown.height / 2 - 2f)
+        super.initObject()
+    }
+
     override fun recruitmentAction() {
 
+    }
+
+    override fun render(batch: SpriteBatch) {
+        super.render(batch)
+        crown.draw(batch)
     }
 
 }

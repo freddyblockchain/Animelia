@@ -109,7 +109,12 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         SignalManager.executeSignals()
 
         //Change to first area.
+        //changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
+        //Respawn on a fountain
         changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
+        val respawn = getNearestRespawn(generalSaveState.areaIdentifier)
+        changeArea(Vector2(respawn.first), respawn.second)
+
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()
     }
