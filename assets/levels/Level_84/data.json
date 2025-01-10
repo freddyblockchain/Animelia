@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_84",
-	"uniqueIdentifer": "66dd33c0-9b00-11ef-9dff-fb5bd7714a7c",
-	"x": 576,
-	"y": 1408,
-	"width": 160,
-	"height": 128,
+	"uniqueIdentifer": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+	"x": 1440,
+	"y": -1632,
+	"width": 128,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "5a2bfee0-9b00-11ef-9dff-bdc5362ca354",
+			"levelIid": "10f334e0-9b00-11ef-9017-05c2f1944775",
+			"dir": "e"
+		},
+		{
+			"levelIid": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "Abandoned_House",
 		"Visible": true
 	},
 	"layers": [
@@ -28,53 +32,109 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "f01dae10-9b00-11ef-9017-03629ad887d4",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true,
+					"ProjectileType": "Boulder"
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "f13586b0-9b00-11ef-9017-3f5436a6af17",
+				"layer": "EntitiesOnTop",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true,
+					"ProjectileType": "Boulder"
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "b2fb59b0-9b00-11ef-9017-b9c0274bac58",
+				"layer": "Entities",
+				"x": 32,
+				"y": 192,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "c0b10640-9b00-11ef-9017-7f8b6bc3c539",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "db582500-9b00-11ef-9017-b7250b601ab1",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 128,
+				"height": 32,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "66dd33c6-9b00-11ef-9dff-6b3ef860a283",
+				"iid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
 				"layer": "Entities",
-				"x": 128,
-				"y": 0,
+				"x": 32,
+				"y": 256,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
-				}
-			}
-		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "845c0390-9b00-11ef-9dff-8d5a40147880",
-				"layer": "Entities",
-				"x": 64,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "KingFrog",
-					"AnimeliaCityPos": {
-						"entityIid": "abb01620-c210-11ef-b8ac-d1e38ca0c9d7",
-						"layerIid": "85324401-c210-11ef-b8ac-4f44a5024376",
-						"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": [
-						{
-							"entityIid": "418cae80-9b00-11ef-8ab8-a3ecaf120e0e",
-							"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-							"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						},
-						{
-							"entityIid": "63286670-c210-11ef-b8ac-fdc0855a84cd",
-							"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-							"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						}
-					]
 				}
 			}
 		]

@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_14",
-	"uniqueIdentifer": "544d74a0-25d0-11ef-8421-af1602e1e169",
-	"x": -768,
-	"y": -640,
-	"width": 256,
+	"uniqueIdentifer": "54445e00-25d0-11ef-b434-15957d2f9085",
+	"x": 960,
+	"y": -800,
+	"width": 288,
 	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "64987210-25d0-11ef-8421-a11f865ea57a",
-			"dir": "e"
+			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
+			"dir": "w"
+		},
+		{
+			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -28,38 +32,59 @@
 		"Beach.png"
 	],
 	"entities": {
-		"ConveyerBelt": [
+		"Cliffside": [
 			{
-				"id": "ConveyerBelt",
-				"iid": "88a31120-25d0-11ef-a383-39bff4bb0259",
-				"layer": "EntitiesOnTop",
-				"x": 96,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 6539085,
-				"customFields": {
-					"Direction": "Right"
-				}
-			}
-		],
-		"FireLightBulb": [
-			{
-				"id": "FireLightBulb",
-				"iid": "95697bb0-25d0-11ef-a383-d59389190c8d",
-				"layer": "EntitiesOnTop",
+				"id": "Cliffside",
+				"iid": "a2d632a0-25d0-11ef-b434-f16106c4be1d",
+				"layer": "Entities",
 				"x": 64,
 				"y": 0,
 				"width": 32,
-				"height": 48,
-				"color": 4098376,
+				"height": 96,
+				"color": 16705377,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "88a31120-25d0-11ef-a383-39bff4bb0259",
-						"layerIid": "544d74a1-25d0-11ef-8421-c365490942ad",
-						"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
+						"entityIid": "c0629b50-9b00-11ef-9017-e1fa8f012c91",
+						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
+						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
+				"layer": "Entities",
+				"x": 256,
+				"y": 80,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
+						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
+						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "c0629b50-9b00-11ef-9017-e1fa8f012c91",
+				"layer": "Entities",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
 				}
 			}
 		]

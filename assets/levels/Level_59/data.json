@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_59",
-	"uniqueIdentifer": "f6d98910-9b00-11ef-9017-e5f222d195bc",
-	"x": 1728,
-	"y": -1312,
-	"width": 64,
+	"uniqueIdentifer": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+	"x": -2080,
+	"y": -832,
+	"width": 160,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-			"dir": "s"
-		},
-		{
-			"levelIid": "015874a0-9b00-11ef-9017-89014ae0a87f",
-			"dir": "n"
+			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -31,5 +27,53 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"IceCrystal": [
+			{
+				"id": "IceCrystal",
+				"iid": "e78db8c7-c210-11ef-a811-77033f8fc5c3",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16151930,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Entity_ref2": {
+						"entityIid": "2ac04e60-c210-11ef-a811-b5998fa3ebec",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
+						"layerIid": "e09bfb22-c210-11ef-a811-491b7a5a2798",
+						"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		]
+	}
 }

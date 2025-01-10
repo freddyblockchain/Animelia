@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_5",
-	"uniqueIdentifer": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
-	"x": -1376,
-	"y": -96,
-	"width": 352,
-	"height": 224,
+	"uniqueIdentifer": "2feab690-25d0-11ef-9d5b-271d9cab9325",
+	"x": -96,
+	"y": 160,
+	"width": 96,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "652dd700-73f0-11ef-af50-1b9c352c1cf8",
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 			"dir": "e"
 		},
 		{
-			"levelIid": "878d2276-9b00-11ef-90a0-2f82895674b1",
-			"dir": "n"
-		},
-		{
-			"levelIid": "833b64f0-9b00-11ef-b959-75615638eebc",
+			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
 			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World4",
+		"World": "World1",
 		"Visible": true
 	},
 	"layers": [
@@ -36,32 +32,28 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Fountain": [
+		"IceCone": [
 			{
-				"id": "Fountain",
-				"iid": "6058e7d0-c210-11ef-a7b0-c3206713f882",
+				"id": "IceCone",
+				"iid": "0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3",
 				"layer": "EntitiesOnTop",
-				"x": 128,
-				"y": 64,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
-		"Railway": [
-			{
-				"id": "Railway",
-				"iid": "0c968d50-9b00-11ef-b959-11e305c04039",
-				"layer": "Entities",
-				"x": 224,
-				"y": 192,
-				"width": 128,
+				"x": 32,
+				"y": 0,
+				"width": 32,
 				"height": 32,
-				"color": 11882632,
-				"customFields": {
-					"Direction": "Right"
-				}
+				"color": 3469566,
+				"customFields" : {}
+			},
+			{
+				"id": "IceCone",
+				"iid": "0e9e00a0-4ce0-11ef-8f8c-cd034c800b23",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 3469566,
+				"customFields" : {}
 			}
 		]
 	}

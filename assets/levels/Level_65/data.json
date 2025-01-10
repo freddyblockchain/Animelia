@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_65",
-	"uniqueIdentifer": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-	"x": 1440,
-	"y": -1632,
-	"width": 128,
-	"height": 320,
+	"uniqueIdentifer": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+	"x": -1920,
+	"y": -896,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "10f334e0-9b00-11ef-9017-05c2f1944775",
+			"levelIid": "fd793628-c210-11ef-a811-a7945750175d",
 			"dir": "e"
 		},
 		{
-			"levelIid": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
-			"dir": "n"
+			"levelIid": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,102 +32,59 @@
 		"Beach.png"
 	],
 	"entities": {
-		"BoulderGenerator": [
+		"IceFloor": [
 			{
-				"id": "BoulderGenerator",
-				"iid": "f01dae10-9b00-11ef-9017-03629ad887d4",
-				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "f13586b0-9b00-11ef-9017-3f5436a6af17",
-				"layer": "EntitiesOnTop",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "b2fb59b0-9b00-11ef-9017-b9c0274bac58",
+				"id": "IceFloor",
+				"iid": "718f6c40-c210-11ef-a811-e319d79bc69a",
 				"layer": "Entities",
 				"x": 32,
-				"y": 192,
-				"width": 96,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
-						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
-						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
+				"y": 32,
+				"width": 32,
+				"height": 128,
+				"color": 2943221,
+				"customFields" : {}
 			},
 			{
-				"id": "Spikes",
-				"iid": "c0b10640-9b00-11ef-9017-7f8b6bc3c539",
+				"id": "IceFloor",
+				"iid": "73823b90-c210-11ef-a811-d17a4f5f97ff",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
+				"x": 64,
+				"y": 128,
 				"width": 96,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
-						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
-						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "db582500-9b00-11ef-9017-b7250b601ab1",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 128,
 				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
-						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
-						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "74b31a70-c210-11ef-a811-5323d538b8e3",
+				"layer": "Entities",
+				"x": 128,
+				"y": 32,
+				"width": 32,
+				"height": 96,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "75bc4d10-c210-11ef-a811-95fedf1a1071",
+				"layer": "Entities",
+				"x": 64,
+				"y": 32,
+				"width": 64,
+				"height": 32,
+				"color": 2943221,
+				"customFields" : {}
 			}
 		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+				"iid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
 				"layer": "Entities",
-				"x": 32,
-				"y": 256,
+				"x": 0,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,

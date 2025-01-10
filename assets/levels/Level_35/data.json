@@ -1,24 +1,20 @@
 {
 	"identifier": "Level_35",
-	"uniqueIdentifer": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-	"x": -2080,
-	"y": 864,
-	"width": 256,
-	"height": 256,
+	"uniqueIdentifer": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
+	"x": 480,
+	"y": 480,
+	"width": 224,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 			"dir": "w"
-		},
-		{
-			"levelIid": "4e9cce40-73f0-11ef-b6cd-f796d46d8e7d",
-			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "Ice_castle",
-		"Visible": true
+		"World": "World1",
+		"Visible": false
 	},
 	"layers": [
 		"GroundIce.png",
@@ -32,92 +28,95 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "1f556bf0-73f0-11ef-bff8-dbe0a83a50ce",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "IceCocoon"
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "0bcdc4f0-73f0-11ef-b6cd-fd8c13015550",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "28c34080-73f0-11ef-b6cd-5f352697f6ae",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 128,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "2ba9e5b0-73f0-11ef-b6cd-a3ccb8c683a8",
-				"layer": "Entities",
-				"x": 0,
-				"y": 160,
-				"width": 256,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
-						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
-						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
+				"iid": "d56dd250-c210-11ef-9e36-c79da551d64e",
 				"layer": "Entities",
-				"x": 224,
-				"y": 96,
+				"x": 96,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
+				}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "5b7281a0-c210-11ef-9b6f-714dc16a81f3",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "ICEFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "602a8b70-c210-11ef-9b6f-5334ffb08fbd",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FORESTFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "66943ce0-c210-11ef-9b6f-19a3833ef761",
+				"layer": "Entities",
+				"x": 192,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "CANYONFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "7060a150-c210-11ef-9b6f-99d46206f886",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FIREFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "7bebccc0-c210-11ef-9b6f-c50f8051faef",
+				"layer": "Entities",
+				"x": 192,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "TROPICALFRUIT",
+					"PercentChance": 25,
+					"KeyItem": false
 				}
 			}
 		]

@@ -1,20 +1,20 @@
 {
 	"identifier": "Level_40",
-	"uniqueIdentifer": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
-	"x": 480,
-	"y": 480,
-	"width": 224,
-	"height": 160,
+	"uniqueIdentifer": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
+	"x": -112,
+	"y": -1696,
+	"width": 192,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "w"
+			"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World1",
-		"Visible": false
+		"World": "World3",
+		"Visible": true
 	},
 	"layers": [
 		"GroundIce.png",
@@ -28,95 +28,46 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Position": [
+		"House": [
 			{
-				"id": "Position",
-				"iid": "d56dd250-c210-11ef-9e36-c79da551d64e",
+				"id": "House",
+				"iid": "c4c15610-9b00-11ef-a397-dd0d62a235d5",
 				"layer": "Entities",
-				"x": 96,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
+				"x": 0,
+				"y": 0,
+				"width": 192,
+				"height": 160,
+				"color": 9149364,
 				"customFields": {
-					"Name": null
+					"House": "Vulcano",
+					"Door": {
+						"entityIid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
+						"layerIid": "5eb46341-9b00-11ef-8045-d52046eabe18",
+						"levelIid": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Visible": true
 				}
 			}
 		],
-		"Item": [
+		"Door": [
 			{
-				"id": "Item",
-				"iid": "5b7281a0-c210-11ef-9b6f-714dc16a81f3",
+				"id": "Door",
+				"iid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
 				"layer": "Entities",
-				"x": 0,
-				"y": 64,
+				"x": 80,
+				"y": 160,
 				"width": 32,
-				"height": 32,
-				"color": 12635100,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Item": "ICEFRUIT",
-					"PercentChance": 25,
-					"KeyItem": false
-				}
-			},
-			{
-				"id": "Item",
-				"iid": "602a8b70-c210-11ef-9b6f-5334ffb08fbd",
-				"layer": "Entities",
-				"x": 64,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "FORESTFRUIT",
-					"PercentChance": 25,
-					"KeyItem": false
-				}
-			},
-			{
-				"id": "Item",
-				"iid": "66943ce0-c210-11ef-9b6f-19a3833ef761",
-				"layer": "Entities",
-				"x": 192,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "CANYONFRUIT",
-					"PercentChance": 25,
-					"KeyItem": false
-				}
-			},
-			{
-				"id": "Item",
-				"iid": "7060a150-c210-11ef-9b6f-99d46206f886",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "FIREFRUIT",
-					"PercentChance": 25,
-					"KeyItem": false
-				}
-			},
-			{
-				"id": "Item",
-				"iid": "7bebccc0-c210-11ef-9b6f-c50f8051faef",
-				"layer": "Entities",
-				"x": 192,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "TROPICALFRUIT",
-					"PercentChance": 25,
-					"KeyItem": false
+					"Door": {
+						"entityIid": "f374e710-9b00-11ef-a397-17e5976864ae",
+						"layerIid": "e71a36a2-9b00-11ef-a397-895bb31d4437",
+						"levelIid": "e71a36a0-9b00-11ef-a397-6544d600574c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
 				}
 			}
 		]

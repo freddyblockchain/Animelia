@@ -57,7 +57,7 @@ data class Entities(
     val Statue: List<GameObjectData> = listOf(),
     val FireGate: List<GameObjectData> = listOf(),
     val Flames: List<GameObjectData> = listOf(),
-    val BoulderGenerator: List<GameObjectData> = listOf(),
+    val Generator: List<GameObjectData> = listOf(),
     val BoulderPad: List<GameObjectData> = listOf(),
     val Fireplace: List<GameObjectData> = listOf(),
     val Trumpet: List<GameObjectData> = listOf(),
@@ -91,7 +91,7 @@ fun initMappings(){
     GameObjectFactory.register("Statue", ::Statue)
     GameObjectFactory.register("FireGate", ::FireGate)
     GameObjectFactory.register("Flames", ::Flames)
-    GameObjectFactory.register("BoulderGenerator", ::BoulderGenerator)
+    GameObjectFactory.register("Generator", ::BoulderGenerator)
     GameObjectFactory.register("BoulderPad", ::BoulderPad)
     GameObjectFactory.register("Fireplace", ::Fireplace)
     GameObjectFactory.register("Trumpet", ::Trumpet)

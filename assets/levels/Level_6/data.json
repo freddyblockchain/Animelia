@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_6",
-	"uniqueIdentifer": "2feab690-25d0-11ef-9d5b-271d9cab9325",
-	"x": -96,
+	"uniqueIdentifer": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+	"x": 480,
 	"y": 160,
-	"width": 96,
+	"width": 256,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "e"
+			"dir": "w"
 		},
 		{
-			"levelIid": "42540780-25d0-11ef-9d5b-a7a1c0724bae",
-			"dir": "w"
+			"levelIid": "34c51910-c210-11ef-ba43-e9598a49b437",
+			"dir": "s"
+		},
+		{
+			"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,28 +36,72 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCone": [
+		"Generator": [
 			{
-				"id": "IceCone",
-				"iid": "0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3",
-				"layer": "EntitiesOnTop",
-				"x": 32,
+				"id": "Generator",
+				"iid": "751898b0-9b00-11ef-b886-0b3e9d355be5",
+				"layer": "Entities",
+				"x": 0,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Right",
+					"Automatic": true,
+					"ProjectileType": "Boulder"
+				}
 			},
 			{
-				"id": "IceCone",
-				"iid": "0e9e00a0-4ce0-11ef-8f8c-cd034c800b23",
-				"layer": "EntitiesOnTop",
-				"x": 32,
+				"id": "Generator",
+				"iid": "76e78c50-9b00-11ef-b886-1d9db1a78905",
+				"layer": "Entities",
+				"x": 0,
 				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Right",
+					"Automatic": true,
+					"ProjectileType": "Boulder"
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "dcefd930-9b00-11ef-b886-0d2e82f3eef1",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "e01905a0-9b00-11ef-b886-0d69c0fad0c4",
+						"layerIid": "bcd2dee2-9b00-11ef-b886-753395e1af32",
+						"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "488c1de0-c210-11ef-ba43-4b002d3f40ba",
+				"layer": "Entities",
+				"x": 192,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
 			}
 		]
 	}

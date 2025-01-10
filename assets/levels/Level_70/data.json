@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_70",
-	"uniqueIdentifer": "4176a3ea-9b00-11ef-9017-cf673f949878",
-	"x": 1952,
-	"y": -1504,
-	"width": 128,
-	"height": 192,
+	"uniqueIdentifer": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+	"x": 1472,
+	"y": -704,
+	"width": 352,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "25c78b00-9b00-11ef-9017-7193c01afe7f",
+			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
 			"dir": "w"
 		},
 		{
-			"levelIid": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
+			"levelIid": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "World2",
 		"Visible": true
 	},
 	"layers": [
@@ -32,53 +32,13 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "427b3b40-9b00-11ef-9017-edf5b5a74f7e",
-				"layer": "Entities",
-				"x": 0,
-				"y": 96,
-				"width": 128,
-				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": true,
-					"Entity_ref": {
-						"entityIid": "49392730-9b00-11ef-9017-5b55c2a0043b",
-						"layerIid": "4176a3ec-9b00-11ef-9017-07b8d98a129e",
-						"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "4b9df230-9b00-11ef-9017-43d569efef92",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 128,
-				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "49392730-9b00-11ef-9017-5b55c2a0043b",
-						"layerIid": "4176a3ec-9b00-11ef-9017-07b8d98a129e",
-						"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "49392730-9b00-11ef-9017-5b55c2a0043b",
+				"iid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
 				"layer": "Entities",
-				"x": 32,
-				"y": 160,
+				"x": 288,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,

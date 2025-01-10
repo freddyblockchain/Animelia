@@ -81,3 +81,7 @@
 {"signaltype":"CHANGE_LEVEL_VISIBLE","areaIdentifer":"WorldSignal","levelId":"3f2b7b80-c210-11ef-9e36-677a79c962a8"}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"Frog"}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"IcePenguin"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"5a3cece0-c210-11ef-ba43-ab6da5cdd05c"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"Bird","posX":384.0,"posY":-288.0}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"Bird"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"f5f79af0-c210-11ef-a811-c7ea9a17d161"}

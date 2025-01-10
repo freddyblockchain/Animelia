@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_63",
-	"uniqueIdentifer": "82c68a77-9b00-11ef-9017-252c63df9b56",
-	"x": 1408,
-	"y": -1984,
-	"width": 64,
-	"height": 64,
+	"uniqueIdentifer": "7bee7bf0-c210-11ef-a811-85b104af6845",
+	"x": -832,
+	"y": -1472,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
+			"levelIid": "74a60340-c210-11ef-a811-91363e01e7c8",
+			"dir": "n"
+		},
+		{
+			"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
 			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -28,27 +32,106 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCrystal": [
+		"Position": [
 			{
-				"id": "IceCrystal",
-				"iid": "c1643430-9b00-11ef-9017-a1f478f735b9",
+				"id": "Position",
+				"iid": "7bee7bf3-c210-11ef-a811-7d57693ce757",
+				"layer": "Entities",
+				"x": 64,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "2d392450-c210-11ef-a811-9d884608afe3",
 				"layer": "Entities",
 				"x": 0,
+				"y": 64,
+				"width": 192,
+				"height": 64,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "7bee7bf3-c210-11ef-a811-7d57693ce757",
+						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
+						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "73982040-c210-11ef-a811-c79670f87317",
+				"layer": "Entities",
+				"x": 32,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 16151930,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder"
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "797bffe0-c210-11ef-a811-29366ed2047d",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true,
+					"ProjectileType": "Boulder"
+				}
+			}
+		],
+		"BoulderPad": [
+			{
+				"id": "BoulderPad",
+				"iid": "7cfdd3a0-c210-11ef-a811-171962495781",
+				"layer": "Entities",
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "b18d0730-9b00-11ef-9017-6b97b9f52090",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+						"entityIid": "73982040-c210-11ef-a811-c79670f87317",
+						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
+						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Entity_ref2": {
-						"entityIid": "54b083e0-9b00-11ef-9017-e1f9806eaaed",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+					}
+				}
+			},
+			{
+				"id": "BoulderPad",
+				"iid": "7f67a7b0-c210-11ef-a811-b9cfc58bafac",
+				"layer": "Entities",
+				"x": 128,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "797bffe0-c210-11ef-a811-29366ed2047d",
+						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
+						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}

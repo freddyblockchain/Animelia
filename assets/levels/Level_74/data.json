@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_74",
-	"uniqueIdentifer": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
-	"x": 896,
-	"y": 960,
-	"width": 128,
-	"height": 192,
+	"uniqueIdentifer": "68f20cb0-9b00-11ef-9017-15f868c27b43",
+	"x": 960,
+	"y": -256,
+	"width": 256,
+	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-			"dir": "n"
+			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
+			"dir": "e"
 		},
 		{
-			"levelIid": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
-			"dir": "w"
+			"levelIid": "6e408a20-9b00-11ef-9017-c7a7a3d3fbfe",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "World2",
 		"Visible": true
 	},
 	"layers": [
@@ -31,5 +31,21 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": "CanyonPos"
+				}
+			}
+		]
+	}
 }

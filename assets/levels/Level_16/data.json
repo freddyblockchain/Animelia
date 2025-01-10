@@ -1,19 +1,14 @@
 {
 	"identifier": "Level_16",
-	"uniqueIdentifer": "a3798d70-25d0-11ef-8421-af2cdb10990f",
-	"x": -416,
-	"y": -352,
-	"width": 64,
-	"height": 160,
+	"uniqueIdentifer": "35b0f360-c210-11ef-b8ac-cdb7c312bf42",
+	"x": -800,
+	"y": 160,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
-	"neighbourLevels": [
-		{
-			"levelIid": "64987210-25d0-11ef-8421-a11f865ea57a",
-			"dir": "n"
-		}
-	],
+	"neighbourLevels": [],
 	"customFields": {
-		"World": "World3",
+		"World": "Iglo_City",
 		"Visible": true
 	},
 	"layers": [
@@ -28,42 +23,52 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCone": [
+		"Door": [
 			{
-				"id": "IceCone",
-				"iid": "debc9a80-25d0-11ef-8421-f1d4fbb2871c",
+				"id": "Door",
+				"iid": "35b0f364-c210-11ef-b8ac-2785485d6fae",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
+				"x": 80,
+				"y": 176,
 				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			},
-			{
-				"id": "IceCone",
-				"iid": "df5298f0-25d0-11ef-8421-51858c939ac3",
-				"layer": "Entities",
-				"x": 32,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "22f3e480-c210-11ef-b8ac-ad2fde47c5f8",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
+				}
 			}
 		],
-		"Ability": [
+		"Fireplace": [
 			{
-				"id": "Ability",
-				"iid": "15bd6640-4ce0-11ef-a934-f594317db23b",
+				"id": "Fireplace",
+				"iid": "35b0f366-c210-11ef-b8ac-950d44dabc8b",
 				"layer": "Entities",
-				"x": 0,
-				"y": 128,
+				"x": 128,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 16690740,
+				"customFields" : {}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "635a4050-c210-11ef-b8ac-11ca98620bf8",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
 				"customFields": {
-					"Ability": "RockThrow"
+					"Name": null
 				}
 			}
 		]

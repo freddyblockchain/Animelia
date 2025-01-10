@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_50",
-	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-	"x": 1216,
-	"y": -704,
+	"uniqueIdentifer": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
+	"x": -896,
+	"y": -1152,
 	"width": 256,
-	"height": 224,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+			"dir": "w"
+		},
+		{
+			"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
 			"dir": "n"
-		},
-		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-			"dir": "e"
-		},
-		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -36,59 +32,56 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
-						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
-						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
-				}
-			}
-		],
-		"Cliffside": [
-			{
-				"id": "Cliffside",
-				"iid": "680565f0-9b00-11ef-9017-99ca0506282d",
-				"layer": "Entities",
-				"x": 224,
-				"y": 64,
-				"width": 32,
-				"height": 64,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
-						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
+				"iid": "52eac570-c210-11ef-a811-4f54a701bf4a",
 				"layer": "Entities",
-				"x": 160,
-				"y": 64,
+				"x": 32,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
+				}
+			}
+		],
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "d1815140-c210-11ef-a811-f510a58124be",
+				"layer": "Entities",
+				"x": 224,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Left",
+					"Automatic": true,
+					"ProjectileType": "Missile"
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "da2d78a0-c210-11ef-a811-116f81ce38c4",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "52eac570-c210-11ef-a811-4f54a701bf4a",
+						"layerIid": "d894d0e2-c210-11ef-a811-8b1736faad6f",
+						"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

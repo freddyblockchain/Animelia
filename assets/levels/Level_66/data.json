@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_66",
-	"uniqueIdentifer": "25c78b00-9b00-11ef-9017-7193c01afe7f",
-	"x": 1888,
-	"y": -1376,
-	"width": 64,
+	"uniqueIdentifer": "45b6111b-c210-11ef-a811-43b63afec456",
+	"x": -1248,
+	"y": -416,
+	"width": 288,
 	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
 			"dir": "s"
 		},
 		{
-			"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-			"dir": "e"
+			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -32,69 +32,46 @@
 		"Beach.png"
 	],
 	"entities": {
-		"BoulderGenerator": [
+		"KingDoor": [
 			{
-				"id": "BoulderGenerator",
-				"iid": "4b6cd040-9b00-11ef-9017-3f1721c915d7",
-				"layer": "EntitiesOnTop",
-				"x": 32,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "4d85c530-9b00-11ef-9017-53f417e15c42",
-				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": true
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "2477d220-9b00-11ef-9017-798707c644d3",
+				"id": "KingDoor",
+				"iid": "bad08d40-c210-11ef-a811-5599f6ef502a",
 				"layer": "Entities",
-				"x": 0,
-				"y": 64,
+				"x": 96,
+				"y": 0,
 				"width": 64,
+				"height": 64,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "491b4a30-c210-11ef-a811-879e90481b29",
+				"layer": "Entities",
+				"x": 160,
+				"y": 96,
+				"width": 128,
 				"height": 32,
-				"color": 1578021,
+				"color": 11882632,
 				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "2cae7b60-9b00-11ef-9017-9b70ec1078f5",
-						"layerIid": "25c78b02-9b00-11ef-9017-93da15426cb2",
-						"levelIid": "25c78b00-9b00-11ef-9017-7193c01afe7f",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Right"
 				}
 			}
 		],
-		"Position": [
+		"Ability": [
 			{
-				"id": "Position",
-				"iid": "2cae7b60-9b00-11ef-9017-9b70ec1078f5",
+				"id": "Ability",
+				"iid": "576fb080-c210-11ef-a811-01bcc27182fa",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
+				"x": 224,
+				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 1199753,
+				"color": 16690740,
 				"customFields": {
-					"Name": null
+					"Ability": "ScrewAttack"
 				}
 			}
 		]

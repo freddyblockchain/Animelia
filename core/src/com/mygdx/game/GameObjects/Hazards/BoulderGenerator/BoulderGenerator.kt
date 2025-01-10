@@ -102,7 +102,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     }
 }
 @Serializable
-class BoulderGeneratorCustomFields(val Direction: String, val Automatic: Boolean)
+class BoulderGeneratorCustomFields(val Direction: String, val Automatic: Boolean, val ProjectileType: String)
 
 class BoulderGeneratorCollision(val boulderGenerator: BoulderGenerator): MoveCollision(){
     override var canMoveAfterCollision = false

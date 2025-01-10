@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_44",
-	"uniqueIdentifer": "8b5f9690-9b00-11ef-8045-5b3be79e0aa9",
-	"x": 208,
-	"y": -1152,
+	"uniqueIdentifer": "2bfc5f9a-c210-11ef-a811-433792379037",
+	"x": -1152,
+	"y": -288,
 	"width": 64,
-	"height": 256,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+			"levelIid": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
 			"dir": "s"
 		},
 		{
-			"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+			"levelIid": "45b6111b-c210-11ef-a811-43b63afec456",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World3",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -32,41 +32,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Flames": [
+		"FireGate": [
 			{
-				"id": "Flames",
-				"iid": "d5bfa860-9b00-11ef-8045-2bfb5e9004a8",
+				"id": "FireGate",
+				"iid": "3eb7c0c0-c210-11ef-a811-a3ca8595e090",
 				"layer": "Entities",
 				"x": 0,
-				"y": 224,
-				"width": 32,
+				"y": 0,
+				"width": 64,
 				"height": 32,
-				"color": 12087120,
+				"color": 16217634,
 				"customFields": {
-					"Position": {
-						"entityIid": "380e5ee0-9b00-11ef-a397-033f5e9311fb",
-						"layerIid": "7b0b0ab1-25d0-11ef-943d-e13b3ec047ef",
-						"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
+					"Entity_ref": {
+						"entityIid": "5e76c880-c210-11ef-a811-53f3d632aa42",
+						"layerIid": "2bfc86a1-c210-11ef-a811-83600d532367",
+						"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
-			},
+			}
+		],
+		"Position": [
 			{
-				"id": "Flames",
-				"iid": "d604c7b0-9b00-11ef-8045-4f3295058f5c",
+				"id": "Position",
+				"iid": "5e76c880-c210-11ef-a811-53f3d632aa42",
 				"layer": "Entities",
-				"x": 32,
-				"y": 224,
+				"x": 0,
+				"y": 128,
 				"width": 32,
 				"height": 32,
-				"color": 12087120,
+				"color": 1199753,
 				"customFields": {
-					"Position": {
-						"entityIid": "380e5ee0-9b00-11ef-a397-033f5e9311fb",
-						"layerIid": "7b0b0ab1-25d0-11ef-943d-e13b3ec047ef",
-						"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Name": null
 				}
 			}
 		]

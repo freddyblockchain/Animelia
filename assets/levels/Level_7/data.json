@@ -1,18 +1,14 @@
 {
 	"identifier": "Level_7",
-	"uniqueIdentifer": "f316d7b0-25d0-11ef-8eef-4537a8752474",
-	"x": 480,
-	"y": 160,
-	"width": 256,
-	"height": 64,
+	"uniqueIdentifer": "34c51910-c210-11ef-ba43-e9598a49b437",
+	"x": 640,
+	"y": 224,
+	"width": 96,
+	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-			"dir": "w"
-		},
-		{
-			"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+			"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
 			"dir": "n"
 		}
 	],
@@ -32,54 +28,45 @@
 		"Beach.png"
 	],
 	"entities": {
-		"BoulderGenerator": [
+		"Cliffside": [
 			{
-				"id": "BoulderGenerator",
-				"iid": "751898b0-9b00-11ef-b886-0b3e9d355be5",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Right",
-					"Automatic": true
-				}
-			},
-			{
-				"id": "BoulderGenerator",
-				"iid": "76e78c50-9b00-11ef-b886-1d9db1a78905",
+				"id": "Cliffside",
+				"iid": "408bedf0-c210-11ef-ba43-7f693095f3bd",
 				"layer": "Entities",
 				"x": 0,
 				"y": 32,
-				"width": 32,
+				"width": 96,
 				"height": 32,
-				"color": 7552569,
+				"color": 16705377,
 				"customFields": {
-					"Direction": "Right",
-					"Automatic": true
+					"Entity_ref": {
+						"entityIid": "488c1de0-c210-11ef-ba43-4b002d3f40ba",
+						"layerIid": "f316d7b1-25d0-11ef-8eef-5163e16a9dc6",
+						"levelIid": "f316d7b0-25d0-11ef-8eef-4537a8752474",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		],
-		"Door": [
+		"Animelia": [
 			{
-				"id": "Door",
-				"iid": "dcefd930-9b00-11ef-b886-0d2e82f3eef1",
+				"id": "Animelia",
+				"iid": "5a3cece0-c210-11ef-ba43-ab6da5cdd05c",
 				"layer": "Entities",
-				"x": 192,
-				"y": 0,
+				"x": 32,
+				"y": 96,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 15389866,
 				"customFields": {
-					"Door": {
-						"entityIid": "e01905a0-9b00-11ef-b886-0d69c0fad0c4",
-						"layerIid": "bcd2dee2-9b00-11ef-b886-753395e1af32",
-						"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
+					"AnimeliaType": "Bird",
+					"AnimeliaCityPos": {
+						"entityIid": "1d0fe440-9b00-11ef-ad95-599c60113559",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Direction": "Up"
+					"CustomData": []
 				}
 			}
 		]

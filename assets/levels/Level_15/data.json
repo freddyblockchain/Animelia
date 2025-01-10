@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_15",
-	"uniqueIdentifer": "64987210-25d0-11ef-8421-a11f865ea57a",
-	"x": -512,
-	"y": -800,
-	"width": 256,
-	"height": 448,
+	"uniqueIdentifer": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
+	"x": -800,
+	"y": -320,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "544d74a0-25d0-11ef-8421-af1602e1e169",
-			"dir": "w"
+			"levelIid": "878d2276-9b00-11ef-90a0-2f82895674b1",
+			"dir": "<"
 		},
 		{
-			"levelIid": "a3798d70-25d0-11ef-8421-af2cdb10990f",
-			"dir": "s"
-		},
-		{
-			"levelIid": "d361e100-25d0-11ef-8421-612c6cfe26b8",
-			"dir": "n"
+			"levelIid": "932d5c80-9b00-11ef-90a0-f94bcc1096ea",
+			"dir": "<"
 		}
 	],
 	"customFields": {
-		"World": "World3",
+		"World": "Iglo",
 		"Visible": true
 	},
 	"layers": [
@@ -36,97 +32,82 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TrainingStation": [
+		"AnivolutionBook": [
 			{
-				"id": "TrainingStation",
-				"iid": "fc5b3a70-25d0-11ef-8421-e72495765c62",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		],
-		"Rock": [
-			{
-				"id": "Rock",
-				"iid": "4dba5fe0-25d0-11ef-8421-49897ed32b54",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
+				"id": "AnivolutionBook",
+				"iid": "ad7b3b10-4ce0-11ef-9c31-a3518b8cc947",
+				"layer": "EntitiesOnTop",
+				"x": 160,
+				"y": 128,
 				"width": 32,
 				"height": 32,
-				"color": 14984818,
+				"color": 16777215,
 				"customFields": {
-					"StrengthToBreak": 15
-				}
-			},
-			{
-				"id": "Rock",
-				"iid": "4e324f00-25d0-11ef-8421-99a4ca0de8c4",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 14984818,
-				"customFields": {
-					"StrengthToBreak": 15
+					"AnimeliaType": "IceYeti"
 				}
 			}
 		],
-		"Sign": [
+		"Door": [
 			{
-				"id": "Sign",
-				"iid": "f2e334a0-4ce0-11ef-9bea-5b4c04524a22",
+				"id": "Door",
+				"iid": "6060f850-4ce0-11ef-8f8c-318ee11e67f0",
 				"layer": "Entities",
-				"x": 0,
-				"y": 32,
+				"x": 80,
+				"y": 176,
 				"width": 32,
-				"height": 32,
-				"color": 3818598,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Text": "Train to get stronger!"
-				}
-			}
-		],
-		"Railway": [
-			{
-				"id": "Railway",
-				"iid": "93ca0a50-73f0-11ef-995c-f5dfe207d030",
-				"layer": "Entities",
-				"x": 128,
-				"y": 224,
-				"width": 128,
-				"height": 32,
-				"color": 11882632,
-				"customFields": {
-					"Direction": "Right"
+					"Door": {
+						"entityIid": "702be670-c210-11ef-a811-c17dd8d29aa2",
+						"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
+						"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Down"
 				}
 			}
 		],
 		"Animelia": [
 			{
 				"id": "Animelia",
-				"iid": "c151c580-73f0-11ef-995c-374d462c62e2",
+				"iid": "382cb1b0-4ce0-11ef-8f8c-c91edd8377b9",
 				"layer": "Entities",
-				"x": 160,
-				"y": 192,
+				"x": 32,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 15389866,
 				"customFields": {
-					"AnimeliaType": "FireHippo",
+					"AnimeliaType": "IceYeti",
 					"AnimeliaCityPos": {
-						"entityIid": "cef067a0-73f0-11ef-995c-4bc71c2effcb",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"entityIid": "635a4050-c210-11ef-b8ac-11ca98620bf8",
+						"layerIid": "35b0f363-c210-11ef-b8ac-9375e79fd607",
+						"levelIid": "35b0f360-c210-11ef-b8ac-cdb7c312bf42",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"CustomData": []
+					"CustomData": [
+						{
+							"entityIid": "18714f70-c210-11ef-b8ac-434d95f8c309",
+							"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+							"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						}
+					]
 				}
+			}
+		],
+		"Fireplace": [
+			{
+				"id": "Fireplace",
+				"iid": "a31e0b90-9b00-11ef-a1c8-eb71942215b9",
+				"layer": "Entities",
+				"x": 128,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields" : {}
 			}
 		]
 	}

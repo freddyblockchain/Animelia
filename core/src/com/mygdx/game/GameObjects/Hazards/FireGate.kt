@@ -12,8 +12,13 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Collition.CollisionMask
+import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameModes.AnimationModes.SkewerAnimationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.Serializable
@@ -108,24 +113,19 @@ class FiregateCollitionObject(fireGate: FireGate) :
     GameObject(GameObjectData(x = fireGate.x.toInt(), y = fireGate.y.toInt(), width = fireGate.width.toInt(), height = fireGate.height.toInt())){
     override val texture = fireGate.texture
     override val layer = fireGate.layer
+    override val collisionMask = OnlyPlayerCollitionMask
 
     override fun frameTask() {
 
     }
 
-    override val collision = object: MoveCollision() {
-        override var canMoveAfterCollision: Boolean = false
-            get() = fireGate.firegateState != FiregateState.CLOSED
+    override val collision = object: DefaultAreaEntranceCollition() {
+        override var canMoveAfterCollision: Boolean = true
 
-        override fun collisionHappened(collidedObject: GameObject) {
-            if(collidedObject is Player && !canMoveAfterCollision){
-                val playerBottomDistance = (player.sprite.y + player.size.y / 2) - fireGate.y
-                val playerTopDistance = fireGate.topleft.y - (player.sprite.y + player.size.y / 2)
-                if(playerBottomDistance < playerTopDistance){
-                    player.setPosition(Vector2(player.sprite.x, initPosition.y - player.size.y - 10f))
-                }else{
-                    player.setPosition(Vector2(player.sprite.x, fireGate.topleft.y + 10f))
-                }
+        override fun actionWhileInside() {
+            if(fireGate.firegateState == FiregateState.CLOSED){
+                player.state = State.STUNNED
+                changeMode(SkewerAnimationMode(mainMode, returningPos = fireGate.goToPosition))
             }
         }
     }

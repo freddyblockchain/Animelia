@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_46",
-	"uniqueIdentifer": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
-	"x": -112,
-	"y": -1696,
-	"width": 192,
-	"height": 224,
+	"uniqueIdentifer": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
+	"x": -1152,
+	"y": -864,
+	"width": 64,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+			"dir": "n"
+		},
+		{
+			"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
 			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World3",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -28,43 +32,21 @@
 		"Beach.png"
 	],
 	"entities": {
-		"House": [
-			{
-				"id": "House",
-				"iid": "c4c15610-9b00-11ef-a397-dd0d62a235d5",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 192,
-				"height": 160,
-				"color": 9149364,
-				"customFields": {
-					"House": "Vulcano",
-					"Door": {
-						"entityIid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
-						"layerIid": "5eb46341-9b00-11ef-8045-d52046eabe18",
-						"levelIid": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Visible": true
-				}
-			}
-		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "d3beebf0-9b00-11ef-a397-614d6638c32b",
+				"iid": "e0561fe0-c210-11ef-a811-27b7327d4b47",
 				"layer": "Entities",
-				"x": 80,
-				"y": 160,
+				"x": 16,
+				"y": 0,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "f374e710-9b00-11ef-a397-17e5976864ae",
-						"layerIid": "e71a36a2-9b00-11ef-a397-895bb31d4437",
-						"levelIid": "e71a36a0-9b00-11ef-a397-6544d600574c",
+						"entityIid": "ce5e35c0-c210-11ef-a811-bb1c9db7bea2",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"

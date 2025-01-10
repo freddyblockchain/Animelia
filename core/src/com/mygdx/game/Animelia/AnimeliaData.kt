@@ -124,7 +124,7 @@ class IceYetiData(): AnimeliaData {
 
 class BirdData(): AnimeliaData {
     override var textureName = "Animelias/bird-straight.png"
-    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIGHTING)
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING)
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/bird-straight.png","Animelias/bird-right.png","Animelias/bird-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()

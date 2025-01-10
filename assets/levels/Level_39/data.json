@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_39",
-	"uniqueIdentifer": "2b561ed0-c210-11ef-9e36-b98cadac3324",
-	"x": 960,
-	"y": 416,
-	"width": 288,
-	"height": 288,
+	"uniqueIdentifer": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+	"x": 16,
+	"y": -1472,
+	"width": 256,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "n"
+			"levelIid": "8b5f9690-9b00-11ef-8045-5b3be79e0aa9",
+			"dir": "s"
 		},
 		{
-			"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-			"dir": "s"
+			"levelIid": "5eb43c30-9b00-11ef-8045-97f2ba458b43",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "World3",
 		"Visible": true
 	},
 	"layers": [
@@ -32,47 +32,136 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"FireLightBulb": [
 			{
-				"id": "Door",
-				"iid": "2b561ed3-c210-11ef-9e36-69c3ecc647d7",
-				"layer": "Entities",
-				"x": 128,
-				"y": 272,
+				"id": "FireLightBulb",
+				"iid": "57ff02d0-9b00-11ef-8045-6b0898565b23",
+				"layer": "EntitiesOnTop",
+				"x": 224,
+				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 48,
+				"color": 4098376,
 				"customFields": {
-					"Door": {
-						"entityIid": "eee08950-9b00-11ef-ad95-d999d583f93f",
-						"layerIid": "74418b92-9b00-11ef-ad95-dff3fd173950",
-						"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
+					"Entity_ref": {
+						"entityIid": "3ecb2320-9b00-11ef-8045-4f4e1a7b52ed",
+						"layerIid": "de70b1c2-9b00-11ef-8045-fb203b592d00",
+						"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
+					}
 				}
 			}
 		],
-		"Animelia": [
+		"Fountain": [
 			{
-				"id": "Animelia",
-				"iid": "c89d55a0-c210-11ef-9e36-e550b344a58a",
+				"id": "Fountain",
+				"iid": "0fc8aed0-9b00-11ef-8045-dfa8a1592a2e",
 				"layer": "Entities",
-				"x": 128,
-				"y": 128,
+				"x": 192,
+				"y": 160,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"Lava": [
+			{
+				"id": "Lava",
+				"iid": "250d04d0-9b00-11ef-8045-55410ebe69c2",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 64,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "ced9c870-9b00-11ef-8045-0fca7cc1487c",
+						"layerIid": "de70b1c2-9b00-11ef-8045-fb203b592d00",
+						"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "5aac7710-9b00-11ef-a397-e36ea6fb9a75",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 64,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "ced9c870-9b00-11ef-8045-0fca7cc1487c",
+						"layerIid": "de70b1c2-9b00-11ef-8045-fb203b592d00",
+						"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "4e1b2150-9b00-11ef-90a0-f38d1cae9965",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 64,
+				"height": 256,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "ced9c870-9b00-11ef-8045-0fca7cc1487c",
+						"layerIid": "de70b1c2-9b00-11ef-8045-fb203b592d00",
+						"levelIid": "de70b1c0-9b00-11ef-8045-6b917889f44b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"ConveyerBelt": [
+			{
+				"id": "ConveyerBelt",
+				"iid": "3ecb2320-9b00-11ef-8045-4f4e1a7b52ed",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 6539085,
+				"customFields": {
+					"Direction": "Right"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "ced9c870-9b00-11ef-8045-0fca7cc1487c",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
 				"width": 32,
 				"height": 32,
-				"color": 15389866,
+				"color": 1199753,
 				"customFields": {
-					"AnimeliaType": "Frog",
-					"AnimeliaCityPos": {
-						"entityIid": "d56dd250-c210-11ef-9e36-c79da551d64e",
-						"layerIid": "3f2b7b82-c210-11ef-9e36-1dc3b9e324bc",
-						"levelIid": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
+					"Name": null
 				}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "524f8000-9b00-11ef-8045-0908dc30e294",
+				"layer": "Entities",
+				"x": 224,
+				"y": 224,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
 			}
 		]
 	}

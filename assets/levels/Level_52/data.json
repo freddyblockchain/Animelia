@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_52",
-	"uniqueIdentifer": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
-	"x": 1760,
-	"y": -800,
-	"width": 64,
-	"height": 96,
+	"uniqueIdentifer": "7f903b20-c210-11ef-a811-d96bd6be84f7",
+	"x": -1600,
+	"y": -928,
+	"width": 256,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-			"dir": "s"
+			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+			"dir": "e"
 		},
 		{
-			"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
-			"dir": "n"
+			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,23 +32,35 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"Generator": [
 			{
-				"id": "Cliffside",
-				"iid": "71c631a0-9b00-11ef-9017-053b4924eb09",
+				"id": "Generator",
+				"iid": "ba66a610-c210-11ef-a811-a5693e96c42a",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Right",
+					"Automatic": true,
+					"ProjectileType": "Missile"
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "bea49de0-c210-11ef-a811-9946c3753c5d",
 				"layer": "Entities",
 				"x": 0,
 				"y": 32,
-				"width": 64,
+				"width": 32,
 				"height": 32,
-				"color": 16705377,
+				"color": 7552569,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
-						"layerIid": "4e3bcf92-9b00-11ef-9017-edefa8611ddd",
-						"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Right",
+					"Automatic": false,
+					"ProjectileType": "Missile"
 				}
 			}
 		]

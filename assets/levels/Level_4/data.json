@@ -1,10 +1,10 @@
 {
 	"identifier": "Level_4",
-	"uniqueIdentifer": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
+	"uniqueIdentifer": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
 	"x": -896,
-	"y": -96,
+	"y": -64,
 	"width": 352,
-	"height": 256,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -12,7 +12,11 @@
 			"dir": "e"
 		},
 		{
-			"levelIid": "652dd700-73f0-11ef-af50-1b9c352c1cf8",
+			"levelIid": "878d2276-9b00-11ef-90a0-2f82895674b1",
+			"dir": "n"
+		},
+		{
+			"levelIid": "833b64f0-9b00-11ef-b959-75615638eebc",
 			"dir": "w"
 		}
 	],
@@ -32,22 +36,35 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "6058e7d0-c210-11ef-a7b0-c3206713f882",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
 		"House": [
 			{
 				"id": "House",
-				"iid": "807583a0-4ce0-11ef-8f8c-83f38f134528",
+				"iid": "66daa570-c210-11ef-a811-47da0321f64a",
 				"layer": "Entities",
-				"x": 64,
+				"x": 128,
 				"y": 64,
-				"width": 128,
-				"height": 128,
+				"width": 96,
+				"height": 96,
 				"color": 9149364,
 				"customFields": {
 					"House": "Iglo",
 					"Door": {
-						"entityIid": "8b07a4e0-4ce0-11ef-8f8c-a5f11cd54192",
-						"layerIid": "f2fc7923-4ce0-11ef-8f8c-033f1da8a0d2",
-						"levelIid": "f2fc7920-4ce0-11ef-8f8c-37baa57da730",
+						"entityIid": "702be670-c210-11ef-a811-c17dd8d29aa2",
+						"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
+						"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Visible": true
@@ -57,10 +74,10 @@
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "8b07a4e0-4ce0-11ef-8f8c-a5f11cd54192",
+				"iid": "702be670-c210-11ef-a811-c17dd8d29aa2",
 				"layer": "Entities",
-				"x": 112,
-				"y": 192,
+				"x": 160,
+				"y": 160,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,
@@ -72,23 +89,6 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"
-				}
-			}
-		],
-		"Item": [
-			{
-				"id": "Item",
-				"iid": "02930060-9b00-11ef-b959-b5042a4367c4",
-				"layer": "Entities",
-				"x": 256,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Item": "FIREFRUIT",
-					"PercentChance": 50,
-					"KeyItem": false
 				}
 			}
 		]

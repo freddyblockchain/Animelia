@@ -1,19 +1,27 @@
 {
 	"identifier": "Level_69",
-	"uniqueIdentifer": "c0b2d3a0-9b00-11ef-9017-990aea766a4e",
-	"x": 1984,
-	"y": -2112,
-	"width": 64,
-	"height": 64,
+	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+	"x": 1216,
+	"y": -704,
+	"width": 256,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+			"dir": "n"
+		},
+		{
+			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"dir": "e"
+		},
+		{
+			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
 			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "World2",
 		"Visible": true
 	},
 	"layers": [
@@ -28,29 +36,59 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCrystal": [
+		"Door": [
 			{
-				"id": "IceCrystal",
-				"iid": "d0dc3f50-9b00-11ef-9017-27ae7904b6a1",
+				"id": "Door",
+				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 16151930,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "b18d0730-9b00-11ef-9017-6b97b9f52090",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+					"Door": {
+						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
+						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
+						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Entity_ref2": {
-						"entityIid": "54b083e0-9b00-11ef-9017-e1f9806eaaed",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+					"Direction": "Up"
+				}
+			}
+		],
+		"Cliffside": [
+			{
+				"id": "Cliffside",
+				"iid": "680565f0-9b00-11ef-9017-99ca0506282d",
+				"layer": "Entities",
+				"x": 224,
+				"y": 64,
+				"width": 32,
+				"height": 64,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "c524b740-9b00-11ef-9017-3bba68f974bf",
+						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
+						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
+				"layer": "Entities",
+				"x": 160,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
 				}
 			}
 		]
