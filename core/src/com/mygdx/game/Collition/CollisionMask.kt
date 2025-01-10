@@ -23,3 +23,7 @@ object OnlyProjectileCollisionMask: CollisionMask{
 class AllOtherObjectsCollisionMask(var objectToExclude: GameObject): CollisionMask{
     override val canCollideWith: (GameObject) -> Boolean = { other: GameObject ->  other != objectToExclude }
 }
+
+class OnlyThisObjectCollisionMask<T : GameObject>(private val type: Class<T>): CollisionMask {
+    override val canCollideWith: (GameObject) -> Boolean = { other: GameObject -> type.isInstance(other) }
+}

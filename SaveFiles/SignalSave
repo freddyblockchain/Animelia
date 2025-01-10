@@ -85,3 +85,6 @@
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"Bird","posX":384.0,"posY":-288.0}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"Bird"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"f5f79af0-c210-11ef-a811-c7ea9a17d161"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"491b4a30-c210-11ef-a811-879e90481b29"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"29605090-c210-11ef-a811-0fed455447d3"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"811a2e50-c210-11ef-a811-fb34550a7a9a"}

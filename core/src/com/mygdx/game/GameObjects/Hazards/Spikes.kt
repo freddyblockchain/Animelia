@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObjects.Hazards
 
+import RemoveObjectSignal
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
@@ -20,11 +21,13 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.Utils.Triggerable
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 
-class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
+class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData), Triggerable {
     lateinit var goToPosition: AnimeliaPosition
     val retractable = Json.decodeFromJsonElement<SpikesCustomFields>(gameObjectData.customFields).Retractable
     val posEntityRef = Json.decodeFromJsonElement<SpikesCustomFields>(gameObjectData.customFields).Entity_ref
@@ -84,6 +87,10 @@ class Spikes(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
             }
            // renderRepeatedTexture(batch, texture, this.currentPosition(), Vector2(16f,currentHeight))
         }
+    }
+
+    override fun onTrigger() {
+        SignalManager.emitSignal(RemoveObjectSignal(this.gameObjectIid))
     }
 
 

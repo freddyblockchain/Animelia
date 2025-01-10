@@ -52,6 +52,6 @@ class AerialDeath(override val attachedFightableObject: FightableObject): KeyAbi
             val animeliaAnimation = EffectAnimation(animeliaEffect, 30)
             AnimationManager.animationManager.add(animeliaAnimation)
         }
-        attachedFightableObject.forceMove(1f)
+        attachedFightableObject.forceMove(0.8f)
     }
 }

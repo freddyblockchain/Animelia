@@ -38,6 +38,6 @@ class Fly(override val attachedFightableObject: FightableObject): KeyAbility() {
         else if(currentFrame >= 41){
             attachedFightableObject.sprite.setSize(width  - 1, height - 1)
         }
-        attachedFightableObject.forceMove(2f)
+        attachedFightableObject.forceMove(1.2f)
     }
 }

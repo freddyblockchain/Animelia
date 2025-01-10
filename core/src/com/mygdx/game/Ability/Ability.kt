@@ -12,7 +12,7 @@ import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
 import com.mygdx.game.Ability.Abilities.Ice.IceBreath
 import com.mygdx.game.Ability.Abilities.Ice.IceCocoon
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
-import com.mygdx.game.Ability.Abilities.Metal.Missile
+import com.mygdx.game.Ability.Abilities.Metal.MissileAbility
 import com.mygdx.game.Ability.Abilities.Metal.ScrapStorm
 import com.mygdx.game.Ability.Abilities.Metal.ScrewAttack
 import com.mygdx.game.Ability.Abilities.Sound.AmphibianLullaby
@@ -83,7 +83,7 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "Whirlwind" -> AbilityData(AbilityName.Whirlwind, ELEMENTAL_TYPE.FLYING, Whirlwind(player))
         "AmphibianLullaby" -> AbilityData(AbilityName.AmphibianLullaby, ELEMENTAL_TYPE.SOUND, AmphibianLullaby(player))
         "SoundGun" -> AbilityData(AbilityName.SoundGun, ELEMENTAL_TYPE.SOUND, SoundGunAbiltiy(player))
-        "Missile" -> AbilityData(AbilityName.Missile, ELEMENTAL_TYPE.METAL, Missile(player))
+        "Missile" -> AbilityData(AbilityName.Missile, ELEMENTAL_TYPE.METAL, MissileAbility(player))
         "ScrewAttack" -> AbilityData(AbilityName.ScrewAttack, ELEMENTAL_TYPE.METAL, ScrewAttack(player))
         "ScrapStorm" -> AbilityData(AbilityName.ScrapStorm, ELEMENTAL_TYPE.METAL, ScrapStorm(player))
         "FlameBreath" -> AbilityData(AbilityName.FlameBreath, ELEMENTAL_TYPE.FIRE, FlameBreath(player))
