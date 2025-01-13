@@ -66,7 +66,7 @@ abstract class GameObject(gameObjectData: GameObjectData, val size: Vector2 = Ve
         return Vector2(sprite.x,sprite.y)
     }
 
-    fun remove(){
+    open fun remove(){
         AreaManager.getActiveArea()!!.gameObjects.remove(this)
     }
     fun add(){

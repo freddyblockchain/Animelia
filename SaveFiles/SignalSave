@@ -88,3 +88,7 @@
 {"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"491b4a30-c210-11ef-a811-879e90481b29"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"29605090-c210-11ef-a811-0fed455447d3"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"811a2e50-c210-11ef-a811-fb34550a7a9a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"576fb080-c210-11ef-a811-01bcc27182fa"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"b94ddd83-c210-11ef-a811-0b5728157555"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"cbea2450-c210-11ef-a811-21861b3a5383"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"cd4e2120-c210-11ef-a811-e3836d643c49"}

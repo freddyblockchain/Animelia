@@ -21,9 +21,12 @@ abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var
     open val projectileLifespan = 90
     var currentFrame = 0
     override val collisionMask = AllOtherObjectsCollisionMask(shooter)
+    init {
+        currentUnitVector = unitVectorDirection
+    }
     override fun frameTask() {
         super.frameTask()
-        this.move(unitVectorDirection)
+        this.move(currentUnitVector)
         currentFrame += 1
 
         if(currentFrame >= projectileLifespan){

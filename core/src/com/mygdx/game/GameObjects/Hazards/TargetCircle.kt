@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Ability.Abilities.Metal.MissileAbility
 import com.mygdx.game.Collition.MoveCollision
+import com.mygdx.game.Collition.OnlyTheseObjectsCollisionMask
 import com.mygdx.game.Collition.OnlyThisObjectCollisionMask
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Enums.getDirectionFromString
@@ -16,6 +17,7 @@ import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Missile
+import com.mygdx.game.GameObjects.MoveableObjects.Projectile.MissileAggroBox
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Utils.Triggerable
@@ -39,7 +41,7 @@ class TargetCircle(gameObjectData: GameObjectData)
     override val texture = DefaultTextureHandler.getTexture("TargetCircle.png")
     override val layer = Layer.AIR
     override val collision = TargetCircleCollision(this)
-    override val collisionMask = OnlyThisObjectCollisionMask(Missile::class.java)
+    override val collisionMask = OnlyTheseObjectsCollisionMask(listOf(MissileAggroBox::class.java, Missile::class.java))
     var activated = false
 
     fun triggerActivated(){
@@ -91,8 +93,10 @@ class TargetCircleCollision(val targetCircle: TargetCircle): MoveCollision(){
     override var canMoveAfterCollision = true
 
     override fun collisionHappened(collidedObject: GameObject) {
-        collidedObject.remove()
-        targetCircle.triggerActivated()
+        if(collidedObject is Missile){
+            collidedObject.remove()
+            targetCircle.triggerActivated()
+        }
     }
 
 }

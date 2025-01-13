@@ -27,3 +27,6 @@ class AllOtherObjectsCollisionMask(var objectToExclude: GameObject): CollisionMa
 class OnlyThisObjectCollisionMask<T : GameObject>(private val type: Class<T>): CollisionMask {
     override val canCollideWith: (GameObject) -> Boolean = { other: GameObject -> type.isInstance(other) }
 }
+class OnlyTheseObjectsCollisionMask(private val types: List<Class<out GameObject>>) : CollisionMask {
+    override val canCollideWith: (GameObject) -> Boolean = { other -> types.any { it.isInstance(other) } }
+}
