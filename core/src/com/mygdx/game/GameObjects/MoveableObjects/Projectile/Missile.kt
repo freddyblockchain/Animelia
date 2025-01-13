@@ -18,7 +18,7 @@ import com.mygdx.game.GameObjects.Hazards.FiregateCollitionObject
 import com.mygdx.game.GameObjects.Hazards.TargetCircle
 import com.mygdx.game.getUnitVectorTowardsPoint
 
-class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
+class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject, val newSpan: Int = 90) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
 
     override var speed = 2.5f
     override val cannotMoveStrategy = MoveRegardless()
@@ -26,6 +26,7 @@ class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection
     override val layer = Layer.AIR
     override var direction = getDirectionFromUnitVector(unitVectorDirection)
     override var canChangeDirection = true
+    override val projectileLifespan = newSpan
     var fixatedObject:GameObject? = null
 
     val sound = DefaultSoundHandler.getSound("Sound/Projectile Sounds/Fire impact 1.wav")
@@ -42,7 +43,7 @@ class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection
 
     override fun frameTask() {
         if(this.fixatedObject != null){
-            currentUnitVector = getUnitVectorTowardsPoint(this.currentPosition(), fixatedObject!!.currentMiddle)
+            currentUnitVector = getUnitVectorTowardsPoint(this.currentMiddle, fixatedObject!!.currentMiddle)
             this.setRotation(currentUnitVector,this,0f)
         }
         super.frameTask()
@@ -56,6 +57,14 @@ class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection
         super.remove()
     }
 
+    override fun handleReflection(collidedObject: GameObject) {
+        super.handleReflection(collidedObject)
+
+        this.fixatedObject = null
+        missileAggroRadius.currentUnitVector = this.currentUnitVector
+        missileAggroRadius.collisionMask = this.collisionMask
+    }
+
 
 }
 
@@ -65,7 +74,7 @@ class MissileAggroBox(val missile: Missile): MoveableObject(GameObjectData(x = m
     override var canChangeDirection = missile.canChangeDirection()
     override var speed = missile.speed
     override val cannotMoveStrategy = missile.cannotMoveStrategy
-    override val collisionMask = missile.collisionMask
+    override var collisionMask = missile.collisionMask
 
     override val collision = MissileAggroBoxCollision(missile)
 

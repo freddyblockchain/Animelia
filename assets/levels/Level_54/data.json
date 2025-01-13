@@ -32,6 +32,19 @@
 		"Beach.png"
 	],
 	"entities": {
+		"IceFloor": [
+			{
+				"id": "IceFloor",
+				"iid": "27083b50-c210-11ef-aa50-f71c81598f6f",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 0,
+				"width": 128,
+				"height": 64,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		],
 		"BoxingGlove": [
 			{
 				"id": "BoxingGlove",

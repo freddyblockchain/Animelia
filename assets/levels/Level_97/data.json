@@ -89,7 +89,8 @@
 				"customFields": {
 					"Direction": "Down",
 					"Automatic": false,
-					"ProjectileType": "Boulder"
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
 			}
 		],

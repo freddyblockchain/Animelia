@@ -59,21 +59,6 @@
 					"Direction": "Right"
 				}
 			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "576fb080-c210-11ef-a811-01bcc27182fa",
-				"layer": "Entities",
-				"x": 224,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "ScrewAttack"
-				}
-			}
 		]
 	}
 }

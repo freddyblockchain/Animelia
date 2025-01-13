@@ -108,7 +108,9 @@
 				"width": 64,
 				"height": 32,
 				"color": 15389866,
-				"customFields" : {}
+				"customFields": {
+					"StatueType": "Ice"
+				}
 			}
 		]
 	}

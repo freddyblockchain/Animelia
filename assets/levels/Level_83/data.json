@@ -100,7 +100,8 @@
 				"customFields": {
 					"Direction": "Down",
 					"Automatic": true,
-					"ProjectileType": "Boulder"
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
 			},
 			{
@@ -115,7 +116,8 @@
 				"customFields": {
 					"Direction": "Down",
 					"Automatic": true,
-					"ProjectileType": "Boulder"
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
 			}
 		]

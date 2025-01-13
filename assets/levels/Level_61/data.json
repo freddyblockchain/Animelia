@@ -32,29 +32,6 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TargetCircle": [
-			{
-				"id": "TargetCircle",
-				"iid": "13786690-c210-11ef-a811-03984ddd57f9",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Range": 0,
-					"Triggerable": {
-						"entityIid": "da2d78a0-c210-11ef-a811-116f81ce38c4",
-						"layerIid": "d894d0e2-c210-11ef-a811-8b1736faad6f",
-						"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"TargetCircle": null,
-					"Direction": "Down"
-				}
-			}
-		],
 		"Cliffside": [
 			{
 				"id": "Cliffside",

@@ -6,10 +6,7 @@ import com.mygdx.game.Collition.AllOtherObjectsCollisionMask
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.GameObjects.GameObject.GameObject
-import com.mygdx.game.GameObjects.GameObject.MoveableObject
-import com.mygdx.game.GameObjects.GameObject.ReflectingState
+import com.mygdx.game.GameObjects.GameObject.*
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.player
@@ -33,6 +30,14 @@ abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var
             this.remove()
         }
     }
+
+    open fun handleReflection(collidedObject: GameObject){
+        this.shooter = collidedObject
+        this.currentFrame = 0
+        this.currentUnitVector = -this.currentUnitVector
+        this.collisionMask.objectToExclude = collidedObject
+        this.setRotation(this.currentUnitVector, this, 0f)
+    }
 }
 
 open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
@@ -41,11 +46,12 @@ open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is FightableObject){
             if(collidedObject.reflectState == ReflectingState.REFLECTING){
-                projectile.shooter = collidedObject
-                projectile.currentFrame = 0
-                projectile.unitVectorDirection = -projectile.unitVectorDirection
-                projectile.collisionMask.objectToExclude = collidedObject
-            }else{
+                projectile.handleReflection(collidedObject)
+            }
+            else if (collidedObject.state == State.SHIELDED){
+                projectile.remove()
+            }
+            else{
                 projectile.remove()
                 collidedObject.currentHealth -= 10
             }

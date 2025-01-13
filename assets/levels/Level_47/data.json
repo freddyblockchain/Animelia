@@ -69,19 +69,6 @@
 				}
 			}
 		],
-		"Frostfire_Statue": [
-			{
-				"id": "Frostfire_Statue",
-				"iid": "2ac04e60-c210-11ef-a811-b5998fa3ebec",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 64,
-				"height": 64,
-				"color": 16777215,
-				"customFields" : {}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
@@ -97,44 +84,56 @@
 				}
 			}
 		],
-		"Spikes": [
+		"Ability": [
 			{
-				"id": "Spikes",
-				"iid": "5c112a10-c210-11ef-a811-15421e6eed27",
+				"id": "Ability",
+				"iid": "24a0ad60-c210-11ef-a811-c7f3840f9d1a",
 				"layer": "Entities",
-				"x": 160,
-				"y": 0,
+				"x": 192,
+				"y": 192,
 				"width": 32,
-				"height": 64,
-				"color": 1578021,
+				"height": 32,
+				"color": 16690740,
 				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
-						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Ability": "ScrewAttack"
 				}
+			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "1b46e0b0-c210-11ef-aa50-a18d28251956",
+				"layer": "Entities",
+				"x": 128,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
 			},
 			{
-				"id": "Spikes",
-				"iid": "6119c4e0-c210-11ef-a811-3572d407b587",
+				"id": "Fountain",
+				"iid": "1fdbd220-c210-11ef-aa50-e311ac2884a6",
 				"layer": "Entities",
-				"x": 256,
-				"y": 0,
+				"x": 128,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "2436c7d0-c210-11ef-aa50-7b9aa7df49fc",
+				"layer": "Entities",
+				"x": 320,
+				"y": 96,
 				"width": 32,
 				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
-						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
+				"color": 7552569,
+				"customFields" : {}
 			}
 		]
 	}

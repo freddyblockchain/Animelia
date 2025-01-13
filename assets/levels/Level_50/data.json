@@ -53,14 +53,15 @@
 				"iid": "d1815140-c210-11ef-a811-f510a58124be",
 				"layer": "Entities",
 				"x": 224,
-				"y": 32,
+				"y": 16,
 				"width": 32,
 				"height": 32,
 				"color": 7552569,
 				"customFields": {
 					"Direction": "Left",
 					"Automatic": true,
-					"ProjectileType": "Missile"
+					"ProjectileType": "Missile",
+					"Cooldown": 5
 				}
 			}
 		],
@@ -75,7 +76,7 @@
 				"height": 64,
 				"color": 1578021,
 				"customFields": {
-					"Retractable": true,
+					"Retractable": false,
 					"Entity_ref": {
 						"entityIid": "52eac570-c210-11ef-a811-4f54a701bf4a",
 						"layerIid": "d894d0e2-c210-11ef-a811-8b1736faad6f",

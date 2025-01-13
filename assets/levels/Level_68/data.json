@@ -130,7 +130,8 @@
 						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Direction": "Left"
+					"Direction": "Left",
+					"Speed": 1
 				}
 			},
 			{
@@ -156,7 +157,8 @@
 						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Direction": "Left"
+					"Direction": "Left",
+					"Speed": 1
 				}
 			}
 		]

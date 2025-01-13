@@ -45,7 +45,8 @@
 				"customFields": {
 					"Direction": "Right",
 					"Automatic": true,
-					"ProjectileType": "Missile"
+					"ProjectileType": "Missile",
+					"Cooldown": 3
 				}
 			},
 			{
@@ -59,8 +60,9 @@
 				"color": 7552569,
 				"customFields": {
 					"Direction": "Right",
-					"Automatic": false,
-					"ProjectileType": "Missile"
+					"Automatic": true,
+					"ProjectileType": "Missile",
+					"Cooldown": 3
 				}
 			}
 		]

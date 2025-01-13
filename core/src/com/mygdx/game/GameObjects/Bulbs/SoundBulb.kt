@@ -38,7 +38,7 @@ class SoundBulb(gameObjectData: GameObjectData) :
 
     override fun initObject() {
         gameObjectToTrigger =
-            AreaManager.getObjectWithIid(entityRefData.entityIid, entityRefData.levelIid) as Triggerable
+           AreaManager.getObjectWithIid(entityRefData.entityIid, entityRefData.levelIid) as Triggerable
 
         fireIconSprite.setPosition(currentMiddle.x - 6f, currentMiddle.y)
         fireIconSprite.setSize(12f, 16f)

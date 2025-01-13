@@ -13,6 +13,7 @@ import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.minus
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
@@ -20,6 +21,7 @@ class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
     override val layer = Layer.ONGROUND
     override val texture = DefaultTextureHandler.getTexture("EmptyDoor.png")
     override val collision = CannotMoveCollision()
+    val statueCustomFields = Json.decodeFromJsonElement<StatueCustomFields>(gameObjectData.customFields)
 
     val crystalTexture = DefaultTextureHandler.getTexture("IceCrystal.png")
     val crystal1 = Sprite(crystalTexture)
@@ -70,3 +72,6 @@ class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
         crystal2.draw(batch)
     }
 }
+
+@Serializable
+class StatueCustomFields(val StatueType: String)

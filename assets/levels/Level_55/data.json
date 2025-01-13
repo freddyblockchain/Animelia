@@ -51,7 +51,8 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"TargetCircle": null,
-					"Direction": "Left"
+					"Direction": "Left",
+					"Speed": 1
 				}
 			}
 		],
@@ -68,7 +69,8 @@
 				"customFields": {
 					"Direction": "Down",
 					"Automatic": false,
-					"ProjectileType": "Missile"
+					"ProjectileType": "Missile",
+					"Cooldown": 3
 				}
 			}
 		]

@@ -87,7 +87,7 @@ class TargetCircle(gameObjectData: GameObjectData)
 }
 
 @Serializable
-class TargetCircleCustomFields(val Range: Int, val Triggerable: EntityRefData, val TargetCircle: EntityRefData?, val Direction: String)
+class TargetCircleCustomFields(val Range: Int, val Triggerable: EntityRefData, val TargetCircle: EntityRefData?, val Direction: String, val Speed: Int)
 
 class TargetCircleCollision(val targetCircle: TargetCircle): MoveCollision(){
     override var canMoveAfterCollision = true
