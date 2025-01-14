@@ -3,6 +3,7 @@ package com.mygdx.game.GameObjects.Hazards.ConveyerBelt
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
@@ -14,6 +15,8 @@ import com.mygdx.game.Enums.getDirectionFromString
 import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
+import com.mygdx.game.Managers.CollisionManager
+import com.mygdx.game.Managers.CollisionManager.Companion.isPolygonsColliding
 import com.mygdx.game.Utils.Triggerable
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -67,6 +70,14 @@ class ConveyerBelt(gameObjectData: GameObjectData)
             upSprite.rotation = 90f
             upSprite.draw(batch)
         }
+        if(this.direction == Direction.UP){
+            upSprite.rotation = 0f
+            upSprite.draw(batch)
+        }
+        if(this.direction == Direction.DOWN){
+            upSprite.rotation = 180f
+            upSprite.draw(batch)
+        }
 
     }
 
@@ -85,12 +96,18 @@ class ConveyerBelt(gameObjectData: GameObjectData)
         return list.toList()
     }
 
-    override fun onTrigger() {
+    override fun  onTrigger() {
         if(direction == Direction.LEFT){
             direction = Direction.RIGHT
         }
         else if(direction == Direction.RIGHT){
             direction = Direction.LEFT
+        }
+        else if(direction == Direction.UP){
+            direction = Direction.UP
+        }
+        else if(direction == Direction.DOWN){
+            direction = Direction.UP
         }
         startBrick.direction = direction
         endBrick.direction = direction
@@ -108,6 +125,10 @@ class ConveyerBeltCollition(val conveyerBelt: ConveyerBelt) : DefaultAreaEntranc
     override fun movedInsideAction(objectEntered: GameObject) {
         player.cannotMoveCount+= 1
         super.movedInsideAction(objectEntered)
+    }
+
+    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
+        return isPolygonsColliding(polygon1, polygon2)
     }
 
     override fun movedOutsideAction(objectLeaved: GameObject) {

@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_52",
-	"uniqueIdentifer": "7f903b20-c210-11ef-a811-d96bd6be84f7",
-	"x": -1600,
-	"y": -928,
+	"uniqueIdentifer": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
+	"x": -896,
+	"y": -1152,
 	"width": 256,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-			"dir": "e"
+			"dir": "w"
 		},
 		{
-			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
-			"dir": "s"
+			"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,37 +32,57 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Generator": [
+		"Position": [
 			{
-				"id": "Generator",
-				"iid": "ba66a610-c210-11ef-a811-a5693e96c42a",
+				"id": "Position",
+				"iid": "52eac570-c210-11ef-a811-4f54a701bf4a",
 				"layer": "Entities",
-				"x": 0,
+				"x": 32,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 7552569,
+				"color": 1199753,
 				"customFields": {
-					"Direction": "Right",
-					"Automatic": true,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Name": null
 				}
-			},
+			}
+		],
+		"Generator": [
 			{
 				"id": "Generator",
-				"iid": "bea49de0-c210-11ef-a811-9946c3753c5d",
+				"iid": "d1815140-c210-11ef-a811-f510a58124be",
 				"layer": "Entities",
-				"x": 0,
-				"y": 32,
+				"x": 224,
+				"y": 16,
 				"width": 32,
 				"height": 32,
 				"color": 7552569,
 				"customFields": {
-					"Direction": "Right",
+					"Direction": "Left",
 					"Automatic": true,
 					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Cooldown": 6
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "da2d78a0-c210-11ef-a811-116f81ce38c4",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "52eac570-c210-11ef-a811-4f54a701bf4a",
+						"layerIid": "d894d0e2-c210-11ef-a811-8b1736faad6f",
+						"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

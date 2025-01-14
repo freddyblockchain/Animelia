@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_64",
-	"uniqueIdentifer": "298492ba-c210-11ef-a811-af24a61387c1",
-	"x": -736,
-	"y": -800,
+	"uniqueIdentifer": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+	"x": -1600,
+	"y": -1504,
 	"width": 192,
 	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
-			"dir": "n"
+			"levelIid": "7255595b-c210-11ef-a811-e7e3d1002f29",
+			"dir": "s"
 		},
 		{
-			"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
-			"dir": "e"
+			"levelIid": "f451d700-c210-11ef-a811-2ff22bee59b8",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,53 +32,13 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "a5e2e850-c210-11ef-a811-03e32ec704ad",
-				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 64,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
-						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "c39d6190-c210-11ef-a811-ede377ff5381",
-				"layer": "Entities",
-				"x": 64,
-				"y": 128,
-				"width": 64,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
-						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+				"iid": "030d81e0-c210-11ef-a811-e323a0213923",
 				"layer": "Entities",
-				"x": 32,
-				"y": 0,
+				"x": 64,
+				"y": 160,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
@@ -87,31 +47,77 @@
 				}
 			}
 		],
-		"Trumpet": [
+		"Lava": [
 			{
-				"id": "Trumpet",
-				"iid": "d9c1de60-c210-11ef-a811-811d327fc00c",
+				"id": "Lava",
+				"iid": "5a7af250-c210-11ef-a811-1511ef02f11a",
 				"layer": "Entities",
 				"x": 0,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
 				"customFields": {
-					"Direction": "Down"
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			},
 			{
-				"id": "Trumpet",
-				"iid": "f2277190-c210-11ef-a811-315f832fba57",
+				"id": "Lava",
+				"iid": "5b80f0a0-c210-11ef-a811-417a723530f7",
 				"layer": "Entities",
-				"x": 160,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
+				"x": 128,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
 				"customFields": {
-					"Direction": "Left"
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "5cce0a10-c210-11ef-a811-45393581285c",
+				"layer": "Entities",
+				"x": 128,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "5dd91170-c210-11ef-a811-2521bdc015b4",
+				"layer": "Entities",
+				"x": 0,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

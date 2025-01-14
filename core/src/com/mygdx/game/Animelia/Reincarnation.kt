@@ -7,6 +7,8 @@ enum class Egg {FIRE, ICE, SOUND,FLYING}
 fun getEggTexture(egg: Egg): String {
     return when (egg){
         Egg.ICE -> "iceegg.png"
+        Egg.SOUND -> "forestegg.png"
+        Egg.FLYING -> "canyonegg.png"
         else -> "fireegg.png"
     }
 }

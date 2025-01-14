@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_66",
-	"uniqueIdentifer": "45b6111b-c210-11ef-a811-43b63afec456",
-	"x": -1248,
-	"y": -416,
-	"width": 288,
-	"height": 128,
+	"uniqueIdentifer": "298492ba-c210-11ef-a811-af24a61387c1",
+	"x": -736,
+	"y": -800,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
-			"dir": "s"
+			"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
+			"dir": "n"
 		},
 		{
-			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
-			"dir": "n"
+			"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "World4",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,31 +32,86 @@
 		"Beach.png"
 	],
 	"entities": {
-		"KingDoor": [
+		"Spikes": [
 			{
-				"id": "KingDoor",
-				"iid": "bad08d40-c210-11ef-a811-5599f6ef502a",
+				"id": "Spikes",
+				"iid": "a5e2e850-c210-11ef-a811-03e32ec704ad",
 				"layer": "Entities",
-				"x": 96,
+				"x": 64,
 				"y": 0,
 				"width": 64,
 				"height": 64,
-				"color": 1199753,
-				"customFields" : {}
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
+						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "c39d6190-c210-11ef-a811-ede377ff5381",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
+						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		],
-		"Railway": [
+		"Position": [
 			{
-				"id": "Railway",
-				"iid": "491b4a30-c210-11ef-a811-879e90481b29",
+				"id": "Position",
+				"iid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"Trumpet": [
+			{
+				"id": "Trumpet",
+				"iid": "d9c1de60-c210-11ef-a811-811d327fc00c",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Right"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "f2277190-c210-11ef-a811-315f832fba57",
 				"layer": "Entities",
 				"x": 160,
 				"y": 96,
-				"width": 128,
+				"width": 32,
 				"height": 32,
-				"color": 11882632,
+				"color": 16705377,
 				"customFields": {
-					"Direction": "Right"
+					"Direction": "Left"
 				}
 			}
 		]

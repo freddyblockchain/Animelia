@@ -1,6 +1,8 @@
 package com.mygdx.game.Animelia
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.g2d.ParticleEffect
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
@@ -13,6 +15,7 @@ import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Items.MaterialItem
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.Utils.RandomManager
 
@@ -36,12 +39,27 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override val texture = DefaultTextureHandler.getTexture("player.png")
     var aggroCounter = 0
 
+    val fogEffect = ParticleEffect()
+
+    lateinit var animeliaEffect: AnimeliaEffect
+
+    init {
+        fogEffect.load(Gdx.files.internal("Particles/fog.p"), Gdx.files.internal("Particles"))
+        animeliaEffect = AnimeliaEffect(fogEffect)
+        animeliaEffect.particleEffect.emitters.forEach { it.reset()
+        }
+        animeliaEffect.start()
+    }
+
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
+
     }
     override fun render(batch: SpriteBatch) {
         setAnimeliaSpriteTexture(this, animeliaInfo)
         super.render(batch)
+
+        animeliaEffect.render(batch)
     }
 
     override fun frameTask() {
@@ -69,6 +87,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
                 materialItem.add()
             }
         }
+
+        animeliaEffect.particleEffect.setPosition(this.currentMiddle.x, this.currentMiddle.y + this.height / 2 )
 
         super.frameTask()
     }

@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_73",
-	"uniqueIdentifer": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-	"x": 1216,
-	"y": -480,
-	"width": 256,
-	"height": 352,
+	"uniqueIdentifer": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
+	"x": 1760,
+	"y": -800,
+	"width": 64,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-			"dir": "n"
+			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"dir": "s"
 		},
 		{
-			"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-			"dir": "w"
+			"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,32 +32,24 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Railway": [
+		"Cliffside": [
 			{
-				"id": "Railway",
-				"iid": "e49e82d0-9b00-11ef-9017-933deec94738",
+				"id": "Cliffside",
+				"iid": "71c631a0-9b00-11ef-9017-053b4924eb09",
 				"layer": "Entities",
-				"x": 128,
-				"y": 256,
-				"width": 128,
-				"height": 32,
-				"color": 11882632,
-				"customFields": {
-					"Direction": "Right"
-				}
-			}
-		],
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "fb453eb0-c210-11ef-a7b0-41c94520e5be",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
+				"x": 0,
+				"y": 32,
 				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
+						"layerIid": "4e3bcf92-9b00-11ef-9017-edefa8611ddd",
+						"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		]
 	}

@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_61",
-	"uniqueIdentifer": "06ed2283-c210-11ef-a811-09c0cfd551d6",
-	"x": -768,
-	"y": -1280,
-	"width": 64,
-	"height": 128,
+	"uniqueIdentifer": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+	"x": -2080,
+	"y": -832,
+	"width": 160,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
-			"dir": "s"
-		},
-		{
-			"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
-			"dir": "n"
+			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -32,38 +28,50 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"IceCrystal": [
 			{
-				"id": "Cliffside",
-				"iid": "98fd7620-c210-11ef-a811-bfd700bda94e",
+				"id": "IceCrystal",
+				"iid": "e78db8c7-c210-11ef-a811-77033f8fc5c3",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
-				"width": 64,
+				"width": 32,
 				"height": 32,
-				"color": 16705377,
+				"color": 16151930,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "b27d52f0-c210-11ef-a811-ad2a2a49887c",
-						"layerIid": "06ed2285-c210-11ef-a811-5da9d99082ef",
-						"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
+						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Entity_ref2": {
+						"entityIid": "d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d",
+						"layerIid": "fd138992-c210-11ef-a811-2d81ff4e161c",
+						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			}
 		],
-		"Position": [
+		"Spikes": [
 			{
-				"id": "Position",
-				"iid": "b27d52f0-c210-11ef-a811-ad2a2a49887c",
+				"id": "Spikes",
+				"iid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
 				"layer": "Entities",
-				"x": 32,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
+				"x": 64,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
 				"customFields": {
-					"Name": null
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
+						"layerIid": "e09bfb22-c210-11ef-a811-491b7a5a2798",
+						"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

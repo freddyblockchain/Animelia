@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_55",
-	"uniqueIdentifer": "22ea827b-c210-11ef-a811-97b44fbf3087",
-	"x": -704,
-	"y": -928,
-	"width": 128,
-	"height": 128,
+	"uniqueIdentifer": "ce1bce30-c210-11ef-a811-9db328830f92",
+	"x": -1568,
+	"y": -864,
+	"width": 64,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
-			"dir": "w"
+			"levelIid": "7f903b20-c210-11ef-a811-d96bd6be84f7",
+			"dir": "n"
 		},
 		{
-			"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-			"dir": "s"
+			"levelIid": "fd793628-c210-11ef-a811-a7945750175d",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -32,45 +32,18 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TargetCircle": [
+		"Position": [
 			{
-				"id": "TargetCircle",
-				"iid": "40769480-c210-11ef-a811-510caf17350d",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Range": 96,
-					"Triggerable": {
-						"entityIid": "d0953900-c210-11ef-a811-db55b7ed110a",
-						"layerIid": "10ac408a-c210-11ef-a811-1396f3b3a610",
-						"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"TargetCircle": null,
-					"Direction": "Left",
-					"Speed": 1
-				}
-			}
-		],
-		"Generator": [
-			{
-				"id": "Generator",
-				"iid": "122a0d40-c210-11ef-a811-d32443922e9e",
+				"id": "Position",
+				"iid": "32a370e0-c210-11ef-a811-4fddb06ad43f",
 				"layer": "Entities",
 				"x": 32,
-				"y": 0,
+				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 7552569,
+				"color": 1199753,
 				"customFields": {
-					"Direction": "Down",
-					"Automatic": false,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Name": null
 				}
 			}
 		]

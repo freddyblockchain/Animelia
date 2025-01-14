@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_69",
-	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-	"x": 1216,
-	"y": -704,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+	"x": -1184,
+	"y": -576,
+	"width": 128,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+			"levelIid": "a37d10e0-c210-11ef-a811-e54b8a3e4904",
 			"dir": "n"
 		},
 		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-			"dir": "e"
-		},
-		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
+			"levelIid": "45b6111b-c210-11ef-a811-43b63afec456",
 			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -36,42 +32,60 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Spikes": [
 			{
-				"id": "Door",
-				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
-				"layer": "Entities",
+				"id": "Spikes",
+				"iid": "0e20c260-c210-11ef-a811-b3c02de9ac92",
+				"layer": "EntitiesOnTop",
 				"x": 0,
 				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 160,
+				"color": 1578021,
 				"customFields": {
-					"Door": {
-						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
-						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
-						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
-				}
-			}
-		],
-		"Cliffside": [
-			{
-				"id": "Cliffside",
-				"iid": "680565f0-9b00-11ef-9017-99ca0506282d",
-				"layer": "Entities",
-				"x": 224,
-				"y": 64,
-				"width": 32,
-				"height": 64,
-				"color": 16705377,
-				"customFields": {
+					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
-						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "24b78900-c210-11ef-a811-7da32074c922",
+				"layer": "EntitiesOnTop",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 160,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "29605090-c210-11ef-a811-0fed455447d3",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
@@ -80,15 +94,54 @@
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-				"layer": "Entities",
-				"x": 160,
-				"y": 64,
+				"iid": "21f20060-c210-11ef-a811-150f43b9ab84",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 128,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
+				}
+			}
+		],
+		"TargetCircle": [
+			{
+				"id": "TargetCircle",
+				"iid": "811a2e50-c210-11ef-a811-fb34550a7a9a",
+				"layer": "EntitiesOnTop",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Range": 96,
+					"Triggerable": {
+						"entityIid": "29605090-c210-11ef-a811-0fed455447d3",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"TargetCircle": null,
+					"Direction": "Left",
+					"Speed": 1
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "f5f79af0-c210-11ef-a811-c7ea9a17d161",
+				"layer": "Entities",
+				"x": 32,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "Missile"
 				}
 			}
 		]

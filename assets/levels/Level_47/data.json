@@ -20,6 +20,10 @@
 			"dir": "w"
 		},
 		{
+			"levelIid": "38f79380-c210-11ef-a051-4b630e0e0cc9",
+			"dir": "w"
+		},
+		{
 			"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
 			"dir": "e"
 		},
@@ -48,6 +52,34 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "704eea70-c210-11ef-a051-e58baada1f42",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			},
+			{
+				"id": "Position",
+				"iid": "fb3b6e30-c210-11ef-a811-959b75903445",
+				"layer": "Entities",
+				"x": 224,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
 		"Door": [
 			{
 				"id": "Door",
@@ -66,21 +98,6 @@
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Down"
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "fb3b6e30-c210-11ef-a811-959b75903445",
-				"layer": "Entities",
-				"x": 224,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
 				}
 			}
 		],
@@ -103,17 +120,6 @@
 			{
 				"id": "Fountain",
 				"iid": "1b46e0b0-c210-11ef-aa50-a18d28251956",
-				"layer": "Entities",
-				"x": 128,
-				"y": 96,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			},
-			{
-				"id": "Fountain",
-				"iid": "1fdbd220-c210-11ef-aa50-e311ac2884a6",
 				"layer": "Entities",
 				"x": 128,
 				"y": 96,

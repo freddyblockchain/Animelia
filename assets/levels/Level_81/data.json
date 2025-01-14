@@ -1,18 +1,14 @@
 {
 	"identifier": "Level_81",
-	"uniqueIdentifer": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
-	"x": 1472,
-	"y": -1760,
-	"width": 64,
+	"uniqueIdentifer": "015874a0-9b00-11ef-9017-89014ae0a87f",
+	"x": 1696,
+	"y": -1440,
+	"width": 128,
 	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
-			"dir": "n"
-		},
-		{
-			"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+			"levelIid": "f6d98910-9b00-11ef-9017-e5f222d195bc",
 			"dir": "s"
 		}
 	],
@@ -31,21 +27,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "3d97f830-9b00-11ef-9017-a39432d437fb",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "Whirlwind"
-				}
-			}
-		]
-	}
+	"entities" : {}
 }
