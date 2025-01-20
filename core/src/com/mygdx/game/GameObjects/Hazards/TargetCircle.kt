@@ -66,7 +66,7 @@ class TargetCircle(gameObjectData: GameObjectData)
         this.setPosition(this.currentPosition() + this.unitVectorDirection * speed.toFloat())
         currentDistance += speed
         if(currentDistance >= range){
-            this.unitVectorDirection = -this.unitVectorDirection
+           this.unitVectorDirection = -this.unitVectorDirection
             currentDistance = 0
         }
 

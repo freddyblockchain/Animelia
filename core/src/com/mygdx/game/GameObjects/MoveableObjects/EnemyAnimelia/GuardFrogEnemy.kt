@@ -25,10 +25,6 @@ class GuardFrogEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefDat
         currentHealth = maxHealth
     }
 
-    override fun initObject() {
-        sprite.setColor(Color.CORAL)
-    }
-
     override fun frameTask() {
         super.frameTask()
         if(aggroCircle.contains(player.currentPosition())){

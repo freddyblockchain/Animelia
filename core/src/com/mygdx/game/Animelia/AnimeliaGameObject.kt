@@ -12,11 +12,10 @@ import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Items.MaterialItem
-import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.PlayerStatus
-import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.Managers.*
 import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.Utils.RandomManager
@@ -65,13 +64,15 @@ class GoToPosition(val enemyAnimelia: EnemyAnimelia, var position: Vector2): Bat
     }
 }
 
-abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: EntityRefData?): FightableObject(gameObjectData, Vector2(32f,32f)) {
+abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: EntityRefData?): FightableObject(gameObjectData, Vector2(32f,32f)), RaycastListener {
     abstract val animeliaEntity: ANIMELIA_ENTITY
     abstract val animeliaInfo: AnimeliaData
 
     override var speed = 1f
     override val cannotMoveStrategy = NoAction()
     override val layer = Layer.ONGROUND
+
+    var playerInLOS = false
 
     override val healthStrategy = EnemyHealthStrategy()
     override var direction = Direction.DOWN
@@ -87,7 +88,9 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     val fogEffect = ParticleEffect()
 
-    lateinit var animeliaEffect: AnimeliaEffect
+    var animeliaEffect: AnimeliaEffect
+
+    lateinit var raycastObject: RaycastObject
 
     init {
         fogEffect.load(Gdx.files.internal("Particles/fog.p"), Gdx.files.internal("Particles"))
@@ -98,6 +101,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
+        raycastObject = RaycastObject(Vector2(100f,32f),this, listOf(player), this)
+        raycastObject.add()
 
     }
     override fun render(batch: SpriteBatch) {
@@ -105,6 +110,12 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
         super.render(batch)
 
         animeliaEffect.render(batch)
+    }
+
+    override fun remove() {
+        super.remove()
+        raycastObject.remove()
+
     }
 
     override fun frameTask() {
@@ -142,6 +153,10 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
         animeliaEffect.particleEffect.setPosition(this.currentMiddle.x, this.currentMiddle.y + this.height / 2 )
 
         super.frameTask()
+    }
+
+    override fun objectEnteredRay(objectEntered: GameObject) {
+        playerInLOS = true
     }
 
 }

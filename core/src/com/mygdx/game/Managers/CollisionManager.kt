@@ -1,15 +1,17 @@
 package com.mygdx.game.Managers
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Intersector.intersectPolygonEdges
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.FloatArray
 import com.mygdx.game.Collisions.AreaEntranceCollition
-import com.mygdx.game.Collition.Collision
-import com.mygdx.game.Collition.InputCollision
-import com.mygdx.game.Collition.MoveCollision
+import com.mygdx.game.Collition.*
+import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Ground
+import com.mygdx.game.Managers.CollisionManager.Companion.GetCollidingObjects
 import com.mygdx.game.anyPointInPolygon
 import com.mygdx.game.player
 
@@ -47,7 +49,7 @@ class CollisionManager {
         }
 
 
-        //Chat gpt weird ass polygon centee
+        //Chat gpt weird ass polygon center
         fun getBoundingBoxCenter(polygon: Polygon): Vector2 {
             val vertices = polygon.transformedVertices
             var minX = vertices[0]
@@ -125,4 +127,46 @@ class CollisionManager {
             collidingObjects.forEach { (it.collision as InputCollision).renderKeycodeToPress() }
         }
     }
+}
+
+class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val objectsToHit: List<GameObject>, rayCastListener: RaycastListener):
+    GameObject(GameObjectData(width = size.x.toInt(), height = size.y.toInt())) {
+    override val layer = Layer.ONGROUND
+
+    override val collisionMask =  OnlyTheseSpecificObjectsCollisionMask(objectsToHit)
+
+    override val collision = RayCastCollision(rayCastListener)
+
+    init {
+        this.polygon.setOrigin(16f,16f)
+    }
+
+    override fun frameTask() {
+        updateRayCast()
+
+        val collidingObjects = GetCollidingObjects(this, this.polygon, objectsToHit)
+        collidingObjects.forEach {
+            this.collision.collisionHappened(it)
+        }
+    }
+
+    fun updateRayCast(){
+        this.setPosition(objectBelongingTo.currentPosition())
+        this.polygon.rotation = objectBelongingTo.polygon.rotation - 90
+
+    }
+
+}
+
+class RayCastCollision(val rayCastListener: RaycastListener): MoveCollision(){
+    override var canMoveAfterCollision = true
+
+    override fun collisionHappened(collidedObject: GameObject) {
+        rayCastListener.objectEnteredRay(collidedObject)
+    }
+
+}
+
+interface RaycastListener{
+    fun objectEnteredRay(objectEntered: GameObject)
 }
