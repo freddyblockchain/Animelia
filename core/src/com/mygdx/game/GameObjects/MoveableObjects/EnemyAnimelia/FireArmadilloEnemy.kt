@@ -10,10 +10,13 @@ import com.mygdx.game.player
 
 enum class EnemyState {NORMAL, AGGROED}
 
-class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObjectData) {
+
+class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObjectData, null) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
     override val texture = DefaultTextureHandler.getTexture("player.png")
+    override val outsideOfAggroStrategy = GoInCircles(this)
+    override val insideBattleStrategy = TurnAndFacePlayer(this)
 
     override val maxHealth = 30f
     val fireballAbility = FireballAbility(this)
@@ -25,7 +28,7 @@ class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObj
     override fun frameTask() {
         super.frameTask()
         if(aggroCircle.contains(player.currentPosition())){
-            if(aggroCounter % 180 == 0){
+            if(encounterFrames % 180 == 0){
                 AbilityManager.abilities.add(fireballAbility)
             }
         }

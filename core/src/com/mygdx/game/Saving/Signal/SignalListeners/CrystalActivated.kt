@@ -2,6 +2,7 @@ package com.mygdx.game.Saving.Signal.SignalListeners
 
 import CrystalActivatedSignal
 import RailwayFixedSignal
+import com.mygdx.game.GameObjects.Other.Crystals.Crystal
 import com.mygdx.game.GameObjects.Other.Crystals.Statue
 import com.mygdx.game.GameObjects.Structures.Railway.Railway
 import com.mygdx.game.Managers.AreaManager
@@ -14,7 +15,8 @@ class CrystalActivated: SignaledEventListener {
         val crystalActivatedSignal = signal as CrystalActivatedSignal
         val areaIdentifer = signal.areaIdentifer
         val area = AreaManager.getArea(areaIdentifer)
+        val crystal: Crystal = area.gameObjects.firstOrNull{it.gameObjectIid == crystalActivatedSignal.crystalEntityIId} as Crystal
         val statue: Statue = area.gameObjects.firstOrNull{it.gameObjectIid == crystalActivatedSignal.statueEntityIid} as Statue
-        statue.activateCrystal()
+        crystal.statue.activateCrystal(crystal)
     }
 }

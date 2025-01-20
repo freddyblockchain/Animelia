@@ -60,6 +60,9 @@ fun getAnimeliaEntity(animeliaType: String): ANIMELIA_ENTITY {
         "KingFrog" -> ANIMELIA_ENTITY.KingFrog
         "Frog" -> ANIMELIA_ENTITY.Frog
         "Bird" -> ANIMELIA_ENTITY.Bird
+        "FireLion" -> ANIMELIA_ENTITY.FireLion
+        "SoundBat" -> ANIMELIA_ENTITY.SoundBat
+        "FrostfireDragon" -> ANIMELIA_ENTITY.FrostFireDragon
         else -> ANIMELIA_ENTITY.FireArmadillo
     }
 }

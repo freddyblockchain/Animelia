@@ -50,7 +50,9 @@
 						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
 						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Element": "Flying",
+					"Index": 1
 				}
 			}
 		]

@@ -92,6 +92,27 @@
 					"Name": null
 				}
 			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "628263e0-c210-11ef-bc3d-11c25b5f96f3",
+				"layer": "Entities",
+				"x": 96,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IceBird",
+					"Entity_ref": {
+						"entityIid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
+						"layerIid": "e78db8c6-c210-11ef-a811-d3cc001a76a9",
+						"levelIid": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
 		]
 	}
 }

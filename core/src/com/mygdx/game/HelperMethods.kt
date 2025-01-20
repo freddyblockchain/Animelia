@@ -23,6 +23,8 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Saving.SVector2
 import kotlin.math.PI
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 fun InitArea(levelName: String) {
     val levelPath = "${FileHandler.BASE_PATH}$levelName/data.json"
@@ -161,6 +163,10 @@ fun getNearestRespawn(areaIdentifierToLookFor: String? = null): Pair<Vector2, St
         return Pair(fountain.currentPosition(), activeArea.areaIdentifier)
     }
     return Pair(startPos, "World1")
+}
+fun distance(point1: Vector2, point2: Vector2): Float {
+    val first = (point2.x - point1.x).pow(2) + (point2.y - point1.y).pow(2)
+    return sqrt(first)
 }
 /*
 

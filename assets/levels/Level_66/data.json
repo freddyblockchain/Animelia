@@ -114,6 +114,27 @@
 					"Direction": "Left"
 				}
 			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "6969a9c0-c210-11ef-bc3d-2b8327373606",
+				"layer": "Entities",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "GuardFrog",
+					"Entity_ref": {
+						"entityIid": "4b2ee2f0-c210-11ef-a811-7b44988c64d5",
+						"layerIid": "1ae28982-c210-11ef-a811-c9ccf53124e7",
+						"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
 		]
 	}
 }

@@ -33,7 +33,9 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     override val collision = BoulderGeneratorCollision(this)
     override val texture = DefaultTextureHandler.getTexture("BoulderGenerator.png")
 
-    val timer = CooldownTimer(customFields.Cooldown.toFloat())
+   // val timer = CooldownTimer(customFields.Cooldown.toFloat())
+    var currentFrame = 0
+    val frames = customFields.Cooldown * 60
 
     var rockThrowCounter = 0
     var rockThrowOngoing = false
@@ -70,13 +72,15 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
     }
 
     fun triggerGenerator(){
-        if(timer.tryUseCooldown()){
+        if(currentFrame >= frames){
             rockThrowOngoing = true
+            currentFrame = 0
         }
     }
 
     override fun frameTask() {
         super.frameTask()
+        currentFrame += 1
         if(automatic){
             triggerGenerator()
         }

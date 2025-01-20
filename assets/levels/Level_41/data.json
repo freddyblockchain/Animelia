@@ -579,7 +579,9 @@
 						"layerIid": "e71a36a2-9b00-11ef-a397-895bb31d4437",
 						"levelIid": "e71a36a0-9b00-11ef-a397-6544d600574c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Element": "Fire",
+					"Index": 0
 				}
 			},
 			{
@@ -603,7 +605,9 @@
 						"layerIid": "e71a36a2-9b00-11ef-a397-895bb31d4437",
 						"levelIid": "e71a36a0-9b00-11ef-a397-6544d600574c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Element": "Fire",
+					"Index": 1
 				}
 			}
 		],

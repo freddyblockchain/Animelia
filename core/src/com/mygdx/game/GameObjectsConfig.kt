@@ -9,8 +9,8 @@ import com.mygdx.game.GameObjects.Hazards.BoulderGenerator.BoulderPad
 import com.mygdx.game.GameObjects.Hazards.ConveyerBelt.ConveyerBelt
 import com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia.convertToEnemyAnimelia
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.convertToFriendlyAnimelia
-import com.mygdx.game.GameObjects.Other.Crystals.IceCrystal
 import com.mygdx.game.GameObjects.Other.Crystals.Statue
+import com.mygdx.game.GameObjects.Other.Crystals.Crystal
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.GameObjects.Sign
 import com.mygdx.game.GameObjects.Structures.Fireplace
@@ -88,7 +88,7 @@ fun initMappings(){
     GameObjectFactory.register("BoxingGlove", ::BoxingGlove)
     GameObjectFactory.register("IceFloor", ::IceFloor)
     GameObjectFactory.register("Spikes", ::Spikes)
-    GameObjectFactory.register("IceCrystal", ::IceCrystal)
+    GameObjectFactory.register("IceCrystal", ::Crystal)
     GameObjectFactory.register("Statue", ::Statue)
     GameObjectFactory.register("FireGate", ::FireGate)
     GameObjectFactory.register("Flames", ::Flames)

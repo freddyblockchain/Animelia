@@ -47,7 +47,8 @@
 				"height": 32,
 				"color": 14120515,
 				"customFields": {
-					"AnimeliaType": "Fire_Armadillo"
+					"AnimeliaType": "Fire_Armadillo",
+					"Entity_ref": null
 				}
 			},
 			{
@@ -60,7 +61,8 @@
 				"height": 32,
 				"color": 14120515,
 				"customFields": {
-					"AnimeliaType": "Fire_Armadillo"
+					"AnimeliaType": "Fire_Armadillo",
+					"Entity_ref": null
 				}
 			},
 			{
@@ -73,7 +75,8 @@
 				"height": 32,
 				"color": 14120515,
 				"customFields": {
-					"AnimeliaType": "Fire_Armadillo"
+					"AnimeliaType": "Fire_Armadillo",
+					"Entity_ref": null
 				}
 			}
 		],

@@ -30,10 +30,10 @@ class TargetCircle(gameObjectData: GameObjectData)
     val customFields = Json.decodeFromJsonElement<TargetCircleCustomFields>(gameObjectData.customFields)
     val direction = getDirectionFromString(customFields.Direction)
     var unitVectorDirection = getDirectionUnitVector(direction)
-    val range = customFields.Range
+    val range = 180
 
     var currentDistance = 0
-    var speed = 1
+    var speed = customFields.Speed
 
     lateinit var triggerable: Triggerable
     var otherCircle: TargetCircle? = null

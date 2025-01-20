@@ -67,7 +67,7 @@ class FireArmadilloData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo, ANIMELIA_ENTITY.FireDragon)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo, ANIMELIA_ENTITY.FireLion)
     override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath)
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 }
@@ -91,25 +91,15 @@ class FireHippoData(): AnimeliaData {
     override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 }
-class FireDragonData(): AnimeliaData {
-    override var textureName = "Butler.png"
-    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
+class FireLionData(): AnimeliaData {
+    override var textureName = "Animelias/FireLion-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE, ELEMENTAL_TYPE.SOUND)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(25))
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/FireLion-straight.png","Animelias/FireLion-right.png","Animelias/FireLion-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), PickedUpItem(Material.FIREFRUIT))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>()
-    override val animeliaEntity = ANIMELIA_ENTITY.FireDragon
-}
-class IceDinosaurData(): AnimeliaData {
-    override var textureName = "Butler.png"
-    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE)
-    override val animeliaStage = ANIMELIA_STAGE.MASTER
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>()
-    override val animeliaEntity = ANIMELIA_ENTITY.IceDinasaur
+    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
+    override val animeliaEntity = ANIMELIA_ENTITY.FireLion
 }
 class IceYetiData(): AnimeliaData {
     override var textureName = "Animelias/ice-yeti-straight.png"
@@ -192,20 +182,17 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         ANIMELIA_ENTITY.FireArmadillo->  {
             FireArmadilloData()
         }
-        ANIMELIA_ENTITY.FireDragon -> {
-            FireDragonData()
-        }
         ANIMELIA_ENTITY.IceYeti -> {
             IceYetiData()
         }
         ANIMELIA_ENTITY.FireHippo -> {
             FireHippoData()
         }
+        ANIMELIA_ENTITY.FireLion -> {
+            FireLionData()
+        }
         ANIMELIA_ENTITY.IcePenguin -> {
             IcePenguinData()
-        }
-        ANIMELIA_ENTITY.IceDinasaur -> {
-            IceDinosaurData()
         }
         ANIMELIA_ENTITY.Bird -> {
             BirdData()
@@ -225,5 +212,7 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         ANIMELIA_ENTITY.KingFrog -> {
             KingFrogData()
         }
+        ANIMELIA_ENTITY.SoundBat -> TODO()
+        ANIMELIA_ENTITY.FrostFireDragon -> TODO()
     }
 }

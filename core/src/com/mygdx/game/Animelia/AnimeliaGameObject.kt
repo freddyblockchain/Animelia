@@ -1,5 +1,6 @@
 package com.mygdx.game.Animelia
 
+import RemoveObjectSignal
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
@@ -11,19 +12,60 @@ import com.mygdx.game.CannotMoveStrategy.NoAction
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Items.MaterialItem
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.Utils.RandomManager
+import com.mygdx.game.Utils.Triggerable
 
-enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, FireDragon, IceDinasaur, IceYeti, FireHippo, Bird, IceBird, MetalBird, Frog, GuardFrog, KingFrog}
+enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, IceYeti, FireHippo, Bird, IceBird, MetalBird, Frog, GuardFrog, KingFrog, FireLion, SoundBat, FrostFireDragon }
 
 enum class ANIMELIA_STAGE{JUNIOR, MASTER, GRANDMASTER}
 
-abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(gameObjectData, Vector2(32f,32f)) {
+interface BattleStrategy{
+    fun action(): Unit
+}
+
+
+class GoInCircles(val enemyAnimelia: EnemyAnimelia): BattleStrategy{
+    override fun action() {
+        enemyAnimelia.currentUnitVector = getRotatedUnitVectorClockwise(enemyAnimelia.currentUnitVector, 1f)
+        enemyAnimelia.move(enemyAnimelia.currentUnitVector)
+        enemyAnimelia.setRotation(enemyAnimelia.currentUnitVector, enemyAnimelia, 90f)
+    }
+
+}
+
+class TurnAndFacePlayer(val enemyAnimelia: EnemyAnimelia): BattleStrategy{
+    override fun action() {
+        val unitVectorToDirection = getUnitVectorTowardsPoint(enemyAnimelia.currentMiddle, player.currentPosition())
+        enemyAnimelia.currentUnitVector = unitVectorToDirection
+        enemyAnimelia.setRotation(unitVectorToDirection, enemyAnimelia, 90f)
+    }
+
+}
+
+class GoToPosition(val enemyAnimelia: EnemyAnimelia, var position: Vector2): BattleStrategy{
+    override fun action() {
+        val unitVectorToDirection = getUnitVectorTowardsPoint(enemyAnimelia.currentMiddle, position)
+        enemyAnimelia.setRotation(unitVectorToDirection, enemyAnimelia, 90f)
+        enemyAnimelia.move(unitVectorToDirection)
+    }
+
+    fun isAtPosition(): Boolean{
+
+        val distance = distance(enemyAnimelia.currentMiddle, position)
+        val distanceWithoutSpeed = distance / enemyAnimelia.speed
+
+        return distanceWithoutSpeed <= 1f
+    }
+}
+
+abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: EntityRefData?): FightableObject(gameObjectData, Vector2(32f,32f)) {
     abstract val animeliaEntity: ANIMELIA_ENTITY
     abstract val animeliaInfo: AnimeliaData
 
@@ -36,8 +78,12 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     override var canChangeDirection = true
     var aggroCircle = Circle(0f, 0f, 100f)
 
+    abstract val outsideOfAggroStrategy: BattleStrategy
+
+    abstract val insideBattleStrategy: BattleStrategy
+
     override val texture = DefaultTextureHandler.getTexture("player.png")
-    var aggroCounter = 0
+    var encounterFrames = 0
 
     val fogEffect = ParticleEffect()
 
@@ -46,8 +92,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
     init {
         fogEffect.load(Gdx.files.internal("Particles/fog.p"), Gdx.files.internal("Particles"))
         animeliaEffect = AnimeliaEffect(fogEffect)
-        animeliaEffect.particleEffect.emitters.forEach { it.reset()
-        }
+        animeliaEffect.particleEffect.emitters.forEach { it.reset() }
         animeliaEffect.start()
     }
 
@@ -66,25 +111,31 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData): FightableObject(ga
         val currentMiddle = this.currentMiddle
         aggroCircle = Circle(currentMiddle.x, currentMiddle.y, 150f)
         if(aggroCircle.contains(player.currentPosition())){
-            val unitVectorToDirection = getUnitVectorTowardsPoint(currentMiddle, player.currentPosition())
-            this.currentUnitVector = unitVectorToDirection
-            this.setRotation(unitVectorToDirection, this, 90f)
-            aggroCounter += 1
+            insideBattleStrategy.action()
+            encounterFrames += 1
         } else{
-            this.currentUnitVector = getRotatedUnitVectorClockwise(this.currentUnitVector, 1f)
-            this.move(this.currentUnitVector)
-            this.setRotation(this.currentUnitVector, this, 90f)
-            aggroCounter = 0
+            outsideOfAggroStrategy.action()
+            encounterFrames = 0
         }
 
+        // death
         if(this.currentHealth <= 0){
-            this.remove()
+            if(this.animeliaEntity == ANIMELIA_ENTITY.IceBird || this.animeliaEntity == ANIMELIA_ENTITY.GuardFrog || this.animeliaEntity == ANIMELIA_ENTITY.FireLion || this.animeliaEntity == ANIMELIA_ENTITY.SoundBat){
+                SignalManager.emitSignal(RemoveObjectSignal(this.gameObjectIid))
+            } else{
+                this.remove()
+            }
             generalSaveState.inventory.goldReceived(1, this.currentMiddle)
             PlayerStatus.animeliaClonesKilled += 1
 
             if(RandomManager.roll(50)){
                 val materialItem = MaterialItem(GameObjectData(x = this.x.toInt(), y = this.y.toInt(), width = 32, height = 32), Material.ANIMELIABONE)
                 materialItem.add()
+            }
+
+            if(entityRefData != null){
+                val gameObjectToTrigger = AreaManager.getObjectWithIid(entityRefData.entityIid, entityRefData.levelIid) as Triggerable
+                gameObjectToTrigger.onTrigger()
             }
         }
 

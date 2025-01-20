@@ -101,9 +101,8 @@ class LullabyProjectile(
         val y =  Math.sin(angle * Math.PI / 180)
 
         val newPoint = Vector2(circle.x + x.toFloat(), circle.y + y.toFloat())
-        unitVectorDirection = getUnitVectorTowardsPoint(Vector2(circle.x, circle.y), newPoint)
+        currentUnitVector = getUnitVectorTowardsPoint(Vector2(circle.x, circle.y), newPoint)
         counter += 1
         super.frameTask()
-
     }
 }

@@ -50,7 +50,9 @@
 						"layerIid": "fd138992-c210-11ef-a811-2d81ff4e161c",
 						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Element": "Sound",
+					"Index": 2
 				}
 			}
 		],

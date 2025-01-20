@@ -64,7 +64,7 @@ class CrystalActivationMode(
             }
         } else {
             if(currentFrame < 120){
-                crystal.statue.animateAlpha()
+                crystal.statue.animateAlpha(crystal.index)
             } else{
                 SignalManager.emitSignal(CrystalActivatedSignal(crystal.gameObjectIid, crystal.statue.gameObjectIid))
                 changeMode(prevMode)

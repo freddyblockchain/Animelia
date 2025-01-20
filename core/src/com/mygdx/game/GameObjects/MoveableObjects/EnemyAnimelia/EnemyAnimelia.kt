@@ -15,19 +15,24 @@ import kotlinx.serialization.json.decodeFromJsonElement
 fun convertToEnemyAnimelia(gameObjectData: GameObjectData): GameObject{
     val animeliaEntityString = Json.decodeFromJsonElement<EnemyAnimeliaCustomFields>(gameObjectData.customFields).AnimeliaType
     val animeliaEntity = getAnimeliaEntity(animeliaEntityString)
+    val entityRef = Json.decodeFromJsonElement<EnemyAnimeliaCustomFields>(gameObjectData.customFields).Entity_ref
 
-    return createEnemyAnimelia(animeliaEntity, gameObjectData)
+    return createEnemyAnimelia(animeliaEntity, gameObjectData, entityRef)
 }
 
-fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData): EnemyAnimelia{
+fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObjectData, entityRefData: EntityRefData?): EnemyAnimelia{
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadilloEnemy(gameObjectData)
         ANIMELIA_ENTITY.IcePenguin -> IcePenguinEnemy(gameObjectData)
+        ANIMELIA_ENTITY.IceBird -> IceBirdEnemy(gameObjectData, entityRefData)
+        ANIMELIA_ENTITY.FireLion -> FireLionEnemy(gameObjectData, entityRefData)
+        ANIMELIA_ENTITY.GuardFrog-> GuardFrogEnemy(gameObjectData, entityRefData)
+        ANIMELIA_ENTITY.SoundBat-> SoundBatEnemy(gameObjectData, entityRefData)
         else -> FireArmadilloEnemy(gameObjectData)
     }
 }
 
 @Serializable
-data class EnemyAnimeliaCustomFields(val AnimeliaType: String){
+data class EnemyAnimeliaCustomFields(val AnimeliaType: String, val Entity_ref: EntityRefData?){
 
 }
