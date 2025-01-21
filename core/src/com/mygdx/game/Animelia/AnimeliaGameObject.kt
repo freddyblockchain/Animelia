@@ -77,7 +77,9 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
     override val healthStrategy = EnemyHealthStrategy()
     override var direction = Direction.DOWN
     override var canChangeDirection = true
-    var aggroCircle = Circle(0f, 0f, 100f)
+
+    open val aggroRange = 150f
+    var aggroCircle = Circle(0f, 0f, aggroRange)
 
     abstract val outsideOfAggroStrategy: BattleStrategy
 
@@ -89,6 +91,10 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
     val fogEffect = ParticleEffect()
 
     var animeliaEffect: AnimeliaEffect
+
+
+    val cooldown = 120
+    var timeSinceLastAbility: Int = 0
 
     lateinit var raycastObject: RaycastObject
 
@@ -120,7 +126,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun frameTask() {
         val currentMiddle = this.currentMiddle
-        aggroCircle = Circle(currentMiddle.x, currentMiddle.y, 150f)
+        aggroCircle = Circle(currentMiddle.x, currentMiddle.y, aggroRange)
         if(aggroCircle.contains(player.currentPosition())){
             insideBattleStrategy.action()
             encounterFrames += 1

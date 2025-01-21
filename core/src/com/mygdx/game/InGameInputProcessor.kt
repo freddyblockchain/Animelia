@@ -10,6 +10,7 @@ import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameModes.MapMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.Items.KeyItem
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Managers.AreaManager
@@ -41,11 +42,16 @@ class InGameInputProcessor : InputProcessor {
                 changeMode(MapMode(mainMode))
             }
         }
-        if (player.abilityCooldown.cooldownAvailable() && AbilityManager.abilities.all { !it.activated }) {
+
+        val noOtherAbilityActivated =  AbilityManager.abilities.filter { it.attachedFightableObject == player  }.all { !it.activated }
+
+        // not sure what this is: AbilityManager.abilities.all { !it.activated }
+        if (player.abilityCooldown.cooldownAvailable() && noOtherAbilityActivated && player.state == State.NORMAL) {
             for (abilityPair in player.activeAbilities) {
                 if (abilityPair.value != null) {
                     if (abilityPair.key == keycode - 7) {
-                        player.abilityCooldown.tryUseCooldown()
+                       player.abilityCooldown.tryUseCooldown()
+                       // player.tryToUseAbility(abilityPair.value!!)
                         AbilityManager.abilities.add(abilityPair.value!!)
                     }
                 }

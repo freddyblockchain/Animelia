@@ -43,6 +43,11 @@ abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var
 open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
 
     override var canMoveAfterCollision = true
+
+    open fun handleProjectileHitting(fightableObject: FightableObject){
+        projectile.remove()
+        fightableObject.currentHealth -= 10
+    }
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is FightableObject){
             if(collidedObject.reflectState == ReflectingState.REFLECTING){
@@ -52,8 +57,7 @@ open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
                 projectile.remove()
             }
             else{
-                projectile.remove()
-                collidedObject.currentHealth -= 10
+                handleProjectileHitting(collidedObject)
             }
         }
     }

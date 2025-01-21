@@ -96,3 +96,16 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"3dfba570-c210-11ef-a811-c919cb9527f0"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"24a0ad60-c210-11ef-a811-c7f3840f9d1a"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"bea49de0-c210-11ef-a811-9946c3753c5d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"01cba1b0-c210-11ef-bc3d-598fa9b00349"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"f8b3aa80-c210-11ef-a811-ef7eb691cf98"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Metal_Factory","crystalEntityIId":"0c66b220-c210-11ef-a811-ab2b1afed6b5","statueEntityIid":"d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"628263e0-c210-11ef-bc3d-11c25b5f96f3"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"e78db8c8-c210-11ef-a811-1d7d941a3981"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Metal_Factory","crystalEntityIId":"e78db8c7-c210-11ef-a811-77033f8fc5c3","statueEntityIid":"d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"d0953900-c210-11ef-a811-db55b7ed110a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"40769480-c210-11ef-a811-510caf17350d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"d9c1de60-c210-11ef-a811-811d327fc00c"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"6969a9c0-c210-11ef-bc3d-2b8327373606"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"4b2ee2f0-c210-11ef-a811-7b44988c64d5"}
+{"signaltype":"CRYSTAL_ACTIVATED","areaIdentifer":"Metal_Factory","crystalEntityIId":"1ae28984-c210-11ef-a811-a902ad1f8e51","statueEntityIid":"d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"516db760-c210-11ef-bc3d-19e4a56dd456"}

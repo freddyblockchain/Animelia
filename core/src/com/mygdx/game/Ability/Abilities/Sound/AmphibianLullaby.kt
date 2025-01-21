@@ -9,6 +9,7 @@ import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Collition.AllOtherObjectsCollisionMask
+import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
@@ -18,6 +19,7 @@ import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
+import com.mygdx.game.GameObjects.MoveableObjects.Projectile.ProjectileCollision
 import com.mygdx.game.getUnitVectorTowardsPoint
 
 class AmphibianLullaby(override val attachedFightableObject: FightableObject) : KeyAbility() {
@@ -81,6 +83,8 @@ class LullabyProjectile(
     override val layer = Layer.AIR
     override val texture: Texture = DefaultTextureHandler.getTexture("MusicNode.png")
 
+    override val collision: ProjectileCollision = LullabyCollision(this)
+
     val angleIncrement = 3f
     override val projectileLifespan = 120
     var counter = 0
@@ -105,4 +109,13 @@ class LullabyProjectile(
         counter += 1
         super.frameTask()
     }
+}
+
+class LullabyCollision(lullabyProjectile: LullabyProjectile): ProjectileCollision(lullabyProjectile){
+    override var canMoveAfterCollision = true
+
+    override fun handleProjectileHitting(fightableObject: FightableObject){
+         fightableObject.fallAsleep()
+    }
+
 }

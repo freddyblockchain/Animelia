@@ -29,12 +29,9 @@ class IceBirdEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?
     override val maxHealth = 30f
     val icicleAbility = IcicleAbility(this)
     val iceBreath = IceBreath(this)
-    override val insideBattleStrategy = IceBirdBattleStrategy(this,icicleAbility)
+    override val insideBattleStrategy = IceBirdBattleStrategy(this,icicleAbility, iceBreath)
 
     override var speed = 0.8f
-
-    val cooldown = 120
-    var timeSinceLastAbility: Int = 0
 
 
     init {
@@ -49,7 +46,7 @@ class IceBirdEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?
 
 }
 
-class IceBirdBattleStrategy(private val enemy: IceBirdEnemy, val icicleAbility: IcicleAbility): BattleStrategy {
+class IceBirdBattleStrategy(private val enemy: IceBirdEnemy, val icicleAbility: IcicleAbility, val iceBreath: IceBreath): BattleStrategy {
     var currentPos = 0
     val positions = getBirdPositions()
     val goToPosition = GoToPosition(enemy, positions[0])
@@ -63,9 +60,9 @@ class IceBirdBattleStrategy(private val enemy: IceBirdEnemy, val icicleAbility: 
 
         if(enemy.timeSinceLastAbility >= enemy.cooldown && enemy.playerInLOS ){
             if(RandomManager.roll(50)){
-                AbilityManager.abilities.add(icicleAbility)
+                this.enemy.tryToUseAbility(icicleAbility)
             } else{
-                AbilityManager.abilities.add(IceBreath(enemy))
+                this.enemy.tryToUseAbility(iceBreath)
             }
             enemy.timeSinceLastAbility = 0
             enemy.playerInLOS = false
