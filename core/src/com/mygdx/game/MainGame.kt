@@ -80,7 +80,7 @@ class MainGame : ApplicationAdapter() {
         drawHealthBars()
         currentGameMode.cameraAction()
         mainCamera.update()
-        fpsLogger.log()
+        //fpsLogger.log()
     }
 
     override fun dispose() {

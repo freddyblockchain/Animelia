@@ -5,13 +5,19 @@ import com.badlogic.gdx.math.Intersector.intersectPolygonEdges
 import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.FloatArray
+import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
+import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Collisions.AreaEntranceCollition
+import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
 import com.mygdx.game.Collition.*
+import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.Ground
 import com.mygdx.game.Managers.CollisionManager.Companion.GetCollidingObjects
+import com.mygdx.game.Managers.CollisionManager.Companion.isPolygonsColliding
 import com.mygdx.game.anyPointInPolygon
 import com.mygdx.game.player
 
@@ -130,10 +136,18 @@ class CollisionManager {
 }
 
 class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val objectsToHit: List<GameObject>, rayCastListener: RaycastListener):
-    GameObject(GameObjectData(width = size.x.toInt(), height = size.y.toInt())) {
+    MoveableObject(GameObjectData(width = size.x.toInt(), height = size.y.toInt())) {
     override val layer = Layer.ONGROUND
+    override var direction: Direction
+        get() = TODO("Not yet implemented")
+        set(value) {}
+    override var canChangeDirection: Boolean
+        get() = TODO("Not yet implemented")
+        set(value) {}
 
     override val collisionMask =  OnlyTheseSpecificObjectsCollisionMask(objectsToHit)
+    override var speed = 1f
+    override val cannotMoveStrategy = MoveRegardless()
 
     override val collision = RayCastCollision(rayCastListener)
 
@@ -143,30 +157,39 @@ class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val object
 
     override fun frameTask() {
         updateRayCast()
-
-        val collidingObjects = GetCollidingObjects(this, this.polygon, objectsToHit)
-        collidingObjects.forEach {
-            this.collision.collisionHappened(it)
-        }
     }
 
     fun updateRayCast(){
         this.setPosition(objectBelongingTo.currentPosition())
+        this.move(Vector2(0f,0f))
         this.polygon.rotation = objectBelongingTo.polygon.rotation - 90
+    }
 
+    override fun render(batch: SpriteBatch) {
     }
 
 }
 
-class RayCastCollision(val rayCastListener: RaycastListener): MoveCollision(){
+class RayCastCollision(val rayCastListener: RaycastListener): DefaultAreaEntranceCollition(){
     override var canMoveAfterCollision = true
 
-    override fun collisionHappened(collidedObject: GameObject) {
-        rayCastListener.objectEnteredRay(collidedObject)
+    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
+        return isPolygonsColliding(polygon1, polygon2)
+    }
+
+    override fun movedOutsideAction(objectLeaved: GameObject) {
+        super.movedOutsideAction(objectLeaved)
+        rayCastListener.objectLeftRay(objectLeaved)
+    }
+
+    override fun movedInsideAction(objectEntered: GameObject) {
+        super.movedInsideAction(objectEntered)
+        rayCastListener.objectEnteredRay(objectEntered)
     }
 
 }
 
 interface RaycastListener{
     fun objectEnteredRay(objectEntered: GameObject)
+    fun objectLeftRay(objectLeft: GameObject)
 }

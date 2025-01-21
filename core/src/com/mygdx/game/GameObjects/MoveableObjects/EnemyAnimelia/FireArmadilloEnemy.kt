@@ -5,6 +5,7 @@ import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.DefaultTextureHandler
+import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.player
 
@@ -19,6 +20,8 @@ class FireArmadilloEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObj
     override val insideBattleStrategy = TurnAndFacePlayer(this)
 
     override val maxHealth = 30f
+
+
     val fireballAbility = FireballAbility(this)
 
     init {

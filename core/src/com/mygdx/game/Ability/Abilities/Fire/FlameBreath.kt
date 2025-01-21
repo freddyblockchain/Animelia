@@ -19,6 +19,7 @@ import com.mygdx.game.GameObjects.GameObject.rotateByAmount
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
+import kotlin.math.roundToInt
 
 class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
 
@@ -102,8 +103,10 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIRE
 }
 
+
 fun getAngleModifier(attachedFightableObject: FightableObject): Float{
-    return when(attachedFightableObject.currentUnitVector){
+    val roundedInteger = Vector2(attachedFightableObject.currentUnitVector.x.roundToInt().toFloat(),attachedFightableObject.currentUnitVector.y.roundToInt().toFloat())
+    return when(roundedInteger){
         Vector2(1f,0f) -> 270f
         Vector2(-1f, 0f) -> 90f
         Vector2(0f,1f) -> 0f

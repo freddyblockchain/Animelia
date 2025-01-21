@@ -101,7 +101,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
-        raycastObject = RaycastObject(Vector2(100f,32f),this, listOf(player), this)
+        raycastObject = RaycastObject(Vector2(112f,32f),this, listOf(player), this)
         raycastObject.add()
 
     }
@@ -157,6 +157,10 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun objectEnteredRay(objectEntered: GameObject) {
         playerInLOS = true
+    }
+
+    override fun objectLeftRay(objectLeft: GameObject) {
+        playerInLOS = false
     }
 
 }

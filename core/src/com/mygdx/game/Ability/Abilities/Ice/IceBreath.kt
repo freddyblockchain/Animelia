@@ -16,6 +16,7 @@ import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
+import kotlin.math.roundToInt
 
 class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
 
@@ -25,14 +26,10 @@ class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbil
 
     var initEffect: AnimeliaEffect
     val particleEffect2 = ParticleEffect()
-    var increment = 0f
 
     var pos = Vector2()
     var effectPos = Vector2()
     val size = Vector2(48f,24f)
-
-    lateinit var flameBreathObject: IceBreathObject
-
     init {
 
         particleEffect2.load(Gdx.files.internal("Particles/icestart.p"), Gdx.files.internal("Particles"))
@@ -40,8 +37,6 @@ class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbil
     }
 
     override fun onActivate() {
-
-
         pos = attachedFightableObject.currentMiddle + (attachedFightableObject.currentUnitVector * 40f) - Vector2(
             size.x / 2,
             size.y / 2)
@@ -100,7 +95,8 @@ class IceBreath(override val attachedFightableObject: FightableObject) : KeyAbil
 }
 
 fun getAngleModifier(attachedFightableObject: FightableObject): Float{
-    return when(attachedFightableObject.currentUnitVector){
+    val roundedInteger = Vector2(attachedFightableObject.currentUnitVector.x.roundToInt().toFloat(),attachedFightableObject.currentUnitVector.y.roundToInt().toFloat())
+    return when(roundedInteger){
         Vector2(1f,0f) -> 270f
         Vector2(-1f, 0f) -> 90f
         Vector2(0f,1f) -> 0f
@@ -124,6 +120,7 @@ class IceBreathObject(gameObjectData: GameObjectData, val attachedFightableObjec
         this.setSize(Vector2(24f,64f))
         this.polygon.setOrigin(attachedFightableObject.currentMiddle.x, attachedFightableObject.currentMiddle.y)
         rotateByAmount(-50f + getAngleModifier(attachedFightableObject))
+        println("rotation" + this.polygon.rotation)
     }
 
     override fun frameTask() {

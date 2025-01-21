@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Rectangle
 import com.badlogic.gdx.math.Vector2
+import com.mygdx.game.Ability.Abilities.Ice.IceBreath
 import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.Enums.Layer
@@ -15,6 +16,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.GameObject.RotationalObject
 import com.mygdx.game.Managers.AbilityManager
+import com.mygdx.game.Utils.RandomManager
 import com.mygdx.game.Utils.RectanglePolygon
 import com.mygdx.game.Utils.drawPolygonShape
 import com.mygdx.game.player
@@ -26,6 +28,7 @@ class IceBirdEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?
 
     override val maxHealth = 30f
     val icicleAbility = IcicleAbility(this)
+    val iceBreath = IceBreath(this)
     override val insideBattleStrategy = IceBirdBattleStrategy(this,icicleAbility)
 
     override var speed = 0.8f
@@ -59,7 +62,11 @@ class IceBirdBattleStrategy(private val enemy: IceBirdEnemy, val icicleAbility: 
         }
 
         if(enemy.timeSinceLastAbility >= enemy.cooldown && enemy.playerInLOS ){
-            AbilityManager.abilities.add(icicleAbility)
+            if(RandomManager.roll(50)){
+                AbilityManager.abilities.add(icicleAbility)
+            } else{
+                AbilityManager.abilities.add(IceBreath(enemy))
+            }
             enemy.timeSinceLastAbility = 0
             enemy.playerInLOS = false
         }

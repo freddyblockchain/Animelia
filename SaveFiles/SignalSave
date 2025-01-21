@@ -94,4 +94,5 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"cd4e2120-c210-11ef-a811-e3836d643c49"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"278ab650-c210-11ef-a811-356362486c75"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"3dfba570-c210-11ef-a811-c919cb9527f0"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"24a0ad60-c210-11ef-a811-c7f3840f9d1a"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"bea49de0-c210-11ef-a811-9946c3753c5d"}
