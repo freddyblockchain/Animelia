@@ -135,6 +135,32 @@
 				"customFields": {
 					"Name": null
 				}
+			},
+			{
+				"id": "Position",
+				"iid": "6eaafd50-c210-11ef-a06d-6d4eb7cd7f0f",
+				"layer": "Entities",
+				"x": 320,
+				"y": 320,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			},
+			{
+				"id": "Position",
+				"iid": "a9301190-c210-11ef-a06d-79f7ba92b335",
+				"layer": "Entities",
+				"x": 384,
+				"y": 352,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
 			}
 		],
 		"Fountain": [

@@ -29,6 +29,8 @@ fun createFriendlyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: Game
         ANIMELIA_ENTITY.KingFrog -> KingFrog(gameObjectData, cityPosRefData, CustomData)
         ANIMELIA_ENTITY.Frog -> Frog(gameObjectData, cityPosRefData)
         ANIMELIA_ENTITY.Bird -> Bird(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.SoundBat -> SoundBat(gameObjectData, cityPosRefData)
+        ANIMELIA_ENTITY.FireLion -> FireLion(gameObjectData, cityPosRefData)
         else -> FireArmadillo(gameObjectData, cityPosRefData)
     }
 }
@@ -44,6 +46,8 @@ fun createFriendlyAnimeliaInCity(animeliaEntity: ANIMELIA_ENTITY, position: Vect
         ANIMELIA_ENTITY.IceYeti  -> IceYetiInCity(gameObjectData)
         ANIMELIA_ENTITY.Frog -> FrogInCity(gameObjectData)
         ANIMELIA_ENTITY.Bird -> BirdInCity(gameObjectData)
+        ANIMELIA_ENTITY.SoundBat -> SoundBatInCity(gameObjectData)
+        ANIMELIA_ENTITY.FireLion -> FireLionInCity(gameObjectData)
         else -> FireArmadilloInCity(gameObjectData)
     }
 }

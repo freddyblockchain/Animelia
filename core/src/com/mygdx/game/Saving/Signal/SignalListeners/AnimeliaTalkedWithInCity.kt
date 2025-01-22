@@ -44,5 +44,18 @@ class AnimeliaTalkedWithInCity: SignaledEventListener {
             generalSaveState.inventory.keyItems.add(KeyItem.MAP)
             generalSaveState.updateSaveState()
         }
+
+        if(entity == ANIMELIA_ENTITY.FireLion && KeyItem.FIREHEART !in generalSaveState.inventory.keyItems){
+            val textAnimation = TextAnimation(
+                Color.YELLOW,
+                "You got the fireheart!",
+                player.currentMiddle + Vector2(0f,64f),
+                false,
+                120
+            )
+            AnimationManager.animationManager.add(textAnimation)
+            generalSaveState.inventory.keyItems.add(KeyItem.FIREHEART)
+            generalSaveState.updateSaveState()
+        }
     }
 }

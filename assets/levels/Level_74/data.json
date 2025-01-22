@@ -39,7 +39,7 @@
 				"height": 96,
 				"color": 9149364,
 				"customFields": {
-					"House": "Abandoned_House",
+					"House": "AbandonedHouse",
 					"Door": {
 						"entityIid": "da69a980-9b00-11ef-9017-fd5b92968883",
 						"layerIid": "c5e25862-9b00-11ef-9017-ef82e2b817ba",

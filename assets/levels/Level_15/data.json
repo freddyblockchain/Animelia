@@ -88,6 +88,12 @@
 					},
 					"CustomData": [
 						{
+							"entityIid": "66daa570-c210-11ef-a811-47da0321f64a",
+							"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
+							"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						},
+						{
 							"entityIid": "18714f70-c210-11ef-b8ac-434d95f8c309",
 							"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
 							"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",

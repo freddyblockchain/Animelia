@@ -76,13 +76,20 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
         //stage.isDebugAll = true
         stage.draw()
         buttons[activeButtonIndex].let {
-            val stageCoords = it.localToParentCoordinates(Vector2(it.parent.x, it.parent.y));
-            val difference = Vector2(stageCoords.x - it.x, stageCoords.y - it.y)
+            val selectedButton = it
 
+            // Convert local coordinates of the selected button to stage coordinates
+            val buttonCoords = selectedButton.localToStageCoordinates(Vector2(selectedButton.width / 2, selectedButton.height / 2))
+
+            // Prepare the ShapeRenderer for drawing
             shapeRenderer.projectionMatrix = stage.camera.combined
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
-            shapeRenderer.setColor(0f, 1f, 0f, 1f)
-            shapeRenderer.circle(stageCoords.x + it.width + 80f + difference.x, stageCoords.y + difference.y - 20f, it.width / 2 + 10)
+            shapeRenderer.color = Color.GREEN // Set the circle color
+
+            // Draw a circle around the selected button
+            val circleRadius = (selectedButton.width.coerceAtLeast(selectedButton.height) / 2) + 10f // Add padding
+            shapeRenderer.circle(buttonCoords.x, buttonCoords.y, circleRadius)
+
             shapeRenderer.end()
         }
 

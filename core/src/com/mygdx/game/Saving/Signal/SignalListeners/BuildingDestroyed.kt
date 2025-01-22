@@ -28,5 +28,27 @@ class BuildingDestroyed: SignaledEventListener {
                 SignalManager.emitSignal(RemoveObjectSignal(iceCastle.door.gameObjectIid))
             }
         }
+
+        if(AreaManager.getActiveArea()!!.areaIdentifier == "World3" && animeliaRecruitedSignal.animeliaEntity == ANIMELIA_ENTITY.FireLion){
+            val area = AreaManager.getArea("World3")
+            val iceCastle = area.gameObjects.firstOrNull { it is House && it.textureName == "vulcano.png"}
+            val pastRemoveSignals = SignalManager.pastSignals.filterIsInstance<RemoveObjectSignal>()
+            if(iceCastle != null && pastRemoveSignals.none { it.entityIid == iceCastle.gameObjectIid }){
+                changeMode(BuildingRemoveAnimation(currentGameMode, house = iceCastle as House))
+                SignalManager.emitSignal(RemoveObjectSignal(iceCastle.gameObjectIid))
+                SignalManager.emitSignal(RemoveObjectSignal(iceCastle.door.gameObjectIid))
+            }
+        }
+
+        if(AreaManager.getActiveArea()!!.areaIdentifier == "World2" && animeliaRecruitedSignal.animeliaEntity == ANIMELIA_ENTITY.SoundBat){
+            val area = AreaManager.getArea("World2")
+            val iceCastle = area.gameObjects.firstOrNull { it is House && it.textureName == "AbandonedHouse.png"}
+            val pastRemoveSignals = SignalManager.pastSignals.filterIsInstance<RemoveObjectSignal>()
+            if(iceCastle != null && pastRemoveSignals.none { it.entityIid == iceCastle.gameObjectIid }){
+                changeMode(BuildingRemoveAnimation(currentGameMode, house = iceCastle as House))
+                SignalManager.emitSignal(RemoveObjectSignal(iceCastle.gameObjectIid))
+                SignalManager.emitSignal(RemoveObjectSignal(iceCastle.door.gameObjectIid))
+            }
+        }
     }
 }

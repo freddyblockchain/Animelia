@@ -101,6 +101,17 @@ class FireLionData(): AnimeliaData {
     override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
     override val animeliaEntity = ANIMELIA_ENTITY.FireLion
 }
+
+class SoundBatData(): AnimeliaData {
+    override var textureName = "Animelias/SoundBat-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.SOUND)
+    override val animeliaStage = ANIMELIA_STAGE.MASTER
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/SoundBat-straight.png","Animelias/SoundBat-right.png","Animelias/SoundBat-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), PickedUpItem(Material.CANYONFRUIT))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.SoundGun, AbilityName.AmphibianLullaby)
+    override val animeliaEntity = ANIMELIA_ENTITY.SoundBat
+}
 class IceYetiData(): AnimeliaData {
     override var textureName = "Animelias/ice-yeti-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.METAL)
@@ -212,7 +223,7 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         ANIMELIA_ENTITY.KingFrog -> {
             KingFrogData()
         }
-        ANIMELIA_ENTITY.SoundBat -> TODO()
+        ANIMELIA_ENTITY.SoundBat -> SoundBatData()
         ANIMELIA_ENTITY.FrostFireDragon -> TODO()
     }
 }

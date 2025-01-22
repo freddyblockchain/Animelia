@@ -30,7 +30,7 @@ class Dash(override val attachedFightableObject: FightableObject) : KeyAbility()
     }
 
     override fun onActivate() {
-        attachedFightableObject.speed = (attachedFightableObject.baseSpeed * 4.0f)
+        attachedFightableObject.speed = (attachedFightableObject.baseSpeed * 3.0f)
 
         increment = (attachedFightableObject.speed - attachedFightableObject.baseSpeed) / activeFrames
 

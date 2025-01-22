@@ -38,10 +38,10 @@ class FireGate(gameObjectData: GameObjectData) :
     val maxTicks = ((size.x - 6f) / 2)
     var counter = 0f;
     var firegateState: FiregateState = FiregateState.INACTIVE
-    val timer = CooldownTimer(0.75f)
+    val timer = CooldownTimer(0.55f)
     var increasing = false
 
-    val counterIncrement = 0.5f
+    val counterIncrement = 0.8f
 
     val firegateCollitionObject = FiregateCollitionObject(this)
     override fun initObject() {

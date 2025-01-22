@@ -37,13 +37,12 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
 enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath, IceBreath, AerialDeath }
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
-        ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.IceBreath, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
-        ELEMENTAL_TYPE.METAL -> listOf(AbilityName.ScrewAttack, AbilityName.Missile, AbilityName.ScrapStorm, AbilityName.PlaceHolder)
-        else -> listOf(AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath)
+        ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.IceBreath)
+        ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath)
+        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.METAL -> listOf(AbilityName.ScrewAttack, AbilityName.Missile, AbilityName.ScrapStorm)
     }
 }
 

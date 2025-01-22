@@ -27,5 +27,28 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "92b51050-c210-11ef-a06d-ddaff977c0b5",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "SoundBat",
+					"AnimeliaCityPos": {
+						"entityIid": "a9301190-c210-11ef-a06d-79f7ba92b335",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"CustomData": []
+				}
+			}
+		]
+	}
 }

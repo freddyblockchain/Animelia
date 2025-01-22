@@ -817,6 +817,28 @@
 				"color": 7552569,
 				"customFields" : {}
 			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "5f1434b0-c210-11ef-a06d-018b75da839a",
+				"layer": "Entities",
+				"x": 256,
+				"y": 352,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "FireLion",
+					"AnimeliaCityPos": {
+						"entityIid": "6eaafd50-c210-11ef-a06d-6d4eb7cd7f0f",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"CustomData": []
+				}
+			}
 		]
 	}
 }
