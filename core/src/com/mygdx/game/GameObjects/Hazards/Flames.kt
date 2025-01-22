@@ -4,15 +4,20 @@ import RemoveObjectSignal
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.ParticleEffect
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.math.Polygon
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Enums.Layer
+import com.mygdx.game.GameModes.AnimationModes.FireAnimationMode
+import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Icicle
 import com.mygdx.game.Managers.AreaManager
+import com.mygdx.game.Managers.CollisionManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import kotlinx.serialization.Serializable
@@ -56,13 +61,18 @@ class FlamesCustomFields(val Position: EntityRefData)
 class FlamesCollision(val flames: Flames): MoveCollision() {
     override var canMoveAfterCollision = true
 
+    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
+        return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
+    }
+
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Icicle){
             SignalManager.emitSignal(RemoveObjectSignal(flames.gameObjectIid))
             collidedObject
         }
         if(collidedObject is Player){
-            player.setPosition(flames.goToPosition.currentPosition())
+            player.state = State.STUNNED
+            changeMode(FireAnimationMode(mainMode, returningPos = flames.goToPosition))
         }
     }
 

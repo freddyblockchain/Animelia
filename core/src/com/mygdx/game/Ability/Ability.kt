@@ -30,7 +30,7 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
         ELEMENTAL_TYPE.ICE -> DefaultTextureHandler.getTexture("SnowFlake.png")
         ELEMENTAL_TYPE.FLYING -> DefaultTextureHandler.getTexture("flying.png")
         ELEMENTAL_TYPE.SOUND -> DefaultTextureHandler.getTexture("SoundIcon.png")
-        else -> DefaultTextureHandler.getTexture("EmptyDoor.png")
+        ELEMENTAL_TYPE.METAL -> DefaultTextureHandler.getTexture("MetalIcon.png")
     }
 }
 

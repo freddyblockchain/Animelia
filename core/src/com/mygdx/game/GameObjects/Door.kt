@@ -28,6 +28,9 @@ class Door(val gameObjectData: GameObjectData): GameObject(gameObjectData, Vecto
         if(direction== Direction.UP){
             this.sprite.setPosition(this.sprite.x, this.sprite.y + this.sprite.height)
         }
+        if(direction== Direction.DOWN){
+            this.setPosition(Vector2(this.sprite.x, this.sprite.y - this.sprite.height))
+        }
 
     }
 
@@ -46,7 +49,7 @@ class DoorCollision(val door: Door): MoveCollision(){
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is Player && player.direction == door.direction && door.active){
-            var newPos = Vector2(door.exitDoor.x, door.exitDoor.y)
+            var newPos = Vector2(door.exitDoor.x, door.exitDoor.y + door.exitDoor.height)
             if(player.direction == Direction.DOWN){
                 newPos = Vector2(door.exitDoor.x, door.exitDoor.y - door.exitDoor.height * 2)
             }
