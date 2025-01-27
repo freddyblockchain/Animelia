@@ -1,13 +1,18 @@
 package com.mygdx.game.GameObjects.GameObject
 
+import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.Colors
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.KeyAbility
+import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia.GuardFrogState
 import com.mygdx.game.Managers.AbilityManager
+import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.Stats
 import com.mygdx.game.UI.HealthStrategy
 
@@ -70,6 +75,16 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
         if(state == State.NORMAL){
             AbilityManager.abilities.add(ability)
         }
+    }
+
+    fun isHit(offenceOfAttacker: Int, damage: Int){
+        val damageTaken =  offenceOfAttacker + damage - this.stats.defence
+        currentHealth -= damageTaken
+
+        val color = if(this is Player) Color.RED else Color.WHITE
+        val minus = if(this is Player) "- " else ""
+        val textAnimation = TextAnimation(color, "$minus$damageTaken", this.currentPosition())
+        AnimationManager.animationManager.add(textAnimation)
     }
 
     override fun render(batch: SpriteBatch) {

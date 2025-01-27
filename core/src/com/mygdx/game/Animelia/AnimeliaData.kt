@@ -146,11 +146,11 @@ class IceBirdData(): AnimeliaData {
 }
 
 class MetalBirdData(): AnimeliaData {
-    override var textureName = "Animelias/IceBird-straight.png"
+    override var textureName = "Animelias/metalbird-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.ICEFRUIT))
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-right.png","Animelias/metalbird-left.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), InArea("World2"))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.Missile, AbilityName.ScrewAttack)
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird

@@ -14,6 +14,7 @@ import com.mygdx.game.unaryMinus
 
 abstract class Projectile(gameObjectData: GameObjectData, size: Vector2,open var unitVectorDirection: Vector2, var shooter: GameObject) : MoveableObject(gameObjectData, size){
 
+    open val damage: Int = 10
     override val collision = ProjectileCollision(this)
     open val projectileLifespan = 90
     var currentFrame = 0
@@ -46,7 +47,9 @@ open class ProjectileCollision(val projectile: Projectile): MoveCollision() {
 
     open fun handleProjectileHitting(fightableObject: FightableObject){
         projectile.remove()
-        fightableObject.currentHealth -= 10
+        val shooter = projectile.shooter
+        val offence = if(shooter is FightableObject) shooter.stats.offence else 10
+        fightableObject.isHit(offence, projectile.damage)
     }
     override fun collisionHappened(collidedObject: GameObject) {
         if(collidedObject is FightableObject){

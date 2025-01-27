@@ -19,7 +19,7 @@ import com.mygdx.game.player
 enum class AbilityButtonOwnership {NotOwned, Owned}
 enum class AbilityButtonLearnable {Learnable, NotLearnable}
 
-class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>, val abilityDescription: Label): ImageButton(drawable) {
+class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityName, val iconTableList: List<IconTable>, val abilityDescription: Label, val cannotLearnText: Label): ImageButton(drawable) {
     val abilityButtonOwnership = if(generalSaveState.inventory.ownedAbilities.any { it == abilityName  }) AbilityButtonOwnership.Owned else AbilityButtonOwnership.NotOwned
     val abilityButtonLearnable = if(player.animeliaInfo.availableAbilities.contains(abilityName)) AbilityButtonLearnable.Learnable else AbilityButtonLearnable.NotLearnable
     private val shapeRenderer: ShapeRenderer = ShapeRenderer()
@@ -41,12 +41,16 @@ class AbilityButton(drawable: TextureRegionDrawable, val abilityName: AbilityNam
             override fun enter(event: InputEvent?, x: Float, y: Float, pointer: Int, fromActor: Actor?) {
                 if(abilityButtonOwnership == AbilityButtonOwnership.Owned){
                     abilityDescription.setText(getDescriptionFromName(abilityName))
+                    if(abilityButtonLearnable == AbilityButtonLearnable.NotLearnable){
+                        cannotLearnText.setText("Cannot Learn this ability")
+                    }
                 }
                 super.enter(event, x, y, pointer, fromActor)
             }
 
             override fun exit(event: InputEvent?, x: Float, y: Float, pointer: Int, toActor: Actor?) {
                 abilityDescription.setText("")
+                cannotLearnText.setText("")
                 super.exit(event, x, y, pointer, toActor)
             }
         })

@@ -13,6 +13,8 @@ class AbilityTable(color: Color): Table() {
     init {
         var hoverString = ""
         val abilityDescription = Label(hoverString, smallToMediumLabel)
+        val cannotLearnText = Label("", smallToMediumLabel)
+        cannotLearnText.color = Color.RED
         val abilityText = Label("Abilities", bigLabel)
         this.add(abilityText).top()
         this.background = createBackgroundDrawable(color)
@@ -29,11 +31,15 @@ class AbilityTable(color: Color): Table() {
         this.add(iconRootTable).expandY().top()
 
         this.row()
-        this.add(AbilityPickTable(iconTableList, abilityDescription)).expandY().top().padRight(100f)
+        this.row()
+        this.add(AbilityPickTable(iconTableList, abilityDescription, cannotLearnText)).expandY().top().padRight(100f)
         this.row()
         // Set width
         abilityDescription.setAlignment(Align.center)
-        abilityDescription.setWrap(true)// Align text in the center
+       // abilityDescription.setWrap(true)// Align text in the center
+        this.add(cannotLearnText).height(40f)
+        this.row()
         this.add(abilityDescription).fillX().height(100f)
+
     }
 }

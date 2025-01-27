@@ -9,7 +9,7 @@ import com.mygdx.game.Ability.getIconFromType
 import com.mygdx.game.UI.Scene2d.smallLabel
 import com.mygdx.game.UI.Scene2d.smallToMediumLabel
 
-class AbilityPickTable(val iconTableList: List<IconTable>, abilityDescription: Label): Table() {
+class AbilityPickTable(val iconTableList: List<IconTable>, abilityDescription: Label, cannotLearnText: Label): Table() {
     init {
         val allTypes = ELEMENTAL_TYPE.values()
 
@@ -24,7 +24,7 @@ class AbilityPickTable(val iconTableList: List<IconTable>, abilityDescription: L
                 val imageIcon = iconTexture
                 val textureRegionDrawable = TextureRegionDrawable(imageIcon)
                 textureRegionDrawable.setMinSize(64f,64f)
-                this.add(AbilityButton(textureRegionDrawable, ability, iconTableList, abilityDescription))
+                this.add(AbilityButton(textureRegionDrawable, ability, iconTableList, abilityDescription, cannotLearnText))
             }
             this.row()
         }

@@ -49,14 +49,14 @@ fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
 fun getDescriptionFromName(abilityName: AbilityName): String{
     return when(abilityName){
         AbilityName.Icicle -> "Shoot a sharp shard of ice"
-        AbilityName.TailSwipe -> "A lounging tail attack! Use it to break rocks and enemies"
+        AbilityName.TailSwipe -> "A lounging tail attack! breaks rocks and enemies"
         AbilityName.RockThrow -> "Throw a deadly rock at enemies"
         AbilityName.Fireball -> "Shoot a fireball, that melts enemies and ice"
         AbilityName.IceCocoon -> "Envelop yourself in ice for protection"
         AbilityName.Dash -> "Do a fire dash, which grants a speed boost"
         AbilityName.Fly -> "Fly over obstacles and projectiles in your way"
-        AbilityName.Whirlwind -> "Perform a whirlwind dance reflecting projectiles"
-        AbilityName.AmphibianLullaby -> "Perform a lullaby that puts listeners to sleep"
+        AbilityName.Whirlwind -> "Perform a whirlwind reflecting projectiles"
+        AbilityName.AmphibianLullaby -> "Sing a lullaby that puts listeners to sleep"
         AbilityName.SoundGun -> "Shoot a sharp sound towards foes"
         AbilityName.ScrapStorm -> "Create a storm of metal scraps around you"
         AbilityName.ScrewAttack -> "Shoot a screw at enemies and buildings"

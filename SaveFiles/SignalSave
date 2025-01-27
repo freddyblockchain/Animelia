@@ -64,3 +64,13 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo","posX":64.0,"posY":-96.0}
 {"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"FireArmadillo"}
+{"signaltype":"FIREPLACE_LIT","areaIdentifer":"Iglo"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Iglo","entityIid":"382cb1b0-4ce0-11ef-8f8c-c91edd8377b9"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"66daa570-c210-11ef-a811-47da0321f64a"}
+{"signaltype":"CHANGE_VISIBLE","entityIid":"18714f70-c210-11ef-b8ac-434d95f8c309","levelId":"26777bd0-fec0-11ee-8705-bd263430058c"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"702be670-c210-11ef-a811-c17dd8d29aa2"}
+{"signaltype":"ANIMELIA_RECRUITED","areaIdentifer":"Iglo_City","animeliaEntity":"IceYeti","posX":-768.0,"posY":-224.0}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","areaIdentifer":"Iglo_City","animeliaEntity":"IceYeti"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4"}
+{"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"World3","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4","levelId":"a49c50f0-9b00-11ef-b959-e9dd9992885b","metalBirdPos":"ICE"}
+{"signaltype":"RAILWAY_FIXED","entityIid":"81fc07a0-73f0-11ef-995c-5303afa1d73e"}

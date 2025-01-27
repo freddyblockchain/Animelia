@@ -37,7 +37,7 @@ class KeyInputRenderer(val text: String): Renderable{
 
         // Unproject the screen coordinates to get the world coordinates
         val worldCoordinates = mainCamera.unproject(screenCoordinates)
-        font.draw(batch,text, worldCoordinates.x, worldCoordinates.y)
+        font.draw(batch, "$text  (Press Enter)", worldCoordinates.x - 100f, worldCoordinates.y)
     }
 
 }

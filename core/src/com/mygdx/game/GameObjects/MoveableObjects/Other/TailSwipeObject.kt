@@ -68,7 +68,7 @@ class TailSwipeCollision(val tailSwipeObject: TailSwipeObject, val objectAttache
             collidedObject.handleRockDestroyed(objectAttached.stats)
         }
         if(collidedObject is FightableObject && !gameObjectAlreadyHit(collidedObject)){
-            collidedObject.currentHealth -= 10f
+            collidedObject.isHit(objectAttached.stats.offence, 10)
         }
         tailSwipeObject.entitesHit[collidedObject] = true
     }
