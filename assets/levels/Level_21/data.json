@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_21",
-	"uniqueIdentifer": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
-	"x": -1792,
-	"y": 1120,
-	"width": 160,
+	"uniqueIdentifer": "7f05ef05-c210-11ef-b429-697a401ae0a8",
+	"x": -288,
+	"y": -1056,
+	"width": 64,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "f0ae7760-73f0-11ef-bff8-75ea7b64895a",
+			"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
 			"dir": "e"
-		},
-		{
-			"levelIid": "0e400f60-73f0-11ef-b6cd-eb89afa81411",
-			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Ice_castle",
+		"World": "World3",
 		"Visible": true
 	},
 	"layers": [
@@ -32,40 +28,18 @@
 		"Beach.png"
 	],
 	"entities": {
-		"BoxingGlove": [
+		"Ability": [
 			{
-				"id": "BoxingGlove",
-				"iid": "3c6e1cb0-73f0-11ef-b6cd-cd6c6e3dcd0c",
+				"id": "Ability",
+				"iid": "8cb1b080-c210-11ef-b429-d3142eed20e7",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 16067712,
+				"color": 16690740,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "4270a7e0-73f0-11ef-b6cd-230c61446fbc",
-						"layerIid": "ee5bcd72-73f0-11ef-bff8-eddbc677f4b3",
-						"levelIid": "ee5bcd70-73f0-11ef-bff8-b5376b4fda56",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Right",
-					"Speed": 1
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "4270a7e0-73f0-11ef-b6cd-230c61446fbc",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
+					"Ability": "FireBreath"
 				}
 			}
 		]

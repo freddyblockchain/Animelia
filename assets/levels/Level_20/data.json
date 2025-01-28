@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_20",
-	"uniqueIdentifer": "8dbb20c0-73f0-11ef-bff8-2d6980630270",
-	"x": -1632,
-	"y": 608,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "360741f0-c210-11ef-b429-f1389f13ce06",
+	"x": -224,
+	"y": -1056,
+	"width": 64,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "8998a030-73f0-11ef-bff8-732ef137ebf0",
+			"levelIid": "29d37a70-c210-11ef-b429-cddc8097b1b8",
 			"dir": "s"
+		},
+		{
+			"levelIid": "7f05ef05-c210-11ef-b429-697a401ae0a8",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "Ice_castle",
+		"World": "World3",
 		"Visible": true
 	},
 	"layers": [
@@ -28,25 +32,59 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Animelia": [
+		"FireGate": [
 			{
-				"id": "Animelia",
-				"iid": "3d529e20-9b00-11ef-9488-cddda9c8ae83",
+				"id": "FireGate",
+				"iid": "4d49b1e0-c210-11ef-b429-13f8514e1a97",
 				"layer": "Entities",
-				"x": 96,
+				"x": 0,
 				"y": 64,
+				"width": 64,
+				"height": 32,
+				"color": 16217634,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "59631390-c210-11ef-b429-d113d3aad833",
+						"layerIid": "360741f2-c210-11ef-b429-8fdf736e669d",
+						"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "59631390-c210-11ef-b429-d113d3aad833",
+				"layer": "Entities",
+				"x": 0,
+				"y": 224,
 				"width": 32,
 				"height": 32,
-				"color": 15389866,
+				"color": 1199753,
 				"customFields": {
-					"AnimeliaType": "IceBird",
-					"AnimeliaCityPos": {
-						"entityIid": "e9b90b10-73f0-11ef-82cd-45463e2ec140",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+					"Name": null
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "713a2260-c210-11ef-b429-5f8f4d8de747",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "59631390-c210-11ef-b429-d113d3aad833",
+						"layerIid": "360741f2-c210-11ef-b429-8fdf736e669d",
+						"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
+					}
 				}
 			}
 		]

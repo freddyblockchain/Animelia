@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_51",
-	"uniqueIdentifer": "38f79380-c210-11ef-a051-4b630e0e0cc9",
-	"x": -1472,
-	"y": -1088,
-	"width": 128,
-	"height": 32,
+	"uniqueIdentifer": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
+	"x": -1152,
+	"y": -864,
+	"width": 64,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-			"dir": "e"
-		},
-		{
-			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
 			"dir": "n"
 		},
 		{
-			"levelIid": "27c54650-c210-11ef-a051-c53077a85c44",
-			"dir": "w"
+			"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "Metal_Factory",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -36,24 +32,24 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Spikes": [
+		"Door": [
 			{
-				"id": "Spikes",
-				"iid": "44bbf760-c210-11ef-a051-d74d81160af8",
+				"id": "Door",
+				"iid": "e0561fe0-c210-11ef-a811-27b7327d4b47",
 				"layer": "Entities",
-				"x": 0,
+				"x": 16,
 				"y": 0,
-				"width": 128,
-				"height": 32,
-				"color": 1578021,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "704eea70-c210-11ef-a051-e58baada1f42",
-						"layerIid": "a4986492-c210-11ef-a811-75561e5fa89b",
+					"Door": {
+						"entityIid": "ce5e35c0-c210-11ef-a811-bb1c9db7bea2",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
 						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Up"
 				}
 			}
 		]

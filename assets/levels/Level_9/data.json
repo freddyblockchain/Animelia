@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_9",
-	"uniqueIdentifer": "d82abd10-25d0-11ef-943d-f5c0fd435082",
-	"x": 160,
-	"y": -416,
-	"width": 160,
-	"height": 160,
+	"uniqueIdentifer": "66b9ccb0-c210-11ef-b429-ff31843fc997",
+	"x": 1056,
+	"y": 192,
+	"width": 64,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
-			"dir": "s"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "n"
 		},
 		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "n"
+			"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World3",
+		"World": "World2",
 		"Visible": true
 	},
 	"layers": [
@@ -31,49 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Door": [
-			{
-				"id": "Door",
-				"iid": "1e731e90-25d0-11ef-8e0b-7b87950b48ab",
-				"layer": "EntitiesOnTop",
-				"x": 64,
-				"y": 144,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "6589ed40-25d0-11ef-8e0b-1d3b7e9159a7",
-						"layerIid": "0bc3f260-25d0-11ef-8e0b-eb8431c13b62",
-						"levelIid": "d4591f40-25d0-11ef-9d5b-85c59fbeb1dd",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
-				}
-			}
-		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "2d0f3930-4ce0-11ef-adfe-6f665ad35ddb",
-				"layer": "Entities",
-				"x": 64,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "Fire_Armadillo",
-					"AnimeliaCityPos": {
-						"entityIid": "2c328d70-4ce0-11ef-adfe-0598b27f0fb5",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

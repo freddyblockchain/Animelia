@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_98",
-	"uniqueIdentifer": "5a2bfee0-9b00-11ef-9dff-bdc5362ca354",
-	"x": 672,
-	"y": 1312,
-	"width": 64,
-	"height": 96,
+	"uniqueIdentifer": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+	"x": 1952,
+	"y": -1760,
+	"width": 128,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-			"dir": "n"
+			"levelIid": "514bf4c0-9b00-11ef-9017-0553fe93fea1",
+			"dir": "s"
 		},
 		{
-			"levelIid": "66dd33c0-9b00-11ef-9dff-fb5bd7714a7c",
-			"dir": "s"
+			"levelIid": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "Abandoned_House",
 		"Visible": true
 	},
 	"layers": [
@@ -31,5 +31,78 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "2044e160-9b00-11ef-9017-6192b8736f7a",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			}
+		],
+		"BoulderPad": [
+			{
+				"id": "BoulderPad",
+				"iid": "263ac260-9b00-11ef-9017-b98cf21aab57",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "2044e160-9b00-11ef-9017-6192b8736f7a",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "BoulderPad",
+				"iid": "29781310-9b00-11ef-9017-a7224cb35469",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "20a32e00-9b00-11ef-9017-6b017ab35cf3",
+						"layerIid": "6c82d062-9b00-11ef-9017-cd3f9503efd9",
+						"levelIid": "6c82d060-9b00-11ef-9017-1b782e0b9d07",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		]
+	}
 }

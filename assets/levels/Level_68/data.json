@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_68",
-	"uniqueIdentifer": "45b6111b-c210-11ef-a811-43b63afec456",
-	"x": -1248,
-	"y": -416,
-	"width": 288,
+	"uniqueIdentifer": "06ed2283-c210-11ef-a811-09c0cfd551d6",
+	"x": -768,
+	"y": -1280,
+	"width": 64,
 	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
+			"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
 			"dir": "s"
 		},
 		{
-			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+			"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World4",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,31 +32,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"KingDoor": [
+		"Cliffside": [
 			{
-				"id": "KingDoor",
-				"iid": "bad08d40-c210-11ef-a811-5599f6ef502a",
+				"id": "Cliffside",
+				"iid": "98fd7620-c210-11ef-a811-bfd700bda94e",
 				"layer": "Entities",
-				"x": 96,
+				"x": 0,
 				"y": 0,
 				"width": 64,
-				"height": 64,
-				"color": 1199753,
-				"customFields" : {}
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "b27d52f0-c210-11ef-a811-ad2a2a49887c",
+						"layerIid": "06ed2285-c210-11ef-a811-5da9d99082ef",
+						"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		],
-		"Railway": [
+		"Position": [
 			{
-				"id": "Railway",
-				"iid": "491b4a30-c210-11ef-a811-879e90481b29",
+				"id": "Position",
+				"iid": "b27d52f0-c210-11ef-a811-ad2a2a49887c",
 				"layer": "Entities",
-				"x": 160,
-				"y": 96,
-				"width": 128,
+				"x": 32,
+				"y": 64,
+				"width": 32,
 				"height": 32,
-				"color": 11882632,
+				"color": 1199753,
 				"customFields": {
-					"Direction": "Right"
+					"Name": null
 				}
 			}
 		]

@@ -1,27 +1,23 @@
 {
 	"identifier": "Level_71",
-	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-	"x": 1216,
-	"y": -704,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "298492ba-c210-11ef-a811-af24a61387c1",
+	"x": -736,
+	"y": -800,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+			"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
 			"dir": "n"
 		},
 		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
 			"dir": "e"
-		},
-		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -36,42 +32,41 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Spikes": [
 			{
-				"id": "Door",
-				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
+				"id": "Spikes",
+				"iid": "a5e2e850-c210-11ef-a811-03e32ec704ad",
 				"layer": "Entities",
-				"x": 0,
+				"x": 64,
 				"y": 0,
-				"width": 32,
-				"height": 16,
-				"color": 4073265,
-				"customFields": {
-					"Door": {
-						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
-						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
-						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
-				}
-			}
-		],
-		"Cliffside": [
-			{
-				"id": "Cliffside",
-				"iid": "680565f0-9b00-11ef-9017-99ca0506282d",
-				"layer": "Entities",
-				"x": 224,
-				"y": 64,
-				"width": 32,
+				"width": 64,
 				"height": 64,
-				"color": 16705377,
+				"color": 1578021,
 				"customFields": {
+					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "c524b740-9b00-11ef-9017-3bba68f974bf",
-						"layerIid": "1c487252-9b00-11ef-9017-bb3511457c53",
-						"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
+						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "c39d6190-c210-11ef-a811-ede377ff5381",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
+						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
+						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
@@ -80,15 +75,64 @@
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
+				"iid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
 				"layer": "Entities",
-				"x": 160,
-				"y": 64,
+				"x": 32,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
+				}
+			}
+		],
+		"Trumpet": [
+			{
+				"id": "Trumpet",
+				"iid": "d9c1de60-c210-11ef-a811-811d327fc00c",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Right"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "f2277190-c210-11ef-a811-315f832fba57",
+				"layer": "Entities",
+				"x": 160,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Left"
+				}
+			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "6969a9c0-c210-11ef-bc3d-2b8327373606",
+				"layer": "Entities",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "GuardFrog",
+					"Entity_ref": {
+						"entityIid": "4b2ee2f0-c210-11ef-a811-7b44988c64d5",
+						"layerIid": "1ae28982-c210-11ef-a811-c9ccf53124e7",
+						"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

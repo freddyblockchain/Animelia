@@ -1,6 +1,7 @@
 package com.mygdx.game.Items
 
 import com.mygdx.game.Animelia.Egg
+import com.mygdx.game.Animelia.getEggTexture
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.generalSaveState
@@ -10,23 +11,17 @@ import kotlinx.serialization.json.decodeFromJsonElement
 
 class EggItem(gameObjectData: GameObjectData) : WorldItem(gameObjectData) {
     val itemText = Json.decodeFromJsonElement<EggItemCustomFields>(gameObjectData.customFields).Egg
+    val egg = getEggs()
     override val itemAquiredText = "You found a ${itemText} Egg!"
-    override val texture = DefaultTextureHandler.getTexture(getEggTexture())
+    override val texture = DefaultTextureHandler.getTexture(getEggTexture(egg))
 
-    fun getEggTexture(): String{
-        return when(itemText){
-            "Ice" -> "iceegg.png"
-            else -> "fireegg.png"
-        }
-    }
     override fun itemGained() {
         super.itemGained()
-        val egg = getEgg()
         generalSaveState.inventory.eggs.add(egg)
         generalSaveState.updateSaveState()
     }
 
-    fun getEgg(): Egg{
+    fun getEggs(): Egg{
         return when(itemText){
             "Ice" -> Egg.ICE
             "Sound" -> Egg.SOUND

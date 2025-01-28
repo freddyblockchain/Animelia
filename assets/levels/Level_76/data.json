@@ -1,18 +1,22 @@
 {
 	"identifier": "Level_76",
-	"uniqueIdentifer": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-	"x": 960,
-	"y": -256,
+	"uniqueIdentifer": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+	"x": 1216,
+	"y": -704,
 	"width": 256,
-	"height": 128,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
+			"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+			"dir": "n"
+		},
+		{
+			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
 			"dir": "e"
 		},
 		{
-			"levelIid": "6e408a20-9b00-11ef-9017-c7a7a3d3fbfe",
+			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
 			"dir": "s"
 		}
 	],
@@ -32,18 +36,39 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "0caa1db0-9b00-11ef-9017-37b70648c6b3",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "168f9a50-9b00-11ef-9017-f7d3e1845a37",
+						"layerIid": "54445e02-25d0-11ef-b434-41cfb0f0cfda",
+						"levelIid": "54445e00-25d0-11ef-b434-15957d2f9085",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
+			}
+		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
+				"iid": "c524b740-9b00-11ef-9017-3bba68f974bf",
 				"layer": "Entities",
-				"x": 32,
-				"y": 0,
+				"x": 160,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
-					"Name": "CanyonPos"
+					"Name": null
 				}
 			}
 		]

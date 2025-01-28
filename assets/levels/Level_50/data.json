@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_50",
-	"uniqueIdentifer": "27c54650-c210-11ef-a051-c53077a85c44",
-	"x": -1536,
-	"y": -1088,
+	"uniqueIdentifer": "a37d10e0-c210-11ef-a811-e54b8a3e4904",
+	"x": -1152,
+	"y": -640,
 	"width": 64,
-	"height": 96,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
-			"dir": "n"
+			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+			"dir": "s"
 		},
 		{
-			"levelIid": "38f79380-c210-11ef-a051-4b630e0e0cc9",
-			"dir": "e"
+			"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Metal_Factory",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -31,27 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "a438b5f0-c210-11ef-a051-9bece002673c",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 64,
-				"height": 32,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "704eea70-c210-11ef-a051-e58baada1f42",
-						"layerIid": "a4986492-c210-11ef-a811-75561e5fa89b",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

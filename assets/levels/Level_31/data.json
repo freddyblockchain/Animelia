@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_31",
-	"uniqueIdentifer": "7fa33170-73f0-11ef-b6cd-6931bca1cb07",
-	"x": -1056,
-	"y": 1120,
-	"width": 160,
-	"height": 64,
+	"uniqueIdentifer": "9e4b0f60-73f0-11ef-b6cd-85a319da941c",
+	"x": -2208,
+	"y": 768,
+	"width": 64,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4a5420b0-73f0-11ef-b6cd-3df69043e60d",
-			"dir": "w"
+			"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+			"dir": "s"
 		},
 		{
-			"levelIid": "87800570-73f0-11ef-b6cd-992048c705bb",
+			"levelIid": "453708f0-73f0-11ef-b6cd-e1249f2a6677",
 			"dir": "n"
 		}
 	],
@@ -32,31 +32,39 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceFloor": [
-			{
-				"id": "IceFloor",
-				"iid": "bc43f9c0-73f0-11ef-b6cd-610523737f8f",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 96,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "4b76e940-73f0-11ef-b6cd-09fd2bedc9d8",
+				"iid": "7a856d80-73f0-11ef-b6cd-f337e6fc697e",
 				"layer": "Entities",
-				"x": 128,
-				"y": 32,
+				"x": 0,
+				"y": 128,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,
 				"customFields": {
 					"Name": null
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "87829f80-73f0-11ef-b6cd-3fe4c7bbed38",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 64,
+				"height": 128,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "7a856d80-73f0-11ef-b6cd-f337e6fc697e",
+						"layerIid": "9e4b0f62-73f0-11ef-b6cd-0182201b87db",
+						"levelIid": "9e4b0f60-73f0-11ef-b6cd-85a319da941c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

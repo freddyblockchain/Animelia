@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_61",
-	"uniqueIdentifer": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
-	"x": -2080,
+	"uniqueIdentifer": "fd793628-c210-11ef-a811-a7945750175d",
+	"x": -1728,
 	"y": -832,
 	"width": 160,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
 			"dir": "e"
+		},
+		{
+			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -28,52 +32,58 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCrystal": [
+		"IceFloor": [
 			{
-				"id": "IceCrystal",
-				"iid": "e78db8c7-c210-11ef-a811-77033f8fc5c3",
+				"id": "IceFloor",
+				"iid": "27083b50-c210-11ef-aa50-f71c81598f6f",
+				"layer": "EntitiesOnTop",
+				"x": 32,
+				"y": 0,
+				"width": 128,
+				"height": 64,
+				"color": 2943221,
+				"customFields" : {}
+			}
+		],
+		"BoxingGlove": [
+			{
+				"id": "BoxingGlove",
+				"iid": "278ab650-c210-11ef-a811-356362486c75",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 16151930,
+				"color": 16067712,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
-						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"entityIid": "32a370e0-c210-11ef-a811-4fddb06ad43f",
+						"layerIid": "ce1bce32-c210-11ef-a811-59e0ce3dfaa0",
+						"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Entity_ref2": {
-						"entityIid": "d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d",
-						"layerIid": "fd138992-c210-11ef-a811-2d81ff4e161c",
-						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Element": "Ice",
-					"Index": 3
+					"Direction": "Right",
+					"Speed": 1
 				}
-			}
-		],
-		"Spikes": [
+			},
 			{
-				"id": "Spikes",
-				"iid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
+				"id": "BoxingGlove",
+				"iid": "3dfba570-c210-11ef-a811-c919cb9527f0",
 				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 96,
-				"height": 64,
-				"color": 1578021,
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
 				"customFields": {
-					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
-						"layerIid": "e09bfb22-c210-11ef-a811-491b7a5a2798",
-						"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+						"entityIid": "32a370e0-c210-11ef-a811-4fddb06ad43f",
+						"layerIid": "ce1bce32-c210-11ef-a811-59e0ce3dfaa0",
+						"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Right",
+					"Speed": 1
 				}
 			}
 		]

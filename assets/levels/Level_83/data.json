@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_83",
-	"uniqueIdentifer": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
-	"x": 1472,
-	"y": -1760,
-	"width": 64,
-	"height": 128,
+	"uniqueIdentifer": "7a7cc7f0-c210-11ef-b429-057df5c40106",
+	"x": 1248,
+	"y": -64,
+	"width": 256,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
-			"dir": "n"
-		},
-		{
-			"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-			"dir": "s"
+			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "Abandoned_House",
+		"World": "World2",
 		"Visible": true
 	},
 	"layers": [
@@ -32,18 +28,145 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Ability": [
+		"BoulderPad": [
 			{
-				"id": "Ability",
-				"iid": "3d97f830-9b00-11ef-9017-a39432d437fb",
+				"id": "BoulderPad",
+				"iid": "9fa3bca0-c210-11ef-b429-155020ba2620",
 				"layer": "Entities",
-				"x": 0,
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "af43d410-c210-11ef-b429-516abb095069",
+						"layerIid": "7a7cc7f2-c210-11ef-b429-eb2c14d9415d",
+						"levelIid": "7a7cc7f0-c210-11ef-b429-057df5c40106",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "BoulderPad",
+				"iid": "a027e0c0-c210-11ef-b429-1576a092921b",
+				"layer": "Entities",
+				"x": 64,
 				"y": 32,
 				"width": 32,
 				"height": 32,
-				"color": 16690740,
+				"color": 14957380,
 				"customFields": {
-					"Ability": "Whirlwind"
+					"Entity_ref": {
+						"entityIid": "b5189880-c210-11ef-b429-753c898df894",
+						"layerIid": "7a7cc7f2-c210-11ef-b429-eb2c14d9415d",
+						"levelIid": "7a7cc7f0-c210-11ef-b429-057df5c40106",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "af43d410-c210-11ef-b429-516abb095069",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Left",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "b5189880-c210-11ef-b429-753c898df894",
+				"layer": "Entities",
+				"x": 192,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Left",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "cc08a2b0-c210-11ef-b429-676556d15246",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "d69019c0-c210-11ef-b429-c3c490ddaf86",
+						"layerIid": "7a7cc7f2-c210-11ef-b429-eb2c14d9415d",
+						"levelIid": "7a7cc7f0-c210-11ef-b429-057df5c40106",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "cd2f6f70-c210-11ef-b429-e1b50829f976",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "d69019c0-c210-11ef-b429-c3c490ddaf86",
+						"layerIid": "7a7cc7f2-c210-11ef-b429-eb2c14d9415d",
+						"levelIid": "7a7cc7f0-c210-11ef-b429-057df5c40106",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "d69019c0-c210-11ef-b429-c3c490ddaf86",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"AnivolutionBook": [
+			{
+				"id": "AnivolutionBook",
+				"iid": "009dc960-c210-11ef-b429-1d076a26b7e6",
+				"layer": "Entities",
+				"x": 224,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "MetalBird"
 				}
 			}
 		]

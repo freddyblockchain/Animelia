@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_73",
-	"uniqueIdentifer": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
-	"x": 1760,
-	"y": -800,
-	"width": 64,
-	"height": 96,
+	"uniqueIdentifer": "45b6111b-c210-11ef-a811-43b63afec456",
+	"x": -1248,
+	"y": -416,
+	"width": 288,
+	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
 			"dir": "s"
 		},
 		{
-			"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
+			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "World4",
 		"Visible": true
 	},
 	"layers": [
@@ -32,23 +32,31 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"KingDoor": [
 			{
-				"id": "Cliffside",
-				"iid": "71c631a0-9b00-11ef-9017-053b4924eb09",
+				"id": "KingDoor",
+				"iid": "bad08d40-c210-11ef-a811-5599f6ef502a",
 				"layer": "Entities",
-				"x": 0,
-				"y": 32,
+				"x": 96,
+				"y": 0,
 				"width": 64,
+				"height": 64,
+				"color": 1199753,
+				"customFields" : {}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "491b4a30-c210-11ef-a811-879e90481b29",
+				"layer": "Entities",
+				"x": 160,
+				"y": 96,
+				"width": 128,
 				"height": 32,
-				"color": 16705377,
+				"color": 11882632,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
-						"layerIid": "4e3bcf92-9b00-11ef-9017-edefa8611ddd",
-						"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Right"
 				}
 			}
 		]

@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_34",
-	"uniqueIdentifer": "2b561ed0-c210-11ef-9e36-b98cadac3324",
-	"x": 960,
-	"y": 416,
-	"width": 288,
-	"height": 288,
+	"uniqueIdentifer": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+	"x": -2080,
+	"y": 864,
+	"width": 256,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "954bfff0-25d0-11ef-8eef-a9825abd0d1e",
-			"dir": "n"
+			"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+			"dir": "w"
 		},
 		{
-			"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-			"dir": "s"
+			"levelIid": "4e9cce40-73f0-11ef-b6cd-f796d46d8e7d",
+			"dir": "e"
 		}
 	],
 	"customFields": {
-		"World": "World2",
+		"World": "Ice_castle",
 		"Visible": true
 	},
 	"layers": [
@@ -32,46 +32,92 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Ability": [
 			{
-				"id": "Door",
-				"iid": "2b561ed3-c210-11ef-9e36-69c3ecc647d7",
+				"id": "Ability",
+				"iid": "1f556bf0-73f0-11ef-bff8-dbe0a83a50ce",
 				"layer": "Entities",
-				"x": 128,
-				"y": 272,
+				"x": 96,
+				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 16690740,
 				"customFields": {
-					"Door": {
-						"entityIid": "eee08950-9b00-11ef-ad95-d999d583f93f",
-						"layerIid": "74418b92-9b00-11ef-ad95-dff3fd173950",
-						"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
+					"Ability": "IceCocoon"
 				}
 			}
 		],
-		"Animelia": [
+		"Spikes": [
 			{
-				"id": "Animelia",
-				"iid": "c89d55a0-c210-11ef-9e36-e550b344a58a",
+				"id": "Spikes",
+				"iid": "0bcdc4f0-73f0-11ef-b6cd-fd8c13015550",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 96,
+				"height": 96,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
+						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
+						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "28c34080-73f0-11ef-b6cd-5f352697f6ae",
 				"layer": "Entities",
 				"x": 128,
-				"y": 128,
+				"y": 0,
+				"width": 128,
+				"height": 96,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
+						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
+						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "2ba9e5b0-73f0-11ef-b6cd-a3ccb8c683a8",
+				"layer": "Entities",
+				"x": 0,
+				"y": 160,
+				"width": 256,
+				"height": 96,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
+						"layerIid": "f71e6302-73f0-11ef-bff8-73bd0745c859",
+						"levelIid": "f71e6300-73f0-11ef-bff8-473e475c68a5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "1dd195f0-73f0-11ef-b6cd-415b12c37c4f",
+				"layer": "Entities",
+				"x": 224,
+				"y": 96,
 				"width": 32,
 				"height": 32,
-				"color": 15389866,
+				"color": 1199753,
 				"customFields": {
-					"AnimeliaType": "Frog",
-					"AnimeliaCityPos": {
-						"entityIid": "d56dd250-c210-11ef-9e36-c79da551d64e",
-						"layerIid": "3f2b7b82-c210-11ef-9e36-1dc3b9e324bc",
-						"levelIid": "3f2b7b80-c210-11ef-9e36-677a79c962a8",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": []
+					"Name": null
 				}
 			}
 		]

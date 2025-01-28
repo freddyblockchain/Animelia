@@ -1,9 +1,9 @@
 {
 	"identifier": "Level_54",
-	"uniqueIdentifer": "7f903b20-c210-11ef-a811-d96bd6be84f7",
-	"x": -1600,
-	"y": -928,
-	"width": 256,
+	"uniqueIdentifer": "621afdb0-c210-11ef-a811-e39ef10c8703",
+	"x": -1568,
+	"y": -1152,
+	"width": 224,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
@@ -12,8 +12,16 @@
 			"dir": "e"
 		},
 		{
-			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
+			"levelIid": "27c54650-c210-11ef-a051-c53077a85c44",
 			"dir": "s"
+		},
+		{
+			"levelIid": "38f79380-c210-11ef-a051-4b630e0e0cc9",
+			"dir": "s"
+		},
+		{
+			"levelIid": "7255595b-c210-11ef-a811-e7e3d1002f29",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,37 +40,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Generator": [
+		"ConveyerBelt": [
 			{
-				"id": "Generator",
-				"iid": "ba66a610-c210-11ef-a811-a5693e96c42a",
+				"id": "ConveyerBelt",
+				"iid": "32ca03b0-c210-11ef-a051-ab2f4ab92b60",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 128,
+				"height": 64,
+				"color": 6539085,
+				"customFields": {
+					"Direction": "Left"
+				}
+			}
+		],
+		"FireLightBulb": [
+			{
+				"id": "FireLightBulb",
+				"iid": "91d0a4e0-c210-11ef-a051-3beb16671dfb",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 7552569,
+				"height": 48,
+				"color": 4098376,
 				"customFields": {
-					"Direction": "Right",
-					"Automatic": true,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
-				}
-			},
-			{
-				"id": "Generator",
-				"iid": "bea49de0-c210-11ef-a811-9946c3753c5d",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Right",
-					"Automatic": true,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Entity_ref": {
+						"entityIid": "44973450-c210-11ef-a051-53ca716e3f1e",
+						"layerIid": "7255595d-c210-11ef-a811-8f6e6ff10054",
+						"levelIid": "7255595b-c210-11ef-a811-e7e3d1002f29",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

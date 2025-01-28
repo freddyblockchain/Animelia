@@ -1,0 +1,49 @@
+{
+	"identifier": "Level_108",
+	"uniqueIdentifer": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+	"x": 160,
+	"y": 992,
+	"width": 128,
+	"height": 128,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+			"dir": "n"
+		},
+		{
+			"levelIid": "6d21749b-c210-11ef-b429-979704c85757",
+			"dir": "s"
+		}
+	],
+	"customFields": {
+		"World": "Swamp0",
+		"Visible": true
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "1baa1770-c210-11ef-a7b0-dfc20cb6269c",
+				"layer": "Entities",
+				"x": 96,
+				"y": 32,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
+			}
+		]
+	}
+}

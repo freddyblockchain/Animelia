@@ -1,18 +1,14 @@
 {
 	"identifier": "Level_66",
-	"uniqueIdentifer": "298492ba-c210-11ef-a811-af24a61387c1",
-	"x": -736,
-	"y": -800,
-	"width": 192,
-	"height": 192,
+	"uniqueIdentifer": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+	"x": -2080,
+	"y": -832,
+	"width": 160,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
-			"dir": "n"
-		},
-		{
-			"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
+			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
 			"dir": "e"
 		}
 	],
@@ -32,105 +28,50 @@
 		"Beach.png"
 	],
 	"entities": {
+		"IceCrystal": [
+			{
+				"id": "IceCrystal",
+				"iid": "e78db8c7-c210-11ef-a811-77033f8fc5c3",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16151930,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Entity_ref2": {
+						"entityIid": "d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d",
+						"layerIid": "fd138992-c210-11ef-a811-2d81ff4e161c",
+						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Element": "Ice",
+					"Index": 3
+				}
+			}
+		],
 		"Spikes": [
 			{
 				"id": "Spikes",
-				"iid": "a5e2e850-c210-11ef-a811-03e32ec704ad",
+				"iid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
 				"layer": "Entities",
 				"x": 64,
 				"y": 0,
-				"width": 64,
+				"width": 96,
 				"height": 64,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
-						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "c39d6190-c210-11ef-a811-ede377ff5381",
-				"layer": "Entities",
-				"x": 64,
-				"y": 128,
-				"width": 64,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
-						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			}
-		],
-		"Trumpet": [
-			{
-				"id": "Trumpet",
-				"iid": "d9c1de60-c210-11ef-a811-811d327fc00c",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Direction": "Right"
-				}
-			},
-			{
-				"id": "Trumpet",
-				"iid": "f2277190-c210-11ef-a811-315f832fba57",
-				"layer": "Entities",
-				"x": 160,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Direction": "Left"
-				}
-			}
-		],
-		"AnimeliaEnemy": [
-			{
-				"id": "AnimeliaEnemy",
-				"iid": "6969a9c0-c210-11ef-bc3d-2b8327373606",
-				"layer": "Entities",
-				"x": 64,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 14120515,
-				"customFields": {
-					"AnimeliaType": "GuardFrog",
-					"Entity_ref": {
-						"entityIid": "4b2ee2f0-c210-11ef-a811-7b44988c64d5",
-						"layerIid": "1ae28982-c210-11ef-a811-c9ccf53124e7",
-						"levelIid": "1ae28980-c210-11ef-a811-55af16f9a98d",
+						"entityIid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
+						"layerIid": "e09bfb22-c210-11ef-a811-491b7a5a2798",
+						"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}

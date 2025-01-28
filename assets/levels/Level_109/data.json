@@ -1,0 +1,122 @@
+{
+	"identifier": "Level_109",
+	"uniqueIdentifer": "6d21749b-c210-11ef-b429-979704c85757",
+	"x": 96,
+	"y": 1120,
+	"width": 256,
+	"height": 224,
+	"bgColor": "#696A79",
+	"neighbourLevels": [
+		{
+			"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
+			"dir": "o"
+		},
+		{
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+			"dir": "n"
+		}
+	],
+	"customFields": {
+		"World": "Swamp0",
+		"Visible": true
+	},
+	"layers": [
+		"GroundIce.png",
+		"Ground_Large.png",
+		"GroundSands2.png",
+		"GroundSands.png",
+		"Ground_Ice_2.png",
+		"Ground_Warm.png",
+		"OngroundTerrain.png",
+		"OnGround_lava.png",
+		"Beach.png"
+	],
+	"entities": {
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "7877fb70-c210-11ef-b429-61a899468fad",
+				"layer": "Entities",
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "a81aa760-c210-11ef-b429-f5ad15a1c5a5",
+				"layer": "Entities",
+				"x": 192,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
+				}
+			}
+		],
+		"Trumpet": [
+			{
+				"id": "Trumpet",
+				"iid": "b56228d0-c210-11ef-b429-a314df426a24",
+				"layer": "Entities",
+				"x": 32,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Right"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "d40ef150-c210-11ef-b429-3bcabd7b37ae",
+				"layer": "Entities",
+				"x": 192,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Up"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "33065040-c210-11ef-b429-29aa634b39c9",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Left"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "05d392e0-c210-11ef-b429-7d722c6f4a76",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		]
+	}
+}

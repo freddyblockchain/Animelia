@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_102",
-	"uniqueIdentifer": "cea2e720-9b00-11ef-bf48-a7ac62585374",
-	"x": 160,
-	"y": 1152,
-	"width": 128,
-	"height": 224,
+	"uniqueIdentifer": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
+	"x": 768,
+	"y": 896,
+	"width": 160,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-			"dir": "n"
+			"levelIid": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
+			"dir": "e"
+		},
+		{
+			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -27,34 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Trumpet": [
-			{
-				"id": "Trumpet",
-				"iid": "a5d63110-9b00-11ef-bf48-dd19e2f05396",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Direction": "Right"
-				}
-			}
-		],
-		"TrainingStation": [
-			{
-				"id": "TrainingStation",
-				"iid": "1baa1770-c210-11ef-a7b0-dfc20cb6269c",
-				"layer": "Entities",
-				"x": 96,
-				"y": 64,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		]
-	}
+	"entities" : {}
 }

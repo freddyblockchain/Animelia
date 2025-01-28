@@ -1,19 +1,27 @@
 {
 	"identifier": "Level_107",
-	"uniqueIdentifer": "85321cf0-c210-11ef-b8ac-d39953d52f58",
-	"x": 480,
-	"y": 1792,
+	"uniqueIdentifer": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+	"x": 160,
+	"y": 832,
 	"width": 256,
-	"height": 256,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
+			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
+			"dir": "e"
+		},
+		{
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+			"dir": "s"
+		},
+		{
+			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "FrogHouse_City",
+		"World": "Swamp0",
 		"Visible": true
 	},
 	"layers": [
@@ -28,52 +36,39 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "abb01620-c210-11ef-b8ac-d1e38ca0c9d7",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			},
-			{
-				"id": "Position",
-				"iid": "b5c56a70-c210-11ef-b8ac-73cc6a4ddb13",
-				"layer": "Entities",
-				"x": 192,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			}
-		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "846a31b0-c210-11ef-b8ac-298178677201",
+				"iid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
 				"layer": "Entities",
-				"x": 96,
+				"x": 64,
 				"y": 0,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "8edb1380-c210-11ef-b8ac-f75a14c8a59f",
-						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"entityIid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
+						"layerIid": "c574c0d2-9b00-11ef-8ab8-053f57f64816",
+						"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "51d99050-9b00-11ef-bf48-cfc411b6f4cc",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "SoundGun"
 				}
 			}
 		]

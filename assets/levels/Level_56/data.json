@@ -1,18 +1,22 @@
 {
 	"identifier": "Level_56",
-	"uniqueIdentifer": "fd793628-c210-11ef-a811-a7945750175d",
-	"x": -1728,
-	"y": -832,
-	"width": 160,
-	"height": 64,
+	"uniqueIdentifer": "38f79380-c210-11ef-a051-4b630e0e0cc9",
+	"x": -1472,
+	"y": -1088,
+	"width": 128,
+	"height": 32,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
+			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
 			"dir": "e"
 		},
 		{
-			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
+			"dir": "n"
+		},
+		{
+			"levelIid": "27c54650-c210-11ef-a051-c53077a85c44",
 			"dir": "w"
 		}
 	],
@@ -32,58 +36,24 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceFloor": [
+		"Spikes": [
 			{
-				"id": "IceFloor",
-				"iid": "27083b50-c210-11ef-aa50-f71c81598f6f",
-				"layer": "EntitiesOnTop",
-				"x": 32,
+				"id": "Spikes",
+				"iid": "44bbf760-c210-11ef-a051-d74d81160af8",
+				"layer": "Entities",
+				"x": 0,
 				"y": 0,
 				"width": 128,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			}
-		],
-		"BoxingGlove": [
-			{
-				"id": "BoxingGlove",
-				"iid": "278ab650-c210-11ef-a811-356362486c75",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
 				"height": 32,
-				"color": 16067712,
+				"color": 1578021,
 				"customFields": {
+					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "32a370e0-c210-11ef-a811-4fddb06ad43f",
-						"layerIid": "ce1bce32-c210-11ef-a811-59e0ce3dfaa0",
-						"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
+						"entityIid": "704eea70-c210-11ef-a051-e58baada1f42",
+						"layerIid": "a4986492-c210-11ef-a811-75561e5fa89b",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Right",
-					"Speed": 1
-				}
-			},
-			{
-				"id": "BoxingGlove",
-				"iid": "3dfba570-c210-11ef-a811-c919cb9527f0",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 16067712,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "32a370e0-c210-11ef-a811-4fddb06ad43f",
-						"layerIid": "ce1bce32-c210-11ef-a811-59e0ce3dfaa0",
-						"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Right",
-					"Speed": 1
+					}
 				}
 			}
 		]
