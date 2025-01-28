@@ -2,6 +2,7 @@ package com.mygdx.game.Ability
 
 import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Ability.Abilities.Fighting.RockThrowAbility
+import com.mygdx.game.Ability.Abilities.Fighting.SpearToss
 import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.Abilities.Fire.Dash
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
@@ -16,6 +17,7 @@ import com.mygdx.game.Ability.Abilities.Metal.MissileAbility
 import com.mygdx.game.Ability.Abilities.Metal.ScrapStorm
 import com.mygdx.game.Ability.Abilities.Metal.ScrewAttack
 import com.mygdx.game.Ability.Abilities.Sound.AmphibianLullaby
+import com.mygdx.game.Ability.Abilities.Sound.LionRoar
 import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbiltiy
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -34,14 +36,14 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath, IceBreath, AerialDeath }
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath, IceBreath, AerialDeath, SpearToss, LionRoar }
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
         ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath)
-        ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.SpearToss)
         ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.IceBreath)
         ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath)
-        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.PlaceHolder)
+        ELEMENTAL_TYPE.SOUND -> listOf(AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.LionRoar)
         ELEMENTAL_TYPE.METAL -> listOf(AbilityName.ScrewAttack, AbilityName.Missile, AbilityName.ScrapStorm)
     }
 }
@@ -64,6 +66,8 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.FlameBreath -> "Breathe fire in an arc in front of you"
         AbilityName.IceBreath -> "Breathe ice in an arc in front of you"
         AbilityName.AerialDeath -> "Fly high up above and come crashing down"
+        AbilityName.LionRoar -> "Do a devastating roar"
+        AbilityName.SpearToss -> "Throw a spear at rocks or enemies"
         else -> "Nothing"
     }
 }
@@ -88,6 +92,8 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "FlameBreath" -> AbilityData(AbilityName.FlameBreath, ELEMENTAL_TYPE.FIRE, FlameBreath(player))
         "IceBreath" -> AbilityData(AbilityName.IceBreath, ELEMENTAL_TYPE.ICE, IceBreath(player))
         "AerialDeath" -> AbilityData(AbilityName.AerialDeath, ELEMENTAL_TYPE.FLYING, AerialDeath(player))
+        "LionRoar" -> AbilityData(AbilityName.LionRoar, ELEMENTAL_TYPE.SOUND, LionRoar(player))
+        "SpearToss" -> AbilityData(AbilityName.SpearToss, ELEMENTAL_TYPE.FIGHTING, SpearToss(player))
         else -> AbilityData(AbilityName.Fireball,ELEMENTAL_TYPE.FIRE, FireballAbility(player))
     }
 }

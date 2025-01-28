@@ -88,7 +88,7 @@ class FireHippoData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firehippo-straight.png","Animelias/firehippo-right.png","Animelias/firehippo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(13), InArea("World3"))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe, AbilityName.SpearToss, AbilityName.LionRoar, AbilityName.ScrapStorm, AbilityName.AerialDeath)
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 }
 class FireLionData(): AnimeliaData {
@@ -187,6 +187,17 @@ class KingFrogData(): AnimeliaData {
     override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
     override val animeliaEntity = ANIMELIA_ENTITY.KingFrog
 }
+class FrostfireDragonData(): AnimeliaData {
+    override var textureName = "Animelias/metalbird-straight.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.FIRE)
+    override val animeliaStage = ANIMELIA_STAGE.GRANDMASTER
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-straight.png","Animelias/metalbird-straight.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), DefenceOver(15))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FlameBreath, AbilityName.IceBreath)
+    override val animeliaEntity = ANIMELIA_ENTITY.FrostFireDragon
+}
+
 
 fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
     return when(animeliaEntity){
@@ -224,6 +235,6 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
             KingFrogData()
         }
         ANIMELIA_ENTITY.SoundBat -> SoundBatData()
-        ANIMELIA_ENTITY.FrostFireDragon -> TODO()
+        ANIMELIA_ENTITY.FrostFireDragon -> FrostfireDragonData()
     }
 }

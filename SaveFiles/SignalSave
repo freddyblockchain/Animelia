@@ -74,3 +74,11 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4"}
 {"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"World3","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4","levelId":"a49c50f0-9b00-11ef-b959-e9dd9992885b","metalBirdPos":"ICE"}
 {"signaltype":"RAILWAY_FIXED","entityIid":"81fc07a0-73f0-11ef-995c-5303afa1d73e"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"47a71230-25d0-11ef-9fe3-8d44c4d818ba"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"474c4800-25d0-11ef-9fe3-35697a08b4a0"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"97a91140-25d0-11ef-9fe3-abb797b6c89d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"bccfdbb0-25d0-11ef-9fe3-879c7ff10cd9"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"bd32e340-25d0-11ef-9fe3-c79b735f4b4c"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"bb351770-25d0-11ef-9fe3-8b5b8d957f8f"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"c0005b20-25d0-11ef-9fe3-79a6fecf7346"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"9f452830-25d0-11ef-9fe3-d76e04ff72ca"}
