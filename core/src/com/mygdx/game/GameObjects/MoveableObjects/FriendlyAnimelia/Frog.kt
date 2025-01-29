@@ -19,15 +19,19 @@ import com.mygdx.game.plus
 class Frog(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.Frog
 
-    val speech1 = SpeechData("Me", "Do you wanna come to the city?")
-    val speech2 = SpeechData("Fire Armadillo", "hmm, prove your worth by defeating 3 animelia clones")
-    val speech3 = SpeechData("Me", "Alright, i'll do that")
+    val speech1 = SpeechData("Frog", "Why hello there!")
+    val speech2 = SpeechData("Frog", "Welcome to my little oasis")
+    val speech3 = SpeechData("Frog", "I'm facinated by fruits. The rare tropical fruit grows here")
+    val speech4 = SpeechData("Me", "Do you want to come to the city?")
+    val speech5 = SpeechData("Frog", "I will come to the city, if you bring me one of every fruit!")
+    val speech6 = SpeechData("Frog", "So 1 fire fruit, 1 canyon fruit, 1 ice fruit, 1 forest fruit, and 1 tropical fruit")
+    val speech7 = SpeechData("Me", "Alright, i'll do that")
 
-    override var speeches = listOf(speech1, speech2, speech3)
+    override var speeches = listOf(speech1, speech2, speech3, speech4, speech5, speech6, speech7)
 
-    val citySpeech1 = SpeechData("Fire Armadillo", "So, you actually defeated 3 clones")
-    val citySpeech2 = SpeechData("Fire Armadillo", "I have to admit. I thought you were a faker")
-    val citySpeech3 = SpeechData("Fire Armadillo", "But you have proven yourself. Alright, i'll come back to the city.")
+    val citySpeech1 = SpeechData("Frog", "Oh wow! You actually did it.")
+    val citySpeech2 = SpeechData("Frog", "I guess i'll have to leave my little paradise here...")
+    val citySpeech3 = SpeechData("Me", "Yes, you said you would come. No backsies.")
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
 
@@ -43,7 +47,12 @@ class Frog(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) 
 class FrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
     override val animeliaEntity = ANIMELIA_ENTITY.Frog
 
-    override val inCitySpeeches = listOf<SpeechData>()
+    val citySpeech1 = SpeechData("Frog", "I ended up making my own little oasis!")
+    val citySpeech2 = SpeechData("Frog", "All sorts of fruits grow here.")
+    val citySpeech3 = SpeechData("Frog", "So stuck up if you are running dry")
+    val citySpeech4 = SpeechData("Me", "Thanks, appreciate it")
+
+    override val inCitySpeeches = listOf<SpeechData>(citySpeech1, citySpeech2, citySpeech3, citySpeech4)
 
     override val conversationOptions = mapOf<String,Conversation>()
 

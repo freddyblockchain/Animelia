@@ -58,24 +58,14 @@ class IceBirdInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(game
 
     override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive, inCitySpeechSix)
 
-    val bone = SpeechData("Me", "Can you explain about books?")
-    val bbone = SpeechData("Ice Penguin", "Certainly! I oversaw the library in this city before the clones invaded")
-    val btwo = SpeechData("Ice Penguin", "When they did, all the books were scattered across the kingdom")
-    val bthree = SpeechData("Ice Penguin", "Each book contains the encyclopedic knowledge of an animelia")
-    val bfour = SpeechData("Ice Penguin", "I want you to find these books in the world, so my library can be restored")
+    val bone = SpeechData("Me", "What can i use the frozen heart for?")
+    val bbone = SpeechData("IceBird", "It will shield you from damage when going into hot regions")
+    val btwo = SpeechData("IceBird", "This will let you access hot regions with all animelia")
+    val bthree = SpeechData("IceBird", "Maybe there is something you can do with fire as an ice animelia?")
 
-    val bookConversation = Conversation(listOf( bone,bbone, btwo,bthree, bfour))
+    val bookConversation = Conversation(listOf( bone,bbone, btwo,bthree))
 
-    val cone = SpeechData("Me", "Can you explain about anivolution conditions!")
-    val ctwo = SpeechData("Ice Penguin", "Certainly! You can view the conditions to anivolve in the library")
-    val cthree = SpeechData("Ice Penguin", "The condition will only be visible if you have the corresponding book")
-    val cfour = SpeechData("Me", "Can i anivolve to any animelia, that fulfills its condition?")
-    val cfive = SpeechData("Ice Penguin", "No, there must also be a direct line between the two animelias")
-    val csix = SpeechData("Ice Penguin", "Check the library for anivolution information about each animelia")
-
-    val conditionConversation = Conversation(listOf(cone, ctwo, cthree, cfour, cfive, csix))
-
-    override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
+    override val conversationOptions = mapOf("Frozen Heart" to bookConversation)
 
     override fun recruitmentAction() {
     }

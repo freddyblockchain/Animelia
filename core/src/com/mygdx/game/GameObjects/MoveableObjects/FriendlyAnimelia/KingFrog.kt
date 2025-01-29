@@ -98,29 +98,22 @@ class KingFrogRecruitment(): AnimeliaRecruitmendCondition {
 class KingFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
     override val animeliaEntity = ANIMELIA_ENTITY.KingFrog
 
-    val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
+    val inCitySpeechOne = SpeechData("King Frog", "Its good to be back!")
+    val inCitySpeechTwo = SpeechData("King Frog", "We must not relax too much...")
+    val inCitySpeechThree = SpeechData("King Frog", "The thread of the clones still linger")
+    val inCitySpeechFour = SpeechData("King Frog", "Take my seal, and go to the sealed door in the ice lands")
+    val inCitySpeechFive = SpeechData("King Frog", "We must strike the clones at their source")
     val crown = Sprite(DefaultTextureHandler.getTexture("crown.png"))
 
-    override val inCitySpeeches = listOf(inCitySpeechOne)
+    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive)
 
-    val bone = SpeechData("Me", "Can you explain about books?")
-    val bbone = SpeechData("Ice Penguin", "Certainly! I oversaw the library in this city before the clones invaded")
-    val btwo = SpeechData("Ice Penguin", "When they did, all the books were scattered across the kingdom")
-    val bthree = SpeechData("Ice Penguin", "Each book contains the encyclopedic knowledge of an animelia")
-    val bfour = SpeechData("Ice Penguin", "I want you to find these books in the world, so my library can be restored")
+    val mone = SpeechData("Me", "How do I use the seal, that you gave me?")
+    val mtwo  = SpeechData("King Frog", "Somewhere in the Ice lands, there is a sealed door")
+    val mthree = SpeechData("King Frog", "Use your seal on that. And bring peace to the animelia kingdom")
 
-    val bookConversation = Conversation(listOf( bone,bbone, btwo,bthree, bfour))
+    val mapConversation = Conversation(listOf(mone, mtwo, mthree))
 
-    val cone = SpeechData("Me", "Can you explain about anivolution conditions!")
-    val ctwo = SpeechData("Ice Penguin", "Certainly! You can view the conditions to anivolve in the library")
-    val cthree = SpeechData("Ice Penguin", "The condition will only be visible if you have the corresponding book")
-    val cfour = SpeechData("Me", "Can i anivolve to any animelia, that fulfills its condition?")
-    val cfive = SpeechData("Ice Penguin", "No, there must also be a direct line between the two animelias")
-    val csix = SpeechData("Ice Penguin", "Check the library for anivolution information about each animelia")
-
-    val conditionConversation = Conversation(listOf(cone, ctwo, cthree, cfour, cfive, csix))
-
-    override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
+    override val conversationOptions = mapOf("Map" to mapConversation)
 
     override fun initObject() {
         crown.setSize(12f,8f)

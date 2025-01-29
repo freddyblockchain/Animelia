@@ -46,9 +46,8 @@ class FireArmadilloInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCit
     val stwo = SpeechData("Fire Armadillo", "Yes! There are four different stats")
     val sthree= SpeechData("Fire Armadillo", "Offence affects how much damage you do")
     val sfour = SpeechData("Fire Armadillo", "Defence affects how much damage you take")
-    val sfive= SpeechData("Fire Armadillo", "Speed affects how fast you move")
     val ssix = SpeechData("Fire Armadillo", "Intelligence affects how many abilities you can use")
-    val statsConversation = Conversation(listOf(sone, stwo,sthree, sfour, sfive, ssix))
+    val statsConversation = Conversation(listOf(sone, stwo,sthree, sfour, ssix))
 
     val tone = SpeechData("Me", "Can you tell me about Training Points?")
     val ttwo = SpeechData("Fire Armadillo", "Yes! Training points determine how much you can increase stats!")

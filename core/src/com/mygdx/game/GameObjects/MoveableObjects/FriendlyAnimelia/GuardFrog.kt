@@ -28,15 +28,23 @@ class GuardFrog(val gameObjectData: GameObjectData, cityPosEntityId: EntityRefDa
     cityPosEntityId
 ) {
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
-    val speech1 = SpeechData("", "Oh my, its so so cold here!")
+    val speech1 = SpeechData("Guard Frog", "I've been guarding this throne room since the clones attacked")
+    val speech2 = SpeechData("Me", "Can I go inside?")
+    val speech3 = SpeechData("Guard Frog", "No, this is the king's room.")
+    val speech4 = SpeechData("Guard Frog", "Even if the king does not regard himself as such, i will guard this place")
+    val speech5 = SpeechData("Guard Frog", "I grow tired ..i have not slept since the clones attacked.")
 
-    val gspeech1 = SpeechData("", "Yes, i will go to the city!")
+    val gspeech1 = SpeechData("Guard Frog", "You... you convinced the king to take up his crown once again?")
+    val gspeech2 = SpeechData("Me", "Yep, that was me!")
+    val gspeech3 = SpeechData("Guard Frog", "... Can i come to the city too?")
+    val gspeech4 = SpeechData("Guard Frog", "I can now completely fulfill my duty as a guard")
+    val gspeech5 = SpeechData("Me", "Alright, i'll let you come")
 
     val spear = Sprite(DefaultTextureHandler.getTexture("spear.png"))
 
-    override val goingToCitySpeech: List<SpeechData> = listOf(gspeech1)
+    override var speeches = listOf(speech1, speech2, speech3, speech4, speech5)
 
-    override var speeches = listOf(speech1)
+    override val goingToCitySpeech: List<SpeechData> = listOf(gspeech1,gspeech2, gspeech3, gspeech4, gspeech5)
 
     var frogState = GuardFrogState.AWAKE
 
@@ -139,31 +147,15 @@ class GuardFrogCollision(val guardFrog: GuardFrog): MoveCollision(){
 
 
 class GuardFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
+    val spear = Sprite(DefaultTextureHandler.getTexture("spear.png"))
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
 
-    val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
-    val spear = Sprite(DefaultTextureHandler.getTexture("spear.png"))
+    val inCitySpeech1= SpeechData("Guard Frog", "Its good to be back here!")
+    val inCitySpeech2= SpeechData("Guard Frog", "As a guard, I know how to fight!")
+    val inCitySpeech3= SpeechData("Guard Frog", "I've collected these secret battle abilities")
+    val inCitySpeech4= SpeechData("Guard Frog", "Please consider buying them!")
 
-    override val inCitySpeeches = listOf(inCitySpeechOne)
-
-    val bone = SpeechData("Me", "Can you explain about books?")
-    val bbone = SpeechData("Ice Penguin", "Certainly! I oversaw the library in this city before the clones invaded")
-    val btwo = SpeechData("Ice Penguin", "When they did, all the books were scattered across the kingdom")
-    val bthree = SpeechData("Ice Penguin", "Each book contains the encyclopedic knowledge of an animelia")
-    val bfour = SpeechData("Ice Penguin", "I want you to find these books in the world, so my library can be restored")
-
-    val bookConversation = Conversation(listOf( bone,bbone, btwo,bthree, bfour))
-
-    val cone = SpeechData("Me", "Can you explain about anivolution conditions!")
-    val ctwo = SpeechData("Ice Penguin", "Certainly! You can view the conditions to anivolve in the library")
-    val cthree = SpeechData("Ice Penguin", "The condition will only be visible if you have the corresponding book")
-    val cfour = SpeechData("Me", "Can i anivolve to any animelia, that fulfills its condition?")
-    val cfive = SpeechData("Ice Penguin", "No, there must also be a direct line between the two animelias")
-    val csix = SpeechData("Ice Penguin", "Check the library for anivolution information about each animelia")
-
-    val conditionConversation = Conversation(listOf(cone, ctwo, cthree, cfour, cfive, csix))
-
-    override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
+    override val inCitySpeeches = listOf(inCitySpeech1,inCitySpeech2, inCitySpeech3, inCitySpeech4)
 
     override fun initObject() {
         super.initObject()

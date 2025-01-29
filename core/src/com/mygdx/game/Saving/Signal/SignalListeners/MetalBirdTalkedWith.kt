@@ -26,10 +26,10 @@ class MetalBirdTalkedWith: SignaledEventListener {
             MetalBirdPos.SWAMP -> MetalBirdPos.ICE
         }
         metalBird.speeches = when(signal.metalBirdPos){
-            MetalBirdPos.ICE -> listOf(metalBird.fireSpeech1)
+            MetalBirdPos.ICE -> listOf(metalBird.firespeech1, metalBird.firespeech2, metalBird.firespeech3, metalBird.firespeech4, metalBird.firespeech5, metalBird.firespeech6)
             MetalBirdPos.FIRE -> listOf(metalBird.canyonSpeech1)
             MetalBirdPos.CANYON -> listOf(metalBird.swampSpeech1)
-            MetalBirdPos.SWAMP -> listOf(metalBird.fireSpeech1)
+            MetalBirdPos.SWAMP -> listOf(metalBird.firespeech1)
         }
         // get new position for metal bird
         val newPos = when(metalBird.metalBirdPos){

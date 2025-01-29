@@ -120,7 +120,7 @@ fun initAreas() {
 
 fun getMapObjects(): List<GameObject> {
     var allObjects = mutableListOf<GameObject>()
-    val overworldZones = listOf("World1", "World2", "World3", "World4", "Swamp0")
+    val overworldZones = listOf("World1", "World2", "World3", "World4", "Swamp0", "Metal_Factory")
     for (i in 0..<amountOfLevels) {
         if (AreaManager.levelToAreaMap["levels/Level_$i"] in overworldZones) {
             val levelPath = "${FileHandler.BASE_PATH}levels/Level_$i/data.json"

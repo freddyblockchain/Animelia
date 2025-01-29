@@ -30,11 +30,24 @@ class MetalBird(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData, 
     val speech7 = SpeechData("MetalBird", "Thank you. I am done with this area.")
     val speech8 = SpeechData("MetalBird", "I am going to map out a hotter area next...")
 
-    val fireSpeech1 = SpeechData("MetalBird", "FireSpeech")
-    val canyonSpeech1 = SpeechData("MetalBird", "CanyonSpeech")
-    val swampSpeech1 = SpeechData("MetalBird", "SwampSpeech")
+    val firespeech1 =  SpeechData("MetalBird", "This area is so hot! I miss the cold now")
+    val firespeech2 =  SpeechData("MetalBird", "I finished everything for this area")
+    val firespeech3 =  SpeechData("MetalBird", "I'll head to my home area of the canyon now")
+    val firespeech4 =  SpeechData("MetalBird", "I hear you'll need a flying ability to go over there")
+    val firespeech5 =  SpeechData("MetalBird", "I'm told there should be one nearby")
+    val firespeech6 =  SpeechData("MetalBird", "Anyways, i'm off. See you in the canyon!")
 
-    override val goingToCitySpeech = listOf<SpeechData>(SpeechData("MetalBird", "I will join the city!"))
+    val canyonSpeech1 = SpeechData("MetalBird", "You came! Things are going well with the map")
+    val canyonSpeech2 = SpeechData("MetalBird", "I'm only missing the northeast area with the abandoned building in this area")
+    val canyonSpeech3 = SpeechData("MetalBird", "Afterwards i'm heading to the last area: The forest")
+
+    val swampSpeech1 = SpeechData("MetalBird", "Oh, here you are again!")
+    val swampSpeech2 = SpeechData("MetalBird", "Great timing! I've finished my map")
+    val swampSpeech3 = SpeechData("MetalBird", "I wonder what to do now.. ")
+    val swampSpeech4 = SpeechData("Me", "You should join me in the city!")
+    val swampSpeech5 = SpeechData("Me", "Okay, don't mind if i do!")
+
+    override val goingToCitySpeech = listOf<SpeechData>(swampSpeech1, swampSpeech2, swampSpeech3, swampSpeech4, swampSpeech5)
     override var speeches = listOf<SpeechData>(speech1, speech2, speech3, speech4, speech5,speech6, speech7, speech8)
 
     val positionList = mutableListOf<AnimeliaPosition>()
@@ -78,28 +91,22 @@ class MetalBirdRecruitment(val metalBird: MetalBird): AnimeliaRecruitmendConditi
 class MetalBirdInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird
 
-    val inCitySpeechOne = SpeechData("Metal Bird", "Here is the Map!")
+    val inCitySpeechOne = SpeechData("Metal Bird", "It sure is lively here!")
+    val inCitySpeechTwo = SpeechData("Metal Bird", "Say do you want a copy of my map?")
+    val inCitySpeechThree = SpeechData("Metal Bird", "Its only to be the only one having this masterpiece")
+    val inCitySpeechFour = SpeechData("Me", "Okay, i'll put it to good use")
+    val inCitySpeechFive = SpeechData("Me", "Perfect! You open and close it by pressing M")
 
-    override val inCitySpeeches = listOf(inCitySpeechOne)
+    override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree, inCitySpeechFour, inCitySpeechFive)
 
-    val bone = SpeechData("Me", "Can you explain about books?")
-    val bbone = SpeechData("Ice Penguin", "Certainly! I oversaw the library in this city before the clones invaded")
-    val btwo = SpeechData("Ice Penguin", "When they did, all the books were scattered across the kingdom")
-    val bthree = SpeechData("Ice Penguin", "Each book contains the encyclopedic knowledge of an animelia")
-    val bfour = SpeechData("Ice Penguin", "I want you to find these books in the world, so my library can be restored")
+    val mone = SpeechData("Me", "How do i use the map?")
+    val mtow = SpeechData("Metal Bird", "Perfect! You open and close it by pressing M")
+    val mthree = SpeechData("Me", "What does the map show?")
+    val mfour = SpeechData("Metal Bird", "It shows the areas, that you can go to aswell as yourself")
 
-    val bookConversation = Conversation(listOf( bone,bbone, btwo,bthree, bfour))
+    val mapConversation = Conversation(listOf(mone, mtow, mthree, mfour))
 
-    val cone = SpeechData("Me", "Can you explain about anivolution conditions!")
-    val ctwo = SpeechData("Ice Penguin", "Certainly! You can view the conditions to anivolve in the library")
-    val cthree = SpeechData("Ice Penguin", "The condition will only be visible if you have the corresponding book")
-    val cfour = SpeechData("Me", "Can i anivolve to any animelia, that fulfills its condition?")
-    val cfive = SpeechData("Ice Penguin", "No, there must also be a direct line between the two animelias")
-    val csix = SpeechData("Ice Penguin", "Check the library for anivolution information about each animelia")
-
-    val conditionConversation = Conversation(listOf(cone, ctwo, cthree, cfour, cfive, csix))
-
-    override val conversationOptions = mapOf("Books" to bookConversation, "Conditions" to conditionConversation)
+    override val conversationOptions = mapOf("Map" to mapConversation)
 
     override fun recruitmentAction() {
 
