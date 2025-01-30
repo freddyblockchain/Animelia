@@ -1,15 +1,23 @@
 {
 	"identifier": "Level_113",
-	"uniqueIdentifer": "60970c23-c210-11ef-b429-453b65772af5",
-	"x": -224,
-	"y": 1024,
-	"width": 32,
-	"height": 64,
+	"uniqueIdentifer": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+	"x": 160,
+	"y": 832,
+	"width": 256,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "5442c450-c210-11ef-b429-79c2cc30f68d",
+			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
 			"dir": "e"
+		},
+		{
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
+			"dir": "s"
+		},
+		{
+			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -28,23 +36,39 @@
 		"Beach.png"
 	],
 	"entities": {
-		"SoundBulb": [
+		"Door": [
 			{
-				"id": "SoundBulb",
-				"iid": "8da3a3e0-c210-11ef-b429-096d9596e5c6",
+				"id": "Door",
+				"iid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
 				"layer": "Entities",
-				"x": 0,
+				"x": 64,
 				"y": 0,
 				"width": 32,
-				"height": 48,
-				"color": 6539085,
+				"height": 16,
+				"color": 4073265,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "7d1730a0-c210-11ef-b429-0970db131363",
-						"layerIid": "5442c452-c210-11ef-b429-3351a8a7397c",
-						"levelIid": "5442c450-c210-11ef-b429-79c2cc30f68d",
+					"Door": {
+						"entityIid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
+						"layerIid": "c574c0d2-9b00-11ef-8ab8-053f57f64816",
+						"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Direction": "Up"
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "51d99050-9b00-11ef-bf48-cfc411b6f4cc",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "SoundGun"
 				}
 			}
 		]

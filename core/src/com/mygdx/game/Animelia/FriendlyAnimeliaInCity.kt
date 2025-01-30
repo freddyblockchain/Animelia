@@ -50,8 +50,7 @@ class FriendlyAnimeliaInCityCollision(val friendlyAnimeliaInCity: FriendlyAnimel
         if (talkedWithAnimelia != null) {
             changeMode(UIMode(PickConversationScreen(mainMode, this.friendlyAnimeliaInCity.conversationOptions)))
         } else {
-            changeMode(TalkMode(Conversation(friendlyAnimeliaInCity.inCitySpeeches), mainMode))
-            SignalManager.emitSignal(AnimeliaCityTalkedWithSignal(this.friendlyAnimeliaInCity.animeliaEntity))
+            changeMode(TalkMode(Conversation(friendlyAnimeliaInCity.inCitySpeeches), mainMode){SignalManager.emitSignal(AnimeliaCityTalkedWithSignal(this.friendlyAnimeliaInCity.animeliaEntity))})
         }
     }
 

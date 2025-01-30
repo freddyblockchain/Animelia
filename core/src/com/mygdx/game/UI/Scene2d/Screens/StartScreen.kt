@@ -93,7 +93,7 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
 
-        val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia } as SpiritOfAnimelia
+        val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia && it.type == "One" } as SpiritOfAnimelia
         changeMode(TalkMode(spiritOfAnimelia.startConversation, mainMode))
 
     }

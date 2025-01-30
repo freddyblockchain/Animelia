@@ -21,7 +21,7 @@ data class RailwayTransportData(val areaIdentifier: String, val x: Float, val y:
 class Inventory() {
     var gold: Int = 0
     val entityBooks: MutableList<ANIMELIA_ENTITY> = mutableListOf()
-    val eggs: MutableList<Egg> = mutableListOf(Egg.FIRE)
+    val eggs: MutableList<Egg> = mutableListOf()
     val ownedAbilities: MutableList<AbilityName> = mutableListOf()
     val materialItems: MutableMap<Material,Int> = mutableMapOf()
     val keyItems: MutableList<KeyItem> = mutableListOf()

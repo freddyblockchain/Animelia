@@ -75,28 +75,13 @@
 				}
 			}
 		],
-		"Egg": [
-			{
-				"id": "Egg",
-				"iid": "89e1a1d0-4ce0-11ef-8990-73cc8bff1faf",
-				"layer": "Entities",
-				"x": 256,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 5925256,
-				"customFields": {
-					"Egg": "Ice"
-				}
-			}
-		],
 		"Ability": [
 			{
 				"id": "Ability",
 				"iid": "eb0d8210-4ce0-11ef-8990-b7294e3913f5",
 				"layer": "Entities",
 				"x": 128,
-				"y": 32,
+				"y": 64,
 				"width": 32,
 				"height": 32,
 				"color": 16690740,

@@ -21,7 +21,7 @@ import com.mygdx.game.UI.EnemyHealthStrategy
 import com.mygdx.game.Utils.RandomManager
 import com.mygdx.game.Utils.Triggerable
 
-enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, IceYeti, FireHippo, Bird, IceBird, MetalBird, Frog, GuardFrog, KingFrog, FireLion, SoundBat, FrostFireDragon }
+enum class ANIMELIA_ENTITY {FireArmadillo, IcePenguin, IceYeti, FireHippo, Bird, IceBird, MetalBird, Frog, GuardFrog, KingFrog, FireLion, SoundBat, FrostFireDragon, SpiritOfAnimelia }
 
 enum class ANIMELIA_STAGE{JUNIOR, MASTER, GRANDMASTER}
 

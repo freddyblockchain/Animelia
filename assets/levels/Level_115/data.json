@@ -1,26 +1,18 @@
 {
 	"identifier": "Level_115",
-	"uniqueIdentifer": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-	"x": 576,
-	"y": 896,
-	"width": 192,
-	"height": 256,
+	"uniqueIdentifer": "6d21749b-c210-11ef-b429-979704c85757",
+	"x": 96,
+	"y": 1120,
+	"width": 256,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
-			"dir": "e"
+			"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
+			"dir": "o"
 		},
 		{
-			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
-			"dir": "w"
-		},
-		{
-			"levelIid": "5a2bfee0-9b00-11ef-9dff-bdc5362ca354",
-			"dir": "s"
-		},
-		{
-			"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
 			"dir": "n"
 		}
 	],
@@ -40,85 +32,84 @@
 		"Beach.png"
 	],
 	"entities": {
-		"House": [
+		"AnimeliaEnemy": [
 			{
-				"id": "House",
-				"iid": "418cae80-9b00-11ef-8ab8-a3ecaf120e0e",
+				"id": "AnimeliaEnemy",
+				"iid": "7877fb70-c210-11ef-b429-61a899468fad",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
-				"width": 128,
-				"height": 160,
-				"color": 9149364,
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
 				"customFields": {
-					"House": "FrogBuilding",
-					"Door": {
-						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Visible": true
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "a81aa760-c210-11ef-b429-f5ad15a1c5a5",
+				"layer": "Entities",
+				"x": 192,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
 				}
 			}
 		],
-		"Animelia": [
+		"Trumpet": [
 			{
-				"id": "Animelia",
-				"iid": "9a8d1300-9b00-11ef-8ab8-61e47ed47e11",
+				"id": "Trumpet",
+				"iid": "b56228d0-c210-11ef-b429-a314df426a24",
 				"layer": "Entities",
-				"x": 64,
+				"x": 32,
 				"y": 64,
 				"width": 32,
 				"height": 32,
-				"color": 15389866,
+				"color": 16705377,
 				"customFields": {
-					"AnimeliaType": "GuardFrog",
-					"AnimeliaCityPos": {
-						"entityIid": "b5c56a70-c210-11ef-b8ac-73cc6a4ddb13",
-						"layerIid": "85324401-c210-11ef-b8ac-4f44a5024376",
-						"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": [
-						{
-							"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-							"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-							"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						}
-					]
+					"Direction": "Right"
 				}
-			}
-		],
-		"Door": [
+			},
 			{
-				"id": "Door",
-				"iid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
+				"id": "Trumpet",
+				"iid": "d40ef150-c210-11ef-b429-3bcabd7b37ae",
 				"layer": "Entities",
-				"x": 48,
-				"y": 96,
+				"x": 192,
+				"y": 64,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 16705377,
 				"customFields": {
-					"Door": {
-						"entityIid": "c23e9230-9b00-11ef-bf48-95cc4d8aa862",
-						"layerIid": "4cbbb742-9b00-11ef-bf48-1b56331b9159",
-						"levelIid": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Down"
+					"Direction": "Up"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "33065040-c210-11ef-b429-29aa634b39c9",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Left"
 				}
 			}
 		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "16afbb10-9b00-11ef-9dff-23a6b4bc1e5d",
+				"iid": "05d392e0-c210-11ef-b429-7d722c6f4a76",
 				"layer": "Entities",
-				"x": 160,
-				"y": 0,
+				"x": 0,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,

@@ -7,7 +7,7 @@ import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechTextBubble
 import com.mygdx.game.Utils.RenderGraph
 
-class TalkMode(val conversation: Conversation, val prevMode: GameMode): GameMode {
+class TalkMode(val conversation: Conversation, val prevMode: GameMode, val actionAfter: () -> Unit = {}): GameMode {
     override val spriteBatch = SpriteBatch()
 
     override val inputProcessor = TalkInputProcessor(::updateSpeechIndex)
@@ -32,6 +32,7 @@ class TalkMode(val conversation: Conversation, val prevMode: GameMode): GameMode
         currentSpeechIndex += 1
 
         if(currentSpeechIndex >= conversation.speechDataList.size){
+            actionAfter()
             changeMode(prevMode)
         }
     }

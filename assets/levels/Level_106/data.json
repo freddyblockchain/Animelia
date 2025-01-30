@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_106",
-	"uniqueIdentifer": "1d2c3230-9b00-11ef-9dff-effef5967c25",
-	"x": 576,
-	"y": 704,
-	"width": 256,
-	"height": 64,
+	"uniqueIdentifer": "105d7ad0-c210-11ef-a794-bf576dcfa58a",
+	"x": 2464,
+	"y": 896,
+	"width": 64,
+	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
-			"dir": "o"
+			"levelIid": "0dab2c10-c210-11ef-a794-2dd4465b7cd9",
+			"dir": "s"
+		},
+		{
+			"levelIid": "12f2cbb0-c210-11ef-a794-15f56e8db264",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "SpiritGrounds",
 		"Visible": true
 	},
 	"layers": [
@@ -27,41 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"SoundBulb": [
-			{
-				"id": "SoundBulb",
-				"iid": "c065eea0-9b00-11ef-9dff-37035423d512",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 48,
-				"color": 6539085,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c956e730-9b00-11ef-9dff-1b83a4339ba2",
-						"layerIid": "fff9fbc2-9b00-11ef-9dff-3dd4640d706e",
-						"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "f94f0490-c210-11ef-b429-e52efbb91001",
-				"layer": "Entities",
-				"x": 224,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "SpearToss"
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

@@ -18,12 +18,14 @@ class SavingHandler {
                 val savedState: String = FileHandler.readPlayerFile()[0]
                 val savedGeneralSaveState: PlayerSaveState = Json.decodeFromString(savedState)
                 generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia, savedGeneralSaveState.pos, savedGeneralSaveState.areaIdentifier)
-                player.animeliaInfo = getAnimeliaData(generalSaveState.currentAnimelia)
 
             } else {
-                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.FireArmadillo, SVector2(120f, -200f), "World1")
+                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.SpiritOfAnimelia, SVector2(64f, 64f), "SpiritGrounds")
             }
+            player.animeliaInfo = getAnimeliaData(generalSaveState.currentAnimelia)
             AreaManager.setActiveArea(generalSaveState.areaIdentifier)
+
+
             player.setPosition(Vector2(generalSaveState.pos.x, generalSaveState.pos.y))
         }
     }

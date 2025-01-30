@@ -61,6 +61,18 @@ class InArea(val areaIdentifer: String): AnivolutionCondition{
     override val textDescription = "Must be in $areaIdentifer"
 }
 
+
+class SpiritOfAnimeliaData(): AnimeliaData {
+    override var textureName = "ghost.png"
+    override val elemental_types: List<ELEMENTAL_TYPE> = listOf()
+    override val animeliaStage = ANIMELIA_STAGE.JUNIOR
+    override val animeliaAnimation = AnimeliaAnimation("ghost.png","ghost.png","ghost.png")
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
+    override val availableAbilities = listOf<AbilityName>()
+    override val animeliaEntity = ANIMELIA_ENTITY.SpiritOfAnimelia
+}
+
 class FireArmadilloData(): AnimeliaData {
     override var textureName = "Animelias/firearmadillo-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE, ELEMENTAL_TYPE.FIGHTING)
@@ -236,5 +248,6 @@ fun getAnimeliaData(animeliaEntity: ANIMELIA_ENTITY): AnimeliaData {
         }
         ANIMELIA_ENTITY.SoundBat -> SoundBatData()
         ANIMELIA_ENTITY.FrostFireDragon -> FrostfireDragonData()
+        ANIMELIA_ENTITY.SpiritOfAnimelia -> SpiritOfAnimeliaData()
     }
 }
