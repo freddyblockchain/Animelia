@@ -54,7 +54,7 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.TailSwipe -> "A lounging tail attack! breaks rocks and enemies"
         AbilityName.RockThrow -> "Throw a deadly rock at enemies"
         AbilityName.Fireball -> "Shoot a fireball, that melts enemies and ice"
-        AbilityName.IceCocoon -> "Envelop yourself in ice for protection"
+        AbilityName.IceCocoon -> "Protect yourself with ice and destroy boxing gloves"
         AbilityName.Dash -> "Do a fire dash, which grants a speed boost"
         AbilityName.Fly -> "Fly over obstacles and projectiles in your way"
         AbilityName.Whirlwind -> "Perform a whirlwind reflecting projectiles"

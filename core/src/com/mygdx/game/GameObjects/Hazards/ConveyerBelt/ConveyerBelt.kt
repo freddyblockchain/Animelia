@@ -52,8 +52,8 @@ class ConveyerBelt(gameObjectData: GameObjectData)
 
     init {
 
-        upSprite.setPosition(this.currentMiddle.x  - upSprite.width / 4, this.currentMiddle.y - upSprite.height / 4)
-        upSprite.setSize(upSprite.width / 2, upSprite.height / 2)
+        upSprite.setPosition(this.currentMiddle.x  - upSprite.width / 2, this.currentMiddle.y - upSprite.height / 2)
+        upSprite.setSize(upSprite.width, upSprite.height)
         upSprite.setOriginCenter()
 
     }

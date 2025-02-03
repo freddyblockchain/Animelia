@@ -28,6 +28,21 @@
 		"Beach.png"
 	],
 	"entities": {
+		"AnivolutionBook": [
+			{
+				"id": "AnivolutionBook",
+				"iid": "9249dcf0-c210-11ef-999d-77e7bc86b901",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "SoundBat"
+				}
+			}
+		],
 		"House": [
 			{
 				"id": "House",

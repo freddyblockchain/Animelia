@@ -74,6 +74,38 @@
 					"CustomData": []
 				}
 			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "26183110-c210-11ef-999d-a1ef38f8db5a",
+				"layer": "Entities",
+				"x": 96,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "TROPICALFRUIT",
+					"PercentChance": 50,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "29c5f6d0-c210-11ef-999d-bd4e9b06c14d",
+				"layer": "Entities",
+				"x": 96,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "TROPICALFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			}
 		]
 	}
 }

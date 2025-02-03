@@ -117,6 +117,23 @@
 					"Name": null
 				}
 			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "6f22ec10-c210-11ef-999d-011cac4b375e",
+				"layer": "Entities",
+				"x": 96,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FORESTFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			}
 		]
 	}
 }

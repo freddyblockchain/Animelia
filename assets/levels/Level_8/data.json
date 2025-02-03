@@ -39,5 +39,68 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "ffe1ef40-c210-11ef-999d-f1e7c4aa8b8e",
+				"layer": "Entities",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Bird",
+					"Entity_ref": null
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "0a14b6a0-c210-11ef-999d-79a9fc75a3ba",
+				"layer": "Entities",
+				"x": 224,
+				"y": 256,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Bird",
+					"Entity_ref": null
+				}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "33b1ca20-c210-11ef-999d-9575e75b7e45",
+				"layer": "Entities",
+				"x": 64,
+				"y": 288,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "CANYONFRUIT",
+					"PercentChance": 50,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "373db000-c210-11ef-999d-8f7c14c2bb0b",
+				"layer": "Entities",
+				"x": 256,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "CANYONFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			}
+		]
+	}
 }

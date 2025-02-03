@@ -12,8 +12,8 @@
 			"dir": "s"
 		},
 		{
-			"levelIid": "7f05ef05-c210-11ef-b429-697a401ae0a8",
-			"dir": "w"
+			"levelIid": "d3afce78-c210-11ef-999d-dd77277890c8",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -85,6 +85,21 @@
 						"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "ec989b60-c210-11ef-999d-cf3580e2fc1f",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "FireBreath"
 				}
 			}
 		]

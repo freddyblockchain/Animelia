@@ -28,6 +28,21 @@
 		"Beach.png"
 	],
 	"entities": {
+		"AnivolutionBook": [
+			{
+				"id": "AnivolutionBook",
+				"iid": "887e89f0-c210-11ef-999d-1feb41ea9b61",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "FireLion"
+				}
+			}
+		],
 		"House": [
 			{
 				"id": "House",
