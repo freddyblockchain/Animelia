@@ -27,7 +27,7 @@ class MetalBirdTalkedWith: SignaledEventListener {
         }
         metalBird.speeches = when(signal.metalBirdPos){
             MetalBirdPos.ICE -> listOf(metalBird.firespeech1, metalBird.firespeech2, metalBird.firespeech3, metalBird.firespeech4, metalBird.firespeech5, metalBird.firespeech6)
-            MetalBirdPos.FIRE -> listOf(metalBird.canyonSpeech1)
+            MetalBirdPos.FIRE -> listOf(metalBird.canyonSpeech1, metalBird.canyonSpeech2, metalBird.canyonSpeech3)
             MetalBirdPos.CANYON -> listOf(metalBird.swampSpeech1)
             MetalBirdPos.SWAMP -> listOf(metalBird.firespeech1)
         }

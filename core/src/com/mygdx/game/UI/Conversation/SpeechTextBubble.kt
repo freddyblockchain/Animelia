@@ -24,7 +24,6 @@ class SpeechTextBubble() {
 
         // Unproject the screen coordinates to get the world coordinates
         val worldCoordinates = mainCamera.unproject(screenCoordinates)
-        println(worldCoordinates)
         // Set the position of the sprite to the calculated world coordinates
         sprite.setPosition(worldCoordinates.x, worldCoordinates.y)
     }

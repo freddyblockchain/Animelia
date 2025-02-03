@@ -7,7 +7,9 @@ import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
 import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
+import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.SignalManager
+import com.mygdx.game.ShopItem
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 
@@ -51,6 +53,8 @@ class SoundBatInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gam
     override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree)
 
     override fun recruitmentAction() {
+        val shopItem = ShopItem(textureString = "book.png", costItems = listOf(Pair(2, Material.CANYONFRUIT),Pair(1, Material.FIREFRUIT)), gameObjectData = GameObjectData(x=this.sprite.x.toInt(), y = (this.sprite.y - 64f).toInt(), width = 32, height = 32))
+        shopItem.add()
     }
 
 }
