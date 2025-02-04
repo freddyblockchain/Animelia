@@ -9,19 +9,17 @@ import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Ability.KeyAbility
 import com.mygdx.game.Animation.EffectAnimation
-import com.mygdx.game.CannotMoveStrategy.CannotMoveStrategy
 import com.mygdx.game.CannotMoveStrategy.MoveRegardless
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
-import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.rotateByAmount
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.Projectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Particles.AnimeliaEffect
 import kotlin.math.roundToInt
 
-class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
+class FireBreath(override val attachedFightableObject: FightableObject) : KeyAbility() {
 
     private lateinit var breatheEffect: AnimeliaEffect
 
@@ -99,7 +97,7 @@ class FlameBreath(override val attachedFightableObject: FightableObject) : KeyAb
         }
     }
 
-    override val abilityName = AbilityName.FlameBreath
+    override val abilityName = AbilityName.FireBreath
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.FIRE
 }
 

@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_78",
-	"uniqueIdentifer": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
-	"x": 1760,
-	"y": -800,
-	"width": 64,
-	"height": 96,
+	"uniqueIdentifer": "c5e25860-9b00-11ef-9017-4dec763123e6",
+	"x": 1696,
+	"y": -992,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+			"levelIid": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
 			"dir": "s"
-		},
-		{
-			"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
-			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,23 +28,61 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"AnivolutionBook": [
 			{
-				"id": "Cliffside",
-				"iid": "71c631a0-9b00-11ef-9017-053b4924eb09",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 64,
+				"id": "AnivolutionBook",
+				"iid": "9249dcf0-c210-11ef-999d-77e7bc86b901",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 64,
+				"width": 32,
 				"height": 32,
-				"color": 16705377,
+				"color": 16777215,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c9aefa50-9b00-11ef-9017-7919dd09088a",
-						"layerIid": "4e3bcf92-9b00-11ef-9017-edefa8611ddd",
-						"levelIid": "4e3bcf90-9b00-11ef-9017-3b5ef312cd51",
+					"AnimeliaType": "SoundBat"
+				}
+			}
+		],
+		"House": [
+			{
+				"id": "House",
+				"iid": "e4637d00-9b00-11ef-9017-817945720cc5",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 128,
+				"height": 96,
+				"color": 9149364,
+				"customFields": {
+					"House": "AbandonedHouse",
+					"Door": {
+						"entityIid": "da69a980-9b00-11ef-9017-fd5b92968883",
+						"layerIid": "c5e25862-9b00-11ef-9017-ef82e2b817ba",
+						"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					},
+					"Visible": true
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "da69a980-9b00-11ef-9017-fd5b92968883",
+				"layer": "Entities",
+				"x": 80,
+				"y": 128,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "e6746530-9b00-11ef-9017-237f5b37278a",
+						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
+						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
 				}
 			}
 		]

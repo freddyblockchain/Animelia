@@ -86,14 +86,14 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
     fun initNewGame(){
         FileHandler.clearSaves()
         initAndGoToGame()
+        val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia && it.type == "One" } as SpiritOfAnimelia
+        player.setPosition(spiritOfAnimelia.currentPosition() - Vector2(16f,0f))
 
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT or GL20.GL_DEPTH_BUFFER_BIT)
         mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
         mainCamera.update()
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
-
-        val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia && it.type == "One" } as SpiritOfAnimelia
         changeMode(TalkMode(spiritOfAnimelia.startConversation, mainMode))
 
     }
@@ -112,8 +112,6 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         //changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
         //Respawn on a fountain
         changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
-        val respawn = getNearestRespawn(generalSaveState.areaIdentifier)
-        changeArea(Vector2(respawn.first), respawn.second)
 
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()

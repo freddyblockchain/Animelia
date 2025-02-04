@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_106",
-	"uniqueIdentifer": "105d7ad0-c210-11ef-a794-bf576dcfa58a",
+	"uniqueIdentifer": "36c2ed8b-c210-11ef-a794-b7e0c735b33d",
 	"x": 2464,
-	"y": 896,
+	"y": 608,
 	"width": 64,
-	"height": 128,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "0dab2c10-c210-11ef-a794-2dd4465b7cd9",
-			"dir": "s"
-		},
-		{
 			"levelIid": "12f2cbb0-c210-11ef-a794-15f56e8db264",
-			"dir": "n"
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -31,5 +27,21 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"SpiritOfAnimelia": [
+			{
+				"id": "SpiritOfAnimelia",
+				"iid": "3df7b720-c210-11ef-a794-af2b69b48ee3",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16711748,
+				"customFields": {
+					"SpiritType": "Four"
+				}
+			}
+		]
+	}
 }

@@ -34,7 +34,7 @@ class FireArmadillo(gameObjectData: GameObjectData, cityPositionEntityId: Entity
 }
 
 class FireArmadilloInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
-    override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
+    override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
     val inCitySpeechOne = SpeechData("Fire Armadillo", "Its good to be back!")
     val inCitySpeechTwo = SpeechData("Fire Armadillo", "I build a training statue")
     val inCitySpeechThree = SpeechData("Fire Armadillo", "Speak to me for training information")

@@ -8,6 +8,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Ability.Abilities.Sound.LullabyProjectile
+import com.mygdx.game.Ability.AbilityName
+import com.mygdx.game.Ability.ELEMENTAL_TYPE
+import com.mygdx.game.Ability.getAbilitiesFromType
+import com.mygdx.game.Ability.getIconFromType
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.Collition.CollisionMask
 import com.mygdx.game.Collition.MoveCollision
@@ -17,6 +21,7 @@ import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.Door
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.MoveableObjects.Projectile.SoundProjectile
+import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.UI.Conversation.Conversation
@@ -82,7 +87,7 @@ class GuardFrog(val gameObjectData: GameObjectData, cityPosEntityId: EntityRefDa
 
     }
 
-    override fun goingToCitySignals(){
+    override fun goingToCityAction(){
         SignalManager.emitSignal(RemoveObjectSignal(gameObjectIid))
         SignalManager.emitSignal(
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
@@ -166,7 +171,29 @@ class GuardFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(ga
     }
 
     override fun recruitmentAction() {
+        if(AbilityName.ScrapStorm !in generalSaveState.inventory.ownedAbilities){
+            val shopItem = ShopItem(texture= getIconFromType(ELEMENTAL_TYPE.METAL), costItems = listOf(Pair(2, Material.TROPICALFRUIT),Pair(1, Material.ANIMELIABONE)), gameObjectData = GameObjectData(x=this.sprite.x.toInt() - 64, y = (this.sprite.y - 32f).toInt(), width = 32, height = 32), text = "Scrap Storm") {
+                generalSaveState.inventory.ownedAbilities.add(AbilityName.ScrapStorm)
+                generalSaveState.updateSaveState()
+            }
+            shopItem.add()
+        }
+        if(AbilityName.AerialDeath !in generalSaveState.inventory.ownedAbilities){
+            val shopItem = ShopItem(texture= getIconFromType(ELEMENTAL_TYPE.FLYING), costItems = listOf(Pair(2, Material.CANYONFRUIT),Pair(1, Material.ICEFRUIT),Pair(1, Material.ANIMELIABONE)), gameObjectData = GameObjectData(x=this.sprite.x.toInt() - 16, y = (this.sprite.y - 32f).toInt(), width = 32, height = 32), text = "Aerial Death") {
+                generalSaveState.inventory.ownedAbilities.add(AbilityName.AerialDeath)
+                generalSaveState.updateSaveState()
+            }
+            shopItem.add()
+        }
 
+        if(AbilityName.LionRoar !in generalSaveState.inventory.ownedAbilities){
+            val shopItem = ShopItem(texture= getIconFromType(ELEMENTAL_TYPE.SOUND), costItems = listOf(Pair(2, Material.FORESTFRUIT),Pair(1, Material.FIREFRUIT), Pair(1,
+                Material.ANIMELIABONE)), gameObjectData = GameObjectData(x=this.sprite.x.toInt() + 32, y = (this.sprite.y - 32f).toInt(), width = 32, height = 32), text = "Lion Roar") {
+                generalSaveState.inventory.ownedAbilities.add(AbilityName.LionRoar)
+                generalSaveState.updateSaveState()
+            }
+            shopItem.add()
+        }
     }
 
     override fun render(batch: SpriteBatch) {

@@ -27,8 +27,8 @@ class FireLion(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) :
         this.animeliaRecruitmentConditions.add(IceBirdRecruitment())
     }
 
-    override fun goingToCitySignals() {
-        super.goingToCitySignals()
+    override fun goingToCityAction() {
+        super.goingToCityAction()
         SignalManager.emitSignal(
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
             areaIdentifier = "World3"

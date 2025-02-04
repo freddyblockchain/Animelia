@@ -1,20 +1,17 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import ChangeLevelVisibleSignal
-import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
 import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
 import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.EntityRefData
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.GameObjects.Structures.TrainingStation
-import com.mygdx.game.Managers.AreaManager
-import com.mygdx.game.Managers.PlayerStatus
+import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
-import com.mygdx.game.plus
+import com.mygdx.game.generalSaveState
 
 class Frog(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData, cityPositionEntityId) {
     override val animeliaEntity = ANIMELIA_ENTITY.Frog
@@ -35,9 +32,20 @@ class Frog(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefData) 
 
     override val goingToCitySpeech = listOf(citySpeech1,citySpeech2,citySpeech3)
 
-    override fun goingToCitySignals() {
-        super.goingToCitySignals()
+    fun giveFruits(){
+        generalSaveState.inventory.materialItems[Material.ICEFRUIT] = generalSaveState.inventory.materialItems[Material.ICEFRUIT]!! -1
+        generalSaveState.inventory.materialItems[Material.FIREFRUIT] = generalSaveState.inventory.materialItems[Material.FIREFRUIT]!! -1
+        generalSaveState.inventory.materialItems[Material.CANYONFRUIT] = generalSaveState.inventory.materialItems[Material.CANYONFRUIT]!! -1
+        generalSaveState.inventory.materialItems[Material.TROPICALFRUIT] = generalSaveState.inventory.materialItems[Material.TROPICALFRUIT]!! -1
+        generalSaveState.inventory.materialItems[Material.FORESTFRUIT] = generalSaveState.inventory.materialItems[Material.FORESTFRUIT]!! -1
+    }
+
+    override fun goingToCityAction() {
+        super.goingToCityAction()
         SignalManager.emitSignal(ChangeLevelVisibleSignal(cityPosition.levelId))
+        giveFruits()
+        generalSaveState.updateSaveState()
+
     }
     init {
         animeliaRecruitmentConditions.add(FrogRecruitment())
@@ -63,7 +71,14 @@ class FrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObj
 }
 
 class FrogRecruitment(): AnimeliaRecruitmendCondition {
+    fun hasFruits():Boolean{
+        return generalSaveState.inventory.materialItems[Material.ICEFRUIT] != null && generalSaveState.inventory.materialItems[Material.ICEFRUIT]!! >= 1 &&
+                generalSaveState.inventory.materialItems[Material.FORESTFRUIT] != null && generalSaveState.inventory.materialItems[Material.FORESTFRUIT]!! >= 1 &&
+                generalSaveState.inventory.materialItems[Material.FIREFRUIT] != null && generalSaveState.inventory.materialItems[Material.FIREFRUIT]!! >= 1 &&
+                generalSaveState.inventory.materialItems[Material.CANYONFRUIT] != null && generalSaveState.inventory.materialItems[Material.CANYONFRUIT]!! >= 1 &&
+                generalSaveState.inventory.materialItems[Material.TROPICALFRUIT] != null && generalSaveState.inventory.materialItems[Material.TROPICALFRUIT]!! >= 1
+    }
     override fun isConditionFulfilled(): Boolean {
-        return true
+        return hasFruits()
     }
 }

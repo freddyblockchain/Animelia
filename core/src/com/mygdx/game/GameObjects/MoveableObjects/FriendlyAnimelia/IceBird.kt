@@ -1,7 +1,6 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import AnimeliaRecruitedSignal
-import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.UI.Conversation.Conversation
 
 import com.mygdx.game.GameObjectData
@@ -10,11 +9,8 @@ import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
 import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
 import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
 import com.mygdx.game.EntityRefData
-import com.mygdx.game.GameObjects.Structures.Library
-import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.UI.Conversation.SpeechData
-import com.mygdx.game.plus
 
 class IceBird(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData,
     cityPosEntityId
@@ -32,8 +28,8 @@ class IceBird(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : 
         this.animeliaRecruitmentConditions.add(IceBirdRecruitment())
     }
 
-    override fun goingToCitySignals() {
-        super.goingToCitySignals()
+    override fun goingToCityAction() {
+        super.goingToCityAction()
         SignalManager.emitSignal(
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
             areaIdentifier = "World4"

@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_19",
-	"uniqueIdentifer": "29d37a70-c210-11ef-b429-cddc8097b1b8",
+	"uniqueIdentifer": "360741f0-c210-11ef-b429-f1389f13ce06",
 	"x": -224,
-	"y": -800,
-	"width": 224,
-	"height": 96,
+	"y": -1056,
+	"width": 64,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "e"
+			"levelIid": "29d37a70-c210-11ef-b429-cddc8097b1b8",
+			"dir": "s"
 		},
 		{
-			"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
+			"levelIid": "d3afce78-c210-11ef-999d-dd77277890c8",
 			"dir": "n"
 		}
 	],
@@ -31,5 +31,77 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"FireGate": [
+			{
+				"id": "FireGate",
+				"iid": "4d49b1e0-c210-11ef-b429-13f8514e1a97",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 64,
+				"height": 32,
+				"color": 16217634,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "59631390-c210-11ef-b429-d113d3aad833",
+						"layerIid": "360741f2-c210-11ef-b429-8fdf736e669d",
+						"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "59631390-c210-11ef-b429-d113d3aad833",
+				"layer": "Entities",
+				"x": 0,
+				"y": 224,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "713a2260-c210-11ef-b429-5f8f4d8de747",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": true,
+					"Entity_ref": {
+						"entityIid": "59631390-c210-11ef-b429-d113d3aad833",
+						"layerIid": "360741f2-c210-11ef-b429-8fdf736e669d",
+						"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Ability": [
+			{
+				"id": "Ability",
+				"iid": "ec989b60-c210-11ef-999d-cf3580e2fc1f",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16690740,
+				"customFields": {
+					"Ability": "FireBreath"
+				}
+			}
+		]
+	}
 }

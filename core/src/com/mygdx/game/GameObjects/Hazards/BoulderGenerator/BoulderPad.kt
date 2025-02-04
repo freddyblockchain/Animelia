@@ -1,13 +1,11 @@
 package com.mygdx.game.GameObjects.Hazards.BoulderGenerator
 
-import com.badlogic.gdx.graphics.Texture
 import com.mygdx.game.Collisions.DefaultAreaEntranceCollition
 import com.mygdx.game.Collition.OnlyPlayerCollitionMask
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.EntityRefCustomFields
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.Managers.AreaManager
 import kotlinx.serialization.json.Json
@@ -38,6 +36,6 @@ class BoulderPadCollision(val boulderPad: BoulderPad): DefaultAreaEntranceCollit
     override var canMoveAfterCollision = true
 
     override fun actionWhileInside() {
-        boulderPad.boulderGenerator.triggerGenerator()
+        boulderPad.boulderGenerator.checkShouldShoot()
     }
 }

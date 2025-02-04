@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_62",
-	"uniqueIdentifer": "22ea827b-c210-11ef-a811-97b44fbf3087",
-	"x": -704,
-	"y": -928,
-	"width": 128,
-	"height": 128,
+	"uniqueIdentifer": "7255595b-c210-11ef-a811-e7e3d1002f29",
+	"x": -1536,
+	"y": -1312,
+	"width": 64,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
-			"dir": "w"
+			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
+			"dir": "s"
 		},
 		{
-			"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-			"dir": "s"
+			"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,45 +32,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TargetCircle": [
+		"FireGate": [
 			{
-				"id": "TargetCircle",
-				"iid": "40769480-c210-11ef-a811-510caf17350d",
-				"layer": "Entities",
-				"x": 96,
-				"y": 96,
-				"width": 32,
+				"id": "FireGate",
+				"iid": "5c4ab590-c210-11ef-a051-0d5f4a7400b5",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 0,
+				"width": 64,
 				"height": 32,
-				"color": 12635100,
+				"color": 16217634,
 				"customFields": {
-					"Range": 96,
-					"Triggerable": {
-						"entityIid": "d0953900-c210-11ef-a811-db55b7ed110a",
-						"layerIid": "10ac408a-c210-11ef-a811-1396f3b3a610",
-						"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
+					"Entity_ref": {
+						"entityIid": "704eea70-c210-11ef-a051-e58baada1f42",
+						"layerIid": "a4986492-c210-11ef-a811-75561e5fa89b",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"TargetCircle": null,
-					"Direction": "Left",
-					"Speed": 1
+					}
 				}
 			}
 		],
-		"Generator": [
+		"ConveyerBelt": [
 			{
-				"id": "Generator",
-				"iid": "122a0d40-c210-11ef-a811-d32443922e9e",
+				"id": "ConveyerBelt",
+				"iid": "44973450-c210-11ef-a051-53ca716e3f1e",
 				"layer": "Entities",
-				"x": 32,
+				"x": 0,
 				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
+				"width": 64,
+				"height": 288,
+				"color": 6539085,
 				"customFields": {
-					"Direction": "Down",
-					"Automatic": false,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Direction": "Down"
 				}
 			}
 		]

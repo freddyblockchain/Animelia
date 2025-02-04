@@ -1,9 +1,7 @@
 package com.mygdx.game.Animelia
 
-import AnimeliaCityTalkedWithSignal
 import AnimeliaRecruitedSignal
 import RemoveObjectSignal
-import SIGNALTYPE
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
@@ -12,7 +10,6 @@ import com.mygdx.game.*
 import com.mygdx.game.Collition.InputCollision
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameModes.TalkMode
-import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.AnimeliaPosition
 import com.mygdx.game.GameObjects.GameObject.DefaultRotationalObject
@@ -22,7 +19,6 @@ import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
-import com.mygdx.game.UI.Scene2d.Screens.PickConversationScreen
 
 interface AnimeliaRecruitmendCondition {
     fun isConditionFulfilled(): Boolean
@@ -65,7 +61,7 @@ abstract class FriendlyAnimeliaInWorld(
         return animeliaRecruitmentConditions.all { it.isConditionFulfilled() }
     }
 
-    open fun goingToCitySignals(){
+    open fun goingToCityAction(){
         SignalManager.emitSignal(RemoveObjectSignal(gameObjectIid))
         SignalManager.emitSignal(
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
@@ -94,7 +90,7 @@ open class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: Friendl
             if (friendlyAnimeliaInWorld.goingToCitySpeech.size > 0) {
                 changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.goingToCitySpeech), mainMode))
             }
-            friendlyAnimeliaInWorld.goingToCitySignals()
+            friendlyAnimeliaInWorld.goingToCityAction()
         } else {
             changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.speeches), mainMode))
             friendlyAnimeliaInWorld.afterSpeechAction()

@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_116",
-	"uniqueIdentifer": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
+	"uniqueIdentifer": "10c193f0-c210-11ef-b429-ebe65309cf3d",
 	"x": -128,
-	"y": 1248,
-	"width": 256,
-	"height": 96,
+	"y": 1184,
+	"width": 96,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "6d21749b-c210-11ef-b429-979704c85757",
-			"dir": "o"
+			"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
+			"dir": "s"
 		},
 		{
-			"levelIid": "10c193f0-c210-11ef-b429-ebe65309cf3d",
+			"levelIid": "5442c450-c210-11ef-b429-79c2cc30f68d",
 			"dir": "n"
 		}
 	],
@@ -31,47 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "0045c280-c210-11ef-b429-0fe4aace38cf",
-				"layer": "Entities",
-				"x": 160,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "05d392e0-c210-11ef-b429-7d722c6f4a76",
-						"layerIid": "6d21749d-c210-11ef-b429-bd8940f57aee",
-						"levelIid": "6d21749b-c210-11ef-b429-979704c85757",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"SoundBulb": [
-			{
-				"id": "SoundBulb",
-				"iid": "0c8326f0-c210-11ef-b429-4d6dade457a8",
-				"layer": "Entities",
-				"x": 128,
-				"y": 32,
-				"width": 32,
-				"height": 48,
-				"color": 6539085,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "0045c280-c210-11ef-b429-0fe4aace38cf",
-						"layerIid": "dfc0dea2-c210-11ef-b429-5744e4403be6",
-						"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

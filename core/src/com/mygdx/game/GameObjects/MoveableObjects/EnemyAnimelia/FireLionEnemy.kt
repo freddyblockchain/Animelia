@@ -5,14 +5,10 @@ import com.mygdx.game.EntityRefData
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
-import com.mygdx.game.Ability.Abilities.Fire.FlameBreath
-import com.mygdx.game.Ability.Abilities.Ice.IceBreath
-import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
+import com.mygdx.game.Ability.Abilities.Fire.FireBreath
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Utils.RandomManager
-import com.mygdx.game.player
 
 class FireLionEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?) : EnemyAnimelia(gameObjectData, entityRefData) {
     override val animeliaEntity = ANIMELIA_ENTITY.FireLion
@@ -20,7 +16,7 @@ class FireLionEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData
 
     override val maxHealth = 30f
     val fireball = FireballAbility(this)
-    val fireBreath = FlameBreath(this)
+    val fireBreath = FireBreath(this)
 
     override val outsideOfAggroStrategy = TurnAndFacePlayer(this)
     override val insideBattleStrategy = FireLionBattleStrategy(this, fireball, fireBreath)
@@ -39,7 +35,7 @@ class FireLionEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData
     }
 }
 
-class FireLionBattleStrategy(private val enemy: FireLionEnemy, val fireball: FireballAbility, val flameBreath: FlameBreath): BattleStrategy {
+class FireLionBattleStrategy(private val enemy: FireLionEnemy, val fireball: FireballAbility, val flameBreath: FireBreath): BattleStrategy {
     var currentPos = 0
     val positions = getBirdPositions()
     val goToPosition = GoToPosition(enemy, positions[0])

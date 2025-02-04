@@ -69,7 +69,7 @@ class KingFrog(val gameObjectData: GameObjectData, cityPosEntityId: EntityRefDat
         ) as House
     }
 
-    override fun goingToCitySignals() {
+    override fun goingToCityAction() {
         SignalManager.emitSignal(RemoveObjectSignal(gameObjectIid))
         SignalManager.emitSignal(RemoveObjectSignal(house.gameObjectIid))
         SignalManager.emitSignal(RemoveObjectSignal(house.door.gameObjectIid))

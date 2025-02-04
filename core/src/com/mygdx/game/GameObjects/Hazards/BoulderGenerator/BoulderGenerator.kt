@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.Animation.EffectAnimation
-import com.mygdx.game.Collisions.CannotMoveCollision
 import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
@@ -19,7 +18,6 @@ import com.mygdx.game.GameObjects.MoveableObjects.Projectile.RockProjectile
 import com.mygdx.game.Managers.AnimationManager
 import com.mygdx.game.Managers.SignalManager
 import com.mygdx.game.Particles.AnimeliaEffect
-import com.mygdx.game.Timer.CooldownTimer
 import com.mygdx.game.Utils.Triggerable
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -48,6 +46,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
 
     override fun initObject() {
         effect.load(Gdx.files.internal("Particles/rockstart.p"), Gdx.files.internal("Particles"))
+
     }
 
 
@@ -71,10 +70,14 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
         }
     }
 
+
     fun triggerGenerator(){
+        rockThrowOngoing = true
+        currentFrame = 0
+    }
+    fun checkShouldShoot(){
         if(currentFrame >= frames){
-            rockThrowOngoing = true
-            currentFrame = 0
+            triggerGenerator()
         }
     }
 
@@ -82,7 +85,7 @@ class BoulderGenerator(gameObjectData: GameObjectData) : GameObject(gameObjectDa
         super.frameTask()
         currentFrame += 1
         if(automatic){
-            triggerGenerator()
+            checkShouldShoot()
         }
         if(rockThrowOngoing){
             if(rockThrowCounter == 0){

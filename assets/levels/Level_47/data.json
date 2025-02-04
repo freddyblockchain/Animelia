@@ -1,14 +1,22 @@
 {
 	"identifier": "Level_47",
-	"uniqueIdentifer": "c6b0be20-c210-11ef-b429-bb6599b27cc9",
-	"x": -1184,
-	"y": 128,
-	"width": 96,
+	"uniqueIdentifer": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
+	"x": -1248,
+	"y": -128,
+	"width": 224,
 	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
+			"levelIid": "833b64f0-9b00-11ef-b959-75615638eebc",
+			"dir": "e"
+		},
+		{
+			"levelIid": "c6b0be20-c210-11ef-b429-bb6599b27cc9",
+			"dir": "s"
+		},
+		{
+			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
 			"dir": "n"
 		}
 	],
@@ -28,80 +36,91 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Cliffside": [
+		"Position": [
 			{
-				"id": "Cliffside",
-				"iid": "fed8cf90-c210-11ef-b429-c97a3c879283",
+				"id": "Position",
+				"iid": "038344d0-c210-11ef-b429-93f721443c9c",
 				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 160,
-				"width": 96,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "038344d0-c210-11ef-b429-93f721443c9c",
-						"layerIid": "a49c50f1-9b00-11ef-b959-15fee2794502",
-						"levelIid": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Cliffside",
-				"iid": "0e89fe00-c210-11ef-b429-4942c391616c",
-				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 64,
-				"width": 96,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "038344d0-c210-11ef-b429-93f721443c9c",
-						"layerIid": "a49c50f1-9b00-11ef-b959-15fee2794502",
-						"levelIid": "a49c50f0-9b00-11ef-b959-e9dd9992885b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"IceFloor": [
-			{
-				"id": "IceFloor",
-				"iid": "278345b0-c210-11ef-b429-873a0cb37533",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 96,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			},
-			{
-				"id": "IceFloor",
-				"iid": "665d3520-c210-11ef-b429-3703bf117384",
-				"layer": "Entities",
-				"x": 0,
-				"y": 96,
-				"width": 96,
-				"height": 64,
-				"color": 2943221,
-				"customFields" : {}
-			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "33e15180-c210-11ef-b429-c7a673c55b73",
-				"layer": "Entities",
-				"x": 32,
+				"x": 96,
 				"y": 224,
 				"width": 32,
 				"height": 32,
-				"color": 16690740,
+				"color": 1199753,
 				"customFields": {
-					"Ability": "IceBreath"
+					"Name": null
+				}
+			}
+		],
+		"Egg": [
+			{
+				"id": "Egg",
+				"iid": "96db0440-9b00-11ef-b959-c7b40722a1b6",
+				"layer": "Entities",
+				"x": 32,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 5925256,
+				"customFields": {
+					"Egg": "Flying"
+				}
+			}
+		],
+		"Animelia": [
+			{
+				"id": "Animelia",
+				"iid": "69745200-9b00-11ef-90a0-29b5de4978b4",
+				"layer": "Entities",
+				"x": 160,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 15389866,
+				"customFields": {
+					"AnimeliaType": "MetalBird",
+					"AnimeliaCityPos": {
+						"entityIid": "6d671910-4ce0-11ef-8f8c-c1f7c1d6296b",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"CustomData": [
+						{
+							"entityIid": "6d9778f0-9b00-11ef-ad95-eb2fbb7b6560",
+							"layerIid": "57c26992-25d0-11ef-9fe3-07f0c77d83e6",
+							"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						},
+						{
+							"entityIid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
+							"layerIid": "68f20cb2-9b00-11ef-9017-63ea1efe3918",
+							"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						},
+						{
+							"entityIid": "27e761a0-c210-11ef-b787-4bd9525cf820",
+							"layerIid": "6170f682-9b00-11ef-8ab8-7fc3e9508808",
+							"levelIid": "6170f680-9b00-11ef-8ab8-a53720e874f7",
+							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+						}
+					]
+				}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "7029e670-c210-11ef-a811-17fc7638ddc5",
+				"layer": "Entities",
+				"x": 32,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "ICEFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
 				}
 			}
 		]

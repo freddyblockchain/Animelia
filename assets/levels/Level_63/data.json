@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_63",
-	"uniqueIdentifer": "7255595b-c210-11ef-a811-e7e3d1002f29",
+	"uniqueIdentifer": "f451d700-c210-11ef-a811-2ff22bee59b8",
 	"x": -1536,
-	"y": -1312,
+	"y": -1664,
 	"width": 64,
 	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
-			"dir": "s"
-		},
-		{
 			"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
-			"dir": "n"
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -32,38 +28,52 @@
 		"Beach.png"
 	],
 	"entities": {
-		"FireGate": [
+		"Spikes": [
 			{
-				"id": "FireGate",
-				"iid": "5c4ab590-c210-11ef-a051-0d5f4a7400b5",
-				"layer": "EntitiesOnTop",
+				"id": "Spikes",
+				"iid": "f8b3aa80-c210-11ef-a811-ef7eb691cf98",
+				"layer": "Entities",
 				"x": 0,
-				"y": 0,
+				"y": 64,
 				"width": 64,
-				"height": 32,
-				"color": 16217634,
+				"height": 96,
+				"color": 1578021,
 				"customFields": {
+					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "704eea70-c210-11ef-a051-e58baada1f42",
-						"layerIid": "a4986492-c210-11ef-a811-75561e5fa89b",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			}
 		],
-		"ConveyerBelt": [
+		"IceCrystal": [
 			{
-				"id": "ConveyerBelt",
-				"iid": "44973450-c210-11ef-a051-53ca716e3f1e",
+				"id": "IceCrystal",
+				"iid": "0c66b220-c210-11ef-a811-ab2b1afed6b5",
 				"layer": "Entities",
-				"x": 0,
+				"x": 32,
 				"y": 0,
-				"width": 64,
-				"height": 288,
-				"color": 6539085,
+				"width": 32,
+				"height": 32,
+				"color": 16151930,
 				"customFields": {
-					"Direction": "Down"
+					"Entity_ref": {
+						"entityIid": "fb3b6e30-c210-11ef-a811-959b75903445",
+						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
+						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Entity_ref2": {
+						"entityIid": "d88fbb10-c210-11ef-aa50-f3fa4c6c1e7d",
+						"layerIid": "fd138992-c210-11ef-a811-2d81ff4e161c",
+						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Element": "Fire",
+					"Index": 0
 				}
 			}
 		]

@@ -1,16 +1,13 @@
 package com.mygdx.game.GameObjects.MoveableObjects.FriendlyAnimelia
 
 import AnimeliaRecruitedSignal
+import com.mygdx.game.*
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.AnimeliaRecruitmendCondition
 import com.mygdx.game.Animelia.FriendlyAnimeliaInCity
 import com.mygdx.game.Animelia.FriendlyAnimeliaInWorld
-import com.mygdx.game.EntityRefData
-import com.mygdx.game.GameObjectData
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.SignalManager
-import com.mygdx.game.ShopItem
-import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 
 class SoundBat(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) : FriendlyAnimeliaInWorld(gameObjectData,
@@ -29,8 +26,8 @@ class SoundBat(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData) :
         this.animeliaRecruitmentConditions.add(SoundBatRecruitment())
     }
 
-    override fun goingToCitySignals() {
-        super.goingToCitySignals()
+    override fun goingToCityAction() {
+        super.goingToCityAction()
         SignalManager.emitSignal(
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
             areaIdentifier = "World2"
@@ -53,8 +50,21 @@ class SoundBatInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gam
     override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree)
 
     override fun recruitmentAction() {
-        val shopItem = ShopItem(textureString = "book.png", costItems = listOf(Pair(2, Material.CANYONFRUIT),Pair(1, Material.FIREFRUIT)), gameObjectData = GameObjectData(x=this.sprite.x.toInt(), y = (this.sprite.y - 64f).toInt(), width = 32, height = 32))
-        shopItem.add()
+        val texture = DefaultTextureHandler.getTexture("book.png")
+        if(ANIMELIA_ENTITY.KingFrog !in generalSaveState.inventory.entityBooks){
+            val shopItem = ShopItem(texture = texture, costItems = listOf(Pair(2, Material.FORESTFRUIT),Pair(1, Material.TROPICALFRUIT)), gameObjectData = GameObjectData(x=this.sprite.x.toInt() - 32, y = (this.sprite.y - 32f).toInt(), width = 32, height = 32), text = "King Frog") {
+                generalSaveState.inventory.entityBooks.add(ANIMELIA_ENTITY.KingFrog)
+                generalSaveState.updateSaveState()
+            }
+            shopItem.add()
+        }
+        if(ANIMELIA_ENTITY.FrostFireDragon !in generalSaveState.inventory.entityBooks){
+            val shopItem = ShopItem(texture = texture, costItems = listOf(Pair(1, Material.CANYONFRUIT),Pair(1, Material.FIREFRUIT), Pair(1,Material.ICEFRUIT)), gameObjectData = GameObjectData(x=this.sprite.x.toInt() + 32, y = (this.sprite.y - 32f).toInt(), width = 32, height = 32), text = "Frostfire Dragon") {
+                generalSaveState.inventory.entityBooks.add(ANIMELIA_ENTITY.FrostFireDragon)
+                generalSaveState.updateSaveState()
+            }
+            shopItem.add()
+        }
     }
 
 }

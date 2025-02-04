@@ -63,7 +63,7 @@ class IceYeti(gameObjectData: GameObjectData, cityPosEntityId: EntityRefData,val
     }
 
 
-    override fun goingToCitySignals() {
+    override fun goingToCityAction() {
         SignalManager.emitSignal(RemoveObjectSignal(gameObjectIid))
         SignalManager.emitSignal(RemoveObjectSignal(house.gameObjectIid), areaIdentifier = "World4")
         SignalManager.emitSignal(ChangeVisibleSignal(house2.gameObjectIid, house2.levelId), areaIdentifier = "World1")

@@ -80,7 +80,7 @@ class FireArmadilloData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo, ANIMELIA_ENTITY.FireLion)
-    override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball, AbilityName.Dash, AbilityName.FireBreath)
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 }
 class IcePenguinData(): AnimeliaData {
@@ -206,7 +206,7 @@ class FrostfireDragonData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-straight.png","Animelias/metalbird-straight.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FlameBreath, AbilityName.IceBreath)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FireBreath, AbilityName.IceBreath)
     override val animeliaEntity = ANIMELIA_ENTITY.FrostFireDragon
 }
 

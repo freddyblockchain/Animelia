@@ -1,23 +1,14 @@
 {
 	"identifier": "Level_16",
-	"uniqueIdentifer": "472e0300-4ce0-11ef-8f8c-c53ceef827de",
+	"uniqueIdentifer": "35b0f360-c210-11ef-b8ac-cdb7c312bf42",
 	"x": -800,
-	"y": -320,
+	"y": 160,
 	"width": 192,
 	"height": 192,
 	"bgColor": "#696A79",
-	"neighbourLevels": [
-		{
-			"levelIid": "878d2276-9b00-11ef-90a0-2f82895674b1",
-			"dir": "<"
-		},
-		{
-			"levelIid": "932d5c80-9b00-11ef-90a0-f94bcc1096ea",
-			"dir": "<"
-		}
-	],
+	"neighbourLevels": [],
 	"customFields": {
-		"World": "Iglo",
+		"World": "Iglo_City",
 		"Visible": true
 	},
 	"layers": [
@@ -32,25 +23,10 @@
 		"Beach.png"
 	],
 	"entities": {
-		"AnivolutionBook": [
-			{
-				"id": "AnivolutionBook",
-				"iid": "ad7b3b10-4ce0-11ef-9c31-a3518b8cc947",
-				"layer": "EntitiesOnTop",
-				"x": 160,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 16777215,
-				"customFields": {
-					"AnimeliaType": "IceYeti"
-				}
-			}
-		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "6060f850-4ce0-11ef-8f8c-318ee11e67f0",
+				"iid": "35b0f364-c210-11ef-b8ac-2785485d6fae",
 				"layer": "Entities",
 				"x": 80,
 				"y": 176,
@@ -59,54 +35,19 @@
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "702be670-c210-11ef-a811-c17dd8d29aa2",
-						"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
-						"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
+						"entityIid": "22f3e480-c210-11ef-b8ac-ad2fde47c5f8",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Down"
 				}
 			}
 		],
-		"Animelia": [
-			{
-				"id": "Animelia",
-				"iid": "382cb1b0-4ce0-11ef-8f8c-c91edd8377b9",
-				"layer": "Entities",
-				"x": 32,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 15389866,
-				"customFields": {
-					"AnimeliaType": "IceYeti",
-					"AnimeliaCityPos": {
-						"entityIid": "635a4050-c210-11ef-b8ac-11ca98620bf8",
-						"layerIid": "35b0f363-c210-11ef-b8ac-9375e79fd607",
-						"levelIid": "35b0f360-c210-11ef-b8ac-cdb7c312bf42",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"CustomData": [
-						{
-							"entityIid": "66daa570-c210-11ef-a811-47da0321f64a",
-							"layerIid": "47d3fee2-73f0-11ef-af50-29eaf319caa6",
-							"levelIid": "47d3fee0-73f0-11ef-af50-a1d6b6e24328",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						},
-						{
-							"entityIid": "18714f70-c210-11ef-b8ac-434d95f8c309",
-							"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
-							"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
-							"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-						}
-					]
-				}
-			}
-		],
 		"Fireplace": [
 			{
 				"id": "Fireplace",
-				"iid": "a31e0b90-9b00-11ef-a1c8-eb71942215b9",
+				"iid": "35b0f366-c210-11ef-b8ac-950d44dabc8b",
 				"layer": "Entities",
 				"x": 128,
 				"y": 32,
@@ -114,6 +55,21 @@
 				"height": 32,
 				"color": 16690740,
 				"customFields" : {}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "635a4050-c210-11ef-b8ac-11ca98620bf8",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
 			}
 		]
 	}

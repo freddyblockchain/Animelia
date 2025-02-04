@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_18",
-	"uniqueIdentifer": "6283c240-4ce0-11ef-9290-f3bee5d80080",
-	"x": 512,
+	"uniqueIdentifer": "29d37a70-c210-11ef-b429-cddc8097b1b8",
+	"x": -224,
 	"y": -800,
-	"width": 160,
+	"width": 224,
 	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "7b0b0ab0-25d0-11ef-943d-ed343e07761f",
-			"dir": "w"
+			"dir": "e"
 		},
 		{
-			"levelIid": "57c26990-25d0-11ef-9fe3-f7cfd2c527db",
-			"dir": "e"
+			"levelIid": "360741f0-c210-11ef-b429-f1389f13ce06",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -31,41 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"ConveyerBelt": [
-			{
-				"id": "ConveyerBelt",
-				"iid": "82a3f0e0-4ce0-11ef-9290-6d324e715d42",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 6539085,
-				"customFields": {
-					"Direction": "Right"
-				}
-			}
-		],
-		"FireLightBulb": [
-			{
-				"id": "FireLightBulb",
-				"iid": "89c3fa00-4ce0-11ef-9290-e55af155127d",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 48,
-				"color": 4098376,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "82a3f0e0-4ce0-11ef-9290-6d324e715d42",
-						"layerIid": "6283c242-4ce0-11ef-9290-cd438ff84bb8",
-						"levelIid": "6283c240-4ce0-11ef-9290-f3bee5d80080",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

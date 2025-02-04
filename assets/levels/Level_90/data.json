@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_90",
-	"uniqueIdentifer": "82c68a77-9b00-11ef-9017-252c63df9b56",
-	"x": 1408,
-	"y": -1984,
-	"width": 64,
-	"height": 64,
+	"uniqueIdentifer": "4759d550-9b00-11ef-9017-87d467ea4980",
+	"x": 1344,
+	"y": -1920,
+	"width": 192,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
+			"levelIid": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
 			"dir": "s"
+		},
+		{
+			"levelIid": "82c68a77-9b00-11ef-9017-252c63df9b56",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -28,31 +32,92 @@
 		"Beach.png"
 	],
 	"entities": {
-		"IceCrystal": [
+		"Spikes": [
 			{
-				"id": "IceCrystal",
-				"iid": "c1643430-9b00-11ef-9017-a1f478f735b9",
+				"id": "Spikes",
+				"iid": "6de9cfe0-9b00-11ef-9017-c9527424a113",
 				"layer": "Entities",
 				"x": 0,
 				"y": 0,
+				"width": 64,
+				"height": 160,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "7695d030-9b00-11ef-9017-81072eea1757",
+						"layerIid": "4759d552-9b00-11ef-9017-a765224c1007",
+						"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "70457320-9b00-11ef-9017-cdcb5be2b027",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 64,
+				"height": 128,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "7695d030-9b00-11ef-9017-81072eea1757",
+						"layerIid": "4759d552-9b00-11ef-9017-a765224c1007",
+						"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "7695d030-9b00-11ef-9017-81072eea1757",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
 				"width": 32,
 				"height": 32,
-				"color": 16151930,
+				"color": 1199753,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "b18d0730-9b00-11ef-9017-6b97b9f52090",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Entity_ref2": {
-						"entityIid": "54b083e0-9b00-11ef-9017-e1f9806eaaed",
-						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
-						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Element": "Flying",
-					"Index": 0
+					"Name": null
+				}
+			}
+		],
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "88757760-9b00-11ef-9017-cfdfe915ee73",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			},
+			{
+				"id": "Generator",
+				"iid": "8a2d6090-9b00-11ef-9017-e9056621512d",
+				"layer": "Entities",
+				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 7552569,
+				"customFields": {
+					"Direction": "Down",
+					"Automatic": true,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
 			}
 		]

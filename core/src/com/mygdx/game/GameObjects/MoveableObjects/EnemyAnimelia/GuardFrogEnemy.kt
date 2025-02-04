@@ -2,19 +2,12 @@ package com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia
 
 import com.mygdx.game.EntityRefData
 
-import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Ability.Abilities.Fighting.RockThrowAbility
-import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
-import com.mygdx.game.Ability.Abilities.Fire.FlameBreath
-import com.mygdx.game.Ability.Abilities.Ice.IcicleAbility
 import com.mygdx.game.Ability.Abilities.Sound.AmphibianLullaby
-import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbiltiy
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.GameObjectData
-import com.mygdx.game.Managers.AbilityManager
 import com.mygdx.game.Utils.RandomManager
-import com.mygdx.game.player
 
 class GuardFrogEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?) : EnemyAnimelia(gameObjectData, entityRefData) {
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog

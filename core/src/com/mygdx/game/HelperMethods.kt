@@ -88,6 +88,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 
     val pastSignalsInArea = SignalManager.pastSignals.filter { it.areaIdentifer == newAreaIdentifier }
     SignalManager.signalManager.addAll(pastSignalsInArea)
+    SignalManager.executeSignals()
 
     if (getAreaType(newAreaIdentifier) == AreaType.Ice && (ELEMENTAL_TYPE.ICE !in player.animeliaInfo.elemental_types) && KeyItem.FIREHEART !in generalSaveState.inventory.keyItems) {
         player.playerEnvironmentState = PlayerEnvironmentState.COLD

@@ -17,16 +17,11 @@ import kotlinx.serialization.json.decodeFromJsonElement
 
 class Railway(val gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
-
-    val directionString = Json.decodeFromJsonElement<ConveyerBeltCustomFields>(gameObjectData.customFields).Direction
-    var direction = getDirectionFromString(directionString)
     override val texture = DefaultTextureHandler.getTexture("HealthyRails.png")
     override val layer = Layer.ONGROUND
     override val collision = CanMoveCollision()
 
     lateinit var brokenRailway: BrokenRailway
-
-    lateinit var railsRegion: TextureRegion
 
     init{
         texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Nearest);
@@ -44,9 +39,4 @@ class Railway(val gameObjectData: GameObjectData)
 
        //sprite.setRegion(0,0,gameObjectData.width, gameObjectData.height)
     }
-}
-
-@Serializable
-data class RailwayCustomFields(val Direction: String){
-
 }

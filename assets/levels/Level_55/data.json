@@ -1,19 +1,23 @@
 {
 	"identifier": "Level_55",
-	"uniqueIdentifer": "27c54650-c210-11ef-a051-c53077a85c44",
-	"x": -1536,
+	"uniqueIdentifer": "38f79380-c210-11ef-a051-4b630e0e0cc9",
+	"x": -1472,
 	"y": -1088,
-	"width": 64,
-	"height": 96,
+	"width": 128,
+	"height": 32,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
+		{
+			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+			"dir": "e"
+		},
 		{
 			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
 			"dir": "n"
 		},
 		{
-			"levelIid": "38f79380-c210-11ef-a051-4b630e0e0cc9",
-			"dir": "e"
+			"levelIid": "27c54650-c210-11ef-a051-c53077a85c44",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -35,11 +39,11 @@
 		"Spikes": [
 			{
 				"id": "Spikes",
-				"iid": "a438b5f0-c210-11ef-a051-9bece002673c",
+				"iid": "44bbf760-c210-11ef-a051-d74d81160af8",
 				"layer": "Entities",
 				"x": 0,
-				"y": 64,
-				"width": 64,
+				"y": 0,
+				"width": 128,
 				"height": 32,
 				"color": 1578021,
 				"customFields": {

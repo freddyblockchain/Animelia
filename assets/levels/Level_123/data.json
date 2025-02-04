@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_123",
-	"uniqueIdentifer": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
+	"uniqueIdentifer": "85321cf0-c210-11ef-b8ac-d39953d52f58",
 	"x": 480,
-	"y": 1536,
+	"y": 1792,
 	"width": 256,
 	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "85321cf0-c210-11ef-b8ac-d39953d52f58",
-			"dir": "s"
+			"levelIid": "4cbbb740-9b00-11ef-bf48-071c602bbebf",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "FrogHouse",
+		"World": "FrogHouse_City",
 		"Visible": true
 	},
 	"layers": [
@@ -28,10 +28,38 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "abb01620-c210-11ef-b8ac-d1e38ca0c9d7",
+				"layer": "Entities",
+				"x": 96,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			},
+			{
+				"id": "Position",
+				"iid": "b5c56a70-c210-11ef-b8ac-73cc6a4ddb13",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "c23e9230-9b00-11ef-bf48-95cc4d8aa862",
+				"iid": "846a31b0-c210-11ef-b8ac-298178677201",
 				"layer": "Entities",
 				"x": 96,
 				"y": 0,
@@ -40,29 +68,27 @@
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "b7ac8250-9b00-11ef-a5dc-9bd7b556d724",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"entityIid": "8edb1380-c210-11ef-b8ac-f75a14c8a59f",
+						"layerIid": "45dfe140-fec0-11ee-8705-d17bbfa6acb2",
+						"levelIid": "26777bd0-fec0-11ee-8705-bd263430058c",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
 					"Direction": "Up"
 				}
 			}
 		],
-		"Item": [
+		"AnivolutionBook": [
 			{
-				"id": "Item",
-				"iid": "afca1ba0-9b00-11ef-9dff-6764f9ac27bb",
+				"id": "AnivolutionBook",
+				"iid": "1221a6e0-c210-11ef-b429-b5f3e8a4f94f",
 				"layer": "Entities",
-				"x": 96,
-				"y": 96,
+				"x": 192,
+				"y": 160,
 				"width": 32,
 				"height": 32,
-				"color": 12635100,
+				"color": 16777215,
 				"customFields": {
-					"Item": "CROWN",
-					"PercentChance": 100,
-					"KeyItem": true
+					"AnimeliaType": "GuardFrog"
 				}
 			}
 		]

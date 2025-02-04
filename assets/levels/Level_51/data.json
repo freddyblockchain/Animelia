@@ -1,23 +1,43 @@
 {
 	"identifier": "Level_51",
-	"uniqueIdentifer": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
-	"x": -1152,
-	"y": -864,
-	"width": 64,
-	"height": 64,
+	"uniqueIdentifer": "a4986491-c210-11ef-a811-97d9a63c45ae",
+	"x": -1344,
+	"y": -1152,
+	"width": 448,
+	"height": 288,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+			"levelIid": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
+			"dir": "s"
+		},
+		{
+			"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 			"dir": "n"
 		},
 		{
-			"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
-			"dir": "s"
+			"levelIid": "621afdb0-c210-11ef-a811-e39ef10c8703",
+			"dir": "w"
+		},
+		{
+			"levelIid": "38f79380-c210-11ef-a051-4b630e0e0cc9",
+			"dir": "w"
+		},
+		{
+			"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
+			"dir": "e"
+		},
+		{
+			"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
+			"dir": "e"
+		},
+		{
+			"levelIid": "7f903b20-c210-11ef-a811-d96bd6be84f7",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World4",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,25 +52,79 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "704eea70-c210-11ef-a051-e58baada1f42",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			},
+			{
+				"id": "Position",
+				"iid": "fb3b6e30-c210-11ef-a811-959b75903445",
+				"layer": "Entities",
+				"x": 224,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
 		"Door": [
 			{
 				"id": "Door",
-				"iid": "e0561fe0-c210-11ef-a811-27b7327d4b47",
+				"iid": "ce5e35c0-c210-11ef-a811-bb1c9db7bea2",
 				"layer": "Entities",
-				"x": 16,
-				"y": 0,
+				"x": 206,
+				"y": 272,
 				"width": 32,
 				"height": 16,
 				"color": 4073265,
 				"customFields": {
 					"Door": {
-						"entityIid": "ce5e35c0-c210-11ef-a811-bb1c9db7bea2",
-						"layerIid": "a4986493-c210-11ef-a811-258717380aa7",
-						"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
+						"entityIid": "e0561fe0-c210-11ef-a811-27b7327d4b47",
+						"layerIid": "f7f5f97c-c210-11ef-a811-7fea99d56389",
+						"levelIid": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Direction": "Up"
+					"Direction": "Down"
 				}
+			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "1b46e0b0-c210-11ef-aa50-a18d28251956",
+				"layer": "Entities",
+				"x": 128,
+				"y": 96,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "2436c7d0-c210-11ef-aa50-7b9aa7df49fc",
+				"layer": "Entities",
+				"x": 320,
+				"y": 96,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
 			}
 		]
 	}

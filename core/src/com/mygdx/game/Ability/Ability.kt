@@ -6,7 +6,7 @@ import com.mygdx.game.Ability.Abilities.Fighting.SpearToss
 import com.mygdx.game.Ability.Abilities.Fighting.TailSwipe
 import com.mygdx.game.Ability.Abilities.Fire.Dash
 import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
-import com.mygdx.game.Ability.Abilities.Fire.FlameBreath
+import com.mygdx.game.Ability.Abilities.Fire.FireBreath
 import com.mygdx.game.Ability.Abilities.Flying.AerialDeath
 import com.mygdx.game.Ability.Abilities.Flying.Fly
 import com.mygdx.game.Ability.Abilities.Flying.Whirlwind
@@ -36,10 +36,10 @@ fun getIconFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): Texture{
     }
 }
 
-enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FlameBreath, IceBreath, AerialDeath, SpearToss, LionRoar }
+enum class AbilityName{Fireball, TailSwipe, RockThrow, PlaceHolder, Icicle, Fly, IceCocoon,Dash, Whirlwind, AmphibianLullaby,SoundGun, Missile, ScrapStorm, ScrewAttack, FireBreath, IceBreath, AerialDeath, SpearToss, LionRoar }
 fun getAbilitiesFromType(ELEMENTALTYPES: ELEMENTAL_TYPE): List<AbilityName>{
     return when (ELEMENTALTYPES){
-        ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FlameBreath)
+        ELEMENTAL_TYPE.FIRE -> listOf(AbilityName.Fireball, AbilityName.Dash, AbilityName.FireBreath)
         ELEMENTAL_TYPE.FIGHTING -> listOf(AbilityName.RockThrow, AbilityName.TailSwipe, AbilityName.SpearToss)
         ELEMENTAL_TYPE.ICE -> listOf(AbilityName.Icicle, AbilityName.IceCocoon, AbilityName.IceBreath)
         ELEMENTAL_TYPE.FLYING -> listOf(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath)
@@ -63,7 +63,7 @@ fun getDescriptionFromName(abilityName: AbilityName): String{
         AbilityName.ScrapStorm -> "Create a storm of metal scraps around you"
         AbilityName.ScrewAttack -> "Shoot a screw at enemies and buildings"
         AbilityName.Missile -> "Shoot a missile that tracks enemies and objects"
-        AbilityName.FlameBreath -> "Breathe fire in an arc in front of you"
+        AbilityName.FireBreath -> "Breathe fire in an arc in front of you"
         AbilityName.IceBreath -> "Breathe ice in an arc in front of you"
         AbilityName.AerialDeath -> "Fly high up above and come crashing down"
         AbilityName.LionRoar -> "Do a devastating roar"
@@ -89,7 +89,7 @@ fun convertNameToAbility(abilityName: String): AbilityData{
         "Missile" -> AbilityData(AbilityName.Missile, ELEMENTAL_TYPE.METAL, MissileAbility(player))
         "ScrewAttack" -> AbilityData(AbilityName.ScrewAttack, ELEMENTAL_TYPE.METAL, ScrewAttack(player))
         "ScrapStorm" -> AbilityData(AbilityName.ScrapStorm, ELEMENTAL_TYPE.METAL, ScrapStorm(player))
-        "FlameBreath" -> AbilityData(AbilityName.FlameBreath, ELEMENTAL_TYPE.FIRE, FlameBreath(player))
+        "FireBreath" -> AbilityData(AbilityName.FireBreath, ELEMENTAL_TYPE.FIRE, FireBreath(player))
         "IceBreath" -> AbilityData(AbilityName.IceBreath, ELEMENTAL_TYPE.ICE, IceBreath(player))
         "AerialDeath" -> AbilityData(AbilityName.AerialDeath, ELEMENTAL_TYPE.FLYING, AerialDeath(player))
         "LionRoar" -> AbilityData(AbilityName.LionRoar, ELEMENTAL_TYPE.SOUND, LionRoar(player))

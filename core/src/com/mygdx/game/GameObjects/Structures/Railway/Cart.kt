@@ -19,7 +19,7 @@ import com.mygdx.game.UI.Scene2d.Screens.PickOptionsScreen
 import com.mygdx.game.UI.Scene2d.Screens.PickRailwayScreen
 
 class Cart(gameObjectData: GameObjectData, railway: Railway) : GameObject(gameObjectData) {
-    override var layer = Layer.ONGROUND
+    override var layer = Layer.AIR
     override val texture = DefaultTextureHandler.getTexture("Minecart.png")
     override val collision = CartCollision(railway, this)
 }
