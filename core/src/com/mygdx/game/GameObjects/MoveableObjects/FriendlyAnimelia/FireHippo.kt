@@ -48,30 +48,13 @@ class FireHippo(gameObjectData: GameObjectData, cityPositionEntityId: EntityRefD
 
 class FireHippoInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gameObjectData){
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
-    val inCitySpeechOne = SpeechData("Fire Armadillo", "Its good to be back!")
-    val inCitySpeechTwo = SpeechData("Fire Armadillo", "I build a training statue")
-    val inCitySpeechThree = SpeechData("Fire Armadillo", "Speak to me for training information")
-
+    val inCitySpeechOne = SpeechData("Fire Hippo", "Its good to be back!")
+    val inCitySpeechTwo = SpeechData("Fire Hippo", "I made a railway station here!")
+    val inCitySpeechThree = SpeechData("Fire Hippo", "This should let you connect nicely to the other railway stations")
     override val inCitySpeeches = listOf(inCitySpeechOne, inCitySpeechTwo, inCitySpeechThree)
 
 
-    val sone = SpeechData("Me", "Can you tell me about Stats?")
-    val stwo = SpeechData("Fire Armadillo", "Yes! There are four different stats")
-    val sthree= SpeechData("Fire Armadillo", "Offence affects how much damage you do")
-    val sfour = SpeechData("Fire Armadillo", "Defence affects how much damage you take")
-    val ssix = SpeechData("Fire Armadillo", "Intelligence affects how many abilities you can use")
-    val statsConversation = Conversation(listOf(sone, stwo,sthree, sfour, ssix))
-
-    val tone = SpeechData("Me", "Can you tell me about Training Points?")
-    val ttwo = SpeechData("Fire Armadillo", "Yes! Training points determine how much you can increase stats!")
-    val tthree = SpeechData("Fire Armadillo", "You can use your training points to increase stats.")
-    val tfour = SpeechData("Fire Armadillo", "When you reincarnate, the training points are reset!")
-    val tfive = SpeechData("Fire Armadillo", "When you anivolve, you gain five additional training points!")
-    val tsix = SpeechData("Me", "Are there other ways to increase training points?")
-    val tseven = SpeechData("Fire Armadillo", "Not to my knowledge. But maybe you will find some")
-    val trainingPointsConversation = Conversation(listOf(tone, ttwo, tthree, tfour, tfive, tsix, tseven))
-
-    override val conversationOptions = mapOf("Stats" to statsConversation, "Training Points" to trainingPointsConversation)
+    override val conversationOptions = mapOf<String,Conversation>()
 
     override fun recruitmentAction() {
         val railWay = Railway(GameObjectData(x = this.x.toInt() + this.width.toInt(), y=this.y.toInt(), width =128, height = 32))

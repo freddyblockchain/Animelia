@@ -51,3 +51,4 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"ec989b60-c210-11ef-999d-cf3580e2fc1f"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"1cf6cf20-c210-11ef-999d-75eb9216bd4a"}
 {"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireHippo","posX":352.0,"posY":-64.0}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"FireHippo"}

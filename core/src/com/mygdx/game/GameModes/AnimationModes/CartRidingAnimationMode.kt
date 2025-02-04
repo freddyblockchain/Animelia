@@ -55,14 +55,13 @@ class CartRidingAnimationMode(val railwayArea: String, val prevMode: GameMode, o
             cart2 = AreaManager.getActiveArea()!!.gameObjects.first { it is Cart } as Cart
             cart2!!.setPosition(Vector2(railwayData.x, railwayData.y))
             player.setPosition(cart.currentMiddle - Vector2(player.width / 2f, 8f))
-            cart2!!.layer = Layer.PERSON
+            cart2!!.layer = Layer.AIR
         }
         else if (currentFrame < secondAreaEndFrame){
             cart2!!.setPosition(Vector2(cart2!!.x - increment, cart2!!.y))
             player.setPosition(cart2!!.currentMiddle - Vector2(player.width / 2f, 8f))
         } else{
             player.layer = Layer.PERSON
-            cart2!!.layer = Layer.ONGROUND
             changeMode(prevMode)
         }
 
