@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
+import com.mygdx.game.Area.getPrettyAreaName
 import com.mygdx.game.GameModes.AnimationModes.CartRidingAnimationMode
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.changeMode
@@ -32,7 +33,7 @@ fun PickRailwayScreen(prevMode: GameMode?, cart: Cart, railway: Railway): PickOp
     val changeModeFunction: (RailwayTransportData) -> CartRidingAnimationMode = { railwayTransportData ->
         CartRidingAnimationMode(railwayTransportData.areaIdentifier,prevMode!!, spriteBatch = mainMode.spriteBatch, cart, railway)
     }
-    val newMap = generalSaveState.inventory.railwayConnections.map { it.areaIdentifier to it }.toMap()
+    val newMap = generalSaveState.inventory.railwayConnections.map { getPrettyAreaName(it.areaIdentifier) to it}.toMap()
     return PickOptionsScreen<RailwayTransportData>(prevMode, newMap, changeModeFunction)
 }
 

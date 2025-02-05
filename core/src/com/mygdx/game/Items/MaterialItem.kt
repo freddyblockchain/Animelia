@@ -16,7 +16,7 @@ import kotlinx.serialization.json.decodeFromJsonElement
 
 
 enum class Material{ANIMELIABONE, ICEFRUIT, FIREFRUIT,CANYONFRUIT,FORESTFRUIT,TROPICALFRUIT}
-enum class KeyItem{FROZENHEART,FIREHEART, MAP, CROWN}
+enum class KeyItem{FROZENHEART,FIREHEART, MAP, CROWN, KINGSEAL }
 
 fun getMaterialTexture(material: Material): Texture{
     return when(material){
@@ -34,6 +34,7 @@ fun getKeyItemTextures(keyItem: KeyItem): Texture{
         KeyItem.FIREHEART -> DefaultTextureHandler.getTexture("fire-heart.png")
         KeyItem.MAP -> DefaultTextureHandler.getTexture("book.png")
         KeyItem.CROWN -> DefaultTextureHandler.getTexture("crown.png")
+        KeyItem.KINGSEAL-> DefaultTextureHandler.getTexture("KingSeal.png")
     }
 }
 
@@ -49,6 +50,7 @@ fun getItemDescription(itemName: String): String{
         "FIREHEART" -> "A fire heart! This lets me keep warm even in cool areas"
         "MAP" -> "A map! This lets me view a map of the world by pressing M"
         "CROWN" -> "A crown! This belongs to a certain king"
+        "KINGSEAL" -> "A seal! It lets me open a certain door"
         else -> "something"
     }
 }

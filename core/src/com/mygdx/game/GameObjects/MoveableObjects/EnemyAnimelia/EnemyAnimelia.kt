@@ -24,6 +24,8 @@ fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObj
     return when(animeliaEntity){
         ANIMELIA_ENTITY.FireArmadillo -> FireArmadilloEnemy(gameObjectData)
         ANIMELIA_ENTITY.IcePenguin -> IcePenguinEnemy(gameObjectData)
+        ANIMELIA_ENTITY.Bird -> BirdEnemy(gameObjectData)
+        ANIMELIA_ENTITY.Frog-> FrogEnemy(gameObjectData)
         ANIMELIA_ENTITY.IceBird -> IceBirdEnemy(gameObjectData, entityRefData)
         ANIMELIA_ENTITY.FireLion -> FireLionEnemy(gameObjectData, entityRefData)
         ANIMELIA_ENTITY.GuardFrog-> GuardFrogEnemy(gameObjectData, entityRefData)

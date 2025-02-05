@@ -76,11 +76,11 @@ class SpiritOfAnimeliaData(): AnimeliaData {
 class FireArmadilloData(): AnimeliaData {
     override var textureName = "Animelias/firearmadillo-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE, ELEMENTAL_TYPE.FIGHTING)
-    override val animeliaStage = ANIMELIA_STAGE.JUNIOR
+    override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firearmadillo-straight.png","Animelias/firearmadillo-right.png","Animelias/firearmadillo-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireHippo, ANIMELIA_ENTITY.FireLion)
-    override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball, AbilityName.Dash, AbilityName.FireBreath)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FrostFireDragon)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.TailSwipe, AbilityName.Fireball, AbilityName.Dash, AbilityName.FireBreath, AbilityName.RockThrow)
     override val animeliaEntity = ANIMELIA_ENTITY.FireArmadillo
 }
 class IcePenguinData(): AnimeliaData {
@@ -96,11 +96,11 @@ class IcePenguinData(): AnimeliaData {
 class FireHippoData(): AnimeliaData {
     override var textureName = "Animelias/firehippo-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE)
-    override val animeliaStage = ANIMELIA_STAGE.MASTER
+    override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/firehippo-straight.png","Animelias/firehippo-right.png","Animelias/firehippo-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(13), InArea("World3"))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe, AbilityName.SpearToss, AbilityName.LionRoar, AbilityName.ScrapStorm, AbilityName.AerialDeath)
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FireArmadillo, ANIMELIA_ENTITY.FireLion)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fireball, AbilityName.FireBreath, AbilityName.Dash)
     override val animeliaEntity = ANIMELIA_ENTITY.FireHippo
 }
 class FireLionData(): AnimeliaData {
@@ -108,9 +108,9 @@ class FireLionData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FIRE, ELEMENTAL_TYPE.SOUND)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/FireLion-straight.png","Animelias/FireLion-right.png","Animelias/FireLion-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), PickedUpItem(Material.FIREFRUIT))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.RockThrow, AbilityName.Fireball, AbilityName.TailSwipe)
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.FIREFRUIT))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.KingFrog)
+    override val availableAbilities = listOf<AbilityName>( AbilityName.Fireball, AbilityName.FireBreath, AbilityName.Dash, AbilityName.LionRoar, AbilityName.SoundGun)
     override val animeliaEntity = ANIMELIA_ENTITY.FireLion
 }
 
@@ -120,8 +120,8 @@ class SoundBatData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/SoundBat-straight.png","Animelias/SoundBat-right.png","Animelias/SoundBat-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), PickedUpItem(Material.CANYONFRUIT))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.SoundGun, AbilityName.AmphibianLullaby)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FrostFireDragon)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.SoundGun, AbilityName.AmphibianLullaby, AbilityName.AerialDeath)
     override val animeliaEntity = ANIMELIA_ENTITY.SoundBat
 }
 class IceYetiData(): AnimeliaData {
@@ -129,9 +129,9 @@ class IceYetiData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/ice-yeti-straight.png","Animelias/ice-yet-right.png","Animelias/ice-yeti-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(IntelligenceOver(15))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.ScrewAttack, AbilityName.ScrapStorm, AbilityName.Missile)
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(IntelligenceOver(15), InArea("World4"))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.KingFrog)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.ScrewAttack, AbilityName.ScrapStorm, AbilityName.Missile, AbilityName.IceCocoon, AbilityName.IceBreath)
     override val animeliaEntity = ANIMELIA_ENTITY.IceYeti
 }
 
@@ -141,7 +141,7 @@ class BirdData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/bird-straight.png","Animelias/bird-right.png","Animelias/bird-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.MetalBird)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.MetalBird,ANIMELIA_ENTITY.IceBird, ANIMELIA_ENTITY.SoundBat)
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.AerialDeath, AbilityName.Whirlwind)
     override val animeliaEntity = ANIMELIA_ENTITY.Bird
 }
@@ -152,8 +152,8 @@ class IceBirdData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/IceBird-straight.png","Animelias/IceBird-right.png","Animelias/IceBird-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), PickedUpItem(Material.ICEFRUIT))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.IceCocoon, AbilityName.Icicle, AbilityName.Whirlwind)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FrostFireDragon)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.IceCocoon, AbilityName.Icicle, AbilityName.Whirlwind, AbilityName.IceBreath, AbilityName.AerialDeath)
     override val animeliaEntity = ANIMELIA_ENTITY.IceBird
 }
 
@@ -162,9 +162,9 @@ class MetalBirdData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-right.png","Animelias/metalbird-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), InArea("World2"))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.Missile, AbilityName.ScrewAttack)
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), InArea("World2"))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FrostFireDragon)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.Missile, AbilityName.ScrewAttack, AbilityName.ScrapStorm, AbilityName.AerialDeath)
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird
 }
 
@@ -174,7 +174,7 @@ class FrogData(): AnimeliaData {
     override val animeliaStage = ANIMELIA_STAGE.JUNIOR
     override val animeliaAnimation = AnimeliaAnimation("Animelias/frog-straight.png","Animelias/frog-right.png","Animelias/frog-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>()
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.GuardFrog)
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.GuardFrog, ANIMELIA_ENTITY.FireLion, ANIMELIA_ENTITY.SoundBat)
     override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
     override val animeliaEntity = ANIMELIA_ENTITY.Frog
 }
@@ -184,9 +184,9 @@ class GuardFrogData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND, ELEMENTAL_TYPE.FIGHTING)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/GuardianFrog-straight.png","Animelias/GuardianFrog-right.png","Animelias/GuardianFrog-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15))
-    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15),PickedUpItem(Material.FORESTFRUIT))
+    override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.KingFrog)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun, AbilityName.SpearToss, AbilityName.RockThrow)
     override val animeliaEntity = ANIMELIA_ENTITY.GuardFrog
 }
 class KingFrogData(): AnimeliaData {
@@ -194,9 +194,9 @@ class KingFrogData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND, ELEMENTAL_TYPE.FIGHTING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.GRANDMASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/kingfrog-straight.png","Animelias/kingfrog-straight.png","Animelias/kingfrog-straight.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), DefenceOver(15))
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(IntelligenceOver(15), DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun, AbilityName.SpearToss, AbilityName.RockThrow, AbilityName.ScrapStorm,AbilityName.Missile,AbilityName.ScrewAttack)
     override val animeliaEntity = ANIMELIA_ENTITY.KingFrog
 }
 class FrostfireDragonData(): AnimeliaData {
@@ -206,7 +206,7 @@ class FrostfireDragonData(): AnimeliaData {
     override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-straight.png","Animelias/metalbird-straight.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
-    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FireBreath, AbilityName.IceBreath)
+    override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FireBreath, AbilityName.IceBreath,AbilityName.IceCocoon, AbilityName.Dash)
     override val animeliaEntity = ANIMELIA_ENTITY.FrostFireDragon
 }
 

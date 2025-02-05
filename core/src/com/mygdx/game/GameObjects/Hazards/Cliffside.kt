@@ -22,7 +22,7 @@ import kotlinx.serialization.json.decodeFromJsonElement
 
 class Cliffside(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
-    override val texture = DefaultTextureHandler.getTexture("sensor.png")
+    override val texture = DefaultTextureHandler.getTexture("cliffside.png")
 
     val posEntityRef = Json.decodeFromJsonElement<EntityRefCustomFields>(gameObjectData.customFields).Entity_ref
 

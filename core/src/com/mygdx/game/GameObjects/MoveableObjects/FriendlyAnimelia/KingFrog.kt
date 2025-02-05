@@ -78,6 +78,9 @@ class KingFrog(val gameObjectData: GameObjectData, cityPosEntityId: EntityRefDat
             AnimeliaRecruitedSignal(animeliaEntity, cityPosition.x, cityPosition.y),
             areaIdentifier = "FrogHouse_City"
         )
+
+        generalSaveState.inventory.keyItems.remove(KeyItem.CROWN)
+        generalSaveState.updateSaveState()
     }
 
     init {
@@ -113,7 +116,7 @@ class KingFrogInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCity(gam
 
     val mapConversation = Conversation(listOf(mone, mtwo, mthree))
 
-    override val conversationOptions = mapOf("Map" to mapConversation)
+    override val conversationOptions = mapOf("Seal" to mapConversation)
 
     override fun initObject() {
         crown.setSize(12f,8f)

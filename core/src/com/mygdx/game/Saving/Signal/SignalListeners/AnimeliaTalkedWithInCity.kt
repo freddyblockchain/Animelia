@@ -34,7 +34,7 @@ class AnimeliaTalkedWithInCity: SignaledEventListener {
         }
         if(entity == ANIMELIA_ENTITY.MetalBird && KeyItem.MAP !in generalSaveState.inventory.keyItems){
             val textAnimation = TextAnimation(
-                Color.WHITE,
+                Color.YELLOW,
                 "You got the World Map!",
                 player.currentMiddle + Vector2(0f,64f),
                 false,
@@ -55,6 +55,18 @@ class AnimeliaTalkedWithInCity: SignaledEventListener {
             )
             AnimationManager.animationManager.add(textAnimation)
             generalSaveState.inventory.keyItems.add(KeyItem.FIREHEART)
+            generalSaveState.updateSaveState()
+        }
+        if(entity == ANIMELIA_ENTITY.KingFrog && KeyItem.KINGSEAL !in generalSaveState.inventory.keyItems){
+            val textAnimation = TextAnimation(
+                Color.YELLOW,
+                "You got the King Seal!",
+                player.currentMiddle + Vector2(0f,64f),
+                false,
+                120
+            )
+            AnimationManager.animationManager.add(textAnimation)
+            generalSaveState.inventory.keyItems.add(KeyItem.KINGSEAL)
             generalSaveState.updateSaveState()
         }
     }

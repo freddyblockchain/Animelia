@@ -65,7 +65,9 @@ class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
         super.initObject()
         val texture = when(this.areaIdentifier){
             "Ice_castle" -> DefaultTextureHandler.getTexture("IceBirdStatue.png")
-            else -> DefaultTextureHandler.getTexture("EmptyDoor.png")
+            "Vulcano" -> DefaultTextureHandler.getTexture("FireLionStatue.png")
+            "Abandoned_House" -> DefaultTextureHandler.getTexture("SoundBatStatue.png")
+            else -> DefaultTextureHandler.getTexture("FrostFireDragonStatue.png")
         }
         sprite.texture = texture
     }

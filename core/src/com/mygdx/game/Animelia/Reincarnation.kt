@@ -18,6 +18,6 @@ fun getEggAnimelia(egg: Egg): ANIMELIA_ENTITY{
         Egg.ICE -> ANIMELIA_ENTITY.IcePenguin
         Egg.SOUND -> ANIMELIA_ENTITY.Frog
         Egg.FLYING-> ANIMELIA_ENTITY.Bird
-        else -> ANIMELIA_ENTITY.FireArmadillo
+        else -> ANIMELIA_ENTITY.FireHippo
     }
 }

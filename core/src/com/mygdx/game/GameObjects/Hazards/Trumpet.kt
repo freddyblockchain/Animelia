@@ -42,6 +42,9 @@ class Trumpet(gameObjectData: GameObjectData)
         if(this.direction == Direction.LEFT){
             this.sprite.rotation = 180f
         }
+        if(this.direction == Direction.UP){
+            this.sprite.rotation = 90f
+        }
     }
 
     fun getOffset(): Vector2{

@@ -38,6 +38,11 @@ class GoInCircles(val enemyAnimelia: EnemyAnimelia): BattleStrategy{
     }
 
 }
+class DoNothing(): BattleStrategy{
+    override fun action() {
+    }
+
+}
 
 class TurnAndFacePlayer(val enemyAnimelia: EnemyAnimelia): BattleStrategy{
     override fun action() {

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.math.Vector3
+import com.mygdx.game.Area.getPrettyAreaName
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.Managers.AreaManager
@@ -60,9 +61,11 @@ class AreaTransitionAnimation: Animation {
             offsetY -= 1
         }
 
+        val area = getPrettyAreaName(AreaManager.getActiveArea()!!.areaIdentifier)
+
         val textPosition = Vector2(blackBox.x + 20f, blackBox.y - 8f)
         textFont.color = Color(1f, 1f, 1f, min(currentAlpha,1f))  // RGB set to white (1f, 1f, 1f) and alpha to 0.5f
-        textFont.draw(batch, AreaManager.getActiveArea()!!.areaIdentifier, textPosition.x, textPosition.y)
+        textFont.draw(batch, area, textPosition.x, textPosition.y)
         textFont.color = Color.WHITE
 
         currentAlpha += alphaIncrement
