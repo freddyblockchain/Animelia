@@ -3,6 +3,7 @@ package com.mygdx.game.Animelia
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.ELEMENTAL_TYPE
 import com.mygdx.game.Animation.AnimeliaAnimation
+import com.mygdx.game.Area.getPrettyAreaName
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.player
@@ -58,7 +59,7 @@ class InArea(val areaIdentifer: String): AnivolutionCondition{
     override fun isConditionFulfilled(): Boolean {
         return AreaManager.getActiveArea()!!.areaIdentifier == areaIdentifer
     }
-    override val textDescription = "Must be in $areaIdentifer"
+    override val textDescription = "Must be in ${getPrettyAreaName(areaIdentifer)}"
 }
 
 
@@ -200,10 +201,10 @@ class KingFrogData(): AnimeliaData {
     override val animeliaEntity = ANIMELIA_ENTITY.KingFrog
 }
 class FrostfireDragonData(): AnimeliaData {
-    override var textureName = "Animelias/metalbird-straight.png"
+    override var textureName = "Animelias/FrostfireDragon-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.ICE, ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.FIRE)
     override val animeliaStage = ANIMELIA_STAGE.GRANDMASTER
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-straight.png","Animelias/metalbird-straight.png")
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/FrostfireDragon-straight.png","Animelias/FrostfireDragon-right.png","Animelias/FrostfireDragon-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.Icicle, AbilityName.Fireball, AbilityName.Fly, AbilityName.Whirlwind, AbilityName.AerialDeath, AbilityName.FireBreath, AbilityName.IceBreath,AbilityName.IceCocoon, AbilityName.Dash)

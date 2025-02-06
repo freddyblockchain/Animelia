@@ -36,12 +36,14 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
 
         val juniorTable = Table()
         val masterTable = Table()
+        val GmTable = Table()
 
         val combinedTable = Table()
 
 
-        combinedTable.add(juniorTable).padRight(400f).padTop(100f).expand().right()
-        combinedTable.add(masterTable).padRight(200f).padTop(50f).expand().left()
+        combinedTable.add(juniorTable).padLeft(100f).padTop(50f).expand().left()
+        combinedTable.add(masterTable).padLeft(100f).padTop(50f).expand().left()
+        combinedTable.add(GmTable).padLeft(100f).padRight(150f).padTop(50f).expand().left()
 
         rootTable.add(combinedTable).expand().fill()
 
@@ -52,44 +54,71 @@ class AnivolutionOverViewScreen(override var prevMode: GameMode?): UIScreen(){
 
         val juniorLabel = Label("Junior", labelStyle)
         val masterLabel = Label("Master", labelStyle)
+        val GmLabel = Label("GrandMaster", labelStyle)
 
         juniorTable.add(juniorLabel).size(50f).padBottom(20f).padRight(150f)
         masterTable.add(masterLabel).size(50f).expand().padBottom(20f)
+        GmTable.add(GmLabel).size(50f).expand().padBottom(20f).padRight(50f)
         juniorTable.row()
         masterTable.row()
+        GmTable.row()
+
+        var masterIndex = 0
 
         ANIMELIA_ENTITY.entries.forEach {
-            val data = getAnimeliaData(it)
-            val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture(data.textureName))
-            textureRegionDrawable.setMinSize(64f,64f)
-            val button = ImageButton(textureRegionDrawable)
-            if(data.animeliaStage == ANIMELIA_STAGE.JUNIOR){
-                juniorTable.add(button).width(64f).height(64f).padBottom(50f)
-                juniorTable.row()
-            }
-            else {
-                masterTable.add(button).width(100f).height(100f).padBottom(50f).padRight(0f)
-                val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture("book.png"))
-                textureRegionDrawable.setMinSize(32f,32f)
+            if (it != ANIMELIA_ENTITY.SpiritOfAnimelia) {
+                val data = getAnimeliaData(it)
+                val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture(data.textureName))
+                textureRegionDrawable.setMinSize(64f, 64f)
+                val button = ImageButton(textureRegionDrawable)
+                if (data.animeliaStage == ANIMELIA_STAGE.JUNIOR) {
+                    juniorTable.add(button).width(64f).height(64f).padBottom(50f)
+                    juniorTable.row()
+                } else if(data.animeliaStage == ANIMELIA_STAGE.MASTER){
+                    masterTable.add(button).width(100f).height(100f).padBottom(50f).padRight(0f)
+                    val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture("book.png"))
+                    textureRegionDrawable.setMinSize(32f, 32f)
 
-                val image = Image(textureRegionDrawable)
+                    val image = Image(textureRegionDrawable)
 
-                val alpha = if(data.animeliaEntity in generalSaveState.inventory.entityBooks) 1f else 0.3f
-                image.color = Color(1f, 1f, 1f, alpha) // RGB = white, Alpha = 0.5 (50% transparency)
+                    val alpha = if (data.animeliaEntity in generalSaveState.inventory.entityBooks) 1f else 0.3f
+                    image.color = Color(1f, 1f, 1f, alpha) // RGB = white, Alpha = 0.5 (50% transparency)
 
-                masterTable.add(image).top().padLeft(-32f)
-                masterTable.row()
-            }
-            val indexForButton = currentIndex
-            button.addListener(object : ClickListener() {
-                override fun clicked(event: InputEvent?, x: Float, y: Float) {
-                    // Define what should happen when the button is clicked
-                    changeMode(UIMode(AnivolutionSpecificViewScreen(associatedMode, ANIMELIA_ENTITY.entries[indexForButton])))
+                    masterTable.add(image).top().padLeft(16f)
+                    masterIndex += 1
+                    if(masterIndex % 2 == 0){
+                        masterTable.row()
+                    }
+                } else {
+                    GmTable.add(button).width(100f).height(100f).padBottom(50f).padRight(0f)
+                    val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture("book.png"))
+                    textureRegionDrawable.setMinSize(32f, 32f)
+
+                    val image = Image(textureRegionDrawable)
+
+                    val alpha = if (data.animeliaEntity in generalSaveState.inventory.entityBooks) 1f else 0.3f
+                    image.color = Color(1f, 1f, 1f, alpha) // RGB = white, Alpha = 0.5 (50% transparency)
+
+                    GmTable.add(image).top().padLeft(16f)
                 }
-            })
+                val indexForButton = currentIndex
+                button.addListener(object : ClickListener() {
+                    override fun clicked(event: InputEvent?, x: Float, y: Float) {
+                        // Define what should happen when the button is clicked
+                        changeMode(
+                            UIMode(
+                                AnivolutionSpecificViewScreen(
+                                    associatedMode,
+                                    ANIMELIA_ENTITY.entries[indexForButton]
+                                )
+                            )
+                        )
+                    }
+                })
 
-            buttons.add(button)
-            currentIndex += 1
+                buttons.add(button)
+                currentIndex += 1
+            }
         }
         //Exit button
         val animeliaButton = AnimeliaButton("Exit", bigLabel, this, buttons.size)

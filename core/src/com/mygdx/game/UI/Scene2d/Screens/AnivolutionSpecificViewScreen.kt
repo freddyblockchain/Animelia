@@ -45,12 +45,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
         val textureRegionDrawable = TextureRegionDrawable(DefaultTextureHandler.getTexture(data.textureName))
         textureRegionDrawable.setMinSize(64f,64f)
         val button = ImageButton(textureRegionDrawable)
-        if(data.animeliaStage == ANIMELIA_STAGE.JUNIOR){
-            table.add(button).width(64f).height(64f).padBottom(100f)
-        }
-        else {
-            table.add(button).width(100f).height(100f).padBottom(100f)
-        }
+        table.add(button).width(64f).height(64f).padBottom(50f)
 
         button.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
@@ -67,7 +62,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
             val alpha = if(data.animeliaEntity in generalSaveState.inventory.entityBooks) 1f else 0.3f
             image.color = Color(1f, 1f, 1f, alpha) // RGB = white, Alpha = 0.5 (50% transparency)
 
-            table.add(image).top().padLeft(-32f)
+            table.add(image).top().padLeft(0f)
         }
         table.row()
     }
@@ -127,9 +122,10 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
                 }
             }
             mainTable = grandmasterTable
-            leftTable = masterTable
+            leftTable = juniorTable
 
             leftEntities = masters
+
         }
 
         combinedTable.add(leftTable).expand().left()
@@ -139,7 +135,6 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
         rootTable.add(combinedTable).expand().fill()
 
         addEntity(selectedAnimelia, mainTable)
-        //Setting active to middle button.
         changeActive(0)
         leftEntities.forEach { addEntity(it, leftTable) }
         rightentites.forEach { addEntity(it, rightTable) }
@@ -160,7 +155,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
                 if(it.isConditionFulfilled()){
                     label.color = Color.GREEN
                 }
-                conditionsTable.add(label).padBottom(20f)
+                conditionsTable.add(label)
                 conditionsTable.row()
             }
         } else{
@@ -174,7 +169,7 @@ class AnivolutionSpecificViewScreen(override var prevMode: GameMode?, val select
         this.activeButtonIndex = animeliaButton.activeIndex
         this.activeButton = animeliaButton
         rootTable.row()
-        rootTable.add(animeliaButton).expand().width(200f).center()
+        rootTable.add(animeliaButton).expand().padBottom(80f).width(200f).center()
 
         animeliaButton.addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
