@@ -19,8 +19,8 @@ abstract class AreaEntranceCollition: MoveCollision() {
 abstract class DefaultAreaEntranceCollition(): AreaEntranceCollition(){
     override var insideCollition: MutableMap<GameObject, Boolean> = mutableMapOf()
 
-    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
-        return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
+    override fun collisionCheck(polygonToCheck: Polygon, polygon2: Polygon,gameObject: GameObject,): Boolean {
+        return CollisionManager.isMiddleInPolygon(polygonToCheck, polygon2)
     }
 
     open fun actionWhileInside() {

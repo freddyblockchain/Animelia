@@ -126,6 +126,19 @@
 				"color": 7552569,
 				"customFields" : {}
 			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "c9786da0-c210-11ef-aae3-413bcae6c861",
+				"layer": "Entities",
+				"x": 320,
+				"y": 160,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields" : {}
+			}
 		]
 	}
 }

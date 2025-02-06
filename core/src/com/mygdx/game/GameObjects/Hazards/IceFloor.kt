@@ -12,6 +12,7 @@ import com.mygdx.game.Enums.getDirectionUnitVector
 import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FlyingState
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.GameObject.State
 import com.mygdx.game.player
 import com.mygdx.game.renderRepeatedTexture
 
@@ -32,7 +33,7 @@ class IceFloorCollision(): DefaultAreaEntranceCollition(){
     override var canMoveAfterCollision = true
 
     override fun actionWhileInside() {
-        if(player.flyingState == FlyingState.NOTFLYING){
+        if(player.flyingState == FlyingState.NOTFLYING && player.state == State.NORMAL){
             player.setRotation(player.currentUnitVector, player, 90f)
             player.forceMove(2f)
         }

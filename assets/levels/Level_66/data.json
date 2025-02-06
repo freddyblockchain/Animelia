@@ -1,15 +1,15 @@
 {
 	"identifier": "Level_66",
-	"uniqueIdentifer": "74a60340-c210-11ef-a811-91363e01e7c8",
-	"x": -768,
-	"y": -1632,
-	"width": 64,
-	"height": 160,
+	"uniqueIdentifer": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+	"x": -2080,
+	"y": -832,
+	"width": 160,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
-			"dir": "s"
+			"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -28,33 +28,12 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "74a60343-c210-11ef-a811-c75b0012f985",
-				"layer": "Entities",
-				"x": 0,
-				"y": 64,
-				"width": 64,
-				"height": 96,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "7bee7bf3-c210-11ef-a811-7d57693ce757",
-						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
-						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
 		"IceCrystal": [
 			{
 				"id": "IceCrystal",
-				"iid": "74a60344-c210-11ef-a811-a3f951276eb2",
+				"iid": "e78db8c7-c210-11ef-a811-77033f8fc5c3",
 				"layer": "Entities",
-				"x": 32,
+				"x": 0,
 				"y": 0,
 				"width": 32,
 				"height": 32,
@@ -72,8 +51,29 @@
 						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Element": "Flying",
-					"Index": 1
+					"Element": "Ice",
+					"Index": 3
+				}
+			}
+		],
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
+						"layerIid": "e09bfb22-c210-11ef-a811-491b7a5a2798",
+						"levelIid": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

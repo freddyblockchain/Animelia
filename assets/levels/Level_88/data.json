@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_88",
-	"uniqueIdentifer": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
-	"x": 1472,
-	"y": -1760,
+	"uniqueIdentifer": "10f334e0-9b00-11ef-9017-05c2f1944775",
+	"x": 1568,
+	"y": -1376,
 	"width": 64,
 	"height": 128,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "4759d550-9b00-11ef-9017-87d467ea4980",
-			"dir": "n"
+			"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+			"dir": "s"
 		},
 		{
 			"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
-			"dir": "s"
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -32,18 +32,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Ability": [
+		"Cliffside": [
 			{
-				"id": "Ability",
-				"iid": "3d97f830-9b00-11ef-9017-a39432d437fb",
+				"id": "Cliffside",
+				"iid": "0ff07570-9b00-11ef-9017-09d3e00a5050",
 				"layer": "Entities",
 				"x": 0,
-				"y": 32,
+				"y": 64,
+				"width": 64,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "9488de40-9b00-11ef-9017-d1ec3364a944",
+						"layerIid": "10f35bf1-9b00-11ef-9017-57e9bd3def2f",
+						"levelIid": "10f334e0-9b00-11ef-9017-05c2f1944775",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "9488de40-9b00-11ef-9017-d1ec3364a944",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
 				"width": 32,
 				"height": 32,
-				"color": 16690740,
+				"color": 1199753,
 				"customFields": {
-					"Ability": "Whirlwind"
+					"Name": null
 				}
 			}
 		]

@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_69",
-	"uniqueIdentifer": "7bee7bf0-c210-11ef-a811-85b104af6845",
-	"x": -832,
-	"y": -1472,
+	"uniqueIdentifer": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+	"x": -1600,
+	"y": -1504,
 	"width": 192,
 	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "74a60340-c210-11ef-a811-91363e01e7c8",
-			"dir": "n"
+			"levelIid": "7255595b-c210-11ef-a811-e7e3d1002f29",
+			"dir": "s"
 		},
 		{
-			"levelIid": "06ed2283-c210-11ef-a811-09c0cfd551d6",
-			"dir": "s"
+			"levelIid": "f451d700-c210-11ef-a811-2ff22bee59b8",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -32,36 +32,12 @@
 		"Beach.png"
 	],
 	"entities": {
-		"TargetCircle": [
-			{
-				"id": "TargetCircle",
-				"iid": "7de24f20-c210-11ef-a5e3-193ba32b69ed",
-				"layer": "EntitiesOnTop",
-				"x": 64,
-				"y": 96,
-				"width": 32,
-				"height": 32,
-				"color": 12635100,
-				"customFields": {
-					"Range": 180,
-					"Triggerable": {
-						"entityIid": "da2d78a0-c210-11ef-a811-116f81ce38c4",
-						"layerIid": "d894d0e2-c210-11ef-a811-8b1736faad6f",
-						"levelIid": "d894d0e0-c210-11ef-a811-cfd37fc9ccbb",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"TargetCircle": null,
-					"Direction": "Down",
-					"Speed": 1
-				}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "7bee7bf3-c210-11ef-a811-7d57693ce757",
+				"iid": "030d81e0-c210-11ef-a811-e323a0213923",
 				"layer": "Entities",
-				"x": 96,
+				"x": 64,
 				"y": 160,
 				"width": 32,
 				"height": 32,
@@ -71,93 +47,75 @@
 				}
 			}
 		],
-		"Cliffside": [
+		"Lava": [
 			{
-				"id": "Cliffside",
-				"iid": "2d392450-c210-11ef-a811-9d884608afe3",
+				"id": "Lava",
+				"iid": "5a7af250-c210-11ef-a811-1511ef02f11a",
 				"layer": "Entities",
 				"x": 0,
-				"y": 64,
-				"width": 192,
-				"height": 32,
-				"color": 16705377,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "7bee7bf3-c210-11ef-a811-7d57693ce757",
-						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
-						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Generator": [
-			{
-				"id": "Generator",
-				"iid": "73982040-c210-11ef-a811-c79670f87317",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": false,
-					"ProjectileType": "Boulder",
-					"Cooldown": 3
-				}
-			},
-			{
-				"id": "Generator",
-				"iid": "797bffe0-c210-11ef-a811-29366ed2047d",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": false,
-					"ProjectileType": "Boulder",
-					"Cooldown": 3
-				}
-			}
-		],
-		"BoulderPad": [
-			{
-				"id": "BoulderPad",
-				"iid": "7cfdd3a0-c210-11ef-a811-171962495781",
-				"layer": "Entities",
-				"x": 32,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 14957380,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "73982040-c210-11ef-a811-c79670f87317",
-						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
-						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			},
 			{
-				"id": "BoulderPad",
-				"iid": "7f67a7b0-c210-11ef-a811-b9cfc58bafac",
+				"id": "Lava",
+				"iid": "5b80f0a0-c210-11ef-a811-417a723530f7",
 				"layer": "Entities",
 				"x": 128,
-				"y": 160,
-				"width": 32,
-				"height": 32,
-				"color": 14957380,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
 				"customFields": {
 					"Entity_ref": {
-						"entityIid": "797bffe0-c210-11ef-a811-29366ed2047d",
-						"layerIid": "7bee7bf2-c210-11ef-a811-b755203faa61",
-						"levelIid": "7bee7bf0-c210-11ef-a811-85b104af6845",
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "5cce0a10-c210-11ef-a811-45393581285c",
+				"layer": "Entities",
+				"x": 128,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Lava",
+				"iid": "5dd91170-c210-11ef-a811-2521bdc015b4",
+				"layer": "Entities",
+				"x": 0,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 12470831,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
@@ -166,16 +124,21 @@
 		"AnimeliaEnemy": [
 			{
 				"id": "AnimeliaEnemy",
-				"iid": "516db760-c210-11ef-bc3d-19e4a56dd456",
+				"iid": "01cba1b0-c210-11ef-bc3d-598fa9b00349",
 				"layer": "Entities",
-				"x": 64,
-				"y": 32,
+				"x": 80,
+				"y": 80,
 				"width": 32,
 				"height": 32,
 				"color": 14120515,
 				"customFields": {
-					"AnimeliaType": "SoundBat",
-					"Entity_ref": null
+					"AnimeliaType": "FireLion",
+					"Entity_ref": {
+						"entityIid": "f8b3aa80-c210-11ef-a811-ef7eb691cf98",
+						"layerIid": "f451d702-c210-11ef-a811-5b303dd52ee9",
+						"levelIid": "f451d700-c210-11ef-a811-2ff22bee59b8",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

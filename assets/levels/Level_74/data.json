@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_74",
-	"uniqueIdentifer": "b94db67b-c210-11ef-a811-49098651cc33",
-	"x": -1248,
-	"y": -800,
-	"width": 256,
+	"uniqueIdentifer": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+	"x": -1184,
+	"y": -576,
+	"width": 128,
 	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "a37d10e0-c210-11ef-a811-e54b8a3e4904",
-			"dir": "s"
+			"dir": "n"
 		},
 		{
-			"levelIid": "f7f5f97a-c210-11ef-a811-a74b8336e9a5",
-			"dir": "n"
+			"levelIid": "45b6111b-c210-11ef-a811-43b63afec456",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -35,47 +35,47 @@
 		"Spikes": [
 			{
 				"id": "Spikes",
-				"iid": "b94ddd80-c210-11ef-a811-8b9b940486c8",
+				"iid": "0e20c260-c210-11ef-a811-b3c02de9ac92",
 				"layer": "EntitiesOnTop",
 				"x": 0,
-				"y": 32,
-				"width": 96,
-				"height": 128,
+				"y": 0,
+				"width": 32,
+				"height": 160,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "b94ddd81-c210-11ef-a811-c771720ef65a",
-						"layerIid": "b94db67c-c210-11ef-a811-3fcc9e1a4024",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
 			},
 			{
 				"id": "Spikes",
-				"iid": "b94ddd82-c210-11ef-a811-3f7a588360a1",
-				"layer": "EntitiesOnTop",
-				"x": 160,
-				"y": 32,
-				"width": 96,
-				"height": 128,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "b94ddd81-c210-11ef-a811-c771720ef65a",
-						"layerIid": "b94db67c-c210-11ef-a811-3fcc9e1a4024",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "b94ddd83-c210-11ef-a811-0b5728157555",
+				"iid": "24b78900-c210-11ef-a811-7da32074c922",
 				"layer": "EntitiesOnTop",
 				"x": 96,
+				"y": 0,
+				"width": 32,
+				"height": 160,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "29605090-c210-11ef-a811-0fed455447d3",
+				"layer": "EntitiesOnTop",
+				"x": 32,
 				"y": 0,
 				"width": 64,
 				"height": 64,
@@ -83,9 +83,9 @@
 				"customFields": {
 					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "b94ddd81-c210-11ef-a811-c771720ef65a",
-						"layerIid": "b94db67c-c210-11ef-a811-3fcc9e1a4024",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
+						"entityIid": "21f20060-c210-11ef-a811-150f43b9ab84",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
@@ -94,9 +94,9 @@
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "b94ddd81-c210-11ef-a811-c771720ef65a",
+				"iid": "21f20060-c210-11ef-a811-150f43b9ab84",
 				"layer": "EntitiesOnTop",
-				"x": 96,
+				"x": 64,
 				"y": 128,
 				"width": 32,
 				"height": 32,
@@ -109,56 +109,39 @@
 		"TargetCircle": [
 			{
 				"id": "TargetCircle",
-				"iid": "cbea2450-c210-11ef-a811-21861b3a5383",
-				"layer": "Entities",
-				"x": 64,
+				"iid": "811a2e50-c210-11ef-a811-fb34550a7a9a",
+				"layer": "EntitiesOnTop",
+				"x": 96,
 				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 12635100,
 				"customFields": {
-					"Range": 64,
+					"Range": 96,
 					"Triggerable": {
-						"entityIid": "b94ddd83-c210-11ef-a811-0b5728157555",
-						"layerIid": "b94db67c-c210-11ef-a811-3fcc9e1a4024",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
+						"entityIid": "29605090-c210-11ef-a811-0fed455447d3",
+						"layerIid": "e4ccbb46-c210-11ef-a811-0da3f3b8b08d",
+						"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"TargetCircle": {
-						"entityIid": "cd4e2120-c210-11ef-a811-e3836d643c49",
-						"layerIid": "b94ddd84-c210-11ef-a811-315616e72285",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
+					"TargetCircle": null,
 					"Direction": "Left",
 					"Speed": 1
 				}
-			},
+			}
+		],
+		"Ability": [
 			{
-				"id": "TargetCircle",
-				"iid": "cd4e2120-c210-11ef-a811-e3836d643c49",
+				"id": "Ability",
+				"iid": "f5f79af0-c210-11ef-a811-c7ea9a17d161",
 				"layer": "Entities",
-				"x": 224,
-				"y": 0,
+				"x": 32,
+				"y": 96,
 				"width": 32,
 				"height": 32,
-				"color": 12635100,
+				"color": 16690740,
 				"customFields": {
-					"Range": 64,
-					"Triggerable": {
-						"entityIid": "b94ddd83-c210-11ef-a811-0b5728157555",
-						"layerIid": "b94db67c-c210-11ef-a811-3fcc9e1a4024",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"TargetCircle": {
-						"entityIid": "cbea2450-c210-11ef-a811-21861b3a5383",
-						"layerIid": "b94ddd84-c210-11ef-a811-315616e72285",
-						"levelIid": "b94db67b-c210-11ef-a811-49098651cc33",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Left",
-					"Speed": 1
+					"Ability": "Missile"
 				}
 			}
 		]

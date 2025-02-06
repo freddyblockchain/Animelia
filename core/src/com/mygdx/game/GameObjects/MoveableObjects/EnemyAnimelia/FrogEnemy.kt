@@ -1,8 +1,7 @@
 package com.mygdx.game.GameObjects.MoveableObjects.EnemyAnimelia
 
 import com.badlogic.gdx.math.Vector2
-import com.mygdx.game.Ability.Abilities.Fire.FireballAbility
-import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbiltiy
+import com.mygdx.game.Ability.Abilities.Sound.SoundGunAbility
 import com.mygdx.game.Animelia.*
 import com.mygdx.game.DefaultTextureHandler
 import com.mygdx.game.GameObjectData
@@ -17,7 +16,7 @@ class FrogEnemy(gameObjectData: GameObjectData) : EnemyAnimelia(gameObjectData, 
 
     override val maxHealth = 30f
 
-    val soundAbility = SoundGunAbiltiy(this)
+    val soundAbility = SoundGunAbility(this)
 
 
     init {

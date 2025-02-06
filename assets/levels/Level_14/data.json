@@ -87,6 +87,21 @@
 					"Name": null
 				}
 			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "aea0e590-c210-11ef-b66a-a38a56fb1b41",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Hmm, seems like flying is needed here"
+				}
+			}
 		]
 	}
 }

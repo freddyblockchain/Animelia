@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_115",
-	"uniqueIdentifer": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
-	"x": -128,
-	"y": 1248,
+	"uniqueIdentifer": "6d21749b-c210-11ef-b429-979704c85757",
+	"x": 96,
+	"y": 1120,
 	"width": 256,
-	"height": 96,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "6d21749b-c210-11ef-b429-979704c85757",
+			"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
 			"dir": "o"
 		},
 		{
-			"levelIid": "10c193f0-c210-11ef-b429-ebe65309cf3d",
+			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
 			"dir": "n"
 		}
 	],
@@ -32,44 +32,106 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Spikes": [
+		"AnimeliaEnemy": [
 			{
-				"id": "Spikes",
-				"iid": "0045c280-c210-11ef-b429-0fe4aace38cf",
+				"id": "AnimeliaEnemy",
+				"iid": "7877fb70-c210-11ef-b429-61a899468fad",
 				"layer": "Entities",
-				"x": 160,
-				"y": 0,
-				"width": 96,
-				"height": 96,
-				"color": 1578021,
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
 				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "05d392e0-c210-11ef-b429-7d722c6f4a76",
-						"layerIid": "6d21749d-c210-11ef-b429-bd8940f57aee",
-						"levelIid": "6d21749b-c210-11ef-b429-979704c85757",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
+				}
+			},
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "a81aa760-c210-11ef-b429-f5ad15a1c5a5",
+				"layer": "Entities",
+				"x": 192,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "Frog",
+					"Entity_ref": null
 				}
 			}
 		],
-		"SoundBulb": [
+		"Trumpet": [
 			{
-				"id": "SoundBulb",
-				"iid": "0c8326f0-c210-11ef-b429-4d6dade457a8",
+				"id": "Trumpet",
+				"iid": "b56228d0-c210-11ef-b429-a314df426a24",
 				"layer": "Entities",
-				"x": 128,
-				"y": 32,
+				"x": 32,
+				"y": 64,
 				"width": 32,
-				"height": 48,
-				"color": 6539085,
+				"height": 32,
+				"color": 16705377,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "0045c280-c210-11ef-b429-0fe4aace38cf",
-						"layerIid": "dfc0dea2-c210-11ef-b429-5744e4403be6",
-						"levelIid": "dfc0dea0-c210-11ef-b429-8f6c2e6cb1a7",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Right"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "d40ef150-c210-11ef-b429-3bcabd7b37ae",
+				"layer": "Entities",
+				"x": 192,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Up"
+				}
+			},
+			{
+				"id": "Trumpet",
+				"iid": "33065040-c210-11ef-b429-29aa634b39c9",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Left"
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "05d392e0-c210-11ef-b429-7d722c6f4a76",
+				"layer": "Entities",
+				"x": 0,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "6f22ec10-c210-11ef-999d-011cac4b375e",
+				"layer": "Entities",
+				"x": 96,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FORESTFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
 				}
 			}
 		]

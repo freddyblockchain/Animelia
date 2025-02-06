@@ -67,7 +67,7 @@ class Statue(gameObjectData: GameObjectData) : GameObject(gameObjectData) {
             "Ice_castle" -> DefaultTextureHandler.getTexture("IceBirdStatue.png")
             "Vulcano" -> DefaultTextureHandler.getTexture("FireLionStatue.png")
             "Abandoned_House" -> DefaultTextureHandler.getTexture("SoundBatStatue.png")
-            else -> DefaultTextureHandler.getTexture("FrostFireDragonStatue.png")
+            else -> DefaultTextureHandler.getTexture("FrostfireDragonStatue.png")
         }
         sprite.texture = texture
     }

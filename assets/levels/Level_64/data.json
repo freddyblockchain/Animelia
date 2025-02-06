@@ -1,15 +1,15 @@
 {
 	"identifier": "Level_64",
-	"uniqueIdentifer": "1ae28980-c210-11ef-a811-55af16f9a98d",
-	"x": -544,
-	"y": -736,
-	"width": 160,
-	"height": 64,
+	"uniqueIdentifer": "f451d700-c210-11ef-a811-2ff22bee59b8",
+	"x": -1536,
+	"y": -1664,
+	"width": 64,
+	"height": 160,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-			"dir": "w"
+			"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -28,12 +28,33 @@
 		"Beach.png"
 	],
 	"entities": {
+		"Spikes": [
+			{
+				"id": "Spikes",
+				"iid": "f8b3aa80-c210-11ef-a811-ef7eb691cf98",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 64,
+				"height": 96,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "030d81e0-c210-11ef-a811-e323a0213923",
+						"layerIid": "76d3b582-c210-11ef-a811-835c2606d965",
+						"levelIid": "76d3b580-c210-11ef-a811-9f0d078f10f5",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
 		"IceCrystal": [
 			{
 				"id": "IceCrystal",
-				"iid": "1ae28984-c210-11ef-a811-a902ad1f8e51",
+				"iid": "0c66b220-c210-11ef-a811-ab2b1afed6b5",
 				"layer": "Entities",
-				"x": 128,
+				"x": 32,
 				"y": 0,
 				"width": 32,
 				"height": 32,
@@ -51,29 +72,8 @@
 						"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					},
-					"Element": "Sound",
-					"Index": 2
-				}
-			}
-		],
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "4b2ee2f0-c210-11ef-a811-7b44988c64d5",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 96,
-				"height": 64,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "b6cd3300-c210-11ef-a811-8b5601c4adba",
-						"layerIid": "298492bc-c210-11ef-a811-dfcb40280539",
-						"levelIid": "298492ba-c210-11ef-a811-af24a61387c1",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Element": "Fire",
+					"Index": 0
 				}
 			}
 		]

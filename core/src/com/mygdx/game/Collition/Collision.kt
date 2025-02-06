@@ -9,8 +9,8 @@ interface Collision {
     fun collisionHappened(collidedObject: GameObject)
     val collitionType: CollisionType
 
-    fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean{
-        return isPolygonsColliding(polygon1, polygon2)
+    fun collisionCheck(polygonToCheck: Polygon, polygon2: Polygon,gameObject: GameObject): Boolean{
+        return isPolygonsColliding(polygonToCheck, polygon2)
     }
 }
 

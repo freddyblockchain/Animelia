@@ -13,6 +13,7 @@ import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
+import com.mygdx.game.GameObjects.MoveableEntities.Characters.Player
 import com.mygdx.game.Items.Material
 import com.mygdx.game.Items.MaterialItem
 import com.mygdx.game.Managers.*
@@ -55,9 +56,11 @@ class TurnAndFacePlayer(val enemyAnimelia: EnemyAnimelia): BattleStrategy{
 
 class GoToPosition(val enemyAnimelia: EnemyAnimelia, var position: Vector2): BattleStrategy{
     override fun action() {
-        val unitVectorToDirection = getUnitVectorTowardsPoint(enemyAnimelia.currentMiddle, position)
-        enemyAnimelia.setRotation(unitVectorToDirection, enemyAnimelia, 90f)
-        enemyAnimelia.move(unitVectorToDirection)
+        if(enemyAnimelia.cannotMoveCount == 0){
+            val unitVectorToDirection = getUnitVectorTowardsPoint(enemyAnimelia.currentMiddle, position)
+            enemyAnimelia.setRotation(unitVectorToDirection, enemyAnimelia, 90f)
+            enemyAnimelia.move(unitVectorToDirection)
+        }
     }
 
     fun isAtPosition(): Boolean{
@@ -75,7 +78,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override var speed = 1f
     override val cannotMoveStrategy = NoAction()
-    override val layer = Layer.ONGROUND
+    override val layer = Layer.PERSON
 
     var playerInLOS = false
 
@@ -112,8 +115,11 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
-        raycastObject = RaycastObject(Vector2(112f,32f),this, listOf(player), this)
+        raycastObject = RaycastObject(Vector2(112f,32f),this, listOf(Player::class.java), this)
         raycastObject.add()
+
+
+        polygon.scale(-0.3f)
 
     }
     override fun render(batch: SpriteBatch) {

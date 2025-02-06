@@ -62,8 +62,8 @@ data class CrystalCustomFields(val Entity_ref: EntityRefData, val Entity_ref2: E
 
 class CrystalCollision(val crystal: Crystal): MoveCollision(){
     override var canMoveAfterCollision = true
-    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
-        return CollisionManager.isMiddleInPolygon(polygon1, polygon2)
+    override fun collisionCheck(polygonToCheck: Polygon, polygon2: Polygon,gameObject: GameObject,): Boolean {
+        return CollisionManager.isMiddleInPolygon(polygonToCheck, polygon2)
     }
     override fun collisionHappened(collidedObject: GameObject) {
        /* val crystalPastSignals = SignalManager.pastSignals.filterIsInstance<CrystalActivatedSignal>()

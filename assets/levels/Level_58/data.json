@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_58",
-	"uniqueIdentifer": "7f903b20-c210-11ef-a811-d96bd6be84f7",
-	"x": -1600,
+	"uniqueIdentifer": "10ac4088-c210-11ef-a811-bf80ef553ab7",
+	"x": -896,
 	"y": -928,
-	"width": 256,
+	"width": 192,
 	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "a4986491-c210-11ef-a811-97d9a63c45ae",
-			"dir": "e"
+			"dir": "w"
 		},
 		{
-			"levelIid": "ce1bce30-c210-11ef-a811-9db328830f92",
-			"dir": "s"
+			"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
+			"dir": "e"
 		}
 	],
 	"customFields": {
@@ -32,37 +32,59 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Generator": [
+		"Spikes": [
 			{
-				"id": "Generator",
-				"iid": "ba66a610-c210-11ef-a811-a5693e96c42a",
+				"id": "Spikes",
+				"iid": "d0953900-c210-11ef-a811-db55b7ed110a",
 				"layer": "Entities",
-				"x": 0,
+				"x": 96,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "0e07d040-c210-11ef-a811-89fccdf335e8",
+						"layerIid": "10ac408a-c210-11ef-a811-1396f3b3a610",
+						"levelIid": "10ac4088-c210-11ef-a811-bf80ef553ab7",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "0e07d040-c210-11ef-a811-89fccdf335e8",
+				"layer": "Entities",
+				"x": 32,
 				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 7552569,
+				"color": 1199753,
 				"customFields": {
-					"Direction": "Right",
-					"Automatic": true,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Name": null
 				}
-			},
+			}
+		],
+		"SoundBulb": [
 			{
-				"id": "Generator",
-				"iid": "bea49de0-c210-11ef-a811-9946c3753c5d",
+				"id": "SoundBulb",
+				"iid": "5d6e0be0-c210-11ef-a811-090a2bb00257",
 				"layer": "Entities",
-				"x": 0,
-				"y": 32,
+				"x": 160,
+				"y": 0,
 				"width": 32,
-				"height": 32,
-				"color": 7552569,
+				"height": 48,
+				"color": 6539085,
 				"customFields": {
-					"Direction": "Right",
-					"Automatic": true,
-					"ProjectileType": "Missile",
-					"Cooldown": 3
+					"Entity_ref": {
+						"entityIid": "122a0d40-c210-11ef-a811-d32443922e9e",
+						"layerIid": "22ea827d-c210-11ef-a811-93ee7c75fd05",
+						"levelIid": "22ea827b-c210-11ef-a811-97b44fbf3087",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

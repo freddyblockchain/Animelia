@@ -40,7 +40,7 @@ class CollisionManager {
 
         // added additional collision check. Beware
         fun GetCollidingObjects(gameObjectToCheck: GameObject, polygonToCheck: Polygon, gameObjects: List<GameObject>): List<GameObject> {
-            val collidingObjects = gameObjects.filter {gameObjectToCheck.collisionMask.canCollideWith(it) && it.collisionMask.canCollideWith(gameObjectToCheck) && gameObjectToCheck.collision.collisionCheck(polygonToCheck, it.polygon) && it.collision.collisionCheck(polygonToCheck, it.polygon)}
+            val collidingObjects = gameObjects.filter {gameObjectToCheck.collisionMask.canCollideWith(it) && it.collisionMask.canCollideWith(gameObjectToCheck) && gameObjectToCheck.collision.collisionCheck(polygonToCheck, it.polygon,gameObjectToCheck) && it.collision.collisionCheck(polygonToCheck, it.polygon,gameObjectToCheck)}
             return collidingObjects
         }
 
@@ -135,7 +135,7 @@ class CollisionManager {
     }
 }
 
-class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val objectsToHit: List<GameObject>, rayCastListener: RaycastListener):
+class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val objectsToHit: List<Class<out GameObject>>, rayCastListener: RaycastListener):
     MoveableObject(GameObjectData(width = size.x.toInt(), height = size.y.toInt())) {
     override val layer = Layer.ONGROUND
     override var direction: Direction
@@ -145,7 +145,7 @@ class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val object
         get() = TODO("Not yet implemented")
         set(value) {}
 
-    override val collisionMask =  OnlyTheseSpecificObjectsCollisionMask(objectsToHit)
+    override val collisionMask =  OnlyTheseObjectsCollisionMask(objectsToHit)
     override var speed = 1f
     override val cannotMoveStrategy = MoveRegardless()
 
@@ -173,7 +173,7 @@ class RaycastObject(size: Vector2, val objectBelongingTo: GameObject, val object
 class RayCastCollision(val rayCastListener: RaycastListener): DefaultAreaEntranceCollition(){
     override var canMoveAfterCollision = true
 
-    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
+    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon, gameObject: GameObject): Boolean {
         return isPolygonsColliding(polygon1, polygon2)
     }
 

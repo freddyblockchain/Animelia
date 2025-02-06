@@ -114,3 +114,17 @@
 {"signaltype":"RAILWAY_FIXED","areaIdentifer":"Swamp0","entityIid":"1bee0b10-c210-11ef-b787-ad37c10214e8"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"751898b0-9b00-11ef-b886-0b3e9d355be5"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"76e78c50-9b00-11ef-b886-1d9db1a78905"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"491b4a30-c210-11ef-a811-879e90481b29"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"29605090-c210-11ef-a811-0fed455447d3"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"811a2e50-c210-11ef-a811-fb34550a7a9a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"b94ddd83-c210-11ef-a811-0b5728157555"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"cbea2450-c210-11ef-a811-21861b3a5383"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"cd4e2120-c210-11ef-a811-e3836d643c49"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"ba66a610-c210-11ef-a811-a5693e96c42a"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"bea49de0-c210-11ef-a811-9946c3753c5d"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"da2d78a0-c210-11ef-a811-116f81ce38c4"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"7de24f20-c210-11ef-a5e3-193ba32b69ed"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"d1815140-c210-11ef-a811-f510a58124be"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"Metal_Factory","entityIid":"c9786da0-c210-11ef-aae3-413bcae6c861"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"516db760-c210-11ef-bc3d-19e4a56dd456"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Metal_Factory","entityIid":"74a60343-c210-11ef-a811-c75b0012f985"}

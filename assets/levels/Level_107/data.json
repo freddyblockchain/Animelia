@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_107",
-	"uniqueIdentifer": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
-	"x": 768,
-	"y": 896,
-	"width": 160,
+	"uniqueIdentifer": "36c2ed8b-c210-11ef-a794-b7e0c735b33d",
+	"x": 2464,
+	"y": 608,
+	"width": 64,
 	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
-			"dir": "e"
-		},
-		{
-			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-			"dir": "w"
+			"levelIid": "12f2cbb0-c210-11ef-a794-15f56e8db264",
+			"dir": "s"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "SpiritGrounds",
 		"Visible": true
 	},
 	"layers": [
@@ -31,5 +27,21 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"SpiritOfAnimelia": [
+			{
+				"id": "SpiritOfAnimelia",
+				"iid": "3df7b720-c210-11ef-a794-af2b69b48ee3",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16711748,
+				"customFields": {
+					"SpiritType": "Four"
+				}
+			}
+		]
+	}
 }

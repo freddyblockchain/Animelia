@@ -127,8 +127,8 @@ class ConveyerBeltCollition(val conveyerBelt: ConveyerBelt) : DefaultAreaEntranc
         super.movedInsideAction(objectEntered)
     }
 
-    override fun collisionCheck(polygon1: Polygon, polygon2: Polygon): Boolean {
-        return isPolygonsColliding(polygon1, polygon2)
+    override fun collisionCheck(polygonToCheck: Polygon, polygon2: Polygon, gameObject: GameObject): Boolean {
+        return isPolygonsColliding(polygonToCheck, polygon2)
     }
 
     override fun movedOutsideAction(objectLeaved: GameObject) {
