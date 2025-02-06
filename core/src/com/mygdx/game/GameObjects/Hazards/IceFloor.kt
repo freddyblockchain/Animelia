@@ -33,7 +33,7 @@ class IceFloorCollision(): DefaultAreaEntranceCollition(){
     override var canMoveAfterCollision = true
 
     override fun actionWhileInside() {
-        if(player.flyingState == FlyingState.NOTFLYING && player.state == State.NORMAL){
+        if(player.flyingState == FlyingState.NOTFLYING && player.state != State.STUNNED){
             player.setRotation(player.currentUnitVector, player, 90f)
             player.forceMove(2f)
         }

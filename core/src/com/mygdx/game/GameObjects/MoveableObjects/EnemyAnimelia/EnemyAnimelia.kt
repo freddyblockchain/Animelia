@@ -30,6 +30,7 @@ fun createEnemyAnimelia(animeliaEntity: ANIMELIA_ENTITY, gameObjectData: GameObj
         ANIMELIA_ENTITY.FireLion -> FireLionEnemy(gameObjectData, entityRefData)
         ANIMELIA_ENTITY.GuardFrog-> GuardFrogEnemy(gameObjectData, entityRefData)
         ANIMELIA_ENTITY.SoundBat-> SoundBatEnemy(gameObjectData, entityRefData)
+        ANIMELIA_ENTITY.FrostFireDragon -> FrostfireDragonEnemy(gameObjectData, entityRefData)
         else -> FireArmadilloEnemy(gameObjectData)
     }
 }

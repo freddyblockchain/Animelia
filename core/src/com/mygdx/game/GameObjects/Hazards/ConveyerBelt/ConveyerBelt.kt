@@ -104,7 +104,7 @@ class ConveyerBelt(gameObjectData: GameObjectData)
             direction = Direction.LEFT
         }
         else if(direction == Direction.UP){
-            direction = Direction.UP
+            direction = Direction.DOWN
         }
         else if(direction == Direction.DOWN){
             direction = Direction.UP

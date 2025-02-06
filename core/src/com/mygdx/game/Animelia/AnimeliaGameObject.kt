@@ -63,6 +63,13 @@ class GoToPosition(val enemyAnimelia: EnemyAnimelia, var position: Vector2): Bat
         }
     }
 
+    fun relaxedIsAtPosition(): Boolean{
+        val distance = distance(enemyAnimelia.currentMiddle, position)
+        val distanceWithoutSpeed = distance / enemyAnimelia.speed
+
+        return distanceWithoutSpeed <= 32f
+    }
+
     fun isAtPosition(): Boolean{
 
         val distance = distance(enemyAnimelia.currentMiddle, position)
@@ -115,7 +122,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
-        raycastObject = RaycastObject(Vector2(112f,32f),this, listOf(Player::class.java), this)
+        raycastObject = RaycastObject(Vector2(64f,32f),this, listOf(Player::class.java), this)
         raycastObject.add()
 
 

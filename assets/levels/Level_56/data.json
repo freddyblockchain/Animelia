@@ -4,7 +4,7 @@
 	"x": -1472,
 	"y": -1088,
 	"width": 128,
-	"height": 32,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
@@ -44,7 +44,7 @@
 				"x": 0,
 				"y": 0,
 				"width": 128,
-				"height": 32,
+				"height": 96,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,
