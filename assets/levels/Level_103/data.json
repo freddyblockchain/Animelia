@@ -1,18 +1,14 @@
 {
 	"identifier": "Level_103",
-	"uniqueIdentifer": "0dab2c10-c210-11ef-a794-2dd4465b7cd9",
+	"uniqueIdentifer": "de467380-c210-11ef-a794-6b58edcabf7d",
 	"x": 2400,
-	"y": 1024,
-	"width": 192,
+	"y": 1344,
+	"width": 224,
 	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
 			"levelIid": "022027b0-c210-11ef-a794-cbb5e6bdcefd",
-			"dir": "s"
-		},
-		{
-			"levelIid": "105d7ad0-c210-11ef-a794-bf576dcfa58a",
 			"dir": "n"
 		}
 	],
@@ -32,58 +28,60 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "e29e3f70-c210-11ef-a794-f3345505691f",
-				"layer": "Entities",
-				"x": 64,
-				"y": 64,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "Fireball"
-				}
-			}
-		],
-		"IceCone": [
-			{
-				"id": "IceCone",
-				"iid": "edea17f0-c210-11ef-a794-9bf521f902e0",
-				"layer": "Entities",
-				"x": 64,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			},
-			{
-				"id": "IceCone",
-				"iid": "eed5fe90-c210-11ef-a794-6b6a99005584",
-				"layer": "Entities",
-				"x": 96,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 3469566,
-				"customFields" : {}
-			}
-		],
 		"SpiritOfAnimelia": [
 			{
 				"id": "SpiritOfAnimelia",
-				"iid": "106e7550-c210-11ef-a794-a5e57df05f8f",
+				"iid": "fd9150c0-c210-11ef-a794-8bd23a4b4ea6",
 				"layer": "Entities",
-				"x": 64,
+				"x": 96,
 				"y": 128,
 				"width": 32,
 				"height": 32,
 				"color": 16711748,
 				"customFields": {
-					"SpiritType": "Two"
+					"SpiritType": "One"
 				}
+			}
+		],
+		"Egg": [
+			{
+				"id": "Egg",
+				"iid": "2037dc20-c210-11ef-a794-9f390c2becca",
+				"layer": "Entities",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 5925256,
+				"customFields": {
+					"Egg": "Fire"
+				}
+			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "36ec63f0-c210-11ef-a794-3db6efe2d3fc",
+				"layer": "Entities",
+				"x": 160,
+				"y": 32,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TriggerGate": [
+			{
+				"id": "TriggerGate",
+				"iid": "ab050080-c210-11ef-a794-1151b8a0e881",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 64,
+				"height": 32,
+				"color": 9149364,
+				"customFields" : {}
 			}
 		]
 	}

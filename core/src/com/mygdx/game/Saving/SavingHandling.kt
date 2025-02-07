@@ -17,10 +17,10 @@ class SavingHandler {
             if (!FileHandler.SaveFileEmpty()) {
                 val savedState: String = FileHandler.readPlayerFile()[0]
                 val savedGeneralSaveState: PlayerSaveState = Json.decodeFromString(savedState)
-                generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia, savedGeneralSaveState.pos, savedGeneralSaveState.areaIdentifier)
+                generalSaveState = PlayerSaveState(savedGeneralSaveState.inventory, savedGeneralSaveState.stats, savedGeneralSaveState.currentAnimelia, savedGeneralSaveState.pos, savedGeneralSaveState.areaIdentifier,savedGeneralSaveState.lastReincarnationEntityId, savedGeneralSaveState.lastReincarnationLevelId)
 
             } else {
-                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.SpiritOfAnimelia, SVector2(64f, 64f), "SpiritGrounds")
+                generalSaveState = PlayerSaveState(Inventory(), Stats(), ANIMELIA_ENTITY.SpiritOfAnimelia, SVector2(64f, 64f), "SpiritGrounds","","")
             }
             player.animeliaInfo = getAnimeliaData(generalSaveState.currentAnimelia)
             AreaManager.setActiveArea(generalSaveState.areaIdentifier)

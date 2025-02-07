@@ -17,15 +17,19 @@ class Fountain(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     override val texture = DefaultTextureHandler.getTexture("toomstone.png")
     override val layer = Layer.ONGROUND
-    override val collision = FountainCollision()
+    override val collision = FountainCollision(this)
 }
 
-class FountainCollision(): InputCollision(){
+class FountainCollision(val fountain: Fountain): InputCollision(){
     override val keyCode = Input.Keys.ENTER
     override val insideText = "REINCARNATE"
 
     override fun collisionHappened(collidedObject: GameObject) {
         if(generalSaveState.inventory.eggs.size > 0){
+            generalSaveState.lastReincarnationEntityId = fountain.gameObjectIid
+            generalSaveState.lastReincarnationLevelId = fountain.levelId
+            generalSaveState.updateSaveState()
+
             val reincarnationMode = UIMode(ReincarnationScreen(mainMode))
             val dialogMode = UIMode(DialogScreen(currentGameMode, reincarnationMode,"Do you want to Reincarnate?"), playConfirmationSound = false)
             changeMode(dialogMode)

@@ -20,6 +20,8 @@ class PlayerSaveState(
     var currentAnimelia: ANIMELIA_ENTITY,
     var pos: SVector2,
     var areaIdentifier: String,
+    var lastReincarnationEntityId: String,
+    var lastReincarnationLevelId: String
 ){
     fun updateSaveState(){
         val stringEncoded = Json.encodeToString(this)

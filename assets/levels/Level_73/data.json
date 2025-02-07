@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_73",
-	"uniqueIdentifer": "45b6111b-c210-11ef-a811-43b63afec456",
-	"x": -1248,
-	"y": -416,
-	"width": 320,
-	"height": 128,
+	"uniqueIdentifer": "e09bfb20-c210-11ef-a811-2b9bce0fe971",
+	"x": -1920,
+	"y": -896,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
-			"dir": "s"
+			"levelIid": "fd793628-c210-11ef-a811-a7945750175d",
+			"dir": "e"
 		},
 		{
-			"levelIid": "e4ccbb45-c210-11ef-a811-e9d4e635fb40",
-			"dir": "n"
+			"levelIid": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+			"dir": "w"
 		}
 	],
 	"customFields": {
-		"World": "World4",
+		"World": "Metal_Factory",
 		"Visible": true
 	},
 	"layers": [
@@ -32,30 +32,86 @@
 		"Beach.png"
 	],
 	"entities": {
-		"KingDoor": [
+		"IceFloor": [
 			{
-				"id": "KingDoor",
-				"iid": "bad08d40-c210-11ef-a811-5599f6ef502a",
+				"id": "IceFloor",
+				"iid": "718f6c40-c210-11ef-a811-e319d79bc69a",
 				"layer": "Entities",
-				"x": 96,
-				"y": 0,
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 128,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "73823b90-c210-11ef-a811-d17a4f5f97ff",
+				"layer": "Entities",
+				"x": 64,
+				"y": 128,
+				"width": 96,
+				"height": 32,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "74b31a70-c210-11ef-a811-5323d538b8e3",
+				"layer": "Entities",
+				"x": 128,
+				"y": 32,
+				"width": 32,
+				"height": 96,
+				"color": 2943221,
+				"customFields" : {}
+			},
+			{
+				"id": "IceFloor",
+				"iid": "75bc4d10-c210-11ef-a811-95fedf1a1071",
+				"layer": "Entities",
+				"x": 64,
+				"y": 32,
 				"width": 64,
-				"height": 64,
-				"color": 1199753,
+				"height": 32,
+				"color": 2943221,
 				"customFields" : {}
 			}
 		],
-		"Railway": [
+		"Position": [
 			{
-				"id": "Railway",
-				"iid": "491b4a30-c210-11ef-a811-879e90481b29",
+				"id": "Position",
+				"iid": "ff7c6e40-c210-11ef-a811-a3105eee73c5",
 				"layer": "Entities",
-				"x": 192,
-				"y": 96,
-				"width": 128,
+				"x": 0,
+				"y": 64,
+				"width": 32,
 				"height": 32,
-				"color": 11882632,
-				"customFields" : {}
+				"color": 1199753,
+				"customFields": {
+					"Name": null
+				}
+			}
+		],
+		"AnimeliaEnemy": [
+			{
+				"id": "AnimeliaEnemy",
+				"iid": "628263e0-c210-11ef-bc3d-11c25b5f96f3",
+				"layer": "Entities",
+				"x": 96,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 14120515,
+				"customFields": {
+					"AnimeliaType": "IceBird",
+					"Entity_ref": {
+						"entityIid": "e78db8c8-c210-11ef-a811-1d7d941a3981",
+						"layerIid": "e78db8c6-c210-11ef-a811-d3cc001a76a9",
+						"levelIid": "e78db8c4-c210-11ef-a811-ed97313cb7ee",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		]
 	}

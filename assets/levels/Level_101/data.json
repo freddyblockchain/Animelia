@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_101",
-	"uniqueIdentifer": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
+	"uniqueIdentifer": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
 	"x": 928,
-	"y": 800,
-	"width": 128,
-	"height": 192,
+	"y": 544,
+	"width": 352,
+	"height": 256,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
+			"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
 			"dir": "n"
 		},
 		{
-			"levelIid": "e429d240-9b00-11ef-8ab8-4b0afdc5daf5",
-			"dir": "w"
+			"levelIid": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -31,5 +31,98 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities" : {}
+	"entities": {
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "eee08950-9b00-11ef-ad95-d999d583f93f",
+				"layer": "Entities",
+				"x": 192,
+				"y": 0,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "2b561ed3-c210-11ef-9e36-69c3ecc647d7",
+						"layerIid": "2b561ed2-c210-11ef-9e36-89db0bc59782",
+						"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
+			}
+		],
+		"Egg": [
+			{
+				"id": "Egg",
+				"iid": "8d757db0-9b00-11ef-bf48-4d5c171eed5c",
+				"layer": "Entities",
+				"x": 192,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 5925256,
+				"customFields": {
+					"Egg": "Sound"
+				}
+			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "096a9d00-c210-11ef-a7b0-0141fb5d5e69",
+				"layer": "Entities",
+				"x": 256,
+				"y": 32,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "62219b60-c210-11ef-999d-317dd3165a3d",
+				"layer": "Entities",
+				"x": 160,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FORESTFRUIT",
+					"PercentChance": 50,
+					"KeyItem": false
+				}
+			}
+		],
+		"Railway": [
+			{
+				"id": "Railway",
+				"iid": "1bee0b10-c210-11ef-b787-ad37c10214e8",
+				"layer": "Entities",
+				"x": 224,
+				"y": 224,
+				"width": 128,
+				"height": 32,
+				"color": 11882632,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "110c4000-c210-11ef-8d5c-85a3dce6ea6c",
+				"layer": "Entities",
+				"x": 64,
+				"y": 32,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
+			}
+		]
+	}
 }

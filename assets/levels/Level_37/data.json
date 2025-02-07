@@ -102,7 +102,7 @@
 				"color": 12635100,
 				"customFields": {
 					"Item": "TROPICALFRUIT",
-					"PercentChance": 100,
+					"PercentChance": 50,
 					"KeyItem": false
 				}
 			}

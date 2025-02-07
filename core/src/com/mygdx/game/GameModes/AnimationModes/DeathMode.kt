@@ -3,11 +3,13 @@ package com.mygdx.game.GameModes.AnimationModes
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShaderProgram
+import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.GameModes.DefaultInputProcessor
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.MusicManager
 import com.mygdx.game.UI.Scene2d.Screens.ReincarnationScreen
 
@@ -44,8 +46,6 @@ class DeathMode(val prevMode: GameMode, override val spriteBatch: SpriteBatch = 
         }
         if(currentFrame == endFrame){
             spriteBatch.shader = originalShader
-            val respawn = getNearestRespawn()
-            changeArea(respawn.first, respawn.second)
             val reincarnationMode = UIMode(ReincarnationScreen(mainMode), playConfirmationSound = false)
             player.currentHealth = player.maxHealth
             changeMode(reincarnationMode)

@@ -1,19 +1,19 @@
 {
 	"identifier": "Level_93",
-	"uniqueIdentifer": "25c78b00-9b00-11ef-9017-7193c01afe7f",
-	"x": 1888,
-	"y": -1376,
-	"width": 64,
-	"height": 128,
+	"uniqueIdentifer": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+	"x": 1440,
+	"y": -1632,
+	"width": 128,
+	"height": 320,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
-			"dir": "s"
+			"levelIid": "10f334e0-9b00-11ef-9017-05c2f1944775",
+			"dir": "e"
 		},
 		{
-			"levelIid": "4176a3ea-9b00-11ef-9017-cf673f949878",
-			"dir": "e"
+			"levelIid": "037d3e80-9b00-11ef-9017-b551bca7ab9e",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -35,10 +35,10 @@
 		"Generator": [
 			{
 				"id": "Generator",
-				"iid": "4b6cd040-9b00-11ef-9017-3f1721c915d7",
+				"iid": "f01dae10-9b00-11ef-9017-03629ad887d4",
 				"layer": "EntitiesOnTop",
-				"x": 32,
-				"y": 96,
+				"x": 0,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 7552569,
@@ -51,10 +51,10 @@
 			},
 			{
 				"id": "Generator",
-				"iid": "4d85c530-9b00-11ef-9017-53f417e15c42",
+				"iid": "f13586b0-9b00-11ef-9017-3f5436a6af17",
 				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 96,
+				"x": 96,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 7552569,
@@ -69,19 +69,57 @@
 		"Spikes": [
 			{
 				"id": "Spikes",
-				"iid": "2477d220-9b00-11ef-9017-798707c644d3",
+				"iid": "b2fb59b0-9b00-11ef-9017-b9c0274bac58",
+				"layer": "Entities",
+				"x": 32,
+				"y": 192,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "c0b10640-9b00-11ef-9017-7f8b6bc3c539",
 				"layer": "Entities",
 				"x": 0,
-				"y": 64,
-				"width": 64,
+				"y": 96,
+				"width": 96,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "db582500-9b00-11ef-9017-b7250b601ab1",
+				"layer": "Entities",
+				"x": 0,
+				"y": 0,
+				"width": 128,
 				"height": 32,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,
 					"Entity_ref": {
-						"entityIid": "2cae7b60-9b00-11ef-9017-9b70ec1078f5",
-						"layerIid": "25c78b02-9b00-11ef-9017-93da15426cb2",
-						"levelIid": "25c78b00-9b00-11ef-9017-7193c01afe7f",
+						"entityIid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
+						"layerIid": "c4b85322-9b00-11ef-9017-5d26491a92d3",
+						"levelIid": "c4b85320-9b00-11ef-9017-7d5f48a1e07d",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
 					}
 				}
@@ -90,10 +128,10 @@
 		"Position": [
 			{
 				"id": "Position",
-				"iid": "2cae7b60-9b00-11ef-9017-9b70ec1078f5",
+				"iid": "bc6af820-9b00-11ef-9017-e75ec1d17286",
 				"layer": "Entities",
-				"x": 0,
-				"y": 96,
+				"x": 32,
+				"y": 256,
 				"width": 32,
 				"height": 32,
 				"color": 1199753,

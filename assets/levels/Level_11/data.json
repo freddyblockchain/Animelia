@@ -99,19 +99,6 @@
 				}
 			}
 		],
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "d5064a50-c210-11ef-a7b0-d1a24bf7bae5",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
 		"Rock": [
 			{
 				"id": "Rock",

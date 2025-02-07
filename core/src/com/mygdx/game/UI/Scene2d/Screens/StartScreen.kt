@@ -15,6 +15,7 @@ import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.Managers.*
+import com.mygdx.game.Saving.SVector2
 import com.mygdx.game.Saving.SavingHandler.Companion.InitPlayerState
 import com.mygdx.game.Signal.WORLDSIGNAL
 import com.mygdx.game.UI.Scene2d.PauseScreenComponents.AnimeliaButton
@@ -88,6 +89,7 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         initAndGoToGame()
         val spiritOfAnimelia: SpiritOfAnimelia = AreaManager.getActiveArea()!!.gameObjects.first { it is SpiritOfAnimelia && it.type == "One" } as SpiritOfAnimelia
         player.setPosition(spiritOfAnimelia.currentPosition() - Vector2(16f,0f))
+        generalSaveState.pos = SVector2(player.currentPosition().x, player.currentPosition().y)
 
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT or GL20.GL_DEPTH_BUFFER_BIT)
         mainCamera.position.set(player.sprite.x, player.sprite.y, 0f)
@@ -111,7 +113,13 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         //Change to first area.
         //changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
         //Respawn on a fountain
-        changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
+        if(generalSaveState.lastReincarnationEntityId != ""){
+            val fountain = AreaManager.getObjectWithIid(generalSaveState.lastReincarnationEntityId, generalSaveState.lastReincarnationLevelId)
+            val reincarnationScreenPos = fountain.currentPosition()
+            changeArea(Vector2(reincarnationScreenPos.x, reincarnationScreenPos.y), fountain.areaIdentifier)
+        } else{
+            changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
+        }
 
         changeMode(nextGameMode)
         mainMode.abilityRowUi.updateToolTips()

@@ -1,19 +1,15 @@
 {
 	"identifier": "Level_80",
-	"uniqueIdentifer": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-	"x": 1216,
-	"y": -480,
-	"width": 256,
-	"height": 224,
+	"uniqueIdentifer": "c5e25860-9b00-11ef-9017-4dec763123e6",
+	"x": 1696,
+	"y": -992,
+	"width": 192,
+	"height": 192,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
-			"dir": "n"
-		},
-		{
-			"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-			"dir": "w"
+			"levelIid": "bfef5d90-9b00-11ef-9017-09a8cea2d718",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -32,29 +28,87 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Railway": [
+		"AnivolutionBook": [
 			{
-				"id": "Railway",
-				"iid": "e49e82d0-9b00-11ef-9017-933deec94738",
-				"layer": "Entities",
-				"x": 128,
-				"y": 160,
-				"width": 128,
+				"id": "AnivolutionBook",
+				"iid": "9249dcf0-c210-11ef-999d-77e7bc86b901",
+				"layer": "EntitiesOnTop",
+				"x": 64,
+				"y": 64,
+				"width": 32,
 				"height": 32,
-				"color": 11882632,
-				"customFields" : {}
+				"color": 16777215,
+				"customFields": {
+					"AnimeliaType": "SoundBat"
+				}
+			}
+		],
+		"House": [
+			{
+				"id": "House",
+				"iid": "e4637d00-9b00-11ef-9017-817945720cc5",
+				"layer": "Entities",
+				"x": 32,
+				"y": 32,
+				"width": 128,
+				"height": 96,
+				"color": 9149364,
+				"customFields": {
+					"House": "AbandonedHouse",
+					"Door": {
+						"entityIid": "da69a980-9b00-11ef-9017-fd5b92968883",
+						"layerIid": "c5e25862-9b00-11ef-9017-ef82e2b817ba",
+						"levelIid": "c5e25860-9b00-11ef-9017-4dec763123e6",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Visible": true
+				}
+			}
+		],
+		"Door": [
+			{
+				"id": "Door",
+				"iid": "da69a980-9b00-11ef-9017-fd5b92968883",
+				"layer": "Entities",
+				"x": 80,
+				"y": 128,
+				"width": 32,
+				"height": 16,
+				"color": 4073265,
+				"customFields": {
+					"Door": {
+						"entityIid": "e6746530-9b00-11ef-9017-237f5b37278a",
+						"layerIid": "41e67222-9b00-11ef-9017-f1d21f060848",
+						"levelIid": "41e67220-9b00-11ef-9017-75098ba24119",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Up"
+				}
 			}
 		],
 		"Fountain": [
 			{
 				"id": "Fountain",
-				"iid": "fb453eb0-c210-11ef-a7b0-41c94520e5be",
+				"iid": "fb17faf0-c210-11ef-8d5c-67efef4f8c71",
 				"layer": "Entities",
-				"x": 96,
-				"y": 32,
+				"x": 0,
+				"y": 128,
 				"width": 64,
 				"height": 64,
 				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "00e82b80-c210-11ef-8d5c-7f4bb71bed3a",
+				"layer": "Entities",
+				"x": 160,
+				"y": 128,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
 				"customFields" : {}
 			}
 		]

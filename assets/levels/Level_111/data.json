@@ -1,18 +1,18 @@
 {
 	"identifier": "Level_111",
-	"uniqueIdentifer": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
-	"x": 672,
-	"y": 608,
+	"uniqueIdentifer": "5a2bfee0-9b00-11ef-9dff-bdc5362ca354",
+	"x": 704,
+	"y": 1152,
 	"width": 64,
-	"height": 288,
+	"height": 96,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "1d2c3230-9b00-11ef-9dff-effef5967c25",
-			"dir": "o"
+			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+			"dir": "n"
 		},
 		{
-			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+			"levelIid": "66dd33c0-9b00-11ef-9dff-fb5bd7714a7c",
 			"dir": "s"
 		}
 	],
@@ -31,94 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"Spikes": [
-			{
-				"id": "Spikes",
-				"iid": "989a3fc0-9b00-11ef-9dff-6b6a990ef903",
-				"layer": "Entities",
-				"x": 32,
-				"y": 160,
-				"width": 32,
-				"height": 128,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "16afbb10-9b00-11ef-9dff-23a6b4bc1e5d",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			},
-			{
-				"id": "Spikes",
-				"iid": "aa6e9c50-9b00-11ef-9dff-e988f6c39907",
-				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
-				"height": 128,
-				"color": 1578021,
-				"customFields": {
-					"Retractable": false,
-					"Entity_ref": {
-						"entityIid": "16afbb10-9b00-11ef-9dff-23a6b4bc1e5d",
-						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
-						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Generator": [
-			{
-				"id": "Generator",
-				"iid": "c956e730-9b00-11ef-9dff-1b83a4339ba2",
-				"layer": "Entities",
-				"x": 0,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 7552569,
-				"customFields": {
-					"Direction": "Down",
-					"Automatic": false,
-					"ProjectileType": "Boulder",
-					"Cooldown": 3
-				}
-			}
-		],
-		"Trumpet": [
-			{
-				"id": "Trumpet",
-				"iid": "cf5357e0-9b00-11ef-9dff-a1e8f28e0fd9",
-				"layer": "Entities",
-				"x": 0,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 16705377,
-				"customFields": {
-					"Direction": "Left"
-				}
-			}
-		],
-		"Ability": [
-			{
-				"id": "Ability",
-				"iid": "b88af860-c210-11ef-b429-af6e24c09a03",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 32,
-				"height": 32,
-				"color": 16690740,
-				"customFields": {
-					"Ability": "RockThrow"
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

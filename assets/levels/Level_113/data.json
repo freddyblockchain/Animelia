@@ -1,23 +1,15 @@
 {
 	"identifier": "Level_113",
-	"uniqueIdentifer": "6170f680-9b00-11ef-8ab8-a53720e874f7",
-	"x": 160,
-	"y": 832,
+	"uniqueIdentifer": "1d2c3230-9b00-11ef-9dff-effef5967c25",
+	"x": 576,
+	"y": 704,
 	"width": 256,
-	"height": 160,
+	"height": 64,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "cdb62307-9b00-11ef-8ab8-c93e63d45361",
-			"dir": "e"
-		},
-		{
-			"levelIid": "cea2e720-9b00-11ef-bf48-a7ac62585374",
-			"dir": "s"
-		},
-		{
-			"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
-			"dir": "n"
+			"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
+			"dir": "o"
 		}
 	],
 	"customFields": {
@@ -36,54 +28,38 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"SoundBulb": [
 			{
-				"id": "Door",
-				"iid": "8201cbd0-9b00-11ef-8ab8-8fee07b0c916",
+				"id": "SoundBulb",
+				"iid": "c065eea0-9b00-11ef-9dff-37035423d512",
 				"layer": "Entities",
-				"x": 64,
-				"y": 0,
+				"x": 0,
+				"y": 32,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 48,
+				"color": 6539085,
 				"customFields": {
-					"Door": {
-						"entityIid": "7f68aa60-9b00-11ef-8ab8-f3b2a1ae251c",
-						"layerIid": "c574c0d2-9b00-11ef-8ab8-053f57f64816",
-						"levelIid": "c574c0d0-9b00-11ef-8ab8-0d81eefb1934",
+					"Entity_ref": {
+						"entityIid": "c956e730-9b00-11ef-9dff-1b83a4339ba2",
+						"layerIid": "fff9fbc2-9b00-11ef-9dff-3dd4640d706e",
+						"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
 						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
+					}
 				}
 			}
 		],
 		"Ability": [
 			{
 				"id": "Ability",
-				"iid": "51d99050-9b00-11ef-bf48-cfc411b6f4cc",
+				"iid": "f94f0490-c210-11ef-b429-e52efbb91001",
 				"layer": "Entities",
-				"x": 64,
-				"y": 128,
+				"x": 224,
+				"y": 32,
 				"width": 32,
 				"height": 32,
 				"color": 16690740,
 				"customFields": {
-					"Ability": "SoundGun"
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "27e761a0-c210-11ef-b787-4bd9525cf820",
-				"layer": "Entities",
-				"x": 160,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": "SwampPos"
+					"Ability": "SpearToss"
 				}
 			}
 		]

@@ -10,6 +10,10 @@
 		{
 			"levelIid": "fd138990-c210-11ef-a811-59af2d84c10f",
 			"dir": "s"
+		},
+		{
+			"levelIid": "e74f22d0-c210-11ef-aae3-219a26f6d0f9",
+			"dir": "n"
 		}
 	],
 	"customFields": {
@@ -88,11 +92,30 @@
 			},
 			{
 				"id": "Spikes",
-				"iid": "eaa82260-c210-11ef-aae3-d5b0d77e993b",
+				"iid": "ed16d870-c210-11ef-aae3-c9bfa51ffa41",
 				"layer": "Entities",
-				"x": 64,
+				"x": 0,
 				"y": 0,
-				"width": 192,
+				"width": 64,
+				"height": 192,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "e16b7ad0-c210-11ef-aae3-99751c9e37d6",
+						"layerIid": "a4b18532-c210-11ef-aae3-bbc864d282ef",
+						"levelIid": "a4b18530-c210-11ef-aae3-4952c9ac8204",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "01061530-c210-11ef-aae3-5bd03d502c08",
+				"layer": "Entities",
+				"x": 128,
+				"y": 0,
+				"width": 64,
 				"height": 64,
 				"color": 1578021,
 				"customFields": {
@@ -107,12 +130,31 @@
 			},
 			{
 				"id": "Spikes",
-				"iid": "ed16d870-c210-11ef-aae3-c9bfa51ffa41",
+				"iid": "03518bd0-c210-11ef-aae3-d7f38b228168",
 				"layer": "Entities",
-				"x": 0,
+				"x": 192,
 				"y": 0,
 				"width": 64,
-				"height": 192,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "e16b7ad0-c210-11ef-aae3-99751c9e37d6",
+						"layerIid": "a4b18532-c210-11ef-aae3-bbc864d282ef",
+						"levelIid": "a4b18530-c210-11ef-aae3-4952c9ac8204",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "05075220-c210-11ef-aae3-5f33fdd05d06",
+				"layer": "Entities",
+				"x": 64,
+				"y": 0,
+				"width": 64,
+				"height": 64,
 				"color": 1578021,
 				"customFields": {
 					"Retractable": false,
@@ -152,7 +194,12 @@
 				"color": 14120515,
 				"customFields": {
 					"AnimeliaType": "FrostfireDragon",
-					"Entity_ref": null
+					"Entity_ref": {
+						"entityIid": "01061530-c210-11ef-aae3-5bd03d502c08",
+						"layerIid": "a4b18532-c210-11ef-aae3-bbc864d282ef",
+						"levelIid": "a4b18530-c210-11ef-aae3-4952c9ac8204",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
 				}
 			}
 		]

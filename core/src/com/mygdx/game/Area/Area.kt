@@ -33,6 +33,11 @@ fun getAreaMusic(areaIdentifier: String): Music{
         "World1" -> "Music/Snow City Theme/snow_city.mp3"
         "World3" -> "Music/Stone Fortress/stone fortress.mp3"
         "World4"-> "Music/Snowy Music/snowytheme.ogg"
+        "World2"-> "Music/Wind/wind1.wav"
+        "Swamp0"-> "Music/Forest/forest.mp3"
+        "Ice_castle"-> "Music/No More Magic/No More Magic.mp3"
+        "Metal_Factory"-> "Music/Futuristic Ambience/Futuristic_ambient_4.ogg"
+        "Abandoned_House"-> "Music/Dark Ambience/Socapex - Dark ambiance_3.mp3"
         else -> "Music/Nature Theme sketch/nature sketch.wav"
     }
     return DefaultMusicHandler.getMusic(musicString)

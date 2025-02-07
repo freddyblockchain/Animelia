@@ -1,23 +1,19 @@
 {
 	"identifier": "Level_81",
-	"uniqueIdentifer": "68f20cb0-9b00-11ef-9017-15f868c27b43",
-	"x": 960,
-	"y": -384,
+	"uniqueIdentifer": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
+	"x": 1216,
+	"y": -480,
 	"width": 256,
-	"height": 128,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "b5f3adf0-9b00-11ef-b959-a11f395b59c0",
-			"dir": "nw"
+			"levelIid": "1c487250-9b00-11ef-9017-c1f5fe9f14ae",
+			"dir": "n"
 		},
 		{
-			"levelIid": "bc747cc0-9b00-11ef-9017-a530d2daeae2",
-			"dir": "e"
-		},
-		{
-			"levelIid": "6e408a20-9b00-11ef-9017-c7a7a3d3fbfe",
-			"dir": "s"
+			"levelIid": "68f20cb0-9b00-11ef-9017-15f868c27b43",
+			"dir": "w"
 		}
 	],
 	"customFields": {
@@ -36,19 +32,17 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Position": [
+		"Railway": [
 			{
-				"id": "Position",
-				"iid": "afcb68d0-9b00-11ef-ad95-3f56552f1ea7",
+				"id": "Railway",
+				"iid": "e49e82d0-9b00-11ef-9017-933deec94738",
 				"layer": "Entities",
-				"x": 32,
-				"y": 0,
-				"width": 32,
+				"x": 128,
+				"y": 160,
+				"width": 128,
 				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": "CanyonPos"
-				}
+				"color": 11882632,
+				"customFields" : {}
 			}
 		]
 	}

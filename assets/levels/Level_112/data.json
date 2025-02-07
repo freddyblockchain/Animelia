@@ -1,15 +1,19 @@
 {
 	"identifier": "Level_112",
-	"uniqueIdentifer": "1d2c3230-9b00-11ef-9dff-effef5967c25",
-	"x": 576,
-	"y": 704,
-	"width": 256,
-	"height": 64,
+	"uniqueIdentifer": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
+	"x": 672,
+	"y": 608,
+	"width": 64,
+	"height": 288,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
+			"levelIid": "1d2c3230-9b00-11ef-9dff-effef5967c25",
 			"dir": "o"
+		},
+		{
+			"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+			"dir": "s"
 		}
 	],
 	"customFields": {
@@ -28,38 +32,91 @@
 		"Beach.png"
 	],
 	"entities": {
-		"SoundBulb": [
+		"Spikes": [
 			{
-				"id": "SoundBulb",
-				"iid": "c065eea0-9b00-11ef-9dff-37035423d512",
+				"id": "Spikes",
+				"iid": "989a3fc0-9b00-11ef-9dff-6b6a990ef903",
+				"layer": "Entities",
+				"x": 32,
+				"y": 160,
+				"width": 32,
+				"height": 128,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "16afbb10-9b00-11ef-9dff-23a6b4bc1e5d",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "Spikes",
+				"iid": "aa6e9c50-9b00-11ef-9dff-e988f6c39907",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 128,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "16afbb10-9b00-11ef-9dff-23a6b4bc1e5d",
+						"layerIid": "fc0a56f2-9b00-11ef-8ab8-f73a3dbe8912",
+						"levelIid": "fc0a56f0-9b00-11ef-8ab8-db1d2bcb767b",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Generator": [
+			{
+				"id": "Generator",
+				"iid": "c956e730-9b00-11ef-9dff-1b83a4339ba2",
 				"layer": "Entities",
 				"x": 0,
 				"y": 32,
 				"width": 32,
-				"height": 48,
-				"color": 6539085,
+				"height": 32,
+				"color": 7552569,
 				"customFields": {
-					"Entity_ref": {
-						"entityIid": "c956e730-9b00-11ef-9dff-1b83a4339ba2",
-						"layerIid": "fff9fbc2-9b00-11ef-9dff-3dd4640d706e",
-						"levelIid": "fff9fbc0-9b00-11ef-9dff-6700f1e4c516",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
+				}
+			}
+		],
+		"Trumpet": [
+			{
+				"id": "Trumpet",
+				"iid": "cf5357e0-9b00-11ef-9dff-a1e8f28e0fd9",
+				"layer": "Entities",
+				"x": 0,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Direction": "Left"
 				}
 			}
 		],
 		"Ability": [
 			{
 				"id": "Ability",
-				"iid": "f94f0490-c210-11ef-b429-e52efbb91001",
+				"iid": "b88af860-c210-11ef-b429-af6e24c09a03",
 				"layer": "Entities",
-				"x": 224,
-				"y": 32,
+				"x": 0,
+				"y": 0,
 				"width": 32,
 				"height": 32,
 				"color": 16690740,
 				"customFields": {
-					"Ability": "SpearToss"
+					"Ability": "RockThrow"
 				}
 			}
 		]

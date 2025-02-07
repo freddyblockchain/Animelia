@@ -792,32 +792,6 @@
 				}
 			}
 		],
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "e02a2870-c210-11ef-a7b0-43087445b08e",
-				"layer": "Entities",
-				"x": 160,
-				"y": 544,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
-		"TrainingStation": [
-			{
-				"id": "TrainingStation",
-				"iid": "e633b880-c210-11ef-a7b0-23797209ef20",
-				"layer": "Entities",
-				"x": 320,
-				"y": 544,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		],
 		"Animelia": [
 			{
 				"id": "Animelia",

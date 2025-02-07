@@ -1,23 +1,23 @@
 {
 	"identifier": "Level_100",
-	"uniqueIdentifer": "74418b90-9b00-11ef-ad95-b30fcede8bf2",
-	"x": 928,
-	"y": 544,
-	"width": 352,
-	"height": 256,
+	"uniqueIdentifer": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+	"x": 1888,
+	"y": -2048,
+	"width": 256,
+	"height": 224,
 	"bgColor": "#696A79",
 	"neighbourLevels": [
 		{
-			"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
-			"dir": "n"
+			"levelIid": "2e4f3da0-9b00-11ef-9017-e55291d023d0",
+			"dir": "s"
 		},
 		{
-			"levelIid": "c74fcdf0-9b00-11ef-8ab8-0d5d4fed4a97",
-			"dir": "s"
+			"levelIid": "c0b2d3a0-9b00-11ef-9017-990aea766a4e",
+			"dir": "n"
 		}
 	],
 	"customFields": {
-		"World": "Swamp0",
+		"World": "Abandoned_House",
 		"Visible": true
 	},
 	"layers": [
@@ -32,83 +32,132 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Door": [
+		"Generator": [
 			{
-				"id": "Door",
-				"iid": "eee08950-9b00-11ef-ad95-d999d583f93f",
+				"id": "Generator",
+				"iid": "46471ae3-9b00-11ef-9017-4daccd1a39d2",
 				"layer": "Entities",
-				"x": 192,
+				"x": 96,
 				"y": 0,
 				"width": 32,
-				"height": 16,
-				"color": 4073265,
+				"height": 32,
+				"color": 7552569,
 				"customFields": {
-					"Door": {
-						"entityIid": "2b561ed3-c210-11ef-9e36-69c3ecc647d7",
-						"layerIid": "2b561ed2-c210-11ef-9e36-89db0bc59782",
-						"levelIid": "2b561ed0-c210-11ef-9e36-b98cadac3324",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					},
-					"Direction": "Up"
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
-			}
-		],
-		"Egg": [
+			},
 			{
-				"id": "Egg",
-				"iid": "8d757db0-9b00-11ef-bf48-4d5c171eed5c",
+				"id": "Generator",
+				"iid": "46471ae4-9b00-11ef-9017-6bf68138fd22",
 				"layer": "Entities",
-				"x": 192,
-				"y": 128,
+				"x": 128,
+				"y": 0,
 				"width": 32,
 				"height": 32,
-				"color": 5925256,
+				"color": 7552569,
 				"customFields": {
-					"Egg": "Sound"
+					"Direction": "Down",
+					"Automatic": false,
+					"ProjectileType": "Boulder",
+					"Cooldown": 3
 				}
 			}
 		],
-		"Fountain": [
+		"BoulderPad": [
 			{
-				"id": "Fountain",
-				"iid": "096a9d00-c210-11ef-a7b0-0141fb5d5e69",
+				"id": "BoulderPad",
+				"iid": "46471ae5-9b00-11ef-9017-e1f61fb2d7c8",
 				"layer": "Entities",
-				"x": 256,
-				"y": 32,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
+				"x": 32,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "46471ae3-9b00-11ef-9017-4daccd1a39d2",
+						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
+						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			},
+			{
+				"id": "BoulderPad",
+				"iid": "46471ae6-9b00-11ef-9017-151a4f7142c8",
+				"layer": "Entities",
+				"x": 192,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 14957380,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "46471ae4-9b00-11ef-9017-6bf68138fd22",
+						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
+						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		],
-		"Item": [
+		"Spikes": [
 			{
-				"id": "Item",
-				"iid": "62219b60-c210-11ef-999d-317dd3165a3d",
+				"id": "Spikes",
+				"iid": "8b947fc0-9b00-11ef-9017-795adddb2c94",
 				"layer": "Entities",
-				"x": 160,
+				"x": 64,
+				"y": 64,
+				"width": 128,
+				"height": 64,
+				"color": 1578021,
+				"customFields": {
+					"Retractable": false,
+					"Entity_ref": {
+						"entityIid": "a32efac0-9b00-11ef-9017-df0024164f4a",
+						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
+						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
+			}
+		],
+		"Position": [
+			{
+				"id": "Position",
+				"iid": "a32efac0-9b00-11ef-9017-df0024164f4a",
+				"layer": "Entities",
+				"x": 96,
 				"y": 192,
 				"width": 32,
 				"height": 32,
-				"color": 12635100,
+				"color": 1199753,
 				"customFields": {
-					"Item": "FORESTFRUIT",
-					"PercentChance": 100,
-					"KeyItem": false
+					"Name": null
 				}
 			}
 		],
-		"Railway": [
+		"Cliffside": [
 			{
-				"id": "Railway",
-				"iid": "1bee0b10-c210-11ef-b787-ad37c10214e8",
+				"id": "Cliffside",
+				"iid": "b18e2dc0-9b00-11ef-9017-89c9bc908724",
 				"layer": "Entities",
-				"x": 224,
-				"y": 224,
-				"width": 128,
+				"x": 0,
+				"y": 128,
+				"width": 256,
 				"height": 32,
-				"color": 11882632,
-				"customFields" : {}
+				"color": 16705377,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "a32efac0-9b00-11ef-9017-df0024164f4a",
+						"layerIid": "46471ae2-9b00-11ef-9017-1da18786b9ac",
+						"levelIid": "46471ae0-9b00-11ef-9017-cf8bf2c0b151",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					}
+				}
 			}
 		]
 	}

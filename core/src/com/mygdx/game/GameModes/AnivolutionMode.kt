@@ -8,6 +8,7 @@ import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
 import com.mygdx.game.Managers.AnimationManager
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.Managers.MusicManager
 import kotlin.math.min
 
@@ -85,6 +86,11 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
                 if(ability?.value?.abilityName !in player.animeliaInfo.availableAbilities){
                     player.activeAbilities.remove(ability?.key)
                 }
+            }
+            if(isReincarnating){
+                val reincarnationScreen = AreaManager.getObjectWithIid(generalSaveState.lastReincarnationEntityId, generalSaveState.lastReincarnationLevelId)
+                val reincarnationScreenPos = reincarnationScreen.currentPosition()
+                changeArea(Vector2(reincarnationScreenPos.x, reincarnationScreenPos.y), reincarnationScreen.areaIdentifier)
             }
             mainMode.abilityRowUi.updateToolTips()
         }

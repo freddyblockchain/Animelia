@@ -25,7 +25,7 @@ class TriggerGate(gameObjectData: GameObjectData)
     override fun frameTask() {
         super.frameTask()
 
-        if(player.animeliaInfo.animeliaEntity == ANIMELIA_ENTITY.FireArmadillo){
+        if(player.animeliaInfo.animeliaEntity == ANIMELIA_ENTITY.FireHippo){
             this.remove()
         }
     }

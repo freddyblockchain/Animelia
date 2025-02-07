@@ -36,19 +36,6 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "6058e7d0-c210-11ef-a7b0-c3206713f882",
-				"layer": "EntitiesOnTop",
-				"x": 32,
-				"y": 0,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
 		"House": [
 			{
 				"id": "House",

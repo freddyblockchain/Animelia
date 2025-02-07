@@ -47,6 +47,32 @@
 				}
 			}
 		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "e40b4100-c210-11ef-8d5c-f310cfb0a98e",
+				"layer": "EntitiesOnTop",
+				"x": 0,
+				"y": 160,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "ec552420-c210-11ef-8d5c-955f952dfb2f",
+				"layer": "EntitiesOnTop",
+				"x": 224,
+				"y": 160,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
+			}
+		],
 		"House": [
 			{
 				"id": "House",
