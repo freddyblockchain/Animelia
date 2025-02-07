@@ -10,6 +10,7 @@ import com.mygdx.game.GameObjectData
 import com.mygdx.game.GameObjects.GameObject.FightableObject
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.Hazards.Rock
+import com.mygdx.game.Managers.SoundManager
 
 class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject, val newSpan: Int = 90) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
 
@@ -24,9 +25,7 @@ class RockProjectile(gameObjectData: GameObjectData, size: Vector2, unitVectorDi
     val sound = DefaultSoundHandler.getSound("Sound/FireExplotion/explosion_01.ogg")
 
     init {
-        val id = sound.play()
-        sound.setPitch(id, 1f)
-        sound.setVolume(id,0.5f)
+        SoundManager.playWorldSound(this, sound, 1f, 0.5f)
     }
 
     override fun frameTask() {
