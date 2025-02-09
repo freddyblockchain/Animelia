@@ -113,6 +113,13 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         //Change to first area.
         //changeArea(Vector2(generalSaveState.pos.x, generalSaveState.pos.y), generalSaveState.areaIdentifier)
         //Respawn on a fountain
+
+
+
+
+
+
+
         if(generalSaveState.lastReincarnationEntityId != ""){
             val fountain = AreaManager.getObjectWithIid(generalSaveState.lastReincarnationEntityId, generalSaveState.lastReincarnationLevelId)
             val reincarnationScreenPos = fountain.currentPosition()

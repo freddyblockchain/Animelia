@@ -62,6 +62,7 @@ class CliffSideCollision(val cliffside: Cliffside): DefaultAreaEntranceCollition
             player.state = State.STUNNED
             changeMode(CliffsideAnimationMode(mainMode, returningPos = cliffside.animeliaPosition))
             movedOutside(player)
+            player.currentHealth -= 10
         }
     }
 

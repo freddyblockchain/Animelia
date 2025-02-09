@@ -88,9 +88,8 @@ open class FriendlyAnimeliaInWorldCollision(val friendlyAnimeliaInWorld: Friendl
 
         if (friendlyAnimeliaInWorld.isConditionsFulfilled()) {
             if (friendlyAnimeliaInWorld.goingToCitySpeech.size > 0) {
-                changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.goingToCitySpeech), mainMode))
+                changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.goingToCitySpeech), mainMode) {friendlyAnimeliaInWorld.goingToCityAction()})
             }
-            friendlyAnimeliaInWorld.goingToCityAction()
         } else {
             changeMode(TalkMode(Conversation(friendlyAnimeliaInWorld.speeches), mainMode))
             friendlyAnimeliaInWorld.afterSpeechAction()

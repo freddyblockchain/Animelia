@@ -101,6 +101,7 @@ class SpikesCollision(val spikes: Spikes): DefaultAreaEntranceCollition(){
             //hack right now
             player.state = State.STUNNED
             changeMode(SkewerAnimationMode(mainMode, returningPos = spikes.goToPosition))
+            player.currentHealth -= 10
         }
     }
 

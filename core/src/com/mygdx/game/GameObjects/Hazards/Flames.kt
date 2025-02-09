@@ -73,6 +73,7 @@ class FlamesCollision(val flames: Flames): MoveCollision() {
         if(collidedObject is Player){
             player.state = State.STUNNED
             changeMode(FireAnimationMode(mainMode, returningPos = flames.goToPosition))
+            player.currentHealth -= 10
         }
     }
 

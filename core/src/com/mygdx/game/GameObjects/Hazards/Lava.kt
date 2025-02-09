@@ -51,6 +51,7 @@ class LavaCollision(val lava: Lava): MoveCollision(){
     override fun collisionHappened(collidedObject: GameObject) {
         player.state = State.STUNNED
         changeMode(FireAnimationMode(mainMode, returningPos = lava.goToPosition))
+        player.currentHealth -= 10
     }
 
 }

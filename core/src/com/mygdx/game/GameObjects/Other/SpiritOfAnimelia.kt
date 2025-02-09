@@ -10,6 +10,8 @@ import com.mygdx.game.GameModes.UIMode
 import com.mygdx.game.GameModes.changeMode
 import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.SignCustomFields
+import com.mygdx.game.GameObjects.Structures.Fountain
+import com.mygdx.game.Managers.AreaManager
 import com.mygdx.game.UI.Conversation.Conversation
 import com.mygdx.game.UI.Conversation.SpeechData
 import com.mygdx.game.UI.Scene2d.Screens.PickConversationScreen
@@ -76,15 +78,23 @@ class SpiritOfAnimelia(val gameObjectData: GameObjectData): GameObject(gameObjec
 
     val endConvo = Conversation(listOf(fone, ftwo, fthree,ffour, ffive, fsix, fseven, feight, fnine, ften))
 
+    val egone = SpeechData(speaker, "You beat the game! Thanks for playing")
+    val engGameConvo = Conversation(listOf(egone))
+
     val conversation = when(type){
         "One" -> startConversation
         "Two" -> second
         "Three"-> third
-        else -> endConvo
+        "Four" -> endConvo
+        else -> engGameConvo
     }
 }
 fun changeToMainArea(){
     changeArea(Vector2(120f,-200f), "World1")
+    val reincarnationStone = AreaManager.getActiveArea()!!.gameObjects.find { it is Fountain }
+    generalSaveState.lastReincarnationEntityId = reincarnationStone!!.gameObjectIid
+    generalSaveState.lastReincarnationLevelId = reincarnationStone!!.levelId
+    generalSaveState.updateSaveState()
 }
 
 class SpiritOfAnimeliaCollision(val spiritOfAnimelia: SpiritOfAnimelia): InputCollision(){

@@ -160,7 +160,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
             } else{
                 this.remove()
             }
-            generalSaveState.inventory.goldReceived(1, this.currentMiddle)
+           // generalSaveState.inventory.goldReceived(1, this.currentMiddle)
             PlayerStatus.animeliaClonesKilled += 1
 
             if(RandomManager.roll(50)){

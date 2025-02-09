@@ -6,7 +6,7 @@ lowMin: 2000.0
 lowMax: 2000.0
 - Count - 
 min: 0
-max: 50
+max: 200
 - Emission - 
 lowMin: 0.0
 lowMax: 0.0
@@ -20,8 +20,8 @@ timeline0: 0.0
 - Life - 
 lowMin: 0.0
 lowMax: 0.0
-highMin: 2000.0
-highMax: 2000.0
+highMin: 400.0
+highMax: 400.0
 relative: false
 scalingCount: 3
 scaling0: 1.0
@@ -80,7 +80,7 @@ active: true
 lowMin: 0.0
 lowMax: 0.0
 highMin: 0.0
-highMax: 20.0
+highMax: 100.0
 relative: false
 scalingCount: 1
 scaling0: 1.0
@@ -90,8 +90,8 @@ timeline0: 0.0
 active: true
 lowMin: 90.0
 lowMax: 90.0
-highMin: 0.0
-highMax: 180.0
+highMin: 45.0
+highMax: 135.0
 relative: false
 scalingCount: 3
 scaling0: 1.0
@@ -118,9 +118,9 @@ colors5: 0.047058824
 colors6: 1.0
 colors7: 0.12156863
 colors8: 0.047058824
-colors9: 1.0
-colors10: 0.12156863
-colors11: 0.047058824
+colors9: 0.98039216
+colors10: 0.043137256
+colors11: 0.0
 timelineCount: 4
 timeline0: 0.0
 timeline1: 0.0
@@ -132,18 +132,14 @@ lowMax: 0.0
 highMin: 1.0
 highMax: 1.0
 relative: false
-scalingCount: 5
+scalingCount: 3
 scaling0: 0.0
-scaling1: 0.0
-scaling2: 0.40677965
-scaling3: 0.33898306
-scaling4: 1.0
-timelineCount: 5
+scaling1: 0.3898305
+scaling2: 1.0
+timelineCount: 3
 timeline0: 0.0
-timeline1: 0.25694445
-timeline2: 0.4513889
-timeline3: 0.8541667
-timeline4: 1.0
+timeline1: 0.0
+timeline2: 0.9236111
 - Options - 
 attached: false
 continuous: true

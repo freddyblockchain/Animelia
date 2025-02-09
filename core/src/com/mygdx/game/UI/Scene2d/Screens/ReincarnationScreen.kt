@@ -62,6 +62,7 @@ class ReincarnationScreen(override var prevMode: GameMode?) : UIScreen() {
                     generalSaveState.updateSaveState()
                     player.materialsPickedUp.clear()
                     changeMode(AnivolutionMode(prevMode!!, getEggAnimelia(egg), isReincarnating = true))
+                    player.currentHealth = player.maxHealth
                 }
             })
 

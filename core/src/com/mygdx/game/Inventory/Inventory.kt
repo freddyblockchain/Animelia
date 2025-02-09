@@ -19,7 +19,6 @@ import kotlinx.serialization.Serializable
 data class RailwayTransportData(val areaIdentifier: String, val x: Float, val y: Float)
 @Serializable
 class Inventory() {
-    var gold: Int = 0
     val entityBooks: MutableList<ANIMELIA_ENTITY> = mutableListOf()
     val eggs: MutableList<Egg> = mutableListOf()
     val ownedAbilities: MutableList<AbilityName> = mutableListOf()
@@ -27,10 +26,10 @@ class Inventory() {
     val keyItems: MutableList<KeyItem> = mutableListOf()
     val railwayConnections: MutableList<RailwayTransportData> = mutableListOf()
     fun goldReceived(amount: Int,pos: Vector2){
-        gold += amount
-        val textAnimation = TextAnimation(Color.YELLOW, "+ $amount gold", pos)
+        //gold += amount
+        //val textAnimation = TextAnimation(Color.YELLOW, "+ $amount gold", pos)
 
-        AnimationManager.animationManager.add(textAnimation)
+        //AnimationManager.animationManager.add(textAnimation)
     }
 
 

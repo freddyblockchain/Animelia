@@ -126,6 +126,7 @@ class FiregateCollitionObject(fireGate: FireGate) :
             if(fireGate.firegateState == FiregateState.CLOSED){
                 player.state = State.STUNNED
                 changeMode(SkewerAnimationMode(mainMode, returningPos = fireGate.goToPosition))
+                player.currentHealth -= 10
             }
         }
     }
