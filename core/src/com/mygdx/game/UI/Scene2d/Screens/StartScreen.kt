@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener
 import com.mygdx.game.*
+import com.mygdx.game.Ability.convertNameToAbility
 import com.mygdx.game.GameModes.GameMode
 import com.mygdx.game.GameModes.TalkMode
 import com.mygdx.game.GameModes.UIMode
@@ -129,6 +130,15 @@ class StartScreen(val nextGameMode: GameMode): UIScreen() {
         }
 
         changeMode(nextGameMode)
+
+        val abilityPrefList = generalSaveState.abilityPrefMap[player.animeliaInfo.animeliaEntity]
+        if(abilityPrefList != null && abilityPrefList.size > 0){
+            for(abilityPref in abilityPrefList){
+                if(abilityPref.numkey !in player.activeAbilities.keys){
+                    player.activeAbilities[abilityPref.numkey] = convertNameToAbility(abilityPref.abilityName.name).keyAbility
+                }
+            }
+        }
         mainMode.abilityRowUi.updateToolTips()
     }
 

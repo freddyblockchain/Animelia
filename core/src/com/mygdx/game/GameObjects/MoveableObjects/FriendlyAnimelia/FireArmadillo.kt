@@ -61,7 +61,7 @@ class FireArmadilloInCity(gameObjectData: GameObjectData): FriendlyAnimeliaInCit
     override val conversationOptions = mapOf("Stats" to statsConversation, "Training Points" to trainingPointsConversation)
 
     override fun recruitmentAction() {
-        val trainingStation = TrainingStation(GameObjectData(x = this.x.toInt() + this.width.toInt(), y=this.y.toInt(), width = 32, height = 64), true)
+        val trainingStation = TrainingStation(GameObjectData(x = this.x.toInt() + this.width.toInt(), y=this.y.toInt(), width = 32, height = 64))
         val firstArea = AreaManager.getArea("World1")
         trainingStation.setPosition(this.currentPosition() + Vector2(this.width * 1.5f, 0f))
         firstArea.gameObjects.add(trainingStation)

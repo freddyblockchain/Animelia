@@ -9,3 +9,5 @@
 {"signaltype":"REMOVE_OBJECT","entityIid":"0e9e00a0-4ce0-11ef-8f8c-cd034c800b23"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"eb0d8210-4ce0-11ef-8990-b7294e3913f5"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo","posX":64.0,"posY":-96.0}

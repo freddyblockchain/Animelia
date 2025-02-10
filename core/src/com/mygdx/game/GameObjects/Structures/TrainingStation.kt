@@ -12,7 +12,7 @@ import com.mygdx.game.UI.Scene2d.Screens.TrainingScreen.TrainingScreen
 import com.mygdx.game.currentGameMode
 import com.mygdx.game.mainMode
 
-class TrainingStation(gameObjectData: GameObjectData, val includeEverything: Boolean = false)
+class TrainingStation(gameObjectData: GameObjectData)
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     override val texture = DefaultTextureHandler.getTexture("TrainingStatue.png")
     override val layer = Layer.ONGROUND
