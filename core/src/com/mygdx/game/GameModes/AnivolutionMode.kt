@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
+import com.mygdx.game.Ability.convertNameToAbility
 import com.mygdx.game.Animation.TextAnimation
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.Animelia.getAnimeliaData
@@ -82,17 +83,26 @@ class AnivolutionMode(val prevMode: GameMode, val animeliaEntity: ANIMELIA_ENTIT
             )
             MusicManager.currentTrack?.play()
             AnimationManager.animationManager.add(textAnimation)
+            val abilityPrefList = generalSaveState.abilityPrefMap[animeliaEntity]
             for(ability in player.activeAbilities.toMap()){
                 if(ability?.value?.abilityName !in player.animeliaInfo.availableAbilities){
                     player.activeAbilities.remove(ability?.key)
                 }
             }
+            //Preferences
+            if(abilityPrefList != null && abilityPrefList.size > 0){
+                for(abilityPref in abilityPrefList){
+                    if(abilityPref.numkey !in player.activeAbilities.keys){
+                        player.activeAbilities[abilityPref.numkey] = convertNameToAbility(abilityPref.abilityName.name).keyAbility
+                    }
+                }
+            }
+            mainMode.abilityRowUi.updateToolTips()
             if(isReincarnating){
                 val reincarnationScreen = AreaManager.getObjectWithIid(generalSaveState.lastReincarnationEntityId, generalSaveState.lastReincarnationLevelId)
                 val reincarnationScreenPos = reincarnationScreen.currentPosition()
                 changeArea(Vector2(reincarnationScreenPos.x, reincarnationScreenPos.y), reincarnationScreen.areaIdentifier)
             }
-            mainMode.abilityRowUi.updateToolTips()
         }
     }
 }

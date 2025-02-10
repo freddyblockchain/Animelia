@@ -3,6 +3,7 @@ package com.mygdx.game.Saving
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.Animelia.ANIMELIA_ENTITY
 import com.mygdx.game.FileHandler
+import com.mygdx.game.Inventory.AbilityPreference
 import com.mygdx.game.Inventory.Inventory
 import com.mygdx.game.Managers.Stats
 import kotlinx.serialization.Serializable
@@ -21,7 +22,8 @@ class PlayerSaveState(
     var pos: SVector2,
     var areaIdentifier: String,
     var lastReincarnationEntityId: String,
-    var lastReincarnationLevelId: String
+    var lastReincarnationLevelId: String,
+    val abilityPrefMap: MutableMap<ANIMELIA_ENTITY, MutableList<AbilityPreference>>
 ){
     fun updateSaveState(){
         val stringEncoded = Json.encodeToString(this)

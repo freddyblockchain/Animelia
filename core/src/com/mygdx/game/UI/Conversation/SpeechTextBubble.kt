@@ -30,8 +30,13 @@ class SpeechTextBubble() {
 
     fun render(batch: SpriteBatch, textData: SpeechData) {
         sprite.draw(batch)
-        textFont.draw(batch, textData.text, sprite.x + 20f, sprite.y + 50f)
-        val prevColor = textFont.color
+        val text = textData.text
+        val lastPart = text.indexOf(" ", 51)
+        val firstIndex = if(lastPart == -1) text.length else lastPart + 1
+        textFont.draw(batch, textData.text.substring(0, firstIndex), sprite.x + 20f, sprite.y + 50f)
+        if(firstIndex != -1){
+            textFont.draw(batch, textData.text.substring(firstIndex, text.length), sprite.x + 20f, sprite.y + 30f)
+        }
         textFont.color = Color.YELLOW
         textFont.draw(batch, textData.speaker, sprite.x + 20f, sprite.y + 80f)
         textFont.color = Color.WHITE

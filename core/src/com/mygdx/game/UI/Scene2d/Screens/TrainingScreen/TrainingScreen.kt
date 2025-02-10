@@ -17,7 +17,7 @@ import com.mygdx.game.UI.Scene2d.Screens.UIScreen
 import com.mygdx.game.generalSaveState
 import com.mygdx.game.player
 
-class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Boolean): UIScreen() {
+class TrainingScreen(override var prevMode: GameMode?): UIScreen() {
 
     override var activeButton: Actor? = null
     override var renderPrevGameMode = true
@@ -46,15 +46,14 @@ class TrainingScreen(override var prevMode: GameMode?, val includeEverything: Bo
         rootTable.add(offenceTable)
 
         rootTable.row()
-        if(includeEverything){
-            val defenceTable = offenceAttributeRow.getNewTable("Defence", defence, {defence += 1; defence},{defence -= 1; defence})
-            val intelligenceTable = offenceAttributeRow.getNewTable("Intelligence", intelligence, {intelligence += 1; intelligence},{intelligence -= 1; intelligence})
+        val defenceTable = offenceAttributeRow.getNewTable("Defence", defence, {defence += 1; defence},{defence -= 1; defence})
+        val intelligenceTable = offenceAttributeRow.getNewTable("Intelligence", intelligence, {intelligence += 1; intelligence},{intelligence -= 1; intelligence})
 
-            rootTable.add(defenceTable)
-            rootTable.row()
-            rootTable.add(intelligenceTable)
-            rootTable.row()
-        }
+        rootTable.add(defenceTable)
+        rootTable.row()
+        rootTable.add(intelligenceTable)
+        rootTable.row()
+
 
         val finishTrainingButton = TextButton("Confirm Training", skin)
         rootTable.add(finishTrainingButton).center().padTop(20f).size(100f)

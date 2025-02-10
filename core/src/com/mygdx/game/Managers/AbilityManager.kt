@@ -3,6 +3,7 @@ package com.mygdx.game.Managers
 import com.mygdx.game.Ability.Ability
 import com.mygdx.game.Ability.AbilityName
 import com.mygdx.game.Ability.convertNameToAbility
+import com.mygdx.game.Inventory.AbilityPreference
 import com.mygdx.game.generalSaveState
 import com.mygdx.game.mainMode
 import com.mygdx.game.player
@@ -34,12 +35,21 @@ class AbilityManager {
             if(ability != null){
                 player.activeAbilities[num] = convertNameToAbility(ability.name).keyAbility
             }
+            val abilityList = generalSaveState.abilityPrefMap.getOrPut(player.animeliaInfo.animeliaEntity) { mutableListOf() }
+            abilityList.add(AbilityPreference(num, abilityName))
+            generalSaveState.updateSaveState()
             mainMode.abilityRowUi.updateToolTips()
         }
         fun removeFromActiveAbilities(num: Int){
             val ability = player.activeAbilities.getOrDefault(num,null)
             if(ability != null){
                 player.activeAbilities[num] = null
+            }
+            val abilityList = generalSaveState.abilityPrefMap.getOrPut(player.animeliaInfo.animeliaEntity) { mutableListOf() }
+            val prefToRemove = abilityList.find { it.numkey == num }
+            if(prefToRemove != null ){
+                abilityList.remove(prefToRemove)
+                generalSaveState.updateSaveState()
             }
             mainMode.abilityRowUi.updateToolTips()
         }

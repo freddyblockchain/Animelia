@@ -16,15 +16,15 @@ class TrainingStation(gameObjectData: GameObjectData, val includeEverything: Boo
     : GameObject(gameObjectData, Vector2(gameObjectData.width.toFloat(),gameObjectData.height.toFloat())) {
     override val texture = DefaultTextureHandler.getTexture("TrainingStatue.png")
     override val layer = Layer.ONGROUND
-    override val collision = TrainingStationCollision(includeEverything)
+    override val collision = TrainingStationCollision()
 }
 
-class TrainingStationCollision(val includeEverything: Boolean): InputCollision(){
+class TrainingStationCollision(): InputCollision(){
     override val keyCode = Input.Keys.ENTER
     override val insideText = "TRAIN"
 
     override fun collisionHappened(collidedObject: GameObject) {
-        currentGameMode = UIMode(TrainingScreen(mainMode,includeEverything))
+        currentGameMode = UIMode(TrainingScreen(mainMode))
     }
 
 }

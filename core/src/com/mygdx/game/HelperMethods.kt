@@ -104,6 +104,7 @@ fun changeArea(newPos: Vector2, newAreaIdentifier: String, shouldSave: Boolean =
 
     AnimationManager.animationManager.add(AreaTransitionAnimation())
 
+    //Reinitialize Abilities
     player.activeAbilities.forEach {
         if(it.value != null){
             player.activeAbilities[it.key] = convertNameToAbility(it.value!!.abilityName.name).keyAbility

@@ -49,7 +49,7 @@ class SpiritOfAnimelia(val gameObjectData: GameObjectData): GameObject(gameObjec
     val rthree = SpeechData(speaker, "I see there is a fireball ability over there!")
     val rfour =  SpeechData(speaker, "As you are a fire animelia, you should be able to learn it!")
     val rfive =  SpeechData(speaker, "When you grab it, press SPACE and navigate to the ability page")
-    val rsix =  SpeechData(speaker, "Click on the ability. You should be able to use it pressing 1 now")
+    val rsix =  SpeechData(speaker, "Click on the ability. You should be able to use it by pressing 1 now")
     val rseven =  SpeechData(speaker, "Maybe you can destroy the ice in front of us?")
 
     val second = Conversation(listOf(rone, rrtwo,rrrtwo, rtwo,rthree,rfour,rfive,rsix, rseven))

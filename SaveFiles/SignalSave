@@ -5,14 +5,7 @@
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"SpiritGrounds","entityIid":"25358500-c210-11ef-a794-512d110e4e15"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"SpiritGrounds","entityIid":"3513ddf0-c210-11ef-a794-2f9337ccb7c2"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"SpiritGrounds","entityIid":"34809ea0-c210-11ef-a794-5f185c1b0a65"}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"2d0f3930-4ce0-11ef-adfe-6f665ad35ddb"}
-{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"FireArmadillo","posX":64.0,"posY":-96.0}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"f1a0e1b0-c210-11ef-b429-212fb4df5af7"}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"f21b41d0-c210-11ef-b429-734aa83afd79"}
-{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"fcb9c350-c210-11ef-b429-d95df59e7493"}
-{"signaltype":"REMOVE_OBJECT","entityIid":"0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"da471810-c210-11ef-a794-150f6ef097cd"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"0e9e00a0-4ce0-11ef-8f8c-cd034c800b23"}
+{"signaltype":"REMOVE_OBJECT","entityIid":"0e74a6b0-4ce0-11ef-8f8c-33d0ef5decd3"}
 {"signaltype":"REMOVE_OBJECT","entityIid":"eb0d8210-4ce0-11ef-8990-b7294e3913f5"}
-{"signaltype":"REMOVE_OBJECT","entityIid":"1b2770f0-4ce0-11ef-8f8c-d50373249f93"}
-{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"IcePenguin","posX":32.0,"posY":-288.0}
-{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"IcePenguin"}
