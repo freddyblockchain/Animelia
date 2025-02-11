@@ -122,7 +122,7 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     override fun initObject() {
         sprite.setColor(Color.CHARTREUSE)
-        raycastObject = RaycastObject(Vector2(64f,32f),this, listOf(Player::class.java), this)
+        raycastObject = RaycastObject(Vector2(80f,32f),this, listOf(Player::class.java), this)
         raycastObject.add()
 
 

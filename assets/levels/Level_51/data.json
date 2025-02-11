@@ -152,6 +152,83 @@
 				"color": 5925256,
 				"customFields" : {}
 			}
+		],
+		"Item": [
+			{
+				"id": "Item",
+				"iid": "203892b0-c210-11ef-b57f-cb16c37ed23c",
+				"layer": "Entities",
+				"x": 32,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FIREFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "24556df0-c210-11ef-b57f-175dea597d32",
+				"layer": "Entities",
+				"x": 32,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "ICEFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "267085c0-c210-11ef-b57f-f59d0e782886",
+				"layer": "Entities",
+				"x": 416,
+				"y": 256,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "FORESTFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "31c95690-c210-11ef-b57f-7580fe8ebd0b",
+				"layer": "Entities",
+				"x": 384,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "TROPICALFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			},
+			{
+				"id": "Item",
+				"iid": "33766a50-c210-11ef-b57f-0da715f77bee",
+				"layer": "Entities",
+				"x": 384,
+				"y": 0,
+				"width": 32,
+				"height": 32,
+				"color": 12635100,
+				"customFields": {
+					"Item": "CANYONFRUIT",
+					"PercentChance": 100,
+					"KeyItem": false
+				}
+			}
 		]
 	}
 }
