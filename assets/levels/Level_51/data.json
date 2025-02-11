@@ -139,6 +139,19 @@
 				"color": 11882632,
 				"customFields" : {}
 			}
+		],
+		"Library": [
+			{
+				"id": "Library",
+				"iid": "d45f55c0-c210-11ef-b57f-57593cc21d4a",
+				"layer": "Entities",
+				"x": 192,
+				"y": 128,
+				"width": 64,
+				"height": 64,
+				"color": 5925256,
+				"customFields" : {}
+			}
 		]
 	}
 }

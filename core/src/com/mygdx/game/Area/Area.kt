@@ -38,6 +38,7 @@ fun getAreaMusic(areaIdentifier: String): Music{
         "Ice_castle"-> "Music/No More Magic/No More Magic.mp3"
         "Metal_Factory"-> "Music/Futuristic Ambience/Futuristic_ambient_4.ogg"
         "Abandoned_House"-> "Music/Dark Ambience/Socapex - Dark ambiance_3.mp3"
+        "Vulcano"-> "Music/Stone Fortress/stone fortress.mp3"
         else -> "Music/Nature Theme sketch/nature sketch.wav"
     }
     return DefaultMusicHandler.getMusic(musicString)

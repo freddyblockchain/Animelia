@@ -163,7 +163,7 @@ class MetalBirdData(): AnimeliaData {
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.FLYING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.MASTER
     override val animeliaAnimation = AnimeliaAnimation("Animelias/metalbird-straight.png","Animelias/metalbird-right.png","Animelias/metalbird-left.png")
-    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(OffenceOver(15), InArea("World2"))
+    override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(DefenceOver(15), InArea("World2"))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>(ANIMELIA_ENTITY.FrostFireDragon)
     override val availableAbilities = listOf<AbilityName>(AbilityName.Fly, AbilityName.Whirlwind, AbilityName.Missile, AbilityName.ScrewAttack, AbilityName.ScrapStorm, AbilityName.AerialDeath)
     override val animeliaEntity = ANIMELIA_ENTITY.MetalBird

@@ -13,11 +13,8 @@ import com.mygdx.game.GameObjects.Other.Crystals.Statue
 import com.mygdx.game.GameObjects.Other.Crystals.Crystal
 import com.mygdx.game.GameObjects.Other.SpiritOfAnimelia
 import com.mygdx.game.GameObjects.Sign
-import com.mygdx.game.GameObjects.Structures.Fireplace
-import com.mygdx.game.GameObjects.Structures.Fountain
-import com.mygdx.game.GameObjects.Structures.House
+import com.mygdx.game.GameObjects.Structures.*
 import com.mygdx.game.GameObjects.Structures.Railway.Railway
-import com.mygdx.game.GameObjects.Structures.TrainingStation
 import com.mygdx.game.Items.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
@@ -65,6 +62,7 @@ data class Entities(
     val TargetCircle: List<GameObjectData> = listOf(),
     val TriggerGate: List<GameObjectData> = listOf(),
     val KingDoor: List<GameObjectData> = listOf(),
+    val Library: List<GameObjectData> = listOf(),
 )
 fun initMappings(){
     GameObjectFactory.register("Door", ::Door)
@@ -102,6 +100,7 @@ fun initMappings(){
     GameObjectFactory.register("TargetCircle", ::TargetCircle)
     GameObjectFactory.register("TriggerGate", ::TriggerGate)
     GameObjectFactory.register("KingDoor", ::KingDoor)
+    GameObjectFactory.register("Library", ::Library)
 }
 @Serializable
 open class GameObjectData( var x: Int = 0,

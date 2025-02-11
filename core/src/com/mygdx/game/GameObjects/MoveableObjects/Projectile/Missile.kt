@@ -16,6 +16,7 @@ import com.mygdx.game.GameObjects.GameObject.GameObject
 import com.mygdx.game.GameObjects.GameObject.MoveableObject
 import com.mygdx.game.GameObjects.Hazards.FiregateCollitionObject
 import com.mygdx.game.GameObjects.Hazards.TargetCircle
+import com.mygdx.game.Managers.SoundManager
 import com.mygdx.game.getUnitVectorTowardsPoint
 
 class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection: Vector2, shooter: GameObject, val newSpan: Int = 90) : Projectile(gameObjectData,size, unitVectorDirection, shooter) {
@@ -34,10 +35,7 @@ class Missile(gameObjectData: GameObjectData, size: Vector2, unitVectorDirection
     val missileAggroRadius = MissileAggroBox(this)
     init {
         setRotation(unitVectorDirection,this,0f)
-        val id = sound.play()
-        sound.setPitch(id, 1f)
-        sound.setVolume(id,0.5f)
-
+        SoundManager.playWorldSound(this, sound, 1f, 0.5f)
         missileAggroRadius.add()
     }
 

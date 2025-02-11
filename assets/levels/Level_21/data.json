@@ -36,32 +36,6 @@
 		"Beach.png"
 	],
 	"entities": {
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "6e3b49b0-c210-11ef-a7b0-dd806f83557a",
-				"layer": "EntitiesOnTop",
-				"x": 0,
-				"y": 32,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
-		"TrainingStation": [
-			{
-				"id": "TrainingStation",
-				"iid": "74c2e360-c210-11ef-a7b0-03b3bceb8c87",
-				"layer": "EntitiesOnTop",
-				"x": 224,
-				"y": 32,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
-		],
 		"Position": [
 			{
 				"id": "Position",
