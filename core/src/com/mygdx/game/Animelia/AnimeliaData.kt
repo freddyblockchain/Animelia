@@ -194,7 +194,7 @@ class KingFrogData(): AnimeliaData {
     override var textureName = "Animelias/kingfrog-straight.png"
     override val elemental_types: List<ELEMENTAL_TYPE> = listOf(ELEMENTAL_TYPE.SOUND, ELEMENTAL_TYPE.FIGHTING, ELEMENTAL_TYPE.METAL)
     override val animeliaStage = ANIMELIA_STAGE.GRANDMASTER
-    override val animeliaAnimation = AnimeliaAnimation("Animelias/kingfrog-straight.png","Animelias/kingfrog-straight.png","Animelias/kingfrog-straight.png")
+    override val animeliaAnimation = AnimeliaAnimation("Animelias/kingfrog-straight.png","Animelias/kingFrog-right.png","Animelias/kingFrog-left.png")
     override val animeliaEvolutionConditions = listOf<AnivolutionCondition>(IntelligenceOver(15), DefenceOver(15))
     override val possibleAnivolutions = listOf<ANIMELIA_ENTITY>()
     override val availableAbilities = listOf<AbilityName>(AbilityName.AmphibianLullaby, AbilityName.SoundGun, AbilityName.SpearToss, AbilityName.RockThrow, AbilityName.ScrapStorm,AbilityName.Missile,AbilityName.ScrewAttack)
