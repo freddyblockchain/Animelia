@@ -72,12 +72,10 @@ class MainGame : ApplicationAdapter() {
         currentGameMode.spriteBatch.projectionMatrix = mainCamera.combined
         currentGameMode.render()
         AnimationManager.addAnimationsToRender()
-        drawrects()
+        //drawrects()
         AbilityManager.processAbilities()
         currentGameMode.FrameAction()
-        EventManager.executeEvents()
         SignalManager.executeSignals()
-        drawHealthBars()
         currentGameMode.cameraAction()
         mainCamera.update()
         fpsLogger.log()
@@ -96,12 +94,6 @@ class MainGame : ApplicationAdapter() {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line)
         shapeRenderer.polygon(polygon.transformedVertices)
         shapeRenderer.end()
-    }
-
-    fun drawHealthBars(){
-        for (fightableObject in AreaManager.getActiveArea()!!.gameObjects.filterIsInstance<FightableObject>()){
-            fightableObject.healthStrategy.showHealth(fightableObject.sprite, fightableObject.currentHealth, fightableObject.maxHealth)
-        }
     }
 
     override fun resize(width: Int, height: Int) {

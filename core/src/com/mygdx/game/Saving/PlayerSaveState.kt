@@ -23,7 +23,8 @@ class PlayerSaveState(
     var areaIdentifier: String,
     var lastReincarnationEntityId: String,
     var lastReincarnationLevelId: String,
-    val abilityPrefMap: MutableMap<ANIMELIA_ENTITY, MutableList<AbilityPreference>>
+    val abilityPrefMap: MutableMap<ANIMELIA_ENTITY, MutableList<AbilityPreference>>,
+    val levelsVisited:MutableList<String>
 ){
     fun updateSaveState(){
         val stringEncoded = Json.encodeToString(this)

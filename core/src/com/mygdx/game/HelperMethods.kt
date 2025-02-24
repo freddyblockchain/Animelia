@@ -51,6 +51,8 @@ fun getObjectsFromLevelName(levelName: String): List<GameObject> {
         Vector2(root.width.toFloat(), root.height.toFloat()),
         "${levelName}/_composite.png"
     )
+    ground.levelId = root.uniqueIdentifer
+
     val wall = Wall(GameObjectData(), Vector2(0f, 0f), ground)
     val entityObjects = JsonParser.getGameObjects(root)
     val objectsToReturn = entityObjects + ground + wall
@@ -127,10 +129,12 @@ fun getMapObjects(): List<GameObject> {
         if (AreaManager.levelToAreaMap["levels/Level_$i"] in overworldZones) {
             val levelPath = "${FileHandler.BASE_PATH}levels/Level_$i/data.json"
             val root = JsonParser.getRoot(levelPath)
+            val levelId = AreaManager.levelNameToLevelId["levels/Level_$i"]
+            val textureName = if(levelId in generalSaveState.levelsVisited) "levels/Level_$i/_composite.png" else "black-box.png"
             val ground = Ground(
                 GameObjectData(x = root.x, y = (-root.y) - root.height),
                 Vector2(root.width.toFloat(), root.height.toFloat()),
-                "levels/Level_$i/_composite.png"
+                textureName
             )
             val wall = Wall(GameObjectData(), Vector2(0f, 0f), ground)
             allObjects.add(ground)

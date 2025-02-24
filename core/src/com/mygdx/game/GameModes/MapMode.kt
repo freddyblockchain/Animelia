@@ -24,7 +24,6 @@ class MapMode(val prevMode: GameMode): GameMode {
     var prevZoom: Float = 0f
 
     val playerSprite = Sprite(DefaultTextureHandler.getTexture(player.animeliaInfo.textureName))
-    val mapPlayer = MapPlayer(playerSprite)
     override fun modeInit() {
         super.modeInit()
         mapToDraw.addAll(getMapObjects())

@@ -53,3 +53,17 @@
 {"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"World3","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4","levelId":"a49c50f0-9b00-11ef-b959-e9dd9992885b","metalBirdPos":"ICE"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"96db0440-9b00-11ef-b959-c7b40722a1b6"}
 {"signaltype":"REMOVE_OBJECT","areaIdentifer":"World4","entityIid":"33e15180-c210-11ef-b429-c7a673c55b73"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Swamp0","entityIid":"27a8dcd0-c210-11ef-b429-8d3962e50f27"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World2","entityIid":"e49e82d0-9b00-11ef-9017-933deec94738"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World3","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4"}
+{"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"World2","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4","levelId":"a49c50f0-9b00-11ef-b959-e9dd9992885b","metalBirdPos":"FIRE"}
+{"signaltype":"RAILWAY_FIXED","areaIdentifer":"World4","entityIid":"491b4a30-c210-11ef-a811-879e90481b29"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World2","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4"}
+{"signaltype":"METAL_BIRD_TALKING","areaIdentifer":"Swamp0","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4","levelId":"a49c50f0-9b00-11ef-b959-e9dd9992885b","metalBirdPos":"CANYON"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"Swamp0","entityIid":"69745200-9b00-11ef-90a0-29b5de4978b4"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"MetalBird","posX":288.0,"posY":-288.0}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"MetalBird"}
+{"signaltype":"REMOVE_OBJECT","areaIdentifer":"World2","entityIid":"c89d55a0-c210-11ef-9e36-e550b344a58a"}
+{"signaltype":"ANIMELIA_RECRUITED","animeliaEntity":"Frog","posX":576.0,"posY":-480.0}
+{"signaltype":"CHANGE_LEVEL_VISIBLE","areaIdentifer":"WorldSignal","levelId":"3f2b7b80-c210-11ef-9e36-677a79c962a8"}
+{"signaltype":"ANIMELIA_CITY_TALKED_WITH","animeliaEntity":"Frog"}
