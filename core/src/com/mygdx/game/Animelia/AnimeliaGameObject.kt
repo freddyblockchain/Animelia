@@ -9,6 +9,8 @@ import com.badlogic.gdx.math.Circle
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
 import com.mygdx.game.CannotMoveStrategy.NoAction
+import com.mygdx.game.Collisions.CanMoveCollision
+import com.mygdx.game.Collition.MoveCollision
 import com.mygdx.game.Enums.Direction
 import com.mygdx.game.Enums.Layer
 import com.mygdx.game.GameObjects.GameObject.FightableObject
@@ -113,6 +115,8 @@ abstract class EnemyAnimelia(gameObjectData: GameObjectData, val entityRefData: 
 
     lateinit var raycastObject: RaycastObject
 
+    override val collision = EnemyAnimeliaCollision(this)
+
     init {
         fogEffect.load(Gdx.files.internal("Particles/fog.p"), Gdx.files.internal("Particles"))
         animeliaEffect = AnimeliaEffect(fogEffect)
@@ -197,4 +201,14 @@ fun setAnimeliaSpriteTexture(animelia: FightableObject, animeliaInfo: AnimeliaDa
         animelia.sprite.texture = DefaultTextureHandler.getTexture(animeliaInfo.textureName)
         animeliaInfo.animeliaAnimation.reset()
     }
+}
+
+class EnemyAnimeliaCollision(enemyAnimelia: EnemyAnimelia): MoveCollision() {
+    override fun collisionHappened(collidedObject: GameObject) {
+        if(collidedObject is Player){
+            collidedObject.isHit(10,10)
+        }
+    }
+
+    override var canMoveAfterCollision = true
 }

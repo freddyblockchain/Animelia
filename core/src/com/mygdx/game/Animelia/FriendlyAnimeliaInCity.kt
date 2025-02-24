@@ -2,6 +2,7 @@ package com.mygdx.game.Animelia
 
 import AnimeliaCityTalkedWithSignal
 import com.badlogic.gdx.Input
+import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector2
 import com.mygdx.game.*
@@ -27,13 +28,34 @@ abstract class FriendlyAnimeliaInCity(gameObjectData: GameObjectData) :
     abstract val inCitySpeeches: List<SpeechData>
 
     open val conversationOptions: Map<String, Conversation> = mapOf()
+    val talkSpeechBubble = Sprite(DefaultTextureHandler.getTexture("animeliaTalk.png"))
     abstract fun recruitmentAction()
 
     override val collision = FriendlyAnimeliaInCityCollision(this)
     override val layer = Layer.ONGROUND
 
+    var talkedWith = false
+
     override fun initObject() {
         this.sprite.texture = DefaultTextureHandler.getTexture(animeliaData.textureName)
+
+        val talkedWithAnimelia =
+            SignalManager.pastSignals.filter { it.signaltype == SIGNALTYPE.ANIMELIA_CITY_TALKED_WITH }
+                .map { it as AnimeliaCityTalkedWithSignal }
+                .firstOrNull { it.animeliaEntity == this.animeliaEntity }
+
+        if(talkedWithAnimelia != null){
+            talkedWith = true
+        }
+    }
+
+    override fun render(batch: SpriteBatch) {
+        super.render(batch)
+        if (!talkedWith) {
+            val pos = this.currentMiddle - Vector2(8f, -8f)
+            talkSpeechBubble.setPosition(pos.x, pos.y)
+            talkSpeechBubble.draw(batch)
+        }
     }
 }
 
@@ -50,7 +72,10 @@ class FriendlyAnimeliaInCityCollision(val friendlyAnimeliaInCity: FriendlyAnimel
         if (talkedWithAnimelia != null) {
             changeMode(UIMode(PickConversationScreen(mainMode, this.friendlyAnimeliaInCity.conversationOptions)))
         } else {
-            changeMode(TalkMode(Conversation(friendlyAnimeliaInCity.inCitySpeeches), mainMode){SignalManager.emitSignal(AnimeliaCityTalkedWithSignal(this.friendlyAnimeliaInCity.animeliaEntity))})
+            changeMode(TalkMode(Conversation(friendlyAnimeliaInCity.inCitySpeeches), mainMode){
+                SignalManager.emitSignal(AnimeliaCityTalkedWithSignal(this.friendlyAnimeliaInCity.animeliaEntity))
+                friendlyAnimeliaInCity.talkedWith = true
+            })
         }
     }
 

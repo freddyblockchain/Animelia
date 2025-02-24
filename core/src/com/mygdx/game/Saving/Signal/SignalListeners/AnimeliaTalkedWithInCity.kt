@@ -69,5 +69,6 @@ class AnimeliaTalkedWithInCity: SignaledEventListener {
             generalSaveState.inventory.keyItems.add(KeyItem.KINGSEAL)
             generalSaveState.updateSaveState()
         }
+
     }
 }

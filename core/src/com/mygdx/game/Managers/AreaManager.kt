@@ -63,6 +63,7 @@ class AreaManager {
                     addObjectsToArea(newArea, newObjects)
                 }
             }
+            newArea.initArea(areaIdentifier)
             newArea.gameObjects.toMutableList().forEach { it.initObject() }
             newArea.gameObjects.add(player)
 

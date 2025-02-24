@@ -17,7 +17,7 @@ import com.mygdx.game.Particles.AnimeliaEffect
 class IceCocoon(override val attachedFightableObject: FightableObject): KeyAbility() {
     override val abilityName = AbilityName.IceCocoon
     override val ELEMENTALTYPES = ELEMENTAL_TYPE.ICE
-    val originalTexture = attachedFightableObject.sprite.texture
+    var originalTexture = attachedFightableObject.sprite.texture
 
     override val activeFrames = 60
     override var currentFrame = 0
@@ -26,6 +26,7 @@ class IceCocoon(override val attachedFightableObject: FightableObject): KeyAbili
 
     override fun onActivate() {
         player.state = State.SHIELDED
+        originalTexture = attachedFightableObject.sprite.texture
         attachedFightableObject.sprite.texture = DefaultTextureHandler.getTexture("IceCocoon.png")
     }
 

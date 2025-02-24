@@ -36,9 +36,11 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     var sleepCounter = 0
     val sleepDuration = 60
 
+    open var invulnerableFrames = 30
+
     override fun frameTask() {
         super.frameTask()
-
+        invulnerableFrames += 1
         if(this.state == State.ASLEEP){
             sleepCounter += 1
             if(sleepCounter >= sleepDuration){
@@ -78,13 +80,17 @@ abstract class FightableObject(gameObjectData: GameObjectData, size: Vector2) : 
     }
 
     fun isHit(offenceOfAttacker: Int, damage: Int){
-        val damageTaken =  offenceOfAttacker + damage - this.stats.defence
-        currentHealth -= damageTaken
+        //Invulnerable frames to make sure you don't get hit a million times
+        if(invulnerableFrames >= 30){
+            val damageTaken =  offenceOfAttacker + damage - this.stats.defence
+            currentHealth -= damageTaken
 
-        val color = if(this is Player) Color.RED else Color.WHITE
-        val minus = if(this is Player) "- " else ""
-        val textAnimation = TextAnimation(color, "$minus$damageTaken", this.currentPosition())
-        AnimationManager.animationManager.add(textAnimation)
+            val color = if(this is Player) Color.RED else Color.WHITE
+            val minus = if(this is Player) "- " else ""
+            val textAnimation = TextAnimation(color, "$minus$damageTaken", this.currentPosition())
+            AnimationManager.animationManager.add(textAnimation)
+            invulnerableFrames = 0
+        }
     }
 
     override fun render(batch: SpriteBatch) {

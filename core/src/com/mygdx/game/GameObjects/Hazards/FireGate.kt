@@ -119,6 +119,9 @@ class FiregateCollitionObject(fireGate: FireGate) :
 
     }
 
+    override fun render(batch: SpriteBatch) {
+    }
+
     override val collision = object: DefaultAreaEntranceCollition() {
         override var canMoveAfterCollision: Boolean = true
 
