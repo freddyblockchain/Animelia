@@ -26,7 +26,7 @@ class IceBirdEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData?
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
     override val outsideOfAggroStrategy = TurnAndFacePlayer(this)
 
-    override val maxHealth = 30f
+    override val maxHealth = 60f
     val icicleAbility = IcicleAbility(this)
     val iceBreath = IceBreath(this)
     override val insideBattleStrategy = IceBirdBattleStrategy(this,icicleAbility, iceBreath)

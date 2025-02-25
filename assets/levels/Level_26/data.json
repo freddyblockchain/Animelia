@@ -52,6 +52,26 @@
 					"Direction": "Right",
 					"Speed": 1
 				}
+			},
+			{
+				"id": "BoxingGlove",
+				"iid": "d0b88de0-e920-11ef-a9e4-dbc374dbb90e",
+				"layer": "Entities",
+				"x": 64,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16067712,
+				"customFields": {
+					"Entity_ref": {
+						"entityIid": "91f84e34-73f0-11ef-b6cd-09dfe87e4bb5",
+						"layerIid": "91f84e32-73f0-11ef-b6cd-9ddfca1dc6e7",
+						"levelIid": "91f84e30-73f0-11ef-b6cd-a7dd8e76d456",
+						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
+					},
+					"Direction": "Right",
+					"Speed": 2
+				}
 			}
 		],
 		"Position": [

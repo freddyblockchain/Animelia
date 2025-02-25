@@ -85,32 +85,6 @@
 					"Direction": "Up"
 				}
 			}
-		],
-		"Fountain": [
-			{
-				"id": "Fountain",
-				"iid": "fb17faf0-c210-11ef-8d5c-67efef4f8c71",
-				"layer": "Entities",
-				"x": 0,
-				"y": 128,
-				"width": 64,
-				"height": 64,
-				"color": 39387,
-				"customFields" : {}
-			}
-		],
-		"TrainingStation": [
-			{
-				"id": "TrainingStation",
-				"iid": "00e82b80-c210-11ef-8d5c-7f4bb71bed3a",
-				"layer": "Entities",
-				"x": 160,
-				"y": 128,
-				"width": 32,
-				"height": 64,
-				"color": 7552569,
-				"customFields" : {}
-			}
 		]
 	}
 }

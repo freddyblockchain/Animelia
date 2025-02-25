@@ -52,41 +52,6 @@
 					"Direction": "Down"
 				}
 			}
-		],
-		"Cliffside": [
-			{
-				"id": "Cliffside",
-				"iid": "3025ba70-9b00-11ef-b886-7b399733c624",
-				"layer": "Entities",
-				"x": 128,
-				"y": 0,
-				"width": 32,
-				"height": 96,
-				"color": 16705377,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "34c496f0-9b00-11ef-b886-2b37bc1bc55e",
-						"layerIid": "bcd2dee2-9b00-11ef-b886-753395e1af32",
-						"levelIid": "bcd2dee0-9b00-11ef-b886-fdd8f9943e97",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "34c496f0-9b00-11ef-b886-2b37bc1bc55e",
-				"layer": "Entities",
-				"x": 160,
-				"y": 32,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			}
 		]
 	}
 }

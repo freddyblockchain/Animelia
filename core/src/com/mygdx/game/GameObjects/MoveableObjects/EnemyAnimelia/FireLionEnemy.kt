@@ -14,7 +14,7 @@ class FireLionEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData
     override val animeliaEntity = ANIMELIA_ENTITY.FireLion
     override val animeliaInfo = getAnimeliaData(animeliaEntity)
 
-    override val maxHealth = 30f
+    override val maxHealth = 60f
     val fireball = FireballAbility(this)
     val fireBreath = FireBreath(this)
 

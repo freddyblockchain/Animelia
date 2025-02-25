@@ -19,7 +19,7 @@ class GuardFrogEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefDat
     override val outsideOfAggroStrategy = TurnAndFacePlayer(this)
     override val insideBattleStrategy = GuardFrogBattleStrategy(this, rockThrowAbility, amphibianLullaby)
 
-    override val maxHealth = 30f
+    override val maxHealth = 60f
 
     override val aggroRange = 200f
 

@@ -46,6 +46,32 @@
 					"Name": null
 				}
 			}
+		],
+		"Fountain": [
+			{
+				"id": "Fountain",
+				"iid": "9cb8b100-e920-11ef-baea-a97604d70c9a",
+				"layer": "Entities",
+				"x": 224,
+				"y": 0,
+				"width": 64,
+				"height": 64,
+				"color": 39387,
+				"customFields" : {}
+			}
+		],
+		"TrainingStation": [
+			{
+				"id": "TrainingStation",
+				"iid": "a4c208b0-e920-11ef-baea-2b31ab6e5d91",
+				"layer": "Entities",
+				"x": 320,
+				"y": 96,
+				"width": 32,
+				"height": 64,
+				"color": 7552569,
+				"customFields" : {}
+			}
 		]
 	}
 }

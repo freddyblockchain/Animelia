@@ -31,41 +31,5 @@
 		"OnGround_lava.png",
 		"Beach.png"
 	],
-	"entities": {
-		"FireGate": [
-			{
-				"id": "FireGate",
-				"iid": "3eb7c0c0-c210-11ef-a811-a3ca8595e090",
-				"layer": "Entities",
-				"x": 0,
-				"y": 0,
-				"width": 64,
-				"height": 32,
-				"color": 16217634,
-				"customFields": {
-					"Entity_ref": {
-						"entityIid": "5e76c880-c210-11ef-a811-53f3d632aa42",
-						"layerIid": "2bfc86a1-c210-11ef-a811-83600d532367",
-						"levelIid": "2bfc5f9a-c210-11ef-a811-433792379037",
-						"worldIid": "26772db0-fec0-11ee-8705-7f2117549b58"
-					}
-				}
-			}
-		],
-		"Position": [
-			{
-				"id": "Position",
-				"iid": "5e76c880-c210-11ef-a811-53f3d632aa42",
-				"layer": "Entities",
-				"x": 0,
-				"y": 128,
-				"width": 32,
-				"height": 32,
-				"color": 1199753,
-				"customFields": {
-					"Name": null
-				}
-			}
-		]
-	}
+	"entities" : {}
 }

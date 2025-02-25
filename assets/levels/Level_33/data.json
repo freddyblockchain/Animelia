@@ -120,6 +120,21 @@
 					"Name": null
 				}
 			}
+		],
+		"Sign": [
+			{
+				"id": "Sign",
+				"iid": "dc893570-e920-11ef-baea-87c2eb274724",
+				"layer": "Entities",
+				"x": 32,
+				"y": 96,
+				"width": 32,
+				"height": 32,
+				"color": 3818598,
+				"customFields": {
+					"Text": "Try using Ice Cocoon"
+				}
+			}
 		]
 	}
 }

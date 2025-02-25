@@ -21,7 +21,7 @@ class FrostfireDragonEnemy(gameObjectData: GameObjectData, entityRefData: Entity
 
     override val aggroRange = 250f
 
-    override val maxHealth = 50f
+    override val maxHealth = 80f
     val arealDeath = AerialDeath(this)
     val fireBreath = FireBreath(this)
     val frostBreath = IceBreath(this)

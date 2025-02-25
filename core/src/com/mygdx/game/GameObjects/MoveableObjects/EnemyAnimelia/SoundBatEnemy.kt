@@ -34,7 +34,7 @@ class SoundBatEnemy(gameObjectData: GameObjectData, entityRefData: EntityRefData
 
     override val insideBattleStrategy: BattleStrategy = SoundBatBattleStrategy(this, soundGunAbility, whirlwind, flying)
 
-    override val maxHealth = 30f
+    override val maxHealth = 60f
 
     lateinit var cliffsideSensor: RaycastObject
 
